@@ -1,0 +1,720 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>0. Introducción al curso &#8212; MEC501 - Manejo y conversión de energía solar térmica</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="1. La radiación como un fenómeno electromagnético" href="../1_ondas_electromagneticas/1_ondas_electromagneticas.html" />
+    <link rel="prev" title="Bienvenidos al curso" href="../intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MEC501 - Manejo y conversión de energía solar térmica</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Bienvenidos al curso
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   0. Introducción al curso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_ondas_electromagneticas/1_ondas_electromagneticas.html">
+   1. La radiación como un fenómeno electromagnético
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/0_introduccion/0_introduccion.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/0_introduccion/0_introduccion.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#situacion-actual-del-sistema-energetico">
+   Situación actual del sistema energético
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problemas-medioambientales-asociados-al-sistema-energetico-actual">
+   Problemas medioambientales asociados al sistema energético actual
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tecnologias-de-manejo-y-conversion-de-energia-solar">
+   Tecnologías de manejo y conversión de energía solar
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aspectos-generales-de-la-energia-solar">
+     Aspectos generales de la energía solar
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#disponibilidad-de-energia-solar">
+     Disponibilidad de energía solar
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#descripcion-de-tecnologias-para-energia-solar">
+     Descripción de tecnologías para energía solar
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tecnologias-en-base-a-energia-solar-en-chile">
+     Tecnologías en base a energía solar en Chile
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descripcion-general-de-la-asignatura">
+   Descripción general de la asignatura
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objetivos-generales">
+     Objetivos generales
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objetivos-especificos">
+     Objetivos específicos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#temario">
+   Temario
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contenidos">
+     Contenidos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluacion-de-la-asignatura">
+   Evaluación de la asignatura
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>0. Introducción al curso</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#situacion-actual-del-sistema-energetico">
+   Situación actual del sistema energético
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problemas-medioambientales-asociados-al-sistema-energetico-actual">
+   Problemas medioambientales asociados al sistema energético actual
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tecnologias-de-manejo-y-conversion-de-energia-solar">
+   Tecnologías de manejo y conversión de energía solar
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aspectos-generales-de-la-energia-solar">
+     Aspectos generales de la energía solar
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#disponibilidad-de-energia-solar">
+     Disponibilidad de energía solar
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#descripcion-de-tecnologias-para-energia-solar">
+     Descripción de tecnologías para energía solar
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tecnologias-en-base-a-energia-solar-en-chile">
+     Tecnologías en base a energía solar en Chile
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descripcion-general-de-la-asignatura">
+   Descripción general de la asignatura
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objetivos-generales">
+     Objetivos generales
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objetivos-especificos">
+     Objetivos específicos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#temario">
+   Temario
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contenidos">
+     Contenidos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluacion-de-la-asignatura">
+   Evaluación de la asignatura
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font></p>
+<section class="tex2jax_ignore mathjax_ignore" id="introduccion-al-curso">
+<h1>0. Introducción al curso<a class="headerlink" href="#introduccion-al-curso" title="Permalink to this headline">#</a></h1>
+<p><br><br><br><br>
+Profesor: Francisco Ramírez Cuevas<br>
+Fecha: 1 de Agosto 2022</p>
+<h1>Tabla de contenidos<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Situación-actual-del-sistema-energético" data-toc-modified-id="Situación-actual-del-sistema-energético-1">Situación actual del sistema energético</a></span></li><li><span><a href="#Problemas-medioambientales-asociados-al-sistema-energético-actual" data-toc-modified-id="Problemas-medioambientales-asociados-al-sistema-energético-actual-2">Problemas medioambientales asociados al sistema energético actual</a></span></li><li><span><a href="#Tecnologías-de-manejo-y-conversión-de-energía-solar" data-toc-modified-id="Tecnologías-de-manejo-y-conversión-de-energía-solar-3">Tecnologías de manejo y conversión de energía solar</a></span><ul class="toc-item"><li><span><a href="#Aspectos-generales-de-la-energía-solar" data-toc-modified-id="Aspectos-generales-de-la-energía-solar-3.1">Aspectos generales de la energía solar</a></span></li><li><span><a href="#Disponibilidad-de-energía-solar" data-toc-modified-id="Disponibilidad-de-energía-solar-3.2">Disponibilidad de energía solar</a></span></li><li><span><a href="#Descripción-de-tecnologías-para-energía-solar" data-toc-modified-id="Descripción-de-tecnologías-para-energía-solar-3.3">Descripción de tecnologías para energía solar</a></span></li><li><span><a href="#Tecnologías-en-base-a-energía-solar-en-Chile" data-toc-modified-id="Tecnologías-en-base-a-energía-solar-en-Chile-3.4">Tecnologías en base a energía solar en Chile</a></span></li></ul></li><li><span><a href="#Descripción-general-de-la-asignatura" data-toc-modified-id="Descripción-general-de-la-asignatura-4">Descripción general de la asignatura</a></span><ul class="toc-item"><li><span><a href="#Objetivos-generales" data-toc-modified-id="Objetivos-generales-4.1">Objetivos generales</a></span></li><li><span><a href="#Objetivos-específicos" data-toc-modified-id="Objetivos-específicos-4.2">Objetivos específicos</a></span></li></ul></li><li><span><a href="#Temario" data-toc-modified-id="Temario-5">Temario</a></span><ul class="toc-item"><li><span><a href="#Contenidos" data-toc-modified-id="Contenidos-5.1">Contenidos</a></span></li></ul></li><li><span><a href="#Evaluación-de-la-asignatura" data-toc-modified-id="Evaluación-de-la-asignatura-6">Evaluación de la asignatura</a></span></li></ul></div><section id="situacion-actual-del-sistema-energetico">
+<h2>Situación actual del sistema energético<a class="headerlink" href="#situacion-actual-del-sistema-energetico" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">IFrame</span>
+<span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;https://ourworldindata.org/grapher/energy-consumption-by-source-and-region?stackMode=absolute&#39;</span><span class="p">,</span> <span class="s1">&#39;900px&#39;</span><span class="p">,</span> <span class="s1">&#39;600px&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="900px"
+    height="600px"
+    src="https://ourworldindata.org/grapher/energy-consumption-by-source-and-region?stackMode=absolute"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+<p><strong>Datos relevantes</strong></p>
+<ul class="simple">
+<li><p>El consumo mundial de combustibles fósiles (petróleo, gas y carbón) a aumentado en casi 65% desde el año 1990 hasta el año 2021.</p></li>
+<li><p>El porcentaje de energía proveniente de combustibles fósiles, ha disminuido de casi un 87% en 1990 a 83% en el 2021 (en Chile, este porcentaje cayó desde 82% a 76.5%).</p></li>
+<li><p>Actualmente en Chile, las energías renovables representan un 23.5%, donde un 6.25% proviene de energía solar.</p></li>
+</ul>
+<blockquote>
+<div><p>Por otro lado, <strong>la disponiblidad de combustilbes fósiles es limitada</strong>. Segun estudios ´<a class="reference external" href="https://earthbuddies.net/when-will-we-run-out-of-fossil-fuel/">las reservas de petroleo, gas y carbón se agotarán para los años 2052, 2060 y 2090, respectivamente.</a></p>
+</div></blockquote>
+<blockquote>
+<div><p>Esto significa que los precios de los combustibles fósiles seguirán aumentando en las próximas décadas.</p>
+</div></blockquote>
+</section>
+<section id="problemas-medioambientales-asociados-al-sistema-energetico-actual">
+<h2>Problemas medioambientales asociados al sistema energético actual<a class="headerlink" href="#problemas-medioambientales-asociados-al-sistema-energetico-actual" title="Permalink to this headline">#</a></h2>
+<p>Como vimos, aunque el consumo de energías renovables ha ido en aumento, la quema de combustibles fósiles sigue siendo la principal fuente de energía en el mundo.</p>
+<p>Además de los problemas asociados a la disponibilidad limitada y aumento de precio de los combustibles fósiles, existen consecuencias medioambientales que tienen asociado un costo indirecto, tales como:</p>
+<ul class="simple">
+<li><p>Lluvia ácida asociada a la emisión de SO<span class="math notranslate nohighlight">\(_2\)</span> y NO<span class="math notranslate nohighlight">\(_x\)</span></p></li>
+<li><p>Disminución de la capa de ozono por emisión de CFC y NO<span class="math notranslate nohighlight">\(_x\)</span>. (<em>Aunque se han tomado una serie de medidas para reducir las emisiones de CFC, se estima que el daño en zonas como la Antartica seguirá presenta hasta, al menos, el año 2075.</em>)</p></li>
+<li><p>Cambio climático producto del aumento de gases de efecto invernadero</p></li>
+</ul>
+</section>
+<section id="tecnologias-de-manejo-y-conversion-de-energia-solar">
+<h2>Tecnologías de manejo y conversión de energía solar<a class="headerlink" href="#tecnologias-de-manejo-y-conversion-de-energia-solar" title="Permalink to this headline">#</a></h2>
+<section id="aspectos-generales-de-la-energia-solar">
+<h3>Aspectos generales de la energía solar<a class="headerlink" href="#aspectos-generales-de-la-energia-solar" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>El sol es la única fuente externa de energía en la tierra</p></li>
+<li><p>Todas la formas de energía disponibles tiene origen solar (combustibles fósiles, mareomotríz, eólica, etc)</p></li>
+</ul>
+</section>
+<section id="disponibilidad-de-energia-solar">
+<h3>Disponibilidad de energía solar<a class="headerlink" href="#disponibilidad-de-energia-solar" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="s1">&#39;https://globalsolaratlas.info/&#39;</span><span class="p">,</span><span class="s1">&#39;100%&#39;</span><span class="p">,</span><span class="s1">&#39;600px&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="100%"
+    height="600px"
+    src="https://globalsolaratlas.info/"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+<p>Chile es el país con mayores niveles de radiación en el mundo.</p>
+<p>Por ejemplo, en base al atlas solar del <a class="reference external" href="https://globalsolaratlas.info/map?c=11.523088,8.261719,3">World Bank Group</a>, si calculamos la energía generada por el área con mayores niveles de radiación considerando paneles con <a class="reference external" href="https://solarity.cz/blog/500-wp-solar-modules-era/">potencia máxima de 500 Wp</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span>     <span class="o">=</span> <span class="mf">250060.15</span> <span class="c1"># Superficie total (km^2)</span>
+<span class="n">Pmax</span>  <span class="o">=</span> <span class="mi">500</span>       <span class="c1"># Potencia máxima por panel en condiciones estándard (Wp)</span>
+<span class="n">PVOUT</span> <span class="o">=</span> <span class="mf">6.0</span>       <span class="c1"># Potencía específica suministrada (kWh/Wp)</span>
+
+<span class="c1"># Energía total suministrada (TWh)</span>
+<span class="n">Etot</span>  <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="mf">1E3</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">PVOUT</span><span class="o">*</span><span class="n">Pmax</span><span class="o">/</span><span class="mf">1E12</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energía eléctrica suministrada: </span><span class="si">%.1f</span><span class="s2"> TWh (Energía consumida en Chile 444 TWh)&quot;</span> <span class="o">%</span> <span class="n">Etot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Energía eléctrica suministrada: 750.2 TWh (Energía consumida en Chile 444 TWh)
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>“<em>Para abastecer toda la energía que requiere Chile si tuviéramos almacenamiento suficiente necesitamos unos mil kilómetros cuadrados, algo menos que el 1% del desierto y equivalente más o menos a la superficie de la comuna de Melipilla.</em>”  <a class="reference external" href="https://www.revistaei.cl/2019/09/04/con-todo-el-potencial-de-energia-solar-de-chile-se-podria-abastecer-60-veces-el-consumo-del-pais-y-el-20-del-mundo/">Rodrigo Palma, director de SERC, 2022</a></p>
+</div></blockquote>
+</section>
+<section id="descripcion-de-tecnologias-para-energia-solar">
+<h3>Descripción de tecnologías para energía solar<a class="headerlink" href="#descripcion-de-tecnologias-para-energia-solar" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Fotovoltaica
+<a class="reference internal" href="../_images/pv_cell.jpg"><img alt="../_images/pv_cell.jpg" src="../_images/pv_cell.jpg" style="width: 400px;" /></a></p></li>
+</ul>
+<ul class="simple">
+<li><p>Termosolar
+<a class="reference internal" href="../_images/thermo_solar_power_plant.jpg"><img alt="../_images/thermo_solar_power_plant.jpg" src="../_images/thermo_solar_power_plant.jpg" style="width: 400px;" /></a></p></li>
+</ul>
+<ul class="simple">
+<li><p>Termoregulación solar para edificaciones
+<a class="reference internal" href="../_images/smart_window.jpg"><img alt="../_images/smart_window.jpg" src="../_images/smart_window.jpg" style="width: 400px;" /></a></p></li>
+</ul>
+<ul class="simple">
+<li><p>Desalinización solar
+<a class="reference internal" href="../_images/solar_desalination.png"><img alt="../_images/solar_desalination.png" src="../_images/solar_desalination.png" style="width: 400px;" /></a></p></li>
+</ul>
+<ul class="simple">
+<li><p>Combustibles solares (ejemplos)</p></li>
+</ul>
+<p>Generación fotoelectroquímica</p>
+<a class="reference internal image-reference" href="../_images/artificial_photosynthesis.png"><img alt="../_images/artificial_photosynthesis.png" src="../_images/artificial_photosynthesis.png" style="width: 400px;" /></a>
+<p>Generación termoquímica</p>
+<a class="reference internal image-reference" href="../_images/thermochemical_solar_reactor.png"><img alt="../_images/thermochemical_solar_reactor.png" src="../_images/thermochemical_solar_reactor.png" style="width: 400px;" /></a>
+</section>
+<section id="tecnologias-en-base-a-energia-solar-en-chile">
+<h3>Tecnologías en base a energía solar en Chile<a class="headerlink" href="#tecnologias-en-base-a-energia-solar-en-chile" title="Permalink to this headline">#</a></h3>
+<p>En Chile las principales tecnologías son la fotovoltaica y termosolar, <a class="reference external" href="https://www.pv-magazine-latam.com/2021/04/13/chile-alcanza-46-gw-fotovoltaicos-de-potencia-instalada/">con una capacidad instalada de 4.6 GW</a>. La mayor parte de este simunistro corresponde a plantas solares fotovoltaicas. Respecto al suministro de energía termosolar, se destacan dos proyectos:</p>
+<p><a class="reference external" href="https://laderasur.com/articulo/recorriendo-cerro-dominador-la-unica-planta-termosolar-que-funciona-en-medio-del-desierto-de-atacama/">Planta solar cerro dominador</a></p>
+<a class="reference internal image-reference" href="../_images/cerro_dominador.jpg"><img alt="../_images/cerro_dominador.jpg" src="../_images/cerro_dominador.jpg" style="width: 400px;" /></a>
+<p><a class="reference external" href="https://energia.gob.cl/noticias/valparaiso/primer-concentrador-solar-termico-en-valparaiso">Concentrador solar parabolico en Valparaiso</a></p>
+<a class="reference internal image-reference" href="../_images/concentrador_solar_chile.jpg"><img alt="../_images/concentrador_solar_chile.jpg" src="../_images/concentrador_solar_chile.jpg" style="width: 400px;" /></a>
+</section>
+</section>
+<section id="descripcion-general-de-la-asignatura">
+<h2>Descripción general de la asignatura<a class="headerlink" href="#descripcion-general-de-la-asignatura" title="Permalink to this headline">#</a></h2>
+<p>En este curso revisaremos los fundamentos y aplicaciones de tecnologías para el manejo y conversión de la energía solar. <strong>La primera parte de este curso estará enfocada hacia los fundamentos de la radiación solar</strong>. Analizaremos el fenómeno electromagnético de la radiación y su interacción con la materia para explicar los mecanismos detrás de la respuesta óptica en diversos escenarios.</p>
+<p>En la segunda parte revisaremos las principales tecnologías de conversión y manejo de energía solar. <strong>Comenzaremos analizando colectores solares aplicados a sistemas de agua caliente en sectores residenciales</strong>. Debido a la simpleza en su diseño, el análisis de estos sistemas servirá como plataforma para aplicar y reforzar los conceptos aprendidos en la primera parte. Luego, revisaremos centrales termosolares, celdas fotovoltaicas,  manejo de la radiación solar en edificaciones, y otras tecnologías aún en desarrollo como desalinización y combustibles solares.</p>
+<section id="objetivos-generales">
+<h3>Objetivos generales<a class="headerlink" href="#objetivos-generales" title="Permalink to this headline">#</a></h3>
+<p>Aprender los fundamentos del manejo de la radiación térmica y solar, así como sobre las principales tecnologías de conversión y manejo de energía solar<br></p>
+</section>
+<section id="objetivos-especificos">
+<h3>Objetivos específicos<a class="headerlink" href="#objetivos-especificos" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Entender la radiación como un fenómeno electromagnético</p></li>
+<li><p>Entender la interacción materia-luz y su relación con la respuesta óptica de los materiales</p></li>
+<li><p>Comprender los régimenes de análisis para el transporte radiativo en función de la longitud de escala.</p></li>
+<li><p>Familiarizar al estudiante con las herramientas de modelación de transporte radiativo.</p></li>
+<li><p>Comprender los fundamentos de la transferencia de calor por radiación.</p></li>
+<li><p>Entender las principales características de la radiación solar.</p></li>
+<li><p>Capacitar al estudiante en el diseño de sistemas de agua caliente domiciliarios basados en colectores solares.</p></li>
+<li><p>Familiarizar al estudiante con las principales tecnologías de manejo y conversión de energía solar.</p></li>
+<li><p>Familiarizar al estudiante con las tecnologías de manejo y conversión de energía solar emergentes, y el rol de la nanofotónica en el futuro de estas tecnologías.</p></li>
+</ul>
+</section>
+</section>
+<section id="temario">
+<h2>Temario<a class="headerlink" href="#temario" title="Permalink to this headline">#</a></h2>
+<section id="contenidos">
+<h3>Contenidos<a class="headerlink" href="#contenidos" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>La radiación como un fenómeno electromagnético</p></li>
+<li><p>Interacción materia-luz</p></li>
+<li><p>Dispersión (scattering) de la luz y transporte radiativo</p></li>
+<li><p>Fundamentos de la transferencia de calor por radiación</p></li>
+<li><p>Radiación Solar</p></li>
+<li><p>Colectores planos para sistemas de agua caliente termosolar</p></li>
+<li><p>Plantas termosolares</p></li>
+<li><p>Celdas fotovoltaicas</p></li>
+<li><p>Tecnologías de termorregulación solar para edificaciones</p></li>
+<li><p>Sistemas de desalinización Solar</p></li>
+<li><p>Dispositivos de conversión de combustibles solares</p></li>
+</ol>
+</section>
+</section>
+<section id="evaluacion-de-la-asignatura">
+<h2>Evaluación de la asignatura<a class="headerlink" href="#evaluacion-de-la-asignatura" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Tres (3) pruebas en formato de tareas (80% de nota de presentación)</p></li>
+<li><p>Cuestionarios al comienzo de cada clase (20% de la nota de presentación)</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-f80d9f6a-6b7c-4e4f-b3cc-2915f68f0966">
+<span class="eqno">(1)<a class="headerlink" href="#equation-f80d9f6a-6b7c-4e4f-b3cc-2915f68f0966" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\mathrm{NP}  = 80\%\mathrm{Promedio Pruebas} + 20\%\mathrm{Promedio Cuestionarios}
+\end{equation}\]</div>
+<blockquote>
+<div><p>*El promedio de cuestionarios considera 8 de las mejores notas.</p>
+</div></blockquote>
+<p>Aquellos alumnos con <span class="math notranslate nohighlight">\(\mathrm{NP} \geq 5.0\)</span> no requieren rendir examen. En caso de rendir el examen, <strong>la calificación de este reemplaza la peor nota de las pruebas parciales (solo si la nota del exámen es superior a la peor nota).</strong> La nota final se calcula mediante el promedio de las 3 mejores notas (incluido examen).</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./0_introduccion"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Bienvenidos al curso</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../1_ondas_electromagneticas/1_ondas_electromagneticas.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1. La radiación como un fenómeno electromagnético</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Francisco V. Ramirez-Cuevas<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
