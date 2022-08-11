@@ -289,6 +289,7 @@ YouTubeVideo('CWulQ1ZSE3c', width=600, height=400,  playsinline=0, start=42)
 # > En otras palabras, el campo electrico representa una **onda transversal.**
 # 
 # <img src="./images/onda_transversal.png" width="400px" align= center>
+# 
 # <center> Esquema de una onda transversal </center>
 
 # En general, tenemos dos tipos de ondas, transversales, y longitudinales
