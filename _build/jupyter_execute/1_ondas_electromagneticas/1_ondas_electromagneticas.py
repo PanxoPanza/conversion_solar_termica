@@ -316,19 +316,19 @@ display(IFrame('https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/h
 # 
 # - Se mueve en el vacio a una velocidad constante $c_0 \approx 3.00\times10^8~\mathrm{m/s}$.
 # 
-# - Es una onda transversal ($\vec{k}\cdot\hat{h} = 0$ por la ley de continuidad).
+# - Es una onda transversal ($\vec{k}\cdot\hat{h} = 0$, por la ley de continuidad de $\vec{H}$).
 
 # Finalmente, mediante la ley de Faraday (o Ampere), deducimos:
 # 
 # \begin{equation*}
-# \hat{h}{H}_0 = \frac{E_0}{k_0Z_0}\left(\hat{k}\times\hat{e}\right),
+# \hat{h}{H}_0 = \frac{E_0}{Z_0}\left(\hat{k}\times\hat{e}\right),
 # \end{equation*}
 # 
 # donde $Z_0 = \sqrt{\frac{\mu_0}{\varepsilon_0}}$, es la **impedancia del vacío** (se mide en $\Omega$).
 
 # De esta relación concluímos:
 # 1. El campo eléctrico magnético y el vector de onda son mutuamente perpendiculares ($H\perp E\perp k$)
-# 2. La amplitud de la intensidad de campo magnético y del campo eléctrico, estan relacionadas por: ${H}_0 = \frac{E_0}{k_0Z_0}$
+# 2. La amplitud de la intensidad de campo magnético y del campo eléctrico, estan relacionadas por: ${H}_0 = \frac{E_0}{Z_0}$
 
 # En resumen:
 # 1. En el vacío, $\vec{E}$ y $\vec{H}$ se comportan como ondas trasversales de la forma $\propto e^{ i\left(\vec{k}\cdot\vec{r} - \omega t\right)}$.
@@ -341,7 +341,7 @@ display(IFrame('https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/h
 # 
 # 5. $\vec{E}$, $\vec{H}$ y $\vec{k}$ son mutuamente perpendiculares. 
 # 
-# 6. Las amplitudes de $\vec{E}$ y $\vec{H}$ están asociadas por la relación ${H}_0 = \frac{E_0}{k_0Z_0}$, donde $Z_0 = \frac{1}{\sqrt{\mu_0\varepsilon_0}}$.
+# 6. Las amplitudes de $\vec{E}$ y $\vec{H}$ están asociadas por la relación ${H}_0 = \frac{E_0}{Z_0}$, donde $Z_0 = \frac{1}{\sqrt{\mu_0\varepsilon_0}}$.
 
 # <img src="./images/EM-Wave.gif" width="400px" align= center>
 # 
@@ -382,7 +382,7 @@ display(IFrame('https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/h
 # La gran diferencia está en la relación de dispersión. En este caso:
 # 
 # \begin{equation}
-# |k| = N \frac{\omega}{c_0}
+# k = N \frac{\omega}{c_0}
 # \end{equation}
 # 
 # donde $N = \sqrt{\varepsilon} = n +i\kappa$, es el **índice de refracción complejo**. En general $n$ se conoce como el **índice de refracción**, y $\kappa$ como **extinsión**.
@@ -391,7 +391,7 @@ display(IFrame('https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/h
 
 # Igualmente la relación entre $H_0$ y $E_0$, es de la forma 
 # 
-# $$H_0 = \frac{E_0}{k_0 Z_0Z_r},$$
+# $$H_0 = \frac{E_0}{Z_0Z_r},$$
 # 
 # donde $Z_r = \sqrt{\frac{1}{\varepsilon}}$ es la **impedancia relativa**.
 
