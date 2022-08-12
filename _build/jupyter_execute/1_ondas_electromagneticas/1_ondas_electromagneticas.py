@@ -444,7 +444,7 @@ display(IFrame('https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/h
 # 
 # 5. $\vec{E}$, $\vec{H}$ y $\vec{k}$ son mutuamente perpendiculares. 
 # 
-# 6. Las amplitudes de $\vec{E}$ y $\vec{H}$ están asociadas por la relación ${H}_0 = \frac{E_0}{k_0Z_0Z_r}$, donde $Z_r = \frac{1}{\sqrt{\varepsilon}}$.
+# 6. Las amplitudes de $\vec{E}$ y $\vec{H}$ están asociadas por la relación ${H}_0 = \frac{E_0}{Z_0Z_r}$, donde $Z_r = \frac{1}{\sqrt{\varepsilon}}$.
 
 # <img src="./images/em_wave_decaying.jpg" width="400px" align= center>
 # 
