@@ -8,9 +8,9 @@
 # Fecha: 19 de Agosto 2022
 
 # <h1>Tabla de contenidos<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Ecuaciones-de-maxwell-en-un-medio" data-toc-modified-id="Ecuaciones-de-maxwell-en-un-medio-1">Ecuaciones de maxwell en un medio</a></span><ul class="toc-item"><li><span><a href="#Vector-de-Poynting" data-toc-modified-id="Vector-de-Poynting-1.1">Vector de Poynting</a></span></li></ul></li><li><span><a href="#Referencias" data-toc-modified-id="Referencias-2">Referencias</a></span></li></ul></div>
+# <div class="toc"><ul class="toc-item"><li><span><a href="#Ecuaciones-de-Maxwell-en-un-medio" data-toc-modified-id="Ecuaciones-de-Maxwell-en-un-medio-1">Ecuaciones de Maxwell en un medio</a></span><ul class="toc-item"><li><span><a href="#Vector-de-Poynting" data-toc-modified-id="Vector-de-Poynting-1.1">Vector de Poynting</a></span></li></ul></li><li><span><a href="#Referencias" data-toc-modified-id="Referencias-2">Referencias</a></span></li></ul></div>
 
-# ## Ecuaciones de maxwell en un medio
+# ## Ecuaciones de Maxwell en un medio
 
 # La materia esta compuesta por cargas (electrónes, átomos, moléculas). Por lo tanto, a diferencia del vacío, la densidad de carga ($\rho$) y de corriente ($\vec{J}$) eléctricas están presentes en las ecuaciones de Maxwell:
 # 

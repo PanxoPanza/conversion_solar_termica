@@ -341,7 +341,7 @@ display(IFrame('https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/h
 # 
 # 5. $\vec{E}$, $\vec{H}$ y $\vec{k}$ son mutuamente perpendiculares. 
 # 
-# 6. Las amplitudes de $\vec{E}$ y $\vec{H}$ están asociadas por la relación ${H}_0 = \frac{E_0}{Z_0}$, donde $Z_0 = \frac{1}{\sqrt{\mu_0\varepsilon_0}}$.
+# 6. Las amplitudes de $\vec{E}$ y $\vec{H}$ están asociadas por la relación ${H}_0 = \frac{E_0}{Z_0}$, donde $Z_0 = \sqrt{\frac{\mu_0}{\varepsilon_0}}$.
 
 # <img src="./images/EM-Wave.gif" width="400px" align= center>
 # 
@@ -382,3 +382,9 @@ YouTubeVideo('bHIhgxav9LY', width=600, height=400,  playsinline=0, start=42)
 # - 7.3 Maxwell's Equations (hasta  7.3.3)
 # - 8 Concervation laws (solo 8.1)
 # - 9 Electromagnetic Waves (hasta 9.2)
+
+# In[ ]:
+
+
+
+
