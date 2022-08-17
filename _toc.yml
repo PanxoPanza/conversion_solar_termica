@@ -6,3 +6,4 @@ root: intro
 chapters:
 - file: 0_introduccion/0_introduccion
 - file: 1_ondas_electromagneticas/1_ondas_electromagneticas
+- file: 2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia
