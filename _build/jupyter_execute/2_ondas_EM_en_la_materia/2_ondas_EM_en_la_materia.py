@@ -356,7 +356,10 @@ def plot_R_interface(n1,n2):
 
 
 from ipywidgets import interact
-interact(plot_R_interface,n1=(1,10,0.5), n2=(1,10,0.5))
+
+@interact(n1=(1,5, 0.1), n2=(1,5, 0.1))
+def g(n1=1, n2=2.0):
+    return plot_R_interface(n1,n2)
 
 
 # Cuando $n_1 < n_2$ vemos que $R_\mathrm{TM} = 0$ en un cierto ángulo. Este ángulo se denomina **ángulo de Brewster.** En este ángulo solo la componente TE es reflejada. 
@@ -428,10 +431,9 @@ interact(plot_R_interface,n1=(1,10,0.5), n2=(1,10,0.5))
 import numpy as np
 import matplotlib.pyplot as plt
 from empylib.fresnel import multilayer
-import empylib.nklib as nk
 
 # Reflectividad en capa delgada
-lam = np.linspace(0.3,1.0,100)          # longitud de onda (en um)
+lam = np.linspace(0.3,0.8,100)          # longitud de onda (en um)
 n_layers = (1.0,1.5,4.3)         # índices de refracción n1, n2, n3
 Rp = lambda tt,d : multilayer(lam, tt,n_layers, (d,), 'p')[0]
 Rs = lambda tt,d : multilayer(lam, tt,n_layers, (d,), 's')[0]
@@ -454,7 +456,10 @@ def plot_R_multi(theta,d):
 
 
 from ipywidgets import interact
-interact(plot_R_multi, theta=(0,89,10), d=(0,0.5,0.01))
+
+@interact(theta=(0,89,10), d=(0,0.5,0.01))
+def g(theta=30, d=0.3):
+    return plot_R_multi(theta,d)
 
 
 # Esta oscilaciones en la reflectancia al variar $\theta_i$ y $d$ son el resultado de la interferencia entre las ondas reflejadas en la parte inferior y superior de la película de silicio.
@@ -478,7 +483,7 @@ from empylib.ref_spectra import color_system as cs
 cs = cs.hdtv
 
 # Reflectividad en capa delgada
-lam = np.linspace(0.3,1.0,81)   # longitud de onda (en um)
+lam = np.linspace(0.3,0.8,81)   # longitud de onda (en um)
 n_layers = (1.0,1.5,4.3)         # índices de refracción n1, n2, n3
 Rp = lambda tt,d : multilayer(lam, tt,n_layers, (d,), 'p')[0]
 Rs = lambda tt,d : multilayer(lam, tt,n_layers, (d,), 's')[0]
@@ -506,7 +511,10 @@ def color_R_film(d):
 
 
 from ipywidgets import interact
-interact(color_R_film, d=(0,0.5,0.001))
+
+@interact(d=(0,0.5,0.001))
+def g(d=0.28):
+    return color_R_film(d)
 
 
 # ## Referencias
