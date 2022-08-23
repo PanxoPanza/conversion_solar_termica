@@ -271,7 +271,7 @@
 # n_1E_i - n_1E_r  - n_2E_t = 0 \label{eq:boundaryH}
 # \end{equation}
 
-# A partir de las ecuaciones (\ref{eq:boundaryE}) y (\ref{eq:boundaryH}), determinamos los coeficientes de Fresnel de reflexión ($r_\mathrm{TM}$) y transmisión ($t_\mathrm{TM}$) para una onda TM:
+# A partir de estas dos ecuaciones, determinamos los coeficientes de Fresnel de reflexión ($r_\mathrm{TM}$) y transmisión ($t_\mathrm{TM}$) para una onda TM:
 # 
 # \begin{align}
 # r_\mathrm{TM} &= \frac{E_r^\mathrm{TM}}{E_i^\mathrm{TM}} = \frac{n_1\cos\theta_t-n_2\cos\theta_i}
