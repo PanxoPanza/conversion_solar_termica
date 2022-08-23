@@ -8,7 +8,7 @@
 # Fecha: 19 de Agosto 2022
 
 # <h1>Tabla de contenidos<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Ecuaciones-de-Maxwell-en-un-medio" data-toc-modified-id="Ecuaciones-de-Maxwell-en-un-medio-1">Ecuaciones de Maxwell en un medio</a></span><ul class="toc-item"><li><span><a href="#Vector-de-Poynting" data-toc-modified-id="Vector-de-Poynting-1.1">Vector de Poynting</a></span></li><li><span><a href="#Condiciones-de-borde" data-toc-modified-id="Condiciones-de-borde-1.2">Condiciones de borde</a></span></li></ul></li><li><span><a href="#Reflección-y-transmissión-de-ondas-electromagnéticas-en-una-interface" data-toc-modified-id="Reflección-y-transmissión-de-ondas-electromagnéticas-en-una-interface-2">Reflección y transmissión de ondas electromagnéticas en una interface</a></span><ul class="toc-item"><li><span><a href="#Coeficientes-de-Fresnel" data-toc-modified-id="Coeficientes-de-Fresnel-2.1">Coeficientes de Fresnel</a></span></li><li><span><a href="#Reflectividad-($R$)-y-transmisividad-($T$)" data-toc-modified-id="Reflectividad-($R$)-y-transmisividad-($T$)-2.2">Reflectividad ($R$) y transmisividad ($T$)</a></span></li><li><span><a href="#Casos-particulares" data-toc-modified-id="Casos-particulares-2.3">Casos particulares</a></span></li></ul></li><li><span><a href="#Reflección-y-transmissión-en-películas-delgadas" data-toc-modified-id="Reflección-y-transmissión-en-películas-delgadas-3">Reflección y transmissión en películas delgadas</a></span></li><li><span><a href="#Referencias" data-toc-modified-id="Referencias-4">Referencias</a></span></li></ul></div>
+# <div class="toc"><ul class="toc-item"><li><span><a href="#Ecuaciones-de-Maxwell-en-un-medio" data-toc-modified-id="Ecuaciones-de-Maxwell-en-un-medio-1">Ecuaciones de Maxwell en un medio</a></span><ul class="toc-item"><li><span><a href="#Vector-de-Poynting" data-toc-modified-id="Vector-de-Poynting-1.1">Vector de Poynting</a></span></li><li><span><a href="#Condiciones-de-borde" data-toc-modified-id="Condiciones-de-borde-1.2">Condiciones de borde</a></span></li></ul></li><li><span><a href="#Reflexión-y-transmisión-de-ondas-electromagnéticas-en-una-interface" data-toc-modified-id="Reflexión-y-transmisión-de-ondas-electromagnéticas-en-una-interface-2">Reflexión y transmisión de ondas electromagnéticas en una interface</a></span><ul class="toc-item"><li><span><a href="#Coeficientes-de-Fresnel" data-toc-modified-id="Coeficientes-de-Fresnel-2.1">Coeficientes de Fresnel</a></span></li><li><span><a href="#Reflectividad-y-transmisividad" data-toc-modified-id="Reflectividad-y-transmisividad-2.2">Reflectividad y transmisividad</a></span></li><li><span><a href="#Casos-particulares" data-toc-modified-id="Casos-particulares-2.3">Casos particulares</a></span></li></ul></li><li><span><a href="#Reflección-y-transmissión-en-películas-delgadas" data-toc-modified-id="Reflección-y-transmissión-en-películas-delgadas-3">Reflección y transmissión en películas delgadas</a></span></li><li><span><a href="#Referencias" data-toc-modified-id="Referencias-4">Referencias</a></span></li></ul></div>
 
 # ## Ecuaciones de Maxwell en un medio
 
@@ -164,7 +164,7 @@
 
 # >**En la interface entre dos medios $1$ y $2$ las componentes de $\vec{E}$ y $\vec{H}$ paralelas a la interface, se conservan.**
 
-# ## Reflección y transmissión de ondas electromagnéticas en una interface
+# ## Reflexión y transmisión de ondas electromagnéticas en una interface
 
 # ### Coeficientes de Fresnel
 
@@ -176,9 +176,17 @@
 
 # <img src="./images/plano_incidencia.png" width="350px" align= center>
 
-# Como ejemplo, consideremos una onda electromagnética donde el campo magnético está **polarizado** en dirección perpendicular al plano de incidencia. Este tipo de onda se define como **onda transversal magnética (TM)**
+# A partir de la dirección de $\vec{E}$ y $\vec{H}$ respecto al plano de incidencia, podemos distunguir dos polarizaciones:
+# 
+# - Si **$\vec{H}$ oscila en dirección perpendicular al plano de incidencia**, hablamos de una **polarización transversal magnética o TM**.
+# 
+# - Si **$\vec{E}$ oscila en dirección perpendicular al plano de incidencia**, hablamos de una **polarización transversal eléctrica o TE**.
+
+# Como ejemplo, consideremos una **onda transversal magnética (TM)**
 # 
 # <img src="./images/em_reflection.png" width="350px" align= center>
+# 
+# La figura muestra la reflexión y transmisión de la onda visto desde el plano de incidencia
 
 # A través de las ecuaciones de Maxwell, podemos establecer la solución general para cada onda electromagnética:
 # 
@@ -245,7 +253,7 @@
 # n_1\sin\theta_i = n_1\sin\theta_r = n_2\sin\theta_t
 # \end{equation*}
 
-# Esto nos lleva a las leyes de Snell, para reflección y transmissión:
+# Esto nos lleva a las leyes de Snell, para reflexión y transmisión:
 # 
 # \begin{equation*}
 # \theta_i = \theta_r\quad\quad\mathrm{y}\quad\quad n_1\sin\theta_i = n_2\sin\theta_t
@@ -263,7 +271,7 @@
 # n_1E_i - n_1E_r  - n_2E_t = 0 \label{eq:boundaryH}
 # \end{equation}
 
-# A partir de las ecuaciones (\ref{eq:boundaryE}) y (\ref{eq:boundaryH}), determinamos los coeficientes de Fresnel de reflección ($r_\mathrm{TM}$) y transmissión ($t_\mathrm{TM}$) para una onda TM:
+# A partir de las ecuaciones (\ref{eq:boundaryE}) y (\ref{eq:boundaryH}), determinamos los coeficientes de Fresnel de reflexión ($r_\mathrm{TM}$) y transmisión ($t_\mathrm{TM}$) para una onda TM:
 # 
 # \begin{align}
 # r_\mathrm{TM} &= \frac{E_r^\mathrm{TM}}{E_i^\mathrm{TM}} = \frac{n_1\cos\theta_t-n_2\cos\theta_i}
@@ -285,7 +293,7 @@
 
 # >Las relaciones para los coeficientes de Fresnel se mantienen para índices de refracción complejos. En este caso, solo debemos reemplazar $n_1$ por $N_1$, y $n_2$ por $N_2$
 
-# ### Reflectividad ($R$) y transmisividad ($T$)
+# ### Reflectividad y transmisividad
 
 # Los coeficientes de Fresnel permiten determinar la magnitud del campo eléctrico (y magnético) reflejado y transmitido por una interface. Para determinar el flujo de energía a través de la interface, utilizamos el vector de Poynting. En el caso de la onda $\mathrm{TM}$, y considerando indices de refracción complejos en los medios 1 y 2:
 # 
@@ -335,14 +343,14 @@ from empylib.fresnel import interface
 
 theta = np.linspace(0,90,100) # Ángulo de incidencia
 # Reflectividad en una interface
-Rp = lambda n1,n2 : interface(theta,n1,n2)[0]
-Rs = lambda n1,n2 : interface(theta,n1,n2)[4]
+Rp = lambda n1,n2 : interface(theta,n1,n2)[0] # TM
+Rs = lambda n1,n2 : interface(theta,n1,n2)[4] # TE
 
 # preparamos el ploteo
 def plot_R_interface(n1,n2):
     fig, ax = plt.subplots()
     fig.set_size_inches(9, 6)
-    plt.rcParams['font.size'] = '16'
+    plt.rcParams['font.size'] = '18'
     ax.plot(theta,Rp(n1,n2), label='$R_\mathrm{TM}$', color='red')
     ax.plot(theta,Rs(n1,n2), label='$R_\mathrm{TE}$',color='blue')
     ax.set_xlim([0,90])
@@ -357,8 +365,8 @@ def plot_R_interface(n1,n2):
 
 from ipywidgets import interact
 
-@interact(n1=(1,5, 0.1), n2=(1,5, 0.1))
-def g(n1=1, n2=2.0):
+@interact( n1=(1,5, 0.1), n2=(1,5, 0.1))
+def g(n1=1.0, n2=1.5):
     return plot_R_interface(n1,n2)
 
 
@@ -457,7 +465,7 @@ def plot_R_multi(theta,d):
 
 from ipywidgets import interact
 
-@interact(theta=(0,89,10), d=(0,0.5,0.01))
+@interact(theta=(0,89,10), d=(0,1.0,0.01))
 def g(theta=30, d=0.3):
     return plot_R_multi(theta,d)
 
@@ -512,7 +520,7 @@ def color_R_film(d):
 
 from ipywidgets import interact
 
-@interact(d=(0,0.5,0.001))
+@interact(d=(0,1.0,0.001))
 def g(d=0.28):
     return color_R_film(d)
 

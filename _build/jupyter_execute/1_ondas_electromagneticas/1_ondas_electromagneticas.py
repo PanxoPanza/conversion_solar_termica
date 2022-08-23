@@ -360,7 +360,7 @@ display(IFrame('https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/h
 # 
 # \begin{align*}
 # \langle\vec{S}\rangle &= \frac{1}{2}\mathrm{Re}\left(\vec{E}\times\vec{H}^*\right) \\
-# &=\frac{1}{2}\mathrm{Re}\left[\frac{E_0^2}{Z_0} e^{i\left(k_0\hat{k}\cdot\vec{r} - \omega t\right)}e^{-i\left(k_0\hat{k}\cdot\vec{r} - \omega t\right)}\right] \left(\hat{e}\times\hat{h}\right)\\
+# &=\frac{1}{2}\mathrm{Re}\left[E_0 e^{i\left(k_0\hat{k}\cdot\vec{r} - \omega t\right)}\frac{E_0}{Z_0}e^{-i\left(k_0\hat{k}\cdot\vec{r} - \omega t\right)}\right] \left(\hat{e}\times\hat{h}\right)\\
 # &=\frac{E_0^2}{2Z_0} \hat{k}
 # \end{align*}
 
