@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>3. Interacción materia-luz &#8212; MEC501 - Manejo y conversión de energía solar térmica</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="2. Ondas electromagnéticas en la materia" href="../2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MEC501 - Manejo y conversión de energía solar térmica</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Bienvenidos al curso
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0_introduccion/0_introduccion.html">
+   0. Introducción al curso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_ondas_electromagneticas/1_ondas_electromagneticas.html">
+   1. La radiación como un fenómeno electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html">
+   2. Ondas electromagnéticas en la materia
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Interacción materia-luz
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/3_Interacción_materia-luz/3_Interacción_materia-luz.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/3_Interacción_materia-luz/3_Interacción_materia-luz.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repaso-de-vibraciones-mecanicas">
+   Repaso de vibraciones mecánicas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#frecuencia-natural-de-un-sistema-vibratorio">
+     Frecuencia natural de un sistema vibratorio
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vibracion-forzada-amortiguada-con-un-grado-de-libertad">
+     Vibración forzada amortiguada con un grado de libertad
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interaccion-de-luz-con-moleculas">
+   Interacción de luz con moléculas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#el-oscilador-armonico">
+     El oscilador armónico
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelo-de-lorentz">
+     Modelo de Lorentz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interaccion-de-la-luz-con-materiales-solidos">
+   Interacción de la luz con materiales sólidos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aislantes-modelo-de-lorentz">
+     Aislantes (modelo de Lorentz)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conductores-modelo-de-drude">
+     Conductores (modelo de Drude)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#semiconductores-absorcion-interbanda">
+     Semiconductores (absorción interbanda)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>3. Interacción materia-luz</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#repaso-de-vibraciones-mecanicas">
+   Repaso de vibraciones mecánicas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#frecuencia-natural-de-un-sistema-vibratorio">
+     Frecuencia natural de un sistema vibratorio
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vibracion-forzada-amortiguada-con-un-grado-de-libertad">
+     Vibración forzada amortiguada con un grado de libertad
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interaccion-de-luz-con-moleculas">
+   Interacción de luz con moléculas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#el-oscilador-armonico">
+     El oscilador armónico
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelo-de-lorentz">
+     Modelo de Lorentz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interaccion-de-la-luz-con-materiales-solidos">
+   Interacción de la luz con materiales sólidos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aislantes-modelo-de-lorentz">
+     Aislantes (modelo de Lorentz)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conductores-modelo-de-drude">
+     Conductores (modelo de Drude)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#semiconductores-absorcion-interbanda">
+     Semiconductores (absorción interbanda)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font></p>
+<section class="tex2jax_ignore mathjax_ignore" id="interaccion-materia-luz">
+<h1>3. Interacción materia-luz<a class="headerlink" href="#interaccion-materia-luz" title="Permalink to this headline">#</a></h1>
+<p><br><br><br><br>
+Profesor: Francisco Ramírez CueSvas<br>
+Fecha: 26 de Agosto 2022</p>
+<section id="repaso-de-vibraciones-mecanicas">
+<h2>Repaso de vibraciones mecánicas<a class="headerlink" href="#repaso-de-vibraciones-mecanicas" title="Permalink to this headline">#</a></h2>
+<section id="frecuencia-natural-de-un-sistema-vibratorio">
+<h3>Frecuencia natural de un sistema vibratorio<a class="headerlink" href="#frecuencia-natural-de-un-sistema-vibratorio" title="Permalink to this headline">#</a></h3>
+<p>La frecuencia natural de un sistema vibratorio representa la frecuencia de oscilación del sistema en ausencia de amortiguación y fuerzas externas.</p>
+<p>Por ejemplo, en el caso simplificado de un sistema masa resorte</p>
+<a class="reference internal image-reference" href="../_images/free_sistem_one_degree.png"><img alt="../_images/free_sistem_one_degree.png" class="align-center" src="../_images/free_sistem_one_degree.png" style="width: 250px;" /></a>
+<p>donde, <span class="math notranslate nohighlight">\(k\)</span> es la constante de rigidez del resorte, y <span class="math notranslate nohighlight">\(m\)</span> es la masa.</p>
+<p>La ecuación gobernante está dada por:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\ddot{x} - \omega_n^2 x = 0 
+\end{equation*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\omega_n = \sqrt{k/m}\)</span>, es la frecuencia natural del sistema</p>
+</section>
+<section id="vibracion-forzada-amortiguada-con-un-grado-de-libertad">
+<h3>Vibración forzada amortiguada con un grado de libertad<a class="headerlink" href="#vibracion-forzada-amortiguada-con-un-grado-de-libertad" title="Permalink to this headline">#</a></h3>
+<p>La frecuencia natural cobra relevancia cuando analizamos vibraciones forzadas.</p>
+<p>Consideremos, por ejemplo, el sistema masa-resorte amortiguado, con constante de amortiguación <span class="math notranslate nohighlight">\(c\)</span>, excitado por una fuerza externa oscilatoria de la forma <span class="math notranslate nohighlight">\(F(t) = F_0 e^{i\omega t}\)</span>, donde <span class="math notranslate nohighlight">\(F_0\)</span> es una constante.</p>
+<a class="reference internal image-reference" href="../_images/forced_damped_system.png"><img alt="../_images/forced_damped_system.png" class="align-center" src="../_images/forced_damped_system.png" style="width: 150px;" /></a>
+<p>La ecuación gobernante de este sistema está dada por:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\ddot{x} + 2\zeta\omega_n\dot{x} +  \omega_n^2 x = \frac{F_0}{m} e^{i\omega t},
+\end{equation*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\zeta = \frac{c}{2\omega_nm}\)</span> es la razón de amortiguación</p>
+<p>En su forma general, la solución a este sistema está dada <span class="math notranslate nohighlight">\(x(t) = x_p(t) + x_h(t)\)</span>, donde:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+x_h(t) &amp;=&amp; C e^{-\zeta \omega_n t}e^{i\omega_n\sqrt{1 - \zeta^2} t} &amp;\quad&amp;\mathrm{solución~homogenea}
+\\[10pt]
+x_p(t) &amp;=&amp; \frac{F_0/k}{\omega^2 - \omega_n^2 + 2i\zeta \omega_n \omega}e^{i\omega t} &amp;\quad&amp;\mathrm{solución~particular}
+\end{eqnarray*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(C\)</span> es una amplitud arbitraria condicionada por las condiciones iniciales del sistema.</p>
+<p>La solución homogénea <span class="math notranslate nohighlight">\(x_h(t)\)</span>, representa la oscilación libre del sistema. Debido al término <span class="math notranslate nohighlight">\(e^{-\zeta \omega_n t}\)</span>, esta componente decae en el tiempo y se le conoce como <strong>respuesta transciente</strong>.</p>
+<p>La solución particular <span class="math notranslate nohighlight">\(x_p(t)\)</span>, por otro lado, representa la vibración en estado estacionario.</p>
+<a class="reference internal image-reference" href="../_images/forced_damped_motion.png"><img alt="../_images/forced_damped_motion.png" class="align-center" src="../_images/forced_damped_motion.png" style="width: 400px;" /></a>
+<p>Podemos repesentar la amplitud de <span class="math notranslate nohighlight">\(x_p = Ae^{i\omega t}\)</span>, como <span class="math notranslate nohighlight">\(A = |A|e^{i\phi}\)</span>, donde <span class="math notranslate nohighlight">\(\phi\)</span> es la fase. Asi, la solución estacionaria queda de la forma:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+x_p = |A|e^{i\left(\omega t + \phi\right)}
+\end{equation*}\]</div>
+<p>Cuando <span class="math notranslate nohighlight">\(\omega/\omega_n = 1\)</span>, el sistema entra en resonancia. Esta respuesta se manifiesta con la característica amplificación de <span class="math notranslate nohighlight">\(|A|\)</span>.</p>
+<a class="reference internal image-reference" href="../_images/resonance.png"><img alt="../_images/resonance.png" class="align-center" src="../_images/resonance.png" style="width: 600px;" /></a>
+</section>
+</section>
+<section id="interaccion-de-luz-con-moleculas">
+<h2>Interacción de luz con moléculas<a class="headerlink" href="#interaccion-de-luz-con-moleculas" title="Permalink to this headline">#</a></h2>
+<section id="el-oscilador-armonico">
+<h3>El oscilador armónico<a class="headerlink" href="#el-oscilador-armonico" title="Permalink to this headline">#</a></h3>
+<p>Consideremos la molecula de agua.</p>
+<a class="reference internal image-reference" href="../_images/water_molecule.png"><img alt="../_images/water_molecule.png" class="align-center" src="../_images/water_molecule.png" style="width: 400px;" /></a>
+<p>Esta molécula es del tipo polar, es decir, posee una carga eléctrica neta positiva en un extremo y negativa en otro. Esto ocurre debido a que la densidad de electrónes es mayor en la región cercana al núcleo del oxígeno.</p>
+<p>El enlace entre el hidrógeno y el oxígeno es del tipo covalente. El siguiente modelo representa la energía potencial, <span class="math notranslate nohighlight">\(U\)</span> en función de la separación entre los núcleos <span class="math notranslate nohighlight">\(r\)</span>:</p>
+<a class="reference internal image-reference" href="../_images/covalent_model.png"><img alt="../_images/covalent_model.png" class="align-center" src="../_images/covalent_model.png" style="width: 400px;" /></a>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+U(r) = A_0e^{-r/p_0} - \frac{q_1q_2}{4\pi\varepsilon_0 r}
+\end{equation*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(A_0\)</span> y <span class="math notranslate nohighlight">\(p_0\)</span> son constantes de ajuste, y <span class="math notranslate nohighlight">\(q_1\)</span> y <span class="math notranslate nohighlight">\(q_2\)</span> son, respectivamente, la carga eléctrica neta negativa y positiva.</p>
+<p>Se puede demostrar que para oscilaciones pequeñas:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+U(r)\approx \frac{1}{2} k(r - r_0)^2
+\end{equation*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(k = \frac{\partial U}{\partial r}\big|_{r = r_0}\)</span>, y <span class="math notranslate nohighlight">\(r_0\)</span> es la posición en el punto de equilibrio.</p>
+<p>En otras palabras, el enlace entre las moléculas se comporta como un resorte, con una fuerza definida por:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+F = -k(r - r_0)
+\end{equation*}\]</div>
+<p>En otras palabras, la vibración de la molécula de agua puede ser representada como un oscilador armónico.</p>
+</section>
+<section id="modelo-de-lorentz">
+<h3>Modelo de Lorentz<a class="headerlink" href="#modelo-de-lorentz" title="Permalink to this headline">#</a></h3>
+<p>Pdemos representar la interacción de la molécula con una onda electromagnética como una vibración forzada amortiguada.</p>
+<a class="reference internal image-reference" href="../_images/molecule_spring_mass.png"><img alt="../_images/molecule_spring_mass.png" class="align-center" src="../_images/molecule_spring_mass.png" style="width: 200px;" /></a>
+<p>Esto es debido a que una onda electromagnética genera un campo eléctrico oscilatorio de la forma <span class="math notranslate nohighlight">\(E_0e^{-i\omega}\)</span>. La fuerza sobre ejercida sobre cada polo es</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+F = qE_0e^{-i\omega t},
+\end{equation*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(q\)</span> es la carga eléctrica del polo positivo (o negativo).</p>
+<p>Por otro lado, la amortiguación surge a raíz de la colición entre los electrones y los nucleos, además de otras interacciónes electromagnéticas.</p>
+<p>Asumiendo un eje de referencia situado en el polo positivo, la ecuación de movimiento está dada por:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+m\ddot{x} + m\Gamma \dot{x} +  k x = qE_0 e^{-i\omega t},
+\end{equation*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(m\)</span> es la masa del polo positivo, <span class="math notranslate nohighlight">\(k\)</span> es la constante de rigidez del enlace entre los polos, y <strong><span class="math notranslate nohighlight">\(\Gamma\)</span> es la taza de decaimiento</strong> (se mide en unidades 1/s).</p>
+<p>La solución estacionaria está dada por la solución particular:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
+\end{equation*}\]</div>
+<p>El desplazamiento del polo positivo respecto a su estado en equilibrio induce un <strong>momento dipolar</strong>, <span class="math notranslate nohighlight">\(\vec{p}\)</span>, el cual expresamos a través de la relación:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\vec{p} = q\vec{x}_p(t) =  \frac{q^2/m}{\omega_n^2 - \omega^2 - i\Gamma \omega}E_0e^{-i\omega t}\hat{e}\quad\mathrm{[C\cdot m]}
+\end{equation*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\hat{e}\)</span> es la dirección del campo eléctrico</p>
+<p>Definimos como <strong>densidad de polarización</strong>, <span class="math notranslate nohighlight">\(\vec{P}\)</span>, al momento dipolar total por unidad de volumen:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\vec{P} = N_p \vec{p} = \frac{N_pq^2/m}{\omega_n^2 - \omega^2 - i\Gamma \omega}\vec{E}\quad\mathrm{\left[\frac{C\cdot m}{m^3}\right]}
+\end{equation*}\]</div>
+<p>En presencia de un medio polarizado, la ley de Gauss se modifica como: <span class="math notranslate nohighlight">\(\nabla\cdot\left(\varepsilon_0\vec{E} + \vec{P}\right) = \rho\)</span>.</p>
+<p>Representando esta relación en la forma, <span class="math notranslate nohighlight">\(\nabla\cdot\varepsilon_0\varepsilon\vec{E} = \rho\)</span>, podemos deducir un modelo para la constante dieléctrica del sistema <span class="math notranslate nohighlight">\(\varepsilon\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\varepsilon = 1 +\frac{\omega_p^2}{\omega_n^2 - \omega^2 - i\Gamma \omega},
+\end{equation*}\]</div>
+<p>con <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_pq^2}{\varepsilon_0 m}\)</span></p>
+<p>En el caso del agua, la molecula posee un dipolo eléctrico neto adicional al dipolo inducido. El efecto de la polarización neta se puede representar, cambiando el primer término por un valor constante <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span>.</p>
+<p>El modelo completo se conoce como <strong>modelo de Lorentz</strong>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-95102308-b7db-40f5-94ae-495ae42dd14a">
+<span class="eqno">(31)<a class="headerlink" href="#equation-95102308-b7db-40f5-94ae-495ae42dd14a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\varepsilon = \varepsilon_\infty + \frac{\omega_p^2}{\omega_n^2 - \omega^2 - i\Gamma \omega}\quad\mathrm{Modelo~de~Lorentz},
+\end{equation}\]</div>
+<p>Por ejemplo, para <span class="math notranslate nohighlight">\(\varepsilon_\infty = 2.0\)</span>, <span class="math notranslate nohighlight">\(\Gamma = 0.1\omega_n\)</span>, y <span class="math notranslate nohighlight">\(\omega_p = \omega_n\)</span></p>
+<a class="reference internal image-reference" href="../_images/Lorentz_model.svg"><img alt="../_images/Lorentz_model.svg" class="align-center" src="../_images/Lorentz_model.svg" width="800px" /></a>
+<blockquote>
+<div><p><strong>El modelo de Lorentz se utiliza como modelo de ajuste para representar la interacción de la luz con los modos vibratorios en la materia</strong></p>
+</div></blockquote>
+<p>Por ejemplo, la molécula de agua tiene 3 modos de vibración fundamentales en las longitudes de onda <span class="math notranslate nohighlight">\(\lambda = \)</span> 2.98, 2.93 y 5.91 <span class="math notranslate nohighlight">\(\mu\)</span>m (3351, 3412 y 1691 cm<span class="math notranslate nohighlight">\(^{-1}\)</span>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;1uE2lvVkKW0&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>  <span class="n">playsinline</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="600"
+    height="400"
+    src="https://www.youtube.com/embed/1uE2lvVkKW0?playsinline=0"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+<p>El índice de refracción del agua muestra dos oscilaciones de Lorentz.</p>
+<a class="reference internal image-reference" href="../_images/h2o_nk.svg"><img alt="../_images/h2o_nk.svg" class="align-center" src="../_images/h2o_nk.svg" width="800px" /></a>
+<p>La resonancia en <span class="math notranslate nohighlight">\(\lambda =\)</span> 2.98 <span class="math notranslate nohighlight">\(\mu\)</span>m (3351 cm<span class="math notranslate nohighlight">\(^{-1}\)</span>) no está presente en el espectro.</p>
+<p>Este modo no es compatible con la oscilación de una onda electromagnética plana. Así la luz no interactúa con esta vibración y, por lo tanto, no se ve representada en el espectro del índice de refracción.</p>
+</section>
+</section>
+<section id="interaccion-de-la-luz-con-materiales-solidos">
+<h2>Interacción de la luz con materiales sólidos<a class="headerlink" href="#interaccion-de-la-luz-con-materiales-solidos" title="Permalink to this headline">#</a></h2>
+<p>El análisis anterior generalmente se aplica a gases, donde las moléculas no interactúan entre sí. En el caso de materiales sólidos, la interacción entre moléculas es fuerte, y genera bandas electrónicas de energía.</p>
+<ul class="simple">
+<li><p><strong>Banda de valencia</strong>: corresponde a la banda ocupada por electrones con el mayor nivel de energía. En esta banda los electrones permanecen en un estado “ligado” al núcleo.</p></li>
+<li><p><strong>Banda de conducción</strong>: corresponde a la banda no ocupada por electrones con el menor nivel de energía. En esta banda los electrones se mueven líbremente por el material</p></li>
+<li><p><strong>Banda prohibida (<em>band-gap</em>)</strong>: Es la diferencia entre la banda de conducción y la banda de valencia</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/bandas_electronicas.png"><img alt="../_images/bandas_electronicas.png" class="align-center" src="../_images/bandas_electronicas.png" style="width: 300px;" /></a>
+<p>A partir de la separación entre la banda de conducción y la banda de valencia, podemos clasificar tres tipos de materiales en función de sus propiedades electrónicas:</p>
+<a class="reference internal image-reference" href="../_images/energy_bands_clasification.png"><img alt="../_images/energy_bands_clasification.png" class="align-center" src="../_images/energy_bands_clasification.png" style="width: 450px;" /></a>
+<ul class="simple">
+<li><p><strong>Conductor</strong>, donde las bandas de conducción y valencia están traslapadas (bandgap = 0). En estos materiales, parte de los electrones están alojados en la banda de conducción y, por lo tanto, son capaces de conducir corriente eléctrica en presencia de un campo eléctrico.</p></li>
+<li><p><strong>Semiconductor</strong>, donde las bandas de conducción y valencia están separadas. Sin embargo, la energía del bandgap es relativamente pequeña, de manera que un electrón puede ser llevado a la banda de conducción mediante un potencial eléctrico razonable, o mediante una onda electromagnética.</p></li>
+<li><p><strong>Ailante</strong>, donde las bandas de conducción y valencia están muy separadas. El umbral para excitar un electrón a la banda de conducción es demaciado grande y, por lo tanto, el material no es capaz de conducir corriente.</p></li>
+</ul>
+<p>La respuesta óptica de cada tipo de material está condicionada por sus propiedades electrónicas</p>
+<section id="aislantes-modelo-de-lorentz">
+<h3>Aislantes (modelo de Lorentz)<a class="headerlink" href="#aislantes-modelo-de-lorentz" title="Permalink to this headline">#</a></h3>
+<p>Debido a que los electrones en un aislante están fuertemente ligados al núcleo, la respuesta óptica de este material está condicionada por los modos de vibración de la red atómica. Así, la constante dieléctrica (y el indice de refración) sigue un comportamiento similar al modelo de Lorentz.</p>
+<p>Por ejemplo, el sílice (SiO<span class="math notranslate nohighlight">\(_2\)</span>)</p>
+<a class="reference internal image-reference" href="../_images/sio2_nk.svg"><img alt="../_images/sio2_nk.svg" class="align-center" src="../_images/sio2_nk.svg" width="800px" /></a>
+</section>
+<section id="conductores-modelo-de-drude">
+<h3>Conductores (modelo de Drude)<a class="headerlink" href="#conductores-modelo-de-drude" title="Permalink to this headline">#</a></h3>
+<p>En este caso los electrónes se mueven libremente por la red atómica.</p>
+<p>Podemos representar la interacción de los electrones libres con una onda electromagnética utilizando la ecuación de movimiento. En este caso, la fuerza de restauración <span class="math notranslate nohighlight">\(kx = 0\)</span>, y la ecuación es:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
+\end{equation*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(m_e\)</span>, <span class="math notranslate nohighlight">\(e\)</span> y <span class="math notranslate nohighlight">\(\Gamma_e\)</span> son, respectivamente, la masa, la carga elemental y la taza de decaimiento del electrón.</p>
+<p>Mediante un procedimiento similar al utilzado para el modelo de Lorentz, derivamos el <strong>modelo de Drude</strong> para conductores:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7fffd325-3694-4866-ade8-168e34f3a4b0">
+<span class="eqno">(32)<a class="headerlink" href="#equation-7fffd325-3694-4866-ade8-168e34f3a4b0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\varepsilon = \varepsilon_\infty - \frac{\omega_p^2}{\omega^2 + i\Gamma_e \omega},\quad\mathrm{Modelo~de~Drude},
+\end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_ee^2}{\varepsilon_0 m}\)</span> se conoce como frecuencia de plasma, y <span class="math notranslate nohighlight">\(N_e\)</span> es la densidad de número de electrones. Similar al modelo de Lorentz, <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span> representa la polarización neta del material.</p>
+<p>En el siguiente ejemplo, <span class="math notranslate nohighlight">\(\varepsilon_\infty = 2.0\)</span> y <span class="math notranslate nohighlight">\(\Gamma_e = 0.1\omega_p\)</span></p>
+<a class="reference internal image-reference" href="../_images/drude_model.svg"><img alt="../_images/drude_model.svg" class="align-center" src="../_images/drude_model.svg" width="800px" /></a>
+<p>Una característica del modelo de Drude es que <span class="math notranslate nohighlight">\(\varepsilon' &lt; 0\)</span> para <span class="math notranslate nohighlight">\(\omega_p/\omega \gtrsim 1\)</span>. Esto se manifiesta en el índice de refracción como <span class="math notranslate nohighlight">\(\kappa &gt; n\)</span></p>
+<p>Cuando <span class="math notranslate nohighlight">\(\kappa &gt; n\)</span> la reflectividad aumenta significativamente. Así, los materiales conductores tienen alta reflectividad en ambas polarizaciones, cuando <span class="math notranslate nohighlight">\(\omega_p/\omega \gtrsim 1\)</span></p>
+<a class="reference internal image-reference" href="../_images/reflectance_drude.svg"><img alt="../_images/reflectance_drude.svg" class="align-center" src="../_images/reflectance_drude.svg" width="450px" /></a>
+<p>En general, los metales pueden ser bien representados por el modelo de Drude. Por ejemplo, el aluminio:</p>
+<a class="reference internal image-reference" href="../_images/aluminium_nk.svg"><img alt="../_images/aluminium_nk.svg" class="align-center" src="../_images/aluminium_nk.svg" width="800px" /></a>
+<p>Notemos como para <span class="math notranslate nohighlight">\(\lambda \approx 0.8\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m, la respuesta del material se desvía del modelo de Drude. Esta respuesta esta asociada a un modo de vibración (modelo de Lorentz).</p>
+<p>Además <span class="math notranslate nohighlight">\(\omega_p \lesssim 0.1\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m, y por lo tanto, refleja todas las longitudes de onda del espectro visible (<span class="math notranslate nohighlight">\(\lambda \in [0.38,0.70]\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m). Esto explica el efecto espejo del aluminio y otros metales</p>
+</section>
+<section id="semiconductores-absorcion-interbanda">
+<h3>Semiconductores (absorción interbanda)<a class="headerlink" href="#semiconductores-absorcion-interbanda" title="Permalink to this headline">#</a></h3>
+<p>En este caso las interacciones con ondas electromagnéticas están dictadas por bandas de absorción asociadas a la excitación de electrones a la banda de conducción.</p>
+<p>Este fenómeno se conoce como absorpción interbanda, y ocurre cuando la energía del fotón <span class="math notranslate nohighlight">\(\hbar\omega\)</span> (<span class="math notranslate nohighlight">\(\hbar = 6.58\times 10^16\)</span> eV<span class="math notranslate nohighlight">\(\cdot\)</span>s) es superior al bandgap del material.</p>
+<p>Los semiconductores son los materiales fundamentales en transistores, LED y celdas fotovoltaicas. El semiconductor más conocido es el silicio (Si).</p>
+<p>El índice de refracción del silicio es:</p>
+<a class="reference internal image-reference" href="../_images/si_nk.png"><img alt="../_images/si_nk.png" class="align-center" src="../_images/si_nk.png" style="width: 700px;" /></a>
+<p>En general, los materiales pueden presentar más de un tipo de respuesta.</p>
+<p>Por ejemplo, el oro tiene absorción interbanda en longitudes de onda <span class="math notranslate nohighlight">\(\lambda &lt; 0.5\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m, combinado con el modelo de Drude.
+<a class="reference internal" href="../_images/gold_nk.png"><img alt="../_images/gold_nk.png" class="align-center" src="../_images/gold_nk.png" style="width: 350px;" /></a></p>
+<p>Debido a esta respuesta, el oro absorbe las longitudes de onda correspondientes al azul y violeta, y refleja el resto de los colores.</p>
+<p>La siguiente figura muestra el color del oro según el ángulo de incidencia en base al espectro de reflección de una interface aire/oro.
+<a class="reference internal" href="../_images/gold_color.svg"><img alt="../_images/gold_color.svg" class="align-center" src="../_images/gold_color.svg" width="500px" /></a></p>
+<p>Otro ejemplo es el dioxido de titanio (TiO<span class="math notranslate nohighlight">\(_2\)</span>), el cual presenta absorción interbanda en el espectro ultravioleta, y oscilaciones de Lorentz en el infrarojo.</p>
+<a class="reference internal image-reference" href="../_images/tio2_nk.png"><img alt="../_images/tio2_nk.png" class="align-center" src="../_images/tio2_nk.png" style="width: 700px;" /></a>
+<p>Debido a la absorcion UV, TiO<span class="math notranslate nohighlight">\(_2\)</span> es muy utilizado en cremas para protección solar.</p>
+</section>
+</section>
+<section id="referencias">
+<h2>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Rao S. S. <strong>Chapter 4 - Vibration Under General Forcing Conditions</strong> in <em>Mechanical Vibrations</em>, 6th Ed, Pearson, 2018</p></li>
+<li><p>Griffths D., <strong>Chapter 4.1 - Polarization</strong> in <em>Introduction to Electrodynamics</em>, 4th Ed, Pearson, 2013</p></li>
+<li><p>Simmons J. and Potter K., <strong>Chapter 2 and 3</strong> in <em>Optical Materials</em>, 1st Ed, Academic Press, 2000</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./3_Interacción_materia-luz"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">2. Ondas electromagnéticas en la materia</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Francisco V. Ramirez-Cuevas<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
