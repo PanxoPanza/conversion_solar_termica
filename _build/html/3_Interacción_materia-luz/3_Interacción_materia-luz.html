@@ -348,6 +348,11 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#espectro-electromagnetico">
+   Espectro electromagnético
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
    Referencias
   </a>
@@ -428,6 +433,11 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#espectro-electromagnetico">
+   Espectro electromagnético
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
    Referencias
   </a>
@@ -481,7 +491,7 @@ x_h(t) &amp;=&amp; C e^{-\zeta \omega_n t}e^{i\omega_n\sqrt{1 - \zeta^2} t} &amp
 \\[10pt]
 x_p(t) &amp;=&amp; \frac{F_0/k}{\omega^2 - \omega_n^2 + 2i\zeta \omega_n \omega}e^{i\omega t} &amp;\quad&amp;\mathrm{solución~particular}
 \end{eqnarray*}\]</div>
-<p>donde <span class="math notranslate nohighlight">\(C\)</span> es una amplitud arbitraria condicionada por las condiciones iniciales del sistema.</p>
+<p>donde <span class="math notranslate nohighlight">\(C\)</span> es una amplitud arbitraria definida por las condiciones iniciales del sistema.</p>
 <p>La solución homogénea <span class="math notranslate nohighlight">\(x_h(t)\)</span>, representa la oscilación libre del sistema. Debido al término <span class="math notranslate nohighlight">\(e^{-\zeta \omega_n t}\)</span>, esta componente decae en el tiempo y se le conoce como <strong>respuesta transciente</strong>.</p>
 <p>La solución particular <span class="math notranslate nohighlight">\(x_p(t)\)</span>, por otro lado, representa la vibración en estado estacionario.</p>
 <a class="reference internal image-reference" href="../_images/forced_damped_motion.png"><img alt="../_images/forced_damped_motion.png" class="align-center" src="../_images/forced_damped_motion.png" style="width: 400px;" /></a>
@@ -505,33 +515,33 @@ x_p = |A|e^{i\left(\omega t + \phi\right)}
 <a class="reference internal image-reference" href="../_images/covalent_model.png"><img alt="../_images/covalent_model.png" class="align-center" src="../_images/covalent_model.png" style="width: 400px;" /></a>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-U(r) = A_0e^{-r/p_0} - \frac{q_1q_2}{4\pi\varepsilon_0 r}
+U(r) = \alpha_0e^{-r/\rho_0} - \frac{q_1q_2}{4\pi\varepsilon_0 r}
 \end{equation*}\]</div>
-<p>donde <span class="math notranslate nohighlight">\(A_0\)</span> y <span class="math notranslate nohighlight">\(p_0\)</span> son constantes de ajuste, y <span class="math notranslate nohighlight">\(q_1\)</span> y <span class="math notranslate nohighlight">\(q_2\)</span> son, respectivamente, la carga eléctrica neta negativa y positiva.</p>
+<p>donde <span class="math notranslate nohighlight">\(\alpha_0\)</span> y <span class="math notranslate nohighlight">\(\rho_0\)</span> son constantes de ajuste, y <span class="math notranslate nohighlight">\(q_1\)</span> y <span class="math notranslate nohighlight">\(q_2\)</span> son, respectivamente, la carga eléctrica neta negativa y positiva.</p>
+<p>En equilibrio, los núcleos pemanecen en la posición de equilibrio definida por <span class="math notranslate nohighlight">\(r_0\)</span></p>
 <p>Se puede demostrar que para oscilaciones pequeñas:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 U(r)\approx \frac{1}{2} k(r - r_0)^2
 \end{equation*}\]</div>
-<p>donde <span class="math notranslate nohighlight">\(k = \frac{\partial U}{\partial r}\big|_{r = r_0}\)</span>, y <span class="math notranslate nohighlight">\(r_0\)</span> es la posición en el punto de equilibrio.</p>
-<p>En otras palabras, el enlace entre las moléculas se comporta como un resorte, con una fuerza definida por:</p>
+<p>donde <span class="math notranslate nohighlight">\(k = \frac{\partial^2 U}{\partial r^2}\big|_{r = r_0}\)</span>.</p>
+<p>En otras palabras, la vibración de la molécula de agua puede ser representada como un oscilador armónico, con una fuerza de restauración definida por:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 F = -k(r - r_0)
 \end{equation*}\]</div>
-<p>En otras palabras, la vibración de la molécula de agua puede ser representada como un oscilador armónico.</p>
 </section>
 <section id="modelo-de-lorentz">
 <h3>Modelo de Lorentz<a class="headerlink" href="#modelo-de-lorentz" title="Permalink to this headline">#</a></h3>
-<p>Pdemos representar la interacción de la molécula con una onda electromagnética como una vibración forzada amortiguada.</p>
+<p>Podemos representar la interacción de la molécula con una onda electromagnética como una vibración forzada amortiguada.</p>
 <a class="reference internal image-reference" href="../_images/molecule_spring_mass.png"><img alt="../_images/molecule_spring_mass.png" class="align-center" src="../_images/molecule_spring_mass.png" style="width: 200px;" /></a>
-<p>Esto es debido a que una onda electromagnética genera un campo eléctrico oscilatorio de la forma <span class="math notranslate nohighlight">\(E_0e^{-i\omega}\)</span>. La fuerza sobre ejercida sobre cada polo es</p>
+<p>Para una onda electromagnética de la forma <span class="math notranslate nohighlight">\(E_0e^{-i\omega t}\)</span>, la fuerza sobre ejercida sobre cada polo es</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 F = qE_0e^{-i\omega t},
 \end{equation*}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(q\)</span> es la carga eléctrica del polo positivo (o negativo).</p>
-<p>Por otro lado, la amortiguación surge a raíz de la colición entre los electrones y los nucleos, además de otras interacciónes electromagnéticas.</p>
+<p>Por otro lado, la amortiguación del sistema surge a raíz de la colición entre los electrones y los nucleos, además de otras interacciónes electromagnéticas.</p>
 <p>Asumiendo un eje de referencia situado en el polo positivo, la ecuación de movimiento está dada por:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -554,7 +564,7 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 \[\begin{equation*}
 \vec{P} = N_p \vec{p} = \frac{N_pq^2/m}{\omega_n^2 - \omega^2 - i\Gamma \omega}\vec{E}\quad\mathrm{\left[\frac{C\cdot m}{m^3}\right]}
 \end{equation*}\]</div>
-<p>En presencia de un medio polarizado, la ley de Gauss se modifica como: <span class="math notranslate nohighlight">\(\nabla\cdot\left(\varepsilon_0\vec{E} + \vec{P}\right) = \rho\)</span>.</p>
+<p>En presencia de un medio polarizado, la ley de Gauss se modifica como: <span class="math notranslate nohighlight">\(\nabla\cdot\left(\varepsilon_0\vec{E} + \vec{P}\right) = 0\)</span>.</p>
 <p>Representando esta relación en la forma, <span class="math notranslate nohighlight">\(\nabla\cdot\varepsilon_0\varepsilon\vec{E} = \rho\)</span>, podemos deducir un modelo para la constante dieléctrica del sistema <span class="math notranslate nohighlight">\(\varepsilon\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -563,8 +573,8 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 <p>con <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_pq^2}{\varepsilon_0 m}\)</span></p>
 <p>En el caso del agua, la molecula posee un dipolo eléctrico neto adicional al dipolo inducido. El efecto de la polarización neta se puede representar, cambiando el primer término por un valor constante <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span>.</p>
 <p>El modelo completo se conoce como <strong>modelo de Lorentz</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-95102308-b7db-40f5-94ae-495ae42dd14a">
-<span class="eqno">(31)<a class="headerlink" href="#equation-95102308-b7db-40f5-94ae-495ae42dd14a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-234aa92a-42ff-4749-8f38-1a70e5449b35">
+<span class="eqno">(31)<a class="headerlink" href="#equation-234aa92a-42ff-4749-8f38-1a70e5449b35" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty + \frac{\omega_p^2}{\omega_n^2 - \omega^2 - i\Gamma \omega}\quad\mathrm{Modelo~de~Lorentz},
 \end{equation}\]</div>
 <p>Por ejemplo, para <span class="math notranslate nohighlight">\(\varepsilon_\infty = 2.0\)</span>, <span class="math notranslate nohighlight">\(\Gamma = 0.1\omega_n\)</span>, y <span class="math notranslate nohighlight">\(\omega_p = \omega_n\)</span></p>
@@ -617,7 +627,7 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 <p>La respuesta óptica de cada tipo de material está condicionada por sus propiedades electrónicas</p>
 <section id="aislantes-modelo-de-lorentz">
 <h3>Aislantes (modelo de Lorentz)<a class="headerlink" href="#aislantes-modelo-de-lorentz" title="Permalink to this headline">#</a></h3>
-<p>Debido a que los electrones en un aislante están fuertemente ligados al núcleo, la respuesta óptica de este material está condicionada por los modos de vibración de la red atómica. Así, la constante dieléctrica (y el indice de refración) sigue un comportamiento similar al modelo de Lorentz.</p>
+<p>Debido a que los electrones en un aislante están fuertemente ligados al núcleo, la respuesta óptica de este material está condicionada por los modos de vibración de la red atómica. Así, la constante dieléctrica y el indice de refración siguen un comportamiento similar al modelo de Lorentz.</p>
 <p>Por ejemplo, el sílice (SiO<span class="math notranslate nohighlight">\(_2\)</span>)</p>
 <a class="reference internal image-reference" href="../_images/sio2_nk.svg"><img alt="../_images/sio2_nk.svg" class="align-center" src="../_images/sio2_nk.svg" width="800px" /></a>
 </section>
@@ -631,8 +641,8 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 \end{equation*}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(m_e\)</span>, <span class="math notranslate nohighlight">\(e\)</span> y <span class="math notranslate nohighlight">\(\Gamma_e\)</span> son, respectivamente, la masa, la carga elemental y la taza de decaimiento del electrón.</p>
 <p>Mediante un procedimiento similar al utilzado para el modelo de Lorentz, derivamos el <strong>modelo de Drude</strong> para conductores:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7fffd325-3694-4866-ade8-168e34f3a4b0">
-<span class="eqno">(32)<a class="headerlink" href="#equation-7fffd325-3694-4866-ade8-168e34f3a4b0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b9c0f962-8594-4354-b4b0-d0d2c20cfe43">
+<span class="eqno">(32)<a class="headerlink" href="#equation-b9c0f962-8594-4354-b4b0-d0d2c20cfe43" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty - \frac{\omega_p^2}{\omega^2 + i\Gamma_e \omega},\quad\mathrm{Modelo~de~Drude},
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_ee^2}{\varepsilon_0 m}\)</span> se conoce como frecuencia de plasma, y <span class="math notranslate nohighlight">\(N_e\)</span> es la densidad de número de electrones. Similar al modelo de Lorentz, <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span> representa la polarización neta del material.</p>
@@ -663,6 +673,121 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 <a class="reference internal image-reference" href="../_images/tio2_nk.png"><img alt="../_images/tio2_nk.png" class="align-center" src="../_images/tio2_nk.png" style="width: 700px;" /></a>
 <p>Debido a la absorcion UV, TiO<span class="math notranslate nohighlight">\(_2\)</span> es muy utilizado en cremas para protección solar.</p>
 </section>
+</section>
+<section id="espectro-electromagnetico">
+<h2>Espectro electromagnético<a class="headerlink" href="#espectro-electromagnetico" title="Permalink to this headline">#</a></h2>
+<p>Podemos clasificar la radiación electromagnética según su longitud de onda (o frecuencia).</p>
+<a class="reference internal image-reference" href="../_images/em_spectrum.png"><img alt="../_images/em_spectrum.png" class="align-center" src="../_images/em_spectrum.png" style="width: 600px;" /></a>
+<p>Para este curso, los espectros más importantes son:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Espectro</p></th>
+<th class="text-align:center head"><p>Longitud de onda</p></th>
+<th class="text-align:center head"><p>Frecuecia</p></th>
+<th class="text-align:center head"><p>Energía</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>UIltravioleta (UV)</p></td>
+<td class="text-align:center"><p>1 - 400 nm</p></td>
+<td class="text-align:center"><p>100 - 0.75 PHz</p></td>
+<td class="text-align:center"><p>414 - 3.1 eV</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Visible (vis)</p></td>
+<td class="text-align:center"><p>400 - 750 nm</p></td>
+<td class="text-align:center"><p>750 - 400 THz</p></td>
+<td class="text-align:center"><p>3.1 - 1.65 eV</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Infrarrojo cercano (near-IR)</p></td>
+<td class="text-align:center"><p>750 nm - 1.4 <span class="math notranslate nohighlight">\(\mu\)</span>m</p></td>
+<td class="text-align:center"><p>400 - 214 THz</p></td>
+<td class="text-align:center"><p>3.1 - 1.65 eV</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Infrarrojo de onda corta (SWIR)</p></td>
+<td class="text-align:center"><p>1.4 - 3 <span class="math notranslate nohighlight">\(\mu\)</span>m</p></td>
+<td class="text-align:center"><p>214 - 100 THz</p></td>
+<td class="text-align:center"><p>885 - 414 meV</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Infrarrojo de onda media (MWIR)</p></td>
+<td class="text-align:center"><p>3 - 8 <span class="math notranslate nohighlight">\(\mu\)</span>m</p></td>
+<td class="text-align:center"><p>100 - 37 THz</p></td>
+<td class="text-align:center"><p>414 - 153 meV</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Infrarrojo de onda larga (LWIR)</p></td>
+<td class="text-align:center"><p>8 - 15 <span class="math notranslate nohighlight">\(\mu\)</span>m</p></td>
+<td class="text-align:center"><p>37 -20 THz</p></td>
+<td class="text-align:center"><p>153 eV - 82 meV</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Infrarrojo de lejano (far-IR)</p></td>
+<td class="text-align:center"><p>15 - 1000 <span class="math notranslate nohighlight">\(\mu\)</span>m</p></td>
+<td class="text-align:center"><p>20 -0.3 THz</p></td>
+<td class="text-align:center"><p>82 - 1.24 meV</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>1 eV = <span class="math notranslate nohighlight">\(1.602\times 10^{−19}\)</span> J es un <strong>electron volt</strong>. Representa la energía cinética de un electron bajo un potencial de 1 volt.</p></li>
+</ul>
+<p>El espectro SWIR + MWIR + LWIR se conoce también como <strong>infrarrojo medio (mid-IR)</strong></p>
+<p>La siguiente tabla es útil para la conversión de unidades:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>–</p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(\lambda\)</span> (nm)</p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(\lambda\)</span> (<span class="math notranslate nohighlight">\(\mu\)</span>m)</p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(\nu\)</span> (Hz)</p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(\omega\)</span> (rad/s)</p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(E_{\hbar\omega}\)</span> (eV)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(\lambda\)</span> (nm)</p></td>
+<td class="text-align:center"><p>–</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\lambda\cdot 10^{-3}\)</span>$</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\frac{c_0}{\lambda}\cdot 10^9\)</span>$</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\frac{2\pi c_0}{\lambda}\cdot 10^9\)</span>$</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\frac{h c_0}{\lambda}\cdot 10^9\)</span>$</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(\lambda\)</span> (<span class="math notranslate nohighlight">\(\mu\)</span>m)</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\lambda\cdot 10^{3}\)</span>$</p></td>
+<td class="text-align:center"><p>–</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\frac{c_0}{\lambda}\cdot 10^6\)</span>$</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\frac{2\pi c_0}{\lambda}\cdot 10^6\)</span>$</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\frac{h c_0}{\lambda}\cdot 10^6\)</span>$</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(\nu\)</span> (Hz)</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\frac{c_0}{\nu}\cdot 10^{-9}\)</span>$</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\frac{c_0}{\nu}\cdot 10^{-6}\)</span>$</p></td>
+<td class="text-align:center"><p>–</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(2\pi\nu\)</span>$</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(h\nu \)</span>$</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(\omega\)</span> (rad/s)</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\frac{2\pi c_0}{\omega}\cdot 10^{-9}\)</span>$</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\frac{2\pi c_0}{\omega}\cdot 10^{-6}\)</span>$</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\frac{\omega}{2\pi}\)</span>$</p></td>
+<td class="text-align:center"><p>–</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\hbar\omega \)</span>$</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(E_{\hbar\omega}\)</span> (eV)</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\frac{2\pi\hbar c_0}{E_{\hbar\omega}}\cdot 10^{-9}\)</span>$</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\frac{2\pi\hbar c_0}{E_{\hbar\omega}}\cdot 10^{-6}\)</span>$</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\frac{E_{\hbar\omega}}{2\pi\hbar}\)</span>$</p></td>
+<td class="text-align:center"><p>$<span class="math notranslate nohighlight">\(\frac{E_{\hbar\omega}}{\hbar}\)</span>$</p></td>
+<td class="text-align:center"><p>–</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(h = 4.136\times 10^{−15}\)</span> eV/Hz es la <strong>constante de Planck</strong>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hbar = \frac{h}{2\pi} = 6.582\times10^{−16}\)</span> eV/Hz es la <strong>constante reducida de Planck o constante de Dirac</strong>.</p></li>
+</ul>
+<p>El espectro electromagnético nos sirve como referencia para clasificar el tipo de interacción con la materia. Así, en base a nuestra clásificación de modos de vibración de la materia, en general tenemos:</p>
+<ul class="simple">
+<li><p>Absorción interbanda: espectro UV y vis</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_p\)</span> (modelo de Drude): espectro vis y near-IR</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_n\)</span> (modelo de Lorentz): mid-IR</p></li>
+</ul>
 </section>
 <section id="referencias">
 <h2>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>

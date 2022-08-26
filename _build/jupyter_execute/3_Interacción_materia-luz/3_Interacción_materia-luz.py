@@ -50,7 +50,7 @@
 # x_p(t) &=& \frac{F_0/k}{\omega^2 - \omega_n^2 + 2i\zeta \omega_n \omega}e^{i\omega t} &\quad&\mathrm{solución~particular}
 # \end{eqnarray*}
 # 
-# donde $C$ es una amplitud arbitraria condicionada por las condiciones iniciales del sistema.
+# donde $C$ es una amplitud arbitraria definida por las condiciones iniciales del sistema.
 
 # La solución homogénea $x_h(t)$, representa la oscilación libre del sistema. Debido al término $e^{-\zeta \omega_n t}$, esta componente decae en el tiempo y se le conoce como **respuesta transciente**. 
 # 
@@ -81,10 +81,12 @@
 # <img src="./images/covalent_model.png" width="400px" align= center>
 
 # \begin{equation*}
-# U(r) = A_0e^{-r/p_0} - \frac{q_1q_2}{4\pi\varepsilon_0 r}
+# U(r) = \alpha_0e^{-r/\rho_0} - \frac{q_1q_2}{4\pi\varepsilon_0 r}
 # \end{equation*}
 # 
-# donde $A_0$ y $p_0$ son constantes de ajuste, y $q_1$ y $q_2$ son, respectivamente, la carga eléctrica neta negativa y positiva.
+# donde $\alpha_0$ y $\rho_0$ son constantes de ajuste, y $q_1$ y $q_2$ son, respectivamente, la carga eléctrica neta negativa y positiva.
+
+# En equilibrio, los núcleos pemanecen en la posición de equilibrio definida por $r_0$
 
 # Se puede demostrar que para oscilaciones pequeñas:
 # 
@@ -92,22 +94,20 @@
 # U(r)\approx \frac{1}{2} k(r - r_0)^2
 # \end{equation*}
 # 
-# donde $k = \frac{\partial U}{\partial r}\big|_{r = r_0}$, y $r_0$ es la posición en el punto de equilibrio.
+# donde $k = \frac{\partial^2 U}{\partial r^2}\big|_{r = r_0}$.
 
-# En otras palabras, el enlace entre las moléculas se comporta como un resorte, con una fuerza definida por:
+# En otras palabras, la vibración de la molécula de agua puede ser representada como un oscilador armónico, con una fuerza de restauración definida por:
 # 
 # \begin{equation*}
 # F = -k(r - r_0)
 # \end{equation*}
-# 
-# En otras palabras, la vibración de la molécula de agua puede ser representada como un oscilador armónico.
 
 # ### Modelo de Lorentz
-# Pdemos representar la interacción de la molécula con una onda electromagnética como una vibración forzada amortiguada. 
+# Podemos representar la interacción de la molécula con una onda electromagnética como una vibración forzada amortiguada. 
 
 # <img src="./images/molecule_spring_mass.png" width="200px" align= center>
 
-# Esto es debido a que una onda electromagnética genera un campo eléctrico oscilatorio de la forma $E_0e^{-i\omega}$. La fuerza sobre ejercida sobre cada polo es
+# Para una onda electromagnética de la forma $E_0e^{-i\omega t}$, la fuerza sobre ejercida sobre cada polo es
 # 
 # \begin{equation*}
 # F = qE_0e^{-i\omega t},
@@ -115,7 +115,7 @@
 # 
 # donde $q$ es la carga eléctrica del polo positivo (o negativo). 
 # 
-# Por otro lado, la amortiguación surge a raíz de la colición entre los electrones y los nucleos, además de otras interacciónes electromagnéticas.
+# Por otro lado, la amortiguación del sistema surge a raíz de la colición entre los electrones y los nucleos, además de otras interacciónes electromagnéticas.
 
 # Asumiendo un eje de referencia situado en el polo positivo, la ecuación de movimiento está dada por:
 # 
@@ -145,7 +145,7 @@
 # \vec{P} = N_p \vec{p} = \frac{N_pq^2/m}{\omega_n^2 - \omega^2 - i\Gamma \omega}\vec{E}\quad\mathrm{\left[\frac{C\cdot m}{m^3}\right]}
 # \end{equation*}
 
-# En presencia de un medio polarizado, la ley de Gauss se modifica como: $\nabla\cdot\left(\varepsilon_0\vec{E} + \vec{P}\right) = \rho$. 
+# En presencia de un medio polarizado, la ley de Gauss se modifica como: $\nabla\cdot\left(\varepsilon_0\vec{E} + \vec{P}\right) = 0$. 
 
 # Representando esta relación en la forma, $\nabla\cdot\varepsilon_0\varepsilon\vec{E} = \rho$, podemos deducir un modelo para la constante dieléctrica del sistema $\varepsilon$:
 # 
@@ -210,7 +210,7 @@ YouTubeVideo('1uE2lvVkKW0', width=600, height=400,  playsinline=0)
 # La respuesta óptica de cada tipo de material está condicionada por sus propiedades electrónicas
 
 # ### Aislantes (modelo de Lorentz)
-# Debido a que los electrones en un aislante están fuertemente ligados al núcleo, la respuesta óptica de este material está condicionada por los modos de vibración de la red atómica. Así, la constante dieléctrica (y el indice de refración) sigue un comportamiento similar al modelo de Lorentz.
+# Debido a que los electrones en un aislante están fuertemente ligados al núcleo, la respuesta óptica de este material está condicionada por los modos de vibración de la red atómica. Así, la constante dieléctrica y el indice de refración siguen un comportamiento similar al modelo de Lorentz.
 
 # Por ejemplo, el sílice (SiO$_2$)
 # 
@@ -281,6 +281,47 @@ YouTubeVideo('1uE2lvVkKW0', width=600, height=400,  playsinline=0)
 # <img src="./images/tio2_nk.png" width="700px" align= center>
 
 # Debido a la absorcion UV, TiO$_2$ es muy utilizado en cremas para protección solar.
+
+# ## Espectro electromagnético
+
+# Podemos clasificar la radiación electromagnética según su longitud de onda (o frecuencia).
+# 
+# <img src="./images/em_spectrum.png" width="600px" align= center>
+
+# Para este curso, los espectros más importantes son:
+# 
+# |Espectro| Longitud de onda |Frecuecia | Energía|
+# |:-:|:-:|:-:|:-:|
+# |UIltravioleta (UV)|1 - 400 nm| 100 - 0.75 PHz|414 - 3.1 eV |
+# |Visible (vis)|400 - 750 nm| 750 - 400 THz|3.1 - 1.65 eV |
+# |Infrarrojo cercano (near-IR)|750 nm - 1.4 $\mu$m| 400 - 214 THz|3.1 - 1.65 eV |
+# |Infrarrojo de onda corta (SWIR)|1.4 - 3 $\mu$m| 214 - 100 THz|885 - 414 meV |
+# |Infrarrojo de onda media (MWIR)| 3 - 8 $\mu$m | 100 - 37 THz|414 - 153 meV |
+# |Infrarrojo de onda larga (LWIR)| 8 - 15 $\mu$m | 37 -20 THz|153 eV - 82 meV |
+# |Infrarrojo de lejano (far-IR)| 15 - 1000 $\mu$m | 20 -0.3 THz|82 - 1.24 meV |
+
+# - 1 eV = $1.602\times 10^{−19}$ J es un **electron volt**. Representa la energía cinética de un electron bajo un potencial de 1 volt.
+
+# El espectro SWIR + MWIR + LWIR se conoce también como **infrarrojo medio (mid-IR)**
+
+# La siguiente tabla es útil para la conversión de unidades:
+# 
+# | -- |$\lambda$ (nm)|$\lambda$ ($\mu$m)| $\nu$ (Hz) | $\omega$ (rad/s)| $E_{\hbar\omega}$ (eV)|
+# |:-:|:------------:|:---------------:|:----------:|:---------------:|:------------:| 
+# |$\lambda$ (nm)|--|$$\lambda\cdot 10^{-3}$$|$$\frac{c_0}{\lambda}\cdot 10^9$$|$$\frac{2\pi c_0}{\lambda}\cdot 10^9$$|$$\frac{h c_0}{\lambda}\cdot 10^9$$|
+# |$\lambda$ ($\mu$m)|$$\lambda\cdot 10^{3}$$|--|$$\frac{c_0}{\lambda}\cdot 10^6$$|$$\frac{2\pi c_0}{\lambda}\cdot 10^6$$|$$\frac{h c_0}{\lambda}\cdot 10^6$$|
+# |$\nu$ (Hz)|$$\frac{c_0}{\nu}\cdot 10^{-9}$$|$$\frac{c_0}{\nu}\cdot 10^{-6}$$|--|$$2\pi\nu$$|$$h\nu $$|
+# |$\omega$ (rad/s)|$$\frac{2\pi c_0}{\omega}\cdot 10^{-9}$$|$$\frac{2\pi c_0}{\omega}\cdot 10^{-6}$$|$$\frac{\omega}{2\pi}$$|--|$$\hbar\omega $$|
+# |$E_{\hbar\omega}$ (eV)|$$\frac{2\pi\hbar c_0}{E_{\hbar\omega}}\cdot 10^{-9}$$|$$\frac{2\pi\hbar c_0}{E_{\hbar\omega}}\cdot 10^{-6}$$|$$\frac{E_{\hbar\omega}}{2\pi\hbar}$$|$$\frac{E_{\hbar\omega}}{\hbar}$$|--|
+
+# - $h = 4.136\times 10^{−15}$ eV/Hz es la **constante de Planck**.
+# - $\hbar = \frac{h}{2\pi} = 6.582\times10^{−16}$ eV/Hz es la **constante reducida de Planck o constante de Dirac**.
+
+# El espectro electromagnético nos sirve como referencia para clasificar el tipo de interacción con la materia. Así, en base a nuestra clásificación de modos de vibración de la materia, en general tenemos:
+# 
+# - Absorción interbanda: espectro UV y vis
+# - $\omega_p$ (modelo de Drude): espectro vis y near-IR
+# - $\omega_n$ (modelo de Lorentz): mid-IR
 
 # ## Referencias
 # - Rao S. S. **Chapter 4 - Vibration Under General Forcing Conditions** in *Mechanical Vibrations*, 6th Ed, Pearson, 2018
