@@ -308,11 +308,11 @@ YouTubeVideo('1uE2lvVkKW0', width=600, height=400,  playsinline=0)
 # 
 # | -- |$\lambda$ (nm)|$\lambda$ ($\mu$m)| $\nu$ (Hz) | $\omega$ (rad/s)| $E_{\hbar\omega}$ (eV)|
 # |:-:|:------------:|:---------------:|:----------:|:---------------:|:------------:| 
-# |$\lambda$ (nm)|--|$$\lambda\cdot 10^{-3}$$|$$\frac{c_0}{\lambda}\cdot 10^9$$|$$\frac{2\pi c_0}{\lambda}\cdot 10^9$$|$$\frac{h c_0}{\lambda}\cdot 10^9$$|
-# |$\lambda$ ($\mu$m)|$$\lambda\cdot 10^{3}$$|--|$$\frac{c_0}{\lambda}\cdot 10^6$$|$$\frac{2\pi c_0}{\lambda}\cdot 10^6$$|$$\frac{h c_0}{\lambda}\cdot 10^6$$|
-# |$\nu$ (Hz)|$$\frac{c_0}{\nu}\cdot 10^{-9}$$|$$\frac{c_0}{\nu}\cdot 10^{-6}$$|--|$$2\pi\nu$$|$$h\nu $$|
-# |$\omega$ (rad/s)|$$\frac{2\pi c_0}{\omega}\cdot 10^{-9}$$|$$\frac{2\pi c_0}{\omega}\cdot 10^{-6}$$|$$\frac{\omega}{2\pi}$$|--|$$\hbar\omega $$|
-# |$E_{\hbar\omega}$ (eV)|$$\frac{2\pi\hbar c_0}{E_{\hbar\omega}}\cdot 10^{-9}$$|$$\frac{2\pi\hbar c_0}{E_{\hbar\omega}}\cdot 10^{-6}$$|$$\frac{E_{\hbar\omega}}{2\pi\hbar}$$|$$\frac{E_{\hbar\omega}}{\hbar}$$|--|
+# |$\lambda$ (nm)|--|$\lambda\cdot 10^{-3}$|$\frac{c_0}{\lambda}\cdot 10^9$|$\frac{2\pi c_0}{\lambda}\cdot 10^9$|$\frac{h c_0}{\lambda}\cdot 10^9$|
+# |$\lambda$ ($\mu$m)|$\lambda\cdot 10^{3}$|--|$\frac{c_0}{\lambda}\cdot 10^6$|$\frac{2\pi c_0}{\lambda}\cdot 10^6$|$\frac{h c_0}{\lambda}\cdot 10^6$|
+# |$\nu$ (Hz)|$\frac{c_0}{\nu}\cdot 10^{-9}$|$\frac{c_0}{\nu}\cdot 10^{-6}$|--|$2\pi\nu$|$h\nu $|
+# |$\omega$ (rad/s)|$\frac{2\pi c_0}{\omega}\cdot 10^{-9}$|$\frac{2\pi c_0}{\omega}\cdot 10^{-6}$|$\frac{\omega}{2\pi}$|--|$\hbar\omega $|
+# |$E_{\hbar\omega}$ (eV)|$\frac{2\pi\hbar c_0}{E_{\hbar\omega}}\cdot 10^{-9}$|$\frac{2\pi\hbar c_0}{E_{\hbar\omega}}\cdot 10^{-6}$|$\frac{E_{\hbar\omega}}{2\pi\hbar}$|$\frac{E_{\hbar\omega}}{\hbar}$|--|
 
 # - $h = 4.136\times 10^{−15}$ eV/Hz es la **constante de Planck**.
 # - $\hbar = \frac{h}{2\pi} = 6.582\times10^{−16}$ eV/Hz es la **constante reducida de Planck o constante de Dirac**.
