@@ -1,0 +1,648 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>4. Scattering electromagnético &#8212; MEC501 - Manejo y conversión de energía solar térmica</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="3. Interacción materia-luz" href="../3_Interacci%C3%B3n_materia-luz/3_Interacci%C3%B3n_materia-luz.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MEC501 - Manejo y conversión de energía solar térmica</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Bienvenidos al curso
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0_introduccion/0_introduccion.html">
+   0. Introducción al curso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_ondas_electromagneticas/1_ondas_electromagneticas.html">
+   1. La radiación como un fenómeno electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html">
+   2. Ondas electromagnéticas en la materia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Interacci%C3%B3n_materia-luz/3_Interacci%C3%B3n_materia-luz.html">
+   3. Interacción materia-luz
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Scattering electromagnético
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/4_Scattering/4_Scattering.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/4_Scattering/4_Scattering.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interaccion-de-luz-segun-el-tamano-de-un-cuerpo">
+   Interacción de luz según el tamaño de un cuerpo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interaccion-de-luz-con-cuerpos-grandes">
+     Interacción de luz con cuerpos grandes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interaccion-de-luz-con-cuerpos-pequenos">
+     Interacción de luz con cuerpos pequeños
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scattering-en-esferas-solucion-de-mie">
+   Scattering en esferas (solución de Mie)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribucion-del-campo-electrico">
+     Distribución del campo eléctrico
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#flujo-de-energia">
+     Flujo de energía
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parametro-de-asimetria">
+     Parámetro de asimetría
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analisis-de-scattering">
+   Analisis de scattering
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#particulas-con-indice-de-refraccion-real-dielectricos">
+     Particulas con índice de refracción real (dieléctricos)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pariculas-metalicas">
+     Parículas metálicas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>4. Scattering electromagnético</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interaccion-de-luz-segun-el-tamano-de-un-cuerpo">
+   Interacción de luz según el tamaño de un cuerpo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interaccion-de-luz-con-cuerpos-grandes">
+     Interacción de luz con cuerpos grandes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interaccion-de-luz-con-cuerpos-pequenos">
+     Interacción de luz con cuerpos pequeños
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scattering-en-esferas-solucion-de-mie">
+   Scattering en esferas (solución de Mie)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribucion-del-campo-electrico">
+     Distribución del campo eléctrico
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#flujo-de-energia">
+     Flujo de energía
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parametro-de-asimetria">
+     Parámetro de asimetría
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analisis-de-scattering">
+   Analisis de scattering
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#particulas-con-indice-de-refraccion-real-dielectricos">
+     Particulas con índice de refracción real (dieléctricos)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pariculas-metalicas">
+     Parículas metálicas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referencias
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font></p>
+<section class="tex2jax_ignore mathjax_ignore" id="scattering-electromagnetico">
+<h1>4. Scattering electromagnético<a class="headerlink" href="#scattering-electromagnetico" title="Permalink to this headline">#</a></h1>
+<p><br><br><br><br>
+Profesor: Francisco Ramírez Cuevas<br>
+Fecha: 2 de Septiembre 2022</p>
+<section id="interaccion-de-luz-segun-el-tamano-de-un-cuerpo">
+<h2>Interacción de luz según el tamaño de un cuerpo<a class="headerlink" href="#interaccion-de-luz-segun-el-tamano-de-un-cuerpo" title="Permalink to this headline">#</a></h2>
+<p>Hasta el momento hemos analizado las ecuaciones de Maxwell y condiciones de borde en coordenadas cartesianas. Estas relaciones se aplican a interfaces rectas.</p>
+<p>En el caso de cuerpos curvos, los coeficientes de Fresnel y otras fórmulas relacionadas aún son aplicables, siembre y cuando el radio de curvartura del cuerpo <span class="math notranslate nohighlight">\(R \gg \lambda\)</span></p>
+<a class="reference internal image-reference" href="../_images/fresnel_curvature.png"><img alt="../_images/fresnel_curvature.png" class="align-center" src="../_images/fresnel_curvature.png" style="width: 500px;" /></a>
+<section id="interaccion-de-luz-con-cuerpos-grandes">
+<h3>Interacción de luz con cuerpos grandes<a class="headerlink" href="#interaccion-de-luz-con-cuerpos-grandes" title="Permalink to this headline">#</a></h3>
+<p>A través de este principio podemos explicar la separación de colores en un arcoiris.</p>
+<p>Primero, es importante notar que el índice de refracción del agua en el espectro visible no es constante. Este índice tiene un pequeño grado de dispersión, y decae a medida que la longitud de onda crece. Así, a partir de la ley de Snell, el ángulo de transmisión de cada onda (o color), crece proporcional a la longitud de onda.</p>
+<a class="reference internal image-reference" href="../_images/rainbow_refraction.png"><img alt="../_images/rainbow_refraction.png" class="align-center" src="../_images/rainbow_refraction.png" style="width: 600px;" /></a>
+<p>Este fenómeno produce que las ondas se separen en el espacio en función de su longitud de onda.</p>
+<p>En una gota de agua, el efecto de separación de colores se magnifica a medida que la luz se refleja en el interior</p>
+<a class="reference internal image-reference" href="../_images/rainbows.jpg"><img alt="../_images/rainbows.jpg" class="align-center" src="../_images/rainbows.jpg" style="width: 300px;" /></a>
+</section>
+<section id="interaccion-de-luz-con-cuerpos-pequenos">
+<h3>Interacción de luz con cuerpos pequeños<a class="headerlink" href="#interaccion-de-luz-con-cuerpos-pequenos" title="Permalink to this headline">#</a></h3>
+<p>Cuándo las dimensiones del cuerpo, <span class="math notranslate nohighlight">\(D\)</span>, son comparables a la longitud de onda, el radio de curvatura se hace significativo y las soluciones de las ecuaciones de Maxwell para una interface plana no son aplicables</p>
+<p>En este caso, se produce el fenómeno de <em><strong>scattering</strong></em>. El scattering produce que la luz sea dispersada en múltiples direcciones, mientras una porción de la energía incidente es absorbida por el objeto (<strong>absorción</strong>). Llamamos <strong>extinción</strong> a la porción de la luz que no sufre scattering ni absorción.</p>
+<a class="reference internal image-reference" href="../_images/scattering_schematic.png"><img alt="../_images/scattering_schematic.png" class="align-center" src="../_images/scattering_schematic.png" style="width: 450px;" /></a>
+</section>
+</section>
+<section id="scattering-en-esferas-solucion-de-mie">
+<h2>Scattering en esferas (solución de Mie)<a class="headerlink" href="#scattering-en-esferas-solucion-de-mie" title="Permalink to this headline">#</a></h2>
+<p>Consideremos el modelo simple una onda electromagnética interactuando con una esfera de radio <span class="math notranslate nohighlight">\(R\)</span> tal que <span class="math notranslate nohighlight">\(R/\lambda \sim 1\)</span>
+<a class="reference internal" href="../_images/em_wave_sphere.png"><img alt="../_images/em_wave_sphere.png" class="align-center" src="../_images/em_wave_sphere.png" style="width: 300px;" /></a></p>
+<p>Llamaremos al índice de refracción de la esfera <span class="math notranslate nohighlight">\(N_p\)</span>, y al índice de refracción del exterior <span class="math notranslate nohighlight">\(N_h\)</span>.</p>
+<p>En este caso asumimos que el índice de refracción del exterior no tiene componente compleja, es decir <span class="math notranslate nohighlight">\(N_h = n_h\)</span></p>
+<p>La solución, propuesta por Gustav Mie, se basa una expansión en serie de ondas esféricas <span class="math notranslate nohighlight">\(\vec{M}_{lm}(r, \theta,\phi)\)</span> y <span class="math notranslate nohighlight">\(\vec{N}_{lm}(r, \theta,\phi)\)</span> (más información en las referencias).</p>
+<p>Por ejemplo, la componente del campo eléctrico correspondiente al scattering, <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{sca}\)</span> es:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\vec{E}_\mathrm{sca} = \sum_{l=1}^\infty \mathrm{Im}\left[E_0\frac{2l+1}{l(l+1)}i^l\left(a_l \vec{N}_{l1}^{(3)} - b_l \vec{M}_{l1}^{(3)}\right)\right]
+\end{equation*}\]</div>
+<p>donde los coeficientes <span class="math notranslate nohighlight">\(a_l\)</span> y <span class="math notranslate nohighlight">\(b_l\)</span> están dados por la funciones de Ricatti-Bessel, <span class="math notranslate nohighlight">\(\psi(x)\)</span> y <span class="math notranslate nohighlight">\(\xi(x)\)</span>, en la forma:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+a_l = \frac{p\psi_l(px)\psi'_l(x) - \psi_l(x)\psi'_l(pm)}{p\psi_l(px)\xi'_l(x) - \xi_l(x)\psi'_l(pm)},
+\quad\quad\quad
+b_l = \frac{\psi_l(px)\psi'_l(x) - p\psi_l(x)\psi'_l(pm)}{\psi_l(px)\xi'_l(x) - p\xi_l(x)\psi'_l(pm)},
+\end{equation*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(x = n_hk_0R\)</span>, y <span class="math notranslate nohighlight">\(p = N_p/n_h\)</span>.</p>
+<p>El campo magnético está dado por <span class="math notranslate nohighlight">\(\vec{H}_\mathrm{sca} = \frac{n_h}{Z_0} \left(\hat{k}\times\vec{E}_\mathrm{sca}\right)\)</span>.</p>
+<section id="distribucion-del-campo-electrico">
+<h3>Distribución del campo eléctrico<a class="headerlink" href="#distribucion-del-campo-electrico" title="Permalink to this headline">#</a></h3>
+<p>A partir de esta solución, podemos visualizar la distribución del campo eléctrico durante el fenómeno de scattering.</p>
+<p>En la siguiente figura, el campo eléctrico oscila perpendicular al plano de la pantalla. A la izquierda podemos visualizar la distribución del campo electrico total, es decir el campo eléctrico incidente <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{inc}\)</span> y <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{sca}\)</span>. A la derecha, hemos removido <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{inc}\)</span> para poder visualizar <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{sca}\)</span></p>
+<a class="reference internal image-reference" href="../_images/scattering_distribution.png"><img alt="../_images/scattering_distribution.png" class="align-center" src="../_images/scattering_distribution.png" style="width: 500px;" /></a>
+<p>La distribución del scattering depende del tamaño de la partícula en relación la longitud de onda.</p>
+<a class="reference internal image-reference" href="../_images/scattering_vs_size.png"><img alt="../_images/scattering_vs_size.png" class="align-center" src="../_images/scattering_vs_size.png" style="width: 550px;" /></a>
+<p>Particularmente, cuando <span class="math notranslate nohighlight">\(D/\lambda \ll 1\)</span>, se denomina Rayleight scattering. En este caso el campo scattering está distribuido uniformemente alrededor de la partícula</p>
+</section>
+<section id="flujo-de-energia">
+<h3>Flujo de energía<a class="headerlink" href="#flujo-de-energia" title="Permalink to this headline">#</a></h3>
+<p>Al igual que con el estudio de reflexión y transmisión, la solución <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{sca}\)</span> nos permite determinar el <strong>Flujo de energía</strong> a través del vector de Poyinting <span class="math notranslate nohighlight">\(\langle\vec{S_\mathrm{sca}}\rangle = \frac{1}{2}\mathrm{Re}\left(\vec{E}_\mathrm{sca}\times\vec{H}^*_\mathrm{sca}\right)~\mathrm{[W/m^2]}\)</span>.</p>
+<p>La energía neta correspondiente al scattering, <span class="math notranslate nohighlight">\(P_\mathrm{sca}\)</span> se obtiene integrando <span class="math notranslate nohighlight">\(\langle\vec{S_\mathrm{sca}}\rangle\)</span> sobre una superficie cerrada alrededor de la esfera :</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_\mathrm{sca} = \oint_{S} \langle\vec{S_\mathrm{sca}}\rangle\cdot\hat{n}dS,
+\end{equation*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\hat{n}\)</span> es un vector normal a la superficie.</p>
+<p>Mediante un proceso similar, podemos determinar la energía extinguida, <span class="math notranslate nohighlight">\(P_\mathrm{ext}\)</span>, a partir del campo total <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{tot} = \vec{E}_\mathrm{inc} + \vec{E}_\mathrm{sca}\)</span></p>
+<p>El resultado lo escribimos relativo al flujo de energía incidente <span class="math notranslate nohighlight">\(I_\mathrm{inc} = \frac{n_hE_0}{2Z_0}\quad\mathrm{[W/m^2]}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+C_\mathrm{sca} &amp;=&amp; \frac{P_\mathrm{sca}}{I_\mathrm{inc}} = \frac{2\pi}{k^2}\sum_{l=1}^\infty (2l+1)\left(|a_l|^2 + |b_l|^2\right)&amp;\quad&amp;\mathrm{[m^2]}
+\\[10pt]
+C_\mathrm{ext} &amp;=&amp; \frac{P_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k^2}\sum_{l=1}^\infty (2l+1)\mathrm{Re}\left(a_l + b_l\right)&amp;\quad&amp;\mathrm{[m^2]}
+\end{eqnarray*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span> y <span class="math notranslate nohighlight">\(C_\mathrm{ext}\)</span> se denominan <strong>sección transversal de scattering y extinción, respectivamente</strong>.</p>
+<p>Por conservación de energía, la sección transversal de absorción, <span class="math notranslate nohighlight">\(C_\mathrm{abs} = C_\mathrm{ext} - C_\mathrm{sca}\)</span>.</p>
+</section>
+<section id="parametro-de-asimetria">
+<h3>Parámetro de asimetría<a class="headerlink" href="#parametro-de-asimetria" title="Permalink to this headline">#</a></h3>
+<p>El parámetro de asimetría, <span class="math notranslate nohighlight">\(\mu_\mathrm{sca} \in [-1,1]\)</span>, nos permite cuantificar la anisotropía en la distribución del scattering.</p>
+<a class="reference internal image-reference" href="../_images/asymmetry_parameter.png"><img alt="../_images/asymmetry_parameter.png" class="align-center" src="../_images/asymmetry_parameter.png" style="width: 550px;" /></a>
+<p>En el caso de esferas, se define por:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\mu_\mathrm{sca} = \frac{4\pi}{k^2C_\mathrm{sca}}\left[
+\sum_{l=1}^\infty \frac{l(l+2)}{l+1}\mathrm{Re}\left(a_la_{l+1}^* + b_lb_{l+1}^*\right) +
+\sum_{l=1}^\infty\frac{2l+1}{l(l+1)}\mathrm{Re}\left(a_lb_l^*\right)
+\right]
+\end{equation*}\]</div>
+</section>
+</section>
+<section id="analisis-de-scattering">
+<h2>Analisis de scattering<a class="headerlink" href="#analisis-de-scattering" title="Permalink to this headline">#</a></h2>
+<p>Similar a los coeficientes de transmisión y reflexión, los parámetros <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span>, <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> y <span class="math notranslate nohighlight">\(C_\mathrm{ext}\)</span> nos permiten cuantificar la energía de scattering, absorción y extinción relativa a la intensidad de la fuente <span class="math notranslate nohighlight">\(I_\mathrm{inc}\)</span>, así como también conocer su distribución en el espectro.</p>
+<section id="particulas-con-indice-de-refraccion-real-dielectricos">
+<h3>Particulas con índice de refracción real (dieléctricos)<a class="headerlink" href="#particulas-con-indice-de-refraccion-real-dielectricos" title="Permalink to this headline">#</a></h3>
+<p>Por ejemplo, analicemos el scattering de una esfera de agua (<span class="math notranslate nohighlight">\(N_p\approx 1.33\)</span>) en el aire (<span class="math notranslate nohighlight">\(n_h = 1.0\)</span>).</p>
+<a class="reference internal image-reference" href="../_images/scattering_water.png"><img alt="../_images/scattering_water.png" class="align-center" src="../_images/scattering_water.png" style="width: 400px;" /></a>
+<p>Notar que <span class="math notranslate nohighlight">\(N_p\approx 1.33\)</span> implica <span class="math notranslate nohighlight">\(C_\mathrm{abs} = 0\)</span></p>
+<p>A partir de este gráfico podemos identificar algunos patrones comúnes en scattering:</p>
+<ul class="simple">
+<li><p>La energía de scattering aumenta con el tamaño de la partícula</p></li>
+<li><p>A medida que el tamaño aumenta, la longitud de onda para scattering máximo crece (<em>red-shifting</em>)</p></li>
+</ul>
+<p>A partir de este gráfico podemos entender muchas situaciones de la vida cotidiana.</p>
+<p>Por ejemplo, en la niebla las partículas de agua tienen un tamaño microscópico (<span class="math notranslate nohighlight">\(D\sim 1\mu\)</span>m) y, por lo tanto, dispersan la mayor parte de la luz visible.</p>
+<a class="reference internal image-reference" href="../_images/difuse_and_specular.png"><img alt="../_images/difuse_and_specular.png" class="align-center" src="../_images/difuse_and_specular.png" style="width: 600px;" /></a>
+<p>Para un haz de luz incidente en un medio con partículas, llamamos <strong>componente difusa</strong> a la porción de la luz dispersada por scattering, y como <strong>componente especular</strong> a la porción no dispersada.</p>
+<p>En el cielo, en cambio, las moleculas del aire son mucho más pequeñas, y el scattering es más intenso para ondas en el espectro del color azul y violeta (<span class="math notranslate nohighlight">\(\lambda &lt; 450\)</span> nm)</p>
+<a class="reference internal image-reference" href="../_images/sky_scattering.png"><img alt="../_images/sky_scattering.png" class="align-center" src="../_images/sky_scattering.png" style="width: 600px;" /></a>
+<p>La componente difusa, así, corresponde a los colores azul y violeta. La componente especular, corresponde al resto de los colores del espectro visible. El fenómeno expica el color azul del cielo durante el día.</p>
+</section>
+<section id="pariculas-metalicas">
+<h3>Parículas metálicas<a class="headerlink" href="#pariculas-metalicas" title="Permalink to this headline">#</a></h3>
+<p>El naturaleza del scattering es diferente para los metales. En este caso, el movimiento libre de los electrones genera acumulación de carga en la superficie de la partícula. Como resultado, la partícula se polariza generando fenómenos de resonancia en determinadas longitudes de onda.</p>
+<a class="reference internal image-reference" href="../_images/surface_plasmon.png"><img alt="../_images/surface_plasmon.png" class="align-center" src="../_images/surface_plasmon.png" style="width: 350px;" /></a>
+<p>En la siguiente figura, graficamos <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span> y <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> para partículas de distinto diámetro. Ambas variables son normalizadas por al área transversal de la esfera <span class="math notranslate nohighlight">\(\pi R^2\)</span>, para mejor comparación entre esferas de distintas dimensiones.</p>
+<a class="reference internal image-reference" href="../_images/scattering_silver.png"><img alt="../_images/scattering_silver.png" class="align-center" src="../_images/scattering_silver.png" style="width: 700px;" /></a>
+<ul class="simple">
+<li><p>Para <span class="math notranslate nohighlight">\(D &lt; 20\)</span> nm, el <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span> es despreciable en comparación con <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span>. El peak en <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> es el resultado de la resonancia del sistema, similar al modelo de Lorentz.</p></li>
+<li><p>Para <span class="math notranslate nohighlight">\(D &gt; 50\)</span> el <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span> crece significativamente, superando <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> para <span class="math notranslate nohighlight">\(D &gt; 80\)</span> nm.</p></li>
+</ul>
+<p>Este fenómeno se repite en otros metales, aunque con distintas magnitudes y frecuencias de resonancia.</p>
+<p>El efecto de de scattering en nanopartículas metálicas permite explicar el cambio en los colores en la copa de Lycurgus.</p>
+<a class="reference internal image-reference" href="../_images/LycurgusCup.jpg"><img alt="../_images/LycurgusCup.jpg" class="align-center" src="../_images/LycurgusCup.jpg" style="width: 300px;" /></a>
+<p>Esta copa del periodo romano, esta compuesta de vidrio con nanopartícula de oro y plata en forma de coloides.</p>
+</section>
+</section>
+<section id="referencias">
+<h2>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Bohren C. and Huffman D. <strong>Chapter 4 - Absorption and Scattering by a Sphere</strong> in <em>Absorption and Scattering of Light by Small Particles</em>, 1st Ed, John Wiley &amp; Sons, 1983</p></li>
+<li><p>Jackson. J. D., <strong>Chapter 10 - Scattering and Diffraction</strong> in <em>Classical Electrodynamics</em>, 3th Ed, John Wiley &amp; Sons, 1999</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./4_Scattering"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../3_Interacci%C3%B3n_materia-luz/3_Interacci%C3%B3n_materia-luz.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">3. Interacción materia-luz</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Francisco V. Ramirez-Cuevas<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

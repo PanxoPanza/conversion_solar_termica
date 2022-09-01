@@ -128,6 +128,16 @@ const thebe_selector_output = ".output, .cell_output"
    2. Ondas electromagnéticas en la materia
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Interacci%C3%B3n_materia-luz/3_Interacci%C3%B3n_materia-luz.html">
+   3. Interacción materia-luz
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Scattering/4_Scattering.html">
+   4. Scattering electromagnético
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -498,14 +508,14 @@ Fecha: 12 de Agosto 2022</p>
 <h3>Operadores diferenciales<a class="headerlink" href="#operadores-diferenciales" title="Permalink to this headline">#</a></h3>
 <p><strong>Operador Del.</strong></p>
 <p>Definimos el operador <span class="math notranslate nohighlight">\(\nabla\)</span> o “del”, como:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-44c8a690-8350-40ce-95d1-119038c0efc7">
-<span class="eqno">(2)<a class="headerlink" href="#equation-44c8a690-8350-40ce-95d1-119038c0efc7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a73d4651-8510-48d4-be02-c2e56f7fe04a">
+<span class="eqno">(2)<a class="headerlink" href="#equation-a73d4651-8510-48d4-be02-c2e56f7fe04a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla= \left( \hat{x}\frac{\partial }{\partial x} + \hat{y}\frac{\partial }{\partial y} + \hat{z}\frac{\partial }{\partial z} \right)
 \end{equation}\]</div>
 <p><strong>Operador Gradiente.</strong></p>
 <p>Es equivalente a la derivada de una función, pero en múltiples dimenciones. Permite identificar zonas de crecimiento o decrecimiento de un campo escalar o vectorial. Se define como el operador Del multiplicado por el campo escalar.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c98ba6c4-31f6-41ae-8c42-525d66c424dd">
-<span class="eqno">(3)<a class="headerlink" href="#equation-c98ba6c4-31f6-41ae-8c42-525d66c424dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5cd8cc7e-41fc-4854-8fe5-aa051ea941cf">
+<span class="eqno">(3)<a class="headerlink" href="#equation-5cd8cc7e-41fc-4854-8fe5-aa051ea941cf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla f= \frac{\partial f}{\partial x}\hat{x} + \frac{\partial f}{\partial y}\hat{y}+ \frac{\partial f}{\partial z}\hat{z}
 \end{equation}\]</div>
 <blockquote>
@@ -513,8 +523,8 @@ Fecha: 12 de Agosto 2022</p>
 </div></blockquote>
 <p><strong>Operador Divergente.</strong></p>
 <p>Se aplica a campos vectoriales. Es una medida de cuanto un campo vectorial diverge o converge respecto de un punto en cuestión. Se define como el producto punto entre el operador Del y un campo vectorial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5c636743-4a5b-45a2-a193-ba4323f3af4c">
-<span class="eqno">(4)<a class="headerlink" href="#equation-5c636743-4a5b-45a2-a193-ba4323f3af4c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-42db3924-6e4c-4a1c-b094-ea6429c1104c">
+<span class="eqno">(4)<a class="headerlink" href="#equation-42db3924-6e4c-4a1c-b094-ea6429c1104c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla \cdot \vec{f}= \frac{\partial f_x}{\partial x} + \frac{\partial f_y}{\partial y} + \frac{\partial f_z}{\partial z}
 \end{equation}\]</div>
 <p>Por ejemplo:</p>
@@ -524,8 +534,8 @@ Fecha: 12 de Agosto 2022</p>
 <p>(c) <span class="math notranslate nohighlight">\(\nabla\cdot\vec{f} \gt 0\)</span></p>
 <p><strong>Operador Rotacional.</strong></p>
 <p>Se aplica a campos vectoriales. Es una medida de cuanto un campo vectorial rota respecto de un punto en cuestión. Se define como el producto cruz entre el operador Del y un campo vectorial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1ce3b1f3-021b-4c78-b18d-67589a8cfe91">
-<span class="eqno">(5)<a class="headerlink" href="#equation-1ce3b1f3-021b-4c78-b18d-67589a8cfe91" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b8a22ce0-00a3-44f3-98f9-d2fcc7bf5b2b">
+<span class="eqno">(5)<a class="headerlink" href="#equation-b8a22ce0-00a3-44f3-98f9-d2fcc7bf5b2b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla \times \vec{f}= \left(\frac{\partial f_z}{\partial y}- \frac{\partial f_y}{\partial z}\right)\hat{x}+\left(\frac{\partial f_x}{\partial z}- \frac{\partial f_z}{\partial x}\right)\hat{y}+\left(\frac{\partial f_y}{\partial x}- \frac{\partial f_x}{\partial y}\right)\hat{z}
 \end{equation}\]</div>
 <p>Por ejemplo:</p>
@@ -559,8 +569,8 @@ Fecha: 12 de Agosto 2022</p>
 <h3>Ley de Gauss<a class="headerlink" href="#ley-de-gauss" title="Permalink to this headline">#</a></h3>
 <p><em>El flujo de campo electrico a través de una superficie cerrada es proporcional a la carga eléctrica, <span class="math notranslate nohighlight">\(\rho\)</span>, contenida dentro de esta superficie.</em></p>
 <p>En su forma diferencial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4b366bf9-a961-4410-b405-083f4f72cf43">
-<span class="eqno">(6)<a class="headerlink" href="#equation-4b366bf9-a961-4410-b405-083f4f72cf43" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-80f48467-8c1d-4720-8b40-f749c4f592a9">
+<span class="eqno">(6)<a class="headerlink" href="#equation-80f48467-8c1d-4720-8b40-f749c4f592a9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla\cdot\left(\varepsilon_0\vec{E}\right) = \rho
 \end{equation}\]</div>
 <p>Donde:</p>
@@ -576,8 +586,8 @@ Fecha: 12 de Agosto 2022</p>
 <h3>Ley de continuidad del campo magnético<a class="headerlink" href="#ley-de-continuidad-del-campo-magnetico" title="Permalink to this headline">#</a></h3>
 <p><em>No existen cargas magnéticas que den lugar a un campo magnético</em></p>
 <p>En su forma diferencial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9fba2536-2d3b-4999-afe2-fc832505768c">
-<span class="eqno">(7)<a class="headerlink" href="#equation-9fba2536-2d3b-4999-afe2-fc832505768c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-26211def-68d9-4fab-8b92-7eaa1ca3a3ae">
+<span class="eqno">(7)<a class="headerlink" href="#equation-26211def-68d9-4fab-8b92-7eaa1ca3a3ae" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla\cdot\left(\mu_0\vec{H}\right) = 0
 \end{equation}\]</div>
 <p>Donde:</p>
@@ -594,8 +604,8 @@ Fecha: 12 de Agosto 2022</p>
 <section id="ley-de-faraday">
 <h3>Ley de Faraday<a class="headerlink" href="#ley-de-faraday" title="Permalink to this headline">#</a></h3>
 <p><em>Un campo magnético variable en el tiempo induce un campo eléctrico rotacional</em></p>
-<div class="amsmath math notranslate nohighlight" id="equation-08b95d93-c85f-4725-8f0b-fc3e3a14d978">
-<span class="eqno">(8)<a class="headerlink" href="#equation-08b95d93-c85f-4725-8f0b-fc3e3a14d978" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9b6e70df-b48b-4fe8-8025-42a135f3d084">
+<span class="eqno">(8)<a class="headerlink" href="#equation-9b6e70df-b48b-4fe8-8025-42a135f3d084" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla\times\vec{E} = -\mu_0\frac{\partial \vec{H}}{\partial t}
 \end{equation}\]</div>
 <ul class="simple">
@@ -605,8 +615,8 @@ Fecha: 12 de Agosto 2022</p>
 <section id="ley-de-ampere">
 <h3>Ley de Ampere<a class="headerlink" href="#ley-de-ampere" title="Permalink to this headline">#</a></h3>
 <p><em>Una corriente eléctrica induce un campo magnético rotacional alrededor de ella</em></p>
-<div class="amsmath math notranslate nohighlight" id="equation-abc0b23e-4b14-4e80-8fb1-a43137ff10b4">
-<span class="eqno">(9)<a class="headerlink" href="#equation-abc0b23e-4b14-4e80-8fb1-a43137ff10b4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ab132134-0389-4703-a200-e5825bd3474b">
+<span class="eqno">(9)<a class="headerlink" href="#equation-ab132134-0389-4703-a200-e5825bd3474b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla\times\vec{H} = \vec{J}
 \end{equation}\]</div>
 <p>Donde:</p>
@@ -656,8 +666,8 @@ Fecha: 12 de Agosto 2022</p>
 \nabla\cdot\vec{J} = - \frac{\partial \rho}{\partial t}
 \end{equation*}\]</div>
 <p>Claramente, la ecuación de Ampere no está completa. La corrección, fue propuesta por James Maxwell</p>
-<div class="amsmath math notranslate nohighlight" id="equation-936da78a-0d0e-42e1-8635-00d514a0891c">
-<span class="eqno">(10)<a class="headerlink" href="#equation-936da78a-0d0e-42e1-8635-00d514a0891c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c48f340f-8460-4539-947e-40446c3fafdd">
+<span class="eqno">(10)<a class="headerlink" href="#equation-c48f340f-8460-4539-947e-40446c3fafdd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla\times\vec{H} = \vec{J} + \varepsilon_0\frac{\partial\vec{E}}{\partial t}
 \end{equation}\]</div>
 <p>El último término es conocido como la <em>corriente de desplazamiento de Maxwell.</em></p>
@@ -708,8 +718,8 @@ Fecha: 12 de Agosto 2022</p>
 <li><p><span class="math notranslate nohighlight">\(\hat{e}\)</span> es la dirección de oscilación de la onda.</p></li>
 </ul>
 <p>Reemplazando esta solución en la ecuación de onda, determinamos la <strong>relación de dispersión</strong> entre la <strong>magnitud del vector de onda en el vacío</strong>, <span class="math notranslate nohighlight">\(k_0 = |\vec{k}|\)</span>, y la frecuencia angular:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1da88a6a-bc89-47e8-b655-70a6533048dd">
-<span class="eqno">(11)<a class="headerlink" href="#equation-1da88a6a-bc89-47e8-b655-70a6533048dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c03de403-7e12-499e-ad37-6590533d5cbb">
+<span class="eqno">(11)<a class="headerlink" href="#equation-c03de403-7e12-499e-ad37-6590533d5cbb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k_0 = \frac{\omega}{c_0},
 \end{equation}\]</div>
 <p>donde</p>
@@ -717,21 +727,21 @@ k_0 = \frac{\omega}{c_0},
 \[c_0 = \frac{1}{\sqrt{\varepsilon_0\mu_0}} \approx 3.00\times10^8~\mathrm{m/s,}\]</div>
 <p>es la velocidad de la luz.</p>
 <p>En general, estamos más familizarizados con los conceptos de <strong>longitud de onda <span class="math notranslate nohighlight">\(\lambda\)</span></strong> y <strong>frecuencia <span class="math notranslate nohighlight">\(\nu\)</span></strong>, para caracterizar ondas electromagnéticas. Estas variables se relacionan con el vector de onda y la frecuencia mediante:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8208f588-5557-4b09-9bca-b0c2bdf6834b">
-<span class="eqno">(12)<a class="headerlink" href="#equation-8208f588-5557-4b09-9bca-b0c2bdf6834b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3ed87bab-f330-4e0b-abba-d1f7980e1f25">
+<span class="eqno">(12)<a class="headerlink" href="#equation-3ed87bab-f330-4e0b-abba-d1f7980e1f25" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k_0 = \frac{2\pi}{\lambda}, ~~ \omega = 2\pi\nu
 \end{equation}\]</div>
 <p>De igual forma, mediante la relación de dispersión, podemos establecer la siguiente relación entre la longitud de onda y la frecuencia:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dff150ab-c449-471f-8cd6-3417519e22d4">
-<span class="eqno">(13)<a class="headerlink" href="#equation-dff150ab-c449-471f-8cd6-3417519e22d4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0295af75-0fdf-4284-ab67-7a9810f11b97">
+<span class="eqno">(13)<a class="headerlink" href="#equation-0295af75-0fdf-4284-ab67-7a9810f11b97" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lambda\nu = c_0
 \end{equation}\]</div>
 <blockquote>
 <div><p>Esto quiere decir, que un punto <span class="math notranslate nohighlight">\(\vec{r}\)</span> arbitrario de la onda, viaja en el vacío a una velocidad constante <span class="math notranslate nohighlight">\(c_0\)</span>, <strong>independendiente de su frecuencia</strong>.</p>
 </div></blockquote>
 <p><strong>El vector de onda representa la dirección de propagación de la onda</strong>. A partir de la ley de Gauss, podemos demostrar:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fa6b3b0a-e29a-4709-98d4-c447801ba48a">
-<span class="eqno">(14)<a class="headerlink" href="#equation-fa6b3b0a-e29a-4709-98d4-c447801ba48a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9d215560-4293-44fb-bc9d-9970ac5a36c8">
+<span class="eqno">(14)<a class="headerlink" href="#equation-9d215560-4293-44fb-bc9d-9970ac5a36c8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vec{k} \cdot\hat{e} = 0
 \end{equation}\]</div>
 <p>Es decir, el campo eléctrico oscila en dirección perpendicular a la dirección de propagación.</p>
@@ -797,8 +807,8 @@ k_0 = \frac{2\pi}{\lambda}, ~~ \omega = 2\pi\nu
 <section id="vector-de-poynting">
 <h3>Vector de Poynting<a class="headerlink" href="#vector-de-poynting" title="Permalink to this headline">#</a></h3>
 <p>El vector de Poynting, <span class="math notranslate nohighlight">\(\vec{S}\)</span>, representa el flujo de energía electromagnética por unidad de área. Está dado por la relación:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f6a515d2-4279-46aa-bebf-7f090beb07da">
-<span class="eqno">(15)<a class="headerlink" href="#equation-f6a515d2-4279-46aa-bebf-7f090beb07da" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d2ebdd9c-d949-46e2-abb6-c2e5abda8b3b">
+<span class="eqno">(15)<a class="headerlink" href="#equation-d2ebdd9c-d949-46e2-abb6-c2e5abda8b3b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \langle\vec{S}\rangle = \frac{1}{2}\mathrm{Re}\left(\vec{E}\times\vec{H}^*\right),
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\langle\cdots\rangle\)</span> reprensenta el promedio temporal, y el símbolo “<span class="math notranslate nohighlight">\(*\)</span>” reprenta el complejo conjugado.</p>
