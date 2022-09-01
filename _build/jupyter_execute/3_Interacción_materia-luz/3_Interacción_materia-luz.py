@@ -22,7 +22,7 @@
 # La ecuación gobernante está dada por:
 # 
 # \begin{equation*}
-# \ddot{x} - \omega_n^2 x = 0 
+# \ddot{x} + \omega_n^2 x = 0 
 # \end{equation*}
 # 
 # donde $\omega_n = \sqrt{k/m}$, es la frecuencia natural del sistema
@@ -205,7 +205,7 @@ YouTubeVideo('1uE2lvVkKW0', width=600, height=400,  playsinline=0)
 # 
 # - **Semiconductor**, donde las bandas de conducción y valencia están separadas. Sin embargo, la energía del bandgap es relativamente pequeña, de manera que un electrón puede ser llevado a la banda de conducción mediante un potencial eléctrico razonable, o mediante una onda electromagnética.
 # 
-# - **Ailante**, donde las bandas de conducción y valencia están muy separadas. El umbral para excitar un electrón a la banda de conducción es demaciado grande y, por lo tanto, el material no es capaz de conducir corriente.
+# - **Aislante**, donde las bandas de conducción y valencia están muy separadas. El umbral para excitar un electrón a la banda de conducción es demaciado grande y, por lo tanto, el material no es capaz de conducir corriente.
 
 # La respuesta óptica de cada tipo de material está condicionada por sus propiedades electrónicas
 
@@ -255,9 +255,11 @@ YouTubeVideo('1uE2lvVkKW0', width=600, height=400,  playsinline=0)
 
 # ### Semiconductores (absorción interbanda)
 
-# En este caso las interacciones con ondas electromagnéticas están dictadas por bandas de absorción asociadas a la excitación de electrones a la banda de conducción. 
+# En este caso las interacciones con ondas electromagnéticas están dictadas por bandas de absorción asociadas a la excitación de electrones de valencia a la banda de conducción. 
 # 
-# Este fenómeno se conoce como absorpción interbanda, y ocurre cuando la energía del fotón $\hbar\omega$ ($\hbar = 6.58\times 10^16$ eV$\cdot$s) es superior al bandgap del material.
+# Este fenómeno se conoce como **absorpción interbanda**, y ocurre cuando la energía del fotón $\hbar\omega$ ($\hbar = 6.58\times 10^16$ eV$\cdot$s) es superior al bandgap del material.
+
+# <img src="./images/photoexcited_electrons.png" width="300px" align= center>
 
 # Los semiconductores son los materiales fundamentales en transistores, LED y celdas fotovoltaicas. El semiconductor más conocido es el silicio (Si).
 # 
@@ -286,7 +288,7 @@ YouTubeVideo('1uE2lvVkKW0', width=600, height=400,  playsinline=0)
 
 # Podemos clasificar la radiación electromagnética según su longitud de onda (o frecuencia).
 # 
-# <img src="./images/em_spectrum.png" width="600px" align= center>
+# <img src="./images/em_spectrum.png" width="700px" align= center>
 
 # Para este curso, los espectros más importantes son:
 # 
@@ -298,7 +300,7 @@ YouTubeVideo('1uE2lvVkKW0', width=600, height=400,  playsinline=0)
 # |Infrarrojo de onda corta (SWIR)|1.4 - 3 $\mu$m| 214 - 100 THz|885 - 414 meV |
 # |Infrarrojo de onda media (MWIR)| 3 - 8 $\mu$m | 100 - 37 THz|414 - 153 meV |
 # |Infrarrojo de onda larga (LWIR)| 8 - 15 $\mu$m | 37 -20 THz|153 eV - 82 meV |
-# |Infrarrojo de lejano (far-IR)| 15 - 1000 $\mu$m | 20 -0.3 THz|82 - 1.24 meV |
+# |Infrarrojo lejano (far-IR)| 15 - 1000 $\mu$m | 20 -0.3 THz|82 - 1.24 meV |
 
 # - 1 eV = $1.602\times 10^{−19}$ J es un **electron volt**. Representa la energía cinética de un electron bajo un potencial de 1 volt.
 
@@ -306,13 +308,7 @@ YouTubeVideo('1uE2lvVkKW0', width=600, height=400,  playsinline=0)
 
 # La siguiente tabla es útil para la conversión de unidades:
 # 
-# | -- |$\lambda$ (nm)|$\lambda$ ($\mu$m)| $\nu$ (Hz) | $\omega$ (rad/s)| $E_{\hbar\omega}$ (eV)|
-# |:-:|:------------:|:---------------:|:----------:|:---------------:|:------------:| 
-# |$\lambda$ (nm)|--|$\lambda\cdot 10^{-3}$|$\frac{c_0}{\lambda}\cdot 10^9$|$\frac{2\pi c_0}{\lambda}\cdot 10^9$|$\frac{h c_0}{\lambda}\cdot 10^9$|
-# |$\lambda$ ($\mu$m)|$\lambda\cdot 10^{3}$|--|$\frac{c_0}{\lambda}\cdot 10^6$|$\frac{2\pi c_0}{\lambda}\cdot 10^6$|$\frac{h c_0}{\lambda}\cdot 10^6$|
-# |$\nu$ (Hz)|$\frac{c_0}{\nu}\cdot 10^{-9}$|$\frac{c_0}{\nu}\cdot 10^{-6}$|--|$2\pi\nu$|$h\nu $|
-# |$\omega$ (rad/s)|$\frac{2\pi c_0}{\omega}\cdot 10^{-9}$|$\frac{2\pi c_0}{\omega}\cdot 10^{-6}$|$\frac{\omega}{2\pi}$|--|$\hbar\omega $|
-# |$E_{\hbar\omega}$ (eV)|$\frac{2\pi\hbar c_0}{E_{\hbar\omega}}\cdot 10^{-9}$|$\frac{2\pi\hbar c_0}{E_{\hbar\omega}}\cdot 10^{-6}$|$\frac{E_{\hbar\omega}}{2\pi\hbar}$|$\frac{E_{\hbar\omega}}{\hbar}$|--|
+# <img src="./images/conversion_table.png" width="600px" align= center>
 
 # - $h = 4.136\times 10^{−15}$ eV/Hz es la **constante de Planck**.
 # - $\hbar = \frac{h}{2\pi} = 6.582\times10^{−16}$ eV/Hz es la **constante reducida de Planck o constante de Dirac**.
@@ -320,8 +316,8 @@ YouTubeVideo('1uE2lvVkKW0', width=600, height=400,  playsinline=0)
 # El espectro electromagnético nos sirve como referencia para clasificar el tipo de interacción con la materia. Así, en base a nuestra clásificación de modos de vibración de la materia, en general tenemos:
 # 
 # - Absorción interbanda: espectro UV y vis
-# - $\omega_p$ (modelo de Drude): espectro vis y near-IR
-# - $\omega_n$ (modelo de Lorentz): mid-IR
+# - Resonancia de plasma de electrones, $\omega_p$ (modelo de Drude): espectro vis y near-IR
+# - Resonancia de vibraciones moleculares, $\omega_n$ (modelo de Lorentz): mid-IR
 
 # ## Referencias
 # - Rao S. S. **Chapter 4 - Vibration Under General Forcing Conditions** in *Mechanical Vibrations*, 6th Ed, Pearson, 2018

@@ -13,7 +13,7 @@ div.inner_cell>div.text_cell_render.rendered_html {
 }
 
 div.inner_cell>div.text_cell_render.rendered_html img{
-    max-height: 400px;
+    max-height: 450px;
     max-width: 1000px;
     height: auto;
     width: auto;

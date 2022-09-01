@@ -7,9 +7,6 @@
 # Profesor: Francisco Ramírez CueSvas<br>
 # Fecha: 19 de Agosto 2022
 
-# <h1>Tabla de contenidos<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Ecuaciones-de-Maxwell-en-un-medio" data-toc-modified-id="Ecuaciones-de-Maxwell-en-un-medio-1">Ecuaciones de Maxwell en un medio</a></span><ul class="toc-item"><li><span><a href="#Vector-de-Poynting" data-toc-modified-id="Vector-de-Poynting-1.1">Vector de Poynting</a></span></li><li><span><a href="#Condiciones-de-borde" data-toc-modified-id="Condiciones-de-borde-1.2">Condiciones de borde</a></span></li></ul></li><li><span><a href="#Reflexión-y-transmisión-de-ondas-electromagnéticas-en-una-interface" data-toc-modified-id="Reflexión-y-transmisión-de-ondas-electromagnéticas-en-una-interface-2">Reflexión y transmisión de ondas electromagnéticas en una interface</a></span><ul class="toc-item"><li><span><a href="#Coeficientes-de-Fresnel" data-toc-modified-id="Coeficientes-de-Fresnel-2.1">Coeficientes de Fresnel</a></span></li><li><span><a href="#Reflectividad-y-transmisividad" data-toc-modified-id="Reflectividad-y-transmisividad-2.2">Reflectividad y transmisividad</a></span></li><li><span><a href="#Casos-particulares" data-toc-modified-id="Casos-particulares-2.3">Casos particulares</a></span></li></ul></li><li><span><a href="#Reflección-y-transmissión-en-películas-delgadas" data-toc-modified-id="Reflección-y-transmissión-en-películas-delgadas-3">Reflección y transmissión en películas delgadas</a></span></li><li><span><a href="#Referencias" data-toc-modified-id="Referencias-4">Referencias</a></span></li></ul></div>
-
 # ## Ecuaciones de Maxwell en un medio
 
 # La materia esta compuesta por cargas (electrónes, átomos, moléculas). Por lo tanto, a diferencia del vacío, la densidad de carga ($\rho$) y de corriente ($\vec{J}$) eléctricas están presentes en las ecuaciones de Maxwell:
