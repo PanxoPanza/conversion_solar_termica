@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -134,6 +132,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../4_Scattering/4_Scattering.html">
    4. Scattering electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5_TransporteRadiativo/5_TransporteRadiativo.html">
+   5. Transporte Radiativo
   </a>
  </li>
 </ul>
@@ -1119,10 +1122,16 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1.0)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">iadpython</span> <span class="k">as</span> <span class="nn">iad</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">empylib.miescattering</span> <span class="k">as</span> <span class="nn">mie</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;iadpython&#39;
 </pre></div>
 </div>
-<img alt="../_images/Tutorial1_30_1.png" src="../_images/Tutorial1_30_1.png" />
 </div>
 </div>
 </section>
