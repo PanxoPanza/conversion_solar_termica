@@ -393,7 +393,7 @@ def g(n1=1.0, n2=1.5):
 # 
 # <img src="./images/reflectance_thinfilm.png" width="600px" align= center>
 
-# Considerando los medios 1,2 y 3, ordenados consecutivamente en dirección de la onda incidente, se puede demostrar que en este caso los coeficientes de Fresnel, para indices de refracción reales son:
+# Considerando los medios 1,2 y 3 ordenados consecutivamente en dirección de la onda incidente, con el medio 2 condicionado por un espesor $d$, se puede demostrar que en este caso los coeficientes de Fresnel, para indices de refracción reales son:
 # 
 # \begin{align}
 # r &= \frac{r_{12}+r_{23}e^{2i\varphi_2}}
@@ -403,7 +403,7 @@ def g(n1=1.0, n2=1.5):
 #           {1+r_{12}r_{23}e^{2i\varphi_2}}
 # \end{align}
 # 
-# donde $\varphi_2 = N_2k_0\cos\theta_i$; $r_{12}$, $r_{23}$ y $t_{12}$, $t_{23}$ son, respectivamente, los coeficientes de Fresnel desde el medio 1 al medio 2, y desde el medio 2 al medio 3. Estas fórmulas son válidas tanto para ondas TE como para ondas TM.
+# donde $\varphi_2 = N_2k_0d\cos\theta_2$ ($\theta_2$ es el ángulo de transmisión en el medio 2); $r_{12}$, $r_{23}$ y $t_{12}$, $t_{23}$ son, respectivamente, los coeficientes de Fresnel desde el medio 1 al medio 2, y desde el medio 2 al medio 3. Estas fórmulas son válidas tanto para ondas TE como para ondas TM.
 
 # Basado en estas expresiones, podemos calcular la reflectividad y tranmissividad de la película:
 # 

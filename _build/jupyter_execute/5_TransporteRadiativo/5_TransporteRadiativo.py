@@ -306,7 +306,7 @@ plt.show()
 
 # Consideremos una atmosfera compuesta de aire ($N_h = 1.0$) y una pequeña concentración ($f_v = 1\times 10^{-6}~\%$) de partículas de 10 nm de diámetro e índice de refracción $N_p = 1.5$. El espesor de la atmosfera es $t_\mathrm{atm} = 100~\mathrm{km}$
 
-# In[7]:
+# In[42]:
 
 
 import empylib.rad_transfer as rt
@@ -352,7 +352,7 @@ def plot_atmosphere(theta_sun):
     ax2.set_facecolor('k')
 
 
-# In[8]:
+# In[43]:
 
 
 from ipywidgets import interact
@@ -367,7 +367,7 @@ def g(theta_sun=0):
 
 # Consideremos un material de sílice de espesor $t_\mathrm{film} = 5~\mathrm{mm}$. Evaluaremos los colores de este material en transmisión y reflección para luz incidente normal a la superficie en función de la concentración y el diámetro de las partículas. Utilizamos la función ```ad_rad_transfer``` de la librería ```empylib.rad_transfer```
 
-# In[9]:
+# In[100]:
 
 
 import empylib.rad_transfer as rt
@@ -432,7 +432,7 @@ def plot_glass_silver(fv,D):
     plt.subplots_adjust(wspace=0.3)
 
 
-# In[10]:
+# In[101]:
 
 
 from ipywidgets import interact
@@ -448,13 +448,13 @@ def g(fv=30, D = 140):
 
 # Como aproximación, consideremos un medio de espesor $1$ cm, compuesto por agua $N_h = 1.3$ y pequeñas partículas esféricas de aceite $N_p = 1.5$. La emulsión considera un 60% de partículas de aceite por volumen.
 
-# In[11]:
+# In[126]:
 
 
 get_ipython().run_cell_magic('capture', 'showplot', "# import empylib.nklib as nk\nimport numpy as np\nimport empylib.rad_transfer as rt\n\n# Solo modificar estos parámetros\n#---------------------------------------------------------------\nlam = np.linspace(0.3,1.0,100) # espectro de longitudes de onda\ntfilm = 10                     # espesor en mm\nNh = 1.3                       # indice de refracción del agua\nfv = 0.6                       # fracción de volúmen de los poros\nD = 1.5                        # diámetro de los poros (micrones)\nNp = 1.5*np.ones(lam.shape)    # índice de refracción partículas de aceite\n#---------------------------------------------------------------\n\nRtot, Ttot = rt.ad_rad_transfer(lam,tfilm,N,fv,D,Np)\n\nfig, ax = plt.subplots()\nfig.set_size_inches(7, 5)\nplt.rcParams['font.size'] = '16'\nax.plot(lam,Rtot,'-r',label='R')\nax.plot(lam,Ttot,'-b',label='T')\nax.set_xlabel('Longitud de onda ($\\mu$m)')\nax.set_ylabel('Reflectividad / Transmisividad')\nax.set_title(r'Leche (fv = %.0f %%)' % (fv*100))\nax.legend()\nax.set_ylim(0,1)\nplt.show\n")
 
 
-# In[12]:
+# In[127]:
 
 
 showplot()

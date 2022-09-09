@@ -50,8 +50,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -136,6 +134,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../4_Scattering/4_Scattering.html">
    4. Scattering electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5_TransporteRadiativo/5_TransporteRadiativo.html">
+   5. Transporte Radiativo
   </a>
  </li>
 </ul>
@@ -446,8 +449,8 @@ Fecha: 19 de Agosto 2022</p>
 <div><p>En general, existe un tercer término asociado con la polarización magnética del material. Sin embargo, en este curso veremos solo materiales paramagnéticos y, por lo tanto, este término será ignorado.</p>
 </div></blockquote>
 <p>Asumiendo un medio homogéneo, y mediante la relación:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fa575011-fd81-4603-b344-0cc75cfbc867">
-<span class="eqno">(16)<a class="headerlink" href="#equation-fa575011-fd81-4603-b344-0cc75cfbc867" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-424ba732-f3b2-482e-8916-1dc73085172e">
+<span class="eqno">(16)<a class="headerlink" href="#equation-424ba732-f3b2-482e-8916-1dc73085172e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vec{D} = \varepsilon_0\varepsilon\vec{E}
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\vec{D}\)</span> es el desplazamiento eléctrico, y <span class="math notranslate nohighlight">\(\varepsilon = \varepsilon' + i\varepsilon''\)</span>, es la <strong>constante dieléctrica</strong> compleja;</p>
@@ -461,8 +464,8 @@ Fecha: 19 de Agosto 2022</p>
 \end{align*}\]</div>
 <p>Estas ecuaciones tiene la misma forma que las ecuaciones de Maxwell en el vacío, y por lo tanto todas las conclusiones anteriores aplican a este caso.</p>
 <p>La gran diferencia está en la relación de dispersión. En este caso:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-47b0de09-fb5b-46dc-b114-70a3da68aac7">
-<span class="eqno">(17)<a class="headerlink" href="#equation-47b0de09-fb5b-46dc-b114-70a3da68aac7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b9d8d787-1cf0-4f76-8c26-fcc30b7929e7">
+<span class="eqno">(17)<a class="headerlink" href="#equation-b9d8d787-1cf0-4f76-8c26-fcc30b7929e7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k = N \frac{\omega}{c_0}
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(N = \sqrt{\varepsilon} = n +i\kappa\)</span>, es el <strong>índice de refracción complejo</strong>. En general <span class="math notranslate nohighlight">\(n\)</span> se conoce como el <strong>índice de refracción</strong>, y <span class="math notranslate nohighlight">\(\kappa\)</span> como <strong>extinsión</strong>.</p>
@@ -486,8 +489,8 @@ k = N \frac{\omega}{c_0}
 <p>Las ondas electromagnéticas aceleran las cargas libres, generando <strong>corrientes eléctricas inducidas</strong>. Algunas cargas libres móbiles colicionan con otros electrónes o núcleos, disipando energía. Esta respuesta está representada por la parte imaginaria de la constante dieléctrica (<span class="math notranslate nohighlight">\(\varepsilon''\)</span>).</p>
 <p>Esta discipación de energía está representada por la resistencia eléctrica, y es la reponsable de la generación de calor en metaeles.</p>
 <p>De hecho, la conductividad eléctrica <span class="math notranslate nohighlight">\(\sigma\)</span> en la ley de Ohm, <span class="math notranslate nohighlight">\(\vec{J} = \sigma\vec{E}\)</span>, está relacionada con la parte imaginaria de la constante dielectrica por:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d7fe0283-32ff-4329-8d18-3539d4aac62e">
-<span class="eqno">(18)<a class="headerlink" href="#equation-d7fe0283-32ff-4329-8d18-3539d4aac62e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-836dab09-71b2-4c29-ad38-da26843d7f1f">
+<span class="eqno">(18)<a class="headerlink" href="#equation-836dab09-71b2-4c29-ad38-da26843d7f1f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sigma = \varepsilon_0\omega\varepsilon''
 \end{equation}\]</div>
 <a class="reference internal image-reference" href="../_images/light_bulb.jpg"><img alt="../_images/light_bulb.jpg" class="align-center" src="../_images/light_bulb.jpg" style="width: 300px;" /></a>
@@ -516,8 +519,8 @@ donde <span class="math notranslate nohighlight">\(N = n + i\kappa\)</span> es e
 <center> Esquema de una onda electromagnética en un material</center><section id="vector-de-poynting">
 <h3>Vector de Poynting<a class="headerlink" href="#vector-de-poynting" title="Permalink to this headline">#</a></h3>
 <p>El vector de Poynting, <span class="math notranslate nohighlight">\(\vec{S}\)</span>, representa el flujo de energía electromagnética por unidad de área. Está dado por la relación:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1f96f0e4-b9f3-48d6-a2c0-088acb19f2a1">
-<span class="eqno">(19)<a class="headerlink" href="#equation-1f96f0e4-b9f3-48d6-a2c0-088acb19f2a1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bd12f808-08d0-44a0-af23-d174a17a2c7f">
+<span class="eqno">(19)<a class="headerlink" href="#equation-bd12f808-08d0-44a0-af23-d174a17a2c7f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \langle\vec{S}\rangle = \frac{1}{2}\mathrm{Re}\left(\vec{E}\times\vec{H}^*\right),
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\langle\cdots\rangle\)</span> reprensenta el promedio en un periodo, y <span class="math notranslate nohighlight">\(^*\)</span> reprenta el complejo conjugado.</p>
@@ -546,8 +549,8 @@ donde <span class="math notranslate nohighlight">\(N = n + i\kappa\)</span> es e
 </div></blockquote>
 <p><strong>¿Que sucede cuando una onda electromagnética encuentra la frontera entre dos medios distintos?</strong></p>
 <p>Como toda ecuación diferencial, la solución particular de las ecuaciones de Maxwell está definida por las condiciones de borde. Estas condiciones de borde surgen al aplicar las ecuaciones de Maxwell en una frontera (cuya derivación no revisaremos aqui). En general son 4 condiciones de borde. Sin embargo, para los problemas que veremos en este curso solo se necesitan dos:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7e63469b-4969-40c4-9427-6823fe3115f9">
-<span class="eqno">(20)<a class="headerlink" href="#equation-7e63469b-4969-40c4-9427-6823fe3115f9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4888c217-279a-4bbe-93c8-c6103df6947a">
+<span class="eqno">(20)<a class="headerlink" href="#equation-4888c217-279a-4bbe-93c8-c6103df6947a" title="Permalink to this equation">#</a></span>\[\begin{align}
 E^{\parallel}_1 - E^{\parallel}_2 &amp;= 0 \\
 H^{\parallel}_1 - H^{\parallel}_2 &amp;= 0
 \end{align}\]</div>
@@ -637,18 +640,18 @@ n_1\sin\theta_i = n_1\sin\theta_r = n_2\sin\theta_t
 \theta_i = \theta_r\quad\quad\mathrm{y}\quad\quad n_1\sin\theta_i = n_2\sin\theta_t
 \end{equation*}\]</div>
 <p>Finalmente, la condición de borde del campo eléctrico queda:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bfd3f81e-a4fe-49be-a099-c56d94c314d6">
-<span class="eqno">(21)<a class="headerlink" href="#equation-bfd3f81e-a4fe-49be-a099-c56d94c314d6" title="Permalink to this equation">#</a></span>\[\begin{equation}\label{eq:boundaryE}
+<div class="amsmath math notranslate nohighlight" id="equation-d0e7170c-9a3a-44af-900f-9c360400aadb">
+<span class="eqno">(21)<a class="headerlink" href="#equation-d0e7170c-9a3a-44af-900f-9c360400aadb" title="Permalink to this equation">#</a></span>\[\begin{equation}\label{eq:boundaryE}
 E_i\cos\theta_i +E_r\cos\theta_r  - E_t\cos\theta_t = 0
 \end{equation}\]</div>
 <p>De igual forma, de la condición de borde <span class="math notranslate nohighlight">\(H^{\parallel}_1 - H^{\parallel}_2 = 0\)</span>, deducimos:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-08c4b30c-c918-4168-9461-8161c5e281fa">
-<span class="eqno">(22)<a class="headerlink" href="#equation-08c4b30c-c918-4168-9461-8161c5e281fa" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0bd3c7b4-d980-495a-8ba1-18f015df15b9">
+<span class="eqno">(22)<a class="headerlink" href="#equation-0bd3c7b4-d980-495a-8ba1-18f015df15b9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 n_1E_i - n_1E_r  - n_2E_t = 0 \label{eq:boundaryH}
 \end{equation}\]</div>
 <p>A partir de estas dos ecuaciones, determinamos los coeficientes de Fresnel de reflexión (<span class="math notranslate nohighlight">\(r_\mathrm{TM}\)</span>) y transmisión (<span class="math notranslate nohighlight">\(t_\mathrm{TM}\)</span>) para una onda TM:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-33ba8632-fd02-4e0f-a4ee-6226ed336893">
-<span class="eqno">(23)<a class="headerlink" href="#equation-33ba8632-fd02-4e0f-a4ee-6226ed336893" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e63e5a50-98f4-4511-ae8d-e837d67c2eba">
+<span class="eqno">(23)<a class="headerlink" href="#equation-e63e5a50-98f4-4511-ae8d-e837d67c2eba" title="Permalink to this equation">#</a></span>\[\begin{align}
 r_\mathrm{TM} &amp;= \frac{E_r^\mathrm{TM}}{E_i^\mathrm{TM}} = \frac{n_1\cos\theta_t-n_2\cos\theta_i}
 {n_1\cos\theta_t+n_2\cos\theta_i}
 \\[10pt]
@@ -656,8 +659,8 @@ t_\mathrm{TM} &amp;= \frac{E_t^\mathrm{TM}}{E_i^\mathrm{TM}} =\frac{2n_1\cos\the
 {n_1\cos\theta_t+n_2\cos\theta_i}
 \end{align}\]</div>
 <p>Similarmente, para una onda transversal eléctrica (TE), los coeficientes de Fresnel son:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a4d33400-67fb-40af-980e-90acc9b7c5fd">
-<span class="eqno">(24)<a class="headerlink" href="#equation-a4d33400-67fb-40af-980e-90acc9b7c5fd" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-78cddd7b-e9bf-404b-a32d-0c611e55af34">
+<span class="eqno">(24)<a class="headerlink" href="#equation-78cddd7b-e9bf-404b-a32d-0c611e55af34" title="Permalink to this equation">#</a></span>\[\begin{align}
 r_\mathrm{TE} &amp;= \frac{E_r^\mathrm{TE}}{E_i^\mathrm{TE}} = \frac{n_1\cos\theta_i -n_2\cos\theta_t}
 {n_1\cos\theta_i+n_2\cos\theta_t}
 \\[10pt]
@@ -681,22 +684,22 @@ t_\mathrm{TE} &amp;= \frac{E_t^\mathrm{TE}}{E_i^\mathrm{TE}} = \frac{2n_1\cos\th
 \end{eqnarray*}\]</div>
 <p>La <strong>reflectividad (<span class="math notranslate nohighlight">\(R\)</span>)</strong> y <strong>transmissivitdad (<span class="math notranslate nohighlight">\(T\)</span>)</strong> se definen, repectivamente, como <strong>el flujo de energía reflejada y transmitida relativa al flujo de energía incidente, y en dirección normal a la interface.</strong></p>
 <p>Así, considerando la componente del vector de Poynting normal a <span class="math notranslate nohighlight">\(\hat{n}\)</span> (notar que <span class="math notranslate nohighlight">\(\hat{n} = - \hat{z}\)</span> en nuestro ejemplo), tenemos:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-52e001de-4b7c-4c44-94aa-97325aad8069">
-<span class="eqno">(25)<a class="headerlink" href="#equation-52e001de-4b7c-4c44-94aa-97325aad8069" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-53f4ef65-3ecd-4e58-890f-ecf742643c7f">
+<span class="eqno">(25)<a class="headerlink" href="#equation-53f4ef65-3ecd-4e58-890f-ecf742643c7f" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 R_\mathrm{TM} &amp;=&amp; \frac{S_{r,z}^\mathrm{TM}}{S_{i,z}^\mathrm{TM}} &amp;=&amp; \lvert r_\mathrm{TM}\rvert^2
 \\[10pt]
 T_\mathrm{TM} &amp;=&amp; \frac{S_{t,z}^\mathrm{TM}}{S_{i,z}^\mathrm{TM}} &amp;=&amp; \frac{\mathrm{Re}\left(N_2^*\cos\theta_t\right)}{\mathrm{Re}\left(N_1^*\cos\theta_i\right)}\lvert t_\mathrm{TM}\rvert^2
 \end{eqnarray}\]</div>
 <p>De igual forma, para una onda TE, tenemos</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9fe1a05f-7803-48d8-a367-765f717923c7">
-<span class="eqno">(26)<a class="headerlink" href="#equation-9fe1a05f-7803-48d8-a367-765f717923c7" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-aae8c6fd-501f-4e58-8c9b-b94a00985e55">
+<span class="eqno">(26)<a class="headerlink" href="#equation-aae8c6fd-501f-4e58-8c9b-b94a00985e55" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 R_\mathrm{TE} &amp;=&amp; \lvert r_\mathrm{TE}\rvert^2
 \\[10pt]
 T_\mathrm{TE} &amp;=&amp; \frac{\mathrm{Re}\left(N_2\cos\theta_t\right)}{\mathrm{Re}\left(N_1\cos\theta_i\right)}\lvert t_\mathrm{TE}\rvert^2
 \end{eqnarray}\]</div>
 <p>Notar que por conservación de energía:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6b956d0c-90f9-41eb-acd5-f03f11deffe6">
-<span class="eqno">(27)<a class="headerlink" href="#equation-6b956d0c-90f9-41eb-acd5-f03f11deffe6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-adcf7a4f-840c-408e-a9db-4a36063332ad">
+<span class="eqno">(27)<a class="headerlink" href="#equation-adcf7a4f-840c-408e-a9db-4a36063332ad" title="Permalink to this equation">#</a></span>\[\begin{equation}
 R + T = 1
 \end{equation}\]</div>
 </section>
@@ -736,12 +739,12 @@ R + T = 1
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_663</span><span class="o">/</span><span class="mf">3392137778.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">empylib.fresnel</span> <span class="kn">import</span> <span class="n">interface</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># Ángulo de incidencia</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Reflectividad en una interface</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;empylib&#39;
 </pre></div>
@@ -769,8 +772,8 @@ R + T = 1
 <p>Así, si giramos los lentes en posición vertical (asumiento lentes con alto nivel de polarización), el efecto se invierte. Es decir, las ondas TE se transmiten y las TM no.</p>
 <p>Por otro lado, cuando <span class="math notranslate nohighlight">\(n_1 &gt; n_2\)</span>, vemos que <span class="math notranslate nohighlight">\(R_\mathrm{TM} = R_\mathrm{TE} = 0\)</span> sobre cierto ángulo. Este ángulo se denomina <strong>ángulo crítico (<span class="math notranslate nohighlight">\(\theta_c\)</span>).</strong> Para deterinar el ángulo crítico usamos la ley de Snell.</p>
 <p>El ángulo máximo para la onda transmitida es <span class="math notranslate nohighlight">\(\theta_t = 90^o\)</span>, la ley de Snell nos indica que existe un ángulo crítico. Sobre este valor, no existe solución real.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d3d7e628-8d77-4f11-8dbc-2c83addb3def">
-<span class="eqno">(28)<a class="headerlink" href="#equation-d3d7e628-8d77-4f11-8dbc-2c83addb3def" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1f318ab7-afc6-4ca0-9bc4-87ebd276511c">
+<span class="eqno">(28)<a class="headerlink" href="#equation-1f318ab7-afc6-4ca0-9bc4-87ebd276511c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 n_1\sin\theta_c = n_2\sin90^o \Rightarrow \theta_c = \arcsin\left(n_2/n_1\right)
 \end{equation}\]</div>
 <p><strong>Para <span class="math notranslate nohighlight">\(\theta_i &gt; \theta_c\)</span>, <span class="math notranslate nohighlight">\(R_\mathrm{TE} = R_\mathrm{TM} = 1\)</span>.</strong></p>
@@ -782,19 +785,19 @@ n_1\sin\theta_c = n_2\sin90^o \Rightarrow \theta_c = \arcsin\left(n_2/n_1\right)
 <h2>Reflección y transmissión en películas delgadas<a class="headerlink" href="#refleccion-y-transmission-en-peliculas-delgadas" title="Permalink to this headline">#</a></h2>
 <p>En el caso materiales de película delgada, las ondas electromagnéticas se reflejan y transmiten múltiples veces.</p>
 <a class="reference internal image-reference" href="../_images/reflectance_thinfilm.png"><img alt="../_images/reflectance_thinfilm.png" class="align-center" src="../_images/reflectance_thinfilm.png" style="width: 600px;" /></a>
-<p>Considerando los medios 1,2 y 3, ordenados consecutivamente en dirección de la onda incidente, se puede demostrar que en este caso los coeficientes de Fresnel, para indices de refracción reales son:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f74af099-9d23-470a-9954-16ba87d094fe">
-<span class="eqno">(29)<a class="headerlink" href="#equation-f74af099-9d23-470a-9954-16ba87d094fe" title="Permalink to this equation">#</a></span>\[\begin{align}
+<p>Considerando los medios 1,2 y 3 ordenados consecutivamente en dirección de la onda incidente, con el medio 2 condicionado por un espesor <span class="math notranslate nohighlight">\(d\)</span>, se puede demostrar que en este caso los coeficientes de Fresnel, para indices de refracción reales son:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a702f79a-b9f3-416c-a3e3-6439b450dd11">
+<span class="eqno">(29)<a class="headerlink" href="#equation-a702f79a-b9f3-416c-a3e3-6439b450dd11" title="Permalink to this equation">#</a></span>\[\begin{align}
 r &amp;= \frac{r_{12}+r_{23}e^{2i\varphi_2}}
           {1+r_{12}r_{23}e^{2i\varphi_2}}
 \\[10pt]
 t &amp;= \frac{t_{12}t_{23}e^{i\varphi_2}}
           {1+r_{12}r_{23}e^{2i\varphi_2}}
 \end{align}\]</div>
-<p>donde <span class="math notranslate nohighlight">\(\varphi_2 = N_2k_0\cos\theta_i\)</span>; <span class="math notranslate nohighlight">\(r_{12}\)</span>, <span class="math notranslate nohighlight">\(r_{23}\)</span> y <span class="math notranslate nohighlight">\(t_{12}\)</span>, <span class="math notranslate nohighlight">\(t_{23}\)</span> son, respectivamente, los coeficientes de Fresnel desde el medio 1 al medio 2, y desde el medio 2 al medio 3. Estas fórmulas son válidas tanto para ondas TE como para ondas TM.</p>
+<p>donde <span class="math notranslate nohighlight">\(\varphi_2 = N_2k_0d\cos\theta_2\)</span> (<span class="math notranslate nohighlight">\(\theta_2\)</span> es el ángulo de transmisión en el medio 2); <span class="math notranslate nohighlight">\(r_{12}\)</span>, <span class="math notranslate nohighlight">\(r_{23}\)</span> y <span class="math notranslate nohighlight">\(t_{12}\)</span>, <span class="math notranslate nohighlight">\(t_{23}\)</span> son, respectivamente, los coeficientes de Fresnel desde el medio 1 al medio 2, y desde el medio 2 al medio 3. Estas fórmulas son válidas tanto para ondas TE como para ondas TM.</p>
 <p>Basado en estas expresiones, podemos calcular la reflectividad y tranmissividad de la película:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-df59ffa1-3d98-4d12-8775-524f3ef86a0e">
-<span class="eqno">(30)<a class="headerlink" href="#equation-df59ffa1-3d98-4d12-8775-524f3ef86a0e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1be42671-3308-46fd-a640-58ce5bfa0477">
+<span class="eqno">(30)<a class="headerlink" href="#equation-1be42671-3308-46fd-a640-58ce5bfa0477" title="Permalink to this equation">#</a></span>\[\begin{align}
 R = {\lvert r\rvert}^2 &amp;= \frac{r_{12}^2+r_{23}^2+2r_{12}r_{23}\cos 2\varphi_2}
                               {1 + 2r_{12}r_{23}\cos 2\varphi_2 + r_{12}^2r_{23}^2}
 \\[10pt]
