@@ -1,0 +1,1184 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Tutorial &#8212; MEC501 - Manejo y conversión de energía solar térmica</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MEC501 - Manejo y conversión de energía solar térmica</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Bienvenidos al curso
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0_introduccion/0_introduccion.html">
+   0. Introducción al curso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_ondas_electromagneticas/1_ondas_electromagneticas.html">
+   1. La radiación como un fenómeno electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html">
+   2. Ondas electromagnéticas en la materia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Interacci%C3%B3n_materia-luz/3_Interacci%C3%B3n_materia-luz.html">
+   3. Interacción materia-luz
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Scattering/4_Scattering.html">
+   4. Scattering electromagnético
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Tutorial/Tutorial1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/Tutorial/Tutorial1.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrucciones-de-instalacion">
+   Instrucciones de instalación
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indices-de-refraccion-nklib">
+   Índices de refracción (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     nklib
+    </span>
+   </code>
+   )
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#valores-tabulados">
+     Valores tabulados
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelos-de-drude-y-lorentz">
+     Modelos de Drude y Lorentz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reflexion-transmission-waveoptics">
+   Reflexión/Transmissión (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     waveoptics
+    </span>
+   </code>
+   )
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#luz-incidente-en-una-interface-interface">
+     Luz incidente en una interface (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       interface
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#luz-incidente-en-arreglos-multicapas-multilayer">
+     Luz incidente en arreglos multicapas (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       multilayer
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#luz-incoherente-en-arreglos-multicapas-incoh-multilayer">
+     Luz incoherente en arreglos multicapas (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       incoh_multilayer
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scattering-de-mie-miescattering">
+   Scattering de mie (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     miescattering
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transporte-radiativo">
+   Transporte Radiativo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#beer-lambert-t-beer-lambert">
+     Beer-Lambert (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       T_beer_lambert
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scattering-multiple-iadpython">
+     Scattering multiple (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       iadpython
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Tutorial</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrucciones-de-instalacion">
+   Instrucciones de instalación
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indices-de-refraccion-nklib">
+   Índices de refracción (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     nklib
+    </span>
+   </code>
+   )
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#valores-tabulados">
+     Valores tabulados
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelos-de-drude-y-lorentz">
+     Modelos de Drude y Lorentz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reflexion-transmission-waveoptics">
+   Reflexión/Transmissión (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     waveoptics
+    </span>
+   </code>
+   )
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#luz-incidente-en-una-interface-interface">
+     Luz incidente en una interface (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       interface
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#luz-incidente-en-arreglos-multicapas-multilayer">
+     Luz incidente en arreglos multicapas (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       multilayer
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#luz-incoherente-en-arreglos-multicapas-incoh-multilayer">
+     Luz incoherente en arreglos multicapas (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       incoh_multilayer
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scattering-de-mie-miescattering">
+   Scattering de mie (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     miescattering
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transporte-radiativo">
+   Transporte Radiativo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#beer-lambert-t-beer-lambert">
+     Beer-Lambert (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       T_beer_lambert
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scattering-multiple-iadpython">
+     Scattering multiple (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       iadpython
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><strong>M501 - Manejo y conversión de energía solar térmica</strong></p>
+<section class="tex2jax_ignore mathjax_ignore" id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">#</a></h1>
+<p>Este es un tutorial para utilizar las librerías de funciones para el curso. Utilizaremos dos librerías:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">empylib</span></code>: Cálculos de reflectividad, transmisividad, scattering de Mie, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iadpyathon</span></code>: Simulaciones de scattering multiple</p></li>
+</ul>
+<section id="instrucciones-de-instalacion">
+<h2>Instrucciones de instalación<a class="headerlink" href="#instrucciones-de-instalacion" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>La librería <code class="docutils literal notranslate"><span class="pre">empylib</span></code> esta disponible desde github ejecutando la siguiente sentencia en una celda de este notebook:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!git clone https://github.com/PanxoPanza/empylib.git
+</pre></div>
+</div>
+<p>Esto descargará una carpeta “empylib” con todos los módulos necesarios. <strong>Ejecutar solo una vez para descar la carpeta</strong> Posteriormente, no es necesario volver a ejecutar esta línea.</p>
+<ul class="simple">
+<li><p>La libería <code class="docutils literal notranslate"><span class="pre">iadpython</span></code> debe ser instalada desde pip, ejecutando el siguiente script en una celda de este notebook</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>import sys
+!{sys.executable} -m pip install iadpython
+</pre></div>
+</div>
+<p>Esta instancia debe ser ejecutada solo una vez.</p>
+<h1>Contenidos<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Instrucciones-de-instalación" data-toc-modified-id="Instrucciones-de-instalación-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Instrucciones de instalación</a></span></li><li><span><a href="#Índices-de-refracción-(nklib)" data-toc-modified-id="Índices-de-refracción-(nklib)-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Índices de refracción (<code>nklib</code>)</a></span><ul class="toc-item"><li><span><a href="#Valores-tabulados" data-toc-modified-id="Valores-tabulados-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Valores tabulados</a></span></li><li><span><a href="#Modelos-de-Drude-y-Lorentz" data-toc-modified-id="Modelos-de-Drude-y-Lorentz-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Modelos de Drude y Lorentz</a></span></li></ul></li><li><span><a href="#Reflexión/Transmissión-(waveoptics)" data-toc-modified-id="Reflexión/Transmissión-(waveoptics)-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Reflexión/Transmissión (<code>waveoptics</code>)</a></span><ul class="toc-item"><li><span><a href="#Luz-incidente-en-una-interface-(interface)" data-toc-modified-id="Luz-incidente-en-una-interface-(interface)-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Luz incidente en una interface (<code>interface</code>)</a></span></li><li><span><a href="#Luz-incidente-en-arreglos-multicapas-(multilayer)" data-toc-modified-id="Luz-incidente-en-arreglos-multicapas-(multilayer)-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Luz incidente en arreglos multicapas (<code>multilayer</code>)</a></span></li><li><span><a href="#Luz-incoherente-en-arreglos-multicapas-(incoh_multilayer)" data-toc-modified-id="Luz-incoherente-en-arreglos-multicapas-(incoh_multilayer)-3.3"><span class="toc-item-num">3.3&nbsp;&nbsp;</span>Luz incoherente en arreglos multicapas (<code>incoh_multilayer</code>)</a></span></li></ul></li><li><span><a href="#Scattering-de-mie-(miescattering)" data-toc-modified-id="Scattering-de-mie-(miescattering)-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Scattering de mie (<code>miescattering</code>)</a></span></li><li><span><a href="#Transporte-Radiativo" data-toc-modified-id="Transporte-Radiativo-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Transporte Radiativo</a></span><ul class="toc-item"><li><span><a href="#Beer-Lambert-(T_beer_lambert)" data-toc-modified-id="Beer-Lambert-(T_beer_lambert)-5.1"><span class="toc-item-num">5.1&nbsp;&nbsp;</span>Beer-Lambert (<code>T_beer_lambert</code>)</a></span></li><li><span><a href="#Scattering-multiple-(iadpython)" data-toc-modified-id="Scattering-multiple-(iadpython)-5.2"><span class="toc-item-num">5.2&nbsp;&nbsp;</span>Scattering multiple (<code>iadpython</code>)</a></span></li></ul></li></ul></div></section>
+<section id="indices-de-refraccion-nklib">
+<h2>Índices de refracción (<code class="docutils literal notranslate"><span class="pre">nklib</span></code>)<a class="headerlink" href="#indices-de-refraccion-nklib" title="Permalink to this headline">#</a></h2>
+<section id="valores-tabulados">
+<h3>Valores tabulados<a class="headerlink" href="#valores-tabulados" title="Permalink to this headline">#</a></h3>
+<p>La librería <code class="docutils literal notranslate"><span class="pre">empylib.nklib</span></code> contiene una serie de funciones para determinar el coeficiente de refracción complejo, <span class="math notranslate nohighlight">\(N = n + i\kappa\)</span>.</p>
+<p>Entre la lista de materiales disponibles tenemos:</p>
+<ul class="simple">
+<li><p>Agua (<code class="docutils literal notranslate"><span class="pre">H2O</span></code>)</p></li>
+<li><p>Oro (<code class="docutils literal notranslate"><span class="pre">gold</span></code>)</p></li>
+<li><p>Plata (<code class="docutils literal notranslate"><span class="pre">silver</span></code>)</p></li>
+<li><p>Cobre (<code class="docutils literal notranslate"><span class="pre">Cu</span></code>)</p></li>
+<li><p>Aluminio (<code class="docutils literal notranslate"><span class="pre">Al</span></code>)</p></li>
+<li><p>Silice (<code class="docutils literal notranslate"><span class="pre">SiO2</span></code>)</p></li>
+<li><p>Silicio (<code class="docutils literal notranslate"><span class="pre">Si</span></code>)</p></li>
+<li><p>Dióxido de Titanio (<code class="docutils literal notranslate"><span class="pre">TiO2</span></code>)</p></li>
+</ul>
+<p>Para utilizar las funciones debemos, primero, generar un arreglo con las longitudes de onda que deseamos graficar, y luego evaluar la función para determinar el índice de refracción.</p>
+<p>Por ejemplo, supongamos que necesitamos el índice de refracción del sílice en el espectro <span class="math notranslate nohighlight">\(\lambda\in[0.5,20]\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>   <span class="c1"># arreglo de 100 datos entre 0.5 y 5.0 micrones</span>
+<span class="n">N</span>   <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">SiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>               <span class="c1"># índice de refracción del sílice</span>
+
+<span class="c1"># graficamos el índice de refracción</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;n&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$\kappa$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Índice de refracción&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Tutorial1_3_0.png" src="../_images/Tutorial1_3_0.png" />
+</div>
+</div>
+</section>
+<section id="modelos-de-drude-y-lorentz">
+<h3>Modelos de Drude y Lorentz<a class="headerlink" href="#modelos-de-drude-y-lorentz" title="Permalink to this headline">#</a></h3>
+<p>La librería <code class="docutils literal notranslate"><span class="pre">empylib.nklib</span></code> también posee funciones para determinar el <strong>índice de refracción</strong> a partir de modelos de Drude y Lorentz.</p>
+<blockquote>
+<div><p>Notar que estas funciones entregan el <strong>índice de refracción</strong>. Para esto, cada función toma el modelo de Drude o Lorentz  para determinar la <strong>constante dieléctrica</strong> <span class="math notranslate nohighlight">\(\varepsilon\)</span>, según lo <a class="reference external" href="https://panxopanza.github.io/conversion_solar_termica/3_Interacci%C3%B3n_materia-luz/3_Interacci%C3%B3n_materia-luz.html">visto en clases</a>. Luego el índice de refracción se determina a partir de <span class="math notranslate nohighlight">\(\sqrt{\varepsilon}\)</span></p>
+</div></blockquote>
+<p>Cada modelo requiere una serie de parámetros. Podemos verificar los parámetros requeridos mediante la función <code class="docutils literal notranslate"><span class="pre">help</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">nk</span><span class="o">.</span><span class="n">lorentz</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function lorentz in module empylib.nklib.nklib:
+
+lorentz(epsinf, wp, wn, gamma, lam)
+    Refractive index from Lorentz model
+    
+    Parameters
+    ----------
+    epsinf : float
+        dielectric constant at infinity.
+    wp : float
+        Plasma frequency, in eV (wp^2 = Nq^2/eps0 m).
+    wn : float
+        Natural frequency in eV
+    gamma : float
+        Decay rate in eV
+    lam : linear np.array
+        wavelength spectrum in um
+    
+    Returns
+    -------
+    complex refractive index
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como vemos la función <code class="docutils literal notranslate"><span class="pre">lorentz</span></code> requiere los parámetros <span class="math notranslate nohighlight">\(\omega_p\)</span>, <span class="math notranslate nohighlight">\(\omega_n\)</span> y <span class="math notranslate nohighlight">\(\Gamma\)</span> en unidades de eV, además de <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span>. Por último, la función también requiere el espectro de longitudes de onda en unidades de micrones (um) a partir de la variable <code class="docutils literal notranslate"><span class="pre">lam</span></code>.</p>
+<p>En el siguiente ejemplo, graficaremos el modelo de Lorentz para <span class="math notranslate nohighlight">\(\lambda\in[2,20]\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m, considerando los siguientes parámetros:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\omega_n = 0.124\)</span> eV (<span class="math notranslate nohighlight">\(\approx 10\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\omega_p = 0.150\)</span> eV</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Gamma = 0.01\)</span> eV</p></li>
+<li><p><span class="math notranslate nohighlight">\(\varepsilon_\infty = 2.25\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>   <span class="c1"># arreglo de 100 datos entre 0.5 y 5.0 micrones</span>
+
+<span class="n">wn</span> <span class="o">=</span> <span class="mf">0.124</span>  <span class="c1"># Frecuencia natural (eV)</span>
+<span class="n">wp</span> <span class="o">=</span> <span class="mf">0.150</span>  <span class="c1"># Frecuencia wp (eV)</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mf">0.01</span>    <span class="c1"># Taza de decaimiento (eV)</span>
+<span class="n">eps0</span> <span class="o">=</span> <span class="mf">2.25</span>
+
+<span class="n">N</span>   <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">lorentz</span><span class="p">(</span><span class="n">eps0</span><span class="p">,</span><span class="n">wp</span><span class="p">,</span><span class="n">wn</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">lam</span><span class="p">)</span>  <span class="c1"># índice de refracción modelo de drude</span>
+
+<span class="c1"># graficamos el índice de refracción</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;n&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">N</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$\kappa$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Índice de refracción&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Tutorial1_7_0.png" src="../_images/Tutorial1_7_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="reflexion-transmission-waveoptics">
+<h2>Reflexión/Transmissión (<code class="docutils literal notranslate"><span class="pre">waveoptics</span></code>)<a class="headerlink" href="#reflexion-transmission-waveoptics" title="Permalink to this headline">#</a></h2>
+<p>La librería <code class="docutils literal notranslate"><span class="pre">empylib.waveoptics</span></code> contiene funciones para calcular los coeficientes de Fresnel y Flujo de energía de la porción transmitida y reflejada de la luz incidente.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">interface</span></code> para una <a class="reference external" href="https://panxopanza.github.io/conversion_solar_termica/2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html#coeficientes-de-fresnel">interface simple</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">multilayer</span></code> para multicapas de <a class="reference external" href="https://panxopanza.github.io/conversion_solar_termica/2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html#refleccion-y-transmission-en-peliculas-delgadas">película delgada</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">incoh_multilayer</span></code> para multicapas de película delgada ignorando fenómenos de interferencia (luz incoherente)</p></li>
+</ul>
+<section id="luz-incidente-en-una-interface-interface">
+<h3>Luz incidente en una interface (<code class="docutils literal notranslate"><span class="pre">interface</span></code>)<a class="headerlink" href="#luz-incidente-en-una-interface-interface" title="Permalink to this headline">#</a></h3>
+<p>Esta función permite determinar los coeficientes de Fresnel y flujo de energía para la onda reflejada y transmitida a través de una interface. La función toma 4 argumentos:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">theta</span></code>: ángulo de incidencia (en radianes)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n1</span></code>: índice de refracción del medio sobre la interface</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n2</span></code>: índice de refracción del medio bajo la interface</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pol</span></code>: Polarización de la onda incidente (<code class="docutils literal notranslate"><span class="pre">'TM'</span> </code> o <code class="docutils literal notranslate"><span class="pre">'TE'</span> </code>)</p></li>
+</ul>
+<p>La función necesita como mínimo 3 argumentos: <code class="docutils literal notranslate"><span class="pre">theta</span></code>, <code class="docutils literal notranslate"><span class="pre">n1</span></code>, <code class="docutils literal notranslate"><span class="pre">n2</span></code>. En ese caso, <code class="docutils literal notranslate"><span class="pre">pol=</span> <span class="pre">'TM'</span> </code> por defecto.</p>
+<p>En el orden respectivo, el output es:</p>
+<ul class="simple">
+<li><p>Reflectividad <code class="docutils literal notranslate"><span class="pre">R</span></code> y Tranmisividad <code class="docutils literal notranslate"><span class="pre">T</span></code></p></li>
+<li><p>coefientes de Fresnel de reflexión <code class="docutils literal notranslate"><span class="pre">r</span></code> y transmisión <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p></li>
+</ul>
+<p>En el siguiente ejemplo analizaremos una interface que separa aire (índice de refracción 1.0) y un metal de Drude con <span class="math notranslate nohighlight">\(\omega_p = 3.1\)</span> eV (aprox 0.4 <span class="math notranslate nohighlight">\(\mu\)</span>m), <span class="math notranslate nohighlight">\(\Gamma = 0.01\)</span> eV y <span class="math notranslate nohighlight">\(\varepsilon_\infty = 1.0\)</span>. El ángulo de incidencia es <span class="math notranslate nohighlight">\(\theta_i = 30°\)</span>.</p>
+<blockquote>
+<div><p>Notar que <code class="docutils literal notranslate"><span class="pre">n1=1.0</span></code> es un valor <code class="docutils literal notranslate"><span class="pre">float</span></code> unidimencional, mientras que <code class="docutils literal notranslate"><span class="pre">n2</span></code> es un arreglo en el espectro <span class="math notranslate nohighlight">\(\lambda \in [0.3,1.0]\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m. En este caso, la función repite <code class="docutils literal notranslate"><span class="pre">n1=1.0</span></code> por cada valor espectral de <code class="docutils literal notranslate"><span class="pre">n2</span></code>. <strong>En el caso que <code class="docutils literal notranslate"><span class="pre">n1</span></code> y <code class="docutils literal notranslate"><span class="pre">n2</span></code> sean un arreglo, ambos deben tener igual dimención.</strong></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">empylib.waveoptics</span> <span class="k">as</span> <span class="nn">wv</span>
+<span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
+
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>         <span class="c1"># Angulo de incidencia (radianes)</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># Espectro de longitudes de onda</span>
+
+<span class="c1"># Modelo de Drude</span>
+<span class="n">epsinf</span> <span class="o">=</span> <span class="mf">1.0</span> 
+<span class="n">wp</span> <span class="o">=</span> <span class="mf">3.1</span>      <span class="c1"># en eV (aproximadamente 0.4 micrones)</span>
+<span class="n">gamma</span> <span class="o">=</span> <span class="mf">0.01</span>  <span class="c1"># en eV</span>
+
+<span class="n">n2</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">drude</span><span class="p">(</span><span class="n">epsinf</span><span class="p">,</span><span class="n">wp</span><span class="p">,</span><span class="n">gamma</span><span class="p">,</span><span class="n">lam</span><span class="p">)</span> <span class="c1"># índice de refracción</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="c1"># Coeficientes de Fresnel y flujo de energia</span>
+<span class="n">Rp</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">tp</span> <span class="o">=</span> <span class="n">wv</span><span class="o">.</span><span class="n">interface</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span> <span class="n">pol</span><span class="o">=</span><span class="s1">&#39;TM&#39;</span><span class="p">)</span> <span class="c1"># polarizacion TM</span>
+<span class="n">Rs</span><span class="p">,</span> <span class="n">Ts</span><span class="p">,</span> <span class="n">rs</span><span class="p">,</span> <span class="n">ts</span> <span class="o">=</span> <span class="n">wv</span><span class="o">.</span><span class="n">interface</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span> <span class="n">pol</span><span class="o">=</span><span class="s1">&#39;TE&#39;</span><span class="p">)</span> <span class="c1"># polarizacion TE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Abajo graficamos los coeficientes de Fresnel a la izquierda (solo la parte real) y el flujo de energía a la derecha. Notar como la reflectividad aumenta para <span class="math notranslate nohighlight">\(\lambda &lt; 2\pi c_0/\omega_p\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">rs</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;r (TE)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">rp</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="s1">&#39;--r&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;r (TM)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">ts</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;t (TE)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">tp</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="s1">&#39;--b&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;t (TM)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Coeficientes de Fresnel&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Reflexión / Transmisión&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Rs</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;R (TE)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Rp</span><span class="p">,</span><span class="s1">&#39;--r&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;R (TM)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ts</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;T (TE)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Tp</span><span class="p">,</span><span class="s1">&#39;--b&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;T (TM)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;FLujo de energía&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Reflectividad / Tranmisividad&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function matplotlib.pyplot.show(close=None, block=None)&gt;
+</pre></div>
+</div>
+<img alt="../_images/Tutorial1_13_1.png" src="../_images/Tutorial1_13_1.png" />
+</div>
+</div>
+</section>
+<section id="luz-incidente-en-arreglos-multicapas-multilayer">
+<h3>Luz incidente en arreglos multicapas (<code class="docutils literal notranslate"><span class="pre">multilayer</span></code>)<a class="headerlink" href="#luz-incidente-en-arreglos-multicapas-multilayer" title="Permalink to this headline">#</a></h3>
+<p>Esta función permite determinar los coeficientes de Fresnel y flujo de energía para la onda reflejada y transmitida a través de un arreglo de multicapas. La función toma 5 argumentos:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lam</span></code>: Espectro de longitudes de onda (en <span class="math notranslate nohighlight">\(\mu\)</span>m)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tt</span></code>: ángulo de incidencia (en radianes)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code>: arreglo tuple con índices de refracción de cada capa + medio superior e inferior al arreglo</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">d</span></code>: arreglo tuple con espesores de cada capa (en micrones)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pol</span></code>: Polarización de la onda incidente (<code class="docutils literal notranslate"><span class="pre">'TM'</span> </code> o <code class="docutils literal notranslate"><span class="pre">'TE'</span> </code>)</p></li>
+</ul>
+<p>La función necesita como mínimo 4 argumentos: <code class="docutils literal notranslate"><span class="pre">lam</span></code>, <code class="docutils literal notranslate"><span class="pre">tt</span></code> <code class="docutils literal notranslate"><span class="pre">N</span></code> y <code class="docutils literal notranslate"><span class="pre">d</span></code>. En ese caso, <code class="docutils literal notranslate"><span class="pre">pol=</span> <span class="pre">'TM'</span> </code> por defecto.</p>
+<p>En el orden respectivo, el output es:</p>
+<ul class="simple">
+<li><p>Reflectividad <code class="docutils literal notranslate"><span class="pre">R</span></code> y Tranmisividad <code class="docutils literal notranslate"><span class="pre">T</span></code></p></li>
+<li><p>coefientes de Fresnel de reflexión <code class="docutils literal notranslate"><span class="pre">r</span></code> y transmisión <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p></li>
+</ul>
+<p>Los elementos de <code class="docutils literal notranslate"><span class="pre">N</span></code> y  <code class="docutils literal notranslate"><span class="pre">d</span></code>, deben estar ordenados según la dirección de la onda incidente. Por ejemplo, si consideramos:</p>
+<ul class="simple">
+<li><p>luz incidente (<span class="math notranslate nohighlight">\(\theta_i = 45°\)</span>, <span class="math notranslate nohighlight">\(\lambda\in[0.3,0.8]\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m)</p></li>
+<li><p>Propagandose en aire (<span class="math notranslate nohighlight">\(N_1 = 1.0\)</span>),</p></li>
+<li><p>La luz incide sobre una película de espesor <span class="math notranslate nohighlight">\(d = 300\)</span> nm e índice de refracción <span class="math notranslate nohighlight">\(N_2 = 1.5\)</span>.</p></li>
+<li><p>La película está depositada sobre un sustrato con índice de refracción <span class="math notranslate nohighlight">\(N_3 = 5.0 + 3i\)</span>:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># espectro de longitudes de onda (um)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">5.0</span> <span class="o">+</span> <span class="mi">3</span><span class="n">j</span><span class="p">)</span> <span class="c1"># indices de refracción (above, mid, below)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="c1"># 300 nm de espesor para capa intermedia</span>
+
+<span class="n">Rp</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">tp</span> <span class="o">=</span> <span class="n">wv</span><span class="o">.</span><span class="n">multilayer</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">pol</span><span class="o">=</span><span class="s1">&#39;TM&#39;</span><span class="p">)</span>
+<span class="n">Rs</span><span class="p">,</span> <span class="n">Ts</span><span class="p">,</span> <span class="n">rs</span><span class="p">,</span> <span class="n">ts</span> <span class="o">=</span> <span class="n">wv</span><span class="o">.</span><span class="n">multilayer</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">pol</span><span class="o">=</span><span class="s1">&#39;TE&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notar que <code class="docutils literal notranslate"><span class="pre">len(d)</span> <span class="pre">=</span> <span class="pre">len(N)</span> <span class="pre">-</span> <span class="pre">2</span></code>, debido a que los índices superior e inferior corresponden a los medios semi-infinitos sobre y bajo la capa.</p>
+<p>Por ejemplo, si ahora queremos determinar la respuesta óptica de un arreglo de una capa delgada de sílice (<span class="math notranslate nohighlight">\(d_1 = 100\)</span> nm) sobre una capa de plata (<span class="math notranslate nohighlight">\(d_2 = 10\)</span> nm), sobre un sustrato con índice de refracción <span class="math notranslate nohighlight">\(n_{back} = 5.0\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># espectro de longitudes de onda (um)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="n">Nfront</span> <span class="o">=</span> <span class="mf">1.0</span>                 <span class="c1"># índice de refracción medio superior</span>
+<span class="n">N1</span>     <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">SiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>        <span class="c1"># índice de refracción sílice</span>
+<span class="n">N2</span>     <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">silver</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>      <span class="c1"># índice de refracción plata</span>
+<span class="n">Nback</span>  <span class="o">=</span> <span class="mf">5.0</span>                 <span class="c1"># índice de refracción medio inferior</span>
+<span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="n">Nfront</span><span class="p">,</span> <span class="n">N1</span><span class="p">,</span> <span class="n">N2</span><span class="p">,</span> <span class="n">Nback</span><span class="p">)</span>  <span class="c1"># indices de refracción (above, mid, below)</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.100</span><span class="p">,</span> <span class="mf">0.010</span><span class="p">)</span> <span class="c1"># espesor para sílice y plata (en ese orden)</span>
+
+<span class="n">Rp</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">tp</span> <span class="o">=</span> <span class="n">wv</span><span class="o">.</span><span class="n">multilayer</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">pol</span><span class="o">=</span><span class="s1">&#39;TM&#39;</span><span class="p">)</span>
+<span class="n">Rs</span><span class="p">,</span> <span class="n">Ts</span><span class="p">,</span> <span class="n">rs</span><span class="p">,</span> <span class="n">ts</span> <span class="o">=</span> <span class="n">wv</span><span class="o">.</span><span class="n">multilayer</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">pol</span><span class="o">=</span><span class="s1">&#39;TE&#39;</span><span class="p">)</span>
+
+<span class="c1"># Graficamos el flujo de energía</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Rp</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;R (TM)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Tp</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;T (TM)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Rs</span><span class="p">,</span><span class="s1">&#39;--r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;R (TE)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ts</span><span class="p">,</span><span class="s1">&#39;--b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;T (TE)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;aire/sílice/plata/n4=5.0&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Refletividad / Transmisividad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Tutorial1_18_0.png" src="../_images/Tutorial1_18_0.png" />
+</div>
+</div>
+</section>
+<section id="luz-incoherente-en-arreglos-multicapas-incoh-multilayer">
+<h3>Luz incoherente en arreglos multicapas (<code class="docutils literal notranslate"><span class="pre">incoh_multilayer</span></code>)<a class="headerlink" href="#luz-incoherente-en-arreglos-multicapas-incoh-multilayer" title="Permalink to this headline">#</a></h3>
+<p>Esta función es similar a <code class="docutils literal notranslate"><span class="pre">multilayer</span></code> pero para una fuente de luz incoherente. Considera los mismos 5 argumentos de <code class="docutils literal notranslate"><span class="pre">multilayer</span></code> con un argumento adicional <code class="docutils literal notranslate"><span class="pre">coh_length</span></code> para condicionar la longitud de coherencia (en <span class="math notranslate nohighlight">\(\mu\)</span>m). Por defecto, <code class="docutils literal notranslate"><span class="pre">coh_length</span> <span class="pre">=</span> <span class="pre">0</span></code></p>
+<p>Debido a que la función es para luz incoherente, el output es:</p>
+<ul class="simple">
+<li><p>Reflectividad <code class="docutils literal notranslate"><span class="pre">R</span></code> y Tranmisividad <code class="docutils literal notranslate"><span class="pre">T</span></code></p></li>
+</ul>
+<p>Por ejemplo, evaluemos el ejemplo de la <a class="reference external" href="https://panxopanza.github.io/conversion_solar_termica/2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html#refleccion-y-transmission-en-peliculas-delgadas">clase 2</a> (<span class="math notranslate nohighlight">\(n_\mathrm{front}= 1.0\)</span>, <span class="math notranslate nohighlight">\(n_\mathrm{layer}= 1.5\)</span>, <span class="math notranslate nohighlight">\(n_\mathrm{back} = 4.3\)</span>), considerando una capa de espesor <span class="math notranslate nohighlight">\(d = 300\)</span> nm, y <span class="math notranslate nohighlight">\(\theta_i = 30°\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># espectro de longitudes de onda (um)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>          <span class="c1"># ángulo de incidencia</span>
+
+<span class="n">Nfront</span> <span class="o">=</span> <span class="mf">1.0</span>                 <span class="c1"># índice de refracción medio superior</span>
+<span class="n">N1</span>     <span class="o">=</span> <span class="mf">1.5</span>                 <span class="c1"># índice de refracción capa delgada</span>
+<span class="n">Nback</span>  <span class="o">=</span> <span class="mf">4.3</span>                 <span class="c1"># índice de refracción medio inferior</span>
+<span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="n">Nfront</span><span class="p">,</span> <span class="n">N1</span><span class="p">,</span> <span class="n">Nback</span><span class="p">)</span>      <span class="c1"># indices de refracción (above, mid, below)</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="mf">0.3</span>                      <span class="c1"># espesor capa intermedia (um)</span>
+
+<span class="n">Rp_incoh</span><span class="p">,</span> <span class="n">Tp_incoh</span> <span class="o">=</span> <span class="n">wv</span><span class="o">.</span><span class="n">incoh_multilayer</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">pol</span><span class="o">=</span><span class="s1">&#39;TM&#39;</span><span class="p">)</span> <span class="c1"># caso luz incoherente</span>
+
+<span class="c1"># Graficamos el flujo de energía</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Rp_incoh</span><span class="p">,</span><span class="s1">&#39;--r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$R_\mathrm</span><span class="si">{TM}</span><span class="s1">$ (incoh)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Tp_incoh</span><span class="p">,</span><span class="s1">&#39;--b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$T_\mathrm</span><span class="si">{TM}</span><span class="s1">$ (incoh)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;arreglo 1.0/1.5/4.3&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Refletividad / Transmisividad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># comparamos con el caso luz coherente</span>
+<span class="n">Rp</span><span class="p">,</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">wv</span><span class="o">.</span><span class="n">multilayer</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">pol</span><span class="o">=</span><span class="s1">&#39;TM&#39;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Rp</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$R_\mathrm</span><span class="si">{TM}</span><span class="s1">$ (coh)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Tp</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$T_\mathrm</span><span class="si">{TM}</span><span class="s1">$ (coh)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Tutorial1_20_0.png" src="../_images/Tutorial1_20_0.png" />
+</div>
+</div>
+<p>En el límite de solo una interface, <code class="docutils literal notranslate"><span class="pre">interface</span></code>, <code class="docutils literal notranslate"><span class="pre">multilayer</span></code> y <code class="docutils literal notranslate"><span class="pre">incoh_multilayer</span></code> entregan el mismo resultado</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
+<span class="kn">import</span> <span class="nn">empylib.waveoptics</span> <span class="k">as</span> <span class="nn">wv</span>
+
+<span class="n">lam</span> <span class="o">=</span> <span class="mf">0.5</span>                <span class="c1"># longitud de onda en micrones</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>   <span class="c1"># ángulo de incidencia (en radianes)                    </span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>  <span class="c1"># interface aire/silice</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">()</span>          <span class="c1"># sin espesores (solo una interface)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;interface:</span><span class="se">\t\t</span><span class="s1"> R = </span><span class="si">%.3f</span><span class="s1">, T = </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">wv</span><span class="o">.</span><span class="n">interface</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">N</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">N</span><span class="p">[</span><span class="mi">1</span><span class="p">])[:</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;multilayer:</span><span class="se">\t\t</span><span class="s1"> R = </span><span class="si">%.3f</span><span class="s1">, T = </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">wv</span><span class="o">.</span><span class="n">multilayer</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">d</span><span class="p">)[:</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;incoh_multilayer:</span><span class="se">\t</span><span class="s1"> R = </span><span class="si">%.3f</span><span class="s1">, T = </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">wv</span><span class="o">.</span><span class="n">incoh_multilayer</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">d</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>interface:		 R = 0.025, T = 0.975
+multilayer:		 R = 0.025, T = 0.975
+incoh_multilayer:	 R = 0.025, T = 0.975
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="scattering-de-mie-miescattering">
+<h2>Scattering de mie (<code class="docutils literal notranslate"><span class="pre">miescattering</span></code>)<a class="headerlink" href="#scattering-de-mie-miescattering" title="Permalink to this headline">#</a></h2>
+<p>En esta librería, la función principal es <code class="docutils literal notranslate"><span class="pre">scatter_efficiency</span></code>, que permite determinar las secciones transversales de scattering, absorción y extinción para una partícula esférica de diámetro <span class="math notranslate nohighlight">\(D\)</span>.</p>
+<p>Los pámetros de entrada son:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lam</span></code>: Espectro de longitudes de onda (en <span class="math notranslate nohighlight">\(\mu\)</span>m)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Nh</span></code>: Índice de refracción del medio circundante</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Np</span></code>: Índice de refracción de la partícula</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">D</span></code>: Diámetro de la partícula (en <span class="math notranslate nohighlight">\(\mu\)</span>m)</p></li>
+</ul>
+<p>Los parámetros de salida son</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Qext</span></code>: coeficiente de extinción</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Qsca</span></code>: coeficiente de scattering</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gcos</span></code>: parámetro de asimetría</p></li>
+</ul>
+<p>Los coeficientes de extinción (<span class="math notranslate nohighlight">\(Q_\mathrm{ext}\)</span>) y scattering (<span class="math notranslate nohighlight">\(Q_\mathrm{sca}\)</span>) se relacionan con las respectivas secciones transversales por <span class="math notranslate nohighlight">\(C_\mathrm{ext} = Q_\mathrm{ext}A_c\)</span>, <span class="math notranslate nohighlight">\(C_\mathrm{sca} = Q_\mathrm{sca}A_c\)</span>, donde <span class="math notranslate nohighlight">\(A_c = \pi D^2/4\)</span> es la sección transversal de la esfera.</p>
+<p>La sección transversal de absorción (<span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span>), se determina por <span class="math notranslate nohighlight">\(C_\mathrm{abs} = C_\mathrm{ext} - C_\mathrm{sca}\)</span></p>
+<p>En el ejemplo de abajo, calculamos la <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span>, <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span> y <span class="math notranslate nohighlight">\(C_\mathrm{ext}\)</span> para una partícula de oro de <span class="math notranslate nohighlight">\(D = 100\)</span> nm de diámetro, alojada de sílice. El espectro considerado es <span class="math notranslate nohighlight">\(\lambda\in[0.3,1.0]\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">empylib.miescattering</span> <span class="k">as</span> <span class="nn">mie</span>
+<span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="c1">#espectro de longitudes de onda (arreglo de 100 puntos entre 0.3 y 1.0 micrones)</span>
+<span class="n">Nh</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">SiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>
+<span class="n">Np</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">gold</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span> 
+<span class="n">D</span> <span class="o">=</span> <span class="mf">0.100</span>  <span class="c1"># diámetro de la partícula</span>
+
+<span class="c1"># determinamos parámetros de eficiencia</span>
+<span class="n">qext</span><span class="p">,</span> <span class="n">qsca</span><span class="p">,</span> <span class="n">gcos</span> <span class="o">=</span> <span class="n">mie</span><span class="o">.</span><span class="n">scatter_efficiency</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Nh</span><span class="p">,</span><span class="n">Np</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+
+<span class="c1"># convertimos los resultados a secciones transversales</span>
+<span class="n">Ac</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">D</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">4</span> <span class="c1"># sección transversal de la partícula</span>
+<span class="n">Csca</span> <span class="o">=</span> <span class="n">qsca</span><span class="o">*</span><span class="n">Ac</span>
+<span class="n">Cext</span> <span class="o">=</span> <span class="n">qext</span><span class="o">*</span><span class="n">Ac</span>
+<span class="n">Cabs</span> <span class="o">=</span> <span class="n">Cext</span> <span class="o">-</span> <span class="n">Csca</span>
+
+<span class="c1"># graficamos los resultados</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Csca</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$C_\mathrm</span><span class="si">{sca}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Cabs</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$C_\mathrm</span><span class="si">{abs}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Cext</span><span class="p">,</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$C_\mathrm</span><span class="si">{ext}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Sección transversal ($\mu$m$^2$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Scattering EM partícula de oro en sílice&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Tutorial1_25_0.png" src="../_images/Tutorial1_25_0.png" />
+</div>
+</div>
+</section>
+<section id="transporte-radiativo">
+<h2>Transporte Radiativo<a class="headerlink" href="#transporte-radiativo" title="Permalink to this headline">#</a></h2>
+<p>Para transporte radiativo tenemos dos librerías:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">rad_transfer</span></code> con funciones para cálculos simples (como Beer-Lambert)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iadpython</span></code> para simulaciones de scattering multiple</p></li>
+</ul>
+<section id="beer-lambert-t-beer-lambert">
+<h3>Beer-Lambert (<code class="docutils literal notranslate"><span class="pre">T_beer_lambert</span></code>)<a class="headerlink" href="#beer-lambert-t-beer-lambert" title="Permalink to this headline">#</a></h3>
+<p>La función <code class="docutils literal notranslate"><span class="pre">T_beer_lambert</span></code> de la librería <code class="docutils literal notranslate"><span class="pre">empylib.rad_transfer</span></code> permite un rápido cálculo de la transmisivitidad a través de un medio de espesor <span class="math notranslate nohighlight">\(d\)</span> con incrustaciones.</p>
+<p>La función requiere los siguientes parámetros de entrada:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lam</span></code>: Espectro de longitudes de onda (en <span class="math notranslate nohighlight">\(\mu\)</span>m)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">theta</span></code>: Ángulo de incidencia (en radianes)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tfilm</span></code>: Espesor del material</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code>: Índice de refracción del medio superior, material intermedio, y medio inferior (arreglo tuple <code class="docutils literal notranslate"><span class="pre">len(N)</span> <span class="pre">=</span> <span class="pre">3</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fv</span></code>: Fracción de volumen de las incrustaciones (0.01 corresponde a 1% v/v)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">D</span></code>: Diámetro de la partícula (en <span class="math notranslate nohighlight">\(\mu\)</span>m)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Np</span></code>: Índice de refracción de las partículas (se debe cumplir la condición: <code class="docutils literal notranslate"><span class="pre">len(Np)</span> <span class="pre">=</span> <span class="pre">len(lam)</span></code>)</p></li>
+</ul>
+<p>Los parámetros de salida son:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Tspec</span></code>: Transmisividad especular</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ttot</span></code>: Transmisividad total</p></li>
+</ul>
+<p>En el siguiente ejemplo, consideramos una película de sílice de espesor <span class="math notranslate nohighlight">\(1.0\)</span> mm, con porosidad de 0.01% donde los poros tienen un de diámetro <span class="math notranslate nohighlight">\(D = 200\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m (<span class="math notranslate nohighlight">\(N_{poro} = 1.0\)</span>). Los medios superior e inferior corresponden a aire. La luz incide en dirección <span class="math notranslate nohighlight">\(\theta_i = 0°\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">empylib.rad_transfer</span> <span class="k">as</span> <span class="nn">rt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># 30 grados en radianes</span>
+<span class="n">tfilm</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># espesor en micrones</span>
+<span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="n">nk</span><span class="o">.</span><span class="n">SiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>  <span class="c1"># indice de refracción superior, intermedio e inferior</span>
+<span class="n">fv</span> <span class="o">=</span> <span class="mf">0.0001</span>   <span class="c1"># fracción de volúmen de los poros</span>
+<span class="n">D</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="c1"># diámetro de los poros</span>
+<span class="n">Np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">lam</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="n">Tspec</span><span class="p">,</span> <span class="n">Ttot</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">T_beer_lambert</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">tfilm</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">fv</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">Np</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Tspec</span><span class="p">,</span><span class="s1">&#39;--k&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Tspec&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ttot</span><span class="p">,</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Ttot&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Transmisividad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Sílice poroso (fv = 0.01% v/v)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1.0)
+</pre></div>
+</div>
+<img alt="../_images/Tutorial1_28_1.png" src="../_images/Tutorial1_28_1.png" />
+</div>
+</div>
+</section>
+<section id="scattering-multiple-iadpython">
+<h3>Scattering multiple (<code class="docutils literal notranslate"><span class="pre">iadpython</span></code>)<a class="headerlink" href="#scattering-multiple-iadpython" title="Permalink to this headline">#</a></h3>
+<p>La modelación de scattering múltiple está considerada en la librería <code class="docutils literal notranslate"><span class="pre">iadpython</span></code>. Hay muchos detalles de esta libería que están fuera del alcance de este curso. Por esto, se recomienda seguir el siguiente script, y editar solo la sección marcada en el encabezado. Los parámetros de entrada son similares a los de la función <code class="docutils literal notranslate"><span class="pre">T_beer_lambert</span></code>, <strong>con la diferencia que el espesor del material con incrustaciones debe ir en unidades de mm.</strong></p>
+<p>En el ejemplo, se modela un sílice poroso con las siguientes características:</p>
+<ul class="simple">
+<li><p>Espesor de 10 cm (<code class="docutils literal notranslate"><span class="pre">tfilm</span> <span class="pre">=</span> <span class="pre">100</span></code>, unidades en mm)</p></li>
+<li><p>porosidad 60%</p></li>
+<li><p>Tamaño de poro <span class="math notranslate nohighlight">\(1.0\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m</p></li>
+<li><p>Espectro <span class="math notranslate nohighlight">\(\lambda\in[0.3,1.0]\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">iadpython</span> <span class="k">as</span> <span class="nn">iad</span>
+<span class="kn">import</span> <span class="nn">empylib.miescattering</span> <span class="k">as</span> <span class="nn">mie</span>
+<span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Solo modificar estos parámetros</span>
+<span class="c1">#---------------------------------------------------------------</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># espectro de longitudes de onda</span>
+<span class="n">tfilm</span> <span class="o">=</span> <span class="mi">100</span>                    <span class="c1"># espesor en mm</span>
+<span class="n">Nh</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">SiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>              <span class="c1"># indice de refracción del material con incrustaciones</span>
+<span class="n">fv</span> <span class="o">=</span> <span class="mf">0.6</span>                       <span class="c1"># fracción de volúmen de los poros</span>
+<span class="n">D</span> <span class="o">=</span> <span class="mf">1.0</span>                        <span class="c1"># diámetro de los poros (micrones)</span>
+<span class="n">Np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">lam</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>        <span class="c1"># índice de refracción partícula</span>
+<span class="c1">#---------------------------------------------------------------</span>
+
+<span class="c1"># determinamos parámetros de eficiencia</span>
+<span class="n">qext</span><span class="p">,</span> <span class="n">qsca</span><span class="p">,</span> <span class="n">gcos</span> <span class="o">=</span> <span class="n">mie</span><span class="o">.</span><span class="n">scatter_efficiency</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Nh</span><span class="p">,</span><span class="n">Np</span><span class="p">,</span><span class="n">D</span><span class="p">)</span>
+
+<span class="c1"># convertimos los resultados a secciones transversales</span>
+<span class="n">Ac</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">D</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">4</span> <span class="c1"># sección transversal de la partícula</span>
+<span class="n">Csca</span> <span class="o">=</span> <span class="n">qsca</span><span class="o">*</span><span class="n">Ac</span>
+<span class="n">Cext</span> <span class="o">=</span> <span class="n">qext</span><span class="o">*</span><span class="n">Ac</span>
+<span class="n">Cabs</span> <span class="o">=</span> <span class="n">Cext</span> <span class="o">-</span> <span class="n">Csca</span>
+<span class="n">Vp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">D</span><span class="o">**</span><span class="mi">3</span><span class="o">/</span><span class="mi">6</span>
+
+<span class="c1"># iteramos en iadpython</span>
+<span class="n">Rtot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">lam</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">Ttot</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">lam</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lam</span><span class="p">)):</span>
+    <span class="n">kz_imag</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">lam</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">Nh</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imag</span>  <span class="c1"># parte imaginaria del vector de onda</span>
+    
+    <span class="n">mu_s</span> <span class="o">=</span> <span class="n">fv</span><span class="o">*</span><span class="n">Csca</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">Vp</span>  
+    <span class="n">mu_a</span> <span class="o">=</span> <span class="n">fv</span><span class="o">*</span><span class="n">Cabs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">Vp</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">kz_imag</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">gcos</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">tfilm</span>
+
+    <span class="n">a</span> <span class="o">=</span> <span class="n">mu_s</span><span class="o">/</span><span class="p">(</span><span class="n">mu_a</span><span class="o">+</span><span class="n">mu_s</span><span class="p">)</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">mu_s</span><span class="o">/</span><span class="p">(</span><span class="n">mu_a</span><span class="o">+</span><span class="n">mu_s</span><span class="p">)</span> <span class="o">*</span> <span class="n">d</span>
+
+    <span class="c1"># air / sample / air</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">iad</span><span class="o">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="n">b</span><span class="p">,</span> <span class="n">g</span><span class="o">=</span><span class="n">g</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">Nh</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">n_above</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">n_below</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">ur1</span><span class="p">,</span> <span class="n">ut1</span><span class="p">,</span> <span class="n">uru</span><span class="p">,</span> <span class="n">utu</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">rt</span><span class="p">()</span>
+    
+    <span class="n">Rtot</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ur1</span>
+    <span class="n">Ttot</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ut1</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Rtot</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ttot</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Reflectividad / Transmisividad&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Sílice poroso (fv = 60% v/v)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1.0)
+</pre></div>
+</div>
+<img alt="../_images/Tutorial1_30_1.png" src="../_images/Tutorial1_30_1.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Tutorial"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Francisco V. Ramirez-Cuevas<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
