@@ -477,7 +477,7 @@ def g(theta=30, d=0.3):
 
 # Analicemos como se manifiesta este fenómeno en forma de color:
 
-# In[5]:
+# In[1]:
 
 
 import numpy as np
@@ -504,7 +504,7 @@ def color_R_film(d):
     for i in range(len(theta)): 
         R = 0.5*Rp(theta[i],d) + 0.5*Rs(theta[i],d)
         Irad = R*AM15_spectra
-        html_rgb = cs.spec_to_rgb(Irad, out_fmt='html')
+        html_rgb = cs.spec_to_rgb(lam, Irad, out_fmt='html')
         ax.axvline(theta[i], color=html_rgb, linewidth=6) 
     ax.set_xlim([min(theta),max(theta)])
     ax.set_ylim([0,1.0])
@@ -512,7 +512,7 @@ def color_R_film(d):
     ax.set_xlabel('Ángulo de incidencia (deg)')
 
 
-# In[6]:
+# In[ ]:
 
 
 from ipywidgets import interact

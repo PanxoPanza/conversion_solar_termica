@@ -7,12 +7,6 @@
 # Profesor: Francisco Ramírez Cuevas<br>
 # Fecha: 2 de Septiembre 2022
 
-# In[ ]:
-
-
-
-
-
 # ## Interacción de luz según el tamaño de un cuerpo
 # Hasta el momento hemos analizado las ecuaciones de Maxwell y condiciones de borde en coordenadas cartesianas. Estas relaciones se aplican a interfaces rectas. 
 # 
@@ -88,7 +82,7 @@
 # ### Flujo de energía
 # Al igual que con el estudio de reflexión y transmisión, la solución $\vec{E}_\mathrm{sca}$ nos permite determinar el **Flujo de energía** a través del vector de Poyinting $\langle\vec{S_\mathrm{sca}}\rangle = \frac{1}{2}\mathrm{Re}\left(\vec{E}_\mathrm{sca}\times\vec{H}^*_\mathrm{sca}\right)~\mathrm{[W/m^2]}$.
 
-# La energía neta correspondiente al scattering, $P_\mathrm{sca}$ se obtiene integrando $\langle\vec{S_\mathrm{sca}}\rangle$ sobre una superficie cerrada alrededor de la esfera :
+# La potencia neta correspondiente al scattering, $P_\mathrm{sca}$ se obtiene integrando $\langle\vec{S_\mathrm{sca}}\rangle$ sobre una superficie cerrada alrededor de la esfera :
 # 
 # \begin{equation*}
 # P_\mathrm{sca} = \oint_{S} \langle\vec{S_\mathrm{sca}}\rangle\cdot\hat{n}dS,
