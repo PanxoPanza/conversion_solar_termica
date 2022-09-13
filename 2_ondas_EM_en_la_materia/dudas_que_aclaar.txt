@@ -1,0 +1,4 @@
+la ecuación de multicapas está mala
+la constante dielectrica se relaciona con E, el índice de refracción con k
+Aclarar diferencia entre coef Fresnel y R, T
+Lentes polarizados suprimen componente TE, no necesarimente la reflejan

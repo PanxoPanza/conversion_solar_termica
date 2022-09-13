@@ -36,12 +36,9 @@
 import numpy as np
 from numpy.random import normal
 import matplotlib.pyplot as plt
-c0 = 3E8          # velocidad de la luz (m/s)
-lam = 0.5         # longitud de onda (um)
-k0 = 2*np.pi/lam  # vector de onda (rad/um)
-w0 = c0*k0        # Frecuencia angular (rad/s)
 
 def light_packet(kdir, x, t, lam, sig, N):
+    c0 = 3E8          # velocidad de la luz (m/s)
     xx = np.meshgrid(x,np.ones(N))[0]
     
     # Generamos arreglo de ondas aleatorias
@@ -52,13 +49,14 @@ def light_packet(kdir, x, t, lam, sig, N):
     
     # Sumamos todas las ondas
     return np.sum(Erand,axis=0)
-
+ 
 def plot_light_packet(N, t, sig):
     '''
     n: número de ondas generadas
     t: tiempo en ns
     sig: % de ancho de banda (dlam = sig*lam)
     '''
+    lam = 0.5         # longitud de onda (um)
     t = t*1E-9 # convertimos ns a s
     
     # recorrido de la onda
@@ -203,11 +201,12 @@ def g(N=1000, t=2, sig=0.3):
 
 # Antes de discutir cada término en la RTE, primero analicemos la función de fase. Esta función describe la intencidad del scattering en una dirección $\hat{k}$ a partir de una onda incidente en dirección $\hat{k}'$.
 
-# En el caso de una esfera, la función de fase depende solo del ángulo relativo entre $\hat{k}$ y $\hat{k}'$. En otras palabras, para esferas $P_\mathrm{sca} (\theta)$, donde $\cos\theta = \hat{k}\cdot\hat{k}'$
+# En el caso más simple es para una esfera. En este caso la función de fase depende solo del ángulo relativo entre $\hat{k}$ y $\hat{k}'$. En otras palabras, para esferas $P_\mathrm{sca} (\theta)$, donde $\cos\theta = \hat{k}\cdot\hat{k}'$
 # 
 # <img src="./images/phase_function.png" width="300px" align= center>
 
-# Notar que $C_\mathrm{sca}$ y $P_\mathrm{sca}$ están relacionados por
+# Notar que $C_\mathrm{sca}$ y $P_\mathrm{sca}$ están relacionados por:
+# 
 # \begin{equation}
 # C_\mathrm{sca} = \frac{1}{2}\int_0^{\pi} P_\mathrm{sca}(\theta)\sin\theta d\theta
 # \end{equation}
@@ -300,13 +299,15 @@ plt.show()
 # 
 # donde, $T_0$ es la **transmisividad incoherente del material sin incrustaciones**.
 
+# <img src="./images/beer_lambert.png" width="500px" align= center>
+
 # Podemos utilizar la ley de Beer-Lambert para analizar, de forma aproximada, el efecto del color del cielo durante el día y en la tarde.
 
 # El color del cielo está dado por la componente difusa. Así calculamos $T_\mathrm{dif} = T_\mathrm{tot} - T_\mathrm{spec}$.
 
 # Consideremos una atmosfera compuesta de aire ($N_h = 1.0$) y una pequeña concentración ($f_v = 1\times 10^{-6}~\%$) de partículas de 10 nm de diámetro e índice de refracción $N_p = 1.5$. El espesor de la atmosfera es $t_\mathrm{atm} = 100~\mathrm{km}$
 
-# In[42]:
+# In[7]:
 
 
 import empylib.rad_transfer as rt
@@ -317,45 +318,49 @@ from empylib.ref_spectra import AM15
 from empylib.ref_spectra import color_system as cs
 cs = cs.hdtv
 
+lam1 = np.linspace(0.38,0.78,100) # espectro de longitudes de onda
+cs.interp_internals(lam1)
 def plot_atmosphere(theta_sun):
-    fig, ax = plt.subplots()
-    fig.set_size_inches(8, 6)
-    plt.rcParams['font.size'] = '18'
+    fig, ax = plt.subplots()          
+    fig.set_size_inches(8, 5)         # Tamaño del gráfico
+    plt.rcParams['font.size'] = '14'  # tamaño de fuente
     
-    tatm = 100E9                     # espesor de la atmósfera 100 km
-    lam = np.linspace(0.38,0.78,100) # espectro de longitudes de onda
+    # parámetros de entrada
+    tatm = 100E9                      # espesor de la atmósfera 100 km
+    N = (1.0,1.0,1.0)                 # indice de refracción superior, intermedio e inferior
+    fvp = 1E-8                        # fracción de volúmen de las partículas
+    Dp = 0.010                        # diámetro de las partículas
+    Np = 1.5*lam1**0                  # índice de refracción de las partículas
+    
+    # transmitancia total y especular
     theta = np.radians(theta_sun)    # posición del sol en radianes
-    N = (1.0,1.0,1.0)                # indice de refracción superior, intermedio e inferior
-    fv = 1E-8                        # fracción de volúmen de las partículas
-    D = 0.010                        # diámetro de las partículas
-    Np = 1.5*np.ones(len(lam))       # índice de refracción de las partículas
-
-    Ttot, Tspec = rt.T_beer_lambert(lam,theta,tatm,N,fv,D,Np)
-    Tdif = Ttot - Tspec
-    ax.plot(lam,Tdif,'-k',label = 'Tdif')
+    Ttot, Tspec = rt.T_beer_lambert(lam1,theta,tatm,N,fvp,Dp,Np)
+    
+    Tdif = Ttot - Tspec              # transmitancia difusa
+    ax.plot(lam1,Tdif,'-k',label = 'Tdif')
     ax.set_xlabel('Longitud de onda ($\mu$m)')
     ax.set_ylabel('Transmisividad')
     ax.set_title(r'Posición del sol, $\theta_\mathrm{sun}$=%.1f°'% (theta_sun))
     ax.set_ylim(0,1.05)
     
-    D = 0.25
-    ax2 = fig.add_axes([0.11,0.15, D, D])
-    Irad = Tdif*AM15(lam)
-    html_rgb = cs.spec_to_rgb(lam*1E3, Irad, out_fmt='html')
-    Circle = plt.Circle((0, 0), D, color=html_rgb)
+    Dcircle = 0.25
+    ax2 = fig.add_axes([0.11,0.15, Dcircle, Dcircle])
+    Irad = Tdif*AM15(lam1)
+    html_rgb = cs.spec_to_rgb(Irad, out_fmt='html')
+    Circle = plt.Circle((0, 0), Dcircle, color=html_rgb)
     ax2.add_patch(Circle)
     ax2.set_aspect('equal')
-    ax2.set_xlim(-D*1.2,D*1.2)
-    ax2.set_ylim(-D*1.2,D*1.2)
+    ax2.set_xlim(-Dcircle*1.2,Dcircle*1.2)
+    ax2.set_ylim(-Dcircle*1.2,Dcircle*1.2)
     ax2.set_xticks([])
     ax2.set_yticks([])
     ax2.set_facecolor('k')
 
 
-# In[43]:
+# In[8]:
 
 
-from ipywidgets import interact
+# from ipywidgets import interact
 
 @interact(theta_sun=(0,89.99,0.1))
 def g(theta_sun=0):
@@ -364,10 +369,12 @@ def g(theta_sun=0):
 
 # ### Pelicula de material particulado (simulaciones de transferencia radiativa)
 # Este caso corresponde a materiales con $\Lambda_\mathrm{sca} > t_\mathrm{film}$. En este caso los eventos de scattering se producen más de una vez, y decimos que estámos en un régimen de **scattering múltiple**. Como resultado, los tres términos de la RTE son relevantes y debemos resolver la ecuación mediante simulación computacional.
+# 
+# <img src="./images/multiple_scattering.png" width="400px" align= center>
 
 # Consideremos un material de sílice de espesor $t_\mathrm{film} = 5~\mathrm{mm}$. Evaluaremos los colores de este material en transmisión y reflección para luz incidente normal a la superficie en función de la concentración y el diámetro de las partículas. Utilizamos la función ```ad_rad_transfer``` de la librería ```empylib.rad_transfer```
 
-# In[100]:
+# In[9]:
 
 
 import empylib.rad_transfer as rt
@@ -376,63 +383,65 @@ import empylib.miescattering as mie
 import numpy as np
 import matplotlib.pyplot as plt
 
+lam2 = np.linspace(0.3,1.0,100) # espectro de longitudes de onda en micrometros
+Nlayers = (1.0,nk.SiO2(lam2),1.0)   # indice de refracción superior, intermedio e inferior
+Np = nk.silver(lam2)                # Índice de refracción de las partículas
+cs.interp_internals(lam2)
+
 def plot_glass_silver(fv,D):
-    lam = np.linspace(0.3,1.0,100)
+    # parámetros de entrada
+    
     theta = np.radians(0)       # 30 grados en radianes
     tfilm = 5E3                 # espesor en micrones
-    N = (1.0,nk.SiO2(lam),1.0)  # indice de refracción superior, intermedio e inferior
-    fv = fv*1E-10                   # fracción de volúmen de las partículas
-    D = D*1E-3                     # diámetro de las partículas
-    Np = nk.silver(lam)
     
-    qext, qsca = mie.scatter_efficiency(lam,N[1],Np,D)[:2]
+    fv = fv*1E-10               # fracción de volúmen de las partículas
+    D = D*1E-3                  # diámetro de las partículas
+    
+    qext, qsca = mie.scatter_efficiency(lam2,Nlayers[1],Np,D)[:2]
     qabs = qext - qsca
-    Rtot, Ttot = rt.ad_rad_transfer(lam,tfilm,N,fv,D,Np)
+    Rtot, Ttot = rt.ad_rad_transfer(lam2,tfilm,Nlayers,fv,D,Np)
 
     fig, ax = plt.subplots(1,3)
     fig.set_size_inches(20, 5)
     plt.rcParams['font.size'] = '16'
     
-    ax[0].plot(lam,qsca,'-r',label='$C_\mathrm{sca} A_c$')
-    ax[0].plot(lam,qabs,'-b',label='$C_\mathrm{abs} A_c$')
+    ax[0].plot(lam2,qsca,'-r',label='$C_\mathrm{sca} A_c$')
+    ax[0].plot(lam2,qabs,'-b',label='$C_\mathrm{abs} A_c$')
     ax[0].set_xlabel('Longitud de onda ($\mu$m)')
     ax[0].set_ylabel('Eficiencia transversal')
     ax[0].set_title('Partícula de plata (D=%.0f nm)' % (D*1E3))
     ax[0].legend()
     ax[0].set_ylim(0,10)
     
-    
-    ax[1].plot(lam,Rtot,'-r',label = 'Rtot')
-    ax[1].plot(lam,Ttot,'-b',label = 'Ttot')
+    ax[1].plot(lam2,Rtot,'-r',label = 'Rtot')
+    ax[1].plot(lam2,Ttot,'-b',label = 'Ttot')
     ax[1].set_xlabel('Longitud de onda ($\mu$m)')
     ax[1].set_ylabel('Transmisividad')
     ax[1].set_title(r'Sílice con plata (fv = %.1e %%)' % (fv*100) )
     ax[1].legend()
     ax[1].set_ylim(0,1)
 
-    D = 0.20
-    Irad = Ttot*AM15(lam)
-    html_rgb = cs.spec_to_rgb(lam*1E3, Irad, out_fmt='html')
-    Circle = plt.Circle((0, 0), D, color=html_rgb)
+    Dcircle = 0.20
+    html_rgb = cs.spec_to_rgb(Ttot*AM15(lam2), out_fmt='html')
+    Circle = plt.Circle((0, 0), Dcircle, color=html_rgb)
     ax[2].add_patch(Circle)
     ax[2].annotate('Luz Trasera', xy=(0, 0), va='center', ha='center')
 
-    Irad = Rtot*AM15(lam)
-    html_rgb = cs.spec_to_rgb(lam*1E3, Irad, out_fmt='html')
-    Circle = plt.Circle((D*1.2*2, 0), D, color=html_rgb)
+    html_rgb = cs.spec_to_rgb(Rtot*AM15(lam2), out_fmt='html')
+    Circle = plt.Circle((Dcircle*1.2*2, 0), Dcircle, color=html_rgb)
     ax[2].add_patch(Circle)
-    ax[2].annotate('Luz Frontal', xy=(D*1.2*2, 0), va='center', ha='center')
+    ax[2].annotate('Luz Frontal', xy=(Dcircle*1.2*2, 0), va='center', ha='center')
 
     ax[2].set_aspect('equal')
-    ax[2].set_xlim(-D*1.2,D*1.2*3)
-    ax[2].set_ylim(-D*1.2,D*1.2)
+    ax[2].set_xlim(-Dcircle*1.2,Dcircle*1.2*3)
+    ax[2].set_ylim(-Dcircle*1.2,Dcircle*1.2)
     ax[2].set_xticks([])
     ax[2].set_yticks([])
     ax[2].set_facecolor('k')
     plt.subplots_adjust(wspace=0.3)
 
 
-# In[101]:
+# In[10]:
 
 
 from ipywidgets import interact
@@ -443,18 +452,21 @@ def g(fv=30, D = 140):
 
 
 # Cuando la concentración de partículas es densa, el medio se vuelve opaco. Este régimen se denomina **scattering difuso** y permite explicar, entre otras cosas, el color de las nubes o la pintura blanca
+# 
+# 
+# <img src="./images/diffuse_scattering.png" width="400px" align= center>
 
 # Un ejemplo interesante corresponde a la leche. En términos simples, la leche es una emulsión formada por pequeñas partículas de grasa dispersas en un medio acuoso. 
 
 # Como aproximación, consideremos un medio de espesor $1$ cm, compuesto por agua $N_h = 1.3$ y pequeñas partículas esféricas de aceite $N_p = 1.5$. La emulsión considera un 60% de partículas de aceite por volumen.
 
-# In[126]:
+# In[11]:
 
 
-get_ipython().run_cell_magic('capture', 'showplot', "# import empylib.nklib as nk\nimport numpy as np\nimport empylib.rad_transfer as rt\n\n# Solo modificar estos parámetros\n#---------------------------------------------------------------\nlam = np.linspace(0.3,1.0,100) # espectro de longitudes de onda\ntfilm = 10                     # espesor en mm\nNh = 1.3                       # indice de refracción del agua\nfv = 0.6                       # fracción de volúmen de los poros\nD = 1.5                        # diámetro de los poros (micrones)\nNp = 1.5*np.ones(lam.shape)    # índice de refracción partículas de aceite\n#---------------------------------------------------------------\n\nRtot, Ttot = rt.ad_rad_transfer(lam,tfilm,N,fv,D,Np)\n\nfig, ax = plt.subplots()\nfig.set_size_inches(7, 5)\nplt.rcParams['font.size'] = '16'\nax.plot(lam,Rtot,'-r',label='R')\nax.plot(lam,Ttot,'-b',label='T')\nax.set_xlabel('Longitud de onda ($\\mu$m)')\nax.set_ylabel('Reflectividad / Transmisividad')\nax.set_title(r'Leche (fv = %.0f %%)' % (fv*100))\nax.legend()\nax.set_ylim(0,1)\nplt.show\n")
+get_ipython().run_cell_magic('capture', 'showplot', "# import empylib.nklib as nk\nimport numpy as np\nimport empylib.rad_transfer as rt\n\n# Solo modificar estos parámetros\n#---------------------------------------------------------------\nlam3 = np.linspace(0.3,1.0,100)   # espectro de longitudes de onda\ntfilm = 10E3                      # espesor en micrones\nfv = 0.6                          # fracción de volúmen de los poros\nD = 2.0                           # diámetro de los poros (micrones)\nNh2o = nk.H2O(lam3)               # Índice de refracción del agua\nNoil = 1.5                        # índice de refracción partículas de aceite\n#---------------------------------------------------------------\nRtot, Ttot = rt.ad_rad_transfer(lam3,tfilm,(1.0,Nh2o,1.0),fv,D,Noil)\n\nfig, ax = plt.subplots()\nfig.set_size_inches(7, 5)\nplt.rcParams['font.size'] = '16'\nax.plot(lam3,Rtot,'-r',label='R')\nax.plot(lam3,Ttot,'-b',label='T')\nax.set_xlabel('Longitud de onda ($\\mu$m)')\nax.set_ylabel('Reflectividad / Transmisividad')\nax.set_title(r'Leche (fv = %.0f %%)' % (fv*100))\nax.legend()\nax.set_ylim(0,1)\nplt.show\n")
 
 
-# In[127]:
+# In[12]:
 
 
 showplot()

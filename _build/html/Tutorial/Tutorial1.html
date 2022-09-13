@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -1033,7 +1035,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 <span class="n">D</span> <span class="o">=</span> <span class="mf">0.2</span> <span class="c1"># diámetro de los poros</span>
 <span class="n">Np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">lam</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
-<span class="n">Tspec</span><span class="p">,</span> <span class="n">Ttot</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">T_beer_lambert</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">tfilm</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">fv</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">Np</span><span class="p">)</span>
+<span class="n">Ttot</span><span class="p">,</span> <span class="n">Tspec</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">T_beer_lambert</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">tfilm</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">fv</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">Np</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Tspec</span><span class="p">,</span><span class="s1">&#39;--k&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Tspec&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ttot</span><span class="p">,</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Ttot&#39;</span><span class="p">)</span>
@@ -1122,16 +1124,10 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [12],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">iadpython</span> <span class="k">as</span> <span class="nn">iad</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">empylib.miescattering</span> <span class="k">as</span> <span class="nn">mie</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;iadpython&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1.0)
 </pre></div>
 </div>
+<img alt="../_images/Tutorial1_30_1.png" src="../_images/Tutorial1_30_1.png" />
 </div>
 </div>
 </section>

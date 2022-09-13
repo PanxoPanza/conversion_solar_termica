@@ -335,13 +335,15 @@
 
 
 import numpy as np
+from numpy import radians as rad # convertimos grados a radianes
 import matplotlib.pyplot as plt
-from empylib.fresnel import interface
+from empylib.waveoptics import interface
 
 theta = np.linspace(0,90,100) # Ángulo de incidencia
+
 # Reflectividad en una interface
-Rp = lambda n1,n2 : interface(theta,n1,n2)[0] # TM
-Rs = lambda n1,n2 : interface(theta,n1,n2)[4] # TE
+Rp = lambda n1,n2 : interface(rad(theta),n1,n2,pol='TM')[0] # TM
+Rs = lambda n1,n2 : interface(rad(theta),n1,n2,pol='TE')[0] # TE
 
 # preparamos el ploteo
 def plot_R_interface(n1,n2):
@@ -434,14 +436,15 @@ def g(n1=1.0, n2=1.5):
 
 
 import numpy as np
+from numpy import radians as rad # convertimos grados a radianes
 import matplotlib.pyplot as plt
-from empylib.fresnel import multilayer
+from empylib.waveoptics import multilayer
 
 # Reflectividad en capa delgada
 lam = np.linspace(0.3,0.8,100)          # longitud de onda (en um)
 n_layers = (1.0,1.5,4.3)         # índices de refracción n1, n2, n3
-Rp = lambda tt,d : multilayer(lam, tt,n_layers, (d,), 'p')[0]
-Rs = lambda tt,d : multilayer(lam, tt,n_layers, (d,), 's')[0]
+Rp = lambda tt,d : multilayer(lam, rad(tt),n_layers, (d,), 'TM')[0]
+Rs = lambda tt,d : multilayer(lam, rad(tt),n_layers, (d,), 'TE')[0]
 
 # preparamos el ploteo
 def plot_R_multi(theta,d):
@@ -477,42 +480,43 @@ def g(theta=30, d=0.3):
 
 # Analicemos como se manifiesta este fenómeno en forma de color:
 
-# In[1]:
+# In[5]:
 
 
 import numpy as np
+from numpy import radians as rad # convertimos grados a radianes
 import matplotlib.pyplot as plt
-from empylib.fresnel import multilayer
+from empylib.waveoptics import multilayer
 from empylib.ref_spectra import AM15
 from empylib.ref_spectra import color_system as cs
 cs = cs.hdtv
 
 # Reflectividad en capa delgada
-lam = np.linspace(0.3,0.8,81)   # longitud de onda (en um)
+lam = np.linspace(0.3,0.8,100)   # longitud de onda (en um)
 n_layers = (1.0,1.5,4.3)         # índices de refracción n1, n2, n3
-Rp = lambda tt,d : multilayer(lam, tt,n_layers, (d,), 'p')[0]
-Rs = lambda tt,d : multilayer(lam, tt,n_layers, (d,), 's')[0]
+Rp = lambda tt,d : multilayer(lam, rad(tt),n_layers, (d,), 'TM')[0]
+Rs = lambda tt,d : multilayer(lam, rad(tt),n_layers, (d,), 'TE')[0]
 
+cs.interp_internals(lam)
 def color_R_film(d):
     # formateamos la figura
     fig, ax = plt.subplots()
     fig.set_size_inches(9, 5)
     plt.rcParams['font.size'] = '16'
     
-    AM15_spectra = AM15(lam)
     theta = np.linspace(0,90,100) # angulo de incidencia
-    for i in range(len(theta)): 
-        R = 0.5*Rp(theta[i],d) + 0.5*Rs(theta[i],d)
-        Irad = R*AM15_spectra
-        html_rgb = cs.spec_to_rgb(lam, Irad, out_fmt='html')
-        ax.axvline(theta[i], color=html_rgb, linewidth=6) 
+    for tt in theta: 
+        R = 0.5*Rp(tt,d) + 0.5*Rs(tt,d)
+        Irad = R*AM15(lam)
+        html_rgb = cs.spec_to_rgb(Irad, out_fmt='html')
+        ax.axvline(tt, color=html_rgb, linewidth=6) 
     ax.set_xlim([min(theta),max(theta)])
     ax.set_ylim([0,1.0])
     ax.axes.yaxis.set_visible(False)
     ax.set_xlabel('Ángulo de incidencia (deg)')
 
 
-# In[ ]:
+# In[6]:
 
 
 from ipywidgets import interact

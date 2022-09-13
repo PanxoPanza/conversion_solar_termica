@@ -402,7 +402,7 @@ fv = 0.0001   # fracción de volúmen de los poros
 D = 0.2 # diámetro de los poros
 Np = np.ones(lam.shape)
 
-Tspec, Ttot = rt.T_beer_lambert(lam,theta,tfilm,N,fv,D,Np)
+Ttot, Tspec = rt.T_beer_lambert(lam,theta,tfilm,N,fv,D,Np)
 
 plt.plot(lam,Tspec,'--k',label = 'Tspec')
 plt.plot(lam,Ttot,'-k',label = 'Ttot')

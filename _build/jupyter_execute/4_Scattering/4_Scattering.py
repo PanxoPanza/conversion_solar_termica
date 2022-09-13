@@ -85,7 +85,7 @@
 # La potencia neta correspondiente al scattering, $P_\mathrm{sca}$ se obtiene integrando $\langle\vec{S_\mathrm{sca}}\rangle$ sobre una superficie cerrada alrededor de la esfera :
 # 
 # \begin{equation*}
-# P_\mathrm{sca} = \oint_{S} \langle\vec{S_\mathrm{sca}}\rangle\cdot\hat{n}dS,
+# P_\mathrm{sca} = \oint_{S} \langle\vec{S_\mathrm{sca}}\rangle\cdot\hat{n}dS,\quad\mathrm{[W]}
 # \end{equation*}
 # 
 # donde $\hat{n}$ es un vector normal a la superficie.
