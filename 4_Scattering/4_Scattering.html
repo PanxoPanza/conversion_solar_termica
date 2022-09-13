@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -516,7 +518,7 @@ b_l = \frac{\psi_l(px)\psi'_l(x) - p\psi_l(x)\psi'_l(pm)}{\psi_l(px)\xi'_l(x) - 
 <p>La potencia neta correspondiente al scattering, <span class="math notranslate nohighlight">\(P_\mathrm{sca}\)</span> se obtiene integrando <span class="math notranslate nohighlight">\(\langle\vec{S_\mathrm{sca}}\rangle\)</span> sobre una superficie cerrada alrededor de la esfera :</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-P_\mathrm{sca} = \oint_{S} \langle\vec{S_\mathrm{sca}}\rangle\cdot\hat{n}dS,
+P_\mathrm{sca} = \oint_{S} \langle\vec{S_\mathrm{sca}}\rangle\cdot\hat{n}dS,\quad\mathrm{[W]}
 \end{equation*}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\hat{n}\)</span> es un vector normal a la superficie.</p>
 <p>Mediante un proceso similar, podemos determinar la energía extinguida, <span class="math notranslate nohighlight">\(P_\mathrm{ext}\)</span>, a partir del campo total <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{tot} = \vec{E}_\mathrm{inc} + \vec{E}_\mathrm{sca}\)</span></p>
