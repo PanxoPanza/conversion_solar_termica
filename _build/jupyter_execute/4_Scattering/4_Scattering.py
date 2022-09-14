@@ -33,47 +33,60 @@
 
 # Cuándo las dimensiones del cuerpo, $D$, son comparables a la longitud de onda, el radio de curvatura se hace significativo y las soluciones de las ecuaciones de Maxwell para una interface plana no son aplicables
 
-# En este caso, se produce el fenómeno de ***scattering***. El scattering produce que la luz sea dispersada en múltiples direcciones, mientras una porción de la energía incidente es absorbida por el objeto (**absorción**). Llamamos **extinción** a la porción de la luz que no sufre scattering ni absorción.
+# En este caso, se produce el fenómeno de ***scattering* de luz** asociado a la disperción de luz en múltiples direcciones. Además del scattering, tenemos el fenómeno de **absorción de luz** asociada con la porción de la energía incidente absorbida por el objeto. Por último, llamamos **extinción de luz** a la suma de la energía de scattering y absorción.
 # 
 # <img src="./images/scattering_schematic.png" width="450px" align= center>
 
 # ## Scattering en esferas (solución de Mie)
 
-# Consideremos el modelo simple una onda electromagnética interactuando con una esfera de radio $R$ tal que $R/\lambda \sim 1$
+# Consideremos el modelo simple una onda electromagnética interactuando con una esfera de radio $R$ y diámetro $D$ tal que $D/\lambda \sim 1$
 # <img src="./images/em_wave_sphere.png" width="300px" align= center>
 
 # Llamaremos al índice de refracción de la esfera $N_p$, y al índice de refracción del exterior $N_h$. 
 # 
 # En este caso asumimos que el índice de refracción del exterior no tiene componente compleja, es decir $N_h = n_h$
+# 
+# El espacio está definido en coordenadas esféricas, donde:
+# 
+# - $\theta$: ángulo cenital
+# - $\phi$: ángulo azimutal
+# - $r$: posición radial
 
 # La solución, propuesta por Gustav Mie, se basa una expansión en serie de ondas esféricas $\vec{M}_{lm}(r, \theta,\phi)$ y $\vec{N}_{lm}(r, \theta,\phi)$ (más información en las referencias).
 
 # Por ejemplo, la componente del campo eléctrico correspondiente al scattering, $\vec{E}_\mathrm{sca}$ es:
 # 
 # \begin{equation*}
-# \vec{E}_\mathrm{sca} = \sum_{l=1}^\infty \mathrm{Im}\left[E_0\frac{2l+1}{l(l+1)}i^l\left(a_l \vec{N}_{l1}^{(3)} - b_l \vec{M}_{l1}^{(3)}\right)\right]
+# \vec{E}_\mathrm{sca}(r, \theta,\phi) = \sum_{l=1}^\infty \mathrm{Im}\left[E_0\frac{2l+1}{l(l+1)}i^l\left(a_l \vec{N}_{l1}^{(3)} - b_l \vec{M}_{l1}^{(3)}\right)\right]
 # \end{equation*}
 # 
 # donde los coeficientes $a_l$ y $b_l$ están dados por la funciones de Ricatti-Bessel, $\psi(x)$ y $\xi(x)$, en la forma:
 # 
 # \begin{equation*}
-# a_l = \frac{p\psi_l(px)\psi'_l(x) - \psi_l(x)\psi'_l(pm)}{p\psi_l(px)\xi'_l(x) - \xi_l(x)\psi'_l(pm)},
+# a_l = \frac{p\psi_l(px)\psi'_l(x) - \psi_l(x)\psi'_l(px)}{p\psi_l(px)\xi'_l(x) - \xi_l(x)\psi'_l(px)},
 # \quad\quad\quad
-# b_l = \frac{\psi_l(px)\psi'_l(x) - p\psi_l(x)\psi'_l(pm)}{\psi_l(px)\xi'_l(x) - p\xi_l(x)\psi'_l(pm)},
+# b_l = \frac{\psi_l(px)\psi'_l(x) - p\psi_l(x)\psi'_l(px)}{\psi_l(px)\xi'_l(x) - p\xi_l(x)\psi'_l(px)},
 # \end{equation*}
 # 
 # donde $x = n_hk_0R$, y $p = N_p/n_h$. 
 
 # El campo magnético está dado por $\vec{H}_\mathrm{sca} = \frac{n_h}{Z_0} \left(\hat{k}\times\vec{E}_\mathrm{sca}\right)$.
 
+# A partir de la solución de Mie, deducimos que la intensidad y distribución del scattering electromagnético depende de dos parámetros: 
+# - $x = n_hk_0R\approx D/\lambda_h$, que representa la proporción entre el tamaño de la particula ($D$) y la longitud de onda en el medio circundante ($\lambda_h= \lambda_0/n_h$)
+# 
+# - $px = N_pk_0R\approx D/\lambda_p$ que representa la proporción entre el tamaño de la particula y la longitud de onda dentro de la partícula ($\lambda_p=\lambda_0/n_p$).
+
 # ### Distribución del campo eléctrico
 # A partir de esta solución, podemos visualizar la distribución del campo eléctrico durante el fenómeno de scattering.
 
-# En la siguiente figura, el campo eléctrico oscila perpendicular al plano de la pantalla. A la izquierda podemos visualizar la distribución del campo electrico total, es decir el campo eléctrico incidente $\vec{E}_\mathrm{inc}$ y $\vec{E}_\mathrm{sca}$. A la derecha, hemos removido $\vec{E}_\mathrm{inc}$ para poder visualizar $\vec{E}_\mathrm{sca}$
+# La siguiente figura representa el scattering electromagnético a partir de la solución de Mie. La dirección de la onda incidente es $\hat{k}_\mathrm{inc} = \hat{x}$, con el campo eléctrico polarizado en dirección $\hat{e}=\hat{z}$. En la figura de la izquierda mostramos la distribución del campo electrico total, es decir el campo eléctrico incidente ($\vec{E}_\mathrm{inc}$) y de scattering ($\vec{E}_\mathrm{sca}$). En la figura de la derecha, hemos removido $\vec{E}_\mathrm{inc}$ para poder visualizar $\vec{E}_\mathrm{sca}$
 # 
-# <img src="./images/scattering_distribution.png" width="500px" align= center>
+# <img src="./images/scattering_distribution.png" width="600px" align= center>
 
-# La distribución del scattering depende del tamaño de la partícula en relación la longitud de onda.
+# Utilizando la dirección de la onda incidente como referencia, podemos ver que la intensidad del scattering es mayor hacia adelante ($\theta = 0^o$) y decrece a medida de $\theta$ aumenta. Debido a la simetría axial, el scattering no varía en $\phi$.
+
+# En general, la distribución del scattering depende del tamaño de la partícula en relación la longitud de onda.
 # 
 # <img src="./images/scattering_vs_size.png" width="550px" align= center>
 
@@ -82,25 +95,40 @@
 # ### Flujo de energía
 # Al igual que con el estudio de reflexión y transmisión, la solución $\vec{E}_\mathrm{sca}$ nos permite determinar el **Flujo de energía** a través del vector de Poyinting $\langle\vec{S_\mathrm{sca}}\rangle = \frac{1}{2}\mathrm{Re}\left(\vec{E}_\mathrm{sca}\times\vec{H}^*_\mathrm{sca}\right)~\mathrm{[W/m^2]}$.
 
-# La potencia neta correspondiente al scattering, $P_\mathrm{sca}$ se obtiene integrando $\langle\vec{S_\mathrm{sca}}\rangle$ sobre una superficie cerrada alrededor de la esfera :
+# Notar que, en general, $\langle\vec{S_\mathrm{sca}}\rangle$ varía según $\theta$, $\phi$ y $r$.
 # 
-# \begin{equation*}
-# P_\mathrm{sca} = \oint_{S} \langle\vec{S_\mathrm{sca}}\rangle\cdot\hat{n}dS,\quad\mathrm{[W]}
-# \end{equation*}
+# <img src="./images/poynting_vector.png" width="300px" align= center>
+
+# La potencia neta por scattering, $W_\mathrm{sca}$ se obtiene integrando $\langle\vec{S_\mathrm{sca}}\rangle$ sobre la superticie de la esfera:
 # 
-# donde $\hat{n}$ es un vector normal a la superficie.
+# \begin{align*}
+# W_\mathrm{sca} &= \oint_{S} \langle\vec{S_\mathrm{sca}}\rangle\cdot\hat{r}dS 
+# \\
+# &= \int_0^{2\pi}\int_0^{\pi} \left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]R^2 \sin\theta d\theta~d\phi
+# \\
+# &= I_\mathrm{inc}~2\pi\int_0^{\pi}  P_\mathrm{sca}(\theta) \sin\theta d\theta
+# \quad\mathrm{[W]}
+# \end{align*}
 
-# Mediante un proceso similar, podemos determinar la energía extinguida, $P_\mathrm{ext}$, a partir del campo total $\vec{E}_\mathrm{tot} = \vec{E}_\mathrm{inc} + \vec{E}_\mathrm{sca}$
+# donde $I_\mathrm{inc} = \frac{n_hE_0}{2Z_0}~\mathrm{[W/m^2]}$ es el flujo de energía incidente, y $P_\mathrm{sca}(\theta)  = \frac{R^2}{I_\mathrm{inc}}\left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]$, es la **función de distribución de scattering** o **función de fase**.
 
-# El resultado lo escribimos relativo al flujo de energía incidente $I_\mathrm{inc} = \frac{n_hE_0}{2Z_0}\quad\mathrm{[W/m^2]}$:
+# **La función de fase se define como la energía de scattering relativo a la intencidad de la onda incidente por unidad de ángulo sólido $d\Omega = \sin\theta d\theta d\phi$**. 
+
+# En otras palabras, para una onda incidente con intensidad $I_\mathrm{inc}$, la energía de scattering en dirección $\theta$ es $I_\mathrm{inc} P_\mathrm{sca}(\theta)d\Omega$
+# 
+# <img src="./images/phase_function.png" width="300px" align= center>
+
+# Mediante un proceso similar, podemos determinar la potencia extinguida, $W_\mathrm{ext}$, a partir del campo total $\vec{E}_\mathrm{tot} = \vec{E}_\mathrm{inc} + \vec{E}_\mathrm{sca}$
+
+# Al igual que con los coeficientes de Fresnel, es común definir la energía relativa a $I_\mathrm{inc}$:
 # 
 # \begin{eqnarray*}
-# C_\mathrm{sca} &=& \frac{P_\mathrm{sca}}{I_\mathrm{inc}} = \frac{2\pi}{k^2}\sum_{l=1}^\infty (2l+1)\left(|a_l|^2 + |b_l|^2\right)&\quad&\mathrm{[m^2]}
+# C_\mathrm{sca} &=& \frac{W_\mathrm{sca}}{I_\mathrm{inc}} = \frac{2\pi}{k^2}\sum_{l=1}^\infty (2l+1)\left(|a_l|^2 + |b_l|^2\right)&\quad&\mathrm{[m^2]}
 # \\[10pt]
-# C_\mathrm{ext} &=& \frac{P_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k^2}\sum_{l=1}^\infty (2l+1)\mathrm{Re}\left(a_l + b_l\right)&\quad&\mathrm{[m^2]}
+# C_\mathrm{ext} &=& \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k^2}\sum_{l=1}^\infty (2l+1)\mathrm{Re}\left(a_l + b_l\right)&\quad&\mathrm{[m^2]}
 # \end{eqnarray*}
 # 
-# donde $C_\mathrm{sca}$ y $C_\mathrm{ext}$ se denominan **sección transversal de scattering y extinción, respectivamente**.
+# debido a que $C_\mathrm{sca}$ y $C_\mathrm{ext}$ están definidos en unidades de área, se denominan **sección transversal de scattering y extinción, respectivamente**.
 
 # Por conservación de energía, la sección transversal de absorción, $C_\mathrm{abs} = C_\mathrm{ext} - C_\mathrm{sca}$.
 
@@ -120,20 +148,32 @@
 
 # ## Analisis de scattering
 
-# Similar a los coeficientes de transmisión y reflexión, los parámetros $C_\mathrm{sca}$, $C_\mathrm{abs}$ y $C_\mathrm{ext}$ nos permiten cuantificar la energía de scattering, absorción y extinción relativa a la intensidad de la fuente $I_\mathrm{inc}$, así como también conocer su distribución en el espectro.
+# Los parámetros $C_\mathrm{sca}$, $C_\mathrm{abs}$ y $C_\mathrm{ext}$ permiten cuantificar la energía de scattering, absorción y extinción relativa a la intensidad de la fuente $I_\mathrm{inc}$, así como también su distribución en el espectro.
 
 # ### Particulas con índice de refracción real (dieléctricos)
 
-# Por ejemplo, analicemos el scattering de una esfera de agua ($N_p\approx 1.33$) en el aire ($n_h = 1.0$). 
+# Por ejemplo, analicemos el scattering de una esfera de agua ($N_p\approx 1.33$) en el aire ($n_h = 1.0$).
 # 
-# <img src="./images/scattering_water.png" width="400px" align= center>
-
 # Notar que $N_p\approx 1.33$ implica $C_\mathrm{abs} = 0$
+
+# In[1]:
+
+
+get_ipython().run_cell_magic('capture', 'show_plot', "import empylib.miescattering as mie\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nlam = np.linspace(0.3,1.4,200)  # espectro de longitudes de onda\nnh = 1.0                        # índice de refracción del material circundante\nNp = 1.33                       # índice de refracción de la partícula\nD = [0.1, 0.3, 0.5, 0.7, 1.0]   # distribución de diámetros \n\nfig, ax = plt.subplots()                # creamos ejes para graficar\ncolors = plt.cm.jet(np.linspace(0,1,len(D))) # set de colores para las curvas\nfor i in range(len(D)):\n    Ac = np.pi*D[i]**2/4                # área transversal de la partícula\n    Qsca = mie.scatter_efficiency(lam,nh,Np,D[i])[1] # determinamos Csca/Ac\n    ax.plot(lam,Qsca*Ac,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Csca\n\n# etiquetas de ejes y formateo de la figura\nfig.set_size_inches(7, 5)         # tamaño de figura\nplt.rcParams['font.size'] = '16'   # tamaño de fuente\nax.set_xlabel(r'Longitud de onda, $\\lambda$ ($\\mu$m)')\nax.set_title('scattering partícula de agua', fontsize=18)\nax.set_ylabel(r'$C_\\mathrm{sca} / \\pi R^2$')\nax.legend(frameon=False, title=r'$D$ ($\\mu$m)')\nplt.show\n")
+
+
+# In[2]:
+
+
+show_plot()
+
 
 # A partir de este gráfico podemos identificar algunos patrones comúnes en scattering:
 # - La energía de scattering aumenta con el tamaño de la partícula
 # 
 # - A medida que el tamaño aumenta, la longitud de onda para scattering máximo crece (*red-shifting*)
+
+# Esta es una característica general del scattering de partículas dieléctricas.
 
 # A partir de este gráfico podemos entender muchas situaciones de la vida cotidiana.
 
@@ -157,11 +197,21 @@
 
 # En la siguiente figura, graficamos $C_\mathrm{sca}$ y $C_\mathrm{abs}$ para partículas de distinto diámetro. Ambas variables son normalizadas por al área transversal de la esfera $\pi R^2$, para mejor comparación entre esferas de distintas dimensiones.
 
-# <img src="./images/scattering_silver.png" width="700px" align= center>
+# In[3]:
 
-# - Para $D < 20$ nm, el $C_\mathrm{sca}$ es despreciable en comparación con $C_\mathrm{abs}$. El peak en $C_\mathrm{abs}$ es el resultado de la resonancia del sistema, similar al modelo de Lorentz.
+
+get_ipython().run_cell_magic('capture', 'show_plot', "import empylib.miescattering as mie\nimport empylib.nklib as nk\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nlam = np.linspace(0.2,0.8,200)     # espectro de longitudes de onda\nnh = 1.0                           # índice de refracción del material circundante\nNp = nk.silver(lam)                # índice de refracción de la partícula\nD = [0.01, 0.02, 0.05, 0.08, 0.1]  # distribución de diámetros \n\nfig, ax = plt.subplots(1,2)        # creamos ejes para graficar\ncolors = plt.cm.jet(np.linspace(0,1,len(D))) # set de colores para las curvas\nfor i in range(len(D)):\n    Qext, Qsca = mie.scatter_efficiency(lam,nh,Np,D[i])[0:2] # determinamos Cext/Ac y Csca/Ac\n    Qabs = Qext - Qsca\n    ax[0].plot(lam,Qsca,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Csca/Ac\n    ax[1].plot(lam,Qabs,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Cabs/Ac\n\n# etiquetas de ejes y formateo de la figura\nfig.set_size_inches(14, 5)         # tamaño de figura\nplt.rcParams['font.size'] = '16'   # tamaño de fuente\n\nfor i in range(2):\n    ax[i].set_xlabel(r'Longitud de onda, $\\lambda$ ($\\mu$m)')\n\nax[0].set_title('scattering partícula de plata', fontsize=18)\nax[0].set_ylabel(r'$C_\\mathrm{sca} / \\pi R^2$')\nax[1].set_title('absorción partícula de plata', fontsize=18)\nax[1].set_ylabel(r'$C_\\mathrm{abs} / \\pi R^2$')\nax[1].legend(frameon=False, title=r'D (nm)')\nplt.show\n")
+
+
+# In[4]:
+
+
+show_plot()
+
+
+# - Para $D < 20$ nm, $C_\mathrm{sca}$ es despreciable en comparación con $C_\mathrm{abs}$. El peak en $C_\mathrm{abs}$ es el resultado de la resonancia del sistema, similar al modelo de Lorentz.
 # 
-# - Para $D > 50$ el $C_\mathrm{sca}$ crece significativamente, superando $C_\mathrm{abs}$ para $D > 80$ nm.
+# - Para $D > 50$ nm, $C_\mathrm{sca}$ crece significativamente, superando $C_\mathrm{abs}$ para $D > 80$ nm.
 # 
 # 
 

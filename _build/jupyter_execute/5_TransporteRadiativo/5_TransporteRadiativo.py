@@ -197,19 +197,13 @@ def g(N=1000, t=2, sig=0.3):
 # \hat{k}\cdot\nabla_r I_\lambda(\vec{r},\hat{k}) = - \left[\frac{f_v}{V_p}C_\mathrm{ext} + 2\kappa k_0\right]I_\lambda(\vec{r},\hat{k}) + \frac{f_v}{V_p}\int_{4\pi} P_\mathrm{sca}(\hat{k},\hat{k}') I_\lambda(\vec{r},\hat{k}') d\hat{k}'
 # \end{equation}
 
-# donde $f_v$ y $V_p$ son, respectivamente la fracción de volúmen y el volúmen de las partículas en el medio, y $P_\mathrm{sca}(\hat{k},\hat{k}')$ es la **función de distribución de scattering** o **función de fase**.
+# donde $f_v$ y $V_p$ son, respectivamente la fracción de volúmen y el volúmen de las partículas en el medio, y $P_\mathrm{sca}(\hat{k},\hat{k}')$ es la función de fase.
 
-# Antes de discutir cada término en la RTE, primero analicemos la función de fase. Esta función describe la intencidad del scattering en una dirección $\hat{k}$ a partir de una onda incidente en dirección $\hat{k}'$.
+# Notar que consideramos el caso más generalizado de la función de fase, que depende tanto de la dirección de la onda incidente $\hat{k}$ como de la dirección del scattering $\hat{k}'$.
 
-# En el caso más simple es para una esfera. En este caso la función de fase depende solo del ángulo relativo entre $\hat{k}$ y $\hat{k}'$. En otras palabras, para esferas $P_\mathrm{sca} (\theta)$, donde $\cos\theta = \hat{k}\cdot\hat{k}'$
+# Como revisamos en el capítulo anterior, en el caso de una esfera, la función de fase depende de $\theta$, el cual está definido por $\cos\theta = \hat{k}\cdot\hat{k}'$
 # 
-# <img src="./images/phase_function.png" width="300px" align= center>
-
-# Notar que $C_\mathrm{sca}$ y $P_\mathrm{sca}$ están relacionados por:
 # 
-# \begin{equation}
-# C_\mathrm{sca} = \frac{1}{2}\int_0^{\pi} P_\mathrm{sca}(\theta)\sin\theta d\theta
-# \end{equation}
 
 # Con esto en mente, ahora podemos discutir el significado de los términos en la RTE:
 
