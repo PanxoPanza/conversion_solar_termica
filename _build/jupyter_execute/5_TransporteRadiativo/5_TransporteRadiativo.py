@@ -91,6 +91,8 @@ def g(N=1000, t=0, sig=0.3):
 # Definimos como **longitud de coherencia**, $l_c$, a la distancia donde un grupo de ondas electromagnética mantiene correlación entre las fases. Para longitudes mayores a $l_c$, decimos que la luz es incoherente, es decir, el desface entre las distintas ondas es completamente aleatorio.
 
 # <img src="./images/coherence_length.png" width="300px" align= center>
+# 
+# <center>Esquema de un paquete de onda emitido por una fuente con longitud de coherencia $l_c$</center>
 
 # La relación entre $l_c$, la longitud de onda central $\lambda$ y el ancho de banda $\Delta\lambda$ está dado, aproximadamente, por la relación:
 # 
@@ -160,33 +162,43 @@ def g(N=1000, t=2, sig=0.3):
 # A partir de esto, podemos concluir que los fenómenos de interferencia en películas de capa delgada de espesor $d$ no serían visibles si $d > l_c$. En otras palabras, el fenómeno de interferencia solo existe si el paquete de onda interfiere consigo mismo.
 
 # <img src="./images/interference_thinfilm.png" width="200px" align= center>
+# 
+# <center>Propagación de una onda a través de una película de espesor $d$, con $l_c < d$</center>
 
-# En general, para una longitud características $D$:
+# En general, para una longitud características $d$:
 # 
-# - Si $D > l_c$ el **transporte de luz es incoherente** . En este régimen, podemos ignorar las propiedades oscilatorias de la luz, y analizar el problema como el transporte de pequeños paquetes de onda, o simplemente como partículas.
+# - Si $d > l_c$ el **transporte de luz es incoherente** . En este régimen, podemos ignorar las propiedades oscilatorias de la luz, y analizar el problema como el transporte de pequeños paquetes de onda, o simplemente como partículas.
 # 
-# - Si $D < l_c$, el **transporte de luz es coherente**. En este régimen debemos considerar las propiedades oscilatorias a partir de las Ecuaciones de Maxwell.
+# - Si $d < l_c$, el **transporte de luz es coherente**. En este régimen debemos considerar las propiedades oscilatorias a partir de las Ecuaciones de Maxwell.
 
 # Así, los coeficientes de Fresnel para una película delgada solo son válidos para $d < l_c$. 
 
 # Los coeficientes de Fresnel para una interface, en cambio, siempre son válidos.
 
 # <img src="./images/interference_interface.png" width="350px" align= center>
+# 
+# <center>Refracción y reflexión de una onda incoherente a través de una interfaz</center>
 
 # Igualmente, en medios particulados, los fenómenos de interferencia pueden ocurrir si las partículas están suficientemente cerca y tienen tamaños similares. Llamamos a esto **scattering coherente**
 
 # <img src="./images/scattering_coherence.png" width="600px" align= center>
+# 
+# <center>Fenómeno de interferencia en scattering</center>
 
 # El fenómeno de scattering coherente da lugar a los denominados **colores estructurales** presentes en las alas de las aves y mariposas (mas info [acá](https://wires.onlinelibrary.wiley.com/doi/10.1002/wnan.1396))
 
 # <img src="./images/structural_colors_birds.png" width="550px" align= center>
 # 
-# [Hwang, V. et al. PNAS 118 (4) e2015551118
+# <center>Colores estructurales en alas de aves</center>
+# 
+# Fuente: [Hwang, V. et al. PNAS 118 (4) e2015551118
 #  (2020)](https://www.pnas.org/doi/10.1073/pnas.2015551118)
 
 # <img src="./images/structural_colors_buterflies.png" width="450px" align= center>
 # 
-# [Tippets C. A. et al. J. Opt. 18 (2016) 065105](https://iopscience.iop.org/article/10.1088/2040-8978/18/6/065105)
+# <center>Colores estructurales en alas de mariposa</center>
+# 
+# Fuente: [Tippets C. A. et al. J. Opt. 18 (2016) 065105](https://iopscience.iop.org/article/10.1088/2040-8978/18/6/065105)
 
 # ## Teoría de transferencia radiativa
 # Si el transporte de luz es incoherente, podemos ignorar las propiedades oscilatorias de la luz y analizar el fenómeno óptico como un el transporte de radiación a través de un volumen de control.
@@ -294,6 +306,8 @@ plt.show()
 # donde, $T_0$ es la **transmisividad incoherente del material sin incrustaciones**.
 
 # <img src="./images/beer_lambert.png" width="500px" align= center>
+# 
+# <center>Transporte de luz en un medio con scattering de primer orden</center>
 
 # Podemos utilizar la ley de Beer-Lambert para analizar, de forma aproximada, el efecto del color del cielo durante el día y en la tarde.
 
@@ -365,6 +379,8 @@ def g(theta_sun=0):
 # Este caso corresponde a materiales con $\Lambda_\mathrm{sca} > t_\mathrm{film}$. En este caso los eventos de scattering se producen más de una vez, y decimos que estámos en un régimen de **scattering múltiple**. Como resultado, los tres términos de la RTE son relevantes y debemos resolver la ecuación mediante simulación computacional.
 # 
 # <img src="./images/multiple_scattering.png" width="400px" align= center>
+# 
+# <center>Transporte de luz en un medio con scattering múltiple</center>
 
 # Consideremos un material de sílice de espesor $t_\mathrm{film} = 5~\mathrm{mm}$. Evaluaremos los colores de este material en transmisión y reflección para luz incidente normal a la superficie en función de la concentración y el diámetro de las partículas. Utilizamos la función ```ad_rad_transfer``` de la librería ```empylib.rad_transfer```
 
@@ -447,10 +463,17 @@ def g(fv=30, D = 140):
 
 # Cuando la concentración de partículas es densa, el medio se vuelve opaco. Este régimen se denomina **scattering difuso** y permite explicar, entre otras cosas, el color de las nubes o la pintura blanca
 # 
-# 
 # <img src="./images/diffuse_scattering.png" width="400px" align= center>
+# 
+# <center>Transporte de luz en un medio con scattering difuso</center>
 
 # Un ejemplo interesante corresponde a la leche. En términos simples, la leche es una emulsión formada por pequeñas partículas de grasa dispersas en un medio acuoso. 
+# 
+# <img src="./images/milk_microscope.png" width="400px" align= center>
+# 
+# <center>Imagen de microscópio (40x) de leche orgánica. Las burbujas verdes corresponden al aceite en suspención en agua.</center>
+# 
+# Fuente: [Braun K., Hanewald A. and Vilgis T. Foods 8(10): 483(2019)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6836175/)
 
 # Como aproximación, consideremos un medio de espesor $1$ cm, compuesto por agua $N_h = 1.3$ y pequeñas partículas esféricas de aceite $N_p = 1.5$. La emulsión considera un 60% de partículas de aceite por volumen.
 
