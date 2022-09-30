@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # <h1>Tabla de contenidos<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Introducción-a-la-Transferencia-de-Calor" data-toc-modified-id="Introducción-a-la-Transferencia-de-Calor-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introducción a la Transferencia de Calor</a></span><ul class="toc-item"><li><span><a href="#Conducción-de-Calor" data-toc-modified-id="Conducción-de-Calor-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Conducción de Calor</a></span></li><li><span><a href="#Convección-de-Calor" data-toc-modified-id="Convección-de-Calor-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Convección de Calor</a></span></li><li><span><a href="#Transferencia-de-calor-en-estado-estacionario" data-toc-modified-id="Transferencia-de-calor-en-estado-estacionario-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Transferencia de calor en estado estacionario</a></span></li></ul></li><li><span><a href="#Fundamentos-de-la-radiación-térmica" data-toc-modified-id="Fundamentos-de-la-radiación-térmica-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Fundamentos de la radiación térmica</a></span><ul class="toc-item"><li><span><a href="#Distribución-de-Planck" data-toc-modified-id="Distribución-de-Planck-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Distribución de Planck</a></span></li><li><span><a href="#Propiedades-Radiativas" data-toc-modified-id="Propiedades-Radiativas-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Propiedades Radiativas</a></span></li><li><span><a href="#Irradiancia-(G)-y-Radiosidad-(J)" data-toc-modified-id="Irradiancia-(G)-y-Radiosidad-(J)-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Irradiancia (G) y Radiosidad (J)</a></span></li></ul></li><li><span><a href="#Referencias" data-toc-modified-id="Referencias-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Referencias</a></span></li></ul></div>
+# <div class="toc"><ul class="toc-item"><li><span><a href="#Introducción-a-la-Transferencia-de-Calor" data-toc-modified-id="Introducción-a-la-Transferencia-de-Calor-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introducción a la Transferencia de Calor</a></span><ul class="toc-item"><li><span><a href="#Conducción-de-Calor" data-toc-modified-id="Conducción-de-Calor-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Conducción de Calor</a></span></li><li><span><a href="#Convección-de-Calor" data-toc-modified-id="Convección-de-Calor-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Convección de Calor</a></span></li><li><span><a href="#Transferencia-de-calor-en-estado-estacionario" data-toc-modified-id="Transferencia-de-calor-en-estado-estacionario-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Transferencia de calor en estado estacionario</a></span></li></ul></li><li><span><a href="#Fundamentos-de-la-radiación-térmica" data-toc-modified-id="Fundamentos-de-la-radiación-térmica-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Fundamentos de la radiación térmica</a></span><ul class="toc-item"><li><span><a href="#Poder-de-emisión" data-toc-modified-id="Poder-de-emisión-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Poder de emisión</a></span></li><li><span><a href="#Distribución-de-Planck" data-toc-modified-id="Distribución-de-Planck-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Distribución de Planck</a></span></li><li><span><a href="#Propiedades-Radiativas" data-toc-modified-id="Propiedades-Radiativas-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Propiedades Radiativas</a></span></li><li><span><a href="#Irradiancia-(G)-y-Radiosidad-(J)" data-toc-modified-id="Irradiancia-(G)-y-Radiosidad-(J)-2.4"><span class="toc-item-num">2.4&nbsp;&nbsp;</span>Irradiancia (G) y Radiosidad (J)</a></span></li></ul></li><li><span><a href="#Referencias" data-toc-modified-id="Referencias-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Referencias</a></span></li></ul></div>
 
 #  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
 # # Radiación Térmica
@@ -125,10 +125,46 @@
 # 
 # <img src="./images/HW_vertical_noground.gif" width="300px" align= center>
 
+# ### Poder de emisión
+# Un cuerpo a temperatura $T$ emite ondas electromagnéticas en todas las direcciones y en un rango de longitudes de onda. En general, la distribución angular ($\Omega$) y espectral ($\lambda$) de la radiación emitida depende de las propiedades ópticas de la superficie y la temperatura del material. 
+
+# Para caracterizar la intensidad de la radiación emitida por una superficie a tempertura $T$, usamos la **intensidad específica o radiancia espectral**, $I_\lambda(\lambda,\Omega,T)$.
+
+# La taza de calor total emitido por una superficie $dA$ de un cuerpo negro en función de $\lambda$ y $\Omega$, $d\dot{Q}_\mathrm{rad}$, está dada por:
+# 
+# \begin{equation}
+# d\dot{Q}_\mathrm{rad} = I_{\lambda}(\lambda,T,\theta,\phi) \sin\theta \cos\theta dA d\Omega d\lambda
+# \end{equation}
+
+# El término $\cos\theta dA$ corresponde a la proyección de $dA$ en la dirección $\Omega$
+# 
+# <img src="./images/specific_intensity.png" width="300px" align= center>
+
+# Definimos como **poder de emisión** direccional y espectral a la relación:
+# 
+# \begin{equation}
+# E_{\lambda,\Omega}(T) = \frac{d\dot{Q}_\mathrm{rad}}{dAd\Omega d\lambda}=I_{\lambda}(\lambda,\Omega)\cos\theta ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}\cdot\mathrm{sr}}
+# \end{equation}
+
+# A diferencia de la intensidad específica, el poder de emisión considera la radiación effectiva emitida por una superficie.
+
+# <img src="./images/emissive_power.png" width="500px" align= center>
+
+# A partir de este término podemos derivar:
+
+# - **Poder de emisión hemisférica espectral**, 
+# \begin{equation*}
+# E_{\lambda}(T) = \frac{d\dot{Q}}{dAd\lambda}=  \int_\mathrm{hemi}I_{\lambda}(\lambda,\Omega)\cos\theta d\Omega,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}}
+# \end{equation*}
+# donde $\int_\mathrm{hemi} d\Omega = \int_0^{2\pi}d\phi\int_0^{\pi/2}\sin\theta d\theta$
+
+# - **Poder de emisión**, 
+# \begin{equation*}
+# E(T) = \frac{d\dot{Q}}{dA}=\int_0^\infty\int_\mathrm{hemi}I_{\lambda}(\lambda,\Omega)\cos\theta d\Omega d\lambda ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
+# \end{equation*}
+
 # ### Distribución de Planck
 # 
-# Un cuerpo a temperatura $T$ emite ondas electromagnéticas en todas las direcciones y en un rango de longitudes de onda. En general, la distribución angular ($\Omega$) y espectral ($\lambda$) de la radiación emitida depende de las propiedades ópticas de la superficie y la temperatura del material.
-
 # Max Planck en 1901 determinó que la **máxima radiancia espectral o intensidad específica** (flujo de energía por unidad de longitud de onda y ángulo sólido) emitida por un cuerpo a temperatura $T$, en un medio con índice de refracción $n_1$, está dada por:
 # 
 # \begin{equation}
@@ -145,17 +181,7 @@
 
 # Esta es la **distribución de Planck**. Representa la radiancia espectral emitida por un cuerpo idealizado, denominado **cuerpo negro**. Un cuerpo negro, así, representa un emisor perfecto, capaz de emitir la máxima radiacion posible a una temperatura $T$.
 
-# La taza de calor total emitido por una superficie $dA$ de un cuerpo negro, $d\dot{Q}_\mathrm{rad}$ se determina mediante:
-# 
-# \begin{equation}
-# d\dot{Q}_\mathrm{rad} = \int_0^\infty d\lambda\int_0^{2\pi}d\phi\int_0^{\pi/2}d\theta~I_{\mathrm{bb},\lambda}(\lambda,T,\theta,\phi) \sin\theta \cos\theta dA
-# \end{equation}
-
-# El término $\cos\theta dA$ corresponde a la proyección de $dA$ en la dirección $\Omega$
-
-# <img src="./images/specific_intensity.png" width="300px" align= center>
-
-# El flujo espectral de radiación emitida o **poder de emisión espectral** de la superficie de un cuerpo negro, $E_\mathrm{bb}(\lambda,T)$, se obtiene integrando la radiancia espectral por ángulo sólido en el límite de una hemiesfera:
+# El poder de emisión espectral de la superficie de un cuerpo negro, $E_\mathrm{bb}(\lambda,T)$, se obtiene integrando la radiancia espectral por ángulo sólido en el límite de una hemiesfera:
 # 
 # \begin{equation}
 # \int_\mathrm{hemi} I_{\mathrm{bb},\lambda}(\lambda,T,\Omega)\cos\theta d\Omega = \pi I_{\mathrm{bb},\lambda}(\lambda,T) = E_\mathrm{bb}(\lambda,T),\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}}
@@ -163,7 +189,7 @@
 # 
 # donde $\int_\mathrm{hemi} d\Omega = \int_0^{2\pi}d\phi\int_0^{\pi/2}d\theta$
 
-# A partir de la integral de $E_\mathrm{bb}(\lambda,T)$ en el espectro de longitudes de onda, obtenemos el flujo de radiación emitida o el **poder de emisión** de un cuerpo negro:
+# A partir de la integral de $E_\mathrm{bb}(\lambda,T)$ en el espectro de longitudes de onda, obtenemos el flujo de radiación emitida o el poder de emisión de un cuerpo negro:
 # 
 # \begin{equation}
 # \int_0^\infty E_\mathrm{bb}(\lambda,T) d\lambda = \sigma T^4,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
@@ -218,12 +244,14 @@
 # 1 = \alpha(\lambda,\Omega) + \rho(\lambda,\Omega) + \tau(\lambda,\Omega)
 # \end{equation}
 
-# Como ejemplo, analicemos la radiancia espectral, $I_\lambda(\lambda,\Omega,T)$ de una capa de vidrio en función de la temperatura, espesor y dirección. En este caso: 
+# Como ejemplo, analicemos el poder de emisión espectral direccional, $E_{\lambda,\Omega}(T)$ y la emisividad $\epsilon(\lambda,\Omega)$ de una capa de vidrio en función de la temperatura, espesor y dirección. En este caso: 
 # 
 # \begin{align*}
-# I_\lambda(\lambda,\Omega,T) &= \epsilon(\lambda,\Omega)I_{\mathrm{bb},\lambda}(\lambda,\Omega,T) \\
-#  &= \left[1 - \rho(\lambda,\Omega) - \tau(\lambda,\Omega)\right]I_{\mathrm{bb},\lambda}(\lambda,\Omega,T)
+# E_{\lambda,\Omega}(T) &= \epsilon(\lambda,\Omega)I_{\mathrm{bb},\lambda}(\lambda,\Omega,T)\cos\theta \\
+#  &= \left[1 - \rho(\lambda,\Omega) - \tau(\lambda,\Omega)\right]I_{\mathrm{bb},\lambda}(\lambda,\Omega,T)\cos\theta
 # \end{align*}
+
+# Comparamos $E_{\lambda,\Omega}(T)$ con el poder de emisión espectral direccional del cuerpo negro, $E_\mathrm{bb}(\lambda,\Omega,T)$
 
 # In[1]:
 
@@ -235,41 +263,69 @@ from numpy import log10, radians
 import matplotlib.pyplot as plt
 from empylib.ref_spectra import Bplanck
 
-def plot_emisivity_glass(Temp,d,theta):
+def plot_emisivity_glass(Temp,d,lam0,theta0):
     # parámetros de entrada
     
-    lam = np.linspace(0.3,15,1000)
+    lam = np.linspace(0.3,15,100)
     Nfront = 1.0                 # índice de refracción medio superior
-    N1     = nk.SiO2(lam)        # índice de refracción capa delgada
+    N1     = nk.SiO2(lam)        # índice de refracción capa intermedia
     Nback  = 4.3                 # índice de refracción medio inferior
     N = (Nfront, N1, Nback)      # indices de refracción (above, mid, below)
 
-    #abs caso luz incoherente
-    Rs, Ts = wv.incoh_multilayer(lam,radians(theta), N, d*1E3, pol='TM')
-    Rp, Tp = wv.incoh_multilayer(lam,radians(theta), N, d*1E3, pol='TM')
+    # Reflectancia y transmitancia espectral en theta0
+    Rs, Ts = wv.incoh_multilayer(lam,radians(theta0), N, d*1E3, pol='TM')
+    Rp, Tp = wv.incoh_multilayer(lam,radians(theta0), N, d*1E3, pol='TM')
     
-    R = (Rs + Rp)/2
-    T = (Ts + Tp)/2
-    A = 1 - T - R
+    R_lam = (Rs + Rp)/2
+    T_lam = (Ts + Tp)/2
+    A_lam = 1 - T_lam - R_lam
+    
+   # Reflectancia y transmitancia direccional en lam0
+    theta = np.linspace(0,90,100)
+    N = (Nfront, np.interp(lam0,lam,N1), Nback)      # indices de refracción (above, mid, below)
+    A_theta = [] # lista vacía
+    for theta_i in theta:
+        Rs, Ts = wv.incoh_multilayer(lam0,radians(theta_i), N, d*1E3, pol='TM')
+        Rp, Tp = wv.incoh_multilayer(lam0,radians(theta_i), N, d*1E3, pol='TM')
+        R = (Rs + Rp)/2
+        T = (Ts + Tp)/2
+        A_theta.append(1 - T - R)
+    A_theta = np.array(A_theta).flatten() # convertimos la lista a ndarray
 
-    fig, ax = plt.subplots(1,2)
+    fig, ax = plt.subplots(1,3)
     fig.set_size_inches(18, 5)
-    plt.rcParams['font.size'] = '16'
-
-    ax[0].plot(lam,R,'--r',label=r'$\rho$')
-    ax[0].plot(lam,T,'--b',label=r'$\tau$')
-    ax[0].plot(lam,A,'-k',label=r'$\alpha$')    
-    ax[0].set_xlabel('Longitud de onda ($\mu$m)')
+    plt.rcParams['font.size'] = '18'
+    
+    # graficamos las propiedades radiativas espectrales
+    ax[0].plot(lam,R_lam,'--r',label=r'$\rho$',linewidth=0.5)
+    ax[0].plot(lam,T_lam,'--b',label=r'$\tau$',linewidth=0.5)
+    ax[0].plot(lam,A_lam,'-k',label=r'$\alpha$',linewidth=2.0)  
+    ax[0].plot(lam0,np.interp(lam0,lam,A_lam),'ok')   
+    ax[0].set_xlabel('$\lambda$ ($\mu$m)')
     ax[0].set_ylabel(r'$\rho$, $\tau$ y $\alpha$')
-    ax[0].set_ylim(0,1)
+    ax[0].set_ylim(0,1.05)
+    ax[0].set_title(r'$\theta = $ %i°' % theta0)
     ax[0].legend()
     
-    ax[1].plot(lam,A*Bplanck(lam,Temp),'-k',label =r'$I_{\mathrm{glass},\lambda}$')
-    ax[1].plot(lam,Bplanck(lam,Temp),'-r',label =r'$I_{\mathrm{bb},\lambda}$')
-    ax[1].set_xlabel('Longitud de onda ($\mu$m)')
-    ax[1].set_ylabel(r'Radiancia espectral (W/m$^2$-$\mu$m-sr)')
-    ax[1].set_title(r'capa de vidrio (d = %.2f mm, $\theta$=%.1f' % (d,theta) )
-    ax[1].legend()
+    # graficamos la emisividad espectral en el ángulo
+    ax[1].plot(theta,A_theta,'-k')  
+    ax[1].plot(theta0,np.interp(theta0,theta,A_theta),'ok')   
+    ax[1].set_xlabel(r'$\theta$ (deg)')
+    ax[1].set_ylabel(r'$\epsilon(\lambda,\theta)$')
+    ax[1].set_title(r'$\lambda = $ %.2f $\mu$m' % lam0)
+    ax[1].set_ylim(0,1.05)
+    
+    # Graficamos la radiación espectral
+    ax[2].plot(lam,A_lam*Bplanck(lam,Temp)*np.cos(np.radians(theta0)),'-k',label =r'$E_{\lambda,\Omega}$')
+    ax[2].plot(lam,Bplanck(lam,Temp)*np.cos(np.radians(theta0)),'-r',label =r'$E_\mathrm{bb}$')
+    ax[2].set_xlabel('Longitud de onda ($\mu$m)')
+    ax[2].set_ylabel(r'E_{\lambda,\Omega}(T) (W/m$^2$-$\mu$m-sr)')
+    ax[2].set_title(r'd = %.2f mm, $\theta$=%i°' % (d,theta0) )
+    ax[2].set_ylim(0,max(Bplanck(lam,Temp))*1.05)
+    ax[2].legend()
+    
+    plt.subplots_adjust(wspace=0.35)
+    plt.show()
 
 
 # In[2]:
@@ -277,12 +333,12 @@ def plot_emisivity_glass(Temp,d,theta):
 
 from ipywidgets import interact
 
-@interact(T=(300,1000,10), d=(0,10,0.01), theta=(0,89,1))
-def g(T=300,d=1, theta=0):
-   return plot_emisivity_glass(T,d,theta)
+@interact(T=(300,1000,10), d=(0,10,0.01), lam0=(5,10,0.01), theta0=(0,90,1))
+def g(T=300,d=1, lam0=10, theta0=0):
+   return plot_emisivity_glass(T,d,lam0,theta0)
 
 
-# Decimos que una superficie es **difusa** cuando sus propiedades radiativas no dependen de $\Omega$. Si la superficie es difusa, una buena aproximación es considerar el valor de la propiedad difusa como la propiedad radiativa de la superficie lisa en la dirección normal. Por ejemplo, para la reflectancia: $\rho(\lambda,T) = \rho(\lambda,\Omega = 0, T)$
+# Decimos que una superficie es **difusa** cuando sus propiedades radiativas no dependen de $\Omega$. Si la superficie es difusa, una buena aproximación es considerar el valor de la propiedad difusa como la propiedad radiativa de la superficie lisa en la dirección normal. Por ejemplo, para la emisividad: $\epsilon(\lambda,T) = \epsilon(\lambda,\Omega = 0, T)$
 
 # Decimos que una superficie es **opaca** cuando $\tau = 0$. En este caso, 
 # tenemos $\alpha + \rho = 1$
