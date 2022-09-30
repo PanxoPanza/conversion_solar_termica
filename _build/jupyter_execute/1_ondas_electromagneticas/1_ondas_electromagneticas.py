@@ -2,13 +2,10 @@
 # coding: utf-8
 
 #  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
-# # 1. La radiación como un fenómeno electromagnético
+# # La radiación como un fenómeno electromagnético
 # <br><br><br><br>
 # Profesor: Francisco Ramírez CueSvas<br>
 # Fecha: 12 de Agosto 2022
-
-# <h1>Tabla de contenidos<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Repaso-de-cálculo-vectorial" data-toc-modified-id="Repaso-de-cálculo-vectorial-1">Repaso de cálculo vectorial</a></span><ul class="toc-item"><li><span><a href="#Campo-escalar-y-vectorial" data-toc-modified-id="Campo-escalar-y-vectorial-1.1">Campo escalar y vectorial</a></span></li><li><span><a href="#Operadores-diferenciales" data-toc-modified-id="Operadores-diferenciales-1.2">Operadores diferenciales</a></span></li><li><span><a href="#Ejemplos-de-uso-de-operadores-diferenciales" data-toc-modified-id="Ejemplos-de-uso-de-operadores-diferenciales-1.3">Ejemplos de uso de operadores diferenciales</a></span></li></ul></li><li><span><a href="#Ecuaciones-de-Maxwell" data-toc-modified-id="Ecuaciones-de-Maxwell-2">Ecuaciones de Maxwell</a></span><ul class="toc-item"><li><span><a href="#Ley-de-Gauss" data-toc-modified-id="Ley-de-Gauss-2.1">Ley de Gauss</a></span></li><li><span><a href="#Ley-de-continuidad-del-campo-magnético" data-toc-modified-id="Ley-de-continuidad-del-campo-magnético-2.2">Ley de continuidad del campo magnético</a></span></li><li><span><a href="#Ley-de-Faraday" data-toc-modified-id="Ley-de-Faraday-2.3">Ley de Faraday</a></span></li><li><span><a href="#Ley-de-Ampere" data-toc-modified-id="Ley-de-Ampere-2.4">Ley de Ampere</a></span></li><li><span><a href="#Corrección-de-la-ley-de-Ampere" data-toc-modified-id="Corrección-de-la-ley-de-Ampere-2.5">Corrección de la ley de Ampere</a></span></li></ul></li><li><span><a href="#Ondas-electromagnéticas" data-toc-modified-id="Ondas-electromagnéticas-3">Ondas electromagnéticas</a></span><ul class="toc-item"><li><span><a href="#Ondas-electromagnéticas-en-el-vacío" data-toc-modified-id="Ondas-electromagnéticas-en-el-vacío-3.1">Ondas electromagnéticas en el vacío</a></span></li><li><span><a href="#Vector-de-Poynting" data-toc-modified-id="Vector-de-Poynting-3.2">Vector de Poynting</a></span></li></ul></li><li><span><a href="#Referencias" data-toc-modified-id="Referencias-4">Referencias</a></span></li></ul></div>
 
 # ## Repaso de cálculo vectorial
 
@@ -382,9 +379,3 @@ YouTubeVideo('bHIhgxav9LY', width=600, height=400,  playsinline=0, start=42)
 # - 7.3 Maxwell's Equations (hasta  7.3.3)
 # - 8 Concervation laws (solo 8.1)
 # - 9 Electromagnetic Waves (hasta 9.2)
-
-# In[ ]:
-
-
-
-

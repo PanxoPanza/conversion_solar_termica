@@ -2,7 +2,7 @@
 # coding: utf-8
 
 #  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
-# # 5. Transporte Radiativo
+# # Transporte Radiativo
 # <br><br><br><br>
 # Profesor: Francisco Ramírez Cuevas<br>
 # Fecha: 9 de Septiembre 2022
@@ -203,28 +203,49 @@ def g(N=1000, t=2, sig=0.3):
 # ## Teoría de transferencia radiativa
 # Si el transporte de luz es incoherente, podemos ignorar las propiedades oscilatorias de la luz y analizar el fenómeno óptico como un el transporte de radiación a través de un volumen de control.
 
-# La **ecuación de transferencia radiativa** (RTE por sus siglas en ingles), describe la propagación de la **radiancia espectral**, $I_\lambda(\vec{r},\hat{k})$ definida como el espectro del flujo de energía en una posición $\vec{r}$, y una dirección $\hat{k}$. En su forma más general, para un problema estacionario:
+# ### Intensidad específica
+
+# Definimos como **radiancia espectral o intensidad específica**, $I_\lambda$, al flujo de energía por **ángulo sólido diferencial**, $d\Omega$, para una longitud de onda $\lambda$.
+# 
+# <img src="./images/specific_intensity.png" width="300px" align= center>
+
+# El ángulo sólido define el tamaño relativo del área $S$ para un observador en $P$ a una distancia $r$. 
+# 
+# El diferencial está definido por $d\Omega = \sin\theta d\theta d\phi$
+# 
+# <img src="./images/solid_angle.png" width="450px" align= center>
+
+# Es importante aclarar que los conceptos intensidad específica y vector de Poynting $\langle\vec{S}\rangle$, son equivalentes: $I_\lambda(\hat{k})$ es un término utilizado en radiometría para definir el flujo de energía por unidad de ángulo sólido, mientras que $\langle\vec{S}\rangle$ es un término ulizado en óptica para describir el flujo de energía en dirección $\hat{k}$. Cabe destacar, sin embargo, que $I_\lambda(\hat{k})$ es una magnitud, y $\langle\vec{S}\rangle$ es un vector. Así, podríamos decir que la relación entre estos dos términos está dada por $I_\lambda(\hat{k}) = \langle\vec{S}\rangle\cdot\hat{k}$.
+
+# El ángulo sólido total para una esfera es:
+# \begin{equation*}
+# \int_\mathrm{esfera} d\Omega = \int_0^{2\pi}\int_0^{\pi} \sin\theta d\theta d\phi= 4\pi
+# \end{equation*}
+
+# ### Ecuación de transferencia radiativa
+# La **ecuación de transferencia radiativa** (RTE por sus siglas en ingles), es una ecuación de transporte que describe la propagación de la radiancia espectral, $I_\lambda(\vec{r},\hat{k})$, en función de la posición posición $\vec{r}$ y dirección $\hat{k}$. En su forma más general, para un problema estacionario:
 # 
 # \begin{equation}
-# \hat{k}\cdot\nabla_r I_\lambda(\vec{r},\hat{k}) = - \left[\frac{f_v}{V_p}C_\mathrm{ext} + 2\kappa k_0\right]I_\lambda(\vec{r},\hat{k}) + \frac{f_v}{V_p}\int_{4\pi} P_\mathrm{sca}(\hat{k},\hat{k}') I_\lambda(\vec{r},\hat{k}') d\hat{k}'
+# \hat{k}\cdot\nabla_r I_\lambda(\vec{r},\hat{k}) = - \left[\frac{f_v}{V_p}C_\mathrm{ext} + 2\kappa k_0\right]I_\lambda(\vec{r},\hat{k}) + \frac{f_v}{V_p}\int_{4\pi} P_\mathrm{sca}(\hat{k},\hat{k}') I_\lambda(\vec{r},\hat{k}') d\Omega'
 # \end{equation}
 
 # donde $f_v$ y $V_p$ son, respectivamente la fracción de volúmen y el volúmen de las partículas en el medio, y $P_\mathrm{sca}(\hat{k},\hat{k}')$ es la función de fase.
 
-# Notar que consideramos el caso más generalizado de la función de fase, que depende tanto de la dirección de la onda incidente $\hat{k}$ como de la dirección del scattering $\hat{k}'$.
+# Notar que consideramos el caso más generalizado de la función de fase, que depende tanto de la dirección de la radiación incidente $\hat{k}$ como de la dirección del scattering $\hat{k}'$. Ambas definidas por ángulo sólido
 
-# Como revisamos en el capítulo anterior, en el caso de una esfera, la función de fase depende de $\theta$, el cual está definido por $\cos\theta = \hat{k}\cdot\hat{k}'$
+# En el caso de una esfera, $\hat{k}_\mathrm{sca} = \hat{k}$ y $\hat{k}_\mathrm{inc} = \hat{k}'$. Así, la función de fase depende de $\theta$, el cual está definido por $\cos\theta = \hat{k}\cdot\hat{k}'$
 # 
 # 
 
 # Con esto en mente, ahora podemos discutir el significado de los términos en la RTE:
 
 # - El primer término representa el cambio de $I_\lambda(\vec{r},\hat{k})$ a través volumen diferencial. Por ejemplo, en el caso unidimencional en dirección $\hat{k} = \hat{x}$, tenemos: 
+# 
 # \begin{equation*}
-# \hat{k}\cdot\nabla_r I_\lambda(\vec{r},\hat{k}) = \frac{\partial}{\partial x}I_\lambda(\vec{r},\hat{k})
+# \hat{x}\cdot\nabla_r I_\lambda(\vec{r},\hat{k}) = \frac{\partial}{\partial x}I_\lambda(\vec{r},\hat{k})
 # \end{equation*}
 
-# - El segundo término representa la pérdida de energía radiativa, por extinción $\left(\frac{f_v}{V_p}C_\mathrm{ext}\right)$ y absorción en el material material ($2\kappa k_0$), respectivamente.Recordemos que la extinción representa la energía absorbida por las partículas + la energía de scattering en direcciónes distintas a $\hat{k}$, es decir $C_\mathrm{ext}= C_\mathrm{abs} + C_\mathrm{sca}$.
+# - El segundo término representa la pérdida de energía radiativa, por extinción $\left(\frac{f_v}{V_p}C_\mathrm{ext}\right)$ y absorción en el material material ($2\kappa k_0$), respectivamente. Recordemos que la extinción representa la energía absorbida por las partículas + la energía de scattering en direcciónes distintas a $\hat{k}$, es decir $C_\mathrm{ext}= C_\mathrm{abs} + C_\mathrm{sca}$.
 
 # - El tercer término representa la ganancia de energía radiativa produco del scattering inducido por radiación incidente en dirección $\hat{k}'$. Este término representa el fenómeno de **scattering múltiple**.
 
@@ -331,10 +352,10 @@ cs.interp_internals(lam1)
 def plot_atmosphere(theta_sun):
     fig, ax = plt.subplots()          
     fig.set_size_inches(8, 5)         # Tamaño del gráfico
-    plt.rcParams['font.size'] = '14'  # tamaño de fuente
+    plt.rcParams['font.size'] = '14'  # tamaño de  fuente
     
     # parámetros de entrada
-    tatm = 100E9                      # espesor de la atmósfera 100 km
+    tatm = 100E6                      # espesor de la atmósfera 100 km
     N = (1.0,1.0,1.0)                 # indice de refracción superior, intermedio e inferior
     fvp = 1E-8                        # fracción de volúmen de las partículas
     Dp = 0.010                        # diámetro de las partículas
@@ -342,7 +363,7 @@ def plot_atmosphere(theta_sun):
     
     # transmitancia total y especular
     theta = np.radians(theta_sun)    # posición del sol en radianes
-    Ttot, Tspec = rt.T_beer_lambert(lam1,theta,tatm,N,fvp,Dp,Np)
+    Ttot, Tspec = rt.T_beer_lambert(lam1,theta,tatm,N,fvp,Dp,Np)[:2]
     
     Tdif = Ttot - Tspec              # transmitancia difusa
     ax.plot(lam1,Tdif,'-k',label = 'Tdif')
@@ -394,17 +415,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 lam2 = np.linspace(0.3,1.0,100) # espectro de longitudes de onda en micrometros
-Nlayers = (1.0,nk.SiO2(lam2),1.0)   # indice de refracción superior, intermedio e inferior
+Nlayers = (1.0,1.5,1.0)   # indice de refracción superior, intermedio e inferior
 Np = nk.silver(lam2)                # Índice de refracción de las partículas
 cs.interp_internals(lam2)
 
 def plot_glass_silver(fv,D):
     # parámetros de entrada
     
-    theta = np.radians(0)       # 30 grados en radianes
-    tfilm = 5E3                 # espesor en micrones
+    theta = np.radians(0)       # 0 grados en radianes
+    tfilm = 5                   # espesor en milímetros
     
-    fv = fv*1E-10               # fracción de volúmen de las partículas
+    fv = fv*1E-7                # fracción de volúmen de las partículas
     D = D*1E-3                  # diámetro de las partículas
     
     qext, qsca = mie.scatter_efficiency(lam2,Nlayers[1],Np,D)[:2]
@@ -427,7 +448,7 @@ def plot_glass_silver(fv,D):
     ax[1].plot(lam2,Ttot,'-b',label = 'Ttot')
     ax[1].set_xlabel('Longitud de onda ($\mu$m)')
     ax[1].set_ylabel('Transmisividad')
-    ax[1].set_title(r'Sílice con plata (fv = %.1e %%)' % (fv*100) )
+    ax[1].set_title(r'Sílice con plata (fv = %.3e %%)' % (fv*100) )
     ax[1].legend()
     ax[1].set_ylim(0,1)
 
@@ -457,7 +478,7 @@ def plot_glass_silver(fv,D):
 from ipywidgets import interact
 
 @interact(fv=(1,100,1), D = (10,200,1))
-def g(fv=30, D = 140):
+def g(fv=20, D = 70):
     return plot_glass_silver(fv,D)
 
 
@@ -480,7 +501,7 @@ def g(fv=30, D = 140):
 # In[11]:
 
 
-get_ipython().run_cell_magic('capture', 'showplot', "# import empylib.nklib as nk\nimport numpy as np\nimport empylib.rad_transfer as rt\n\n# Solo modificar estos parámetros\n#---------------------------------------------------------------\nlam3 = np.linspace(0.3,1.0,100)   # espectro de longitudes de onda\ntfilm = 10E3                      # espesor en micrones\nfv = 0.6                          # fracción de volúmen de los poros\nD = 2.0                           # diámetro de los poros (micrones)\nNh2o = nk.H2O(lam3)               # Índice de refracción del agua\nNoil = 1.5                        # índice de refracción partículas de aceite\n#---------------------------------------------------------------\nRtot, Ttot = rt.ad_rad_transfer(lam3,tfilm,(1.0,Nh2o,1.0),fv,D,Noil)\n\nfig, ax = plt.subplots()\nfig.set_size_inches(7, 5)\nplt.rcParams['font.size'] = '16'\nax.plot(lam3,Rtot,'-r',label='R')\nax.plot(lam3,Ttot,'-b',label='T')\nax.set_xlabel('Longitud de onda ($\\mu$m)')\nax.set_ylabel('Reflectividad / Transmisividad')\nax.set_title(r'Leche (fv = %.0f %%)' % (fv*100))\nax.legend()\nax.set_ylim(0,1)\nplt.show\n")
+get_ipython().run_cell_magic('capture', 'showplot', "# import empylib.nklib as nk\nimport numpy as np\nimport empylib.rad_transfer as rt\n\n# Solo modificar estos parámetros\n#---------------------------------------------------------------\nlam3 = np.linspace(0.3,1.0,100)   # espectro de longitudes de onda\ntfilm = 10                        # espesor en milímetros\nfv = 0.6                          # fracción de volúmen de los poros\nD = 1.0                           # diámetro de los poros (micrones)\nNh2o = 1.3                        # Índice de refracción del agua\nNoil = 1.5                        # índice de refracción partículas de aceite\n#---------------------------------------------------------------\nRtot, Ttot = rt.ad_rad_transfer(lam3,tfilm,(1.0,Nh2o,1.0),fv,D,Noil)\n\nfig, ax = plt.subplots()\nfig.set_size_inches(7, 5)\nplt.rcParams['font.size'] = '16'\nax.plot(lam3,Rtot,'-r',label='R')\nax.plot(lam3,Ttot,'-b',label='T')\nax.set_xlabel('Longitud de onda ($\\mu$m)')\nax.set_ylabel('Reflectividad / Transmisividad')\nax.set_title(r'Leche (fv = %.0f %%)' % (fv*100))\nax.legend()\nax.set_ylim(0,1.02)\nplt.show\n")
 
 
 # In[12]:

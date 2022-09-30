@@ -2,7 +2,7 @@
 # coding: utf-8
 
 #  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
-# # 4. Scattering electromagnético
+# # Scattering electromagnético
 # <br><br><br><br>
 # Profesor: Francisco Ramírez Cuevas<br>
 # Fecha: 2 de Septiembre 2022
@@ -93,7 +93,7 @@
 # Particularmente, cuando $D/\lambda \ll 1$, se denomina Rayleight scattering. En este caso el campo scattering está distribuido uniformemente alrededor de la partícula
 
 # ### Flujo de energía
-# Al igual que con el estudio de reflexión y transmisión, la solución $\vec{E}_\mathrm{sca}$ nos permite determinar el **Flujo de energía** a través del vector de Poyinting $\langle\vec{S_\mathrm{sca}}\rangle = \frac{1}{2}\mathrm{Re}\left(\vec{E}_\mathrm{sca}\times\vec{H}^*_\mathrm{sca}\right)~\mathrm{[W/m^2]}$.
+# Al igual que con el estudio de reflexión y transmisión, la solución $\vec{E}_\mathrm{sca}$ nos permite determinar el el vector de Poyinting asociado a scattering, $\langle\vec{S_\mathrm{sca}}\rangle = \frac{1}{2}\mathrm{Re}\left(\vec{E}_\mathrm{sca}\times\vec{H}^*_\mathrm{sca}\right)~\mathrm{[W/m^2]}$.
 
 # Notar que, en general, $\langle\vec{S_\mathrm{sca}}\rangle$ varía según $\theta$, $\phi$ y $r$.
 # 
@@ -106,15 +106,15 @@
 # \\
 # &= \int_0^{2\pi}\int_0^{\pi} \left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]R^2 \sin\theta d\theta~d\phi
 # \\
-# &= I_\mathrm{inc}~2\pi\int_0^{\pi}  P_\mathrm{sca}(\theta) \sin\theta d\theta
+# &= \Phi_\mathrm{inc}~2\pi\int_0^{\pi}  P_\mathrm{sca}(\theta) \sin\theta d\theta
 # \quad\mathrm{[W]}
 # \end{align*}
 
-# donde $I_\mathrm{inc} = \frac{n_hE_0}{2Z_0}~\mathrm{[W/m^2]}$ es el flujo de energía incidente, y $P_\mathrm{sca}(\theta)  = \frac{R^2}{I_\mathrm{inc}}\left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]$, es la **función de distribución de scattering** o **función de fase**.
+# donde $\Phi_\mathrm{inc} = \frac{n_hE_0}{2Z_0}~\mathrm{[W/m^2]}$ es el flujo de energía o intensidad de la onda incidente, y $P_\mathrm{sca}(\theta)  = \frac{R^2}{\Phi_\mathrm{inc}}\left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]$, es la **función de distribución de scattering** o **función de fase**.
 
-# **La función de fase se define como la energía de scattering relativo a la intencidad de la onda incidente por unidad de ángulo sólido $d\Omega = \sin\theta d\theta d\phi$**. 
+# La función de fase se define como la **energía de scattering por unidad de ángulo sólido $d\Omega = \sin\theta d\theta d\phi$ relativo al flujo de energía de la onda incidente, $\Phi_\mathrm{inc}$**.
 
-# En otras palabras, para una onda incidente con intensidad $I_\mathrm{inc}$, la energía de scattering en dirección $\theta$ es $I_\mathrm{inc} P_\mathrm{sca}(\theta)d\Omega$
+# En otras palabras, para una onda incidente con intensidad $\Phi_\mathrm{inc}$, la energía de scattering en dirección $\theta$ es $\Phi_\mathrm{inc} P_\mathrm{sca}(\theta)d\Omega$
 # 
 # <img src="./images/phase_function.png" width="300px" align= center>
 

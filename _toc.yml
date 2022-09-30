@@ -3,6 +3,8 @@
 
 format: jb-book
 root: intro
+options:  # The options key will be applied to all chapters, but not sub-sections
+  numbered: True
 chapters:
 - file: 0_introduccion/0_introduccion
 - file: 1_ondas_electromagneticas/1_ondas_electromagneticas
@@ -10,3 +12,4 @@ chapters:
 - file: 3_Interacción_materia-luz/3_Interacción_materia-luz
 - file: 4_Scattering/4_Scattering
 - file: 5_TransporteRadiativo/5_TransporteRadiativo
+- file: 6_RadiacionTermica/6_RadiacionTermica

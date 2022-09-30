@@ -1,0 +1,778 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>7. Radiación Térmica &#8212; MEC501 - Manejo y conversión de energía solar térmica</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="6. Transporte Radiativo" href="../5_TransporteRadiativo/5_TransporteRadiativo.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MEC501 - Manejo y conversión de energía solar térmica</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Bienvenidos al curso
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0_introduccion/0_introduccion.html">
+   1. Introducción al curso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_ondas_electromagneticas/1_ondas_electromagneticas.html">
+   2. La radiación como un fenómeno electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html">
+   3. Ondas electromagnéticas en la materia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Interacci%C3%B3n_materia-luz/3_Interacci%C3%B3n_materia-luz.html">
+   4. Interacción materia-luz
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Scattering/4_Scattering.html">
+   5. Scattering electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5_TransporteRadiativo/5_TransporteRadiativo.html">
+   6. Transporte Radiativo
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   7. Radiación Térmica
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/6_RadiacionTermica/6_RadiacionTermica.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/6_RadiacionTermica/6_RadiacionTermica.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion-a-la-transferencia-de-calor">
+   7.1. Introducción a la Transferencia de Calor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conduccion-de-calor">
+     7.1.1. Conducción de Calor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conveccion-de-calor">
+     7.1.2. Convección de Calor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transferencia-de-calor-en-estado-estacionario">
+     7.1.3. Transferencia de calor en estado estacionario
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fundamentos-de-la-radiacion-termica">
+   7.2. Fundamentos de la radiación térmica
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribucion-de-planck">
+     7.2.1. Distribución de Planck
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#propiedades-radiativas">
+     7.2.2. Propiedades Radiativas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#irradiancia-g-y-radiosidad-j">
+     7.2.3. Irradiancia (G) y Radiosidad (J)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   7.3. Referencias
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Radiación Térmica</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion-a-la-transferencia-de-calor">
+   7.1. Introducción a la Transferencia de Calor
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conduccion-de-calor">
+     7.1.1. Conducción de Calor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conveccion-de-calor">
+     7.1.2. Convección de Calor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transferencia-de-calor-en-estado-estacionario">
+     7.1.3. Transferencia de calor en estado estacionario
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fundamentos-de-la-radiacion-termica">
+   7.2. Fundamentos de la radiación térmica
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#distribucion-de-planck">
+     7.2.1. Distribución de Planck
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#propiedades-radiativas">
+     7.2.2. Propiedades Radiativas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#irradiancia-g-y-radiosidad-j">
+     7.2.3. Irradiancia (G) y Radiosidad (J)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   7.3. Referencias
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <h1>Tabla de contenidos<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Introducción-a-la-Transferencia-de-Calor" data-toc-modified-id="Introducción-a-la-Transferencia-de-Calor-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Introducción a la Transferencia de Calor</a></span><ul class="toc-item"><li><span><a href="#Conducción-de-Calor" data-toc-modified-id="Conducción-de-Calor-1.1"><span class="toc-item-num">1.1&nbsp;&nbsp;</span>Conducción de Calor</a></span></li><li><span><a href="#Convección-de-Calor" data-toc-modified-id="Convección-de-Calor-1.2"><span class="toc-item-num">1.2&nbsp;&nbsp;</span>Convección de Calor</a></span></li><li><span><a href="#Transferencia-de-calor-en-estado-estacionario" data-toc-modified-id="Transferencia-de-calor-en-estado-estacionario-1.3"><span class="toc-item-num">1.3&nbsp;&nbsp;</span>Transferencia de calor en estado estacionario</a></span></li></ul></li><li><span><a href="#Fundamentos-de-la-radiación-térmica" data-toc-modified-id="Fundamentos-de-la-radiación-térmica-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Fundamentos de la radiación térmica</a></span><ul class="toc-item"><li><span><a href="#Distribución-de-Planck" data-toc-modified-id="Distribución-de-Planck-2.1"><span class="toc-item-num">2.1&nbsp;&nbsp;</span>Distribución de Planck</a></span></li><li><span><a href="#Propiedades-Radiativas" data-toc-modified-id="Propiedades-Radiativas-2.2"><span class="toc-item-num">2.2&nbsp;&nbsp;</span>Propiedades Radiativas</a></span></li><li><span><a href="#Irradiancia-(G)-y-Radiosidad-(J)" data-toc-modified-id="Irradiancia-(G)-y-Radiosidad-(J)-2.3"><span class="toc-item-num">2.3&nbsp;&nbsp;</span>Irradiancia (G) y Radiosidad (J)</a></span></li></ul></li><li><span><a href="#Referencias" data-toc-modified-id="Referencias-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Referencias</a></span></li></ul></div><p><font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font></p>
+<section class="tex2jax_ignore mathjax_ignore" id="radiacion-termica">
+<h1><span class="section-number">7. </span>Radiación Térmica<a class="headerlink" href="#radiacion-termica" title="Permalink to this headline">#</a></h1>
+<p><br><br><br><br>
+Profesor: Francisco Ramírez Cuevas<br>
+Fecha: 30 de Septiembre 2022</p>
+<section id="introduccion-a-la-transferencia-de-calor">
+<h2><span class="section-number">7.1. </span>Introducción a la Transferencia de Calor<a class="headerlink" href="#introduccion-a-la-transferencia-de-calor" title="Permalink to this headline">#</a></h2>
+<p>A nivel molecular, los átomos que compomen la materia siempre está vibrando. La magnitud de estas vibraciones está caracterizada estadísticamente por la temperatura:</p>
+<a class="reference internal image-reference" href="../_images/temperature_brownian_motion.gif"><img alt="../_images/temperature_brownian_motion.gif" class="align-center" src="../_images/temperature_brownian_motion.gif" style="width: 400px;" /></a>
+<p>Consideremos un sólido extendido con una diferencia de temperatura, <span class="math notranslate nohighlight">\(\Delta T\)</span>, entre sus extremos, tal que el lado izquierdo tiene una mayor temperatura que el lado derecho</p>
+<a class="reference internal image-reference" href="../_images/heat_transfer.gif"><img alt="../_images/heat_transfer.gif" class="align-center" src="../_images/heat_transfer.gif" style="width: 300px;" /></a>
+<p>Debido a la diferencia de temperatura, la vibración molecular en el lado izquierdo es mayor. Esta energía cinética es transmitida a través del material hacia el lado derecho.</p>
+<p>Definimos como <strong>calor</strong>, <span class="math notranslate nohighlight">\(Q\)</span>, a la energía térmica intercambiada entre dos medios cuya diferencia de temperatura es <span class="math notranslate nohighlight">\(\Delta T\)</span>. A mayor <span class="math notranslate nohighlight">\(\Delta T\)</span>, mayor es el intercambio de calor, matematicamente:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+Q \propto \Delta T,\quad\mathrm{J}
+\end{equation*}\]</div>
+<p>La <strong>taza de transferencia de calor</strong>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\dot{Q} = \frac{dQ}{dt},\quad\mathrm{W}
+\end{equation*}\]</div>
+<p>corresponde al calor tranferido por unidad de tiempo.</p>
+<p>Por último, definimos como <strong>flujo de calor</strong>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+q'' = \dot{Q}/A,\quad\frac{\mathrm{W}}{\mathrm{m}^2}
+\end{equation*}\]</div>
+<p>a la taza de transferencia de calor por unidad de área.</p>
+<p>Existen tres mecanismo de transferencia de calor:</p>
+<ul class="simple">
+<li><p>Conducción de calor</p></li>
+<li><p>Convección de calor</p></li>
+<li><p>Radiación</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/heat_transfer_mechanism.png"><img alt="../_images/heat_transfer_mechanism.png" class="align-center" src="../_images/heat_transfer_mechanism.png" style="width: 500px;" /></a>
+<section id="conduccion-de-calor">
+<h3><span class="section-number">7.1.1. </span>Conducción de Calor<a class="headerlink" href="#conduccion-de-calor" title="Permalink to this headline">#</a></h3>
+<p><strong>Definimos como <em>conducción de calor</em> al calor transferido a través de un material en reposo</strong>. El mecanismo generalmente se asocia a <strong>sólidos</strong>, donde el calor es transferido a travéz de la red atómica del material. Sin embargo, la definición también incluye <strong>líquidos y gases en reposo.</strong> En este caso, las moléculas se mueven eleatoriamente, de manera tal que la velocidad neta del fluido es cero.</p>
+<p>Matemáticamente, para un material de espesor <span class="math notranslate nohighlight">\(t\)</span> y diferencia de temperatura <span class="math notranslate nohighlight">\(\Delta T\)</span>, la <strong>taza de transferencia de calor por conducción</strong> a través de una superficie <span class="math notranslate nohighlight">\(A\)</span>, es:</p>
+<a class="reference internal image-reference" href="../_images/heat_conduction_formula.png"><img alt="../_images/heat_conduction_formula.png" class="align-center" src="../_images/heat_conduction_formula.png" style="width: 700px;" /></a>
+<p>La conductividad térmica, <span class="math notranslate nohighlight">\(k_c\)</span>, es una propiedad del material que varía según la temperatura.</p>
+<a class="reference internal image-reference" href="../_images/thermal_conductivity.png"><img alt="../_images/thermal_conductivity.png" class="align-center" src="../_images/thermal_conductivity.png" style="width: 800px;" /></a>
+<p>En su forma diferencial, <span class="math notranslate nohighlight">\(\dot{Q}_\mathrm{cond}= - k\nabla T\)</span>, y para el caso unidimensional:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a8a25014-edbf-4feb-af18-3563711a18ac">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-a8a25014-edbf-4feb-af18-3563711a18ac" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\dot{Q}_\mathrm{cond} = - kA\frac{dT}{dx},\quad\mathrm{W}
+\end{equation}\]</div>
+<p>A partir de esta fórmula podemos deducir expresiones para taza de transferencia de calor por conducción según la geometría:</p>
+<a class="reference internal image-reference" href="../_images/heat_conduction_resistance.png"><img alt="../_images/heat_conduction_resistance.png" class="align-center" src="../_images/heat_conduction_resistance.png" style="width: 600px;" /></a>
+<p>Notar que, como fórmula general, podemos expresar la taza de conducción de calor en la forma:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\dot{Q}_\mathrm{cond} = \frac{T_H - T_C}{R_\mathrm{cond}},\quad\mathrm{W}
+\end{equation*}\]</div>
+<p>donde, <span class="math notranslate nohighlight">\(R_\mathrm{cond}\)</span> (K/W) es la <strong>resistencia térmica</strong> asociada al mecanismo de conducción.</p>
+</section>
+<section id="conveccion-de-calor">
+<h3><span class="section-number">7.1.2. </span>Convección de Calor<a class="headerlink" href="#conveccion-de-calor" title="Permalink to this headline">#</a></h3>
+<p><strong>Definimos como <em>convección de calor</em> al calor transferido a través de fluidos en movimiento.</strong> El movimiento de un fluido puede ocurrir naturalmente, debido a los efectos de flotación a raíz de los cambio de densidad con la temperatura; o de forma inducida, como por ejemplo mediante un ventilador.</p>
+<p>A partir de esto, clasificamos la transferencia de calor por convección, respectivamente, como:</p>
+<ul class="simple">
+<li><p><strong>convección natural</strong></p></li>
+<li><p><strong>convección forzada</strong>.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/heat_convection_mechanism.png"><img alt="../_images/heat_convection_mechanism.png" class="align-center" src="../_images/heat_convection_mechanism.png" style="width: 300px;" /></a>
+<p>La convección de calor esta asociada al contacto de fluidos con una superficie, <span class="math notranslate nohighlight">\(A\)</span>. Así, independiente del mecanismo de convección de calor (natural o forzada), expresamos la <strong>taza de transferencia de calor por convección</strong> como:</p>
+<a class="reference internal image-reference" href="../_images/heat_convection_formula.png"><img alt="../_images/heat_convection_formula.png" class="align-center" src="../_images/heat_convection_formula.png" style="width: 700px;" /></a>
+<p>Notar que la taza de transferencia de calor por convección puede ser expresada en la forma:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\dot{Q}_\mathrm{conv} = \frac{T_\infty - T}{R_\mathrm{conv}},\quad\mathrm{W}
+\end{equation*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(R_\mathrm{conv}=1/hA\)</span> es la resisitencia térnmica asociada a la convección de calor.</p>
+<p>A diferencia de la conducción de calor, el coeficiente convectivo, <span class="math notranslate nohighlight">\(h\)</span>, <strong>no es una propiedad del fluido</strong>. Esto porque no solo depende de las propiedades del fluido (densidad, viscocidad y conductividad térmica, entre otras), sino que además depende de condiciones externas, como la velocidad del flujo, la diferencia de temperaturas, y la geometría del cuerpó sometido a conveccción de calor.</p>
+<p>El coeficiente convectivo se determina a partir de relaciones expresadas en términos del número de Nusselt, <span class="math notranslate nohighlight">\(\mathrm{Nu} = \frac{hL_c}{k_f}\)</span>, donde <span class="math notranslate nohighlight">\(L_c\)</span> es una longitud característica y <span class="math notranslate nohighlight">\(k_f\)</span> es la conductividad térmica del fluido. En la mayoría de los casos, las relaciones para el número de Nusselt para cada caso se determinan experimentalmente.</p>
+<p>Comúnmente, los valores para el número de Nusselt se encuentran dentro de los siguientes rangos:</p>
+<ul class="simple">
+<li><p>Convección forzada, <span class="math notranslate nohighlight">\(\mathrm{Nu} \sim 5 - 1000 \)</span></p></li>
+<li><p>Convección natural, <span class="math notranslate nohighlight">\(\mathrm{Nu} \sim 0 - 100\)</span></p></li>
+</ul>
+</section>
+<section id="transferencia-de-calor-en-estado-estacionario">
+<h3><span class="section-number">7.1.3. </span>Transferencia de calor en estado estacionario<a class="headerlink" href="#transferencia-de-calor-en-estado-estacionario" title="Permalink to this headline">#</a></h3>
+<p>En estado estacionario, el flujo de calor es constante. En este caso, podemos simplificar el análisis de transferencia de calor por convección y conducción utilizando resistencias térmicas.</p>
+<a class="reference internal image-reference" href="../_images/stationary_heat_transfer.png"><img alt="../_images/stationary_heat_transfer.png" class="align-center" src="../_images/stationary_heat_transfer.png" style="width: 700px;" /></a>
+</section>
+</section>
+<section id="fundamentos-de-la-radiacion-termica">
+<h2><span class="section-number">7.2. </span>Fundamentos de la radiación térmica<a class="headerlink" href="#fundamentos-de-la-radiacion-termica" title="Permalink to this headline">#</a></h2>
+<p>Las vibraciones a nivel molecular también inducen polarización en la materia. Esto es similar al fenómeno de polarización inducida por ondas electromagnéticas estudiada en la unidad 3. Estos dipolos inducidos térmicamente, oscilan constantemente generando campos electromagnéticos que se propagan en dirección radial.</p>
+<a class="reference internal image-reference" href="../_images/radiating_dipole.png"><img alt="../_images/radiating_dipole.png" class="align-center" src="../_images/radiating_dipole.png" style="width: 700px;" /></a>
+<p>En la siguiente animación podemos ver el proceso de emisión de ondas electromagnéticas por un dipolo oscilatorio. El mapa de colores representa la intensidad del campo magnético, es decir <span class="math notranslate nohighlight">\(|\vec{H}|\)</span>, donde rojo y azul corresponden, respectivamente, a los valorse máximos y mínimos.</p>
+<a class="reference internal image-reference" href="../_images/HW_vertical_noground.gif"><img alt="../_images/HW_vertical_noground.gif" class="align-center" src="../_images/HW_vertical_noground.gif" style="width: 300px;" /></a>
+<section id="distribucion-de-planck">
+<h3><span class="section-number">7.2.1. </span>Distribución de Planck<a class="headerlink" href="#distribucion-de-planck" title="Permalink to this headline">#</a></h3>
+<p>Un cuerpo a temperatura <span class="math notranslate nohighlight">\(T\)</span> emite ondas electromagnéticas en todas las direcciones y en un rango de longitudes de onda. En general, la distribución angular (<span class="math notranslate nohighlight">\(\Omega\)</span>) y espectral (<span class="math notranslate nohighlight">\(\lambda\)</span>) de la radiación emitida depende de las propiedades ópticas de la superficie y la temperatura del material.</p>
+<p>Max Planck en 1901 determinó que la <strong>máxima radiancia espectral o intensidad específica</strong> (flujo de energía por unidad de longitud de onda y ángulo sólido) emitida por un cuerpo a temperatura <span class="math notranslate nohighlight">\(T\)</span>, en un medio con índice de refracción <span class="math notranslate nohighlight">\(n_1\)</span>, está dada por:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-62044107-1f4d-494a-8aed-0031297f5715">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-62044107-1f4d-494a-8aed-0031297f5715" title="Permalink to this equation">#</a></span>\[\begin{equation}
+I_{\mathrm{bb},\lambda}(\lambda,T,\Omega) = \frac{C_1}{n_1\lambda^5\left[\exp\left(C_2/\lambda T\right) - 1\right]},\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}\cdot\mathrm{sr}}
+\end{equation}\]</div>
+<p>donde</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+C_1 &amp;= 2hc_0^2 = 1.19104238\times 10^8 ~\mathrm{W}\cdot\mu\mathrm{m}^4/\mathrm{m}^2 \\
+C_2 &amp;= hc_0/k_\mathrm{B} = 1.43878\times10^{4}~\mu\mathrm{m}\cdot\mathrm{K}
+\end{align*}\]</div>
+<p><span class="math notranslate nohighlight">\(k_\mathrm{B} = 1.381\times 10^{-23}\)</span> J/K <span class="math notranslate nohighlight">\(=8.617\times 10^{-5}\)</span> eV/K, es la constante de Boltzmann. La unidad “sr” correponde a un esteroradian.</p>
+<p>Esta es la <strong>distribución de Planck</strong>. Representa la radiancia espectral emitida por un cuerpo idealizado, denominado <strong>cuerpo negro</strong>. Un cuerpo negro, así, representa un emisor perfecto, capaz de emitir la máxima radiacion posible a una temperatura <span class="math notranslate nohighlight">\(T\)</span>.</p>
+<p>La taza de calor total emitido por una superficie <span class="math notranslate nohighlight">\(dA\)</span> de un cuerpo negro, <span class="math notranslate nohighlight">\(d\dot{Q}_\mathrm{rad}\)</span> se determina mediante:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-94496f63-1c76-4d0d-b2ee-865473ccfb0e">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-94496f63-1c76-4d0d-b2ee-865473ccfb0e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+d\dot{Q}_\mathrm{rad} = \int_0^\infty d\lambda\int_0^{2\pi}d\phi\int_0^{\pi/2}d\theta~I_{\mathrm{bb},\lambda}(\lambda,T,\theta,\phi) \sin\theta \cos\theta dA
+\end{equation}\]</div>
+<p>El término <span class="math notranslate nohighlight">\(\cos\theta dA\)</span> corresponde a la proyección de <span class="math notranslate nohighlight">\(dA\)</span> en la dirección <span class="math notranslate nohighlight">\(\Omega\)</span></p>
+<a class="reference internal image-reference" href="../_images/specific_intensity1.png"><img alt="../_images/specific_intensity1.png" class="align-center" src="../_images/specific_intensity1.png" style="width: 300px;" /></a>
+<p>El flujo espectral de radiación emitida o <strong>poder de emisión espectral</strong> de la superficie de un cuerpo negro, <span class="math notranslate nohighlight">\(E_\mathrm{bb}(\lambda,T)\)</span>, se obtiene integrando la radiancia espectral por ángulo sólido en el límite de una hemiesfera:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-35ba5603-b716-4b88-82ff-59836af38a9a">
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-35ba5603-b716-4b88-82ff-59836af38a9a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int_\mathrm{hemi} I_{\mathrm{bb},\lambda}(\lambda,T,\Omega)\cos\theta d\Omega = \pi I_{\mathrm{bb},\lambda}(\lambda,T) = E_\mathrm{bb}(\lambda,T),\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}}
+\end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\int_\mathrm{hemi} d\Omega = \int_0^{2\pi}d\phi\int_0^{\pi/2}d\theta\)</span></p>
+<p>A partir de la integral de <span class="math notranslate nohighlight">\(E_\mathrm{bb}(\lambda,T)\)</span> en el espectro de longitudes de onda, obtenemos el flujo de radiación emitida o el <strong>poder de emisión</strong> de un cuerpo negro:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ad3bd535-ebfd-41fa-8914-9dd24812fc31">
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-ad3bd535-ebfd-41fa-8914-9dd24812fc31" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\int_0^\infty E_\mathrm{bb}(\lambda,T) d\lambda = \sigma T^4,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
+\end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\sigma = 5.670\times10^{-8}\)</span> W/m<span class="math notranslate nohighlight">\(^2\cdot\)</span>K<span class="math notranslate nohighlight">\(^4\)</span>, es la <em>constante de Stefan-Boltzmann.</em> Esta fórmula se conoce como la <strong>ley de Stefan-Boltzmann</strong></p>
+<p>En la siguiente figura, se ilustra <span class="math notranslate nohighlight">\(E_\mathrm{bb}(\lambda,T)\)</span> función de la temperatura y longitud de onda.</p>
+<a class="reference internal image-reference" href="../_images/blackbody_rad.png"><img alt="../_images/blackbody_rad.png" class="align-center" src="../_images/blackbody_rad.png" style="width: 700px;" /></a>
+<p>A medida que <span class="math notranslate nohighlight">\(T\)</span> aumenta, notamos que el máximo de la curva se desplaza hacia el azul. La longitud de onda correspondiente a este máximo, <span class="math notranslate nohighlight">\(\lambda_\mathrm{peak}\)</span>, está definida por la <strong>ley de desplazamiento de Wien:</strong></p>
+<div class="amsmath math notranslate nohighlight" id="equation-3e591ab6-0b73-4a41-bfd9-068bcb403129">
+<span class="eqno">(7.6)<a class="headerlink" href="#equation-3e591ab6-0b73-4a41-bfd9-068bcb403129" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\lambda_\mathrm{peak}T = 2897.8\quad\mu\mathrm{m}\cdot\mathrm{K}
+\end{equation}\]</div>
+<p>Esta relación permite entender el cambio de color de la fuente emisora con la tempertura. Sin embargo, <strong>el color de un material no solo se define por la emisión de radiación, sino también por la forma en la que interactúa con la luz incidente</strong>. Como revisamos en las unidades anteriores, esta interacción está condionada por las propiedades radiativas.</p>
+</section>
+<section id="propiedades-radiativas">
+<h3><span class="section-number">7.2.2. </span>Propiedades Radiativas<a class="headerlink" href="#propiedades-radiativas" title="Permalink to this headline">#</a></h3>
+<p>Definimos como <strong>emisividad, <span class="math notranslate nohighlight">\(\epsilon\)</span></strong> a la <em>razón entre la radiación emitida por una superficie, <span class="math notranslate nohighlight">\(I_\lambda(\lambda,T,\Omega)\)</span>, y la radiación emitida por un cuerpo negro, ambas a temperatura <span class="math notranslate nohighlight">\(T\)</span></em>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-604976dd-52d1-4e2c-ab80-0fb8609f01df">
+<span class="eqno">(7.7)<a class="headerlink" href="#equation-604976dd-52d1-4e2c-ab80-0fb8609f01df" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\epsilon(\lambda,\Omega) = \frac{I_\lambda(\lambda,T,\Omega)}{I_{\mathrm{bb},\lambda}(\lambda,T,\Omega)}
+\end{equation}\]</div>
+<p>De esta forma, <span class="math notranslate nohighlight">\(\epsilon\)</span> es una propiedad adimensional de superfice que varía entre <span class="math notranslate nohighlight">\(0 \le \epsilon \le 1\)</span>.</p>
+<p>La <strong>ley de Kirchhoff</strong>, establece que la abortividad, <span class="math notranslate nohighlight">\(\alpha\)</span> y la emisividad están relacionadas por:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-245e63d8-6f53-4c10-ad64-c191d2dbac1d">
+<span class="eqno">(7.8)<a class="headerlink" href="#equation-245e63d8-6f53-4c10-ad64-c191d2dbac1d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\epsilon(\lambda,\Omega) = \alpha(\lambda,\Omega)
+\end{equation}\]</div>
+<p>A partir de estas relacion podemos relacionar las propiedades de reflectividad, <span class="math notranslate nohighlight">\(R\)</span> y transmisividad <span class="math notranslate nohighlight">\(T\)</span> para determinar <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p>Debido a la naturaleza de la radiación térmica, la polarización de las ondas electromagnéticas es aleatoria. Así, <span class="math notranslate nohighlight">\(R\)</span> y <span class="math notranslate nohighlight">\(T\)</span> se calculan como:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e8132ab4-cf5c-4b53-97dc-5fa7fed291e6">
+<span class="eqno">(7.9)<a class="headerlink" href="#equation-e8132ab4-cf5c-4b53-97dc-5fa7fed291e6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+R = \frac{R_\mathrm{TM}+R_\mathrm{TE}}{2}\quad\quad
+T = \frac{T_\mathrm{TM}+T_\mathrm{TE}}{2}
+\end{equation}\]</div>
+<p>Cabe mencionar que en radiometría, la reflectividad y transmisividad se denominan, respectivamente, <strong>reflectancia (<span class="math notranslate nohighlight">\(\rho\)</span>)</strong>, <strong>transmitancia (<span class="math notranslate nohighlight">\(\tau\)</span>).</strong> Igualmente la absortividad se denomina <strong>absortancia.</strong> Ambos términos son equivalentes.</p>
+<p>Por la ley de conservación de energía, la reflectancia, transmitancia y absortancia se relacionan por:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-159835cd-7293-475d-9546-9abb47aa0f3e">
+<span class="eqno">(7.10)<a class="headerlink" href="#equation-159835cd-7293-475d-9546-9abb47aa0f3e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+1 = \alpha(\lambda,\Omega) + \rho(\lambda,\Omega) + \tau(\lambda,\Omega)
+\end{equation}\]</div>
+<p>Como ejemplo, analicemos la radiancia espectral, <span class="math notranslate nohighlight">\(I_\lambda(\lambda,\Omega,T)\)</span> de una capa de vidrio en función de la temperatura, espesor y dirección. En este caso:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+I_\lambda(\lambda,\Omega,T) &amp;= \epsilon(\lambda,\Omega)I_{\mathrm{bb},\lambda}(\lambda,\Omega,T) \\
+ &amp;= \left[1 - \rho(\lambda,\Omega) - \tau(\lambda,\Omega)\right]I_{\mathrm{bb},\lambda}(\lambda,\Omega,T)
+\end{align*}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">empylib.waveoptics</span> <span class="k">as</span> <span class="nn">wv</span>
+<span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">log10</span><span class="p">,</span> <span class="n">radians</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">empylib.ref_spectra</span> <span class="kn">import</span> <span class="n">Bplanck</span>
+
+<span class="k">def</span> <span class="nf">plot_emisivity_glass</span><span class="p">(</span><span class="n">Temp</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">theta</span><span class="p">):</span>
+    <span class="c1"># parámetros de entrada</span>
+    
+    <span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">Nfront</span> <span class="o">=</span> <span class="mf">1.0</span>                 <span class="c1"># índice de refracción medio superior</span>
+    <span class="n">N1</span>     <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">SiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>        <span class="c1"># índice de refracción capa delgada</span>
+    <span class="n">Nback</span>  <span class="o">=</span> <span class="mf">4.3</span>                 <span class="c1"># índice de refracción medio inferior</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="n">Nfront</span><span class="p">,</span> <span class="n">N1</span><span class="p">,</span> <span class="n">Nback</span><span class="p">)</span>      <span class="c1"># indices de refracción (above, mid, below)</span>
+
+    <span class="c1">#abs caso luz incoherente</span>
+    <span class="n">Rs</span><span class="p">,</span> <span class="n">Ts</span> <span class="o">=</span> <span class="n">wv</span><span class="o">.</span><span class="n">incoh_multilayer</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">radians</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="o">*</span><span class="mf">1E3</span><span class="p">,</span> <span class="n">pol</span><span class="o">=</span><span class="s1">&#39;TM&#39;</span><span class="p">)</span>
+    <span class="n">Rp</span><span class="p">,</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">wv</span><span class="o">.</span><span class="n">incoh_multilayer</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">radians</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">N</span><span class="p">,</span> <span class="n">d</span><span class="o">*</span><span class="mf">1E3</span><span class="p">,</span> <span class="n">pol</span><span class="o">=</span><span class="s1">&#39;TM&#39;</span><span class="p">)</span>
+    
+    <span class="n">R</span> <span class="o">=</span> <span class="p">(</span><span class="n">Rs</span> <span class="o">+</span> <span class="n">Rp</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="p">(</span><span class="n">Ts</span> <span class="o">+</span> <span class="n">Tp</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">T</span> <span class="o">-</span> <span class="n">R</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;16&#39;</span>
+
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="s1">&#39;--r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\rho$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="s1">&#39;--b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\tau$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\alpha$&#39;</span><span class="p">)</span>    
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\rho$, $\tau$ y $\alpha$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">A</span><span class="o">*</span><span class="n">Bplanck</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Temp</span><span class="p">),</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$I_{\mathrm</span><span class="si">{glass}</span><span class="s1">,\lambda}$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Bplanck</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Temp</span><span class="p">),</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$I_{\mathrm</span><span class="si">{bb}</span><span class="s1">,\lambda}$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Radiancia espectral (W/m$^2$-$\mu$m-sr)&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;capa de vidrio (d = </span><span class="si">%.2f</span><span class="s1"> mm, $\theta$=</span><span class="si">%.1f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">theta</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
+
+<span class="nd">@interact</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">d</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">theta</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">89</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">T</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">d</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">plot_emisivity_glass</span><span class="p">(</span><span class="n">T</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">theta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "33a72123879141afb5de21441bcfb4d7"}
+</script></div>
+</div>
+<p>Decimos que una superficie es <strong>difusa</strong> cuando sus propiedades radiativas no dependen de <span class="math notranslate nohighlight">\(\Omega\)</span>. Si la superficie es difusa, una buena aproximación es considerar el valor de la propiedad difusa como la propiedad radiativa de la superficie lisa en la dirección normal. Por ejemplo, para la reflectancia: <span class="math notranslate nohighlight">\(\rho(\lambda,T) = \rho(\lambda,\Omega = 0, T)\)</span></p>
+<p>Decimos que una superficie es <strong>opaca</strong> cuando <span class="math notranslate nohighlight">\(\tau = 0\)</span>. En este caso,
+tenemos <span class="math notranslate nohighlight">\(\alpha + \rho = 1\)</span></p>
+<p>Para gases, <span class="math notranslate nohighlight">\(\rho \approx 0\)</span>, así <span class="math notranslate nohighlight">\(\alpha + \tau = 1\)</span></p>
+</section>
+<section id="irradiancia-g-y-radiosidad-j">
+<h3><span class="section-number">7.2.3. </span>Irradiancia (G) y Radiosidad (J)<a class="headerlink" href="#irradiancia-g-y-radiosidad-j" title="Permalink to this headline">#</a></h3>
+<p>Definimos como <strong>irradiación (G)</strong> a la radiancia espectral incidente en una superficie.
+<a class="reference internal" href="../_images/irradiance.png"><img alt="../_images/irradiance.png" class="align-center" src="../_images/irradiance.png" style="width: 300px;" /></a></p>
+<p>Definimos como <strong>radiosidad (J)</strong> a la combinación de radiación emitida y reflejada por una superficie
+<a class="reference internal" href="../_images/radiosity.png"><img alt="../_images/radiosity.png" class="align-center" src="../_images/radiosity.png" style="width: 250px;" /></a></p>
+</section>
+</section>
+<section id="referencias">
+<h2><span class="section-number">7.3. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Çengel Y. A y Ghanjar A. J. <strong>Capítulo 12 - Fundamentos de la radiación térmica</strong> en <em>Transferencia de calor y masa</em>, 4ta Ed, McGraw Hill, 2011</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;FDmYCI_xYlA&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>  <span class="n">playsinline</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="600"
+    height="400"
+    src="https://www.youtube.com/embed/FDmYCI_xYlA?playsinline=0"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+</section>
+</section>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"dc4ddcbc36404feeb4abe4572fa2c1dd": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "33a72123879141afb5de21441bcfb4d7": {"model_name": "VBoxModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": ["widget-interact"], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "VBoxModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "VBoxView", "box_style": "", "children": ["IPY_MODEL_905d0a1f4e3f44fab47dd992d14f7ad9", "IPY_MODEL_50b4d42a12184651b921e5fce8cc339f", "IPY_MODEL_93d7586b2553488c97e117f644dfd34e", "IPY_MODEL_967a34ef57114823aa4d14ad266e2077"], "layout": "IPY_MODEL_dc4ddcbc36404feeb4abe4572fa2c1dd"}}, "fa4b59ad894f44bbad10c924aaa03e60": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "62cae56e32e443a89080399e090fb4f0": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "905d0a1f4e3f44fab47dd992d14f7ad9": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "T", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_fa4b59ad894f44bbad10c924aaa03e60", "max": 1000, "min": 300, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 10, "style": "IPY_MODEL_62cae56e32e443a89080399e090fb4f0", "value": 300}}, "91a281ea5a164ebabae7eec6e6e10ea3": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7bb135a3a5604c67a3b9f1407255546c": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "50b4d42a12184651b921e5fce8cc339f": {"model_name": "FloatSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "FloatSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "FloatSliderView", "continuous_update": true, "description": "d", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_91a281ea5a164ebabae7eec6e6e10ea3", "max": 10.0, "min": 0.0, "orientation": "horizontal", "readout": true, "readout_format": ".2f", "step": 0.01, "style": "IPY_MODEL_7bb135a3a5604c67a3b9f1407255546c", "value": 1.0}}, "776e2483938943dfa24b5ef91b0dfd19": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "551371cdab4247ad93b8ee95df4bab51": {"model_name": "SliderStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "SliderStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "StyleView", "description_width": "", "handle_color": null}}, "93d7586b2553488c97e117f644dfd34e": {"model_name": "IntSliderModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "1.5.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "1.5.0", "_model_name": "IntSliderModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "1.5.0", "_view_name": "IntSliderView", "continuous_update": true, "description": "theta", "description_tooltip": null, "disabled": false, "layout": "IPY_MODEL_776e2483938943dfa24b5ef91b0dfd19", "max": 89, "min": 0, "orientation": "horizontal", "readout": true, "readout_format": "d", "step": 1, "style": "IPY_MODEL_551371cdab4247ad93b8ee95df4bab51", "value": 0}}, "5b58902c41ac43d3aa7e43e390152b2a": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "1.2.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "1.2.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "overflow_x": null, "overflow_y": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "967a34ef57114823aa4d14ad266e2077": {"model_name": "OutputModel", "model_module": "@jupyter-widgets/output", "model_module_version": "1.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/output", "_model_module_version": "1.0.0", "_model_name": "OutputModel", "_view_count": null, "_view_module": "@jupyter-widgets/output", "_view_module_version": "1.0.0", "_view_name": "OutputView", "layout": "IPY_MODEL_5b58902c41ac43d3aa7e43e390152b2a", "msg_id": "", "outputs": [{"output_type": "display_data", "metadata": {"needs_background": "light"}, "data": {"text/plain": "<Figure size 1296x360 with 2 Axes>", "image/png": "iVBORw0KGgoAAAANSUhEUgAABCEAAAFYCAYAAABtZ+ZQAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjUuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8qNh9FAAAACXBIWXMAAAsTAAALEwEAmpwYAAC+1ElEQVR4nOzdd3gUVRfA4d9NI7QQOkkgJLQAQuhFREAQlSZKUUQRsFBEEUXFLjZQaQqKCAqI+qECIqCIBVCaICAQeg0thAAptEDq/f6Y3RhCElJ2d3az532efZadmb1zNoXsnrn3HKW1RgghhBBCCCGEEMLePMwOQAghhBBCCCGEEO5BkhBCCCGEEEIIIYRwCElCCCGEEEIIIYQQwiEkCSGEEEIIIYQQQgiHkCSEEEIIIYQQQgghHEKSEEIIIYQQQgghhHAISUIIIYQQQgghhBDCISQJIYQQQgghhBBCCIeQJIQQQgghhHB7SqlBSimtlBpkchwdLHGMzcdz8h17Qc6TX0opT6XUXqXUgjwe7xTfA+F8lFJVlFKfKaWilFJXlFKblVKdzY5LFIwkIYQQQgghhBD28DgQBrxpdiD5pZR6yPKhd6tSKsmSHLmngGPdrJT6VSl1Xil1SSm1VinVzVbHF3VKqYZABNAXWAbMxvi5+lkpFW6H89nk6y/fx5x5mR2AEEIIIYQQIsM/QD3gnCufRynlBbwGrNBa77LHOezsHaA6cBaIAaoVZBCl1O3AL0AiMN9yfx/wk1JqsNZ6bmGOL+qUUv7Az8AloJ3W+qRl+8+W7c8Cg2x4Ppt8/eX7mDuZCSGEEEIIIYST0Fonaq33aa3tmoRwwHnuBgKBr+00vr09BlTXWlfCuPKeb0opb2AWkAq01VoP01o/CzQGTgIfKaXKFfR4N/EmRgJosDUBAaC1Xg5cANrZ6kS2+vrL9/HGJAkhhBBCCCFypZTqrZRaqZSKt6zHPqSUmqmUCrbs91FKjVRK/W5Zs52slIpWSv1PKVU7m/Ey6hEopW5TSq1XSl1WSp1VSn2hlKqQ5fh8jX+D11JSKTVJKXXK8lr+VUr1zsPr/9MyrfqKUmqbUmpIHs/X3vJaP85hfxvL/s8sj3Os1ZCf2LN8jdsppVYppS4opSJzO49Sylsp9ZxSaqflHPFKqRVKqVvz8nozGYjxIWxJYV6HWbTWf2itjxdymE5ACPC11npnprHPARMBP4wlBgU9PkdZvv9tlVJrLEsCopVS7yulPC3HPayUirB8Hw4rpR6xxzgFoZQqDwwFNmit/8rmkHigcmHPk4mtvv42+z4WVZKEEEIIIYQQOVJKfQQsBBoAC4CPgK0Yb6KbWg4rB0wGPDHWbE8BNmFMP96klArNYfibgRXAKcu4u4BHgL+UUiUzHVfQ8bO+Fg/gJ4wp3NGZzvk/oE8Oz5lgef0hwHfAZ4AP8JlSakoeTrsGOA7cp4wlCln1t9x/Y+vYLW4B/sCYDv4pxhTxnM6hMF7rBIzPCdMsj9sAq5VSef0A7IFxhXqn1vqyjV6HK2pvuf89m32/ZjmmIMfnRSvgN+AMMBNIAF4AximlngU+xPh9/gIoA3yhlMruHLYaJz/uA4qR82ya4kBKIc+Rma2+/vb4PhYpUhNCCCGEEEJkSyl1NzAS2AzcrrW+kGlfcYwPAWBckQzWWp/K8vz2wErgFYzp7VndAQzUWs/L9JypwFPAGOD1Qo6f1SCgA8bV+V5a63TLOF9ifFC/hlLqTuA5y/H9tNZXLdu9MRIyo5RS/9Nab87phFprrZSab3k9dwDLM43vhfFB6ziw1paxZ3I78KDW+n83GB/gYYxlFL8B3bTWqZZzTAa2ALOUUiu01hdvME49wB/414avI1vZzRjJjdY6X8cXknWWzqFs9h0GNFCrEMfnxV1Ad631zwBKqdcs4z8FxAFNtNbHLPvmYHyfRwNZZx7Yapz86GK5D8/h+1wOOJB5QyF/Hmz19bfH97FIkSSEEEIIIYTIyXDL/cjMCQgArfUV4Irl30kYsxnIcsxfSqk9GB+Es7MP+CrLtjcxEgoPYUlCFGL8rB6y3L9s/fBrGWelUup3IGvLvxEYHxiGWBMQluNTlFKvAj2B+zGSNLn5GiMJ0Z9MSQiMpERF4D2ttbZx7FZb8piAAGMJBcDz1gSE5Rx7lVKzgKeBe7j+e5ZVVct9TDb7Cvo6cvJGPo8fm8/jC8PPcn8h6w7Lz9AVjFkDBT0+L1ZZEweWcS4ro6jjo8Bn1sSBZd9WpdRhoJEdx8mPNpb7YbkcszfL48L8PNjq62+P72ORIkkIIYQQQgiRkxbARa31xhsdqJRqhjE9+xagEuCdaXdyDk9bn/XDt9Y6Vim1D2iilCptvepewPGzagTEaa33ZLNvHdd/AG6F8UHiCWOlwjWs5697o5NqrXcppSKAe5RSJbTWiZZdD1ru81K8Mb+xW23Jw9hWjYF4rXVENvv+xEhCNObGSYjylvv4bPYV9HVkS2t93TfGiVhju1GCqaDH58WObLadvsG+VnYcJ0+UUhUxfo5+1Vrflc3+IRhLozZk3l7Inwdbff3t8X0sUiQJIYQQQgghclIGY/pwrpRSbTGWRaRjrHk+BFzGeBM+CKPVYXbO5rDdegXdD7hYiPGzKgMcvME5MyuH8X45t6urJXPZl9k3wPsYsyfmW2pe9AS2a6135+H5+Y3d6kwe4wPj653TOU5nOuZGrljui2ezr6CvwxWdt9xfd9XbsqSneKZjCnJ8Xlx3NR6jYGhu+7L7jGircfIq0HIfncP+Oy33Kwpxjqxs9fW3x/exSJEkhBBCCCGEyEkC/30YyM1LGMUa22it/868Qyl1fy7Pq5jDdmvFe+uHm4KOn9V5jFkUuZ0zswvAFa111Wz25df/gPcwZj/Mx1jWUJIbFKTMJL+xW+XnauyFXMbK+j3JjTW5lF0bwoK+jmw5eU0Ia7KlFtfXx6iJccX8UCGOL8qsM42uZt2hjPaWXYGtWWfUFPLnwVZff/k+3oAkIYQQQgghRE42A12UUq1vsCSjJhCbTYKgsmVfTtoopVTmJRmWtnx1gchMBRALOn5WO4DblFL1s1kO0Dab4/8B7lJKVdNan8jHea6jtT6plFoD3GF5jQ9izOyYn8ch8ht7QWy3nKOB1npXln3tMx1zI7sxkh/ZtU+19etw5poQfwEvYiwx+T7LPuuV/DWFOL4os86KyS5RORrwBcZls68wPw+2+vrL9/EGpEWnEEIIIYTIyaeW+6lKqWum4SulfC1XJMHo7lBOKVUv034f4GOurd2QVT1gQJZtb2BMV85cJ6Gg42dlHfNdS6tI61idyL4WwTTL/RdKqeymVocqpULyeX5vjIKXnYHVWuuofDwX8h57QVi7lIxXSnlmOkcdYAjGLIYlNxpEax2P0XazRTa7bfo6tNYqP7f8jp9XSqm6Sqms9UFWAkeBB5VSDTIdWwHjg/QFjC4rBT3e5Sil/lRKaaVUh9yOsyT9jgGdlVIZM2eUUl2B54FlWusfsnleYX4e8v31t9H33e3ITAghhBBCCJEtrfUypdQ0jDZ8B5RSSzDa8QVjtOx7FPgRIxnQGVivlPoOYz347RgfuHeQc5X83zDaPvbAmMJ8M0b7xj0Y9ROsCjp+VnMxkh73AJst3RgCMTpc/Ax0y/L6lyulxmMsBzmklPoVOIlxdbYe0Bqj48XRPJ5/oeW1vIrxPjyvSzHyHXsBzQP6AN2BbUqpX4CylnMUx2j1mZflGGAkK15VSoVnKXTpiNdRaEqpx/hvZkZjy/1IpdQ9ln9/rrVel+kp1i4NGR9sLZ0QhmB0RFlvadWaiNGWNQgYrLWOLejxLsqaeErN9SjDB8AnwN9KqUVACNALo9hq1uRloRXw61/o77s7kpkQQgghhBAiR1rrkcADwAHL/dNAS4wreVstxyzF+BB5DKPNY19gE0Yni4Rchv8b6ILxIfRpoCEwB+igtb6cKYaCjp/1taQDPYApWc7ZHyNBkN1zXsZYf/4PRuLlWct9CsYV2T/ycf4EjA8m3hhr3RfZM/b8spzjXoyp5J6Wc9wHbAQ6aq2/zcdwn2MsN3ko80ZHvA4baYvxszaQ/5Jct2XaVisvg2itf8dYyrIJ4zUOxfg57qG1nlvY412JMlrM1MdI2t2w447WejowCuMD/kggHKNtbzuttV0KO9rq61+Uv4+2oG7cklgIIYQQQgjbsUzFXg286eBCgcKBlFILMBJFoVrrJLPjEeZSStXHqBcywpJgEG5KZkIIIYQQQggh7OFljKUrj5sdiHAKbTEKTs42OxBhLrsnIZRSs5VSZ5RSWSvsWvcrpdRUpdQhpVSEUqqpvWMSQgghhBBC2JfW+iAwCEg2ORThBLTWM7XWVbTW17XdFO7FETMh5mKsm8tJF4z2PbUxqu5+msuxQgghhBBCCBehtf5Gaz3T7DiEEM7D7t0xtNZrbtC6qCcwz9IfeqNSyl8pFaC1jrZ3bEIIIYQQwvG01n+SqZq8EEII9+EMNSGCgBOZHp+0bBNCCCGEEEIIIUQRYveZEHmQXRY825Ydln6rQwBKlizZrG7duvaMSwiXlpqaSnJyMklJSRm3q1evkpycTHJy9kszlVJ4eXnh5eWFh4cHWmu01qSnp5OSkkJ6ejoAnp6elC1blkqVKlG8eHFHviwhRB5s3br1nNa6otlxuIMKFSrokJAQs8MQQgghnE5O70ecIQlxEqiW6XFV4FR2B1rWk80EaN68ud6yZYv9oxPCCV2+fJkTJ05w/PjxHO+vXr225k/lypUJDw8nNDSU6tWrU61aNapVq0aVKlWoUKEC5cuXp2TJkhgtnK+ntebYsWOsX7+en3/+mSVLlrBnzx4eeOABpk2bRvny5R3x0oUQeaCUOmZ2DO4iJCQEeT8ihBBCXC+n9yPOkIRYCjyplPoWaAWcl3oQwt1orYmPjycqKoqYmBhiYmI4c+YMZ8+e5dy5c9fcYmJiiIuLu+b5SikCAgIIDg6mUaNG9OjRg2rVqhEcHExISAi1atWidOnShYpRKUVISAghISE8+OCDJCQkMHHiRN5//33WrVvH+vXrqVat2o0HEkIIIYQQQrgtuychlFLzgQ5ABaXUSeANwBtAaz0DWA50BQ4BicBge8ckhCNorbl06RLnzp0jNjY2I4lg/ffp06evmblw+fLl68bw8vLKmKVQoUIF6tevT/v27QkODiY4ODgj0RAYGIiPj49DX5+/vz/vvPMOPXv25Pbbb6d79+6sX7+eUqVKOTQOIYQQQgghhOtwRHeMB26wXwMj7B2HEAWltSYxMZH4+HhiY2OJi4sjLi4u49+5bcut9kLFihUJDg6mXr163HnnnQQHBxMUFESVKlWoXLkylStXpkyZMjkuj3AWLVq04Pvvv+euu+7i3XffZfz48WaHJIQQQgghhHBSzrAcQwincerUKd5++23Wr1/P6dOnSUpKIjExkdTU1Byf4+vrS/ny5SlXrhzlypUjLCws498VKlTIuFlnM5QvXx5/f388PT0d+Mrs684772TgwIFMmjSJJ554QpZlCCGEEEIIIbIlSQghLC5dukTbtm05deoUt99+O23atKFYsWKUKFECf39/ypUrd02ywfpv6Q5heOutt/j666/58MMPmTRpktnhCCGEEEIIIZyQJCGEsPjqq6+IjIxk5cqVdOzY0exwXE5wcDD3338/s2bN4s0335TaEEIIp6WUmg10B85orRtYtpUDvgNCgKPAfVrreLNiFEIIIYoqSUIIgVH3YcaMGTRt2pTbbrvN7HBc1vDhw/nf//7H0qVL6d+/v9nhCCFETuYCHwPzMm17EViptX5PKfWi5fEYW5zswoULnDlzhpSUFFsMJ2zA29ubSpUq4efnZ3YoQgjhdiQJIQRw9OhRIiIi+Oijj5y+EKQza9OmDeXKleO3336TJIQQwmlprdcopUKybO6J0c0L4EvgT2yQhLhw4QIxMTEEBQVRvHhx+RvjBLTWXLlyhaioKABJRAghhIN5mB2AEM5g7dq1ALIMo5A8PDzo1KkTf/zxB0bjGyGEcBmVtdbRAJb7SrYY9MyZMwQFBVGiRAlJQDgJpRQlSpQgKCiIM2fOmB2OEEK4HZkJIQQQERGBr68v9erVMzsUl9e5c2cWLFjAgQMHCAsLMzscIYSwOaXUEGAIGPVwcpOSkiIFjJ1U8eLFZYmMcE5JSXDmDJw+DefOwdWr/920hmLFjJuvL5QtC5UqGTc/P5Bkp3ABkoQQAti3bx916tQpUm0zzdK2bVsANmzYIEkIIYQriVFKBWito5VSAUCOl8i11jOBmQDNmze/4bQvmQHhnOT7Ikx3/jxs3gz//gv79hm3AwcgNrZg4/n6Qmgo1Kpl3GrXhvBwaNQIpGC4cCKShBACOHDgAI0bNzY7jCIhLCwMf39/Nm7cyODBg80ORwgh8mopMBB4z3K/xNxwhBBFzsWLsGoVrFgBa9fCnj3GzAaAKlWgbl3o0weqVjUeV6kCFSpA8eJGgsHX1zg2Kcm4Xb0KcXHGrIkzZyA6Go4cgYMH4Y8/4MoV43iljLGbNYObb4b27aF+fZk1IUwjSQjh9rTWnDp1iu7du5sdSpHg4eFBq1at2Lhxo9mhCOEUtNbExsYSHR3N6dOniY6OvubfNWvW5N133zU7TLeilJqPUYSyglLqJPAGRvLhe6XUo8BxoK95EQohiozYWFi0CL77zkg8pKQYsxLatoX77oPWraF5cyhXzrbnTU+HqCjYvh22bjVmW6xcCV9/beyvWBHatYPbb4fu3Y3EhxAOIkkI4fYuXrzI5cuXCQwMNDuUIqNVq1a88847JCYmUqJECbPDEcIukpOTiYmJyTG5YL3FxMRku+68VKlSBAQEUKZMGROid29a6wdy2NXJoYEIIYqmtDT46Sf44gtj1kNKCtSpA6NGQZcucMst4ONj3xg8PKBaNePWo4exTWuIjIQ//4S//oLVq40EyfDh0LixkYzo0QNatJBZEsKuJAkh3N6pU6cAJAlhQ40bNyY9PZ1du3bRsmVLs8MR+XDy5ElWr17Nhg0biIyMJDIykuPHj1OmTBlatWpFhw4daN++PY0bN8bDo+g3WLp48SKHDh3K9mb9vyOrihUrUqVKFQICAqhfvz4BAQEZj623KlWqUErW5woXNmvWLIYMGcKWLVto1qyZ2eEI4RxiY+Hzz2H6dDh+HAIDYeRI6N8fmjQx/4O9UlCjhnF75BEjKbF3r5EwWbYMxo2Dd96BkBDo1w8eeAAaNjQ/blHkSBJCuL3o6GgAqlSpYnIkRUejRo0A2LFjhyQhXMC///7Lt99+y5IlSzhw4AAA/v7+1KpVi/DwcLp3705cXBzr1q1j6dKlAISHh/PZZ5/RunVrM0O3iQsXLnDgwIFsEw0xMTHXHFulShVq1arFHXfcQUhIyDVJhYCAACpXroy3t7dJr0QIx9m+fTteXl40aNDA7FCEMF9MDEyaZCQfLl+G226DKVPg7rvBy4k/bill1IaoXx9eeMFIovz0E3z7LUyYAO+9Z+zr3x8eftiYVSGEDTjxb4UQjhEfHw9A+fLlTY6k6AgJCaFUqVJERESYHYrIQXp6Oj///DMTJ05kzZo1eHt707FjR4YNG0bHjh1p2LBhtjMdoqKi+PXXX3njjTdo06YNQ4cOZfz48fj7+zv+ReRTamoqBw8eJCIigoiICHbu3ElERATHjh275rigoCBq1apF9+7dqVWrVsatZs2alC5d2qTohXAu27dvp379+hQrVszsUIQwT2ysMXvg00+NQpEPPAAvvgiumpwrXx4GDjRuZ8/CggUwfz68+iq8/jp07QqPP27cO3NyRTg9+ekRbs+ahHCFD1GuwsPDg/DwcHbs2GF2KCKLK1eu8NVXXzF58mT2799PcHAwkydPZtCgQZQtW/aGzw8KCuKRRx6hb9++vP7660ydOpXFixczZcoU+vXr5zQt72JiYjKSDNbbnj17SEpKAsDLy4uwsLCMREq9evWoVasWNWrUkDomQtyA1pqIiAh69epldihCmCMlxZj18OabRpvNBx80PqjXqWN2ZLZTsSI88YRxi4w06lvMnm3MlAgMNJZzDBsGQUFmRypckCQhhNuzJiHy8gFM5N1NN93E4sWLzQ5DWJw7d47p06fz8ccfc/bsWZo2bcr8+fPp06cPXgW4mlG6dGmmTJnCgAEDGDp0KP379+ejjz7iySefpG/fvg69Onr69Gm2bt3Kli1bMu6ty6wAAgICCA8Pp1OnToSHhxMeHk7dunXlCq4QBXTw4EEuXbpEkyZNzA5FCMf74w948knYv9/oLDF5slE3oSgLDTVqRYwdCz//DDNnGjNA3nvP6PDxzDNGhw8h8kiSEMLtJSQk4OHhIUXibKxOnTqcO3eO+Ph4SfCY6MCBA0yZMoW5c+dy9epVunXrxnPPPUf79u1tMmuhadOmbNy4kc8//5zJkyczYMAAnn32WR577DGGDRtGcHCwDV7Ff1JTU1m7di3r1q3LSDhERUUBoJSibt263H777TRt2pTw8HAaNmxIxYoVbRqDEO5u+/btAJKEEO4lPh6ee86YDVCrllHIsVs39yra6OUFPXsat8hImDrVmCHxv/8ZLUefecbY5+lpdqTCyUkSQri9+Ph4/P393aLSvyPVsUxJPHjwoBSndDCtNRs2bGDixIksWbIEb2/vjORA/fr1bX4+T09Phg4dyuOPP87KlSv55JNPeP/993n//fe5++67GTFiBJ06dSpw0iMpKYk//viDH374gSVLlhAbGwtAWFgY7du3p3nz5jRv3pzGjRtLzQbhEkaNGpXxQd4sjRs35sMPPyzQc7dt2wb8V4Q4N0qpjL+zjpCSkkKDBg0oWbIkf//9t8x4EraxZImx9ODsWRgzBt54A4oXNzsqc4WGGsU333zTSERMnQq9e0PNmvDSSzBggP3bkAqXJUkI4fYSEhKkHoQdWJMQBw4ckCSEg6SlpbF48WImTpzIpk2bKFeuHK+88gojRoxwSPcXDw8POnfuTOfOnTl27BgzZszg888/58cffyQsLIyHHnqIOnXqEBoaSmhoKOXLl78uMaG15ujRo2zdujXjtnHjRi5evIifnx89evSgV69edOrUiTJlytj9NQkhrrd9+3ZCQ0Od8m+nt7c3+/btIzQ0lK1bt9KmTRuzQxKu7MoVePZZmDEDGjUyliI0bWp2VM7Fz8+YATFyJPz4I4wfD489ZiQnxowxake4e8JGXEeSEMLtWT/cCNuqUaMGHh4eHDx40OxQ3MKOHTu4//772b9/PzVq1ODjjz9m0KBBlCxZ0pR4qlevzvjx43njjTdYsGABn3zyCa+99to1x5QqVYpKlSqhtUZrTXp6OhcuXCAhIQEgo/1f//796dmzJx07dpSrmqJIKOgMBGexffv2az7cL1myhDFjxuDr60vXrl2ZPn0627dvJyQk5JrnPfTQQ+zfv5+kpCSqVavGF198QZUqVbhy5QqDBg1i586deHt7U7lyZX777bcct9+IUopKlSpdF6cQ+bJrF/TrB7t3G8sw3n1XruznxtPTmAnRqxf8+iu8/bZRO+Odd2D0aBg+HEx6TyKcjyQhhNtLTEyUavh24OPjQ0hICAcOHDA7lCLvq6++YsiQIZQrV44FCxZw77334ukk6zF9fX0ZMGAAAwYM4MKFC0RGRnL06FEiIyOJjIwkNjYWpRQeHh4opShRogSNGjWiWbNmNGjQAF9fX7NfghAik5iYGE6fPk3jxo0BOHPmDI888gjr16+nbt26fP7555w/fz7b53744YdUqFABgPfee4+xY8cyY8YMVqxYQUJCAnv27AEgLi4OIMftN/LFF18QERGRsWxEiHz75hvjan6ZMrBiBdx5p9kRuQ6l4K67jK/ZX38ZSYjnn4cJE4wOIkOGgFxQcHuShBBuLzExUYpS2kmdOnUkCWFHycnJPPPMM0yfPp327dvz3XffUblyZbPDypGfnx+NGjXK0zpyIYRzsn6wtxal3LhxY0bHGYBBgwYxfPjwbJ/7zTff8NVXX5GUlMSVK1cyEhKNGjViz549DBs2jA4dOtC1a9dct+cmMjKSt99+m6lTpzJz5sxCv17hZtLS4MUXYeJEaNcOvv8enPjvqlNTCjp0MG4bNsArrxhLNiZONLpsDBhgFLoUbkkq8Qm3d/nyZZkJYSfWJITW2uxQipyoqCjat2/P9OnTee655/jjjz+cOgEhhCgarAU1rTMhtNbX1HZRSmX7f/66deuYNm0aK1asYOfOnUyePJmrV68CxvK9vXv30rVrV9atW0eDBg2Ij4/PcXtO0tPTGThwIBMmTODuu+9m165dpKam2u7Fi6ItPh66djU+JI8YYbTilL+rttGmDaxaBb/9BpUqGXUiGjSABQsgPd3s6IQJJAkh3J4sx7Cf2rVrc+nSJc6cOWN2KEXKn3/+SdOmTdm1axcLFixgwoQJeMnVBCGEA7z44otoralatSoAN998Mzt27GD//v0AfPnll6SlpV33vPj4eEqWLEnZsmVJTk7ms88+y9h38uRJlFLcfffdTJ48mbS0NE6cOJHjdoCHH36YxYsXX3OOiRMnEhoaSt++falSpQply5bNWMohRK5OnDBaTK5eDbNmwccfg7e32VEVLUpB587wzz/www9GDYn77oOWLY1lG8KtSBJCuL3ExETTivcVddWrVwfg+PHjJkdSNGitmTRpErfffjtly5bln3/+oU+fPmaHJYRwY5UqVWLWrFn07NmTNm3aEBUVRfHixa/rnNGlSxfq1q1L3bp1ufPOOzNmUgDs3LmTNm3aEB4eTtOmTRk0aBDh4eE5bgfYsmVLRiIEICIigtmzZzNt2rSMbU2bNpW6EOLGdu6Em2+GkyeNgoqPPWZ2REWbUnDvvRARAV9+CTExxpKNXr1Aipm7Dbl0JtyeLMewn+DgYMBIQrRo0cLkaFxbUlISAwcO5LvvvqN3797Mnj1buroIIZxC586d6dWrFwCLFy+mevXqGUmIzEszvvvuu2ue9+677wJGgqJLly7XjZvT9rNnzxIUFHTN35Xw8HD27dt3zXE///xzwV6QcB9//QU9expdG9auBUuSSziApyc8/DD06QNTphitPX/6yeio8dprULas2REKO5KZEMLtyUwI+6lWrRogMyEK69KlS3Tv3p3vvvuO8ePHs2DBAklACCGcxrRp02jcuDENGjRgwoQJfPPNN3Y9X8WKFfn999/teg7hBn77zejiEBgIf/8tCQizlChhFK08dAgGDoSPPoJatYz75GSzoxN2IkkI4dZSUlJISUmRmRB2UrZsWUqWLClJiEKIi4vj9ttvZ/Xq1cydO5cXX3zxmiJwQghhtpdffpnt27eza9cuNmzYQNOmTc0OSYjcLV8Od98NYWHGbAjLzE1hoipVjHoc27ZB06YwapSRGPrtN7MjE3YgSQjh1hITEwFkJoSdKKUIDg6WJEQBRUdH0759e7Zt28bChQsZOHCg2SEJIYQQrm3JErjnHqM7w6pVULGi2RGJzKyJh59+Mlqm3nkn9O4Nx46ZHZmwIUlCCLd25coVAHx9fU2OpOiSJETBHDlyhLZt2xIZGcny5cu55557zA5JCCGEcG3Llxs1CJo2NVpwlitndkQiO0pBt26waxe8+y788gvUqwfvvAOW1r7CtUkSQri1ZMtas2LFipkcSdElSYj827VrF23btiUhIYFVq1bRqVMns0MSQgghXNvatcYV9fBwowtGlg4uwgkVKwYvvwz79hlJiddeM2awSNFZlydJCOHWkpKSAElC2FNwcDBnzpzJmHUicrdp0ybatWsHwF9//UXLli1NjkgIIYRwcf/+C927Q/XqsGIFlCljdkQiP4KDYcEC+P138PY2vpc9ekBkpNmRiQKSJIRwa9aZED4+PiZHUnRZ23SePHnS5Eic38qVK+nUqRNly5Zl3bp1NGjQwOyQhBBCCNe2f7/RBcPf3/gQKzUgXNftt8OOHTBhAqxeDTfdZPw7JcXsyEQ+SRJCuDVZjmF/1iSELMnI3U8//UTXrl0JDQ1l3bp11KhRw+yQhBBCCNd2+jTccYdRY+D338HSOly4MB8feO452LsXOneGF16A5s1h0yazIxP5IEkI4dasyzFkJoT9VK1aFZCZELnZuXMn/fr1Izw8nL/++ouAgACzQxJCCCFcW2Ki0Ybz3DmjIGWdOmZHJGypWjWj08nixRAbCzffDE8+CefPmx2ZyANJQgi3Jssx7C8wMBCAU6dOmRyJc4qNjaVnz574+fmxdOlSykmlbiGEEKJw0tPh4Ydhyxb43/+gWTOzIxL2cs89sGcPPPUUTJ9udNFYuBC0NjsykQtJQgi3JoUp7a9EiRL4+/sTFRVldihOJzU1lX79+hEVFcXixYtlBoQQQghhCy+/DIsWwcSJ0LOn2dEIe/Pzg48+MpZkVKkCffsas2COHTM7MpEDSUIItyYzIRwjMDBQZkJkY8yYMfzxxx/MmDGDVq1amR2OEEII4frmzIH334dhw+CZZ8yORjhSixbwzz8waRKsWmUUrpw2zZgZI5yKJCGEW5MkhGMEBQXJTIgsvvrqKyZPnsxTTz3F4MGDzQ5HCCGEcH2bN8Pw4dCpE0ydahSkFO7FywuefdZYonHrrTByJLRrZ3RJEU7Dy+wAhDCTLMdwjMDAQPbu3Wt2GE5jy5YtPP7443To0IFJkyaZHY4QQuTbrFmzGDJkCFu2bKGZrLcXzuDsWejdGypXhm+/BW9vsyNyK1euXGHNmjX8+uuvHDx4EF9fX4oXL07ZsmUpX7485cuXp0KFCpQvX57AwECqVq2Kn5+f/QKqXt0oSPrVVzBqFDRqBGPHGp01vOQjsNnkOyDcmsyEcIygoCCio6NJT0/Hw8O9J2DFxMRw7733UqVKFb7//nu85U2SEMIFbd++HS8vLxo0aGB2KEJAaio88ACcOQPr10OFCmZH5BbOnTvHsmXL+OGHH/jjjz+4evUqxYoVIywsjJSUFBITE4mPj+fChQvZPr9UqVJUrVqV4OBgwsLCCAsLo0mTJrRq1QpPT8/CB6iUUaD0jjuMzhkvvQQLFsDs2UZSQphGkhDCrUmLTscIDAwkLS2NM2fOUKVKFbPDMU1ycjJ9+vQhNjaWDRs2ULFiRbNDEkKIAtm+fTv169eXmYTCObzyCqxcSfS4cfy6cyfNixWTBJmdxMbGMn/+fH744Qf++usv0tPTCQ4OZsiQIdx11120b9+eEiVKXPOclJQU4uLiiI2N5dy5c5w6dYqTJ09y8uRJoqKiiIyMZM6cOVy6dAmA8uXL07VrV7p3707Xrl0pVapU4YKuUsXomLFwIYwYAc2bGwmJV14B+T/MFJKEEG7NOhNC3kTZV1BQEGC06XTnJMSoUaNYt24d8+fPp3HjxmaHI4QQBaK1JiIigl69epkdihCwZAl88AG/VK9O15dfztg8YsQIPvroI9tcURecPHmSyZMn89lnn5GYmEi9evV46aWXuPfee2natCkql/ob3t7eVK5cmcqVK+d4jNaa6Oho1q9fz7Jly1i+fDlfffUV/v7+DB06lCeffJKqVasW7kX06QO33WYULH37baODyuzZIMXBHc6950ULtyfLMRwjMDAQwK2LU/744498+umnPP/88/Tr18/scIQQosAOHjzIpUuXaNKkidmhCHd34gRpDz9MhI8PfaOieOedd9ixYwdPP/00n3zyCXPmzDE7QpcXFRXF0KFDqVGjBlOnTqVXr17s2LGDPXv28M4779CsWbNcExB5pZQiMDCQvn37Mm/ePGJiYvjzzz/p3LkzEyZMIDQ0lAEDBnD8+PHCnah8eZg3D37+GS5cgDZtYPRoSEws9GsQeSdJCOHWpDClY2SeCeGO4uPjGT58OI0bN+bdd981OxwhhCiU7du3A0gSQpgrNZXEe+/lysWLDPPzY/WGDbzyyiuEh4czZcoUWrduzdixYzMuOIn8SUhI4OWXX6Z27drMmTOHxx9/nEOHDvHVV18RHh5u9/N7enrSvn17vv/+ew4fPsyTTz7J4sWLadiwIfPnzy/8Cbp2hd27YcgQmDwZGjeGDRsKP67IE1mOIdya9Q+TFAe0r8qVK6OUctskxPPPP8/Zs2f5+eef5WdNCGFUard8kDdN48bw4YcFeuq2bdsAaGQp7KaUIj4+Hn9//+uOzW1fTlJSUmjQoAElS5bk77//lgsFIlvnn3+eMlu38qSfH7PXrqVu3boZ+5RSvPrqq3Tv3p1ly5bRu3dvEyN1LVevXmX69Om8++67xMXF8eCDD/L2228TGhpqWkwhISFMmTKFkSNHMmDAAPr378+GDRuYNGlS4WYz+/nBp59C377wyCNGS8/Ro+Gtt8DX13YvQFzHITMhlFJ3KaX2K6UOKaVezGZ/GaXUMqXUDqXUbqXUYEfEJURSUhKenp6yXtDOvLy8qFy5slsux9i4cSNffPEFzz77LE2bNjU7HCGEKLTt27cTGhqar8RCfnh7e7Nv3z7i4uLYunWrXc4hXFviihWU+vBD5nt7M2z9+msSEFZ33XUXQUFBfPHFFyZE6JoOHTpE06ZNGT16NC1atODff//l66+/NjUBkVloaCirV6/m2Wef5eOPP6ZDhw62ucDVsSPs3AmPPQYTJkDTprB5c+HHFTmy+0wIpZQn8AnQGTgJbFZKLdVa78l02Ahgj9a6h1KqIrBfKfWN1lrmTwm7Sk5OlissDhIQEEB0dLTZYThUeno6Tz31FAEBAbz22mtmhyNEkaKUKglc1VqnmR1LvhVwBoKz2L59O23atLlm24cffsjKlSs5ffo0Y8aM4bHHHsvTvpwopahUqVK25xLuLT02lsv33ksUUPG773LsguHp6Un//v2ZMmUKFy5cwM/Pz7GBuphVq1bRp08flFIsX76cLl26mB1Stry9vZk0aRKtW7dm8ODBdOrUiTVr1hS+41jp0vDZZ9C7Nzz6KNx8M4wZA6+/Lh007MARMyFaAoe01kcsSYVvgZ5ZjtFAaWVUNSkFxAGpDohNuLnk5GQpSukg7piEmDNnDlu2bGHChAmULl3a7HCEcGlKKQ+lVH+l1M9KqTPAPiDaMoNyglKqttkxuoOYmBhOnz59XYef1NRU1q5dy5o1a3j11VfZvXt3nvbl5IsvviAiIiJj6YcQVns6d6bs1av8O3o0t997b67H9ujRg9TUVH777TcHReeaZsyYwZ133klAQAD//POP0yYgMuvbty/Lly/n6NGjdOnShQsXLthm4DvuMGZFPPwwjBsHLVqA/D9kc45IQgQBJzI9PmnZltnHQD3gFLATeFprnZ51IKXUEKXUFqXUlrNnz9orXuFGkpKSJAnhIIGBgW6VhEhISOCll17illtuoX///maHI0RRsBqoCbwEVNFaV9NaVwJuBTYC7ymlHjIzQHdgTQpkLUppnd0QEBDAXXfdxapVq/K0LzuRkZG8/fbbTJ06VZIQ4hr7xo+nwbZtLK5fn/smTLjh8TfffDNly5Zl+fLlDojO9Witeemllxg+fDh33HEHf//9NzVr1jQ7rDxr164dixYtYseOHdx9991cuXLFNgP7+xutO5ctg3PnoGVLePNNSEmxzfjCIUmI7Hq26CyP7wS2A4FAY+BjpdR1c6a01jO11s211s0LPeVGCGQ5hiMFBARw5swZUlPdY5LTG2+8wblz55g2bZpNWlcJIbhda/221joi84UKrXWc1nqR1ro38J2J8bkFa2eMrDMhsv4/l/lxbvuySk9PZ+DAgUyYMIG7776bXbt2uc3fDZG7+AMHqPDqq+zy8eGOP//M099WLy8vOnTowJo1axwQoWtJTU3l0Ucf5b333mPIkCEsXbrUJZesdO3alXnz5rFmzRruu+8+UmyZKOjeHXbtgn79YOxYIxkREWG78d2YI5IQJ4FqmR5XxZjxkNlg4AdtOAREAtdXmBHCxmQmhOMEBASQnp7OmTNnzA7F7nbt2sUnn3zC0KFDpYWdEDaitU5Rhmq5HePImNzRiy++iNaaqlWrXrN91qxZAERHR7NixQpuu+22G+57+OGHWbx48TXjTJw4kdDQUPr27UuVKlUoW7Yse/bsQbg5rTnQqROl09PRc+dSJh8XI2+55RYOHz7M6dOn7Riga0lMTOTee+9lzpw5vPHGG8yYMcOli7Q/8MADTJ8+nZ9++olBgwaRnn7dhPqCK1cOvvoKFi+GU6egeXN4912Q5GihOCIJsRmorZQKVUr5AP2ApVmOOQ50AlBKVQbCgCMOiE24OakJ4TiBgYEARX5JhtaakSNH4ufnxzvvvGN2OEIUKVprDfxoz3MopZ6x1JnYpZSar5SSPm15UKZMGdq2bUu7du145513uOmmm264b8uWLdckMyIiIpg9ezbTpk3L2Na0aVNZkiHY/OyztDp5knV33EHDBx7I13NvueUWANavX2+P0FxOXFwcnTt35ueff2b69OmMHTu2SMzYHDZsGOPGjeN///sfI0aMsG0iAuCee2D3bujVC1591ShcKQnSArN7dwytdapS6kngV8ATmK213q2UGmbZPwN4G5irlNqJsXxjjNb6nL1jE0KWYzhOQEAAUPSTEAsXLmT16tV88sknlC9f3uxwhCiKNiqlWmitbd4/TSkVBIwE6mutryilvse4eDLX1ucqSozcEDz//PN53nf27FmCgoJo0aJFxrbw8HD27dt3zXE///yzrcMVLiZu3z5qfvQRO0qWpN2SJfl+ftOmTSlWrBh///03vXv3tkOEriM5OZlu3brx77//8v3339OnTx+zQ7KpF198kfPnz/P+++9z8eJF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rvz+++90796d8uXL8/rrr8dWAgKgVy94+GFuTv0Xt+wbrKkY4bJ0qf+GqnTpoCMREcmtGsD6TM83AK2O3sjMegO9AWrVqhXWABoMG0aZsB6xYNkH/A6khu43AVtCt63AZuAH4PvQ/Z5du/yqN8uXAz6JUKJECYoXL37oVqJECYoVK0apUqWoVq0apUuXPuaWmJhIUlISF110UcGveyUiks8pCRFhd955J2PHjqVv3760bduW8uXLBx1Sjt15550sX76cadOmUaVKlaDDCb/TT4ezziLus3mgBET4fPqpv7/ggmDjEBHJvaz+GhwzZNQ59xLwEviREOEMYNO4cWw8eNAHE5pG4MAviR3Klmd+nPn+6G0yAss4jmWelpDdfjnZJvTYzHCZX8u8bRb7HXO8jMdxcbjixf3KM0WKHDpeSaAkUDPTtwSWxePMiYciRdS1FRHJ7/SbOsISEhIYPXo0559/Pn379uWtt94KOqQcmThxIi+++CL33HMPnTp1CjqcyDn7bLZ+tJB7bvQ1q9q1CzqgGDB9OjRs6NdfFxEpWDYANTM9TwI2RjOABtdcE83TiYiIRF3u1ieSk9KiRQvuv/9+3n777QKRhNiyZQt//etfad68OQ8++GDQ4UTWWWeRsHUTr74K+bzESMGwbx/MmQOxnLgSkVi2EDjdzGqbWVGgOzA14JhERERiipIQUTJw4EBat27NbbfdRko+X7qwX79+7Nq1izFjxsR+MaZbbqHMno2UKuVX2JM82rsXeveGWFpFRUQKDedcGtAP+ARYDrzrnPsu2KhERERii5IQURIfH8+bb75JfHw8V155JXv27Ak6pCyNHz+ed999l/vvv5/GuVhPu8AqXRorUZykqgdYt+Zg0NEUfGXLwtNPQ4cOQUciInJSnHMfOufqO+fqOuceDjoeERGRWKOaEFF02mmn8c4775CcnMxNN93EO++8c0SBpaBt3bqV2267jWbNmnH33XcHHU70/PILDTcsZsX3taD8hVChgv8wfdVVcN99fps774RSpfzrGbczz/Q352D3bkhMPFx0qzBavhw2bYL27Qv3z0FERERERLKlJESUderUiUceeYQBAwZw9tlnM3DgwKBDOqR///7s2LGDGTNmkJCQEHQ40VO5Mk271ef7GaVJv7oncTt+hR07oGRJ337gAIwe7ZcAy7zO+V13wRNPwJ49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\n"}}]}}}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./6_RadiacionTermica"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../5_TransporteRadiativo/5_TransporteRadiativo.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">6. </span>Transporte Radiativo</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Francisco V. Ramirez-Cuevas<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

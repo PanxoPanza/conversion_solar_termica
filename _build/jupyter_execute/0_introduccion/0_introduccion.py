@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
-# # 0. Introducción al curso
+# # Introducción al curso
 # <br><br><br><br>
 # Profesor: Francisco Ramírez Cuevas<br>
 # Fecha: 1 de Agosto 2022

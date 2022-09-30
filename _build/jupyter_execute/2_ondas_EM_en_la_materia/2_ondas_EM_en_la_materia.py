@@ -2,7 +2,7 @@
 # coding: utf-8
 
 #  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
-# # 2. Ondas electromagnéticas en la materia
+# # Ondas electromagnéticas en la materia
 # <br><br><br><br>
 # Profesor: Francisco Ramírez CueSvas<br>
 # Fecha: 19 de Agosto 2022

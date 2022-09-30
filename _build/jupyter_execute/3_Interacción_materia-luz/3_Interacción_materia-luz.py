@@ -2,7 +2,7 @@
 # coding: utf-8
 
 #  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
-# # 3. Interacción materia-luz
+# # Interacción materia-luz
 # <br><br><br><br>
 # Profesor: Francisco Ramírez CueSvas<br>
 # Fecha: 26 de Agosto 2022
