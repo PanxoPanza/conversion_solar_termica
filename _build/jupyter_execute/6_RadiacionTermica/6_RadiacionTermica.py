@@ -95,7 +95,7 @@
 # \dot{Q}_\mathrm{conv} = \frac{T_\infty - T}{R_\mathrm{conv}},\quad\mathrm{W}
 # \end{equation*}
 # 
-# donde $R_\mathrm{conv}=1/hA$ es la resisitencia térnmica asociada a la convección de calor.
+# donde $R_\mathrm{conv}=1/hA$ es la resistencia térmica asociada a la convección de calor.
 
 # A diferencia de la conducción de calor, el coeficiente convectivo, $h$, **no es una propiedad del fluido**. Esto porque no solo depende de las propiedades del fluido (densidad, viscocidad y conductividad térmica, entre otras), sino que además depende de condiciones externas, como la velocidad del flujo, la diferencia de temperaturas, y la geometría del cuerpó sometido a conveccción de calor.
 
