@@ -434,6 +434,75 @@ def g(T=300,d=1, lam0=10, theta0=0):
 
 # Al igual que con el poder de emisión, la irradiancia ($G_{\lambda,\Omega}$) y la radiosidad ($J_{\lambda,\Omega}$) pueden ser definidas de forma hemisférica (integrando por ángulo sólido) o total (integrando por longitud de onda).
 
+# ## Transferencia de calor por radiación
+
+# ### Factor de visión para superficies difusas
+# La transferencia de calor por radiación depende de la orientación relativa entre las superficies.
+
+# En general, este análisis es complejo ya que requiere integración por ángulo sólido considerando factores geométricos y dependencia de las propiedades radiativas con la orientación. En el caso de superficies difusas, sin embargo, podemos simplificar el análisis considerando sólamente los aspectos geométricos.
+
+# Consideremos el parámetro,  $\dot{Q}_{dA_1\rightarrow dA_2}$, que representa la radiación espectral emitida por una superficie $dA_1$ que incide sobre una superficie $dA_2$.
+
+# 
+# <img src="./images/vision_factor.png" width="250px" align= center>
+
+# \begin{equation*}
+# dQ_{dA_1\rightarrow dA_2} = I_{\mathrm{bb},\lambda}(T_1)\cos\theta_1 dA_1 d\Omega_{12}
+# \end{equation*}
+
+# A través de la relación $r^2 d\Omega_{12} = \cos\theta_2 dA_2$, podemos determinar:
+# 
+# \begin{equation*}
+# \dot{Q}_{dA_1\rightarrow dA_2} = I_{\mathrm{bb},\lambda}(T_1) \frac{\cos\theta_1 \cos\theta_2}{r^2 }dA_1dA_2
+# \end{equation*}
+
+# La radiación total espectral que incide sobre la superficie $A_2$, es:
+# 
+# \begin{equation*}
+# \dot{Q}_{A_1\rightarrow A_2} = \int_{A_1}\int_{A_1}I_{\mathrm{bb},\lambda}(T_1) \frac{\cos\theta_1 \cos\theta_2}{r^2 }dA_1dA_2
+# \end{equation*}
+
+# Definimos como **factor de visión o factor de forma, $F_{12}$** a la razón entre $\dot{Q}_{A_1\rightarrow A_2}$ y la radiación hemisférica espectral emitida por $A_1$, es decir $\dot{Q}_{A_1} = \pi I_{\mathrm{bb},\lambda}(T_1) A_1 $:
+# 
+# 
+# \begin{equation}
+# F_{12} = \frac{\dot{Q}_{A_1\rightarrow A_2}}{\dot{Q}_{A_1}} = \frac{1}{A_1}\int_{A_1}\int_{A_2} \frac{\cos\theta_1 \cos\theta_2}{\pi r^2 }dA_1dA_2
+# \end{equation}
+
+# El factor de visión permite simplificar el análisis para determinar el calor por radiación transferido a una superficie, de la forma:
+# 
+# \begin{equation*}
+# \dot{Q}_{A_1\rightarrow A_2} = I_{\mathrm{bb},\lambda}(T_1) A_1F_{12}
+# \end{equation*}
+
+# Por reciprocidad, el factor de visión desde $A_2$ a $A_1$ es:
+# 
+# \begin{equation*}
+# F_{21} = \frac{1}{A_2}\int_{A_1}\int_{A_2} \frac{\cos\theta_1 \cos\theta_2}{\pi r^2 }dA_1dA_2
+# \end{equation*}
+
+# De donde deducimos la relación:
+# 
+# \begin{equation}
+# A_1 F_{12} = A_2 F_{21}
+# \end{equation}
+
+# Las expresiones para el factor de visión se encuentran tabuladas en diversos textos especializados. 
+
+# Si una de las superficies es muy pequeña respecto a la otra, $F_{12} = 1$
+
+# 
+# <img src="./images/vision_factor_table.png" width="400px" align= center>
+
+# ### Transferencia de calor por radiación
+# En el caso de dos superficies negras a temperaturas $T_1$ y $T_2$, la transferencia de calor neta por radiación es:
+# 
+# \begin{align}
+# \dot{Q} &= \dot{Q}_{A_1\rightarrow A_2} - \dot{Q}_{A_2\rightarrow A_1} \nonumber \\[10pt]
+# &= A_1F_{12}\sigma T_1^4 - A_2F_{21}\sigma T_2^4 \nonumber \\[10pt]
+# &= A_1F_{12}\sigma\left(T_1^4 - T_2^4\right)
+# \end{align}
+
 # ## Referencias
 # - Çengel Y. A y Ghanjar A. J. **Capítulo 12 - Fundamentos de la radiación térmica** en *Transferencia de calor y masa*, 4ta Ed, McGraw Hill, 2011
 
