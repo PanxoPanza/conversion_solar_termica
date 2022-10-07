@@ -271,7 +271,7 @@
 # In[1]:
 
 
-get_ipython().run_cell_magic('capture', 'showplot', "import empylib.nklib as nk\nimport matplotlib.pyplot as plt\n\nplt.rcParams['font.size'] = '16' # tamaño de fuente\n\nlam = np.linspace(0.3,15,100)\nplt.plot(lam,nk.SiO2(lam).real,'-r',label='$n$')\nplt.plot(lam,nk.SiO2(lam).imag,'-b',label='$\\kappa$')\nplt.xlabel('Longitud de onda, $\\lambda$ ($\\mu$m)',fontsize=16)\nplt.ylabel('$n$, $\\kappa$',fontsize=16)\nplt.title('Índice de refracción SiO$_2$')\nplt.legend(frameon=False)\n")
+get_ipython().run_cell_magic('capture', 'showplot', "import numpy as np\nimport empylib.nklib as nk\nimport matplotlib.pyplot as plt\n\nplt.rcParams['font.size'] = '18' # tamaño de fuente\n\nlam = np.linspace(0.3,15,100)\nplt.plot(lam,nk.SiO2(lam).real,'-r',label='$n$')\nplt.plot(lam,nk.SiO2(lam).imag,'-b',label='$\\kappa$')\nplt.xlabel('Longitud de onda, $\\lambda$ ($\\mu$m)',fontsize=16)\nplt.ylabel('$n$, $\\kappa$',fontsize=16)\nplt.title('Índice de refracción SiO$_2$')\nplt.legend(frameon=False)\n")
 
 
 # In[2]:
@@ -322,26 +322,25 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     A_theta = np.array(A_theta).flatten() # convertimos la lista a ndarray
 
     fig, ax = plt.subplots(1,3)
-    fig.set_size_inches(18, 5)
-    plt.rcParams['font.size'] = '18'
+    fig.set_size_inches(16, 5)
     
     # graficamos las propiedades radiativas espectrales
     ax[0].plot(lam,R_lam,'--r',label=r'$R_{\lambda,\Omega}$',linewidth=0.5)
     ax[0].plot(lam,T_lam,'--b',label=r'$T_{\lambda,\Omega}$',linewidth=0.5)
     ax[0].plot(lam,A_lam,'-k',label=r'$A_{\lambda,\Omega}$',linewidth=2.0)  
     ax[0].plot(lam0,np.interp(lam0,lam,A_lam),'or',ms=8.0)   
-    ax[0].set_xlabel('$\lambda$ ($\mu$m)')
-    ax[0].set_ylabel(r'$R_{\lambda,\Omega}$, $T_{\lambda,\Omega}$ y $A_{\lambda,\Omega}$')
+    ax[0].set_xlabel('$\lambda$ ($\mu$m)',fontsize=18)
+    ax[0].set_ylabel(r'$R_{\lambda,\Omega}$, $T_{\lambda,\Omega}$ y $A_{\lambda,\Omega}$',fontsize=18)
     ax[0].set_ylim(0,1.05)
-    ax[0].set_title(r'$\theta = $ %i°' % theta0)
+    ax[0].set_title(r'$\theta = $ %i°' % theta0,fontsize=18)
     ax[0].legend()
     
     # graficamos la emisividad espectral en el ángulo
     ax[1].plot(theta,A_theta,'-k')  
     ax[1].plot(theta0,np.interp(theta0,theta,A_theta),'or',ms=8.0)   
-    ax[1].set_xlabel(r'$\theta$ (deg)')
-    ax[1].set_ylabel(r'$\epsilon_{\lambda,\Omega}(\theta)$')
-    ax[1].set_title(r'$\lambda = $ %.2f $\mu$m' % lam0)
+    ax[1].set_xlabel(r'$\theta$ (deg)',fontsize=18)
+    ax[1].set_ylabel(r'$\epsilon_{\lambda,\Omega}(\theta)$',fontsize=18)
+    ax[1].set_title(r'$\lambda = $ %.2f $\mu$m' % lam0,fontsize=18)
     ax[1].set_ylim(0,1.05)
     
     # Graficamos la radiación espectral
@@ -350,13 +349,13 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     ax[2].plot(lam,E_lam,'-k',label =r'$E_{\lambda,\Omega}$')
     ax[2].plot(lam,E_bb,'-r',label =r'$E_\mathrm{bb}$') 
     ax[2].plot(lam0,np.interp(lam0,lam,E_lam),'or',ms=8.0)   
-    ax[2].set_xlabel('Longitud de onda ($\mu$m)')
-    ax[2].set_ylabel(r'$E_{\lambda,\Omega}$(T) (W/m$^2$-$\mu$m-sr)')
-    ax[2].set_title(r'd = %.2f mm, $\theta$=%i°' % (d,theta0) )
+    ax[2].set_xlabel('Longitud de onda ($\mu$m)',fontsize=18)
+    ax[2].set_ylabel(r'$E_{\lambda,\Omega}$(T) (W/m$^2$-$\mu$m-sr)',fontsize=18)
+    ax[2].set_title(r'd = %.2f mm, $\theta$=%i°' % (d,theta0) ,fontsize=18)
     ax[2].set_ylim(0,max(Bplanck(lam,Temp))*1.05)
     ax[2].legend()
     
-    plt.subplots_adjust(wspace=0.35)
+    plt.subplots_adjust(wspace=0.30)
     plt.show()
 
 
