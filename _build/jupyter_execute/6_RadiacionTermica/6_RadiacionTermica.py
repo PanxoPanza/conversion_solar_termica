@@ -492,7 +492,7 @@ def g(T=300,d=1, lam0=10, theta0=0):
 # Si una de las superficies es muy pequeña respecto a la otra, $F_{12} = 1$
 
 # 
-# <img src="./images/vision_factor_table.png" width="400px" align= center>
+# <img src="./images/vision_factor_table.png" width="500px" align= center>
 
 # ### Transferencia de calor por radiación
 # En el caso de dos superficies negras a temperaturas $T_1$ y $T_2$, la transferencia de calor neta por radiación es:
