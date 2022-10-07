@@ -271,7 +271,7 @@
 # In[1]:
 
 
-get_ipython().run_cell_magic('capture', 'showplot', "import numpy as np\nimport empylib.nklib as nk\nimport matplotlib.pyplot as plt\n\nplt.rcParams['font.size'] = '18' # tamaño de fuente\n\nlam = np.linspace(0.3,15,100)\nplt.plot(lam,nk.SiO2(lam).real,'-r',label='$n$')\nplt.plot(lam,nk.SiO2(lam).imag,'-b',label='$\\kappa$')\nplt.xlabel('Longitud de onda, $\\lambda$ ($\\mu$m)',fontsize=16)\nplt.ylabel('$n$, $\\kappa$',fontsize=16)\nplt.title('Índice de refracción SiO$_2$')\nplt.legend(frameon=False)\n")
+get_ipython().run_cell_magic('capture', 'showplot', "import numpy as np\nimport empylib.nklib as nk\nimport matplotlib.pyplot as plt\n\nlam = np.linspace(0.3,15,100)\nplt.plot(lam,nk.SiO2(lam).real,'-r',label='$n$')\nplt.plot(lam,nk.SiO2(lam).imag,'-b',label='$\\kappa$')\nplt.xlabel('Longitud de onda, $\\lambda$ ($\\mu$m)',fontsize=16)\nplt.ylabel('$n$, $\\kappa$',fontsize=16)\nplt.title('Índice de refracción SiO$_2$',fontsize=18)\nplt.legend(frameon=False,fontsize=16)\nplt.tick_params(labelsize=16)\n")
 
 
 # In[2]:
@@ -288,31 +288,33 @@ showplot()
 import empylib.waveoptics as wv
 import empylib.nklib as nk
 import numpy as np
-from numpy import log10, radians
+from numpy import log10, radians, cos
 import matplotlib.pyplot as plt
 from empylib.ref_spectra import Bplanck
 
 def plot_emisivity_glass(Temp,d,lam0,theta0):
-    # parámetros de entrada
-    
+    # PARAMETROS DE ENTRADA
     lam = np.linspace(0.3,15,100)
     Nfront = 1.0                 # índice de refracción medio superior
     N1     = nk.SiO2(lam)        # índice de refracción capa intermedia
     Nback  = 4.3                 # índice de refracción medio inferior
     N = (Nfront, N1, Nback)      # indices de refracción (above, mid, below)
+    #-------------------------------------------------------------------------
 
-    # Reflectancia y transmitancia espectral en theta0
+    # CÁLCULO DE VARIABLES
+    # 1. Reflectancia y transmitancia espectral en theta0
     Rs, Ts = wv.incoh_multilayer(lam,radians(theta0), N, d*1E3, pol='TM')
     Rp, Tp = wv.incoh_multilayer(lam,radians(theta0), N, d*1E3, pol='TM')
     
     R_lam = (Rs + Rp)/2
     T_lam = (Ts + Tp)/2
-    A_lam = 1 - T_lam - R_lam
+    A_lam = 1 - T_lam - R_lam  # absortancia espectral
     
-   # Reflectancia y transmitancia direccional en lam0
+   # 2. Reflectancia y transmitancia direccional en lam0
     theta = np.linspace(0,90,100)
-    N = (Nfront, np.interp(lam0,lam,N1), Nback)      # indices de refracción (above, mid, below)
-    A_theta = [] # lista vacía
+    N = (Nfront, nk.SiO2(lam0), Nback) # indices de refracción (above, mid, below)
+    
+    A_theta = [] # generamos la absortancia direccional en este loop
     for theta_i in theta:
         Rs, Ts = wv.incoh_multilayer(lam0,radians(theta_i), N, d*1E3, pol='TM')
         Rp, Tp = wv.incoh_multilayer(lam0,radians(theta_i), N, d*1E3, pol='TM')
@@ -320,12 +322,17 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
         T = (Ts + Tp)/2
         A_theta.append(1 - T - R)
     A_theta = np.array(A_theta).flatten() # convertimos la lista a ndarray
-
-    fig, ax = plt.subplots(1,3)
-    fig.set_size_inches(16, 5)
-    plt.rcParams.update({'font.size': 18})
     
-    # graficamos las propiedades radiativas espectrales
+    # 3. Poder de emisión direccional espectral
+    E_lam = A_lam*Bplanck(lam,Temp)*cos(radians(theta0)) # poder de emisión material
+    E_bb  =       Bplanck(lam,Temp)*cos(radians(theta0)) # poder de emisión de cuerpo negro
+    #-------------------------------------------------------------------------
+    
+    # GRAFICAMOS RESULTADOS.
+    fig, ax = plt.subplots(1,3)             # 3 ejes
+    fig.set_size_inches(16, 5)              # Tamaño de figura
+    
+    # 1. Propiedades radiativas direccional espectral para theta0
     ax[0].plot(lam,R_lam,'--r',label=r'$R_{\lambda,\Omega}$',linewidth=0.5)
     ax[0].plot(lam,T_lam,'--b',label=r'$T_{\lambda,\Omega}$',linewidth=0.5)
     ax[0].plot(lam,A_lam,'-k',label=r'$A_{\lambda,\Omega}$',linewidth=2.0)  
@@ -334,19 +341,19 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     ax[0].set_ylabel(r'$R_{\lambda,\Omega}$, $T_{\lambda,\Omega}$ y $A_{\lambda,\Omega}$',fontsize=18)
     ax[0].set_ylim(0,1.05)
     ax[0].set_title(r'$\theta = $ %i°' % theta0,fontsize=18)
-    ax[0].legend(fontsize=16)
+    ax[0].legend(fontsize=16, loc='lower right')
+    ax[0].tick_params(labelsize=16)
     
-    # graficamos la emisividad espectral en el ángulo
+    # 2. Emisividad direccional espectral para lam0
     ax[1].plot(theta,A_theta,'-k')  
     ax[1].plot(theta0,np.interp(theta0,theta,A_theta),'or',ms=8.0)   
     ax[1].set_xlabel(r'$\theta$ (deg)',fontsize=18)
     ax[1].set_ylabel(r'$\epsilon_{\lambda,\Omega}(\theta)$',fontsize=18)
     ax[1].set_title(r'$\lambda = $ %.2f $\mu$m' % lam0,fontsize=18)
     ax[1].set_ylim(0,1.05)
+    ax[1].tick_params(labelsize=16)
     
-    # Graficamos la radiación espectral
-    E_lam = A_lam*Bplanck(lam,Temp)*np.cos(np.radians(theta0)) # poder de emisión material
-    E_bb = Bplanck(lam,Temp)*np.cos(np.radians(theta0))        # poder de emisión de cuerpo negro
+    # 3. Poder de emisión direccional espectral para theta0
     ax[2].plot(lam,E_lam,'-k',label =r'$E_{\lambda,\Omega}$')
     ax[2].plot(lam,E_bb,'-r',label =r'$E_\mathrm{bb}$') 
     ax[2].plot(lam0,np.interp(lam0,lam,E_lam),'or',ms=8.0)   
@@ -355,6 +362,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     ax[2].set_title(r'd = %.2f mm, $\theta$=%i°' % (d,theta0) ,fontsize=18)
     ax[2].set_ylim(0,max(Bplanck(lam,Temp))*1.05)
     ax[2].legend(fontsize=16)
+    ax[2].tick_params(labelsize=16)
     
     plt.subplots_adjust(wspace=0.30)
     plt.show()
