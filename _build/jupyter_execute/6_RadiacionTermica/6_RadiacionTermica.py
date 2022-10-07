@@ -123,7 +123,7 @@
 # <img src="./images/HW_vertical_noground.gif" width="300px" align= center>
 
 # ### Poder de emisión
-# Un cuerpo a temperatura $T$ emite ondas electromagnéticas en todas las direcciones y en un rango de longitudes de onda. En general, la distribución angular ($\Omega$) y espectral ($\lambda$) de la radiación emitida depende de las propiedades ópticas de la superficie y la temperatura del material. 
+# Un cuerpo a temperatura $T$ emite ondas electromagnéticas en todas las direcciones y en un espectro de longitudes de onda. En general, la distribución angular ($\Omega$) y espectral ($\lambda$) de la radiación emitida depende de las propiedades ópticas de la superficie y la temperatura del material. 
 
 # Para caracterizar la intensidad de la radiación emitida por una superficie a tempertura $T$, usamos la **intensidad específica o radiancia espectral**, $I_\lambda(\lambda,\Omega,T)$.
 
@@ -134,10 +134,10 @@
 # \end{equation}
 
 # El término $\cos\theta dA$ corresponde a la proyección de $dA$ en la dirección $\Omega$
-# 
+
 # <img src="./images/specific_intensity.png" width="300px" align= center>
 
-# Definimos como **poder de emisión** direccional y espectral a la relación:
+# Definimos como **poder de emisión direccional espectral** a la relación:
 # 
 # \begin{equation}
 # E_{\lambda,\Omega}(T) = \frac{d\dot{Q}_\mathrm{rad}}{dAd\Omega d\lambda}=I_{\lambda}(\lambda,\Omega)\cos\theta ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}\cdot\mathrm{sr}}
@@ -150,14 +150,24 @@
 # A partir de este término podemos derivar:
 
 # - **Poder de emisión hemisférica espectral**, 
-# \begin{equation*}
-# E_{\lambda}(T) = \frac{d\dot{Q}}{dAd\lambda}=  \int_\mathrm{hemi}I_{\lambda}(\lambda,\Omega)\cos\theta d\Omega,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}}
-# \end{equation*}
-# donde $\int_\mathrm{hemi} d\Omega = \int_0^{2\pi}d\phi\int_0^{\pi/2}\sin\theta d\theta$
+# 
+# \begin{align*}
+# E_{\lambda}(T) = \frac{d\dot{Q}}{dA d\lambda} &= \int_0^{2\pi}\int_0^{\pi/2}I_{\lambda}(\lambda,\Omega)\cos\theta~\sin\theta  d\theta d\phi
+#   \\ 
+#   &=\int_\mathrm{hemi} I_{\lambda}(\lambda,\Omega)\cos\theta~d\Omega
+#   ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}}
+# \end{align*}
 
-# - **Poder de emisión**, 
+# - **Poder de emisión direccional total**,
+# 
 # \begin{equation*}
-# E(T) = \frac{d\dot{Q}}{dA}=\int_0^\infty\int_\mathrm{hemi}I_{\lambda}(\lambda,\Omega)\cos\theta d\Omega d\lambda ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
+# E_\Omega(\lambda,T) = \frac{d\dot{Q}}{dAd\Omega}=\cos\theta \int_0^\infty~ I_{\lambda}(\lambda,\Omega)~d\lambda  ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2 \cdot\mathrm{sr}}
+# \end{equation*}
+
+# - **Poder de emisión hemisfética total**, 
+# 
+# \begin{equation*}
+# E(T) = \frac{d\dot{Q}}{dA}=\int_0^\infty\int_\mathrm{hemi}I_{\lambda}(\lambda,\Omega)\cos\theta~d\Omega d\lambda ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
 # \end{equation*}
 
 # ### Distribución de Planck
@@ -178,24 +188,23 @@
 
 # Esta es la **distribución de Planck**. Representa la radiancia espectral emitida por un cuerpo idealizado, denominado **cuerpo negro**. Un cuerpo negro, así, representa un emisor perfecto, capaz de emitir la máxima radiacion posible a una temperatura $T$.
 
-# El poder de emisión espectral de la superficie de un cuerpo negro, $E_\mathrm{bb}(\lambda,T)$, se obtiene integrando la radiancia espectral por ángulo sólido en el límite de una hemiesfera:
+# El poder de emisión hemisférico espectral de la superficie de un cuerpo negro, $E_\mathrm{bb}(\lambda,T)$, se obtiene integrando la radiancia espectral por ángulo sólido en el límite de una hemiesfera:
 # 
 # \begin{equation}
-# \int_\mathrm{hemi} I_{\mathrm{bb},\lambda}(\lambda,T,\Omega)\cos\theta d\Omega = \pi I_{\mathrm{bb},\lambda}(\lambda,T) = E_\mathrm{bb}(\lambda,T),\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}}
+# \int_\mathrm{hemi} I_{\mathrm{bb},\lambda}(\lambda,T,\Omega)\cos\theta d\Omega = \pi I_{\mathrm{bb},\lambda}(\lambda,T) = E_{\mathrm{bb},\lambda}(\lambda,T),\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}}
 # \end{equation}
-# 
-# donde $\int_\mathrm{hemi} d\Omega = \int_0^{2\pi}d\phi\int_0^{\pi/2}d\theta$
 
-# A partir de la integral de $E_\mathrm{bb}(\lambda,T)$ en el espectro de longitudes de onda, obtenemos el flujo de radiación emitida o el poder de emisión de un cuerpo negro:
+# A partir de la integral de $E_\mathrm{bb}(\lambda,T)$ en el espectro de longitudes de onda, obtenemos el poder de emisión hemisferico total de un cuerpo negro:
 # 
 # \begin{equation}
-# \int_0^\infty E_\mathrm{bb}(\lambda,T) d\lambda = \sigma T^4,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
+# \int_0^\infty E_{\mathrm{bb},\lambda}(\lambda,T) d\lambda = \sigma T^4,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
 # \end{equation}
 # 
 # donde $\sigma = 5.670\times10^{-8}$ W/m$^2\cdot$K$^4$, es la *constante de Stefan-Boltzmann.* Esta fórmula se conoce como la **ley de Stefan-Boltzmann**
 
-# En la siguiente figura, se ilustra $E_\mathrm{bb}(\lambda,T)$ función de la temperatura y longitud de onda.
+# En la siguiente figura, se ilustra $E_{\mathrm{bb},\lambda}(\lambda,T)$ función de la temperatura y longitud de onda.
 # 
+
 # <img src="./images/blackbody_rad.png" width="700px" align= center>
 
 # A medida que $T$ aumenta, notamos que el máximo de la curva se desplaza hacia el azul. La longitud de onda correspondiente a este máximo, $\lambda_\mathrm{peak}$, está definida por la **ley de desplazamiento de Wien:**
@@ -205,52 +214,75 @@
 # \end{equation}
 # 
 
-# Esta relación permite entender el cambio de color de la fuente emisora con la tempertura. Sin embargo, **el color de un material no solo se define por la emisión de radiación, sino también por la forma en la que interactúa con la luz incidente**. Como revisamos en las unidades anteriores, esta interacción está condionada por las propiedades radiativas.
+# Esta relación permite entender el cambio de color de la fuente emisora con la tempertura.
+
+# Recordemos, sin embargo,  que **el color de un material no solo se define por la emisión de radiación, sino también por la forma en la que interactúa con la luz incidente**. Como revisamos en las unidades anteriores, esta interacción está condionada por las propiedades radiativas.
 
 # ### Propiedades Radiativas
 # 
-# Definimos como **emisividad, $\epsilon$** a la *razón entre la radiación emitida por una superficie, $I_\lambda(\lambda,T,\Omega)$, y la radiación emitida por un cuerpo negro, ambas a temperatura $T$*:
+# Definimos como **emisividad direccional espectral, $\epsilon_{\lambda,\Omega}$,** a la *razón entre la radiación emitida por una superficie, $I_\lambda(\lambda,T,\Omega)$, y la radiación emitida por un cuerpo negro, ambas a temperatura $T$*:
 # 
 # \begin{equation}
-# \epsilon(\lambda,\Omega) = \frac{I_\lambda(\lambda,T,\Omega)}{I_{\mathrm{bb},\lambda}(\lambda,T,\Omega)}
+# \epsilon_{\lambda,\Omega} = \frac{I_\lambda(\lambda,T,\Omega)}{I_{\mathrm{bb},\lambda}(\lambda,T,\Omega)}
 # \end{equation}
 # 
 # De esta forma, $\epsilon$ es una propiedad adimensional de superfice que varía entre $0 \le \epsilon \le 1$.
 
-# La **ley de Kirchhoff**, establece que la abortividad, $\alpha$ y la emisividad están relacionadas por:
+# Definimos como **absortividad direccional espectral, $A_{\lambda,\Omega}$,** a la *porción de radiación incidente que es absorbida por una superficie*. Igualmente, $0 \le \alpha \le 1$.
+
+# A través de la **ley de Kirchhoff**, podemos establecer una relación entre la absortancia y emisividad espectral direccional:
 # 
 # \begin{equation}
-# \epsilon(\lambda,\Omega) = \alpha(\lambda,\Omega)
+# \epsilon_{\lambda,\Omega} = A_{\lambda,\Omega}
+# \end{equation}
+
+# En otras palabras, las propiedades de un material como receptor o emisor de radiación, son iguales. Este concepto, denominado *reciprocidad*, es consecuencia de las ecuaciones de Maxwell y es la base fundamental para el diseño de antenas y radares.
+
+# Por conservación de energía:
+# \begin{equation}
+# A_{\lambda,\Omega} + R_{\lambda,\Omega} + T_{\lambda,\Omega} = 1
 # \end{equation}
 # 
 
-# A partir de estas relacion podemos relacionar las propiedades de reflectividad, $R$ y transmisividad $T$ para determinar $\epsilon$.
+# donde $R_{\lambda,\Omega}$ y $T_{\lambda,\Omega}$ son, respectivamente, la reflectividad y transmisividad espectral direccional del material
 
-# Debido a la naturaleza de la radiación térmica, la polarización de las ondas electromagnéticas es aleatoria. Así, $R$ y $T$ se calculan como:
+# Debido a la naturaleza de la radiación térmica, la polarización de las ondas electromagnéticas es aleatoria. Así, $R_{\lambda,\Omega}$ y $T_{\lambda,\Omega}$ se calculan como:
 # 
 # \begin{equation}
-# R = \frac{R_\mathrm{TM}+R_\mathrm{TE}}{2}\quad\quad
-# T = \frac{T_\mathrm{TM}+T_\mathrm{TE}}{2}
+# R_{\lambda,\Omega} = \frac{R_{\lambda,\Omega}^\mathrm{TM}+R_{\lambda,\Omega}^\mathrm{TE}}{2}\quad\quad
+# T_{\lambda,\Omega} = \frac{T_{\lambda,\Omega}^\mathrm{TM}+T_{\lambda,\Omega}^\mathrm{TE}}{2}
 # \end{equation}
 
-# Cabe mencionar que en radiometría, la reflectividad y transmisividad se denominan, respectivamente, **reflectancia ($\rho$)**, **transmitancia ($\tau$).** Igualmente la absortividad se denomina **absortancia.** Ambos términos son equivalentes.
+# A partir de estas relaciones podemos determinar $\epsilon_{\lambda,\Omega}$.
 
-# Por la ley de conservación de energía, la reflectancia, transmitancia y absortancia se relacionan por:
-# 
-# \begin{equation}
-# 1 = \alpha(\lambda,\Omega) + \rho(\lambda,\Omega) + \tau(\lambda,\Omega)
-# \end{equation}
+# Cabe mencionar que en textos de radiometría y transferencia de calor, la reflectividad y transmisividad se denominan, respectivamente, **reflectancia ($\rho$)**, **transmitancia ($\tau$).** Igualmente la absortividad se denomina **absortancia ($\alpha$).** Ambos términos son equivalentes.
 
-# Como ejemplo, analicemos el poder de emisión espectral direccional, $E_{\lambda,\Omega}(T)$ y la emisividad $\epsilon(\lambda,\Omega)$ de una capa de vidrio en función de la temperatura, espesor y dirección. En este caso: 
+# En este curso, seguiremos utilizando los términos y notación de óptica, es decir $R_{\lambda,\Omega}$, $T_{\lambda,\Omega}$ y $A_{\lambda,\Omega}$, para evitar confusiones. 
+
+# Como ejemplo, analicemos el poder de emisión espectral direccional, $E_{\lambda,\Omega}(T)$ y la emisividad $\epsilon(\lambda,\Omega)$ de una capa de vidrio en función de la temperatura ($T$), espesor ($d$) y dirección ($\theta$). En este caso: 
 # 
 # \begin{align*}
-# E_{\lambda,\Omega}(T) &= \epsilon(\lambda,\Omega)I_{\mathrm{bb},\lambda}(\lambda,\Omega,T)\cos\theta \\
-#  &= \left[1 - \rho(\lambda,\Omega) - \tau(\lambda,\Omega)\right]I_{\mathrm{bb},\lambda}(\lambda,\Omega,T)\cos\theta
+# E_{\lambda,\Omega}(T) &= \epsilon(\lambda,\Omega)I_{\mathrm{bb},\lambda}(\lambda,\Omega,T)\cos\theta \\[10pt]
+#  &= \left[1 - R_{\lambda,\Omega} - T_{\lambda,\Omega}\right]I_{\mathrm{bb},\lambda}(\lambda,\Omega,T)\cos\theta
 # \end{align*}
 
-# Comparamos $E_{\lambda,\Omega}(T)$ con el poder de emisión espectral direccional del cuerpo negro, $E_\mathrm{bb}(\lambda,\Omega,T)$
+# Antes, analicemos el índice de refracción del vidrio (sílicice, SiO$_2$), en el espectro $\lambda\in[0.3,15]$ $\mu$m.
 
 # In[1]:
+
+
+get_ipython().run_cell_magic('capture', 'showplot', "import empylib.nklib as nk\nimport matplotlib.pyplot as plt\n\nplt.rcParams['font.size'] = '16' # tamaño de fuente\n\nlam = np.linspace(0.3,15,100)\nplt.plot(lam,nk.SiO2(lam).real,'-r',label='$n$')\nplt.plot(lam,nk.SiO2(lam).imag,'-b',label='$\\kappa$')\nplt.xlabel('Longitud de onda, $\\lambda$ ($\\mu$m)',fontsize=16)\nplt.ylabel('$n$, $\\kappa$',fontsize=16)\nplt.title('Índice de refracción SiO$_2$')\nplt.legend(frameon=False)\n")
+
+
+# In[2]:
+
+
+showplot()
+
+
+# Comparamos $E_{\lambda,\Omega}(T)$ con el poder de emisión espectral direccional del cuerpo negro, $E_{\mathrm{bb},\lambda,\Omega} = I_{\mathrm{bb},\lambda}\cos\theta$
+
+# In[3]:
 
 
 import empylib.waveoptics as wv
@@ -294,29 +326,32 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     plt.rcParams['font.size'] = '18'
     
     # graficamos las propiedades radiativas espectrales
-    ax[0].plot(lam,R_lam,'--r',label=r'$\rho$',linewidth=0.5)
-    ax[0].plot(lam,T_lam,'--b',label=r'$\tau$',linewidth=0.5)
-    ax[0].plot(lam,A_lam,'-k',label=r'$\alpha$',linewidth=2.0)  
-    ax[0].plot(lam0,np.interp(lam0,lam,A_lam),'ok')   
+    ax[0].plot(lam,R_lam,'--r',label=r'$R_{\lambda,\Omega}$',linewidth=0.5)
+    ax[0].plot(lam,T_lam,'--b',label=r'$T_{\lambda,\Omega}$',linewidth=0.5)
+    ax[0].plot(lam,A_lam,'-k',label=r'$A_{\lambda,\Omega}$',linewidth=2.0)  
+    ax[0].plot(lam0,np.interp(lam0,lam,A_lam),'or',ms=8.0)   
     ax[0].set_xlabel('$\lambda$ ($\mu$m)')
-    ax[0].set_ylabel(r'$\rho$, $\tau$ y $\alpha$')
+    ax[0].set_ylabel(r'$R_{\lambda,\Omega}$, $T_{\lambda,\Omega}$ y $A_{\lambda,\Omega}$')
     ax[0].set_ylim(0,1.05)
     ax[0].set_title(r'$\theta = $ %i°' % theta0)
     ax[0].legend()
     
     # graficamos la emisividad espectral en el ángulo
     ax[1].plot(theta,A_theta,'-k')  
-    ax[1].plot(theta0,np.interp(theta0,theta,A_theta),'ok')   
+    ax[1].plot(theta0,np.interp(theta0,theta,A_theta),'or',ms=8.0)   
     ax[1].set_xlabel(r'$\theta$ (deg)')
-    ax[1].set_ylabel(r'$\epsilon(\lambda,\theta)$')
+    ax[1].set_ylabel(r'$\epsilon_{\lambda,\Omega}(\theta)$')
     ax[1].set_title(r'$\lambda = $ %.2f $\mu$m' % lam0)
     ax[1].set_ylim(0,1.05)
     
     # Graficamos la radiación espectral
-    ax[2].plot(lam,A_lam*Bplanck(lam,Temp)*np.cos(np.radians(theta0)),'-k',label =r'$E_{\lambda,\Omega}$')
-    ax[2].plot(lam,Bplanck(lam,Temp)*np.cos(np.radians(theta0)),'-r',label =r'$E_\mathrm{bb}$')
+    E_lam = A_lam*Bplanck(lam,Temp)*np.cos(np.radians(theta0)) # poder de emisión material
+    E_bb = Bplanck(lam,Temp)*np.cos(np.radians(theta0))        # poder de emisión de cuerpo negro
+    ax[2].plot(lam,E_lam,'-k',label =r'$E_{\lambda,\Omega}$')
+    ax[2].plot(lam,E_bb,'-r',label =r'$E_\mathrm{bb}$') 
+    ax[2].plot(lam0,np.interp(lam0,lam,E_lam),'or',ms=8.0)   
     ax[2].set_xlabel('Longitud de onda ($\mu$m)')
-    ax[2].set_ylabel(r'E_{\lambda,\Omega}(T) (W/m$^2$-$\mu$m-sr)')
+    ax[2].set_ylabel(r'$E_{\lambda,\Omega}$(T) (W/m$^2$-$\mu$m-sr)')
     ax[2].set_title(r'd = %.2f mm, $\theta$=%i°' % (d,theta0) )
     ax[2].set_ylim(0,max(Bplanck(lam,Temp))*1.05)
     ax[2].legend()
@@ -325,7 +360,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     plt.show()
 
 
-# In[2]:
+# In[4]:
 
 
 from ipywidgets import interact
@@ -335,25 +370,66 @@ def g(T=300,d=1, lam0=10, theta0=0):
    return plot_emisivity_glass(T,d,lam0,theta0)
 
 
-# Decimos que una superficie es **difusa** cuando sus propiedades radiativas no dependen de $\Omega$. Si la superficie es difusa, una buena aproximación es considerar el valor de la propiedad difusa como la propiedad radiativa de la superficie lisa en la dirección normal. Por ejemplo, para la emisividad: $\epsilon(\lambda,T) = \epsilon(\lambda,\Omega = 0, T)$
+# Al igual que con el poder de emisión, la emisividad puede también ser definida de forma hemisférica (integración por ángulo sólido) o total (integración por longitudes de onda)
 
-# Decimos que una superficie es **opaca** cuando $\tau = 0$. En este caso, 
-# tenemos $\alpha + \rho = 1$
+# **Emisividad direccional total**
+# \begin{equation}
+# \epsilon_\Omega(\Omega,T) = \frac{E_\Omega(T)}{E_{\Omega,bb}(T)} =\frac{\int_0^\infty \epsilon_{\lambda,\Omega} I_{\mathrm{bb},\lambda} (T)\cos\theta~d\lambda}{\int_0^\infty I_{\mathrm{bb},\lambda} (T)\cos\theta~d\lambda} = \frac{\pi}{\sigma T^4}\int_0^\infty \epsilon_{\lambda,\Omega} I_{\mathrm{bb},\lambda} (T)~d\lambda
+# \end{equation}
 
-# Para gases, $\rho \approx 0$, así $\alpha + \tau = 1$
+# **Emisividad hemisférica espectral**
+# \begin{equation}
+# \epsilon_\lambda(\lambda) = \frac{E_\lambda(T)}{E_{\lambda,bb}(T)} = \frac{\int_\mathrm{hemi}\epsilon_{\lambda,\Omega}I_{\mathrm{bb},\lambda}(T)\cos\theta~d\Omega}{\pi I_{\mathrm{bb},\lambda}(T)}  = \frac{1}{\pi}\int_\mathrm{hemi}\epsilon_{\lambda,\Omega}\cos\theta~d\Omega
+# \end{equation}
+
+# **Emisividad hemisférica total**
+# \begin{equation}
+# \epsilon(T) = \frac{E(T)}{\sigma T^4} =\frac{1}{\sigma T^4}\int\int_0^\infty \epsilon_{\lambda,\Omega} I_{\mathrm{bb},\lambda} (T)\cos\theta~d\lambda~d\Omega
+# \end{equation}
+
+# Notar que las valores totatles (integración en el espectro), implícitamente dependen de $T$ debido al factor $\sigma T^4$.
+
+# ### Materiales idealizados
+
+# - Decimos que una superficie es **difusa** cuando sus propiedades radiativas no dependen de $\Omega$. Es práctica común suponer que las superficies son emisores difusos, con una emisividad igual al valor de la dirección normal ($\theta = 0$).
+
+# - Decimos que una superficie es **gris** cuando la emisividad es independiente de $\lambda$.
+
+# - Decimos que una superficie es **opaca** cuando $T_{\lambda,\Omega} = 0$. En este caso, 
+# tenemos $A_{\lambda,\Omega} + R_{\lambda,\Omega} = 1$
+
+# - En el caso de **gases**, $R_{\lambda,\Omega} \approx 0$, así $A_{\lambda,\Omega} + T_{\lambda,\Omega} = 1$
 
 # ### Irradiancia (G) y Radiosidad (J)
 
-# Definimos como **irradiación (G)** a la radiancia espectral incidente en una superficie.
+# Definimos como **irradiación espectral direccional, $G_{\lambda,\Omega}$** a la radiancia espectral incidente en una superficie.
+# 
 # <img src="./images/irradiance.png" width="300px" align= center>
 
-# Definimos como **radiosidad (J)** a la combinación de radiación emitida y reflejada por una superficie
+# Matématicamente:
+# 
+# \begin{equation}
+# G_{\lambda,\Omega} = I_i(\lambda,\Omega) \cos\theta\quad\frac{\mathrm{W}}{\mathrm{m}^2}
+# \end{equation}
+# 
+# donde $I_i$ es la radiancia espectral incidente sobre una superficie $dA$
+
+# Definimos como **radiosidad, $J_{\lambda,\Omega}$** a la combinación de radiación emitida y reflejada por una superficie
+
+# 
 # <img src="./images/radiosity.png" width="250px" align= center>
+
+# Matemáticamente:
+# \begin{equation}
+# J_{\lambda,\Omega} = R_{\lambda,\Omega}G_{\lambda,\Omega}+E_{\lambda,\Omega}
+# \end{equation}
+
+# Al igual que con el poder de emisión, la irradiancia ($G_{\lambda,\Omega}$) y la radiosidad ($J_{\lambda,\Omega}$) pueden ser definidas de forma hemisférica (integrando por ángulo sólido) o total (integrando por longitud de onda).
 
 # ## Referencias
 # - Çengel Y. A y Ghanjar A. J. **Capítulo 12 - Fundamentos de la radiación térmica** en *Transferencia de calor y masa*, 4ta Ed, McGraw Hill, 2011
 
-# In[3]:
+# In[5]:
 
 
 from IPython.display import YouTubeVideo
