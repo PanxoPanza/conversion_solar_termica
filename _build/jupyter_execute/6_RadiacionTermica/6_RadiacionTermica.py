@@ -323,6 +323,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
 
     fig, ax = plt.subplots(1,3)
     fig.set_size_inches(16, 5)
+    plt.rcParams.update({'font.size': 18})
     
     # graficamos las propiedades radiativas espectrales
     ax[0].plot(lam,R_lam,'--r',label=r'$R_{\lambda,\Omega}$',linewidth=0.5)
@@ -333,7 +334,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     ax[0].set_ylabel(r'$R_{\lambda,\Omega}$, $T_{\lambda,\Omega}$ y $A_{\lambda,\Omega}$',fontsize=18)
     ax[0].set_ylim(0,1.05)
     ax[0].set_title(r'$\theta = $ %i°' % theta0,fontsize=18)
-    ax[0].legend()
+    ax[0].legend(fontsize=16)
     
     # graficamos la emisividad espectral en el ángulo
     ax[1].plot(theta,A_theta,'-k')  
@@ -353,7 +354,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     ax[2].set_ylabel(r'$E_{\lambda,\Omega}$(T) (W/m$^2$-$\mu$m-sr)',fontsize=18)
     ax[2].set_title(r'd = %.2f mm, $\theta$=%i°' % (d,theta0) ,fontsize=18)
     ax[2].set_ylim(0,max(Bplanck(lam,Temp))*1.05)
-    ax[2].legend()
+    ax[2].legend(fontsize=16)
     
     plt.subplots_adjust(wspace=0.30)
     plt.show()
