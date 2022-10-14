@@ -5,13 +5,13 @@
 # # Radiación Solar
 # <br><br><br><br>
 # Profesor: Francisco Ramírez Cuevas<br>
-# Fecha: 30 de Septiembre 2022
+# Fecha: 14 de octubre 2022
 
 # ## Ángulos solares
 
 # ### Características de la órbita de la tierra
 # - La órbita de la tierra aproximadamente circular, con una pequeña excentricidad ($e = 1.673$%).
-# - La distancia entre el sol y la tierra está dada por: $d_\mathrm{e-s} = 1.495\times 10^{11}\pm 1.7$%.
+# - La distancia entre el sol y la tierra está dada por: $d_\mathrm{e-s} = 1.495\times 10^{11}~\mathrm{m}\pm 1.7$%.
 # - El eje de la tierra está inclinado 23.45° del plano ecliptico (plano de la órbida de la tiera)
 
 # <img src="./images/earth_orbit.png" width="600px" align= center>
@@ -29,11 +29,14 @@
 # 
 # - La **declinación solar, $\delta$** corresponde al ángulo vertical medido desde el plano ecuatorial. 
 
-# - La **ascención recta** se define como el ángulo horizontal en referencia al eje del equinoccio vernal (21 de marzo), también conocido como punto de aries.
+# - La **ascención recta, $\mathrm{AR}$** se define como el ángulo horizontal en referencia al eje del equinoccio vernal (21 de marzo), también conocido como punto de aries. Se mide en horas, con 1 hora equivalente a 15°.
+
+# En el equinoxio del 21 de marzo, $\delta \approx 0°$ y $\mathrm{AR}\approx 0$ h
 
 # La declinación solar esta asociada con la inclinación del eje polar respecto al plano eclíptico.
-# 
 # <img src="./images/schematic_declination.png" width="900px" align= center>
+
+# <img src="./images/declination_year.png" width="500px" align= center>
 
 # ### Posición del sol respecto al plano horizontal local
 # Una forma más intuitiva de definir la posición del sol, es utilizando el plano horizontal local. En este caso, caracterizamos la posición del sol respecto a los ángulos, **elevación solar ($\alpha_\mathrm{s}$)** y **acimut solar ($\phi_\mathrm{s}$)**.
@@ -44,7 +47,7 @@
 
 # - El ángulo **acimut solar** $\phi_\mathrm{s}$ mide la proyección de la posición del sol en el plano horizontal local. En el hemisferio sur(norte), el valor $\phi_\mathrm{s} = 0$°,  corresponde al eje norte(sur) creciendo en dirección oeste. 
 
-# Para una coordenada en términos de latitud y longitud, valor de $\alpha_\mathrm{s}$ y $\phi_\mathrm{s}$ está definido en función de los ángulos de declinación y ascención recta. 
+# El valor de $\alpha_\mathrm{s}$ y $\phi_\mathrm{s}$, es función de  $\delta$, $\mathrm{AR}$, la longitud, latitud y la hora local.
 # 
 # En este curso utilizaremos $\alpha_\mathrm{s}$ y $\phi_\mathrm{s}$ directamente utilizando [fuentes disponibles en línea](https://www.suncalc.org/).
 
@@ -53,6 +56,12 @@
 # El ángulo de incidencia del sol, $\theta_\mathrm{i}$, corresponde al ángulo cenital relativo a la norla de una superficie. En la siguiente figura se muestra una superficie inclinada con ángulo cenital $\beta$ y ángulo acimutal $\Phi$ respecto a la dirección normal al plano horizontal
 
 # <img src="./images/incidence_angle.png" width="650px" align= center>
+
+# Considerando la posición del sol relativa al plano horizontal, el ángulo de incidencia es:
+# 
+# \begin{equation}
+# \cos\theta_i = \cos\theta_\mathrm{s}\cos\beta+\sin\theta_\mathrm{s}\sin\beta\cos(\phi_\mathrm{s} - \Phi)
+# \end{equation}
 
 # Para una superficie en posición horizontal, $\theta_\mathrm{i} = \theta_\mathrm{s}$
 
@@ -91,6 +100,18 @@
 # 
 # <img src="./images/solar_constant_daily.png" width="600px" align= center>
 
+# La constante solar también cambia según la elevación solar o, de forma complementaria, con el cenit solar en la forma:
+# 
+# \begin{equation}
+# G_{\mathrm{sc},t} = G_\mathrm{sc}\cos\theta_\mathrm{s}
+# \end{equation}
+
+# Para una superficie inclinada, con un ángulo de incidencia $\theta_i$ la constate solar es:
+# 
+# \begin{equation}
+# G_{\mathrm{sc},s} = G_\mathrm{sc}\cos\theta_\mathrm{i}
+# \end{equation}
+
 # ### Atenuación atmosférica
 # 
 # La radiación solar definida por $G_\mathrm{sc}$ corresponde al valor fuera de la atmosfera de la tierra. En la superficie de la tierra, este valor es atenuado debido a fenómenos de absoción y *scattering* asociado a los gases atmosfpericos, tales como vapor de agua, ozono, nubes, etc. 
@@ -106,7 +127,9 @@
 # \mathrm{AM} = \frac{L}{L_0}
 # \end{equation*}
 # 
-# donde $L_0$ es la distancia (espesor de la atmósfera) normal a la superficie de la tierra y al nivel del mar.
+# donde $L_0$ es la distancia (espesor de la atmósfera) normal a la superficie de la tierra y al nivel del mar, y $L$ es la distancia al nivel del mar a un ángulo $\theta_\mathrm{s}$
+
+# <img src="./images/AM_diagram.png" width="300px" align= center>
 
 # Una forma simplificada de representar el coeficiente de masa de aire es:
 # 
@@ -131,7 +154,7 @@
 # G_\mathrm{AM1.5} = 1000~\frac{\mathrm{W}}{\mathrm{m}^2} = 1~\mathrm{sun}
 # \end{equation}
 
-# Existen distintas fuentes con valores tabulados del espectro AM1.5. Por ejemplo, tenemos esta [fuente](https://www.nrel.gov/grid/solar-resource/spectra-am1.5.html)
+# Existen distintas fuentes con valores tabulados del espectro AM1.5, por ejemplo: [NREL AM1.5](https://www.nrel.gov/grid/solar-resource/spectra-am1.5.html)
 
 # ## Instrumentos de medición de radiación solar
 # 

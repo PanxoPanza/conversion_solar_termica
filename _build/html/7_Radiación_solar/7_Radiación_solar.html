@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -509,14 +511,14 @@ title="Print to PDF"
 <h1><span class="section-number">7. </span>Radiación Solar<a class="headerlink" href="#radiacion-solar" title="Permalink to this headline">#</a></h1>
 <p><br><br><br><br>
 Profesor: Francisco Ramírez Cuevas<br>
-Fecha: 30 de Septiembre 2022</p>
+Fecha: 14 de octubre 2022</p>
 <section id="angulos-solares">
 <h2><span class="section-number">7.1. </span>Ángulos solares<a class="headerlink" href="#angulos-solares" title="Permalink to this headline">#</a></h2>
 <section id="caracteristicas-de-la-orbita-de-la-tierra">
 <h3><span class="section-number">7.1.1. </span>Características de la órbita de la tierra<a class="headerlink" href="#caracteristicas-de-la-orbita-de-la-tierra" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>La órbita de la tierra aproximadamente circular, con una pequeña excentricidad (<span class="math notranslate nohighlight">\(e = 1.673\)</span>%).</p></li>
-<li><p>La distancia entre el sol y la tierra está dada por: <span class="math notranslate nohighlight">\(d_\mathrm{e-s} = 1.495\times 10^{11}\pm 1.7\)</span>%.</p></li>
+<li><p>La distancia entre el sol y la tierra está dada por: <span class="math notranslate nohighlight">\(d_\mathrm{e-s} = 1.495\times 10^{11}~\mathrm{m}\pm 1.7\)</span>%.</p></li>
 <li><p>El eje de la tierra está inclinado 23.45° del plano ecliptico (plano de la órbida de la tiera)</p></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/earth_orbit.png"><img alt="../_images/earth_orbit.png" class="align-center" src="../_images/earth_orbit.png" style="width: 600px;" /></a>
@@ -534,10 +536,12 @@ Fecha: 30 de Septiembre 2022</p>
 <li><p>La <strong>declinación solar, <span class="math notranslate nohighlight">\(\delta\)</span></strong> corresponde al ángulo vertical medido desde el plano ecuatorial.</p></li>
 </ul>
 <ul class="simple">
-<li><p>La <strong>ascención recta</strong> se define como el ángulo horizontal en referencia al eje del equinoccio vernal (21 de marzo), también conocido como punto de aries.</p></li>
+<li><p>La <strong>ascención recta, <span class="math notranslate nohighlight">\(\mathrm{AR}\)</span></strong> se define como el ángulo horizontal en referencia al eje del equinoccio vernal (21 de marzo), también conocido como punto de aries. Se mide en horas, con 1 hora equivalente a 15°.</p></li>
 </ul>
-<p>La declinación solar esta asociada con la inclinación del eje polar respecto al plano eclíptico.</p>
-<a class="reference internal image-reference" href="../_images/schematic_declination.png"><img alt="../_images/schematic_declination.png" class="align-center" src="../_images/schematic_declination.png" style="width: 900px;" /></a>
+<p>En el equinoxio del 21 de marzo, <span class="math notranslate nohighlight">\(\delta \approx 0°\)</span> y <span class="math notranslate nohighlight">\(\mathrm{AR}\approx 0\)</span> h</p>
+<p>La declinación solar esta asociada con la inclinación del eje polar respecto al plano eclíptico.
+<a class="reference internal" href="../_images/schematic_declination.png"><img alt="../_images/schematic_declination.png" class="align-center" src="../_images/schematic_declination.png" style="width: 900px;" /></a></p>
+<a class="reference internal image-reference" href="../_images/declination_year.png"><img alt="../_images/declination_year.png" class="align-center" src="../_images/declination_year.png" style="width: 500px;" /></a>
 </section>
 <section id="posicion-del-sol-respecto-al-plano-horizontal-local">
 <h3><span class="section-number">7.1.4. </span>Posición del sol respecto al plano horizontal local<a class="headerlink" href="#posicion-del-sol-respecto-al-plano-horizontal-local" title="Permalink to this headline">#</a></h3>
@@ -549,13 +553,18 @@ Fecha: 30 de Septiembre 2022</p>
 <ul class="simple">
 <li><p>El ángulo <strong>acimut solar</strong> <span class="math notranslate nohighlight">\(\phi_\mathrm{s}\)</span> mide la proyección de la posición del sol en el plano horizontal local. En el hemisferio sur(norte), el valor <span class="math notranslate nohighlight">\(\phi_\mathrm{s} = 0\)</span>°,  corresponde al eje norte(sur) creciendo en dirección oeste.</p></li>
 </ul>
-<p>Para una coordenada en términos de latitud y longitud, valor de <span class="math notranslate nohighlight">\(\alpha_\mathrm{s}\)</span> y <span class="math notranslate nohighlight">\(\phi_\mathrm{s}\)</span> está definido en función de los ángulos de declinación y ascención recta.</p>
+<p>El valor de <span class="math notranslate nohighlight">\(\alpha_\mathrm{s}\)</span> y <span class="math notranslate nohighlight">\(\phi_\mathrm{s}\)</span>, es función de  <span class="math notranslate nohighlight">\(\delta\)</span>, <span class="math notranslate nohighlight">\(\mathrm{AR}\)</span>, la longitud, latitud y la hora local.</p>
 <p>En este curso utilizaremos <span class="math notranslate nohighlight">\(\alpha_\mathrm{s}\)</span> y <span class="math notranslate nohighlight">\(\phi_\mathrm{s}\)</span> directamente utilizando <a class="reference external" href="https://www.suncalc.org/">fuentes disponibles en línea</a>.</p>
 </section>
 <section id="angulo-de-incidencia">
 <h3><span class="section-number">7.1.5. </span>Ángulo de incidencia<a class="headerlink" href="#angulo-de-incidencia" title="Permalink to this headline">#</a></h3>
 <p>El ángulo de incidencia del sol, <span class="math notranslate nohighlight">\(\theta_\mathrm{i}\)</span>, corresponde al ángulo cenital relativo a la norla de una superficie. En la siguiente figura se muestra una superficie inclinada con ángulo cenital <span class="math notranslate nohighlight">\(\beta\)</span> y ángulo acimutal <span class="math notranslate nohighlight">\(\Phi\)</span> respecto a la dirección normal al plano horizontal</p>
 <a class="reference internal image-reference" href="../_images/incidence_angle.png"><img alt="../_images/incidence_angle.png" class="align-center" src="../_images/incidence_angle.png" style="width: 650px;" /></a>
+<p>Considerando la posición del sol relativa al plano horizontal, el ángulo de incidencia es:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-31d22a9e-55af-46a9-848c-e1c334f325bf">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-31d22a9e-55af-46a9-848c-e1c334f325bf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\cos\theta_i = \cos\theta_\mathrm{s}\cos\beta+\sin\theta_\mathrm{s}\sin\beta\cos(\phi_\mathrm{s} - \Phi)
+\end{equation}\]</div>
 <p>Para una superficie en posición horizontal, <span class="math notranslate nohighlight">\(\theta_\mathrm{i} = \theta_\mathrm{s}\)</span></p>
 </section>
 </section>
@@ -568,8 +577,8 @@ Fecha: 30 de Septiembre 2022</p>
 <p>Consideremos el sol como un cuerpo negro a temperatura <span class="math notranslate nohighlight">\(T_\mathrm{sun} = 5777\)</span> K.</p>
 <p>El calor total por radiación emitido por el sol es <span class="math notranslate nohighlight">\(\pi D_\mathrm{sun}^2 E_\mathrm{sun}\)</span>, donde <span class="math notranslate nohighlight">\(D_\mathrm{sun} = 1.39\times 10^9\)</span> m es el diámetro del sol.</p>
 <p>Considerando la distancia entre el sol y la tierra, <span class="math notranslate nohighlight">\(d_\mathrm{e-s} = 1.495\times 10^{11}\)</span> m, el flujo de radiación sobre la superficie de la tierra, <span class="math notranslate nohighlight">\(G_\mathrm{sc}\)</span>, es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-045c44cb-c682-49fc-835a-fc46f86fb34f">
-<span class="eqno">(7.1)<a class="headerlink" href="#equation-045c44cb-c682-49fc-835a-fc46f86fb34f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-931f7947-03fa-4bf1-9439-b959abee7d75">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-931f7947-03fa-4bf1-9439-b959abee7d75" title="Permalink to this equation">#</a></span>\[\begin{equation}
 G_\mathrm{sc} = \sigma T_\mathrm{sun}^4 \frac{\pi D_\mathrm{sun}^2}{4\pi d_\mathrm{e-s}^2}=1367\frac{\mathrm{W}}{\mathrm{m}^2}
 \end{equation}\]</div>
 <p>La <strong>constante solar <span class="math notranslate nohighlight">\(G_\mathrm{sc} = 1367\)</span> W/m<span class="math notranslate nohighlight">\(^2\)</span></strong> es la irradiancia total sobre una superficie perpendicular a los rayos solares y a la distancia media entre la tierra y el sol. En otras palabras, corresponde <strong>radiación extraterrestre del sol</strong> que incide sobre 1 m<span class="math notranslate nohighlight">\(^2\)</span> en la tierra.</p>
@@ -577,11 +586,21 @@ G_\mathrm{sc} = \sigma T_\mathrm{sun}^4 \frac{\pi D_\mathrm{sun}^2}{4\pi d_\math
 <p>La siguiente figura ilustra la variación espectral de la constante solar, según reportado en la norma <a class="reference external" href="https://webstore.ansi.org/Standards/ASTM/ASTME49000a2019?gclid=Cj0KCQjwnP-ZBhDiARIsAH3FSRdkNPhMjh2Ru8irt-P5F2A2SPQYGY5liGc31hHI6lPK7VyEygeZHy4aAh99EALw_wcB">ASTM E-490</a></p>
 <a class="reference internal image-reference" href="../_images/extraterrestial_solar_radiation.png"><img alt="../_images/extraterrestial_solar_radiation.png" class="align-center" src="../_images/extraterrestial_solar_radiation.png" style="width: 600px;" /></a>
 <p>Debido a la excentricidad de la órbita de la tierra, la constante solar varía alrededor de un 3.3% largo del año. Para un día <span class="math notranslate nohighlight">\(N\)</span> de un total de 365, la constante solar está dada por:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-be42b236-260a-421d-9b55-2fe8665391c7">
-<span class="eqno">(7.2)<a class="headerlink" href="#equation-be42b236-260a-421d-9b55-2fe8665391c7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-77d8c0a6-5df2-4d96-a41c-dc391923f4bd">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-77d8c0a6-5df2-4d96-a41c-dc391923f4bd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 G_\mathrm{sc,N} = G_\mathrm{sc}\left[1+0.033\cos\left(\frac{360N}{365}\right)\right]
 \end{equation}\]</div>
 <a class="reference internal image-reference" href="../_images/solar_constant_daily.png"><img alt="../_images/solar_constant_daily.png" class="align-center" src="../_images/solar_constant_daily.png" style="width: 600px;" /></a>
+<p>La constante solar también cambia según la elevación solar o, de forma complementaria, con el cenit solar en la forma:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4c0a4553-e5d1-4689-8be4-2b31439d7795">
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-4c0a4553-e5d1-4689-8be4-2b31439d7795" title="Permalink to this equation">#</a></span>\[\begin{equation}
+G_{\mathrm{sc},t} = G_\mathrm{sc}\cos\theta_\mathrm{s}
+\end{equation}\]</div>
+<p>Para una superficie inclinada, con un ángulo de incidencia <span class="math notranslate nohighlight">\(\theta_i\)</span> la constate solar es:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7f783a15-fbad-4950-aacd-06c1d17b20bd">
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-7f783a15-fbad-4950-aacd-06c1d17b20bd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+G_{\mathrm{sc},s} = G_\mathrm{sc}\cos\theta_\mathrm{i}
+\end{equation}\]</div>
 </section>
 <section id="atenuacion-atmosferica">
 <h3><span class="section-number">7.2.2. </span>Atenuación atmosférica<a class="headerlink" href="#atenuacion-atmosferica" title="Permalink to this headline">#</a></h3>
@@ -593,10 +612,11 @@ G_\mathrm{sc,N} = G_\mathrm{sc}\left[1+0.033\cos\left(\frac{360N}{365}\right)\ri
 \[\begin{equation*}
 \mathrm{AM} = \frac{L}{L_0}
 \end{equation*}\]</div>
-<p>donde <span class="math notranslate nohighlight">\(L_0\)</span> es la distancia (espesor de la atmósfera) normal a la superficie de la tierra y al nivel del mar.</p>
+<p>donde <span class="math notranslate nohighlight">\(L_0\)</span> es la distancia (espesor de la atmósfera) normal a la superficie de la tierra y al nivel del mar, y <span class="math notranslate nohighlight">\(L\)</span> es la distancia al nivel del mar a un ángulo <span class="math notranslate nohighlight">\(\theta_\mathrm{s}\)</span></p>
+<a class="reference internal image-reference" href="../_images/AM_diagram.png"><img alt="../_images/AM_diagram.png" class="align-center" src="../_images/AM_diagram.png" style="width: 300px;" /></a>
 <p>Una forma simplificada de representar el coeficiente de masa de aire es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e9fcb13f-b704-40bb-964d-e152c738d30f">
-<span class="eqno">(7.3)<a class="headerlink" href="#equation-e9fcb13f-b704-40bb-964d-e152c738d30f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3c3e350c-a634-4737-a974-1ff103bd3763">
+<span class="eqno">(7.6)<a class="headerlink" href="#equation-3c3e350c-a634-4737-a974-1ff103bd3763" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \mathrm{AM} = \frac{1}{\cos\theta_\mathrm{s}}
 \end{equation}\]</div>
 <ul class="simple">
@@ -608,11 +628,11 @@ G_\mathrm{sc,N} = G_\mathrm{sc}\left[1+0.033\cos\left(\frac{360N}{365}\right)\ri
 <a class="reference internal image-reference" href="../_images/am1.5.png"><img alt="../_images/am1.5.png" class="align-center" src="../_images/am1.5.png" style="width: 400px;" /></a>
 <p>Debido al <em>scattering</em> atmosférico, el espectro <span class="math notranslate nohighlight">\(\mathrm{AM}1.5\)</span> considera una componente global (directa + difusa) y una directa.</p>
 <p>La irradiancia hemisférica total del espectro <span class="math notranslate nohighlight">\(\mathrm{AM}1.5\)</span>, es</p>
-<div class="amsmath math notranslate nohighlight" id="equation-82b7714c-690e-4474-8ea1-eb49d95020b7">
-<span class="eqno">(7.4)<a class="headerlink" href="#equation-82b7714c-690e-4474-8ea1-eb49d95020b7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8b0dd137-abb3-4bd7-b73a-68188c575bb2">
+<span class="eqno">(7.7)<a class="headerlink" href="#equation-8b0dd137-abb3-4bd7-b73a-68188c575bb2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 G_\mathrm{AM1.5} = 1000~\frac{\mathrm{W}}{\mathrm{m}^2} = 1~\mathrm{sun}
 \end{equation}\]</div>
-<p>Existen distintas fuentes con valores tabulados del espectro AM1.5. Por ejemplo, tenemos esta <a class="reference external" href="https://www.nrel.gov/grid/solar-resource/spectra-am1.5.html">fuente</a></p>
+<p>Existen distintas fuentes con valores tabulados del espectro AM1.5, por ejemplo: <a class="reference external" href="https://www.nrel.gov/grid/solar-resource/spectra-am1.5.html">NREL AM1.5</a></p>
 </section>
 </section>
 <section id="instrumentos-de-medicion-de-radiacion-solar">
