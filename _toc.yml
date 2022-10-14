@@ -17,3 +17,4 @@ parts:
     - file: 4_Scattering/4_Scattering
     - file: 5_TransporteRadiativo/5_TransporteRadiativo
     - file: 6_RadiacionTermica/6_RadiacionTermica
+    - file: 7_Radiación_solar/7_Radiación_solar

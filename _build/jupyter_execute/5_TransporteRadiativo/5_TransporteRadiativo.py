@@ -343,7 +343,7 @@ import empylib.rad_transfer as rt
 import empylib.nklib as nk
 import numpy as np
 import matplotlib.pyplot as plt
-from empylib.ref_spectra import AM15
+from empylib.ref_spectra import AM15, Bplanck
 from empylib.ref_spectra import color_system as cs
 cs = cs.hdtv
 
@@ -355,11 +355,11 @@ def plot_atmosphere(theta_sun):
     plt.rcParams['font.size'] = '14'  # tamaño de  fuente
     
     # parámetros de entrada
-    tatm = 100E6                      # espesor de la atmósfera 100 km
+    tatm = 100E6                      # espesor de la atmósfera en mm
     N = (1.0,1.0,1.0)                 # indice de refracción superior, intermedio e inferior
     fvp = 1E-8                        # fracción de volúmen de las partículas
     Dp = 0.010                        # diámetro de las partículas
-    Np = 1.5*lam1**0                  # índice de refracción de las partículas
+    Np = 1.5                          # índice de refracción de las partículas
     
     # transmitancia total y especular
     theta = np.radians(theta_sun)    # posición del sol en radianes
@@ -374,7 +374,7 @@ def plot_atmosphere(theta_sun):
     
     Dcircle = 0.25
     ax2 = fig.add_axes([0.11,0.15, Dcircle, Dcircle])
-    Irad = Tdif*AM15(lam1)
+    Irad = Tdif*Bplanck(lam1,5777)
     html_rgb = cs.spec_to_rgb(Irad, out_fmt='html')
     Circle = plt.Circle((0, 0), Dcircle, color=html_rgb)
     ax2.add_patch(Circle)
@@ -389,7 +389,7 @@ def plot_atmosphere(theta_sun):
 # In[8]:
 
 
-# from ipywidgets import interact
+from ipywidgets import interact
 
 @interact(theta_sun=(0,89.99,0.1))
 def g(theta_sun=0):

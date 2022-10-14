@@ -1946,4 +1946,119 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
 (Font)              scaled to size 17.28026pt on input line 97.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.000
+(Font)              scaled to size 12.00018pt on input line 97.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00015pt on input line 97.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 17.27972pt on input line 97.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 11.99982pt on input line 97.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99985pt on input line 97.
+LaTeX Font Info:    Try loading font information for U+msa on input line 97.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 97.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 97.
+
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+) [1
+
+] [2
+
+
+]
+\tf@toc=\write7
+\openout7 = `book.toc'.
+
+ [1
+
+]
+[2
+
+]
+
+LaTeX Warning: Hyper reference `0_introduccion/0_introduccion::doc' on page 1 u
+ndefined on input line 137.
+
+
+LaTeX Warning: Hyper reference `1_ondas_electromagneticas/1_ondas_electromagnet
+icas::doc' on page 1 undefined on input line 149.
+
+
+LaTeX Warning: Hyper reference `2_ondas_EM_en_la_materia/2_ondas_EM_en_la_mater
+ia::doc' on page 1 undefined on input line 153.
+
+
+LaTeX Warning: Hyper reference `3_Interacci_xf3n_materia-luz/3_Interacci_xf3n_m
+ateria-luz::doc' on page 1 undefined on input line 157.
+
+
+LaTeX Warning: Hyper reference `4_Scattering/4_Scattering::doc' on page 1 undef
+ined on input line 161.
+
+
+LaTeX Warning: Hyper reference `5_TransporteRadiativo/5_TransporteRadiativo::do
+c' on page 1 undefined on input line 165.
+
+
+LaTeX Warning: Hyper reference `6_RadiacionTermica/6_RadiacionTermica::doc' on 
+page 1 undefined on input line 169.
+
+[1] [2
+
+] [3] [4] [5] [6
+
+]
+Chapter 1.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00008pt on input line 198.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99992pt on input line 198.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.01247pt on input line 252.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 4.9808pt on input line 252.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 7.01224pt on input line 252.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.98067pt on input line 252.
+[7]
+File: pv_cell.jpg Graphic file (type bmp)
+<pv_cell.jpg>
+ [8]
+! Unable to load picture or PDF file 'thermo_solar_power_plant.jpg'.
+<to be read again> 
+                   }
+l.349 ...xpxdimen]{{thermo_solar_power_plant}.jpg}
+                                                  
+? 
+! Interruption.
+<argument> ...\Gread@@xetex@box \Gin@pagebox \fi }
+                                                  \def \Gin@llx {0}\let \Gin...
+l.349 ...xpxdimen]{{thermo_solar_power_plant}.jpg}
+                                                  
+? 
+! Emergency stop.
+<argument> ...\Gread@@xetex@box \Gin@pagebox \fi }
+                                                  \def \Gin@llx {0}\let \Gin...
+l.349 ...xpxdimen]{{thermo_solar_power_plant}.jpg}
+                                                  
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 48084 strings out of 494988
+ 1055274 string characters out of 6178638
+ 1344165 words of memory out of 5000000
+ 51156 multiletter control sequences out of 15000+600000
+ 536912 words of font info for 102 fonts, out of 8000000 for 9000
+ 15 hyphenation exceptions out of 8191
+ 69i,11n,98p,10440b,2084s stack positions out of 5000i,50

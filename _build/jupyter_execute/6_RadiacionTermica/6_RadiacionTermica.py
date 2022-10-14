@@ -130,7 +130,7 @@
 # La taza de calor total emitido por una superficie $dA$ de un cuerpo negro en función de $\lambda$ y $\Omega$, $d\dot{Q}_\mathrm{rad}$, está dada por:
 # 
 # \begin{equation}
-# d\dot{Q}_\mathrm{rad} = I_{\lambda}(\lambda,T,\theta,\phi) \sin\theta \cos\theta dA d\Omega d\lambda
+# d\dot{Q}_\mathrm{rad} = I_{\lambda}(\lambda,T,\theta,\phi) \cos\theta dA d\Omega d\lambda
 # \end{equation}
 
 # El término $\cos\theta dA$ corresponde a la proyección de $dA$ en la dirección $\Omega$
@@ -149,7 +149,7 @@
 
 # A partir de este término podemos derivar:
 
-# - **Poder de emisión hemisférica espectral**, 
+# - **Poder de emisión hemiesférica espectral**, 
 # 
 # \begin{align*}
 # E_{\lambda}(T) = \frac{d\dot{Q}}{dA d\lambda} &= \int_0^{2\pi}\int_0^{\pi/2}I_{\lambda}(\lambda,\Omega)\cos\theta~\sin\theta  d\theta d\phi
@@ -161,10 +161,10 @@
 # - **Poder de emisión direccional total**,
 # 
 # \begin{equation*}
-# E_\Omega(\lambda,T) = \frac{d\dot{Q}}{dAd\Omega}=\cos\theta \int_0^\infty~ I_{\lambda}(\lambda,\Omega)~d\lambda  ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2 \cdot\mathrm{sr}}
+# E_\Omega(T) = \frac{d\dot{Q}}{dAd\Omega}=\cos\theta \int_0^\infty~ I_{\lambda}(\lambda,\Omega)~d\lambda  ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2 \cdot\mathrm{sr}}
 # \end{equation*}
 
-# - **Poder de emisión hemisfética total**, 
+# - **Poder de emisión hemiesfética total**, 
 # 
 # \begin{equation*}
 # E(T) = \frac{d\dot{Q}}{dA}=\int_0^\infty\int_\mathrm{hemi}I_{\lambda}(\lambda,\Omega)\cos\theta~d\Omega d\lambda ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
@@ -175,7 +175,7 @@
 # Max Planck en 1901 determinó que la **máxima radiancia espectral o intensidad específica** (flujo de energía por unidad de longitud de onda y ángulo sólido) emitida por un cuerpo a temperatura $T$, en un medio con índice de refracción $n_1$, está dada por:
 # 
 # \begin{equation}
-# I_{\mathrm{bb},\lambda}(\lambda,T,\Omega) = \frac{C_1}{n_1\lambda^5\left[\exp\left(C_2/\lambda T\right) - 1\right]},\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}\cdot\mathrm{sr}}
+# I_{\mathrm{bb},\lambda}(\lambda,T) = \frac{C_1}{n_1\lambda^5\left[\exp\left(C_2/\lambda T\right) - 1\right]},\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}\cdot\mathrm{sr}}
 # \end{equation}
 # 
 # donde 
@@ -191,7 +191,7 @@
 # El poder de emisión hemisférico espectral de la superficie de un cuerpo negro, $E_\mathrm{bb}(\lambda,T)$, se obtiene integrando la radiancia espectral por ángulo sólido en el límite de una hemiesfera:
 # 
 # \begin{equation}
-# \int_\mathrm{hemi} I_{\mathrm{bb},\lambda}(\lambda,T,\Omega)\cos\theta d\Omega = \pi I_{\mathrm{bb},\lambda}(\lambda,T) = E_{\mathrm{bb},\lambda}(\lambda,T),\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}}
+# \int_\mathrm{hemi} I_{\mathrm{bb},\lambda}(\lambda,T)\cos\theta d\Omega = \pi I_{\mathrm{bb},\lambda}(\lambda,T) = E_{\mathrm{bb},\lambda}(\lambda,T),\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}}
 # \end{equation}
 
 # A partir de la integral de $E_\mathrm{bb}(\lambda,T)$ en el espectro de longitudes de onda, obtenemos el poder de emisión hemisferico total de un cuerpo negro:
@@ -228,7 +228,7 @@
 # 
 # De esta forma, $\epsilon$ es una propiedad adimensional de superfice que varía entre $0 \le \epsilon \le 1$.
 
-# Definimos como **absortividad direccional espectral, $A_{\lambda,\Omega}$,** a la *porción de radiación incidente que es absorbida por una superficie*. Igualmente, $0 \le \alpha \le 1$.
+# Definimos como **absortividad direccional espectral, $A_{\lambda,\Omega}$,** a la *porción de radiación incidente que es absorbida por una superficie*. Igualmente, $0 \le A_{\lambda,\Omega} \le 1$.
 
 # A través de la **ley de Kirchhoff**, podemos establecer una relación entre la absortancia y emisividad espectral direccional:
 # 
@@ -271,7 +271,7 @@
 # In[1]:
 
 
-get_ipython().run_cell_magic('capture', 'showplot', "import numpy as np\nimport empylib.nklib as nk\nimport matplotlib.pyplot as plt\n\nlam = np.linspace(0.3,15,100)\nplt.plot(lam,nk.SiO2(lam).real,'-r',label='$n$')\nplt.plot(lam,nk.SiO2(lam).imag,'-b',label='$\\kappa$')\nplt.xlabel('Longitud de onda, $\\lambda$ ($\\mu$m)',fontsize=16)\nplt.ylabel('$n$, $\\kappa$',fontsize=16)\nplt.title('Índice de refracción SiO$_2$',fontsize=18)\nplt.legend(frameon=False,fontsize=16)\nplt.tick_params(labelsize=16)\n")
+get_ipython().run_cell_magic('capture', 'showplot', "import numpy as np\nimport empylib.nklib as nk\nimport matplotlib.pyplot as plt\n\nlam = np.linspace(0.3,15,100) #longitud de onda en um\nplt.plot(lam,nk.SiO2(lam).real,'-r',label='$n$')\nplt.plot(lam,nk.SiO2(lam).imag,'-b',label='$\\kappa$')\nplt.xlabel('Longitud de onda, $\\lambda$ ($\\mu$m)',fontsize=16)\nplt.ylabel('$n$, $\\kappa$',fontsize=16)\nplt.title('Índice de refracción SiO$_2$',fontsize=18)\nplt.legend(frameon=False,fontsize=16)\nplt.tick_params(labelsize=16)\n")
 
 
 # In[2]:
@@ -304,7 +304,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     # CÁLCULO DE VARIABLES
     # 1. Reflectancia y transmitancia espectral en theta0
     Rs, Ts = wv.incoh_multilayer(lam,radians(theta0), N, d*1E3, pol='TM')
-    Rp, Tp = wv.incoh_multilayer(lam,radians(theta0), N, d*1E3, pol='TM')
+    Rp, Tp = wv.incoh_multilayer(lam,radians(theta0), N, d*1E3, pol='TE')
     
     R_lam = (Rs + Rp)/2
     T_lam = (Ts + Tp)/2
@@ -317,7 +317,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     A_theta = [] # generamos la absortancia direccional en este loop
     for theta_i in theta:
         Rs, Ts = wv.incoh_multilayer(lam0,radians(theta_i), N, d*1E3, pol='TM')
-        Rp, Tp = wv.incoh_multilayer(lam0,radians(theta_i), N, d*1E3, pol='TM')
+        Rp, Tp = wv.incoh_multilayer(lam0,radians(theta_i), N, d*1E3, pol='TE')
         R = (Rs + Rp)/2
         T = (Ts + Tp)/2
         A_theta.append(1 - T - R)
@@ -511,4 +511,10 @@ def g(T=300,d=1, lam0=10, theta0=0):
 
 from IPython.display import YouTubeVideo
 YouTubeVideo('FDmYCI_xYlA', width=600, height=400,  playsinline=0)
+
+
+# In[ ]:
+
+
+
 
