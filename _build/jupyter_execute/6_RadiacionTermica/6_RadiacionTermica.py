@@ -8,7 +8,7 @@
 # Fecha: 30 de Septiembre 2022
 
 # ## Introducción a la Transferencia de Calor
-# A nivel molecular, los átomos que compomen la materia siempre está vibrando. La magnitud de estas vibraciones está caracterizada estadísticamente por la temperatura:
+# A nivel molecular, los átomos en la materia siempre están vibrando. La magnitud de estas vibraciones está caracterizada estadísticamente por la temperatura:
 
 # <img src="./images/temperature_brownian_motion.gif" width="400px" align= center>
 
@@ -18,7 +18,7 @@
 
 # Debido a la diferencia de temperatura, la vibración molecular en el lado izquierdo es mayor. Esta energía cinética es transmitida a través del material hacia el lado derecho.
 
-# Definimos como **calor**, $Q$, a la energía térmica intercambiada entre dos medios cuya diferencia de temperatura es $\Delta T$. A mayor $\Delta T$, mayor es el intercambio de calor, matematicamente: 
+# Definimos como **calor**, $Q$, a la energía térmica intercambiada entre dos medios cuya diferencia de temperatura es $\Delta T$. A mayor $\Delta T$, mayor es el intercambio de calor, matemáticamente: 
 # 
 # \begin{equation*}
 # Q \propto \Delta T,\quad\mathrm{J}
@@ -37,6 +37,7 @@
 # \begin{equation*}
 # q'' = \dot{Q}/A,\quad\frac{\mathrm{W}}{\mathrm{m}^2}
 # \end{equation*}
+# 
 # a la taza de transferencia de calor por unidad de área.
 
 # Existen tres mecanismo de transferencia de calor:
@@ -48,7 +49,7 @@
 # <img src="./images/heat_transfer_mechanism.png" width="500px" align= center>
 
 # ### Conducción de Calor
-# **Definimos como *conducción de calor* al calor transferido a través de un material en reposo**. El mecanismo generalmente se asocia a **sólidos**, donde el calor es transferido a travéz de la red atómica del material. Sin embargo, la definición también incluye **líquidos y gases en reposo.** En este caso, las moléculas se mueven eleatoriamente, de manera tal que la velocidad neta del fluido es cero.
+# **Definimos como *conducción de calor* al calor transferido a través de un material en reposo**. El mecanismo generalmente se asocia a **sólidos**, donde el calor es transferido a travéz de la red atómica del material. Sin embargo, la definición también incluye **líquidos y gases en reposo.** En este caso, las moléculas se mueven aleatoriamente, de manera tal que la velocidad neta del fluido es cero.
 
 # Matemáticamente, para un material de espesor $t$ y diferencia de temperatura $\Delta T$, la **taza de transferencia de calor por conducción** a través de una superficie $A$, es:
 # 
@@ -97,7 +98,7 @@
 # 
 # donde $R_\mathrm{conv}=1/hA$ es la resistencia térmica asociada a la convección de calor.
 
-# A diferencia de la conducción de calor, el coeficiente convectivo, $h$, **no es una propiedad del fluido**. Esto porque no solo depende de las propiedades del fluido (densidad, viscocidad y conductividad térmica, entre otras), sino que además depende de condiciones externas, como la velocidad del flujo, la diferencia de temperaturas, y la geometría del cuerpó sometido a conveccción de calor.
+# A diferencia de la conducción de calor, el coeficiente convectivo, $h$, **no es una propiedad del fluido**. Esto porque no solo depende de las propiedades del fluido (densidad, viscocidad y conductividad térmica, entre otras), sino que además depende de condiciones externas, como la velocidad del flujo, la diferencia de temperaturas, y la geometría del cuerpo sometido a convección de calor.
 
 # El coeficiente convectivo se determina a partir de relaciones expresadas en términos del número de Nusselt, $\mathrm{Nu} = \frac{hL_c}{k_f}$, donde $L_c$ es una longitud característica y $k_f$ es la conductividad térmica del fluido. En la mayoría de los casos, las relaciones para el número de Nusselt para cada caso se determinan experimentalmente.
 
@@ -118,7 +119,7 @@
 # 
 # <img src="./images/radiating_dipole.png" width="700px" align= center>
 
-# En la siguiente animación podemos ver el proceso de emisión de ondas electromagnéticas por un dipolo oscilatorio. El mapa de colores representa la intensidad del campo magnético, es decir $|\vec{H}|$, donde rojo y azul corresponden, respectivamente, a los valorse máximos y mínimos.
+# En la siguiente animación podemos ver el proceso de emisión de ondas electromagnéticas de un dipolo oscilatorio. El mapa de colores representa la intensidad del campo magnético, es decir $|\vec{H}|$, donde rojo y azul corresponden, respectivamente, a los valorse máximos y mínimos.
 # 
 # <img src="./images/HW_vertical_noground.gif" width="300px" align= center>
 
@@ -149,7 +150,7 @@
 
 # A partir de este término podemos derivar:
 
-# - **Poder de emisión hemiesférica espectral**, 
+# - **Poder de emisión hemisférica espectral**, 
 # 
 # \begin{align*}
 # E_{\lambda}(T) = \frac{d\dot{Q}}{dA d\lambda} &= \int_0^{2\pi}\int_0^{\pi/2}I_{\lambda}(\lambda,\Omega)\cos\theta~\sin\theta  d\theta d\phi
@@ -164,7 +165,7 @@
 # E_\Omega(T) = \frac{d\dot{Q}}{dAd\Omega}=\cos\theta \int_0^\infty~ I_{\lambda}(\lambda,\Omega)~d\lambda  ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2 \cdot\mathrm{sr}}
 # \end{equation*}
 
-# - **Poder de emisión hemiesfética total**, 
+# - **Poder de emisión hemisfética total**, 
 # 
 # \begin{equation*}
 # E(T) = \frac{d\dot{Q}}{dA}=\int_0^\infty\int_\mathrm{hemi}I_{\lambda}(\lambda,\Omega)\cos\theta~d\Omega d\lambda ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
@@ -302,7 +303,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     #-------------------------------------------------------------------------
 
     # CÁLCULO DE VARIABLES
-    # 1. Reflectancia y transmitancia espectral en theta0
+    # 1. Reflectancia y transmitancia esp ectral en theta0
     Rs, Ts = wv.incoh_multilayer(lam,radians(theta0), N, d*1E3, pol='TM')
     Rp, Tp = wv.incoh_multilayer(lam,radians(theta0), N, d*1E3, pol='TE')
     
@@ -395,7 +396,7 @@ def g(T=300,d=1, lam0=10, theta0=0):
 # \epsilon(T) = \frac{E(T)}{\sigma T^4} =\frac{1}{\sigma T^4}\int\int_0^\infty \epsilon_{\lambda,\Omega} I_{\mathrm{bb},\lambda} (T)\cos\theta~d\lambda~d\Omega
 # \end{equation}
 
-# Notar que las valores totatles (integración en el espectro), implícitamente dependen de $T$ debido al factor $\sigma T^4$.
+# Notar que las valores totales (integración en el espectro), implícitamente dependen de $T$ debido al factor $\sigma T^4$.
 
 # ### Materiales idealizados
 
@@ -414,7 +415,7 @@ def g(T=300,d=1, lam0=10, theta0=0):
 # 
 # <img src="./images/irradiance.png" width="300px" align= center>
 
-# Matématicamente:
+# Matemáticamente:
 # 
 # \begin{equation}
 # G_{\lambda,\Omega} = I_i(\lambda,\Omega) \cos\theta\quad\frac{\mathrm{W}}{\mathrm{m}^2}
@@ -511,10 +512,4 @@ def g(T=300,d=1, lam0=10, theta0=0):
 
 from IPython.display import YouTubeVideo
 YouTubeVideo('FDmYCI_xYlA', width=600, height=400,  playsinline=0)
-
-
-# In[ ]:
-
-
-
 
