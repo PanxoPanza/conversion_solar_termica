@@ -65,7 +65,7 @@
 
 # Para una superficie en posición horizontal, $\theta_\mathrm{i} = \theta_\mathrm{s}$
 
-# ## Características de la radiación solar
+# ## Radiación solar disponible
 # La radiación solar puede ser estimada como un cuerpo negro a temperatura $T_\mathrm{sun} = 5777 K$. Sin embargo, la radiación solar es el resultado de la emisión de muchas capas con diferente composición, y cuya temperatura puede alcanzar más de 100,000 K.
 
 # 
@@ -83,7 +83,7 @@
 # G_\mathrm{sc} = \sigma T_\mathrm{sun}^4 \frac{\pi D_\mathrm{sun}^2}{4\pi d_\mathrm{e-s}^2}=1367\frac{\mathrm{W}}{\mathrm{m}^2}
 # \end{equation}
 
-# La **constante solar $G_\mathrm{sc} = 1367$ W/m$^2$** es la irradiancia total sobre una superficie perpendicular a los rayos solares y a la distancia media entre la tierra y el sol. En otras palabras, corresponde **radiación extraterrestre del sol** que incide sobre 1 m$^2$ en la tierra.
+# La **constante solar $G_\mathrm{sc} = 1367$ W/m$^2$** es el flujo de energía sobre una superficie perpendicular a los rayos solares y a la distancia media entre la tierra y el sol. En otras palabras, corresponde **radiación extraterrestre del sol** que incide sobre 1 m$^2$ en la tierra.
 # 
 # <img src="./images/solar_constant.png" width="400px" align= center>
 
@@ -156,6 +156,33 @@
 
 # Existen distintas fuentes con valores tabulados del espectro AM1.5, por ejemplo: [NREL AM1.5](https://www.nrel.gov/grid/solar-resource/spectra-am1.5.html)
 
+# ## Componentes de la radiación solar
+# La radiación solar no esta compuesta únicamente de un haz de rayos especulares. Si así fuera, no tendríamos visibilidad al bloquear el sol con nuestras manos.
+
+# En efecto, la radiación solar está compuesta por una série de componentes.
+
+# 
+# <img src="./images/solar_components.jpg" width="400px" align= center>
+
+# Tal como indica la figura, las componentes de la radiación son:
+# - **Directa (*beam*)**: Correspondiente a los rayos speculares del sol.
+# 
+# - **Difusa circumsolar**: Asociada al scattering hacia adelante alrededor del disco solar.
+# 
+# - **Isotrópica difusa**: Asociada a la componente uniforme (isotrópica) del scattering producida alrededor del domo del cielo.
+# 
+# - **Difusa del horizonte**: Corresponde a la componente del scattering en el plano del horizonte, la cual es más intensa que la componente isotrópica difusa.
+# 
+# - **Terrestre reflejada o abedo (*ground*)**: radiación reflejada por el suelo.
+
+# Comúnmente, las mediciones de radiación solar se reportan usando tres parámetros de irradiancia (radiación sobre una superficie):
+# 
+# - **Irradiancia directa normal (*Direct normal irradiance* DNI)**: Corresponde a la radiación sobre una superficie apuntando en dirección normal a los rayos del sol. **Considera la componente directa y circumsolar de la radiación solar**.
+# 
+# - **Irradiancia difusa horizontal (*Diffuse horizontal irradiance* DIF)**: Corresponde a la radiación **isotrópica difusa y difusa del horizonte** que incide sobre una superficie horizontal.
+# 
+# - **Irradiancia global horizontal (*Global horizontal irradiance* GHI)**. Corresponde a $\mathrm{GHI} = \mathrm{DNI}\cos\theta_i + \mathrm{DIF}$
+
 # ## Instrumentos de medición de radiación solar
 # 
 # Para diseñar sistemas basados en energía solar, es necesario caracterizar una serie de parámetros de la radiación solar. Estos incluyen, irradiación solar hemisférica, especular y difusa. 
@@ -165,31 +192,43 @@
 # Existen dos tipos de instrumentos para medir la irradiancia solar: el **piranómetro** y el **pirheliómetro**.
 
 # ### Piranómetro
-# Este instrumento mide la componente hemisférica (difusa + especular) de la irradiancia solar.
-
-# <img src="./images/pyranometer.jpg" width="400px" align= center>
-
-# El domo superior esta conformado por dos cámaras de vidrio. El aire atrapado entre las cámaras actúa como aislante térmico. 
+# Este instrumento **mide la componente GHI**
 # 
-# Al interior del domo se ubica un material negro ($\varepsilon \approx 1$) que absorbe la radiación solar. El cambio de temperatura del absorbedor es correlacionado con el flujo de calor por radiación.
+# <img src="./images/pyranometer.jpg" width="800px" align= center>
 
-# El piranómetro también puede ser utilizado para medir la componente difusa de la irradiancia solar. En este caso se utiliza una banda que bloquea la componente directa de la irradiancia solar
+# Esta compuesto de un **domo superior (*glass dome*)** conformado por dos cámaras de vidrio, donde el aire atrapado actúa como aislante térmico. Al interior del domo se ubica un **detector** que absorbe la radiación solar. El cambio de temperatura del absorbedor es correlacionado con el flujo de calor por radiación. El detector está rodado de una **cubierta aislante (*housing*)** y un **escudo de radiación solar (*sun shield*)** para evitar ganancias parasíticas de calor.
+
+# El piranómetro también puede ser utilizado para **medir la componente DIF**. En este caso se utiliza una banda que **bloquea la componente directa y circumsolar.**
 
 # <img src="./images/pyranometer_diffuse.png" width="400px" align= center>
 # 
 
 # ### Pirheliómetro
 # 
-# Este instrumento permite medir la componente directa de la irradiancia solar. Esta compoonente es particularmente util para predecir el desempeño de concentradores solares.
+# Este instrumento **permite medir la componente DNI** de la radiación solar.
 # 
 # <img src="./images/pyrheliometer.jpg" width="300px" align= center>
 
 # ## Mapas solares
 # 
-# Existen diversos mapas solares disponibles en línea. Los más recomendados son:
+# Existen diversos mapas solares disponibles en línea. En general, estos reportan valores de GHI, DNI y DIF medidos a lo largo de un año. 
+
+# Los más recomendados son:
 # 
-# - [Explorador solar](https://solar.minenergia.cl/exploracion) del ministerio de energía
-# - [Global Solar Atlas](https://globalsolaratlas.info/), del World Bank Group
+# - **[Explorador solar](https://solar.minenergia.cl/exploracion) del ministerio de energía**. Entrega información detallada de las componentes DNI, DIF y GHI por més y año en el territorio chileno. La herramienta permite exportar los datos en formato .csv con información detallada de irradiancia directa y difusa para superficies orientadas en distintos ángulos. Además, permite estimar el desempeño de un colector solar y paneles fotovoltaicos. 
+# 
+# - **[Global Solar Atlas](https://globalsolaratlas.info/), del World Bank Group**. Corresponde a un mapa global de la radiación solar, con reportes de DNI, DIF y GHI anuales, y reportes detallados del DNI distribuido por mes y día. Además permite estimar el desempeño de paneles fotolvaicos por kWp (kiloWatt peak) a través del parámetro PVOUT.
+
+# Es importante mencionar que la componente DNI no siembre es dominante. 
+# 
+# |Coordenadas| Localidad | DNI (kWh/m$^2$-año) | GHI (511.6 kWh/m$^2$-año) | DIF = 2536.7 kWh/m$^2$-año|
+# |:---------:|:---------:|:-------------------:|:-------------------------:|:-------------------------:|
+# -45.51°, -73.52°|Aysén | 848.2|1025.9|556.2|
+# -23.92°, -69.49°| Antofagasta | 3330.4 | 2604| 575|
+
+# En el caso de la región de Asyén, la componente normal de la irradiancia sobre una superficie horizontal, es GHI - DIF =  468.7 kW/m$^2$ - año (aproximadamente 45.7% del GHI), mientras que en Antofagasta es, 2029.0 kW/m$^2$ - año (aproximadamente 77.9% del GHI).
+
+# Notar, además, que en ninguno de los dos ejemplos el valor GHI - DIF coincide con el DNI. Esto debido a que la primera considera el factor $\cos\theta_i$ asociado al ángulo de incidencia.
 
 # ## Referencias
 # - Kalogirou S. A. **Chapter 2: Environmental Characteristics** en *Solar Energy Engineering Processes and Systems*, 2nd Ed, Academic Press, 2014
