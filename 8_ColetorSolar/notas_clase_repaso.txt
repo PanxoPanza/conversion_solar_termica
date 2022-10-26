@@ -3,3 +3,4 @@
 - Como determinar el intercambio de calor entre una superficie y el ambiente
 - Cálculo de un colector
 - Correción ángulos solares
+- Factor de remoción de calor, explicar con el concepto de transferencia de calor por un tubo a calor constante. A medida que aumenta el flujo, la pendiente de Tp dismminuye y FR aumenta

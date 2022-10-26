@@ -73,6 +73,8 @@
 
 # Por otro lado, materiales como el sílice, poseen alta emisividad en el infrarojo medio (mid-IR). Al igual que con el efecto invernadero, esta propiedad permite capturar la radiación emitida por el absorbedor caliente, minimizando las pérdidas de calor por radiación.
 
+# Algunos diseños consideran más de una cubierta transparente para reducir aún más las pérdidas de calor.
+
 # ### Placa absorbedora
 # 
 # El **absorbedor** debe cumplir con dos requerimientos. Por un lado, debe absorber la mayor cantidad de radiación solar posible ($\alpha \approx 1$ en el espectro visible e infrarojo medio). Por el otro, debe minimizar las pérdidas de calor por radiación ($\varepsilon \approx 0$ en el espectro infrarojo medio) 
@@ -121,7 +123,9 @@
 # donde:
 # - $\tau$ transmitancia de la cubierta transparente
 # - $\alpha$ absortancia de la placa absorbedora
-# - $ \rho_D$ es la reflectancia de la cubierta transparente. En genral, $\rho_D \sim 0.11 - 0.15$
+# - $ \rho_D$ es la reflectancia difusa de la cubierta transparente. En genral, $\rho_D \sim 0.11 - 0.15$
+
+# Valores típicos para $(\tau\alpha)$ son 0.7 - 0-75 en vidrio para ventanas, y 0.85-0.9 en vidrio con bajo contenido de Fe$_2$O$_3$
 
 # Para determinar $(\tau \alpha)_\mathrm{B}$, $(\tau \alpha)_\mathrm{D}$ y $(\tau \alpha)_\mathrm{G}$ utilizamos el siguiente gráfico que permite relacionar $(\tau \alpha)_n$ respecto al ángulo de incidencia $\theta_i$
 
@@ -156,6 +160,8 @@
 # 
 # es el coeficiente equivalente de transferencia de calor por radiación.
 
+# Notar que $h_\mathrm{r,~i-j}$ depende de la temperatura de los elementos participantes, aún cuando el resto de las propiedades permanezcan constantes.
+
 # En la práctica las pérdidas de calor se asocian a un coeficiente global de transferencia de calor, $U_L$, de la forma:
 
 # \begin{equation}
@@ -166,6 +172,8 @@
 
 # <img src="./images/collector_energy_losses_eqcircuit.png" width="150" align= center>
 
+# El coeficiente global $U_L$ depende mayormente del diseño del colector.
+
 # Los valores de $U_L$ son determinados por el fabricante.
 
 # ## Rendimiento de colectores de placa plana
@@ -174,7 +182,7 @@
 # 
 # En la práctica $T_p$ es dificil de determinar, así la ecuación de $Q_\mathrm{loss}$ planteada anteriormente no es de uso práctico
 
-# Defnimos el factor de remoción de calor, $F_R$, como la razón entre el calor real transferido al fluído de trabajo ($Q_u$), y la energía tranferida por el colector cuando la temperatura de la placa absorbedora es igual a la temperatura de entrada del fluído de trabajo, $T_\mathrm{f,i}$.
+# Definimos el factor de remoción de calor, $F_R$, como la razón entre el calor real transferido al fluído de trabajo ($Q_u$), y la energía transferida por el colector cuando la temperatura de la placa absorbedora es igual a la temperatura de entrada del fluído de trabajo, $T_\mathrm{f,i}$.
 
 # Matemáticamente:
 # 
@@ -184,13 +192,19 @@
 
 # donde $C_p$, $\dot{m}$ y $T_\mathrm{f,o}$ son, respectivamente, el calor específico, el flujo másico y la temperatura de salida del fluido de trabajo.
 
-# El factor de remoción de calor puede ser determinado de forma teorica o experimental. A partir de este parámetro podemos determinar el calor efectivo transferido a un fluido como:
+# **El parámetro $F_R$ depende del diseño del colector, el tipo de fluido, y el flujo a través del colector.** Puede ser determinado de forma teórica o experimental.
+
+# Conceptualmente, el factor de remoción de calor es similar a la efectividad de un intercambiador de calor, el cual considera el calor transferido respecto al máximo calor transferible por el intercambiador.
+
+# En el caso del colector, a menor temperatura de la placa absorbedora, menor las pérdidas asociadas a $U_L(T_p - T_a)$
+
+# La mínima temperatura posible para la placa absorbedora es $T_\mathrm{f,i}$, y por lo tanto $A_c[S - U_L(T_\mathrm{f,i} - T_a)]$ representa el máximo calor que puede ser transferido por el colector.
+
+# A partir de este parámetro podemos determinar el calor efectivo transferido a un fluido como:
 # 
 # \begin{equation}
 # Q_u = A_cF_R\left[S - U_L\left(T_\mathrm{f,i} - T_a\right)\right]
 # \end{equation}
-
-# **El parámetro $F_R$ depende del tipo de colector, el tipo de fluido, y el flujo a través del colector.**
 
 # ### Eficiencia térmica
 # La eficiencia térmica de un colector corresponde al calor trasferido al fluido divido por la irradiación total, $G_t$, sobre la superficie del colector, $A_c$:
@@ -202,12 +216,16 @@
 # 
 
 # ### Curvas de rendimiento
-# Debido a que $F_R$ y, por consecuencia $\eta$ son dependientes de las condiciones del flujo y del tipo de colector, es común que los fabricantes realicen ensallos de desempeño del colector para una serie de casos. 
+# $F_R$, y por consecuencia $\eta$, son dependientes de muchos factores, como las condiciones del flujo, el tipo de fluido, el tipo de colector y la irradiancia solar. Debido a esto, es común que los fabricantes realicen ensayos de desempeño del colector para una serie de casos. 
 
-# Existen diversos estandares para evaluar el desempeño de un colector. Los más comunes son la [ISO 9806](https://www.iso.org/standard/67978.html) y la [ASNI/ASHRAE 93](https://webstore.ansi.org/Standards/ASHRAE/ansiashraestandard932010). En cualquiera de los dos casos, el objetivo de estos es medir el desempeño de un colector en condiciones estacionarias, en función de la temperatura de entrada del fluido de trabajo ($T_i$)
+# Existen diversos estandares para evaluar el rendimiento de un colector. Los más comunes son la [ISO 9806](https://www.iso.org/standard/67978.html) y la [ASNI/ASHRAE 93](https://webstore.ansi.org/Standards/ASHRAE/ansiashraestandard932010).
 
-# Considerando radiación solar en dirección normal al colector, y condiciones de trabajo estacionarias, los parámetros $F_RS/G_t$  y $F_RUL$ permanecen constantes independientes de $T_i$. Más aún, para radiación solar normal a la superficie del colector, $S = (\tau\alpha)_nG_t$, y la eficiencia térmica forma una recta de la forma:
-# 
+# En cualquiera de los dos casos, el objetivo de estos es medir el rendimiento de un colector en condiciones estacionarias, radiación normal a la superficie del colector, y en función de la temperatura de entrada del fluido de trabajo ($T_i$)
+
+# Bajo estas condiciones de trabajo, los parámetros $F_RS/G_t$  y $F_RU_L$ permanecen constantes.
+
+# Más aún, para radiación solar normal a la superficie del colector, $S = (\tau\alpha)_nG_t$. Así, la eficiencia térmica forma una recta de la forma:
+
 # \begin{equation*}
 # \eta = F_R(\tau\alpha)_n - F_RU_L\frac{\Delta T}{G_t}
 # \end{equation*}
@@ -216,11 +234,23 @@
 
 # <img src="./images/eficiency_curve_flatplate_collector.png" width="250" align= center>
 
-# Las curvas de eficiencia varían para distintos colectores, y sirven como método de selección según la aplicación requerida:
-# 
-# <img src="./images/collector_selection.png" width="600" align= center>
+# A través de estas curvas podemos determinar el valor de $F_R(\tau\alpha)_n$ y $F_R U_L$.
 
-# A través de estas curvas podemos determinar el valor de $F_R(\tau\alpha)_n$ y $F_R U_L$. El valor espéctifico de $U_L$, $F_R$ y $(\tau\alpha)_n$, se puede determinar con la información de uno de los tres parámetros. 
+# El valor espéctifico de $U_L$, $F_R$ y $(\tau\alpha)_n$, se puede determinar con la información de uno de los tres parámetros. 
+
+# En la práctica, el coeficiente de pérdida de calor $U_L$ no es constante, sino que depende de $\Delta T$ de la forma, $U_L = c_1 + c_2\Delta T$.
+
+# Esto implica que el comportamiento de las curvas de eficiencia no es exáctamente una recta.
+
+# En el siguiente ejemplo mostramos una curva de eficiencia de un colector de placa plana del fabricante Schüco
+
+# <img src="./images/real_flat_plate_collector.png" width="600" align= center>
+
+# Las curvas de eficiencia varían para distintos colectores, y sirven como método de pre-selección según la aplicación requerida. La mejor forma es identificar el parametro $\Delta T/G$ asociado a las condiciones locales y la demanda, y luego evaluar seleccionar el sistema mas adecuado, como se indica en la figura.
+
+# <img src="./images/collector_selection.png" width="500" align= center>
+
+# Sin embargo, la selección final depende de un estudio más exhaustivo, que considere la operación del sistema completo en función de las condiciones climáticas y consumo a lo largo de un año. Para esto existen heramientas especializadas, tales como [TRNSYS](https://www.trnsys.com/).
 
 # ### Corrector de ángulo de incidencia
 # Las curvas de rendimiento son generadas mediante un ensallo con radiación solar normal al plano de incidencia. En la realidad, esto nunca sucede debido que el colector solar está en posición estacionaria.
@@ -228,20 +258,74 @@
 # Así, en la práctica, necesitamos un factor de correción que nos permita identificar el rendimiento del colector respecto al ángulo de incidencia de la radiación solar, $\theta_i$. Este corrector se conoce como el **modificador del ángulo de incidencia, $K_\theta$**.
 # 
 # \begin{equation}
-# K_\theta = \frac{(\tau\alpha)}{(\tau\alpha)_n}=1 - b_0\left[\frac{1}{\cos\theta} - 1\right]
+# K_\theta = \frac{(\tau\alpha)}{(\tau\alpha)_n}=1 - b_0\left[\frac{1}{\cos\theta_i} - 1\right]
 # \end{equation}
 # 
 # donde $b_0\sim 0.1  - 0.15$.
 
-# ## Sistemas de agua caliente solares
+# Considerando el factor $K_\theta$, la curva de eficiencia corregida es:
+# 
+# \begin{equation}
+# \eta = F_R(\tau\alpha)_n K_\theta(\theta_i) - F_RU_L\frac{\Delta T}{G_t}
+# \end{equation}
 
+# ## Sistemas de calentamiento de agua solar
+# 
+# Una de las aplicaciones más común en colectores solares es el calentamiento de agua para uso doméstico.
+
+# Un sistema de calentamiento de agua solar se compone de un arreglo de colectores, un sistema de transferencia de energía térmica y un tanque de almacenamiento
+
+# Debido a que estos sistemas están mayormente expuestos al ambiente, deben estar protegidos contra el congelamiento en el invierno, o sobrecalentamiento durante el verano en periodos cuando la demanda de agua caliente es baja.
+
+# Podemos clasificar estos sistemas en dos tipos:
+# 
+# - **Sistemas de circuito abierto**, donde el agua potable es directamente calentada por el colector
+# 
+# - **Sistemas de circuito cerrado**, donde el agua potable es calentada indirectamente a través de un intercambiador de calor por donde circula el fluido de trabajo calentado por el colector solar.
+
+# También podemos clasificar los sistemas respecto a la forma en que se mueve el fluido de trabajo. En esta clasificación tenemos:
+# 
+# - **Sistemas pasivos,** donde el fluido de trabajo es impulsado por convección natural, a través del efecto termosifón.
+# 
+# - **Sistemas activos** donde el fluido de trabajo es impulsado sistemas de bombeo.
+
+# 
 # ### Sistemas pasivos
 
-# ### Sistemas activos
+# El sistema más utilizado es el colector solar con sistema termosifón. El sistema esta basado en un colector solar y un estanque de almacenamiento sobre el colector.
+# 
+# <img src="./images/passive_water_heating.png" width="800" align= center>
 
-# ### Estimación de demanda de agua caliente domiciliaria
+# El efecto termosifón ocurre debido a la disminución de la densidad del fluido de trabajo a medida que se calienta. Esto produce que el fluido caliente ascienda por los tubos hacia el estanque de reserva. Por otro lado, el fluido más frio asciende por diferencia de preciones ocupando el espacio disponible en el colector.
+
+# Debido a que estos sistemas no necesitan bombeo, son menos costosos y tienen una vida util mayor que los sistemas activos, ya que requieren menos mantención.
+
+# La principal desventaja es su diseño bultoso, que ocupa mucho espacio y no es esteticamente agradable. Además, debido a que no es posible controlar el flujo en el colector, estos sistemas tienen a ser menos eficientes que los sitemas activos.
+
+# Las configuraciones más comunes consideran colectores del tipo FPC o ETC.
+
+# El sistema puede operar en circuito abierto, o cerrado.
+
+# ### Sistemas activos
+# 
+# Los sistemas activos son, en general, de mayor costo que los sistemas pasivos. Además requieren de más espacio para el sistema de bombeo.
+
+# Sus principales ventajas están asociadas al mejor control del caudal, lo que permite maximizar la eficiencia del colector. Además está el aspecto estético, ya que el tanque de almacenamiento puede ser instalado en un lugar separado del colector.
+
+# El sistema puede operar en circuito abierto o cerrado. En ambos casos, una bomba, controlada por un termostato, es activada cada vez que la temperatura del agua a la salida del colector es mayor a la temperatura del estanque de almacenamiento. El estanque de almacenamiento comúnmente incluye un calefactor auxiliar para evitar caidas abrutas de la temperatura del agua.
+
+# La siguiente figura muestra un sistema activo de tipo abierto.
+# 
+# <img src="./images/active_direct.png" width="600" align= center>
 
 # ## Referencias
-# - Kalogirou S. A. **Chapter 2: Environmental Characteristics** en *Solar Energy Engineering Processes and Systems*, 2nd Ed, Academic Press, 2014
+# - Kalogirou S. A. ***Solar Energy Engineering Processes and Systems***, 2nd Ed, Academic Press, 2014
+#  - Chapter 3 Solar energy collectors
+#  - Chapter 4 Performance of solar collectors
+#  - Chapter 5 Solar water-heating systems
 # 
-# - Duffie J. A., Beckman W. A. and Blair N. **Chapter 1: Solar Radiation** and **Chapter 2: Available Solar Radiation** en *Solar Engineering of Thermal Processes*, 5th Ed, Jhon Wiley and Sons, 2020
+# - Duffie J. A., Beckman W. A. and Blair N. ***Solar Engineering of Thermal Processes***, 5th Ed, Jhon Wiley and Sons, 2020
+#  - Chapter 4. Radiation characteristi of opaque materials
+#  - Chapter 5. Radiation transmission through glazing: Absorbed radiation
+#  - Chapter 6. Flat-plate collectors
+#  - Chapter 12. Solar water-heating: active and passive
