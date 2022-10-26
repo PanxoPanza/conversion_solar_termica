@@ -221,7 +221,7 @@
 
 # Es importante mencionar que la componente DNI no siembre es dominante. 
 # 
-# |Coordenadas| Localidad | DNI (kWh/m$^2$-año) | GHI (511.6 kWh/m$^2$-año) | DIF = 2536.7 kWh/m$^2$-año|
+# |Coordenadas| Localidad | DNI<br />(kWh/m$^2$-año) | GHI<br />(kWh/m$^2$-año) | DIF<br />(kWh/m$^2$-año)|
 # |:---------:|:---------:|:-------------------:|:-------------------------:|:-------------------------:|
 # -45.51°, -73.52°|Aysén | 848.2|1025.9|556.2|
 # -23.92°, -69.49°| Antofagasta | 3330.4 | 2604| 575|
