@@ -87,7 +87,7 @@
 
 # ### Integración de componentes
 
-# Los **tubos asecendentes** deben estar integrados en el absorbedor, o bien, unidos mediante soldaduras o sujetadores. En último caso es importante que la unión minimice la resistencia térmica en el contacto entre los tubos y el absorbedor.
+# Los **tubos ascendentes** deben estar integrados en el absorbedor, o bien, unidos mediante soldaduras o sujetadores. En último caso es importante que la unión minimice la resistencia térmica en el contacto entre los tubos y el absorbedor.
 
 # ## Análisis térmico de colectores de placa plana
 

@@ -45,7 +45,7 @@
 
 # - El ángulo de **elevación solar**, $\alpha_\mathrm{s}$, corresponde a la posición del sol respecto al plano perpendicular al horizonte local. Su valor es complementario al **ángulo cenital solar** $\theta_\mathrm{s} = \pi/2 - \alpha_\mathrm{s}$.
 
-# - El ángulo **acimut solar** $\phi_\mathrm{s}$ mide la proyección de la posición del sol en el plano horizontal local. En el hemisferio sur(norte), el valor $\phi_\mathrm{s} = 0$°,  corresponde al eje norte(sur) creciendo en dirección oeste. 
+# - El ángulo **acimut solar** $\phi_\mathrm{s}$ mide la proyección de la posición del sol en el plano horizontal local. El valor $\phi_\mathrm{s} = 0$°,  corresponde al eje norte creciendo en dirección este. 
 
 # El valor de $\alpha_\mathrm{s}$ y $\phi_\mathrm{s}$, es función de  $\delta$, $\mathrm{AR}$, la longitud, latitud y la hora local.
 # 

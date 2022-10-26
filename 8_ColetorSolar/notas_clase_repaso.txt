@@ -1,0 +1,5 @@
+- Cálculo de valores totales de emisividad y absortividad a la radiación solar y atmosférica
+- Como el índice de refracción afecta la reflectancia, transmitancia y absortancia
+- Como determinar el intercambio de calor entre una superficie y el ambiente
+- Cálculo de un colector
+- Correción ángulos solares
