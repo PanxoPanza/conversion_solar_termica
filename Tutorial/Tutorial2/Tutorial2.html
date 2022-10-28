@@ -1,0 +1,760 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Tutorial 2 &#8212; MEC501 - Manejo y conversión de energía solar térmica</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Tutorial" href="../Tutorial1/Tutorial1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MEC501 - Manejo y conversión de energía solar térmica</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Bienvenidos al curso
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../0_introduccion/0_introduccion.html">
+   Introducción al curso
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unidades del curso
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../1_ondas_electromagneticas/1_ondas_electromagneticas.html">
+   1. La radiación como un fenómeno electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html">
+   2. Ondas electromagnéticas en la materia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../3_Interacci%C3%B3n_materia-luz/3_Interacci%C3%B3n_materia-luz.html">
+   3. Interacción materia-luz
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../4_Scattering/4_Scattering.html">
+   4. Scattering electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../5_TransporteRadiativo/5_TransporteRadiativo.html">
+   5. Transporte Radiativo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../6_RadiacionTermica/6_RadiacionTermica.html">
+   6. Radiación Térmica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../7_Radiaci%C3%B3n_solar/7_Radiaci%C3%B3n_solar.html">
+   7. Radiación Solar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../8_ColetorSolar/8_ColetorSolar.html">
+   8. Colectores solares estacionarios
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Apéndice
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../Intro.html">
+   Tutoriales
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorial1/Tutorial1.html">
+     Tutorial
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Tutorial 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Tutorial/Tutorial2/Tutorial2.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/Tutorial/Tutorial2/Tutorial2.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrucciones-de-instalacion">
+   Instrucciones de instalación
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distribucion-de-planck-bplanck">
+   Distribución de Planck (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Bplanck
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#irradiacion-solar-espectro-am1-5-am15">
+   Irradiación solar, espectro AM1.5 (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     AM15
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transmitancia-atmosferica-t-atmosphere">
+   Transmitancia atmosférica (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     T_atmosphere
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Tutorial 2</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrucciones-de-instalacion">
+   Instrucciones de instalación
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#distribucion-de-planck-bplanck">
+   Distribución de Planck (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Bplanck
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#irradiacion-solar-espectro-am1-5-am15">
+   Irradiación solar, espectro AM1.5 (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     AM15
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transmitancia-atmosferica-t-atmosphere">
+   Transmitancia atmosférica (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     T_atmosphere
+    </span>
+   </code>
+   )
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><strong>M501 - Manejo y conversión de energía solar térmica</strong></p>
+<section class="tex2jax_ignore mathjax_ignore" id="tutorial-2">
+<h1>Tutorial 2<a class="headerlink" href="#tutorial-2" title="Permalink to this headline">#</a></h1>
+<p>Este es un tutorial para utilizar el módulo <code class="docutils literal notranslate"><span class="pre">ref_spectra</span></code> de la librería <code class="docutils literal notranslate"><span class="pre">empylib</span></code></p>
+<section id="instrucciones-de-instalacion">
+<h2>Instrucciones de instalación<a class="headerlink" href="#instrucciones-de-instalacion" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>La librería <code class="docutils literal notranslate"><span class="pre">empylib</span></code> esta disponible desde github ejecutando la siguiente sentencia en una celda de este notebook:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!git clone https://github.com/PanxoPanza/empylib.git
+</pre></div>
+</div>
+<p>Esto descargará una carpeta “empylib” con todos los módulos necesarios. <strong>Ejecutar solo una vez para descar la carpeta</strong> Posteriormente, no es necesario volver a ejecutar esta línea.</p>
+<ul class="simple">
+<li><p>La libería <code class="docutils literal notranslate"><span class="pre">iadpython</span></code> debe ser instalada desde pip, ejecutando el siguiente script en una celda de este notebook</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>import sys
+!{sys.executable} -m pip install iadpython
+</pre></div>
+</div>
+<p>Esta instancia debe ser ejecutada solo una vez.</p>
+<h1>Contenidos<span class="tocSkip"></span></h1>
+<div class="toc"><ul class="toc-item"><li><span><a href="#Instrucciones-de-instalación" data-toc-modified-id="Instrucciones-de-instalación-1">Instrucciones de instalación</a></span></li><li><span><a href="#Distribución-de-Planck-(Bplanck)" data-toc-modified-id="Distribución-de-Planck-(Bplanck)-2">Distribución de Planck (<code>Bplanck</code>)</a></span></li><li><span><a href="#Irradiación-solar,-espectro-AM1.5-(AM15)" data-toc-modified-id="Irradiación-solar,-espectro-AM1.5-(AM15)-3">Irradiación solar, espectro AM1.5 (<code>AM15</code>)</a></span></li><li><span><a href="#Transmitancia-atmosférica-(T_atmosphere)" data-toc-modified-id="Transmitancia-atmosférica-(T_atmosphere)-4">Transmitancia atmosférica (<code>T_atmosphere</code>)</a></span></li></ul></div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">empylib.ref_spectra</span> <span class="k">as</span> <span class="nn">rf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="distribucion-de-planck-bplanck">
+<h2>Distribución de Planck (<code class="docutils literal notranslate"><span class="pre">Bplanck</span></code>)<a class="headerlink" href="#distribucion-de-planck-bplanck" title="Permalink to this headline">#</a></h2>
+<p>La función <code class="docutils literal notranslate"><span class="pre">Bplanck</span></code> permite determinar la radiancia espectral de un cuerpo negro.</p>
+<p>Tal como indica la documentación, los valores de entrada son:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lam</span></code> espectro de longitudes de onda en micrones</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code> temperatura del cuerpo negro en Kelvin</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unit</span></code> argumento opcional en caso que se necesite el espectro de radiancia en unidades de frecuencia (<strong>no necesario para este curso</strong>)</p></li>
+</ul>
+<p>Como parámetro de salida, la función entregará la radiancia espectral</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -------------------------------------------------------------------</span>
+<span class="c1"># librerías adicionales </span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">ScalarFormatter</span><span class="p">,</span> <span class="n">FuncFormatter</span>
+<span class="c1"># -------------------------------------------------------------------</span>
+
+<span class="kn">import</span> <span class="nn">empylib.ref_spectra</span> <span class="k">as</span> <span class="nn">rf</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># espectro de longitudes de onda (de 2 a 100 micrones)</span>
+<span class="n">Ibb</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">Bplanck</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">T</span><span class="p">)</span>         <span class="c1"># Temperatura del cuerpo negro</span>
+
+<span class="c1"># Graficamos resultados</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ibb</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">)</span>    <span class="c1"># graficar absortancia</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Radiancia espectral (W/m$^2$-$\mu$m-sr)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Radiancia espectral de cuerpo negro (</span><span class="si">%i</span><span class="s1"> K)&#39;</span> <span class="o">%</span> <span class="n">T</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Tutorial2_4_0.png" src="../../_images/Tutorial2_4_0.png" />
+</div>
+</div>
+<p>Con esto podemos analizar la variación del poder de emisión espectral hemisférico del cuerpo negro, <span class="math notranslate nohighlight">\(\pi I_{\mathrm{bb},\lambda}\)</span>, en función de la temperatura</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">empylib.ref_spectra</span> <span class="kn">import</span> <span class="n">color_system</span> <span class="k">as</span> <span class="n">cs</span>
+<span class="n">cs</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">hdtv</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>
+
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>       <span class="c1"># espectro de longitudes de onda</span>
+<span class="n">T_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span>    <span class="c1"># lista de temperaturas</span>
+                   <span class="mi">1000</span><span class="p">,</span><span class="mi">2000</span><span class="p">,</span><span class="mi">4000</span><span class="p">,</span>
+                   <span class="mi">5800</span><span class="p">])</span>
+
+<span class="c1"># creamos dos listas vacías para guardar el valor máximo de cada curva y la longitud de onda asociada</span>
+<span class="n">peak</span>   <span class="o">=</span> <span class="p">[]</span>            
+<span class="n">lam_at</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># iteramos respecto a la temperatura</span>
+<span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">T_list</span><span class="p">:</span>
+    <span class="n">Ebb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">rf</span><span class="o">.</span><span class="n">Bplanck</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>                         <span class="c1"># poder de emisión hemisférico espectral del cuerpo negro</span>
+    <span class="n">html_rgb</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">spec_to_rgb</span><span class="p">(</span><span class="n">Ebb</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">out_fmt</span><span class="o">=</span><span class="s1">&#39;html&#39;</span><span class="p">)</span>    <span class="c1"># color asociado a la curva</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ebb</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%i</span><span class="s1"> K&#39;</span> <span class="o">%</span> <span class="n">T</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">html_rgb</span><span class="p">)</span>   <span class="c1"># graficamos el espectro usando el color anterior </span>
+    <span class="n">peak</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Ebb</span><span class="p">))</span>                               <span class="c1"># guardamos el máximo de la curva</span>
+    <span class="n">lam_at</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lam</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Ebb</span><span class="p">)])</span>                     <span class="c1"># guardamos la longitud de onda asociada al máximo</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam_at</span><span class="p">,</span><span class="n">peak</span><span class="p">,</span><span class="s1">&#39;--k&#39;</span><span class="p">)</span> <span class="c1"># graficamos la línea correspondiente a la ley de desplazamiento de Wien</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1E-6</span><span class="p">,</span><span class="mf">1E8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda, $\lambda$ ($\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$E_{\mathrm</span><span class="si">{bb}</span><span class="s1">,\lambda}$ (W/m$^2$-$\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/mnt/c/Users/francisco.ramirez.c/OneDrive - Universidad Adolfo Ibanez/ComputerCodes/Python/custom_packages/empylib/ref_spectra/ref_spectra.py:161: RuntimeWarning: overflow encountered in exp
+  Ibb = 2*h*c0**2./ll**5*1/(np.exp(h*c0/(ll*T*kB)) - 1)*1E-6
+</pre></div>
+</div>
+<img alt="../../_images/Tutorial2_6_1.png" src="../../_images/Tutorial2_6_1.png" />
+</div>
+</div>
+<p>Además podemos comprobar la ley de Stefan-Boltzmann para el poder de emisión hemisférico total:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\int_\mathrm{hemi}\int_0^\infty I_{\mathrm{bb},\lambda}(\lambda,T)~\cos\theta~d\lambda~d\Omega = \pi\int_0^\infty I_{\mathrm{bb},\lambda}(\lambda,T)~d\lambda = \sigma T^4
+\end{equation*}\]</div>
+<p>Para la integración ocupamos la regla del trapecio a travéz de la función <code class="docutils literal notranslate"><span class="pre">numpy.trapz</span></code> (también disponible en la librería <code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code> como <code class="docutils literal notranslate"><span class="pre">trapezoid</span></code> o <code class="docutils literal notranslate"><span class="pre">trapz</span></code>). <a class="reference external" href="https://panxopanza.github.io/metodos_numericos_mec301/7-Integracion/7-Integracion.html#regla-del-trapecio-scipy-integrate-trapezoid">Más info acá</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># espectro de longitudes de onda (de 2 a 100 micrones)</span>
+<span class="n">Ibb</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">Bplanck</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">T</span><span class="p">)</span>         <span class="c1"># Temperatura del cuerpo negro</span>
+
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">5.6704E-8</span> <span class="c1"># constante de Stefan-Boltzmann</span>
+
+<span class="n">E_int</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">Ibb</span><span class="p">,</span><span class="n">lam</span><span class="p">)</span> <span class="c1"># poder de emisión integrando la distribución de Planck</span>
+<span class="n">E_sb</span> <span class="o">=</span> <span class="n">sigma</span><span class="o">*</span><span class="n">T</span><span class="o">**</span><span class="mi">4</span>               <span class="c1"># poder de emisión por Steffan-Boltzmann</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Poder de emisión de cuerpo negro (integral de dist. de Planck): </span><span class="si">%.3f</span><span class="s1"> W/m^2&#39;</span> <span class="o">%</span> <span class="n">E_int</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Poder de emisión de cuerpo negro (Stefan-Boltzmann): </span><span class="si">%.3f</span><span class="s1"> W/m^2&#39;</span> <span class="o">%</span> <span class="n">E_sb</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Poder de emisión de cuerpo negro (integral de dist. de Planck): 457.136 W/m^2
+Poder de emisión de cuerpo negro (Stefan-Boltzmann): 459.302 W/m^2
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>Notar que los valores no son exáctamente iguales. Esto porque <span class="math notranslate nohighlight">\(\lambda\)</span> en la integración está acotado a <span class="math notranslate nohighlight">\(\lambda\in[2,100]\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m. El valor mejora si aumentamos el espectro de integración. Por ejemplo, para <span class="math notranslate nohighlight">\(\lambda\in[2,10000]\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m, el poder de emisión calculado a travéz de la interal es <code class="docutils literal notranslate"><span class="pre">459.300</span> <span class="pre">W/m^2</span></code>.</p>
+</div></blockquote>
+</section>
+<section id="irradiacion-solar-espectro-am1-5-am15">
+<h2>Irradiación solar, espectro AM1.5 (<code class="docutils literal notranslate"><span class="pre">AM15</span></code>)<a class="headerlink" href="#irradiacion-solar-espectro-am1-5-am15" title="Permalink to this headline">#</a></h2>
+<p>La función <code class="docutils literal notranslate"><span class="pre">AM15</span></code> entrega el espectro global y directo del AM1.5 para un arreglo de longitudes de onda.</p>
+<p>Como valor de entrada la función requiere el espectro de longitudes de onda <code class="docutils literal notranslate"><span class="pre">lam</span></code> en unidades de micrometros. El tipo de espectro (global o directo) se puede controlar mediante un segúndo argumento <code class="docutils literal notranslate"><span class="pre">spectra_type</span></code>, con <code class="docutils literal notranslate"><span class="pre">spectra_type='global'</span></code> para espectro directo, y <code class="docutils literal notranslate"><span class="pre">spectra_type='direct'</span></code> para espectro difuso. Por defecto <code class="docutils literal notranslate"><span class="pre">spectra_type='global'</span></code></p>
+<p>En el siguiente código graficaremos el espectro AM1.5 directo y global comparándolo con la radiación solar extraterrestre, <span class="math notranslate nohighlight">\(I_\mathrm{sun,out}\)</span>. Para este último, consideraremos la radiación de cuerpo negro mediante <code class="docutils literal notranslate"><span class="pre">Bplanck</span></code> escalada a partir de la constante solar.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+I_\mathrm{sun,out} = \frac{G_\mathrm{sun}}{\sigma T^4_\mathrm{sun}} \pi I_{\mathrm{bb},\lambda}(\lambda,T_\mathrm{sun})
+\end{equation*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(T_\mathrm{sun} = 5777\)</span> K y <span class="math notranslate nohighlight">\(G_\mathrm{sun} = 1367\)</span> W/m<span class="math notranslate nohighlight">\(^2\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">3.0</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">sigma</span> <span class="o">=</span> <span class="mf">5.6704E-8</span> <span class="c1"># constante de Stefan-Boltzmann</span>
+<span class="n">Tsun</span> <span class="o">=</span> <span class="mi">5777</span>     <span class="c1"># temperatura efectiva del sol (K)</span>
+<span class="n">Gsun</span> <span class="o">=</span> <span class="mi">1367</span>      <span class="c1"># constante solar (W/m^2)</span>
+
+<span class="n">Isun_global</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">AM15</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">spectra_type</span><span class="o">=</span><span class="s1">&#39;global&#39;</span><span class="p">)</span>
+<span class="n">Isun_direct</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">AM15</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">spectra_type</span><span class="o">=</span><span class="s1">&#39;direct&#39;</span><span class="p">)</span>
+<span class="n">Isun_out</span>    <span class="o">=</span> <span class="n">Gsun</span><span class="o">/</span><span class="p">(</span><span class="n">sigma</span><span class="o">*</span><span class="n">Tsun</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">rf</span><span class="o">.</span><span class="n">Bplanck</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Tsun</span><span class="p">)</span>
+
+<span class="c1"># Graficamos resultados</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Isun_out</span>   <span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span><span class="s1">&#39;Extraterrestre&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Isun_global</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span><span class="s1">&#39;AM1.5 global&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Isun_direct</span><span class="p">,</span><span class="s1">&#39;-g&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span><span class="s1">&#39;AM1.5 direct&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Irradianca espectral (W/m$^2$-$\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Irradiancia solar&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Tutorial2_11_0.png" src="../../_images/Tutorial2_11_0.png" />
+</div>
+</div>
+</section>
+<section id="transmitancia-atmosferica-t-atmosphere">
+<h2>Transmitancia atmosférica (<code class="docutils literal notranslate"><span class="pre">T_atmosphere</span></code>)<a class="headerlink" href="#transmitancia-atmosferica-t-atmosphere" title="Permalink to this headline">#</a></h2>
+<p>Esta función permite determinar la transmitancia atmosférica a partir de un espectro de longitudes de onda. Como valor de entrada la función requiere el espectro de longitudes de onda <code class="docutils literal notranslate"><span class="pre">lam</span></code> en unidades de micrometros.</p>
+<p>En el siguiente ejemplo graficaremos la radiación de cuerpo negro con <span class="math notranslate nohighlight">\(T = 300\)</span> K, el AM1.5 global y la transmitancia atmosférica.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">ScalarFormatter</span><span class="p">,</span> <span class="n">FuncFormatter</span>
+
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">0.3</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># espectro de longitudes de onda</span>
+
+<span class="n">T_atm</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">T_atmosphere</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>
+<span class="n">Isun</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">AM15</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>
+<span class="n">Ibb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">rf</span><span class="o">.</span><span class="n">Bplanck</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Isun</span><span class="p">,</span><span class="s1">&#39;-y&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;AM1.5&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ibb</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$E_{\mathrm</span><span class="si">{bb}</span><span class="s1">,\lambda}\times 10$ &#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">T_atm</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;T. atmosférica&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Wavelength, $\mu$m&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Spectral irradiance (W/m$^2$-$\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">1.4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Transmittance (%)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.16g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Tutorial2_13_0.png" src="../../_images/Tutorial2_13_0.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Tutorial/Tutorial2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../Tutorial1/Tutorial1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Tutorial</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Francisco V. Ramirez-Cuevas<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
