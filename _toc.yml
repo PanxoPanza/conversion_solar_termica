@@ -19,3 +19,10 @@ parts:
     - file: 6_RadiacionTermica/6_RadiacionTermica
     - file: 7_Radiación_solar/7_Radiación_solar
     - file: 8_ColetorSolar/8_ColetorSolar
+  - caption: Apéndice
+    numbered: false
+    chapters:
+      - file: Tutorial/Intro
+        sections:
+        - file: Tutorial/Tutorial1/Tutorial1
+        - file: Tutorial/Tutorial2/Tutorial2
