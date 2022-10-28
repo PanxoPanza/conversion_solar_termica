@@ -319,12 +319,12 @@
 # <img src="./images/active_direct.png" width="600" align= center>
 
 # ## Referencias
-# - Kalogirou S. A. ***Solar Energy Engineering Processes and Systems***, 2nd Ed, Academic Press, 2014
+# Kalogirou S. A. ***Solar Energy Engineering Processes and Systems***, 2nd Ed, Academic Press, 2014
 #  - Chapter 3 Solar energy collectors
 #  - Chapter 4 Performance of solar collectors
 #  - Chapter 5 Solar water-heating systems
 # 
-# - Duffie J. A., Beckman W. A. and Blair N. ***Solar Engineering of Thermal Processes***, 5th Ed, Jhon Wiley and Sons, 2020
+# Duffie J. A., Beckman W. A. and Blair N. ***Solar Engineering of Thermal Processes***, 5th Ed, Jhon Wiley and Sons, 2020
 #  - Chapter 4. Radiation characteristi of opaque materials
 #  - Chapter 5. Radiation transmission through glazing: Absorbed radiation
 #  - Chapter 6. Flat-plate collectors
