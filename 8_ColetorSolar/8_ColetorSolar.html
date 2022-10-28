@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -657,8 +659,8 @@ Fecha: 21 de octubre 2022</p>
 <section id="absorcion-de-radiacion-solar">
 <h3><span class="section-number">8.3.1. </span>Absorción de radiación solar<a class="headerlink" href="#absorcion-de-radiacion-solar" title="Permalink to this headline">#</a></h3>
 <p>Utilizando el modelo de cielo isotrópico, la radiación solar absorbida por un colector, <span class="math notranslate nohighlight">\(s\)</span>, puede aproximarse por:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a9014994-5031-43c8-a636-9378bef6397b">
-<span class="eqno">(8.1)<a class="headerlink" href="#equation-a9014994-5031-43c8-a636-9378bef6397b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-153f40fe-b8c8-4d15-9181-04535262460c">
+<span class="eqno">(8.1)<a class="headerlink" href="#equation-153f40fe-b8c8-4d15-9181-04535262460c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 S = G_\mathrm{DNI}R_\mathrm{B}(\tau \alpha)_\mathrm{B}+G_\mathrm{DIF}(\tau \alpha)_\mathrm{D}\left[\frac{1+\cos\beta}{2}\right]+\rho_\mathrm{G}(G_\mathrm{DNI} + G_\mathrm{DIF})(\tau \alpha)_\mathrm{G}\left[\frac{1-\cos\beta}{2}\right]
 \end{equation}\]</div>
 <p>Donde:</p>
@@ -673,8 +675,8 @@ S = G_\mathrm{DNI}R_\mathrm{B}(\tau \alpha)_\mathrm{B}+G_\mathrm{DIF}(\tau \alph
 <p>El valor de <span class="math notranslate nohighlight">\((\tau\alpha)\)</span> considera las múltiples reflecciones y absorciones ocurridas entre la covertura transparente y el absorbedor del colector.</p>
 <a class="reference internal image-reference" href="../_images/FPC_internal_reflection.png"><img alt="../_images/FPC_internal_reflection.png" class="align-center" src="../_images/FPC_internal_reflection.png" style="width: 500px;" /></a>
 <p>La componente normal de este parámetro está dada por:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-56bc6e7d-45fb-4526-852e-37309097952e">
-<span class="eqno">(8.2)<a class="headerlink" href="#equation-56bc6e7d-45fb-4526-852e-37309097952e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1b5337fe-4a31-4358-b318-9b91662fc01d">
+<span class="eqno">(8.2)<a class="headerlink" href="#equation-1b5337fe-4a31-4358-b318-9b91662fc01d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 (\tau\alpha)_n=\tau\alpha\sum_{n=1}^\infty \left[(1-\alpha)\rho_\mathrm{D}\right]^n = \frac{\tau\alpha}{1 - (1 - \alpha)\rho_\mathrm{D}}
 \end{equation}\]</div>
 <p>donde:</p>
@@ -687,8 +689,8 @@ S = G_\mathrm{DNI}R_\mathrm{B}(\tau \alpha)_\mathrm{B}+G_\mathrm{DIF}(\tau \alph
 <p>Para determinar <span class="math notranslate nohighlight">\((\tau \alpha)_\mathrm{B}\)</span>, <span class="math notranslate nohighlight">\((\tau \alpha)_\mathrm{D}\)</span> y <span class="math notranslate nohighlight">\((\tau \alpha)_\mathrm{G}\)</span> utilizamos el siguiente gráfico que permite relacionar <span class="math notranslate nohighlight">\((\tau \alpha)_n\)</span> respecto al ángulo de incidencia <span class="math notranslate nohighlight">\(\theta_i\)</span></p>
 <a class="reference internal image-reference" href="../_images/Incident_angle_correction.png"><img alt="../_images/Incident_angle_correction.png" class="align-center" src="../_images/Incident_angle_correction.png" style="width: 500px;" /></a>
 <p>En el caso de  <span class="math notranslate nohighlight">\((\tau \alpha)_\mathrm{D}\)</span> y <span class="math notranslate nohighlight">\((\tau \alpha)_\mathrm{G}\)</span>, utilizamos las siguientes fórmulas para determinar el ángulo equivalente de la componente difusa, <span class="math notranslate nohighlight">\(\theta_\mathrm{e,D} \)</span>, y global, <span class="math notranslate nohighlight">\(\theta_\mathrm{e,G}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d43001d4-e2cf-4f28-90c8-41605313103f">
-<span class="eqno">(8.3)<a class="headerlink" href="#equation-d43001d4-e2cf-4f28-90c8-41605313103f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fafa6c97-7ac0-4170-b68c-a050ad5dc8da">
+<span class="eqno">(8.3)<a class="headerlink" href="#equation-fafa6c97-7ac0-4170-b68c-a050ad5dc8da" title="Permalink to this equation">#</a></span>\[\begin{align}
 \theta_\mathrm{e,D} &amp;= 59.68 - 0.1388\beta+0.001497\beta^2 \\
 \theta_\mathrm{e,G} &amp;= 90 - 0.5788\beta+0.002693\beta^2
 \end{align}\]</div>
@@ -712,8 +714,8 @@ h_\mathrm{r,~i-j} = \frac{\sigma(T_i - T_j)(T_i^2 + T_j^2)}{1/\varepsilon_i + 1/
 <p>es el coeficiente equivalente de transferencia de calor por radiación.</p>
 <p>Notar que <span class="math notranslate nohighlight">\(h_\mathrm{r,~i-j}\)</span> depende de la temperatura de los elementos participantes, aún cuando el resto de las propiedades permanezcan constantes.</p>
 <p>En la práctica las pérdidas de calor se asocian a un coeficiente global de transferencia de calor, <span class="math notranslate nohighlight">\(U_L\)</span>, de la forma:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-784e8c04-ca78-4391-b741-b141ab063931">
-<span class="eqno">(8.4)<a class="headerlink" href="#equation-784e8c04-ca78-4391-b741-b141ab063931" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6f9a9812-9793-4d47-880f-bbb2576734da">
+<span class="eqno">(8.4)<a class="headerlink" href="#equation-6f9a9812-9793-4d47-880f-bbb2576734da" title="Permalink to this equation">#</a></span>\[\begin{equation}
 Q_\mathrm{loss} = U_L A_c(T_p - T_a)
 \end{equation}\]</div>
 <p>donde, <span class="math notranslate nohighlight">\(T_p\)</span> y <span class="math notranslate nohighlight">\(T_a\)</span> corresponden, respectivamente, a la temperaturas de la placa absorbedora y el ambiente, y <span class="math notranslate nohighlight">\(A_c\)</span> es la superficie superior(inferior) del colector.</p>
@@ -729,8 +731,8 @@ Q_\mathrm{loss} = U_L A_c(T_p - T_a)
 <p>En la práctica <span class="math notranslate nohighlight">\(T_p\)</span> es dificil de determinar, así la ecuación de <span class="math notranslate nohighlight">\(Q_\mathrm{loss}\)</span> planteada anteriormente no es de uso práctico</p>
 <p>Definimos el factor de remoción de calor, <span class="math notranslate nohighlight">\(F_R\)</span>, como la razón entre el calor real transferido al fluído de trabajo (<span class="math notranslate nohighlight">\(Q_u\)</span>), y la energía transferida por el colector cuando la temperatura de la placa absorbedora es igual a la temperatura de entrada del fluído de trabajo, <span class="math notranslate nohighlight">\(T_\mathrm{f,i}\)</span>.</p>
 <p>Matemáticamente:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2e93b57a-5ee0-4b5b-8379-b28d361a68a7">
-<span class="eqno">(8.5)<a class="headerlink" href="#equation-2e93b57a-5ee0-4b5b-8379-b28d361a68a7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a972b0ca-7769-42bc-963a-f549739fd244">
+<span class="eqno">(8.5)<a class="headerlink" href="#equation-a972b0ca-7769-42bc-963a-f549739fd244" title="Permalink to this equation">#</a></span>\[\begin{equation}
 F_R = \frac{\dot{m}C_p(T_\mathrm{f,o} - T_\mathrm{f,i})}{A_c[S - U_L(T_\mathrm{f,i} - T_a)]}
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(C_p\)</span>, <span class="math notranslate nohighlight">\(\dot{m}\)</span> y <span class="math notranslate nohighlight">\(T_\mathrm{f,o}\)</span> son, respectivamente, el calor específico, el flujo másico y la temperatura de salida del fluido de trabajo.</p>
@@ -739,16 +741,16 @@ F_R = \frac{\dot{m}C_p(T_\mathrm{f,o} - T_\mathrm{f,i})}{A_c[S - U_L(T_\mathrm{f
 <p>En el caso del colector, a menor temperatura de la placa absorbedora, menor las pérdidas asociadas a <span class="math notranslate nohighlight">\(U_L(T_p - T_a)\)</span></p>
 <p>La mínima temperatura posible para la placa absorbedora es <span class="math notranslate nohighlight">\(T_\mathrm{f,i}\)</span>, y por lo tanto <span class="math notranslate nohighlight">\(A_c[S - U_L(T_\mathrm{f,i} - T_a)]\)</span> representa el máximo calor que puede ser transferido por el colector.</p>
 <p>A partir de este parámetro podemos determinar el calor efectivo transferido a un fluido como:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-51efb4b2-5de6-4c68-8d2f-dc1c30f4c0cb">
-<span class="eqno">(8.6)<a class="headerlink" href="#equation-51efb4b2-5de6-4c68-8d2f-dc1c30f4c0cb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fffa8083-851d-4d42-a938-9b3cb31bc648">
+<span class="eqno">(8.6)<a class="headerlink" href="#equation-fffa8083-851d-4d42-a938-9b3cb31bc648" title="Permalink to this equation">#</a></span>\[\begin{equation}
 Q_u = A_cF_R\left[S - U_L\left(T_\mathrm{f,i} - T_a\right)\right]
 \end{equation}\]</div>
 </section>
 <section id="eficiencia-termica">
 <h3><span class="section-number">8.4.2. </span>Eficiencia térmica<a class="headerlink" href="#eficiencia-termica" title="Permalink to this headline">#</a></h3>
 <p>La eficiencia térmica de un colector corresponde al calor trasferido al fluido divido por la irradiación total, <span class="math notranslate nohighlight">\(G_t\)</span>, sobre la superficie del colector, <span class="math notranslate nohighlight">\(A_c\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5e28422-7318-42b7-bfac-1a269e1c1d43">
-<span class="eqno">(8.7)<a class="headerlink" href="#equation-b5e28422-7318-42b7-bfac-1a269e1c1d43" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f9345345-d23f-4b39-b00a-9925e854140e">
+<span class="eqno">(8.7)<a class="headerlink" href="#equation-f9345345-d23f-4b39-b00a-9925e854140e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \eta = F_R\left[\frac{S - U_L(T_\mathrm{f,i} - T_a)}{G_t}\right]
 \end{equation}\]</div>
 </section>
@@ -779,14 +781,14 @@ Q_u = A_cF_R\left[S - U_L\left(T_\mathrm{f,i} - T_a\right)\right]
 <h3><span class="section-number">8.4.4. </span>Corrector de ángulo de incidencia<a class="headerlink" href="#corrector-de-angulo-de-incidencia" title="Permalink to this headline">#</a></h3>
 <p>Las curvas de rendimiento son generadas mediante un ensallo con radiación solar normal al plano de incidencia. En la realidad, esto nunca sucede debido que el colector solar está en posición estacionaria.</p>
 <p>Así, en la práctica, necesitamos un factor de correción que nos permita identificar el rendimiento del colector respecto al ángulo de incidencia de la radiación solar, <span class="math notranslate nohighlight">\(\theta_i\)</span>. Este corrector se conoce como el <strong>modificador del ángulo de incidencia, <span class="math notranslate nohighlight">\(K_\theta\)</span></strong>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1144bfb5-7021-48f4-ac80-5814bd460e73">
-<span class="eqno">(8.8)<a class="headerlink" href="#equation-1144bfb5-7021-48f4-ac80-5814bd460e73" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fb23eba3-b32a-4d41-8b95-2a45bb48804c">
+<span class="eqno">(8.8)<a class="headerlink" href="#equation-fb23eba3-b32a-4d41-8b95-2a45bb48804c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 K_\theta = \frac{(\tau\alpha)}{(\tau\alpha)_n}=1 - b_0\left[\frac{1}{\cos\theta_i} - 1\right]
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(b_0\sim 0.1  - 0.15\)</span>.</p>
 <p>Considerando el factor <span class="math notranslate nohighlight">\(K_\theta\)</span>, la curva de eficiencia corregida es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-170d7bba-f83d-4dd5-a1e5-f4e5b5ef26a4">
-<span class="eqno">(8.9)<a class="headerlink" href="#equation-170d7bba-f83d-4dd5-a1e5-f4e5b5ef26a4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c7aad25c-7a8a-4974-b057-49e3fbe39355">
+<span class="eqno">(8.9)<a class="headerlink" href="#equation-c7aad25c-7a8a-4974-b057-49e3fbe39355" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \eta = F_R(\tau\alpha)_n K_\theta(\theta_i) - F_RU_L\frac{\Delta T}{G_t}
 \end{equation}\]</div>
 </section>
@@ -827,12 +829,14 @@ K_\theta = \frac{(\tau\alpha)}{(\tau\alpha)_n}=1 - b_0\left[\frac{1}{\cos\theta_
 </section>
 <section id="referencias">
 <h2><span class="section-number">8.6. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<p>Kalogirou S. A. <em><strong>Solar Energy Engineering Processes and Systems</strong></em>, 2nd Ed, Academic Press, 2014</p>
 <ul class="simple">
-<li><p>Kalogirou S. A. <em><strong>Solar Energy Engineering Processes and Systems</strong></em>, 2nd Ed, Academic Press, 2014</p></li>
 <li><p>Chapter 3 Solar energy collectors</p></li>
 <li><p>Chapter 4 Performance of solar collectors</p></li>
 <li><p>Chapter 5 Solar water-heating systems</p></li>
-<li><p>Duffie J. A., Beckman W. A. and Blair N. <em><strong>Solar Engineering of Thermal Processes</strong></em>, 5th Ed, Jhon Wiley and Sons, 2020</p></li>
+</ul>
+<p>Duffie J. A., Beckman W. A. and Blair N. <em><strong>Solar Engineering of Thermal Processes</strong></em>, 5th Ed, Jhon Wiley and Sons, 2020</p>
+<ul class="simple">
 <li><p>Chapter 4. Radiation characteristi of opaque materials</p></li>
 <li><p>Chapter 5. Radiation transmission through glazing: Absorbed radiation</p></li>
 <li><p>Chapter 6. Flat-plate collectors</p></li>

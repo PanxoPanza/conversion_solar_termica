@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -575,8 +577,8 @@ Fecha: 14 de octubre 2022</p>
 <p>El ángulo de incidencia del sol, <span class="math notranslate nohighlight">\(\theta_\mathrm{i}\)</span>, corresponde al ángulo cenital relativo a la norla de una superficie. En la siguiente figura se muestra una superficie inclinada con ángulo cenital <span class="math notranslate nohighlight">\(\beta\)</span> y ángulo acimutal <span class="math notranslate nohighlight">\(\Phi\)</span> respecto a la dirección normal al plano horizontal</p>
 <a class="reference internal image-reference" href="../_images/incidence_angle.png"><img alt="../_images/incidence_angle.png" class="align-center" src="../_images/incidence_angle.png" style="width: 650px;" /></a>
 <p>Considerando la posición del sol relativa al plano horizontal, el ángulo de incidencia es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ea058cb7-6ecf-4b17-9eb3-2c1e65f7eb0f">
-<span class="eqno">(7.1)<a class="headerlink" href="#equation-ea058cb7-6ecf-4b17-9eb3-2c1e65f7eb0f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-287cd1be-7216-4d4f-8b12-25ea4b815950">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-287cd1be-7216-4d4f-8b12-25ea4b815950" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \cos\theta_i = \cos\theta_\mathrm{s}\cos\beta+\sin\theta_\mathrm{s}\sin\beta\cos(\phi_\mathrm{s} - \Phi)
 \end{equation}\]</div>
 <p>Para una superficie en posición horizontal, <span class="math notranslate nohighlight">\(\theta_\mathrm{i} = \theta_\mathrm{s}\)</span></p>
@@ -591,8 +593,8 @@ Fecha: 14 de octubre 2022</p>
 <p>Consideremos el sol como un cuerpo negro a temperatura <span class="math notranslate nohighlight">\(T_\mathrm{sun} = 5777\)</span> K.</p>
 <p>El calor total por radiación emitido por el sol es <span class="math notranslate nohighlight">\(\pi D_\mathrm{sun}^2 E_\mathrm{sun}\)</span>, donde <span class="math notranslate nohighlight">\(D_\mathrm{sun} = 1.39\times 10^9\)</span> m es el diámetro del sol.</p>
 <p>Considerando la distancia entre el sol y la tierra, <span class="math notranslate nohighlight">\(d_\mathrm{e-s} = 1.495\times 10^{11}\)</span> m, el flujo de radiación sobre la superficie de la tierra, <span class="math notranslate nohighlight">\(G_\mathrm{sc}\)</span>, es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-30f8f0e8-8dad-4c64-900c-65352d041356">
-<span class="eqno">(7.2)<a class="headerlink" href="#equation-30f8f0e8-8dad-4c64-900c-65352d041356" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-38fb7ccf-dda3-4352-85a4-b16431bff20d">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-38fb7ccf-dda3-4352-85a4-b16431bff20d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 G_\mathrm{sc} = \sigma T_\mathrm{sun}^4 \frac{\pi D_\mathrm{sun}^2}{4\pi d_\mathrm{e-s}^2}=1367\frac{\mathrm{W}}{\mathrm{m}^2}
 \end{equation}\]</div>
 <p>La <strong>constante solar <span class="math notranslate nohighlight">\(G_\mathrm{sc} = 1367\)</span> W/m<span class="math notranslate nohighlight">\(^2\)</span></strong> es el flujo de energía sobre una superficie perpendicular a los rayos solares y a la distancia media entre la tierra y el sol. En otras palabras, corresponde <strong>radiación extraterrestre del sol</strong> que incide sobre 1 m<span class="math notranslate nohighlight">\(^2\)</span> en la tierra.</p>
@@ -600,19 +602,19 @@ G_\mathrm{sc} = \sigma T_\mathrm{sun}^4 \frac{\pi D_\mathrm{sun}^2}{4\pi d_\math
 <p>La siguiente figura ilustra la variación espectral de la constante solar, según reportado en la norma <a class="reference external" href="https://webstore.ansi.org/Standards/ASTM/ASTME49000a2019?gclid=Cj0KCQjwnP-ZBhDiARIsAH3FSRdkNPhMjh2Ru8irt-P5F2A2SPQYGY5liGc31hHI6lPK7VyEygeZHy4aAh99EALw_wcB">ASTM E-490</a></p>
 <a class="reference internal image-reference" href="../_images/extraterrestial_solar_radiation.png"><img alt="../_images/extraterrestial_solar_radiation.png" class="align-center" src="../_images/extraterrestial_solar_radiation.png" style="width: 600px;" /></a>
 <p>Debido a la excentricidad de la órbita de la tierra, la constante solar varía alrededor de un 3.3% largo del año. Para un día <span class="math notranslate nohighlight">\(N\)</span> de un total de 365, la constante solar está dada por:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ea26638b-e6d7-4756-922c-acab2bde6105">
-<span class="eqno">(7.3)<a class="headerlink" href="#equation-ea26638b-e6d7-4756-922c-acab2bde6105" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a68bb45c-e2cf-41cb-a5bd-5a85a00341b1">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-a68bb45c-e2cf-41cb-a5bd-5a85a00341b1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 G_\mathrm{sc,N} = G_\mathrm{sc}\left[1+0.033\cos\left(\frac{360N}{365}\right)\right]
 \end{equation}\]</div>
 <a class="reference internal image-reference" href="../_images/solar_constant_daily.png"><img alt="../_images/solar_constant_daily.png" class="align-center" src="../_images/solar_constant_daily.png" style="width: 600px;" /></a>
 <p>La constante solar también cambia según la elevación solar o, de forma complementaria, con el cenit solar en la forma:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8cd3399c-8604-4d3b-a4ba-b36c49918bb4">
-<span class="eqno">(7.4)<a class="headerlink" href="#equation-8cd3399c-8604-4d3b-a4ba-b36c49918bb4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0c70e821-57ba-4bd2-a9c6-8a56c1db463d">
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-0c70e821-57ba-4bd2-a9c6-8a56c1db463d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 G_{\mathrm{sc},t} = G_\mathrm{sc}\cos\theta_\mathrm{s}
 \end{equation}\]</div>
 <p>Para una superficie inclinada, con un ángulo de incidencia <span class="math notranslate nohighlight">\(\theta_i\)</span> la constate solar es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-37e8b10f-5862-4cfd-b0a3-0a15d7d42d40">
-<span class="eqno">(7.5)<a class="headerlink" href="#equation-37e8b10f-5862-4cfd-b0a3-0a15d7d42d40" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-deb185a2-8b3d-4e7e-88b1-293417211f47">
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-deb185a2-8b3d-4e7e-88b1-293417211f47" title="Permalink to this equation">#</a></span>\[\begin{equation}
 G_{\mathrm{sc},s} = G_\mathrm{sc}\cos\theta_\mathrm{i}
 \end{equation}\]</div>
 </section>
@@ -629,8 +631,8 @@ G_{\mathrm{sc},s} = G_\mathrm{sc}\cos\theta_\mathrm{i}
 <p>donde <span class="math notranslate nohighlight">\(L_0\)</span> es la distancia (espesor de la atmósfera) normal a la superficie de la tierra y al nivel del mar, y <span class="math notranslate nohighlight">\(L\)</span> es la distancia al nivel del mar a un ángulo <span class="math notranslate nohighlight">\(\theta_\mathrm{s}\)</span></p>
 <a class="reference internal image-reference" href="../_images/AM_diagram.png"><img alt="../_images/AM_diagram.png" class="align-center" src="../_images/AM_diagram.png" style="width: 300px;" /></a>
 <p>Una forma simplificada de representar el coeficiente de masa de aire es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d5f5246c-6914-4cab-9a95-7ffd74f41ef3">
-<span class="eqno">(7.6)<a class="headerlink" href="#equation-d5f5246c-6914-4cab-9a95-7ffd74f41ef3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ccc7e175-722b-41bf-b260-91b78ad88c1e">
+<span class="eqno">(7.6)<a class="headerlink" href="#equation-ccc7e175-722b-41bf-b260-91b78ad88c1e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \mathrm{AM} = \frac{1}{\cos\theta_\mathrm{s}}
 \end{equation}\]</div>
 <ul class="simple">
@@ -642,8 +644,8 @@ G_{\mathrm{sc},s} = G_\mathrm{sc}\cos\theta_\mathrm{i}
 <a class="reference internal image-reference" href="../_images/am1.5.png"><img alt="../_images/am1.5.png" class="align-center" src="../_images/am1.5.png" style="width: 400px;" /></a>
 <p>Debido al <em>scattering</em> atmosférico, el espectro <span class="math notranslate nohighlight">\(\mathrm{AM}1.5\)</span> considera una componente global (directa + difusa) y una directa.</p>
 <p>La irradiancia hemisférica total del espectro <span class="math notranslate nohighlight">\(\mathrm{AM}1.5\)</span>, es</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a3df8d23-8081-4024-a69a-e9a9fa187302">
-<span class="eqno">(7.7)<a class="headerlink" href="#equation-a3df8d23-8081-4024-a69a-e9a9fa187302" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8488553f-1506-40f2-807c-0c91fe943532">
+<span class="eqno">(7.7)<a class="headerlink" href="#equation-8488553f-1506-40f2-807c-0c91fe943532" title="Permalink to this equation">#</a></span>\[\begin{equation}
 G_\mathrm{AM1.5} = 1000~\frac{\mathrm{W}}{\mathrm{m}^2} = 1~\mathrm{sun}
 \end{equation}\]</div>
 <p>Existen distintas fuentes con valores tabulados del espectro AM1.5, por ejemplo: <a class="reference external" href="https://www.nrel.gov/grid/solar-resource/spectra-am1.5.html">NREL AM1.5</a></p>
