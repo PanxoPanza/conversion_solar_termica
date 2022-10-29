@@ -183,15 +183,16 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import ScalarFormatter, FuncFormatter
 
 lam = np.logspace(np.log10(0.3),np.log10(100),1000) # espectro de longitudes de onda
+Tbb = 300 # temperatura de cuerpo negro
 
 T_atm = rf.T_atmosphere(lam)     # Transmitancia atmosférica
 Gsun = rf.AM15(lam)              # GHI solar AM1.5
-Ebb = np.pi*rf.Bplanck(lam,300)  # Poder de emisión espectral hemisférico de un cuerpo negro
+Ebb = np.pi*rf.Bplanck(lam,Tbb)  # Poder de emisión espectral hemisférico de un cuerpo negro
 
 fig, ax1 = plt.subplots(figsize=(12,4))
 ax2=ax1.twinx()                          # segundo eje para unidades de radiación espectral
 ax1.plot(lam,Gsun,'-y',label='AM1.5')
-ax1.plot(lam,Ebb*10,'-r',label=r'$E_{\mathrm{bb},\lambda}\times 10$ ')
+ax1.plot(lam,Ebb*10,'-r',label=r'$E_{\mathrm{bb},\lambda}(%i~\mathrm{K})\times 10$ ' % Tbb)
 ax2.plot(lam,T_atm*100,'-b', label = r'$\tau_\mathrm{atm}$')
 
 ax1.set_xlabel('Longitud de onda, $\mu$m')
@@ -202,17 +203,17 @@ ax2.set_ylabel('Transmitancia (%)')
 ax2.set_xlim(0.3,100)
 
 ax1.xaxis.set_major_formatter(FuncFormatter(lambda y, _: '{:.16g}'.format(y)))
-ax1.legend(frameon=False,loc='lower right')
-ax2.legend(frameon=False,loc='upper right')
+ax1.legend(frameon=False,loc='upper right')
+ax2.legend(frameon=False,loc='lower right')
 plt.show()
 
 
 # **Nota** Para valores $\lambda > 20$ $\mu$m y $\lambda < 0.8$ $\mu$m, `T_atmosphere = 0` automáticamente. Aunque no es consistente con la realidad, esta condicion no induce un error significativo, ya que el espectro de emisión de la atmosféra ocurre en el infrarojo medio. Esto último, considerando a la atmósfera como un cuerpo negro a temperatura $T_\mathrm{atm}\sim 0-35$°C.
 
-# En efecto, esto lo podemos confirmar graficando el poder de emisión hemisférico espectral de la atmósfera:
+# En efecto, esto lo podemos confirmar graficando la irradiancia hemisférica espectral de la atmósfera sobre una superficie horizontal:
 # 
 # \begin{equation*}
-# E_{\mathrm{atm},\lambda} = (1 - \tau_{\mathrm{atm},\lambda})\pi I_{\mathrm{bb},\lambda}(\lambda,T_\mathrm{atm})\quad\frac{\mathrm{W}}{\mathrm{m}^2 \mu\mathrm{m}}
+# G_{\mathrm{atm},\lambda} = (1 - \tau_{\mathrm{atm},\lambda})\pi I_{\mathrm{bb},\lambda}(\lambda,T_\mathrm{atm})\
 # \end{equation*}
 # 
 # donde asumimos $\rho_{\mathrm{atm},\lambda} = 0$ debido a que la atmosféra esta compuesta de gases.
@@ -227,8 +228,8 @@ fig, ax1 = plt.subplots(figsize=(12,4))
 ax1.plot(lam,Eatm)
 
 ax1.set_xlabel('Longitud de onda, $\mu$m')
-ax1.set_ylabel('Poder de emisión (W/m$^2$-$\mu$m)')
-ax1.set_title('Poder de emisión de la atmósfera a %.1f °C' % (Tatm - 273))
+ax1.set_ylabel('Irradiancia espectral hemisférica (W/m$^2$-$\mu$m)')
+ax1.set_title('Irradiancia de la atmósfera a %.1f °C, sobre una superficie horizontal' % (Tatm - 273))
 ax1.set_xscale('log')
 ax1.set_xticks([0.3,0.4,0.75,1.4,3,8,15,30, 50, 100])
 ax1.xaxis.set_major_formatter(FuncFormatter(lambda y, _: '{:.16g}'.format(y)))
