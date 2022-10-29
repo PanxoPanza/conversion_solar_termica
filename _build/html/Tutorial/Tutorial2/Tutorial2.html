@@ -50,13 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Tutorial" href="../Tutorial1/Tutorial1.html" />
+    <link rel="prev" title="Tutorial 1" href="../Tutorial1/Tutorial1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -188,7 +186,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="../Tutorial1/Tutorial1.html">
-     Tutorial
+     Tutorial 1
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -485,8 +483,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>Esta instancia debe ser ejecutada solo una vez.</p>
-<h1>Contenidos<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Instrucciones-de-instalación" data-toc-modified-id="Instrucciones-de-instalación-1">Instrucciones de instalación</a></span></li><li><span><a href="#Distribución-de-Planck-(Bplanck)" data-toc-modified-id="Distribución-de-Planck-(Bplanck)-2">Distribución de Planck (<code>Bplanck</code>)</a></span></li><li><span><a href="#Irradiación-solar,-espectro-AM1.5-(AM15)" data-toc-modified-id="Irradiación-solar,-espectro-AM1.5-(AM15)-3">Irradiación solar, espectro AM1.5 (<code>AM15</code>)</a></span></li><li><span><a href="#Transmitancia-atmosférica-(T_atmosphere)" data-toc-modified-id="Transmitancia-atmosférica-(T_atmosphere)-4">Transmitancia atmosférica (<code>T_atmosphere</code>)</a></span></li></ul></div><div class="cell docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">empylib.ref_spectra</span> <span class="k">as</span> <span class="nn">rf</span>
 </pre></div>
@@ -533,7 +530,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial2_4_0.png" src="../../_images/Tutorial2_4_0.png" />
+<img alt="../../_images/Tutorial2_3_0.png" src="../../_images/Tutorial2_3_0.png" />
 </div>
 </div>
 <p>Con esto podemos analizar la variación del poder de emisión espectral hemisférico del cuerpo negro, <span class="math notranslate nohighlight">\(\pi I_{\mathrm{bb},\lambda}\)</span>, en función de la temperatura</p>
@@ -575,11 +572,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/mnt/c/Users/francisco.ramirez.c/OneDrive - Universidad Adolfo Ibanez/ComputerCodes/Python/custom_packages/empylib/ref_spectra/ref_spectra.py:161: RuntimeWarning: overflow encountered in exp
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/mnt/d/OneDrive - Universidad Adolfo Ibanez/ComputerCodes/Python/custom_packages/empylib/ref_spectra/ref_spectra.py:161: RuntimeWarning: overflow encountered in exp
   Ibb = 2*h*c0**2./ll**5*1/(np.exp(h*c0/(ll*T*kB)) - 1)*1E-6
 </pre></div>
 </div>
-<img alt="../../_images/Tutorial2_6_1.png" src="../../_images/Tutorial2_6_1.png" />
+<img alt="../../_images/Tutorial2_5_1.png" src="../../_images/Tutorial2_5_1.png" />
 </div>
 </div>
 <p>Además podemos comprobar la ley de Stefan-Boltzmann para el poder de emisión hemisférico total:</p>
@@ -633,16 +630,16 @@ I_\mathrm{sun,out} = \frac{G_\mathrm{sun}}{\sigma T^4_\mathrm{sun}} \pi I_{\math
 <span class="n">Tsun</span> <span class="o">=</span> <span class="mi">5777</span>     <span class="c1"># temperatura efectiva del sol (K)</span>
 <span class="n">Gsun</span> <span class="o">=</span> <span class="mi">1367</span>      <span class="c1"># constante solar (W/m^2)</span>
 
-<span class="n">Isun_global</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">AM15</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">spectra_type</span><span class="o">=</span><span class="s1">&#39;global&#39;</span><span class="p">)</span>
-<span class="n">Isun_direct</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">AM15</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">spectra_type</span><span class="o">=</span><span class="s1">&#39;direct&#39;</span><span class="p">)</span>
-<span class="n">Isun_out</span>    <span class="o">=</span> <span class="n">Gsun</span><span class="o">/</span><span class="p">(</span><span class="n">sigma</span><span class="o">*</span><span class="n">Tsun</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">rf</span><span class="o">.</span><span class="n">Bplanck</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Tsun</span><span class="p">)</span>
+<span class="n">Gsun_global</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">AM15</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">spectra_type</span><span class="o">=</span><span class="s1">&#39;global&#39;</span><span class="p">)</span>
+<span class="n">Gsun_direct</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">AM15</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">spectra_type</span><span class="o">=</span><span class="s1">&#39;direct&#39;</span><span class="p">)</span>
+<span class="n">Gsun_out</span>    <span class="o">=</span> <span class="n">Gsun</span><span class="o">/</span><span class="p">(</span><span class="n">sigma</span><span class="o">*</span><span class="n">Tsun</span><span class="o">**</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">rf</span><span class="o">.</span><span class="n">Bplanck</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Tsun</span><span class="p">)</span>
 
 <span class="c1"># Graficamos resultados</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Isun_out</span>   <span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span><span class="s1">&#39;Extraterrestre&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Isun_global</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span><span class="s1">&#39;AM1.5 global&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Isun_direct</span><span class="p">,</span><span class="s1">&#39;-g&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span><span class="s1">&#39;AM1.5 direct&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Gsun_out</span>   <span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span><span class="s1">&#39;Extraterrestre&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Gsun_global</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span><span class="s1">&#39;AM1.5 global&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Gsun_direct</span><span class="p">,</span><span class="s1">&#39;-g&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span><span class="s1">&#39;AM1.5 direct&#39;</span><span class="p">)</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Irradianca espectral (W/m$^2$-$\mu$m)&#39;</span><span class="p">)</span>
@@ -653,14 +650,14 @@ I_\mathrm{sun,out} = \frac{G_\mathrm{sun}}{\sigma T^4_\mathrm{sun}} \pi I_{\math
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial2_11_0.png" src="../../_images/Tutorial2_11_0.png" />
+<img alt="../../_images/Tutorial2_10_0.png" src="../../_images/Tutorial2_10_0.png" />
 </div>
 </div>
 </section>
 <section id="transmitancia-atmosferica-t-atmosphere">
 <h2>Transmitancia atmosférica (<code class="docutils literal notranslate"><span class="pre">T_atmosphere</span></code>)<a class="headerlink" href="#transmitancia-atmosferica-t-atmosphere" title="Permalink to this headline">#</a></h2>
 <p>Esta función permite determinar la transmitancia atmosférica a partir de un espectro de longitudes de onda. Como valor de entrada la función requiere el espectro de longitudes de onda <code class="docutils literal notranslate"><span class="pre">lam</span></code> en unidades de micrometros.</p>
-<p>En el siguiente ejemplo graficaremos la radiación de cuerpo negro con <span class="math notranslate nohighlight">\(T = 300\)</span> K, el AM1.5 global y la transmitancia atmosférica.</p>
+<p>En el siguiente ejemplo graficaremos la radiación de cuerpo negro con <span class="math notranslate nohighlight">\(T = 300\)</span> K, el AM1.5 global y la transmitancia atmosférica. Debido a la diferencia de escalas, <strong>utilizaremos el eje de la derecha para cuantificar la transmitancia atmosférica (<span class="math notranslate nohighlight">\(\tau_{\mathrm{atm},\lambda}\)</span>), y el eje de la izquierda para la radiación solar y de cuerpo negro</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -668,31 +665,60 @@ I_\mathrm{sun,out} = \frac{G_\mathrm{sun}}{\sigma T^4_\mathrm{sun}} \pi I_{\math
 
 <span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">0.3</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># espectro de longitudes de onda</span>
 
-<span class="n">T_atm</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">T_atmosphere</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>
-<span class="n">Isun</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">AM15</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>
-<span class="n">Ibb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">rf</span><span class="o">.</span><span class="n">Bplanck</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">T_atm</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">T_atmosphere</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>     <span class="c1"># Transmitancia atmosférica</span>
+<span class="n">Gsun</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">AM15</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>              <span class="c1"># GHI solar AM1.5</span>
+<span class="n">Ebb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">rf</span><span class="o">.</span><span class="n">Bplanck</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="mi">300</span><span class="p">)</span>  <span class="c1"># Poder de emisión espectral hemisférico de un cuerpo negro</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Isun</span><span class="p">,</span><span class="s1">&#39;-y&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;AM1.5&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ibb</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$E_{\mathrm</span><span class="si">{bb}</span><span class="s1">,\lambda}\times 10$ &#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">T_atm</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;T. atmosférica&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax2</span><span class="o">=</span><span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>                          <span class="c1"># segundo eje para unidades de radiación espectral</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Gsun</span><span class="p">,</span><span class="s1">&#39;-y&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;AM1.5&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ebb</span><span class="o">*</span><span class="mi">10</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$E_{\mathrm</span><span class="si">{bb}</span><span class="s1">,\lambda}\times 10$ &#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">T_atm</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;$\tau_\mathrm</span><span class="si">{atm}</span><span class="s1">$&#39;</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Wavelength, $\mu$m&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Spectral irradiance (W/m$^2$-$\mu$m)&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">1.4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Transmittance (%)&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.16g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda, $\mu$m&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">1.4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Irradiancia espectral (W/m$^2$-$\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Transmitancia (%)&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.16g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial2_13_0.png" src="../../_images/Tutorial2_13_0.png" />
+<img alt="../../_images/Tutorial2_12_0.png" src="../../_images/Tutorial2_12_0.png" />
+</div>
+</div>
+<p><strong>Nota</strong> Para valores <span class="math notranslate nohighlight">\(\lambda &gt; 20\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m y <span class="math notranslate nohighlight">\(\lambda &lt; 0.8\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m, <code class="docutils literal notranslate"><span class="pre">T_atmosphere</span> <span class="pre">=</span> <span class="pre">0</span></code> automáticamente. Aunque no es consistente con la realidad, esta condicion no induce un error significativo, ya que el espectro de emisión de la atmosféra ocurre en el infrarojo medio. Esto último, considerando a la atmósfera como un cuerpo negro a temperatura <span class="math notranslate nohighlight">\(T_\mathrm{atm}\sim 0-35\)</span>°C.</p>
+<p>En efecto, esto lo podemos confirmar graficando el poder de emisión hemisférico espectral de la atmósfera:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+E_{\mathrm{atm},\lambda} = (1 - \tau_{\mathrm{atm},\lambda})\pi I_{\mathrm{bb},\lambda}(\lambda,T_\mathrm{atm})\quad\frac{\mathrm{W}}{\mathrm{m}^2 \mu\mathrm{m}}
+\end{equation*}\]</div>
+<p>donde asumimos <span class="math notranslate nohighlight">\(\rho_{\mathrm{atm},\lambda} = 0\)</span> debido a que la atmosféra esta compuesta de gases.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Tatm</span> <span class="o">=</span> <span class="mi">300</span>                                           <span class="c1"># Temperatura de la atmósfera (K)</span>
+<span class="n">Eatm</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">rf</span><span class="o">.</span><span class="n">T_atmosphere</span><span class="p">(</span><span class="n">lam</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">rf</span><span class="o">.</span><span class="n">Bplanck</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Tatm</span><span class="p">)</span> <span class="c1"># Poder de emisión de la atmósfera (W/m^2-um)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Eatm</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda, $\mu$m&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Poder de emisión (W/m$^2$-$\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Poder de emisión de la atmósfera a </span><span class="si">%.1f</span><span class="s1"> °C&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">Tatm</span> <span class="o">-</span> <span class="mi">273</span><span class="p">))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="mf">1.4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.16g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Tutorial2_15_0.png" src="../../_images/Tutorial2_15_0.png" />
 </div>
 </div>
 </section>
@@ -729,7 +755,7 @@ I_\mathrm{sun,out} = \frac{G_\mathrm{sun}}{\sigma T^4_\mathrm{sun}} \pi I_{\math
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Tutorial</p>
+            <p class="prev-next-title">Tutorial 1</p>
         </div>
     </a>
 </div>

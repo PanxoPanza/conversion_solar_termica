@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # **M501 - Manejo y conversión de energía solar térmica**
-# # Tutorial
+# # Tutorial 1
 # 
 # Este es un tutorial para utilizar las librerías de funciones para el curso. Utilizaremos dos librerías:
 # - ```empylib```: Cálculos de reflectividad, transmisividad, scattering de Mie, etc.
@@ -21,9 +21,6 @@
 # !{sys.executable} -m pip install iadpython
 # ```
 # Esta instancia debe ser ejecutada solo una vez.
-
-# <h1>Contenidos<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Instrucciones-de-instalación" data-toc-modified-id="Instrucciones-de-instalación-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Instrucciones de instalación</a></span></li><li><span><a href="#Conversión-de-unidades" data-toc-modified-id="Conversión-de-unidades-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Conversión de unidades</a></span></li><li><span><a href="#Índices-de-refracción-(nklib)" data-toc-modified-id="Índices-de-refracción-(nklib)-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Índices de refracción (<code>nklib</code>)</a></span><ul class="toc-item"><li><span><a href="#Valores-tabulados" data-toc-modified-id="Valores-tabulados-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Valores tabulados</a></span></li><li><span><a href="#Modelos-de-Drude-y-Lorentz" data-toc-modified-id="Modelos-de-Drude-y-Lorentz-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Modelos de Drude y Lorentz</a></span></li></ul></li><li><span><a href="#Reflexión/Transmissión-(waveoptics)" data-toc-modified-id="Reflexión/Transmissión-(waveoptics)-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Reflexión/Transmissión (<code>waveoptics</code>)</a></span><ul class="toc-item"><li><span><a href="#Luz-incidente-en-una-interface-(interface)" data-toc-modified-id="Luz-incidente-en-una-interface-(interface)-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Luz incidente en una interface (<code>interface</code>)</a></span></li><li><span><a href="#Luz-incidente-en-arreglos-multicapas-(multilayer)" data-toc-modified-id="Luz-incidente-en-arreglos-multicapas-(multilayer)-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Luz incidente en arreglos multicapas (<code>multilayer</code>)</a></span></li><li><span><a href="#Luz-incoherente-en-arreglos-multicapas-(incoh_multilayer)" data-toc-modified-id="Luz-incoherente-en-arreglos-multicapas-(incoh_multilayer)-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Luz incoherente en arreglos multicapas (<code>incoh_multilayer</code>)</a></span></li></ul></li><li><span><a href="#Scattering-de-mie-(miescattering)" data-toc-modified-id="Scattering-de-mie-(miescattering)-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Scattering de mie (<code>miescattering</code>)</a></span></li><li><span><a href="#Transporte-Radiativo-(rad_transfer)" data-toc-modified-id="Transporte-Radiativo-(rad_transfer)-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Transporte Radiativo (<code>rad_transfer</code>)</a></span><ul class="toc-item"><li><span><a href="#Beer-Lambert-(T_beer_lambert)" data-toc-modified-id="Beer-Lambert-(T_beer_lambert)-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Beer-Lambert (<code>T_beer_lambert</code>)</a></span></li><li><span><a href="#Scattering-multiple-(ad_rad_transfer)" data-toc-modified-id="Scattering-multiple-(ad_rad_transfer)-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Scattering multiple (<code>ad_rad_transfer</code>)</a></span></li></ul></li></ul></div>
 
 # ## Conversión de unidades
 # La librería ```empylib``` cuenta con la función ```convert_units(x, x_in, to)``` para convertir unidades. Los parámetros de entrada son:

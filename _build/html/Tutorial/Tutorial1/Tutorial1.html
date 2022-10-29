@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Tutorial &#8212; MEC501 - Manejo y conversión de energía solar térmica</title>
+    <title>Tutorial 1 &#8212; MEC501 - Manejo y conversión de energía solar térmica</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -189,7 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Tutorial
+     Tutorial 1
     </a>
    </li>
    <li class="toctree-l2">
@@ -494,7 +494,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tutorial</h1>
+                <h1>Tutorial 1</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -640,8 +640,8 @@ title="Print to PDF"
               <div>
                 
   <p><strong>M501 - Manejo y conversión de energía solar térmica</strong></p>
-<section class="tex2jax_ignore mathjax_ignore" id="tutorial">
-<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="tutorial-1">
+<h1>Tutorial 1<a class="headerlink" href="#tutorial-1" title="Permalink to this headline">#</a></h1>
 <p>Este es un tutorial para utilizar las librerías de funciones para el curso. Utilizaremos dos librerías:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">empylib</span></code>: Cálculos de reflectividad, transmisividad, scattering de Mie, etc.</p></li>
@@ -664,8 +664,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>Esta instancia debe ser ejecutada solo una vez.</p>
-<h1>Contenidos<span class="tocSkip"></span></h1>
-<div class="toc"><ul class="toc-item"><li><span><a href="#Instrucciones-de-instalación" data-toc-modified-id="Instrucciones-de-instalación-1"><span class="toc-item-num">1&nbsp;&nbsp;</span>Instrucciones de instalación</a></span></li><li><span><a href="#Conversión-de-unidades" data-toc-modified-id="Conversión-de-unidades-2"><span class="toc-item-num">2&nbsp;&nbsp;</span>Conversión de unidades</a></span></li><li><span><a href="#Índices-de-refracción-(nklib)" data-toc-modified-id="Índices-de-refracción-(nklib)-3"><span class="toc-item-num">3&nbsp;&nbsp;</span>Índices de refracción (<code>nklib</code>)</a></span><ul class="toc-item"><li><span><a href="#Valores-tabulados" data-toc-modified-id="Valores-tabulados-3.1"><span class="toc-item-num">3.1&nbsp;&nbsp;</span>Valores tabulados</a></span></li><li><span><a href="#Modelos-de-Drude-y-Lorentz" data-toc-modified-id="Modelos-de-Drude-y-Lorentz-3.2"><span class="toc-item-num">3.2&nbsp;&nbsp;</span>Modelos de Drude y Lorentz</a></span></li></ul></li><li><span><a href="#Reflexión/Transmissión-(waveoptics)" data-toc-modified-id="Reflexión/Transmissión-(waveoptics)-4"><span class="toc-item-num">4&nbsp;&nbsp;</span>Reflexión/Transmissión (<code>waveoptics</code>)</a></span><ul class="toc-item"><li><span><a href="#Luz-incidente-en-una-interface-(interface)" data-toc-modified-id="Luz-incidente-en-una-interface-(interface)-4.1"><span class="toc-item-num">4.1&nbsp;&nbsp;</span>Luz incidente en una interface (<code>interface</code>)</a></span></li><li><span><a href="#Luz-incidente-en-arreglos-multicapas-(multilayer)" data-toc-modified-id="Luz-incidente-en-arreglos-multicapas-(multilayer)-4.2"><span class="toc-item-num">4.2&nbsp;&nbsp;</span>Luz incidente en arreglos multicapas (<code>multilayer</code>)</a></span></li><li><span><a href="#Luz-incoherente-en-arreglos-multicapas-(incoh_multilayer)" data-toc-modified-id="Luz-incoherente-en-arreglos-multicapas-(incoh_multilayer)-4.3"><span class="toc-item-num">4.3&nbsp;&nbsp;</span>Luz incoherente en arreglos multicapas (<code>incoh_multilayer</code>)</a></span></li></ul></li><li><span><a href="#Scattering-de-mie-(miescattering)" data-toc-modified-id="Scattering-de-mie-(miescattering)-5"><span class="toc-item-num">5&nbsp;&nbsp;</span>Scattering de mie (<code>miescattering</code>)</a></span></li><li><span><a href="#Transporte-Radiativo-(rad_transfer)" data-toc-modified-id="Transporte-Radiativo-(rad_transfer)-6"><span class="toc-item-num">6&nbsp;&nbsp;</span>Transporte Radiativo (<code>rad_transfer</code>)</a></span><ul class="toc-item"><li><span><a href="#Beer-Lambert-(T_beer_lambert)" data-toc-modified-id="Beer-Lambert-(T_beer_lambert)-6.1"><span class="toc-item-num">6.1&nbsp;&nbsp;</span>Beer-Lambert (<code>T_beer_lambert</code>)</a></span></li><li><span><a href="#Scattering-multiple-(ad_rad_transfer)" data-toc-modified-id="Scattering-multiple-(ad_rad_transfer)-6.2"><span class="toc-item-num">6.2&nbsp;&nbsp;</span>Scattering multiple (<code>ad_rad_transfer</code>)</a></span></li></ul></li></ul></div></section>
+</section>
 <section id="conversion-de-unidades">
 <h2>Conversión de unidades<a class="headerlink" href="#conversion-de-unidades" title="Permalink to this headline">#</a></h2>
 <p>La librería <code class="docutils literal notranslate"><span class="pre">empylib</span></code> cuenta con la función <code class="docutils literal notranslate"><span class="pre">convert_units(x,</span> <span class="pre">x_in,</span> <span class="pre">to)</span></code> para convertir unidades. Los parámetros de entrada son:</p>
@@ -776,7 +775,7 @@ longitudes de onda en eV:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_8_0.png" src="../../_images/Tutorial1_8_0.png" />
+<img alt="../../_images/Tutorial1_7_0.png" src="../../_images/Tutorial1_7_0.png" />
 </div>
 </div>
 </section>
@@ -854,7 +853,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_13_0.png" src="../../_images/Tutorial1_13_0.png" />
+<img alt="../../_images/Tutorial1_12_0.png" src="../../_images/Tutorial1_12_0.png" />
 </div>
 </div>
 <p><strong>Constante dieléctrica según modelo de Lorentz</strong></p>
@@ -873,7 +872,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_15_0.png" src="../../_images/Tutorial1_15_0.png" />
+<img alt="../../_images/Tutorial1_14_0.png" src="../../_images/Tutorial1_14_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -894,10 +893,10 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe1fe124070&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fddfb63a370&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/Tutorial1_16_1.png" src="../../_images/Tutorial1_16_1.png" />
+<img alt="../../_images/Tutorial1_15_1.png" src="../../_images/Tutorial1_15_1.png" />
 </div>
 </div>
 <p><strong>Constante dieléctrica del agua modelo de Lorentz</strong></p>
@@ -954,7 +953,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_21_0.png" src="../../_images/Tutorial1_21_0.png" />
+<img alt="../../_images/Tutorial1_20_0.png" src="../../_images/Tutorial1_20_0.png" />
 </div>
 </div>
 </section>
@@ -1056,7 +1055,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function matplotlib.pyplot.show(close=None, block=None)&gt;
 </pre></div>
 </div>
-<img alt="../../_images/Tutorial1_28_1.png" src="../../_images/Tutorial1_28_1.png" />
+<img alt="../../_images/Tutorial1_27_1.png" src="../../_images/Tutorial1_27_1.png" />
 </div>
 </div>
 </section>
@@ -1133,7 +1132,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_33_0.png" src="../../_images/Tutorial1_33_0.png" />
+<img alt="../../_images/Tutorial1_32_0.png" src="../../_images/Tutorial1_32_0.png" />
 </div>
 </div>
 </section>
@@ -1178,7 +1177,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_35_0.png" src="../../_images/Tutorial1_35_0.png" />
+<img alt="../../_images/Tutorial1_34_0.png" src="../../_images/Tutorial1_34_0.png" />
 </div>
 </div>
 <p>En el límite de solo una interface, <code class="docutils literal notranslate"><span class="pre">interface</span></code>, <code class="docutils literal notranslate"><span class="pre">multilayer</span></code> y <code class="docutils literal notranslate"><span class="pre">incoh_multilayer</span></code> entregan el mismo resultado</p>
@@ -1262,7 +1261,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_40_0.png" src="../../_images/Tutorial1_40_0.png" />
+<img alt="../../_images/Tutorial1_39_0.png" src="../../_images/Tutorial1_39_0.png" />
 </div>
 </div>
 </section>
@@ -1321,7 +1320,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_43_0.png" src="../../_images/Tutorial1_43_0.png" />
+<img alt="../../_images/Tutorial1_42_0.png" src="../../_images/Tutorial1_42_0.png" />
 </div>
 </div>
 </section>
@@ -1377,7 +1376,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_45_0.png" src="../../_images/Tutorial1_45_0.png" />
+<img alt="../../_images/Tutorial1_44_0.png" src="../../_images/Tutorial1_44_0.png" />
 </div>
 </div>
 </section>

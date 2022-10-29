@@ -20,9 +20,6 @@
 # ```
 # Esta instancia debe ser ejecutada solo una vez.
 
-# <h1>Contenidos<span class="tocSkip"></span></h1>
-# <div class="toc"><ul class="toc-item"><li><span><a href="#Instrucciones-de-instalación" data-toc-modified-id="Instrucciones-de-instalación-1">Instrucciones de instalación</a></span></li><li><span><a href="#Distribución-de-Planck-(Bplanck)" data-toc-modified-id="Distribución-de-Planck-(Bplanck)-2">Distribución de Planck (<code>Bplanck</code>)</a></span></li><li><span><a href="#Irradiación-solar,-espectro-AM1.5-(AM15)" data-toc-modified-id="Irradiación-solar,-espectro-AM1.5-(AM15)-3">Irradiación solar, espectro AM1.5 (<code>AM15</code>)</a></span></li><li><span><a href="#Transmitancia-atmosférica-(T_atmosphere)" data-toc-modified-id="Transmitancia-atmosférica-(T_atmosphere)-4">Transmitancia atmosférica (<code>T_atmosphere</code>)</a></span></li></ul></div>
-
 # In[1]:
 
 
@@ -155,16 +152,16 @@ sigma = 5.6704E-8 # constante de Stefan-Boltzmann
 Tsun = 5777     # temperatura efectiva del sol (K)
 Gsun = 1367      # constante solar (W/m^2)
 
-Isun_global = rf.AM15(lam,spectra_type='global')
-Isun_direct = rf.AM15(lam,spectra_type='direct')
-Isun_out    = Gsun/(sigma*Tsun**4)*np.pi*rf.Bplanck(lam,Tsun)
+Gsun_global = rf.AM15(lam,spectra_type='global')
+Gsun_direct = rf.AM15(lam,spectra_type='direct')
+Gsun_out    = Gsun/(sigma*Tsun**4)*np.pi*rf.Bplanck(lam,Tsun)
 
 # Graficamos resultados
 fig, ax = plt.subplots()
 plt.rcParams['font.size'] = '12'
-ax.plot(lam,Isun_out   ,'-r',label ='Extraterrestre')
-ax.plot(lam,Isun_global,'-b',label ='AM1.5 global')
-ax.plot(lam,Isun_direct,'-g',label ='AM1.5 direct')
+ax.plot(lam,Gsun_out   ,'-r',label ='Extraterrestre')
+ax.plot(lam,Gsun_global,'-b',label ='AM1.5 global')
+ax.plot(lam,Gsun_direct,'-g',label ='AM1.5 direct')
 
 ax.set_xlabel('Longitud de onda ($\mu$m)')
 ax.set_ylabel('Irradianca espectral (W/m$^2$-$\mu$m)')
@@ -177,7 +174,7 @@ plt.show()
 # 
 # Esta función permite determinar la transmitancia atmosférica a partir de un espectro de longitudes de onda. Como valor de entrada la función requiere el espectro de longitudes de onda `lam` en unidades de micrometros. 
 # 
-# En el siguiente ejemplo graficaremos la radiación de cuerpo negro con $T = 300$ K, el AM1.5 global y la transmitancia atmosférica.
+# En el siguiente ejemplo graficaremos la radiación de cuerpo negro con $T = 300$ K, el AM1.5 global y la transmitancia atmosférica. Debido a la diferencia de escalas, **utilizaremos el eje de la derecha para cuantificar la transmitancia atmosférica ($\tau_{\mathrm{atm},\lambda}$), y el eje de la izquierda para la radiación solar y de cuerpo negro**.
 
 # In[6]:
 
@@ -187,24 +184,52 @@ from matplotlib.ticker import ScalarFormatter, FuncFormatter
 
 lam = np.logspace(np.log10(0.3),np.log10(100),1000) # espectro de longitudes de onda
 
-T_atm = rf.T_atmosphere(lam)
-Isun = rf.AM15(lam)
-Ibb = np.pi*rf.Bplanck(lam,300)
+T_atm = rf.T_atmosphere(lam)     # Transmitancia atmosférica
+Gsun = rf.AM15(lam)              # GHI solar AM1.5
+Ebb = np.pi*rf.Bplanck(lam,300)  # Poder de emisión espectral hemisférico de un cuerpo negro
 
-fig, ax = plt.subplots(figsize=(12,4))
-ax.fill(lam,Isun,'-y',alpha=0.2,label='AM1.5')
-ax.fill(lam,Ibb*10,'-r',alpha=0.2,label=r'$E_{\mathrm{bb},\lambda}\times 10$ ')
-ax2=ax.twinx()
-ax2.fill(lam,T_atm*100,'-b',alpha=0.2,label = 'T. atmosférica')
+fig, ax1 = plt.subplots(figsize=(12,4))
+ax2=ax1.twinx()                          # segundo eje para unidades de radiación espectral
+ax1.plot(lam,Gsun,'-y',label='AM1.5')
+ax1.plot(lam,Ebb*10,'-r',label=r'$E_{\mathrm{bb},\lambda}\times 10$ ')
+ax2.plot(lam,T_atm*100,'-b', label = r'$\tau_\mathrm{atm}$')
 
-ax.set_xlabel('Wavelength, $\mu$m')
-ax.set_ylabel('Spectral irradiance (W/m$^2$-$\mu$m)')
-ax.set_xscale('log')
-ax.set_xticks([0.3,0.4,0.75,1.4,3,8,15,30, 50, 100])
-ax.set_xlim(0.3,100)
-ax2.set_ylabel('Transmittance (%)')
-ax.xaxis.set_major_formatter(FuncFormatter(lambda y, _: '{:.16g}'.format(y)))
-ax.legend(frameon=False,loc='lower right')
+ax1.set_xlabel('Longitud de onda, $\mu$m')
+ax1.set_xscale('log')
+ax1.set_xticks([0.3,0.4,0.75,1.4,3,8,15,30, 50, 100])
+ax1.set_ylabel('Irradiancia espectral (W/m$^2$-$\mu$m)')
+ax2.set_ylabel('Transmitancia (%)')
+ax2.set_xlim(0.3,100)
+
+ax1.xaxis.set_major_formatter(FuncFormatter(lambda y, _: '{:.16g}'.format(y)))
+ax1.legend(frameon=False,loc='lower right')
 ax2.legend(frameon=False,loc='upper right')
 plt.show()
+
+
+# **Nota** Para valores $\lambda > 20$ $\mu$m y $\lambda < 0.8$ $\mu$m, `T_atmosphere = 0` automáticamente. Aunque no es consistente con la realidad, esta condicion no induce un error significativo, ya que el espectro de emisión de la atmosféra ocurre en el infrarojo medio. Esto último, considerando a la atmósfera como un cuerpo negro a temperatura $T_\mathrm{atm}\sim 0-35$°C.
+
+# En efecto, esto lo podemos confirmar graficando el poder de emisión hemisférico espectral de la atmósfera:
+# 
+# \begin{equation*}
+# E_{\mathrm{atm},\lambda} = (1 - \tau_{\mathrm{atm},\lambda})\pi I_{\mathrm{bb},\lambda}(\lambda,T_\mathrm{atm})\quad\frac{\mathrm{W}}{\mathrm{m}^2 \mu\mathrm{m}}
+# \end{equation*}
+# 
+# donde asumimos $\rho_{\mathrm{atm},\lambda} = 0$ debido a que la atmosféra esta compuesta de gases.
+
+# In[7]:
+
+
+Tatm = 300                                           # Temperatura de la atmósfera (K)
+Eatm = (1 - rf.T_atmosphere(lam))*np.pi*rf.Bplanck(lam,Tatm) # Poder de emisión de la atmósfera (W/m^2-um)
+
+fig, ax1 = plt.subplots(figsize=(12,4))
+ax1.plot(lam,Eatm)
+
+ax1.set_xlabel('Longitud de onda, $\mu$m')
+ax1.set_ylabel('Poder de emisión (W/m$^2$-$\mu$m)')
+ax1.set_title('Poder de emisión de la atmósfera a %.1f °C' % (Tatm - 273))
+ax1.set_xscale('log')
+ax1.set_xticks([0.3,0.4,0.75,1.4,3,8,15,30, 50, 100])
+ax1.xaxis.set_major_formatter(FuncFormatter(lambda y, _: '{:.16g}'.format(y)))
 
