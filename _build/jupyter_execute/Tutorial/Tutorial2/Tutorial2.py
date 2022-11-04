@@ -183,7 +183,7 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import ScalarFormatter, FuncFormatter
 
 lam = np.logspace(np.log10(0.3),np.log10(100),1000) # espectro de longitudes de onda
-Tbb = 300 # temperatura de cuerpo negro
+Tbb = 300                                           # temperatura de cuerpo negro
 
 T_atm = rf.T_atmosphere(lam)     # Transmitancia atmosférica
 Gsun = rf.AM15(lam)              # GHI solar AM1.5

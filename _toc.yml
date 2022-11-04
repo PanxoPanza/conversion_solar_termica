@@ -19,6 +19,7 @@ parts:
     - file: 6_RadiacionTermica/6_RadiacionTermica
     - file: 7_Radiación_solar/7_Radiación_solar
     - file: 8_ColetorSolar/8_ColetorSolar
+    - file: 9_CentralTermoSolar/9_CentralTermoSolar
   - caption: Apéndice
     numbered: false
     chapters:

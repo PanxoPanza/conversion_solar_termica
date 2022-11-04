@@ -50,6 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -165,6 +167,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../8_ColetorSolar/8_ColetorSolar.html">
    8. Colectores solares estacionarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../9_CentralTermoSolar/9_CentralTermoSolar.html">
+   9. Centrales Termosolar
   </a>
  </li>
 </ul>
@@ -572,7 +579,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/mnt/d/OneDrive - Universidad Adolfo Ibanez/ComputerCodes/Python/custom_packages/empylib/ref_spectra/ref_spectra.py:161: RuntimeWarning: overflow encountered in exp
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/mnt/c/Users/francisco.ramirez.c/OneDrive - Universidad Adolfo Ibanez/ComputerCodes/Python/custom_packages/empylib/ref_spectra/ref_spectra.py:161: RuntimeWarning: overflow encountered in exp
   Ibb = 2*h*c0**2./ll**5*1/(np.exp(h*c0/(ll*T*kB)) - 1)*1E-6
 </pre></div>
 </div>
@@ -664,7 +671,7 @@ I_\mathrm{sun,out} = \frac{G_\mathrm{sun}}{\sigma T^4_\mathrm{sun}} \pi I_{\math
 <span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">ScalarFormatter</span><span class="p">,</span> <span class="n">FuncFormatter</span>
 
 <span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mf">0.3</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span><span class="mi">1000</span><span class="p">)</span> <span class="c1"># espectro de longitudes de onda</span>
-<span class="n">Tbb</span> <span class="o">=</span> <span class="mi">300</span> <span class="c1"># temperatura de cuerpo negro</span>
+<span class="n">Tbb</span> <span class="o">=</span> <span class="mi">300</span>                                           <span class="c1"># temperatura de cuerpo negro</span>
 
 <span class="n">T_atm</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">T_atmosphere</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>     <span class="c1"># Transmitancia atmosférica</span>
 <span class="n">Gsun</span> <span class="o">=</span> <span class="n">rf</span><span class="o">.</span><span class="n">AM15</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>              <span class="c1"># GHI solar AM1.5</span>
