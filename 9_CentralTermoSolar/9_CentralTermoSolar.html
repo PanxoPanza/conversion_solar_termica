@@ -1,0 +1,917 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>9. Central Termosolar &#8212; MEC501 - Manejo y conversión de energía solar térmica</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutoriales" href="../Tutorial/Intro.html" />
+    <link rel="prev" title="8. Colectores solares estacionarios" href="../8_ColetorSolar/8_ColetorSolar.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MEC501 - Manejo y conversión de energía solar térmica</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Bienvenidos al curso
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0_introduccion/0_introduccion.html">
+   Introducción al curso
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unidades del curso
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_ondas_electromagneticas/1_ondas_electromagneticas.html">
+   1. La radiación como un fenómeno electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html">
+   2. Ondas electromagnéticas en la materia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Interacci%C3%B3n_materia-luz/3_Interacci%C3%B3n_materia-luz.html">
+   3. Interacción materia-luz
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Scattering/4_Scattering.html">
+   4. Scattering electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5_TransporteRadiativo/5_TransporteRadiativo.html">
+   5. Transporte Radiativo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6_RadiacionTermica/6_RadiacionTermica.html">
+   6. Radiación Térmica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../7_Radiaci%C3%B3n_solar/7_Radiaci%C3%B3n_solar.html">
+   7. Radiación Solar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../8_ColetorSolar/8_ColetorSolar.html">
+   8. Colectores solares estacionarios
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   9. Central Termosolar
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Apéndice
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Tutorial/Intro.html">
+   Tutoriales
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorial/Tutorial1/Tutorial1.html">
+     Tutorial 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorial/Tutorial2/Tutorial2.html">
+     Tutorial 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/9_CentralTermoSolar/9_CentralTermoSolar.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/9_CentralTermoSolar/9_CentralTermoSolar.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion">
+   9.1. Introducción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistema-de-captura-de-energia-solar-termica">
+   9.2. Sistema de captura de energía solar térmica
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tipos-de-concentradores-solares">
+     9.2.1. Tipos de concentradores solares
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#almacenamiento-y-transporte-de-energia-termica">
+   9.3. Almacenamiento y transporte de energía térmica
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#agua">
+     9.3.1. Agua
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aceites-termicos">
+     9.3.2. Aceites térmicos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sales-fundidas">
+     9.3.3. Sales fundidas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ciclos-termodinamicos-para-conversion-de-energia-solar-termica">
+   9.4. Ciclos termodinámicos para conversión de energía solar térmica
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ciclo-rankine">
+     9.4.1. Ciclo Rankine
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caracteristicas-de-una-central-termosolar">
+   9.5. Características de una central termosolar
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#central-solar-de-colectores-parabolicos">
+     9.5.1. Central solar de colectores parabólicos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#central-solares-de-torre-de-potencia">
+     9.5.2. Central solares de torre de potencia
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#central-de-reflector-linear-fresnel">
+     9.5.3. Central de reflector linear Fresnel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#centrales-de-disco-parabolico">
+     9.5.4. Centrales de disco parabólico
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   9.6. Referencias
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Central Termosolar</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion">
+   9.1. Introducción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistema-de-captura-de-energia-solar-termica">
+   9.2. Sistema de captura de energía solar térmica
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tipos-de-concentradores-solares">
+     9.2.1. Tipos de concentradores solares
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#almacenamiento-y-transporte-de-energia-termica">
+   9.3. Almacenamiento y transporte de energía térmica
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#agua">
+     9.3.1. Agua
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aceites-termicos">
+     9.3.2. Aceites térmicos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sales-fundidas">
+     9.3.3. Sales fundidas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ciclos-termodinamicos-para-conversion-de-energia-solar-termica">
+   9.4. Ciclos termodinámicos para conversión de energía solar térmica
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ciclo-rankine">
+     9.4.1. Ciclo Rankine
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caracteristicas-de-una-central-termosolar">
+   9.5. Características de una central termosolar
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#central-solar-de-colectores-parabolicos">
+     9.5.1. Central solar de colectores parabólicos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#central-solares-de-torre-de-potencia">
+     9.5.2. Central solares de torre de potencia
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#central-de-reflector-linear-fresnel">
+     9.5.3. Central de reflector linear Fresnel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#centrales-de-disco-parabolico">
+     9.5.4. Centrales de disco parabólico
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   9.6. Referencias
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font></p>
+<section class="tex2jax_ignore mathjax_ignore" id="central-termosolar">
+<h1><span class="section-number">9. </span>Central Termosolar<a class="headerlink" href="#central-termosolar" title="Permalink to this headline">#</a></h1>
+<p><br><br><br><br>
+Profesor: Francisco Ramírez Cuevas<br>
+Fecha: 4 de noviembre 2022</p>
+<section id="introduccion">
+<h2><span class="section-number">9.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this headline">#</a></h2>
+<p>Los colectores estacionarios permiten alcanzar temperaturas relativamente bajas. Esto debido a que el absorvedor y la apertura del sistema (definido por la covertura transparente) tiene áreas similares. El formato es ventajoso para sistemas estacionarios, ya que permite capturar gran parte de la radiación solar difusa y directa sin necesidad de cambiar la orientación del colector.</p>
+<p>Intuitivamente, una forma de <strong>aumentar la temperatura de trabajo es reducir el área del absorbedor y aumentar el área de la apertura</strong>. Esto permite incrementar el flujo de energía por unidad de superficie y, por consecuencia, aumentar la temperatura de salida del fluido de trabajo.</p>
+<p>Llamamos <strong>concentración solar</strong> a la práctica de aumentar la razón de áreas entre la apertura y el absorbedor.</p>
+<p>¿Para qué necesitamos mayores temperaturas?</p>
+<p>La mejor forma de entender el efecto de un aumento de temperatura es mediante el <strong>ciclo de Carnot,</strong> <em>un modelo idealizado de un ciclo termodinámico de potencia que opera entre una fuente a temperatura <span class="math notranslate nohighlight">\(T_\mathrm{H}\)</span> y que rechaza calor a un sumidero con temperatura <span class="math notranslate nohighlight">\(T_\mathrm{C}\)</span></em>.</p>
+<a class="reference internal image-reference" href="../_images/Carnot_Cycle.png"><img alt="../_images/Carnot_Cycle.png" class="align-center" src="../_images/Carnot_Cycle.png" style="width: 300px;" /></a>
+<p><strong>El ciclo de Carnot define la máxima eficiencia</strong> que puede alcanzar un ciclo termodinámico operando en estas condiciones:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\eta = 1 - \frac{T_\mathrm{C}}{T_\mathrm{H}}
+\end{equation*}\]</div>
+<p>Comúnmente, el calor <span class="math notranslate nohighlight">\(Q_\mathrm{C}\)</span> es rechazado al ambiente y, por lo tanto, <span class="math notranslate nohighlight">\(T_\mathrm{C} = T_a\)</span>, donde <span class="math notranslate nohighlight">\(T_a\)</span> es la temperatura atmosférica.</p>
+<p>Así, la eficiencia termodínámica del sistema está condicionada por <span class="math notranslate nohighlight">\(T_\mathrm{H}\)</span>.</p>
+<p>En conclución, <strong>la concentración solar permite aumentar la eficiencia termodinámica del sistema y, por consecuencia, un mejor aprovechamiento de la energía solar térmica.</strong></p>
+<p>¿Cómo transformamos la energía solar capturada en energía útil?</p>
+<p>En el caso de los colectores estacionarios, la principal función es obtener agua caliente. La concentración solar, sin embargo, permite generar vapor de agua, el cual puede ser utilizado para generar energía eléctrica a travéz de una turbina de vapor acoplada a un alternador.</p>
+<p>Una <strong>central termosolar es una instalación de generación de energía eléctrica a través de un ciclo termodinámico de vapor.</strong></p>
+<p>Los principales componentes de una central termosolar son:</p>
+<ul class="simple">
+<li><p>Sistemas de captura de energía solar térmica (concentradores solares)</p></li>
+<li><p>Sistema de transporte y almacenaje de energía térmica (Fluído de transferencia de calor)</p></li>
+<li><p>Sistema de conversión de energía térmica a energía eléctrica (Ciclo termodinámico)</p></li>
+</ul>
+<p>A continuación revisaremos los aspectos principales de cada uno de estos componentes</p>
+</section>
+<section id="sistema-de-captura-de-energia-solar-termica">
+<h2><span class="section-number">9.2. </span>Sistema de captura de energía solar térmica<a class="headerlink" href="#sistema-de-captura-de-energia-solar-termica" title="Permalink to this headline">#</a></h2>
+<p>Para la captura de energía solar en centrales termosolares se utilizan colectores solares de concentración.</p>
+<p>El colector de concentración se compone de dos partes:</p>
+<ul class="simple">
+<li><p>Un <strong>concentrador</strong>, encargado de enfocar los rayos del sol en un área de menor tamaño</p></li>
+<li><p>Un <strong>receptor</strong>, encargado de convertir la energía concentrada en calor útil.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/solar_colector_concentrator_intro.png"><img alt="../_images/solar_colector_concentrator_intro.png" class="align-center" src="../_images/solar_colector_concentrator_intro.png" style="width: 900px;" /></a>
+<p>Los <strong>concentradores solares</strong> puede ser de diversos formatos:</p>
+<ul class="simple">
+<li><p>Reflectores o refractores (lentes). <em>Comúnmente, reflectores</em></p></li>
+<li><p>Cilíndricos o parabólicos</p></li>
+<li><p>Continuos o segmentados.</p></li>
+</ul>
+<p>El <strong>receptor</strong> puede ser convexo, plano, cilíndrico o concavo. Suelen también estar cubierto por un material transparente separado a una pequeña distancia de la superficie del receptor, generando así un efecto aislante. El espacio entre el receptor y el material transparente puede ser aire o vacío.</p>
+<a class="reference internal image-reference" href="../_images/solar_reciever.png"><img alt="../_images/solar_reciever.png" class="align-center" src="../_images/solar_reciever.png" style="width: 600px;" /></a>
+<p>Un aspecto fundamental de los colectores solares de concentración es la <strong>relación de concentración, <span class="math notranslate nohighlight">\(C_r\)</span></strong>, definida como:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-db9af408-1969-494b-bd0e-2404ad9a766d">
+<span class="eqno">(9.1)<a class="headerlink" href="#equation-db9af408-1969-494b-bd0e-2404ad9a766d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+C_r = \frac{A_c}{A_r},
+\end{equation}\]</div>
+<p>donde, <span class="math notranslate nohighlight">\(A_c\)</span> es el área del concentrador, y <span class="math notranslate nohighlight">\(A_r\)</span> el área del receptor.</p>
+<p>Este parámetro puede variar desde 1 a valores del orden de 10.000. A mayor nivel de concentración mayor temperatura, pero menor caputa luz incidente en ángulos oblicuos.</p>
+<p>Así, a mayor nivel de concentración, mayores serán los requerimientos para los elementos ópticos y de seguimiento.</p>
+<section id="tipos-de-concentradores-solares">
+<h3><span class="section-number">9.2.1. </span>Tipos de concentradores solares<a class="headerlink" href="#tipos-de-concentradores-solares" title="Permalink to this headline">#</a></h3>
+<p><strong>Concentrador de canal parabólico</strong></p>
+<ul class="simple">
+<li><p>Es la tecnología más madura en centrales termosolares</p></li>
+<li><p>Consiste en un tubo que pasa por el punto focal de un canal parabólico</p></li>
+<li><p>Las relaciones de concentración pueden variar entre 10 - 85</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/parabolic_trough_collector.png"><img alt="../_images/parabolic_trough_collector.png" class="align-center" src="../_images/parabolic_trough_collector.png" style="width: 600px;" /></a>
+<p><strong>Reflector lineal Fresnel</strong></p>
+<p>El reflector lineal de Fresnel se basa en el principio de los lentes de Fresnel. Estos lentes permiten enfocar luz de forma similar a un lente convexo, pero con un volumen de material menor. Se utilizan en diversas aplicaciones como faros, lámparas y focos de automoviles.</p>
+<a class="reference internal image-reference" href="../_images/Fresnel_lens.png"><img alt="../_images/Fresnel_lens.png" class="align-center" src="../_images/Fresnel_lens.png" style="width: 700px;" /></a>
+<p>La siguiente imagen muestra como el lente de Fresnel redirecciona los rayos de una fuente en el punto focal (<a class="reference external" href="https://www.parabolixlight.com/fresnel-lens-and-parabolic-reflectors">más info acá</a>).</p>
+<a class="reference internal image-reference" href="../_images/Fresnel_lens_focus.png"><img alt="../_images/Fresnel_lens_focus.png" class="align-center" src="../_images/Fresnel_lens_focus.png" style="width: 800px;" /></a>
+<p>El reflector lineal Fresnel opera de forma similar a un lente de Fresnel pero con espejos en lugar de lentes.</p>
+<ul class="simple">
+<li><p>Las relaciones de concentración pueden ser entre 10 - 40.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/linear_fresnel_collector.png"><img alt="../_images/linear_fresnel_collector.png" class="align-center" src="../_images/linear_fresnel_collector.png" style="width: 800px;" /></a>
+<p><strong>Concentrador de disco parabólico</strong></p>
+<ul class="simple">
+<li><p>Consiste en un paraboloide que concentra la luz en un punto focal</p></li>
+<li><p>El principio de funcionamiento es similar al de una antena, con sistema de seguimiento de dos ejes.</p></li>
+<li><p>La relación de concentración varía entre 600 - 2000.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/parabolic_dish_collector.png"><img alt="../_images/parabolic_dish_collector.png" class="align-center" src="../_images/parabolic_dish_collector.png" style="width: 700px;" /></a>
+<p><strong>Colector de helióstatos</strong></p>
+<ul class="simple">
+<li><p>Similar al concentrador de disco parabólico pero a gran escala.</p></li>
+<li><p>El receptor se ubica en la punta de una torre cental.</p></li>
+<li><p>Una serie de espejos planos móbiles, también denominados heliostatos concentran la radiación solar hacia el receptor.</p></li>
+<li><p>Las relación de concentración en estos sistemas es del orden de 300 - 1500</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Heliostat_solar_concentrator.png"><img alt="../_images/Heliostat_solar_concentrator.png" class="align-center" src="../_images/Heliostat_solar_concentrator.png" style="width: 700px;" /></a>
+</section>
+</section>
+<section id="almacenamiento-y-transporte-de-energia-termica">
+<h2><span class="section-number">9.3. </span>Almacenamiento y transporte de energía térmica<a class="headerlink" href="#almacenamiento-y-transporte-de-energia-termica" title="Permalink to this headline">#</a></h2>
+<p>El principal componente de este sistema es el <strong>fluido de transferencia de calor (HTF por sus siglas en ingles)</strong>. El HTF es el encargado de transportar y almacenar la energía térmica capturada en el receptor de forma eficiente.</p>
+<p>Las propiedades más importantes son:</p>
+<ul class="simple">
+<li><p>Temperatura de cambio de fase <span class="math notranslate nohighlight">\(T_{fg}\)</span> menor a la temperatura de operación del ciclo</p></li>
+<li><p>Calor específico <span class="math notranslate nohighlight">\(C_p\)</span> alto (almacenamiento de calor)</p></li>
+<li><p>Conductividad térmica <span class="math notranslate nohighlight">\(k_f\)</span> alta</p></li>
+<li><p>viscosidad baja y densidad alta.</p></li>
+</ul>
+<section id="agua">
+<h3><span class="section-number">9.3.1. </span>Agua<a class="headerlink" href="#agua" title="Permalink to this headline">#</a></h3>
+<p>El agua es el HTF más popular en aplicaciones industriales debido a su gran entalpía de evaporación, calor específico y baja viscosidad.</p>
+<p>En las centrales termosolares contemporaneas, el agua opera como HTF y es convertida en vapor directamente en el receptor. Sin emgargo, esto reduce la conductividad térmica y la capacidad de almacenar calor por tiempos superiores a 1-2 horas.</p>
+<p>En las centrales termosolares modernas, el agua es convertida a vapor indirectamente a través de un intercambiador de calor por donde circula un HTF que transporta la energía térmica capturada en el receptor.</p>
+</section>
+<section id="aceites-termicos">
+<h3><span class="section-number">9.3.2. </span>Aceites térmicos<a class="headerlink" href="#aceites-termicos" title="Permalink to this headline">#</a></h3>
+<p>Los aceites térmicos permiten temperaturas de operación de hasta 300 - 400° C. La principal desventaja de estos aceites radica en su flamabilidad y descomposición a temperaturas elevadas.</p>
+<p>La siguiente tabla corresponde a las propiedades de un HTF de la compañia <a class="reference external" href="https://globalhtf.com/application/solar/#:~:text=Heat%20Transfer%20Fluid%20for%20Concentrated%20Solar%20Power%20and%20Thermal%20Storage,in%20solar%20thermal%20electricity%20applications.">Omnitech</a>.</p>
+<a class="reference internal image-reference" href="../_images/heat_transfer_fluid_oil.jpg"><img alt="../_images/heat_transfer_fluid_oil.jpg" class="align-center" src="../_images/heat_transfer_fluid_oil.jpg" style="width: 700px;" /></a>
+</section>
+<section id="sales-fundidas">
+<h3><span class="section-number">9.3.3. </span>Sales fundidas<a class="headerlink" href="#sales-fundidas" title="Permalink to this headline">#</a></h3>
+<p>Los líquidos iónicos o sales fundidas, son sales con bajo punto de fusión que permiten operar a temperaturas elevadas entre 250 a 1000° C. Tienen  viscocidad relativamente baja, alta estabilidad térmica y no son inflamables. Debido a su alto calor específico, permiten almacenar calor hasta por 15 horas contínuas.</p>
+<p>Su principal desventaja está asociada a la alta corroción. Esto debido a que las sales son higroscópicas, es decir, absorben la humedad del aire con facilidad. Sin embargo, hay investigación en curso que busca reducir este problema</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="400"
+    src="https://www.youtube.com/embed/BEOkxg25DfI"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+</section>
+</section>
+<section id="ciclos-termodinamicos-para-conversion-de-energia-solar-termica">
+<h2><span class="section-number">9.4. </span>Ciclos termodinámicos para conversión de energía solar térmica<a class="headerlink" href="#ciclos-termodinamicos-para-conversion-de-energia-solar-termica" title="Permalink to this headline">#</a></h2>
+<section id="ciclo-rankine">
+<h3><span class="section-number">9.4.1. </span>Ciclo Rankine<a class="headerlink" href="#ciclo-rankine" title="Permalink to this headline">#</a></h3>
+<p>La mayoría de las centrales termosolares operan en base al <strong>ciclo Rankine</strong>. Este ciclo se basa en la generación de energía mecánica a través de turbinas por donde circula vapor.</p>
+<p>En su forma simplificada, el ciclo Rankine está compuesto de una <strong>caldera (boiler)</strong> que suministra el calor al fluido, una <strong>turbina (turbine)</strong> por donde circula el vapor, un <strong>condensador (condenser)</strong> encargado del rechazo de calor y del cambio de fase vapor-agua, y una <strong>bomba (pump)</strong>, que alimenta a la caldera.</p>
+<a class="reference internal image-reference" href="../_images/Rankin_cycle.png"><img alt="../_images/Rankin_cycle.png" class="align-center" src="../_images/Rankin_cycle.png" style="width: 700px;" /></a>
+<p>Es práctica común complementar el ciclo con etapas de recalentamiento y regeneración con el fin de mejorar la eficiencia térmodinámica.</p>
+<p><strong>Ciclo Rankine con recalentamiento</strong></p>
+<a class="reference internal image-reference" href="../_images/reheated_Rankin_cycle.png"><img alt="../_images/reheated_Rankin_cycle.png" class="align-center" src="../_images/reheated_Rankin_cycle.png" style="width: 700px;" /></a>
+<p><strong>Ciclo Rankine regenerativo</strong></p>
+<a class="reference internal image-reference" href="../_images/regenerative_Rankin_cycle.png"><img alt="../_images/regenerative_Rankin_cycle.png" class="align-center" src="../_images/regenerative_Rankin_cycle.png" style="width: 700px;" /></a>
+</section>
+</section>
+<section id="caracteristicas-de-una-central-termosolar">
+<h2><span class="section-number">9.5. </span>Características de una central termosolar<a class="headerlink" href="#caracteristicas-de-una-central-termosolar" title="Permalink to this headline">#</a></h2>
+<p>El esquema básico de una central termosolar consiste en un <strong>ciclo térmico donde el calor de la caldera es reemplazado por el calor extraido por el concentrador solar</strong>. Comúnmente, las centrales solares utilizan sistemas de almacenamiento de calor en base a sales fundidas o cerámicos, además de una caldera como backup, que permiten una operación continua duarante periodos nublados y durante la noche.</p>
+<a class="reference internal image-reference" href="../_images/solar_power_plant_general.png"><img alt="../_images/solar_power_plant_general.png" class="align-center" src="../_images/solar_power_plant_general.png" style="width: 500px;" /></a>
+<p>En el caso de sales fundidas, estas pueden operar directamente en el circuito del colector (como HTF), o bien solo para almacenaje de energía. En el segundo caso, se necesita un intercambiador de calor para transferir el calor del HTF a las sales fundidas.</p>
+<section id="central-solar-de-colectores-parabolicos">
+<h3><span class="section-number">9.5.1. </span>Central solar de colectores parabólicos<a class="headerlink" href="#central-solar-de-colectores-parabolicos" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Están basadas en colectores de canal parabólico</p></li>
+<li><p>Correponde a la tecnología más madura y popular en centrales solares.</p></li>
+<li><p>El sistema puede alcanzar temperaturas entre 60 - 400°C</p></li>
+<li><p>Comúnmente, utlizan aceites térmicos como HTF, y en menor medida sales fundidas.</p></li>
+</ul>
+<p>El siguiente video muestra el detalle de una central solar piloto basada en sales fundidas. El proyecto comenzó su operación el 2021, y es llevado a cabo por DLR (Deutsches Zentrum für Luft- und Raumfahrt, Alemania) y University of Évora (Portugal). <a class="reference external" href="https://www.dlr.de/content/en/articles/news/2022/02/20220428_salt-makes-solar-thermal-power-more-cost-effective.html">Más información acá</a>.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="400"
+    src="https://www.youtube.com/embed/5zHSPFUD1L8"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+<p>En la siguiente imagen se muestra una fotografía de la central solar de concentradores parabólicos <em>Solar Energy Generating Systems (SEGS)</em> en el desierto Monjave, California, Estados Unidos, con capacidad de 160 MW.</p>
+<a class="reference internal image-reference" href="../_images/SEGS_plant.png"><img alt="../_images/SEGS_plant.png" class="align-center" src="../_images/SEGS_plant.png" style="width: 700px;" /></a>
+<p>La limpieza de los canales parabólicos es crítica para el correcto funcionamiento del sistema, y existen equipos especializados para esto.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="400"
+    src="https://www.youtube.com/embed/41M8GxY12D8"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+<p>El esquema a continuación corresponde a un ciclo típico de una central solar parabólica. Esta planta opera con aceite térmico como HTF, utiliza sales fundidas para el almacenamiento de calor</p>
+<a class="reference internal image-reference" href="../_images/parabolic_trough_plant_thermodynamic_cycle.png"><img alt="../_images/parabolic_trough_plant_thermodynamic_cycle.png" class="align-center" src="../_images/parabolic_trough_plant_thermodynamic_cycle.png" style="width: 700px;" /></a>
+<p>La siguiente lista comprende las 10 centrales solares de canal parabólico con mayor capacidad:</p>
+<a class="reference internal image-reference" href="../_images/Parabolic_plants_registry.png"><img alt="../_images/Parabolic_plants_registry.png" class="align-center" src="../_images/Parabolic_plants_registry.png" style="width: 700px;" /></a>
+</section>
+<section id="central-solares-de-torre-de-potencia">
+<h3><span class="section-number">9.5.2. </span>Central solares de torre de potencia<a class="headerlink" href="#central-solares-de-torre-de-potencia" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Es la segunda alternativa más popular en centrales solares</p></li>
+<li><p>Pueden alcanzar temperaturas entre 150 - 2000°C.</p></li>
+<li><p>Comúnmente, utilizan sales fundidas como fluido de trabajo, aunque también existen centrales en base a vapor.</p></li>
+<li><p>En el caso de las sales fundidas, el sistema permite una autonomía de más de 15 horas sin presencia de radiación solar.</p></li>
+<li><p>Debido a su gran tamaño, permiten calentar grandes volúmenes de fluido con alto nivel de concentración.</p></li>
+</ul>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="400"
+    src="https://www.youtube.com/embed/JbJ7AVHBQfs"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+<p>La imagen a continuación corresponde a la planta solar Cerro Dominador en María Elena, Antofagasta, Chile. La planta tiene una capacidad de 110 MW, el HTF es sales fundidas y tiene una autonomía de 17.5 horas.</p>
+<a class="reference internal image-reference" href="../_images/cerro_dominador.png"><img alt="../_images/cerro_dominador.png" class="align-center" src="../_images/cerro_dominador.png" style="width: 900px;" /></a>
+<p>La siguiente lista comprende las 10 centrales con mayor capacidad basadas en concentrador de canal parabólico:</p>
+<a class="reference internal image-reference" href="../_images/tower_plants_registry.png"><img alt="../_images/tower_plants_registry.png" class="align-center" src="../_images/tower_plants_registry.png" style="width: 700px;" /></a>
+</section>
+<section id="central-de-reflector-linear-fresnel">
+<h3><span class="section-number">9.5.3. </span>Central de reflector linear Fresnel<a class="headerlink" href="#central-de-reflector-linear-fresnel" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Una tecnología relativamente nueva en centrales solares</p></li>
+<li><p>Permite alcanzar temperaturas entre 60 - 250°C</p></li>
+<li><p>Operan con vapor como HTF.</p></li>
+<li><p>Debido a su ligera estructura tienen el pontencial de ser instalados en techos de edificaciones.</p></li>
+</ul>
+<p>Actualmente solo existen dos plantas basada en esta tecnología:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://solarpaces.nrel.gov/project/dhursar">Dhursar</a>, distrito de Jaisalmer, India. Tiene una capacidad nominal de 125 MW y está basada en vapor de agua. Opera desde el año 2014</p></li>
+<li><p><a class="reference external" href="https://solarpaces.nrel.gov/project/lanzhou-dacheng-dunhuang-dctc-dunhuang-50mw-fresnel">DCTC Dunhuang</a>, región de Gansu, China. Tiene una capacidad nominal de 50 MW y está basada en sales fundidas como HTF. Opera desde el 2018</p></li>
+</ul>
+<p>La siguiente imagen corresponde a la planta DCTC Dunhuang en China.</p>
+<a class="reference internal image-reference" href="../_images/Dacheng_Dunhuang_LFR.png"><img alt="../_images/Dacheng_Dunhuang_LFR.png" class="align-center" src="../_images/Dacheng_Dunhuang_LFR.png" style="width: 900px;" /></a>
+<p>En el siguiente video se muestra el funcionamiento de una planta piloto desarrollada por la compañía <a class="reference external" href="https://www.industrial-solar.de/en/">Industrial Solar</a></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="400"
+    src="https://www.youtube.com/embed/1CatPf-xoC4"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+</section>
+<section id="centrales-de-disco-parabolico">
+<h3><span class="section-number">9.5.4. </span>Centrales de disco parabólico<a class="headerlink" href="#centrales-de-disco-parabolico" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Permite alcanzar temperaturas de trabajo entre 100 - 1500° C</p></li>
+<li><p>La principal desventaja es el mecanismo para remover la energía térmica.</p></li>
+<li><p>El diseño más popular está basado en motores Stirling acoplados en el receptor.</p></li>
+<li><p>No existen plantas operativas basadas en esta tecnología</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/Dish_striling_solar_plant.jpg"><img alt="../_images/Dish_striling_solar_plant.jpg" class="align-center" src="../_images/Dish_striling_solar_plant.jpg" style="width: 500px;" /></a>
+<p>En el siguiente video se explica el funcionamiento de las centrales de disco parabólico.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="400"
+    src="https://www.youtube.com/embed/PamhI7ZJiFs"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+</section>
+</section>
+<section id="referencias">
+<h2><span class="section-number">9.6. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<p>Kalogirou S. A. <em><strong>Solar Energy Engineering Processes and Systems</strong></em>, 2nd Ed, Academic Press, 2014</p>
+<ul class="simple">
+<li><p>Chapter 3.6 Concentrating collectors</p></li>
+<li><p>Chapter 10 Solar Thermal Power Systems</p></li>
+</ul>
+<p>Duffie J. A., Beckman W. A. and Blair N. <em>Chapter 17. Solar Thermal Power Systems</em> in <em><strong>Solar Engineering of Thermal Processes</strong></em>, 5th Ed, Jhon Wiley and Sons, 2020</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./9_CentralTermoSolar"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../8_ColetorSolar/8_ColetorSolar.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">8. </span>Colectores solares estacionarios</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Tutorial/Intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tutoriales</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Francisco V. Ramirez-Cuevas<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
