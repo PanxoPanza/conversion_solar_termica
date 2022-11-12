@@ -690,7 +690,7 @@ Fecha: 11 de noviembre 2022</p>
 <div class="cell_output docutils container">
 <div class="output text_html">
 <iframe
-    width="900px"
+    width="700px"
     height="600px"
     src="https://ourworldindata.org/grapher/levelized-cost-of-energy"
     frameborder="0"
@@ -721,7 +721,7 @@ Fecha: 11 de noviembre 2022</p>
 <p>Consideremos, ahora, la presencia de una impuresa en el cristal.</p>
 <a class="reference internal image-reference" href="../_images/n-doped_silicon.png"><img alt="../_images/n-doped_silicon.png" class="align-center" src="../_images/n-doped_silicon.png" style="width: 400px;" /></a>
 <p>En este caso, consideraremos un átomo de fósforo (P), el cual reemplazará uno de los átomos de silicio.</p>
-<p>El fóforo tiene 5 electrones de valencia. Debido que solo 4 electrones son necesarios para completar el orbital de cada átomo de silicio, el cristal quedará con un electrón libre.</p>
+<p>El fósforo tiene 5 electrones de valencia. Debido que solo 4 electrones son necesarios para completar el orbital de cada átomo de silicio, el cristal quedará con un electrón libre.</p>
 <p>Como resultado, el silicio dopado con fósforo quedará con una carga electrica neta negativa.</p>
 <p>En este caso, decimos que el <strong>semiconductor es de tipo n</strong>.</p>
 <p>Por el contrario, si el elemento dopante tiene menos electrones de valencia, el semiconductor quedará cargado positivamente</p>
@@ -786,19 +786,19 @@ J = J_\mathrm{pv} - J_0\left[\exp{\left(\frac{qV}{k_\mathrm{B}T}\right)} - 1 \ri
 \[\begin{equation*}
 \mathrm{FF} = \frac{J_\mathrm{max}V_\mathrm{max}}{J_\mathrm{sc}V_\mathrm{oc}}
 \end{equation*}\]</div>
-<p>Este es un parámetro de diseño de la celda. A través de este parámetro podemos determinar la densidad de potencia máxima del sistema como <span class="math notranslate nohighlight">\(p_\mathrm{max} = \mathrm{FF}J_\mathrm{sc}V_\mathrm{oc}\)</span></p>
+<p>Este es un parámetro de diseño de la celda. A través de este parámetro podemos determinar la densidad de potencia máxima del sistema como <span class="math notranslate nohighlight">\(P_\mathrm{max} = \mathrm{FF}J_\mathrm{sc}V_\mathrm{oc}\)</span></p>
 <p>Otro parámetro de interés es la máxima eficiencia de la celda, definida por:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\eta_\mathrm{max} = \frac{I_\mathrm{max}V_\mathrm{max}}{G_t}
+\eta_\mathrm{max} = \frac{J_\mathrm{max}V_\mathrm{max}}{G_t}
 \end{equation*}\]</div>
 <p>En la práctica, estas curvas se obtienen mediante un ensayo de cada panel en condiciones estándar. Esto es, radiación según AM1.5 y temperatura 25°C.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
 <iframe
-    width="800"
-    height="500"
+    width="700"
+    height="400"
     src="https://www.youtube.com/embed/N4n-SiMjqqM?start=17&end=179"
     frameborder="0"
     allowfullscreen
@@ -851,8 +851,8 @@ J = J_\mathrm{pv} - J_0\left[\exp{\left(\frac{qV}{k_\mathrm{B}T}\right)} - 1 \ri
 <div class="cell_output docutils container">
 <div class="output text_html">
 <iframe
-    width="800"
-    height="500"
+    width="700"
+    height="400"
     src="https://www.youtube.com/embed/2iRfbWOJtog"
     frameborder="0"
     allowfullscreen
@@ -970,12 +970,12 @@ V_\mathrm{oc}^\mathrm{M} = N_\mathrm{PM}V_\mathrm{oc}
 <h3><span class="section-number">10.6.2. </span>Conversión termofotovoltaica (TPV)<a class="headerlink" href="#conversion-termofotovoltaica-tpv" title="Permalink to this headline">#</a></h3>
 <p>La tecnología de conversión termofotovoltaica consiste en cambiar el sol, como fuente de radiación, por un emisor térmico cercano a la celda. Esto permite una mejor aprovechamiento de la radiación, ya que parte de los fotones que no son convertidos a corriente, pueden ser reflejados de vuelta al emisor.</p>
 <a class="reference internal image-reference" href="../_images/thermophotovoltaics-intro.png"><img alt="../_images/thermophotovoltaics-intro.png" class="align-center" src="../_images/thermophotovoltaics-intro.png" style="width: 600px;" /></a>
-<p>El límite teórico definido por Shockley–Queisser es de 85%. En la práctica, [las celdas TPV han alcanzado eficiencias de hasta 40%](<a class="reference external" href="https://www.nature.com/articles/s41586-022-04473-y#:~:text=Reaching%2040%25%20efficiency%20with%20TPVs,in%20the%20United%20States%20(Fig.)">https://www.nature.com/articles/s41586-022-04473-y#:~:text=Reaching 40% efficiency with TPVs,in the United States (Fig.)</a>.</p>
+<p>El límite teórico definido por Shockley–Queisser es de 85%. En la práctica, <a class="reference external" href="https://www.nature.com/articles/s41586-022-04473-y.pdf?origin=ppub">las celdas TPV han alcanzado eficiencias de hasta 40%</a>.</p>
 <a class="reference internal image-reference" href="../_images/tpv-efficiency.png"><img alt="../_images/tpv-efficiency.png" class="align-center" src="../_images/tpv-efficiency.png" style="width: 800px;" /></a>
 <p>Esta tecnología, aún en desarrollo, se ha propuesto para conversión de energía solar, o como técnica para recuperación del calor desechado en procesos térmicos. En el caso de conversión TPV solas, las eficiencias aún están por debajo del 10%.</p>
 <p>La siguiente imagen muestra un estudio donde se propone <a class="reference external" href="https://www.nature.com/articles/nnano.2013.286">TPV para conversión de energía solar</a>. El ensayo fue realizado en un laboratorio con un simulador solar.</p>
 <a class="reference internal image-reference" href="../_images/solar_tpv.png"><img alt="../_images/solar_tpv.png" class="align-center" src="../_images/solar_tpv.png" style="width: 800px;" /></a>
-<p>En la siguiente imagen se muestra un [tpv para un sistema de almacenaje térmico de energía eléctrica (TEGS por sus siglas en ingles)](<a class="reference external" href="https://www.nature.com/articles/s41586-022-04473-y#:~:text=Reaching%2040%25%20efficiency%20with%20TPVs,in%20the%20United%20States%20(Fig.)">https://www.nature.com/articles/s41586-022-04473-y#:~:text=Reaching 40% efficiency with TPVs,in the United States (Fig.)</a>.</p>
+<p>En la siguiente imagen se muestra un <a class="reference external" href="https://www.nature.com/articles/s41586-022-04473-y.pdf?origin=ppub">tpv para un sistema de almacenaje térmico de energía eléctrica (TEGS por sus siglas en ingles)</a>.</p>
 <a class="reference internal image-reference" href="../_images/TEGS_tpv.png"><img alt="../_images/TEGS_tpv.png" class="align-center" src="../_images/TEGS_tpv.png" style="width: 500px;" /></a>
 <p>El sistema almacena la energía eléctrica en forma de energía térmica, y luego la vuelve a convertir a energía eléctrica mediante celdas TPV. Según el estudio, el sistema permite almacenar energía eléctrica por periodos prolongados y a un costo menor que las baterías convecionales.</p>
 <p>Otra alternativa en estudio es utilizar radiación de campo cercano para conversión tpv. Este concepto se basa en la conversión de radiación no propagada, lo cual se consigue cuando la separación entre el emisor y el receptor es menor a la longitud de onda definida por la ley de Wien.</p>
@@ -984,9 +984,22 @@ V_\mathrm{oc}^\mathrm{M} = N_\mathrm{PM}V_\mathrm{oc}
 </section>
 <section id="concentradores-solares-luminiscentes">
 <h3><span class="section-number">10.6.3. </span>Concentradores solares luminiscentes<a class="headerlink" href="#concentradores-solares-luminiscentes" title="Permalink to this headline">#</a></h3>
-<p>Otra tecnología aún en desarrollo son los <a class="reference external" href="https://www.nature.com/articles/natrevmats201772">concentradores solares luminiscentes</a>. Este concepto consiste en la concentración solar usando materiales con luminiscencia. La energía emitida por el material es convertida a elecricidad mediante celdas fotovoltaicas en los bordes</p>
+<p>Otra tecnología aún en desarrollo son los <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/aenm.202002883">concentradores solares luminiscentes</a>. Este concepto consiste en la concentración solar usando materiales con luminiscencia. La radiación solar es absorbida y reemitida por pigmentos luminiscentes, canalizada hasta los bordes y luego convertida a elecricidad mediante celdas fotovoltaicas.</p>
 <a class="reference internal image-reference" href="../_images/lsc_solar.png"><img alt="../_images/lsc_solar.png" class="align-center" src="../_images/lsc_solar.png" style="width: 700px;" /></a>
 <p>Esta tecnología no pretende competir con las tecnologías de conversión solar convencionales, sino que ofrecer una alternativa de conversión de energía solar en ventanas para edificios.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="400"
+    src="https://www.youtube.com/embed/ZSZZIkOnPzM"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
 </section>
 </section>
 <section id="referencias">
