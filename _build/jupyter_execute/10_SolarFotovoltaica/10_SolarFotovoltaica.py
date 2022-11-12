@@ -36,7 +36,7 @@
 
 
 from IPython.display import display, HTML, IFrame
-display(IFrame('https://ourworldindata.org/grapher/levelized-cost-of-energy', '900px', '600px'))
+display(IFrame('https://ourworldindata.org/grapher/levelized-cost-of-energy', '700px', '600px'))
 
 
 # ## Fundamentos de la conversión fotovoltaica en semiconductores
@@ -74,7 +74,7 @@ display(IFrame('https://ourworldindata.org/grapher/levelized-cost-of-energy', '9
 
 # En este caso, consideraremos un átomo de fósforo (P), el cual reemplazará uno de los átomos de silicio.
 
-# El fóforo tiene 5 electrones de valencia. Debido que solo 4 electrones son necesarios para completar el orbital de cada átomo de silicio, el cristal quedará con un electrón libre.
+# El fósforo tiene 5 electrones de valencia. Debido que solo 4 electrones son necesarios para completar el orbital de cada átomo de silicio, el cristal quedará con un electrón libre.
 
 # Como resultado, el silicio dopado con fósforo quedará con una carga electrica neta negativa.
 
@@ -175,12 +175,12 @@ display(IFrame('https://ourworldindata.org/grapher/levelized-cost-of-energy', '9
 # \mathrm{FF} = \frac{J_\mathrm{max}V_\mathrm{max}}{J_\mathrm{sc}V_\mathrm{oc}}
 # \end{equation*}
 
-# Este es un parámetro de diseño de la celda. A través de este parámetro podemos determinar la densidad de potencia máxima del sistema como $p_\mathrm{max} = \mathrm{FF}J_\mathrm{sc}V_\mathrm{oc}$
+# Este es un parámetro de diseño de la celda. A través de este parámetro podemos determinar la densidad de potencia máxima del sistema como $P_\mathrm{max} = \mathrm{FF}J_\mathrm{sc}V_\mathrm{oc}$
 
 # Otro parámetro de interés es la máxima eficiencia de la celda, definida por:
 # 
 # \begin{equation*}
-# \eta_\mathrm{max} = \frac{I_\mathrm{max}V_\mathrm{max}}{G_t}
+# \eta_\mathrm{max} = \frac{J_\mathrm{max}V_\mathrm{max}}{G_t}
 # \end{equation*}
 
 # En la práctica, estas curvas se obtienen mediante un ensayo de cada panel en condiciones estándar. Esto es, radiación según AM1.5 y temperatura 25°C.
@@ -189,7 +189,7 @@ display(IFrame('https://ourworldindata.org/grapher/levelized-cost-of-energy', '9
 
 
 from IPython.display import YouTubeVideo
-YouTubeVideo('N4n-SiMjqqM', width=800, height=500,  start=17, end=179)
+YouTubeVideo('N4n-SiMjqqM', width=700, height=400,  start=17, end=179)
 
 
 # Cabe destacar que la discución anterior está basada en parámetros por unidad de área. Generalmente, la información del fabricante está dada en valores de corriente total, $I = AJ$, donde $A$ es la superficie expuesta del panel. 
@@ -256,7 +256,7 @@ YouTubeVideo('N4n-SiMjqqM', width=800, height=500,  start=17, end=179)
 
 
 from IPython.display import YouTubeVideo
-YouTubeVideo('2iRfbWOJtog', width=800, height=500)
+YouTubeVideo('2iRfbWOJtog', width=700, height=400)
 
 
 # ## Paneles fotovoltaicos
@@ -381,7 +381,7 @@ YouTubeVideo('2iRfbWOJtog', width=800, height=500)
 # 
 # <img src="./images/thermophotovoltaics-intro.png" width="600" align= center>
 
-# El límite teórico definido por Shockley–Queisser es de 85%. En la práctica, [las celdas TPV han alcanzado eficiencias de hasta 40%](https://www.nature.com/articles/s41586-022-04473-y#:~:text=Reaching%2040%25%20efficiency%20with%20TPVs,in%20the%20United%20States%20(Fig.).
+# El límite teórico definido por Shockley–Queisser es de 85%. En la práctica, [las celdas TPV han alcanzado eficiencias de hasta 40%](https://www.nature.com/articles/s41586-022-04473-y.pdf?origin=ppub).
 # 
 # <img src="./images/tpv-efficiency.png" width="800" align= center>
 
@@ -391,7 +391,7 @@ YouTubeVideo('2iRfbWOJtog', width=800, height=500)
 # 
 # <img src="./images/solar_tpv.png" width="800" align= center>
 
-# En la siguiente imagen se muestra un [tpv para un sistema de almacenaje térmico de energía eléctrica (TEGS por sus siglas en ingles)](https://www.nature.com/articles/s41586-022-04473-y#:~:text=Reaching%2040%25%20efficiency%20with%20TPVs,in%20the%20United%20States%20(Fig.). 
+# En la siguiente imagen se muestra un [tpv para un sistema de almacenaje térmico de energía eléctrica (TEGS por sus siglas en ingles)](https://www.nature.com/articles/s41586-022-04473-y.pdf?origin=ppub). 
 # 
 # <img src="./images/TEGS_tpv.png" width="500" align= center>
 # 
@@ -405,11 +405,18 @@ YouTubeVideo('2iRfbWOJtog', width=800, height=500)
 
 # ### Concentradores solares luminiscentes
 # 
-# Otra tecnología aún en desarrollo son los [concentradores solares luminiscentes](https://www.nature.com/articles/natrevmats201772). Este concepto consiste en la concentración solar usando materiales con luminiscencia. La energía emitida por el material es convertida a elecricidad mediante celdas fotovoltaicas en los bordes
+# Otra tecnología aún en desarrollo son los [concentradores solares luminiscentes](https://onlinelibrary.wiley.com/doi/abs/10.1002/aenm.202002883). Este concepto consiste en la concentración solar usando materiales con luminiscencia. La radiación solar es absorbida y reemitida por pigmentos luminiscentes, canalizada hasta los bordes y luego convertida a elecricidad mediante celdas fotovoltaicas.
 # 
 # <img src="./images/lsc_solar.png" width="700" align= center>
 # 
 # Esta tecnología no pretende competir con las tecnologías de conversión solar convencionales, sino que ofrecer una alternativa de conversión de energía solar en ventanas para edificios.
+
+# In[4]:
+
+
+from IPython.display import YouTubeVideo
+YouTubeVideo('ZSZZIkOnPzM', width=700, height=400)
+
 
 # ## Referencias
 # Kalogirou S. A. *Chapter 9. Photovoltaic Systems* in **Solar Energy Engineering Processes and Systems**, 2nd Ed, Academic Press, 2014
