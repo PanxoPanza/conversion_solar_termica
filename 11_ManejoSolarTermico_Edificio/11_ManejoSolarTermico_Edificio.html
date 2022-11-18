@@ -1,0 +1,679 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>11. Control pasivo de radiación solar en edificaciones &#8212; MEC501 - Manejo y conversión de energía solar térmica</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutoriales" href="../Tutorial/Intro.html" />
+    <link rel="prev" title="10. Conversión Solar Fotovoltaica" href="../10_SolarFotovoltaica/10_SolarFotovoltaica.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MEC501 - Manejo y conversión de energía solar térmica</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Bienvenidos al curso
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0_introduccion/0_introduccion.html">
+   Introducción al curso
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Unidades del curso
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_ondas_electromagneticas/1_ondas_electromagneticas.html">
+   1. La radiación como un fenómeno electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html">
+   2. Ondas electromagnéticas en la materia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_Interacci%C3%B3n_materia-luz/3_Interacci%C3%B3n_materia-luz.html">
+   3. Interacción materia-luz
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_Scattering/4_Scattering.html">
+   4. Scattering electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../5_TransporteRadiativo/5_TransporteRadiativo.html">
+   5. Transporte Radiativo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../6_RadiacionTermica/6_RadiacionTermica.html">
+   6. Radiación Térmica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../7_Radiaci%C3%B3n_solar/7_Radiaci%C3%B3n_solar.html">
+   7. Radiación Solar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../8_ColetorSolar/8_ColetorSolar.html">
+   8. Colectores solares estacionarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../9_CentralTermoSolar/9_CentralTermoSolar.html">
+   9. Central Termosolar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10_SolarFotovoltaica/10_SolarFotovoltaica.html">
+   10. Conversión Solar Fotovoltaica
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   11. Control pasivo de radiación solar en edificaciones
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Apéndice
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Tutorial/Intro.html">
+   Tutoriales
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorial/Tutorial1/Tutorial1.html">
+     Tutorial 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorial/Tutorial2/Tutorial2.html">
+     Tutorial 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion">
+   11.1. Introducción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#masa-termica-y-desface-termico-en-materiales-de-construccion">
+   11.2. Masa térmica y desface térmico en materiales de construcción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manejo-termico-a-traves-de-ventanas">
+   11.3. Manejo térmico a través de ventanas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ventanas-inteligentes">
+   11.4. Ventanas inteligentes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enfriamiento-radiativo-pasivo">
+   11.5. Enfriamiento radiativo pasivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   11.6. Referencias
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Control pasivo de radiación solar en edificaciones</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduccion">
+   11.1. Introducción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#masa-termica-y-desface-termico-en-materiales-de-construccion">
+   11.2. Masa térmica y desface térmico en materiales de construcción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manejo-termico-a-traves-de-ventanas">
+   11.3. Manejo térmico a través de ventanas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ventanas-inteligentes">
+   11.4. Ventanas inteligentes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enfriamiento-radiativo-pasivo">
+   11.5. Enfriamiento radiativo pasivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   11.6. Referencias
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p><font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font></p>
+<section class="tex2jax_ignore mathjax_ignore" id="control-pasivo-de-radiacion-solar-en-edificaciones">
+<h1><span class="section-number">11. </span>Control pasivo de radiación solar en edificaciones<a class="headerlink" href="#control-pasivo-de-radiacion-solar-en-edificaciones" title="Permalink to this headline">#</a></h1>
+<p><br><br><br><br>
+Profesor: Francisco Ramírez Cuevas<br>
+Fecha: 18 de noviembre 2022</p>
+<section id="introduccion">
+<h2><span class="section-number">11.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this headline">#</a></h2>
+<p>Hasta ahora hemos revisado tecnologías de conversión de energía solar. En estas aplicaciones el objetivo es convertir eficientemente la mayor cantidad de radiación solar.</p>
+<p>Sin embargo, hay situaciones donde la exposición solar induce efectos indeseables, tales como sobrecalentamiento de ambientes, degradación de materiales o efectos dañinos en la piel.</p>
+<p>Particularmente en edificios y hogares, el aumento de la temperatura en días cálidos por exceso de radiación solar conduce a un mayor consumo eléctrico asociado a sistemas de acondicionamiento de aire. Por el contrario, en invierno, necesitamos aprovechar el calor del sol al máximo para reducir el consumo por calefacción. <strong>El manejo eficiente de la energía solar térmica en edificios, así, juega un rol fundamental en la reducción de gases de efecto invernadero</strong>.</p>
+<p>En esta unidad revisaremos algunas tecnologías de manejo pasivo (sin electricidad) de radiación solar en edificaciones.</p>
+<a class="reference internal image-reference" href="../_images/passive_solar_management.png"><img alt="../_images/passive_solar_management.png" class="align-center" src="../_images/passive_solar_management.png" style="width: 700px;" /></a>
+</section>
+<section id="masa-termica-y-desface-termico-en-materiales-de-construccion">
+<h2><span class="section-number">11.2. </span>Masa térmica y desface térmico en materiales de construcción<a class="headerlink" href="#masa-termica-y-desface-termico-en-materiales-de-construccion" title="Permalink to this headline">#</a></h2>
+<p>El calor puede ser almacenado en materiales de construcción para reducir la temperatura interior, reducir las cargas de enfriamiento, o para retrasar el momento donde la carga térmica es máxima.</p>
+<p>En arquitectura y construcción, la <strong>capacidad de un material para almacenar calor se conoce como, <em>masa térmica</em></strong> y corresponde al producto entre la densidad y el calor específico del material.</p>
+<a class="reference internal image-reference" href="../_images/masa_termica_tabla.png"><img alt="../_images/masa_termica_tabla.png" class="align-center" src="../_images/masa_termica_tabla.png" style="width: 500px;" /></a>
+<p>Por otro lado, el <em><strong>desface térmico</strong></em>, asociado a la capacidad del material para liberar este calor, es también una propiedad relevante, ya que nos permite reducir las fluctuaciones asociadas a los cambios de temperatura externos.</p>
+<a class="reference internal image-reference" href="../_images/thermal_lag.png"><img alt="../_images/thermal_lag.png" class="align-center" src="../_images/thermal_lag.png" style="width: 650px;" /></a>
+<p>Esta característica depende de diversos factores, tales como la difusividad térmica, la diferencia de temperaturas entre la estructura y el aire circundante, el espesor del material, efectos convectivos asociados a la exposición a corrientes de aire, rugosidad de la superficie, color, etc.</p>
+<p>Un diseño adecuado de la masa térmica y el desface térmico de una estructura permite un manejo eficiente de las ganancias por radiación solar.</p>
+<p>Un buen ejemplo es el <em>muro de Trombe</em>, el cual consiste en un muro de concreto separado de un vidrio y expuesto a la radiación solar.</p>
+<a class="reference internal image-reference" href="../_images/trombe_wall.png"><img alt="../_images/trombe_wall.png" class="align-center" src="../_images/trombe_wall.png" style="width: 650px;" /></a>
+<p>El sistema opera de forma similar a un colector solar en base a aire. El muro está cubierto por una pintura de color oscuro para maximizar la absorción de radiación, y tiene dos aperturas, una en la parte superior y otra en la parte inferior del muro.</p>
+<p>Durante el invierno, el calor almacenado en el muro de concreto es liberado hacia la cámara de aire generando un efecto de calefacción por convección natural. El aire frio entra por la parte inferior del muro y sale por la parte superior.</p>
+<p>Durante el verano, el muro es cubierto mediante percianas metálicas para evitar el exceso de radiación. Una apertura en la parte inferior del vidrio es descubiertas para permitir la ventilación hacia el interior. En la parte superior del vidrio, una segunda apertura permite el escape del aire caliente dentro de la habitación.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="400"
+    src="https://www.youtube.com/embed/fwIdRKwiOD4"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+<p>Existen muchos diseños basados en el principio de un muro de Trombe, algunos con parades inclinadas o en base a colectores de aire en la pared.</p>
+<div class="cell tag_remove-tag docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;N6QOZGgbj-g&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="400"
+    src="https://www.youtube.com/embed/N6QOZGgbj-g"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+<p>Lo más importante es la dirección donde debe apuntar este muro. En el hemisferio norte el muro debe apuntar hacia el sur, mientras que en el hemisferio sur, el muro debe apuntar preferentemente hacia la dirección norte.</p>
+</section>
+<section id="manejo-termico-a-traves-de-ventanas">
+<h2><span class="section-number">11.3. </span>Manejo térmico a través de ventanas<a class="headerlink" href="#manejo-termico-a-traves-de-ventanas" title="Permalink to this headline">#</a></h2>
+<p>Otro elemento importante para el manejo solar térmico son las ventanas. Dependiendo del diseño, una ventana puede ser utilizada para manejar las ganancias y pérdidas de energía por radiación.</p>
+<a class="reference internal image-reference" href="../_images/window_sunspaces.png"><img alt="../_images/window_sunspaces.png" class="align-center" src="../_images/window_sunspaces.png" style="width: 400px;" /></a>
+<p>En la figura se muestran tres diseños de ventanas utilizados para este propósito. En todos los casos, <strong>la cara vertical debe apuntar hacia el norte (sur para hemisferio norte) para maximizar la captura de radiación solar</strong>.]</p>
+<p>A mayor área expuesta a la radiación solar, mayor será el aporte energético para calefacción. El diseño adecuado, así, debe considerar un buen balance entre la radiación recibida durante el verano y el invierno.</p>
+<p>Por ejemplo, el diseño (a) es preferible en lugares cálidos o con variaciones de temperatura altas, ya que reduce la exposición solar durante el verano.</p>
+<p>Los aleros sobre las ventanas, también sirven como elementos de control de radiación solar. Aunque generalmente el diseño de estos va asociado a otros factores, como canalización de lluvias, la sombra generada por el alero sobre una ventana permite reducir o aumentar la exposición a la radiación solar.</p>
+<a class="reference internal image-reference" href="../_images/overhangs.png"><img alt="../_images/overhangs.png" class="align-center" src="../_images/overhangs.png" style="width: 400px;" /></a>
+<p>En ocaciones, la sección de la ventana es inclinada para maximizar las ganancias por radiación térmica</p>
+</section>
+<section id="ventanas-inteligentes">
+<h2><span class="section-number">11.4. </span>Ventanas inteligentes<a class="headerlink" href="#ventanas-inteligentes" title="Permalink to this headline">#</a></h2>
+<p>La principal función de las ventanas es permitir el paso de la luz. Esta luz, sin embargo, corresponde a solo una pequeña porción del espectro solar.</p>
+<a class="reference internal image-reference" href="../_images/g-smart-window-types-alt.jpg"><img alt="../_images/g-smart-window-types-alt.jpg" class="align-center" src="../_images/g-smart-window-types-alt.jpg" style="width: 600px;" /></a>
+<p>Las ventanas inteligentes son materiales capaces de modificar sus propiedades ópticas frente a cambios de temperatura (<strong>termocrómicas</strong>), o de voltaje (<strong>eléctrocrómicas</strong>), para así modular el paso de la radiación hacia el interior de un ambiente.</p>
+<p>Dependiendo de la aplicación, una ventana inteligente puede ser diseñada para regular el paso de la radiación solar visible, UV o del infrarojo cercano (NIR).</p>
+<p>Debido a su caracter pasivo, en esta unidad nos enfocaremos en <strong>ventanas termocrómicas para modulación de radiación NIR</strong>.</p>
+<p>Las ventanas termocrómicas están diseñadas para regular el paso la radiación térmica (infrarojo cercano) solar entre el verano y el invierno.</p>
+<a class="reference internal image-reference" href="../_images/smart_window_schematic.png"><img alt="../_images/smart_window_schematic.png" class="align-center" src="../_images/smart_window_schematic.png" style="width: 800px;" /></a>
+<p>Para producir este efecto se utilizan <strong>materiales termocrómicos con cambio de fase aislante-conductor eléctrico.</strong></p>
+<p>El material más utilizado es el dióxido de vanadio (VO<span class="math notranslate nohighlight">\(_2\)</span>).</p>
+<a class="reference internal image-reference" href="../_images/vanadium_dioxide.png"><img alt="../_images/vanadium_dioxide.png" class="align-center" src="../_images/vanadium_dioxide.png" style="width: 400px;" /></a>
+<p>Sobre la temperatura de transición, el VO<span class="math notranslate nohighlight">\(_2\)</span> se comporta como un conductor eléctrico, con alta reflectancia en el espectro NIR. Bajo la temperatura de transición, el material se comporta como aislante térmico y la reflectancia dismuye.</p>
+<p>La temperatura de transición intrínseca del VO<span class="math notranslate nohighlight">\(_2\)</span> es ~70°C. Sin embargo, <strong>esta temperatura puede ser modificada mediante dopaje</strong> desde los 70°C hasta cerca de los 10°C</p>
+<p>Las ventanas termocrómicas operan agregando VO<span class="math notranslate nohighlight">\(_2\)</span> en pequeñas cantidades. Esto puede ser mediate una capa delgada sobre vidrio, o mediante particulas dispersas en un polímero transparente.</p>
+<a class="reference internal image-reference" href="../_images/vo2_smart_windows.png"><img alt="../_images/vo2_smart_windows.png" class="align-center" src="../_images/vo2_smart_windows.png" style="width: 700px;" /></a>
+<p>El desempeño de una ventana inteligente se caracteriza por la transmitancia lumínica (<span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span>), y la modulación de transmitancia solar (<span class="math notranslate nohighlight">\(\Delta T_\mathrm{sol}\)</span>):</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+T_\mathrm{lum} = \frac{\int_{380~\mathrm{nm}}^{780~\mathrm{nm}}T_\lambda V(\lambda) d\lambda}{\int_{380~\mathrm{nm}}^{780~\mathrm{nm}}V(\lambda) d\lambda};\quad\quad\quad
+T_\mathrm{sol} = \frac{\int_{300~\mathrm{nm}}^{2500~\mathrm{nm}}T_\lambda I_\mathrm{AM1.5}(\lambda) d\lambda}{\int_{300~\mathrm{nm}}^{2500~\mathrm{nm}}I_\mathrm{AM1.5}(\lambda) d\lambda}
+\end{equation*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(T_\lambda\)</span> es la transmitancia espectral del material (frio o caliente), <span class="math notranslate nohighlight">\(\Delta T_\mathrm{sol} = T_\mathrm{sol}^\mathrm{frio} - T_\mathrm{sol}^\mathrm{caliente}\)</span>, y <span class="math notranslate nohighlight">\(V(\lambda)\)</span> es la <a class="reference external" href="https://en.wikipedia.org/wiki/Luminous_efficiency_function#:~:text=The%20CIE%20photopic%20luminous%20efficiency,the%20CIE%201931%20color%20space.">eficiencia de luminosidad fotocópica</a></p>
+<p>Además del VO<span class="math notranslate nohighlight">\(_2\)</span> existen otros materiales estudiados en ventanas inteligentes, tales como los hidrogel y las peroskitas.</p>
+<a class="reference internal image-reference" href="../_images/smart-window_table.png"><img alt="../_images/smart-window_table.png" class="align-center" src="../_images/smart-window_table.png" style="width: 600px;" /></a>
+<p>Dependiendo de las condiciones del clima, se estima que estas ventanas pueden reducir entre 25-80% el consumo eléctrico en sistemas de acondicionamiento de ambientes.</p>
+<a class="reference internal image-reference" href="../_images/smart_windows_closing.jpg"><img alt="../_images/smart_windows_closing.jpg" class="align-center" src="../_images/smart_windows_closing.jpg" style="width: 800px;" /></a>
+<p>Las ventanas inteligentes son una tecnología relativamente nueva. Hoy en día, la mayoría de los fabricantes se enfocan en ventanas electrocrómicas. Esto debido a que las termocrómicas aun requieren mejoras en su vida útil, ya que los materiales termocrómicos son sencibles a la oxidación.</p>
+</section>
+<section id="enfriamiento-radiativo-pasivo">
+<h2><span class="section-number">11.5. </span>Enfriamiento radiativo pasivo<a class="headerlink" href="#enfriamiento-radiativo-pasivo" title="Permalink to this headline">#</a></h2>
+<p>Los materiales para enfriamiento radiativo pasivo, consisten en materiales con reflectancia selectiva, es decir, alta reflectancia solar (&gt; 95%), y alta emisividad o transparencia en el espectro mid-IR.</p>
+<a class="reference internal image-reference" href="../_images/thermal_radiation_spectra.png"><img alt="../_images/thermal_radiation_spectra.png" class="align-center" src="../_images/thermal_radiation_spectra.png" style="width: 500px;" /></a>
+<p>La reflectancia selectiva permite reducir las ganancias de calor por radiación solar, y al mismo tiempo, canalizar el calor radiativo disipado por los cuerpos a temperaturas bajo 400K.</p>
+<p>Según estudios, esta tecnología podría reducir el consumo eléctrico en sistemas de aire acondicionado entre 15-40%.</p>
+<p>El efecto de enfriamiento se intensifica en climas secos, ya que la atmósfera es transparente en el espectro <span class="math notranslate nohighlight">\(\lambda\in[8, 13]~\mu\mathrm{m}\)</span></p>
+<a class="reference internal image-reference" href="../_images/atmospheric_transmittance.png"><img alt="../_images/atmospheric_transmittance.png" class="align-center" src="../_images/atmospheric_transmittance.png" style="width: 500px;" /></a>
+<p>Esto implica que parte del intercambio radiativo ocurre entre el cuerpo y el universo.</p>
+<p>En otras palabras, <strong>el enfriamiento radiativo utiliza al universo como sumidero térmico</strong></p>
+<p>Como resultado <strong>el material es capaz de alcanzar temperaturas de equilibrio bajo la temperatura ambiente a plena luz del día</strong>.</p>
+<p>El enfriamiento radiativo pasivo es un mecanismo que ocurre naturalmente en climas secos. Este fenómeno explica las altas fluctuaciones térmicas que ocurren en el desierto entre el día y la noche.</p>
+<p>Algunos seres vivos utilizan este mecanismo para enfriar su cuerpo naturalmente. Tal es el caso de las <a class="reference external" href="https://www.science.org/doi/10.1126/science.aab3564">hormigas de plata en el desierto del Sahara</a>.</p>
+<a class="reference internal image-reference" href="../_images/silver_ants.png"><img alt="../_images/silver_ants.png" class="align-center" src="../_images/silver_ants.png" style="width: 700px;" /></a>
+<p>En el caso de las hormigas de plata. Los pelos producen efectos de scattering para longitudes de onda corta, aumentando la reflectancia, selectívamente, en el espectro visible. Como resultado, la hormiga adquire el color plateado característico.</p>
+<a class="reference internal image-reference" href="../_images/silver_ants_scattering.png"><img alt="../_images/silver_ants_scattering.png" class="align-center" src="../_images/silver_ants_scattering.png" style="width: 700px;" /></a>
+<p>Artificialmente, el fenómeno puede ser reproducido utilizando materiales transparentes con porosidad inducida.</p>
+<p>Para esto, comúnmente se utilizan polímeros. La porosidad puede ser inducida mediante un proceso llamado <em>separación de fases</em>.</p>
+<a class="reference internal image-reference" href="../_images/radiative_cooling_film.png"><img alt="../_images/radiative_cooling_film.png" class="align-center" src="../_images/radiative_cooling_film.png" style="width: 900px;" /></a>
+<p>El <a class="reference external" href="http://www.sciencemag.org/lookup/doi/10.1126/science.aat9513">siguiente estudio utiliza PVDF como polímero base</a></p>
+<p>La investigación en enfriamiento radiativo pasivo ha avanzado rápidamente en los últimos años. A partir de estos estudios se han elavorado diversas alternativas en formato de pinturas, ropa o láminas adhesivas</p>
+<a class="reference internal image-reference" href="../_images/radiative_cooling_format.png"><img alt="../_images/radiative_cooling_format.png" class="align-center" src="../_images/radiative_cooling_format.png" style="width: 900px;" /></a>
+<p>Enfriamiento radiativo pasivo es una tecnología emergente, con al menos 10 emprendimientos en el mundo. <a class="reference external" href="https://www.skycoolsystems.com/">Skycool</a>, es uno de los primeros en patentar esta tecnología. El siguiente video explica el funcionamiento de sus paneles de enfrmiamiento radiativo.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="400"
+    src="https://www.youtube.com/embed/CMaZfuInd9c"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
+</section>
+<section id="referencias">
+<h2><span class="section-number">11.6. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<p>Kalogirou S. A. <em>Chapter 6. Solar space heating and cooling</em> in <strong>Solar Energy Engineering Processes and Systems</strong>, 2nd Ed, Academic Press, 2014</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./11_ManejoSolarTermico_Edificio"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../10_SolarFotovoltaica/10_SolarFotovoltaica.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">10. </span>Conversión Solar Fotovoltaica</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Tutorial/Intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tutoriales</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Francisco V. Ramirez-Cuevas<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
