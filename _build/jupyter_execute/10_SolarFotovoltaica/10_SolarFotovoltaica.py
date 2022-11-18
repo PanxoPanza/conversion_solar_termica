@@ -125,6 +125,15 @@ display(IFrame('https://ourworldindata.org/grapher/levelized-cost-of-energy', '7
 
 # En este caso, la región de agotamiento disminuye su tamaño. Si el voltaje bajo el sesgo hacia adelante es suficientemente grande, la unión pn es capáz de conducir corriente
 
+# El siguiente video resume lo discutido en relación al funcionamiento de un diodo y el efecto de la unión pn.
+
+# In[2]:
+
+
+from IPython.display import YouTubeVideo
+YouTubeVideo('Coy-WRCfems', width=700, height=400)
+
+
 # Usando una **curva J-V** (Densidad de corriente vs Voltaje), el comportamiento es:
 
 # <img src="./images/JV_curve_dark-diode.png" width="400" align= center>
@@ -185,7 +194,7 @@ display(IFrame('https://ourworldindata.org/grapher/levelized-cost-of-energy', '7
 
 # En la práctica, estas curvas se obtienen mediante un ensayo de cada panel en condiciones estándar. Esto es, radiación según AM1.5 y temperatura 25°C.
 
-# In[2]:
+# In[3]:
 
 
 from IPython.display import YouTubeVideo
@@ -252,7 +261,7 @@ YouTubeVideo('N4n-SiMjqqM', width=700, height=400,  start=17, end=179)
 # 
 # El video a continuación muestra el procedimiento de fabricación de celdas de silicio cristalino, el material más utilizado en paneles.
 
-# In[3]:
+# In[4]:
 
 
 from IPython.display import YouTubeVideo
@@ -411,7 +420,7 @@ YouTubeVideo('2iRfbWOJtog', width=700, height=400)
 # 
 # Esta tecnología no pretende competir con las tecnologías de conversión solar convencionales, sino que ofrecer una alternativa de conversión de energía solar en ventanas para edificios.
 
-# In[4]:
+# In[5]:
 
 
 from IPython.display import YouTubeVideo

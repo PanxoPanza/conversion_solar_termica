@@ -1,0 +1,8 @@
+requerimientos de enfriamiento en una habitación
+
+m^2	BTU	W	m^2 radcool	BTU AC con rad cool	% ahorro
+12	6000	1758	17.6		1904.4			68.3%
+16	12000	3516	35.2		6539.2			45.5%
+25	18000	5274	52.7		9467.6			47.4%
+30	24000	7032	70.3		13761.1			42.7%
+	

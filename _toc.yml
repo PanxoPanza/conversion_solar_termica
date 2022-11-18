@@ -21,6 +21,7 @@ parts:
     - file: 8_ColetorSolar/8_ColetorSolar
     - file: 9_CentralTermoSolar/9_CentralTermoSolar
     - file: 10_SolarFotovoltaica/10_SolarFotovoltaica
+    - file: 11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio
   - caption: Apéndice
     numbered: false
     chapters:
