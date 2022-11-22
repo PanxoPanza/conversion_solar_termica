@@ -282,13 +282,13 @@ YouTubeVideo('2iRfbWOJtog', width=700, height=400)
 # La corriente de cortocircuito del módulo, $I_\mathrm{sc}^\mathrm{M}$, esta asociada con $I_\mathrm{sc}$ mediante:
 # 
 # \begin{equation*}
-# I_\mathrm{sc}^\mathrm{M} = N_\mathrm{SM}I_\mathrm{sc}
+# I_\mathrm{sc}^\mathrm{M} = N_\mathrm{PM}I_\mathrm{sc}
 # \end{equation*}
 
 # El voltage de circuito abierto del módulo, $V_\mathrm{oc}^\mathrm{M}$, esta asociada con $V_\mathrm{oc}$ mediante:
 # 
 # \begin{equation*}
-# V_\mathrm{oc}^\mathrm{M} = N_\mathrm{PM}V_\mathrm{oc}
+# V_\mathrm{oc}^\mathrm{M} = N_\mathrm{SM}V_\mathrm{oc}
 # \end{equation*}
 
 # ### Componentes de un módulo fotovoltaico
