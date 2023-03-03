@@ -80,6 +80,7 @@ print("Energía eléctrica suministrada: %.1f TWh (Energía consumida en Chile 4
 # En Chile las principales tecnologías son la fotovoltaica y termosolar, [con una capacidad instalada total de 4.6 GW](https://www.pv-magazine-latam.com/2021/04/13/chile-alcanza-46-gw-fotovoltaicos-de-potencia-instalada/). Con excepción de la planta termosolar Cerro Dominador, la mayoría de este simunistro corresponde a plantas solares fotovoltaicas, de las cuales la más grande es El Romero Solar.
 
 # <img src="./images/planta_fotovoltaica_ElRomero_chile.jpg" width="500" align= center>
+# 
 # <center><a href="https://www.acciona.cl/proyectos/planta-fotovoltaica-romero-solar/">Planta fotovoltaica El Romero Solar (196 MW)</a></center>
 
 # <img src="./images/cerro_dominador.jpg" width="500" align= center>
