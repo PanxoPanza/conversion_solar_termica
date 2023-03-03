@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
 # # La radiación como un fenómeno electromagnético
-# <br><br><br><br>
-# Profesor: Francisco Ramírez CueSvas<br>
-# Fecha: 12 de Agosto 2022
 
 # ## Repaso de cálculo vectorial
 
