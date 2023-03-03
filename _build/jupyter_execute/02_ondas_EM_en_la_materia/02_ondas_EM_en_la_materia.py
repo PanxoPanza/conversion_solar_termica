@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
 # # Ondas electromagnéticas en la materia
-# <br><br><br><br>
-# Profesor: Francisco Ramírez CueSvas<br>
-# Fecha: 19 de Agosto 2022
 
 # ## Ecuaciones de Maxwell en un medio
 
