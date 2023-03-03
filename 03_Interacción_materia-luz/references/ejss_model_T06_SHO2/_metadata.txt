@@ -1,0 +1,22 @@
+generated-with: Easy Java/Javascript Simulations, version 5.3, build 180218. Visit http://www.um.es/fem/Ejs
+title: Driven Damped Harmonic Motion
+logo-image: T06_SHO2/T06_SHO2.png
+author: Andreu Glasmann; Wolfgang Christian; Mario Belloni; Kyle Forinash
+copyright: W. Christian
+preferred-width: 750
+preferred-height: 600
+author-image: images/ag.png;./images/wc_icon.png;./images/mjb_icon.png;./images/kyle_icon.png
+source: T06_SHO2.ejss
+main-script: 
+main-simulation: T06_SHO2_Simulation.xhtml
+available-languages: 
+html-contents: T06_SHO2_Contents.xhtml
+html-main: T06_SHO2.xhtml
+page-title: Driven Damped Harmonic Motion
+page-index: T06_SHO2_Simulation.xhtml
+resource: T06_SHO2/T06_SHO2.png
+resource: T06_SHO2/T06_SHO2.xhtml
+resource: images/kyle_icon.png
+resource: images/ag.png
+resource: images/wc_icon.png
+resource: images/mjb_icon.png

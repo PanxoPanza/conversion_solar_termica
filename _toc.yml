@@ -7,19 +7,25 @@ parts:
   - caption: Introducción
     numbered: false
     chapters:
-    - file: 0_introduccion/0_introduccion
-  - caption: Unidades del curso
+    - file: 00_introduccion/00_introduccion
+  - caption: Parte 1 - Fundamentos del transporte de fotones
     numbered: true
     chapters:
-    - file: 1_ondas_electromagneticas/1_ondas_electromagneticas
-    - file: 2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia
-    - file: 3_Interacción_materia-luz/3_Interacción_materia-luz
-    - file: 4_Scattering/4_Scattering
-    - file: 5_TransporteRadiativo/5_TransporteRadiativo
-    - file: 6_RadiacionTermica/6_RadiacionTermica
-    - file: 7_Radiación_solar/7_Radiación_solar
-    - file: 8_ColetorSolar/8_ColetorSolar
-    - file: 9_CentralTermoSolar/9_CentralTermoSolar
+    - file: 01_ondas_electromagneticas/01_ondas_electromagneticas
+    - file: 02_ondas_EM_en_la_materia/02_ondas_EM_en_la_materia
+    - file: 03_Interacción_materia-luz/03_Interacción_materia-luz
+    - file: 04_Scattering/04_Scattering
+    - file: 05_TransporteRadiativo/05_TransporteRadiativo
+  - caption: Parte 2 - Diseño de sistemas para manejo y conversión de energía solar
+    numbered: true
+    chapters:
+    - file: 06_RadiacionTermica/06_RadiacionTermica
+    - file: 07_Radiación_solar/07_Radiación_solar
+    - file: 08_ColetorSolar/08_ColetorSolar
+  - caption: Parte 3 - Aplicaciones
+    numbered: true
+    chapters:
+    - file: 09_CentralTermoSolar/09_CentralTermoSolar
     - file: 10_SolarFotovoltaica/10_SolarFotovoltaica
     - file: 11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio
   - caption: Apéndice

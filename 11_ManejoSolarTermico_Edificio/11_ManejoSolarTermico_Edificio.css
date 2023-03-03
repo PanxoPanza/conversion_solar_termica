@@ -14,7 +14,7 @@ div.inner_cell>div.text_cell_render.rendered_html {
 
 div.inner_cell>div.text_cell_render.rendered_html img{
     max-height: 100%;
-    max-width: 1100px;
+    max-width: 90%;
     height: auto;
     width: 90%;
     margin-left: auto;

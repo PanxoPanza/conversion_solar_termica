@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <title>Longitudinal</title>
+    <link rel="stylesheet" type="text/css" href="../waveTutorial.css" />
+  </head>
+  <body>
+    <div id="content">
+
+<h2>Tutorial 6: Simple Harmonic Motion and Resonance</h2>
+
+<p>The following simulation shows a driven, damped harmonic oscillator;
+a 1 kg mass on a spring with spring constant
+2 N/m. The amplitude of the motion is graphed versus time.
+The
+driving frequency, <i>f</i>, can be adjusted so we expect that for one particular
+frequency we will see the amplitude of the motion to be very large; in other words,
+resonance will occurr. </p>
+<p>Several other parameters can also be adjusted. <i>b</i> is the amount of friction in Ns/m (this could
+be air resistance or sliding friction or friction in the spring itself); <i>v<sub>0</sub></i>
+in m/s is the initial velocity of the mass, and <i>F<sub>0</sub></i> is the magnitude of the
+driving force in Newtons.</p>
+
+<p>In this (and many other simulations we will use) it is easier to write
+<i>&#x3C9; = 2&#x3C0; f</i> where <i>&#x3C9;</i> is the <span style="font-weight: bold;">angular frequency</span>
+in radians per second instead of having to write <i>2&#x3C0; f</i> everywhere.</p>
+  
+  <h3>Questions:</h3>
+<p>6.1. Start with the default parameters, drag the ball to the maximum starting position
+(10 m) and hit play. How does this motion compare with simple harmonic motion (in the last chapter)?</p>
+
+<p>6.2. Reset the simulation, change the friction parameter, <i>b</i> to 0.5 Ns/m, drag the
+ball to the maximum starting position (10 m) and hit play. (You can also click the button at the top for under damped motion.) What happens? This motion is called
+<span style="font-weight: bold;">damped harmonic motion</span>. </p>
+
+<p>6.3. Try different values for <i>b</i>. How is the behavior of the mass for small values of <i>b</i>
+(less than one) different than for values larger than 2 Ns/m (be sure to use the same starting position each time)?</p>
+
+
+<p>If the mass oscillates at least once before stopping the damping is called <span style="font-weight: bold;">under damped</span>
+motion. If the mass never quite gets back to the equilibrium position the motion is called
+<span style="font-weight: bold;">over damped</span>. The case where there is just enough damping so
+that an oscillation does not occur (the mass just barely makes it back to equilibrium) is called
+<span style="font-weight: bold;">critically damped</span> motion. </p>
+
+<p>6.4. Click the buttons on the top for under, over and critically damped motion. Describe the differences between these three cases.</p>
+
+<p>6.5. Reset the simulation, set the friction parameter, <i>b</i> to 1.0 Ns/m and the magnitude of the driving force,
+<i>F<sub>0</sub></i> to 1.0 N. The
+angular frequency should be 1.0 rad/s also. Drag the ball to the maximum starting position
+and hit play. In this and the next few questions you will need to wait 10 s or so for the
+motion to stabilize. Describe the stable motion after the initial oscillations for this case. This motion is called
+<span style="font-weight: bold;">driven, damped harmonic motion</span>. </p>
+
+<p>6.6. Experiment with different amounts of force, keeping friction and angular frequency equal to one. Also start
+from the same position each time. What is the effect of larger values of force amplitude, <i>F<sub>0</sub></i>
+on the final, stable motion of the mass? HINT: You can right click (two finger click on a Mac)
+on the graph to save it in a separate screen to compare
+with other cases.</p>
+
+
+<p>6.7. With damping, <i>b</i> set to 0.2 Ns/m and <i>F<sub>0</sub></i> set to 1.0 N try several values of the angular
+driving frequency, <i>&#x3C9;</i>. Start with a value of 1.1 rad/s and increase by 0.1 each time until you get to 1.8 rad/s. In each case,
+wait until the animation ends and measure the amplitude by clicking on the top of the curve near the end. The second
+number in the yellow box is the amplitude in m. Write down the amplitude for each driving frequency. Which
+driving frequency ended up giving the largest amplitude? </p>
+
+<p><span style="font-weight: bold;">Resonance</span> is defined to occur when a vibrating system is driven with a frequency that
+causes the largest amplitude. Generally this occurs when the driving frequency equals the natural frequency. An
+example of resonance is when a wine glass is driven by sound waves with a frequency equal to the natural frequency
+of the glass. If the amplitude becomes large enough the glass will break. There are many other examples of resonance.
+Musical instruments depend on
+the phenomena of resonance to produce fixed pitches, tuning a radio to a particular chanel depends on selecting a resonance
+frequency and Magnetic Resonance Imagining (MRI) in the medical world uses resonance to form images of the inside of the human body. </p>
+
+<p>As we saw in the previous chapter the <span style="font-weight: bold;">natural frequency</span>,
+written as <i>f<sub>0</sub></i> is given
+by the stiffness of the spring, &#x3BA;, and the mass; <i>f<sub>0</sub> = (&#x3BA;/m)<sup>1/2</sup>/2&#x3C0;</i>.
+In this simulation the mass is 1 kg and the spring constant is 2 N/m so <i>f<sub>0</sub></i> = 0.225 Hz
+and the natural angular frequency, <i>&#x3C9;<sub>0</sub> = 2 &#x3C0; f</i> equals  1.41 rad/s. In the previous
+question you should have seen the maximum amplitude for a driving frequency of 1.41 rad/s. In other words
+a driving frequency, <i>&#x3C9;</i> of 1.41 rad/s leads to resonance (maximum amplitude) because it
+equals the natural frequency, <i>&#x3C9;<sub>0</sub></i>. 
+</p>
+
+<p>6.8. Use a calculator to find the natural frequency for a spring and mass system with <i>m</i> = 2.0 kg and
+<i>&#x3BA;</i> = 5.0 N/m. What do you expect the resonance frequency to be for this case?</p>
+
+<p>The mathematical formula that describes damped harmonic motion is
+<i>A e<sup>-&#x3B3;t</sup> cos (&#x3C9; t + &#x3C6;)</i> where <i>&#x3B3; = b/2m</i>. Notice
+that this is the same cosine function for simple harmonic motion but the amplitude, <i>A</i>,
+is multiplied by an exponentially decreasing function of time, <i>e<sup>-&#x3B3;t</sup></i>.
+So we expect the oscillation of a damped harmonic oscillator to be an up and down cosine
+function with an amplitude that decreases over time. </p>
+
+<p>6.9. Check to see if the formula <i>A e<sup>-&#x3B3;t</sup> cos (&#x3C9; t + &#x3C6;)</i> really
+does describe the behavior of damped harmonic motion in the simulation.
+To do this, use a graphing calculator (or go to
+<a href="http://www.meta-calculator.com/online/" target="blank">meta calculator</a>
+and chose graphing calculator or use <a href="https://www.desmos.com/calculator" target="blank">desmos calculator</a>)
+and plot <span class="code">y = 10*exp(-.2 * x) * cos(1.*x)</span>. This is
+the case <i>A</i> = 10 m; <i>b</i> = 0.4 Ns/m; <i>m</i> = 1.0 kg ; and <i>&#x3C9;</i> = 1.0 rad/s.
+(You can cut and paste the equation into the online calculator). How does this
+graph compare
+with the simulation for these same parameters (note: you are only interested in the positive <i>x</i> values)? </p>
+
+<p>The mathematical formula that describes driven, damped harmonic motion
+ is <i>A<sub>0</sub> cos (&#x3C9; t + &#x3C6;)</i> where  <i>A<sub>0</sub> =
+(F<sub>0</sub>/m) / ((&#x3C9;<sup>2</sup> - &#x3C9;<sub>0</sub><sup>2</sup>)<sup>2</sup>
++ 4 &#x3B3;<sup>2</sup> &#x3C9;<sup>2</sup>)<sup>1/2</sup></i>. In this case the amplitude, <i>A<sub>0</sub></i> does
+not change over time but it is dependent on the driving frequency, <i>&#x3C9;</i>. 
+</p>
+
+<p>6.10. What happens to the amplitude, <i>A<sub>0</sub></i>, when <i>&#x3C9; = &#x3C9;<sub>0</sub></i>
+ (assume all the other factors are constant numbers)? Is there
+any other combination of <i>&#x3C9;</i> and <i> &#x3C9;<sub>0</sub></i> that gives a larger amplitude? </p>
+
+<p>6.11. Verify your previous answer by
+making a plot of <i>A<sub>0</sub> =
+(F<sub>0</sub>/m) / ((&#x3C9;<sup>2</sup> - &#x3C9;<sub>0</sub><sup>2</sup>)<sup>2</sup>
++ 4 &#x3B3;<sup>2</sup> &#x3C9;<sup>2</sup>)<sup>1/2</sup></i> for
+a range of driving frequency. To do this,
+use a graphing calculator to graph <span class="code">y = 1.0 / ((1.4^2 - x^2)^2 + 4*.04*1.4^2)^.5</span>. Where
+does this graph have a maximum for positive values of <span class="code">x</span>? </p>
+<p>6.12. Based on the previous two questions, what is the resonance frequency of this system and how does
+this compare with the natural frequency?</p></div>
+
+  </body>
+</html>

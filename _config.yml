@@ -19,8 +19,8 @@ only_build_toc_files: true
 
 parse:
  myst_enable_extensions:
-  - html_image # parse html image scripts (non-default)
-  - amsmath # advanced latex math text (non-default)
+  - html_image  # parse html image scripts (non-default)
+  - amsmath     # advanced latex math text (non-default)
   - colon_fence
   #- deflist
   - dollarmath

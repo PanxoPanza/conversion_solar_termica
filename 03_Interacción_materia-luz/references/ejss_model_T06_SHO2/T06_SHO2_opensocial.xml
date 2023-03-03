@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Module>
+<ModulePrefs
+title="T06_SHO2"
+author="Andreu Glasmann; Wolfgang Christian; Mario Belloni; Kyle Forinash"
+description="Adapted from Physlet Physics illustration 16.4."
+screenshot="./T06_SHO2/T06_SHO2.png"
+thumbnail="./T06_SHO2/T06_SHO2.png">
+<Require feature="opensocial-0.9"/>
+<Require feature="dynamic-height"/>
+</ModulePrefs>
+<Content type="html" href="T06_SHO2_Simulation.xhtml"/>
+</Module>

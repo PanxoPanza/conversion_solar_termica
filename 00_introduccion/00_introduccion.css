@@ -1,0 +1,34 @@
+/* an example to illustrate how to tweak font sizes */
+
+/* to apply a setting only when under RISE, 
+   be aware that the <body> tag has class .rise-enabled */
+
+
+/* ---------- markdown cells
+ */
+body.rise-enabled 
+
+div.inner_cell>div.text_cell_render.rendered_html {
+    font-size: 90%;
+    font-family: "Calibri Light"
+}
+
+div.inner_cell>div.text_cell_render.rendered_html h1{
+    color: rgb(0,175,216);
+}
+
+div.inner_cell>div.text_cell_render.rendered_html h2{
+    color: rgb(0,175,216);
+}
+
+div.inner_cell>div.text_cell_render.rendered_html h3{
+    color: rgb(0,175,216);
+}
+
+div.inner_cell>div.text_cell_render.rendered_html img{
+    min-width: 70%;
+    max-width: 90%;
+    max-height: 90%; 
+    margin-left: auto;
+    margin-right: auto;
+}
