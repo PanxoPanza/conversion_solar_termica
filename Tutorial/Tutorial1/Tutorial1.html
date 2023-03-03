@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -118,59 +120,73 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../0_introduccion/0_introduccion.html">
+  <a class="reference internal" href="../../00_introduccion/00_introduccion.html">
    Introducción al curso
   </a>
  </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Unidades del curso
+  Parte 1 - Fundamentos del transporte de fotones
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../1_ondas_electromagneticas/1_ondas_electromagneticas.html">
+  <a class="reference internal" href="../../01_ondas_electromagneticas/01_ondas_electromagneticas.html">
    1. La radiación como un fenómeno electromagnético
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html">
+  <a class="reference internal" href="../../02_ondas_EM_en_la_materia/02_ondas_EM_en_la_materia.html">
    2. Ondas electromagnéticas en la materia
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../3_Interacci%C3%B3n_materia-luz/3_Interacci%C3%B3n_materia-luz.html">
+  <a class="reference internal" href="../../03_Interacci%C3%B3n_materia-luz/03_Interacci%C3%B3n_materia-luz.html">
    3. Interacción materia-luz
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../4_Scattering/4_Scattering.html">
+  <a class="reference internal" href="../../04_Scattering/04_Scattering.html">
    4. Scattering electromagnético
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../5_TransporteRadiativo/5_TransporteRadiativo.html">
+  <a class="reference internal" href="../../05_TransporteRadiativo/05_TransporteRadiativo.html">
    5. Transporte Radiativo
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parte 2 - Diseño de sistemas para manejo y conversión de energía solar
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../6_RadiacionTermica/6_RadiacionTermica.html">
+  <a class="reference internal" href="../../06_RadiacionTermica/06_RadiacionTermica.html">
    6. Radiación Térmica
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../7_Radiaci%C3%B3n_solar/7_Radiaci%C3%B3n_solar.html">
+  <a class="reference internal" href="../../07_Radiaci%C3%B3n_solar/07_Radiaci%C3%B3n_solar.html">
    7. Radiación Solar
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../8_ColetorSolar/8_ColetorSolar.html">
+  <a class="reference internal" href="../../08_ColetorSolar/08_ColetorSolar.html">
    8. Colectores solares estacionarios
   </a>
  </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parte 3 - Aplicaciones
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../9_CentralTermoSolar/9_CentralTermoSolar.html">
+  <a class="reference internal" href="../../09_CentralTermoSolar/09_CentralTermoSolar.html">
    9. Central Termosolar
   </a>
  </li>
@@ -907,7 +923,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f27168583d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9d2f856040&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/Tutorial1_15_1.png" src="../../_images/Tutorial1_15_1.png" />
@@ -1390,7 +1406,18 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_44_0.png" src="../../_images/Tutorial1_44_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">Input In [20],</span> in <span class="ni">&lt;cell line: 12&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">D</span> <span class="o">=</span> <span class="mf">1.0</span>                        <span class="c1"># diámetro de los poros (micrones)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="n">Np</span> <span class="o">=</span> <span class="mf">1.0</span>                       <span class="c1"># índice de refracción partícula</span>
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">Rtot</span><span class="p">,</span> <span class="n">Ttot</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">ad_rad_transfer</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">tfilm</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">fv</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">Np</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Rtot</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ttot</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: ad_rad_transfer() missing 2 required positional arguments: &#39;gcos&#39; and &#39;Vp&#39;
+</pre></div>
+</div>
 </div>
 </div>
 </section>
