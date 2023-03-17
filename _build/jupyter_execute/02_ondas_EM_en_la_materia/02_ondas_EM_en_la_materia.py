@@ -39,29 +39,33 @@
 # k = N \frac{\omega}{c_0}
 # \end{equation}
 # 
-# donde $N = \sqrt{\varepsilon} = n +i\kappa$, es el **índice de refracción complejo**. En general $n$ se conoce como el **índice de refracción**, y $\kappa$ como **extinsión**.
+# donde $N = \sqrt{\varepsilon} = n +i\kappa$, es el **índice de refracción complejo**. En general $n$ se conoce como el **índice de refracción**, y $\kappa$ como **extinsión**. Así, el **vector de onda es un número complejo, $k = k'+ik''$**
 
-# > Notar que la velocidad de la onda también cambia a $c = c_0/n$
+# La parte real nos da información sobre la **velocidad de fase de la onda $v_\mathrm{p} = \omega/k'$:**
+# 
+# \begin{equation}
+# v_\mathrm{p} = \frac{c_0}{n}\quad\quad\mathrm{Velocidad~de~fase~en~un~medio~con~índice~de~refracción}~N
+# \end{equation}
+# 
+# > Notar que para $n > 1$ la onda se mueve a una velocidad más lenta que en el vacío
 
-# Igualmente la relación entre $H_0$ y $E_0$, es de la forma 
+# Las relaciones de disersión no son necesariamente lineales. Por ejemplo, la relación de dispersión de ondas de sonido en un metal tienen la forma $\omega \propto k^2$.
+
+# Así, las ondas agudas (alta frecuencia) se mueven más rápido que las ondas graves (baja frecuencia).
+
+# In[1]:
+
+
+from IPython.display import YouTubeVideo
+YouTubeVideo('dumzvAN12-4', width=600, height=400,  playsinline=0, start=354, end = 532)
+
+
+# 
+# Igualmente, la relación entre $H_0$ y $E_0$ también cambia a la forma 
 # 
 # $$H_0 = \frac{E_0}{Z_0Z_r},$$
 # 
 # donde $Z_r = \sqrt{\frac{1}{\varepsilon}}$ es la **impedancia relativa**.
-
-# **¿Qué representa la constante dielectrica compleja?**
-
-# Los materiales están compuestos de átomos, con un núcleo positivo y electrones negativos. Estos electrones interactúan con los átomos de distintas formas; algunos orbitan alrededor del núcleo mientras que otros se mueven libremente por el material. Así, podemos separar las cargas eléctricas en dos tipos: **cargas ligadas**, y **cargas libres**.
-
-# 
-# 
-# <img src="./images/atomic_lattice.png" width="400px" align= center>
-
-# La interacción de las onda electromagnéticas con las cargas ligadas induce **polarización**. Esta respuesta está representada por la parte real de la constante dielectrica ($\varepsilon'$).
-
-# <img src="./images/constante_dielectrica.png" width="650px" align= center>
-
-# Las ondas electromagnéticas aceleran las cargas libres, generando **corrientes eléctricas inducidas**. Algunas cargas libres móbiles colicionan con otros electrónes o núcleos, disipando energía. Esta respuesta está representada por la parte imaginaria de la constante dieléctrica ($\varepsilon''$).
 
 # **¿Que significa que el vector de onda sea complejo?**
 
@@ -113,6 +117,20 @@
 # <img src="./images/em_wave_decaying.jpg" width="400px" align= center>
 # 
 # <center> Esquema de una onda electromagnética en un material</center>
+
+# **¿Qué representa la constante dielectrica compleja?**
+
+# Los materiales están compuestos de átomos, con un núcleo positivo y electrones negativos. Estos electrones interactúan con los átomos de distintas formas; algunos orbitan alrededor del núcleo mientras que otros se mueven libremente por el material. Así, podemos separar las cargas eléctricas en dos tipos: **cargas ligadas**, y **cargas libres**.
+
+# 
+# 
+# <img src="./images/atomic_lattice.png" width="400px" align= center>
+
+# La interacción de las onda electromagnéticas con las cargas ligadas induce **polarización**. Esta respuesta está representada por la parte real de la constante dielectrica ($\varepsilon'$).
+
+# <img src="./images/constante_dielectrica.png" width="650px" align= center>
+
+# Las ondas electromagnéticas aceleran las cargas libres, generando **corrientes eléctricas inducidas**. Algunas cargas libres móbiles colicionan con otros electrónes o núcleos, disipando energía. Esta respuesta está representada por la parte imaginaria de la constante dieléctrica ($\varepsilon''$).
 
 # ### Condiciones de borde
 
@@ -308,7 +326,7 @@
 # - caso 1, $n_1 < n_2$
 # - caso 1, $n_1 > n_2$
 
-# In[1]:
+# In[2]:
 
 
 import numpy as np
@@ -318,17 +336,18 @@ from empylib.waveoptics import interface
 
 theta = np.linspace(0,90,100) # Ángulo de incidencia
 
-# Reflectividad en una interface
-Rp = lambda n1,n2 : interface(rad(theta),n1,n2,pol='TM')[0] # TM
-Rs = lambda n1,n2 : interface(rad(theta),n1,n2,pol='TE')[0] # TE
-
 # preparamos el ploteo
 def plot_R_interface(n1,n2):
+    
+    # Reflectividad en una interface
+    Rp = interface(rad(theta),n1,n2,pol='TM')[0] # TM
+    Rs = interface(rad(theta),n1,n2,pol='TE')[0] # TE
+    
     fig, ax = plt.subplots()
-    fig.set_size_inches(9, 6)
-    plt.rcParams['font.size'] = '18'
-    ax.plot(theta,Rp(n1,n2), label='$R_\mathrm{TM}$', color='red')
-    ax.plot(theta,Rs(n1,n2), label='$R_\mathrm{TE}$',color='blue')
+    fig.set_size_inches(5,3)
+    plt.rcParams['font.size'] = '14'
+    ax.plot(theta,Rp, label='$R_\mathrm{TM}$', color='red')
+    ax.plot(theta,Rs, label='$R_\mathrm{TE}$',color='blue')
     ax.set_xlim([0,90])
     ax.set_ylim([0,1.0])
     ax.set_xlabel('Ángulo de incidencia (°)')
@@ -336,7 +355,7 @@ def plot_R_interface(n1,n2):
     ax.legend(frameon=False)
 
 
-# In[2]:
+# In[3]:
 
 
 from ipywidgets import interact
@@ -356,7 +375,7 @@ def g(n1=1.0, n2=1.5):
 
 # En el siguiente video, podemos ver el efecto de la polarización. Aquí, la luz no puede pasar a través de dos polarizadores cuando son oriententados en direcciones perpendiculares.
 
-# In[3]:
+# In[4]:
 
 
 from IPython.display import YouTubeVideo
@@ -420,7 +439,7 @@ YouTubeVideo('5SIxEiL8ujA', width=600, height=400,  playsinline=0, start=0)
 # - espesor del sílice, $d$: variable
 # - ángulo de incidencia $\theta_i$: variable
 
-# In[4]:
+# In[5]:
 
 
 import numpy as np
@@ -430,17 +449,19 @@ from empylib.waveoptics import multilayer
 
 # Reflectividad en capa delgada
 lam = np.linspace(0.3,0.8,100)          # longitud de onda (en um)
-n_layers = (1.0,1.5,4.3)         # índices de refracción n1, n2, n3
-Rp = lambda tt,d : multilayer(lam, rad(tt),n_layers, (d,), 'TM')[0]
-Rs = lambda tt,d : multilayer(lam, rad(tt),n_layers, (d,), 'TE')[0]
+n_layers = (1.0,1.5,4.3)     # índices de refracción n1, n2, n3
 
 # preparamos el ploteo
 def plot_R_multi(theta,d):
+    
+    Rp = multilayer(lam, rad(theta),n_layers, (d,), 'TM')[0]
+    Rs = multilayer(lam, rad(theta),n_layers, (d,), 'TE')[0]
+    
     fig, ax = plt.subplots()
-    fig.set_size_inches(9, 6)
-    plt.rcParams['font.size'] = '16'
-    ax.plot(lam,Rp(theta,d), label='$R_\mathrm{TM}$', color='red')
-    ax.plot(lam,Rs(theta,d), label='$R_\mathrm{TE}$',color='blue')
+    fig.set_size_inches(5, 3)
+    plt.rcParams['font.size'] = '14'
+    ax.plot(lam,Rp, label='$R_\mathrm{TM}$', color='red')
+    ax.plot(lam,Rs, label='$R_\mathrm{TE}$',color='blue')
     ax.set_xlim([min(lam),max(lam)])
     ax.set_ylim([0,1.0])
     ax.set_xlabel('Longitud de onda ($\mu$m)')
@@ -448,7 +469,7 @@ def plot_R_multi(theta,d):
     ax.legend(frameon=False)
 
 
-# In[5]:
+# In[6]:
 
 
 from ipywidgets import interact
@@ -468,7 +489,7 @@ def g(theta=30, d=0.3):
 
 # Analicemos como se manifiesta este fenómeno en forma de color:
 
-# In[6]:
+# In[7]:
 
 
 import numpy as np
@@ -482,17 +503,18 @@ cs = cs.hdtv
 # Reflectividad en capa delgada
 lam = np.linspace(0.3,0.8,100)   # longitud de onda (en um)
 n_layers = (1.0,1.5,4.3)         # índices de refracción n1, n2, n3
-Rp = lambda tt,d : multilayer(lam, rad(tt),n_layers, (d,), 'TM')[0]
-Rs = lambda tt,d : multilayer(lam, rad(tt),n_layers, (d,), 'TE')[0]
 
 cs.interp_internals(lam)
 def color_R_film(d):
+    Rp = lambda tt,d : multilayer(lam, rad(tt),n_layers, (d,), 'TM')[0]
+    Rs = lambda tt,d : multilayer(lam, rad(tt),n_layers, (d,), 'TE')[0]
+    
     # formateamos la figura
     fig, ax = plt.subplots()
-    fig.set_size_inches(9, 5)
-    plt.rcParams['font.size'] = '16'
+    fig.set_size_inches(6, 4)
+    plt.rcParams['font.size'] = '14'
     
-    theta = np.linspace(0,90,100) # angulo de incidencia
+    theta = np.linspace(0,90,100) # angulo de inciSdencia
     for tt in theta: 
         R = 0.5*Rp(tt,d) + 0.5*Rs(tt,d)
         Irad = R*AM15(lam)
@@ -504,7 +526,7 @@ def color_R_film(d):
     ax.set_xlabel('Ángulo de incidencia (deg)')
 
 
-# In[7]:
+# In[8]:
 
 
 from ipywidgets import interact

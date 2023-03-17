@@ -88,7 +88,7 @@ print("Energía eléctrica suministrada: %.1f TWh (Energía consumida en Chile 4
 # <center><a href="https://laderasur.com/articulo/recorriendo-cerro-dominador-la-unica-planta-termosolar-que-funciona-en-medio-del-desierto-de-atacama/">Planta termosolar cerro dominador (110 MW)</a></center>
 
 # ### Estado del arte de las tecnologías de conversión y manejo de energía solar
-# Las actuales tecnologias bassadas en energía solar (principalmente fotovoltaica y termosolar) presentan una serie de deseventajas:
+# Las actuales tecnologias basadas en energía solar (principalmente fotovoltaica y termosolar) presentan una serie de deseventajas:
 
 # - **Baja eficiencia.** *Hoy en día la eficiencia de un panel fotovoltaico es cercana al 30%. En el caso de una central termosolar, la eficiencia es menor al 20%.* 
 
@@ -108,8 +108,6 @@ print("Energía eléctrica suministrada: %.1f TWh (Energía consumida en Chile 4
 # 
 # El sol y, en general, todos los cuerpos a temperaturas sobre 0K emiten radiación, la cual está compuesta de ondas electromagnéticas con un amplio espectro de longitudes de onda.
 # <img src="./images/thermal_radiation_spectra.png" width="450" align= center>
-
-# 
 
 # Cada región del espectro genera una respuesta particular en los materiales. El adecuado manejo de este espectro es, así, fundamental para el aprovechamiento eficiente de la energía solar.
 

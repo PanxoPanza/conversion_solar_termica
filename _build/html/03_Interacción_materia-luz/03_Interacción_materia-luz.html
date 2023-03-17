@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -654,8 +654,8 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 <p>con <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_pq^2}{\varepsilon_0 m}\)</span></p>
 <p>En el caso del agua, la molecula posee un dipolo eléctrico neto adicional al dipolo inducido. El efecto de la polarización neta se puede representar, cambiando el primer término por un valor constante <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span>.</p>
 <p>El modelo completo se conoce como <strong>modelo de Lorentz</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1a3682b7-c48f-4b4e-a763-9f0680db4068">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-1a3682b7-c48f-4b4e-a763-9f0680db4068" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-47f6f901-40ec-4da6-99ef-e06aed2eb70f">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-47f6f901-40ec-4da6-99ef-e06aed2eb70f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty + \frac{\omega_p^2}{\omega_n^2 - \omega^2 - i\Gamma \omega}\quad\mathrm{Modelo~de~Lorentz},
 \end{equation}\]</div>
 <p>Usaremos la función <code class="docutils literal notranslate"><span class="pre">lorentz</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">empylib.nklib</span></code> para generar el índice de refracción y constante dielectrica a partir del modelo de Lorentz, con los parámetros: <span class="math notranslate nohighlight">\(\varepsilon_\infty = 2.0\)</span>, <span class="math notranslate nohighlight">\(\Gamma = 0.1\omega_n\)</span>, y <span class="math notranslate nohighlight">\(\omega_p = \omega_n\)</span></p>
@@ -815,8 +815,8 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 \end{equation*}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(m_e\)</span>, <span class="math notranslate nohighlight">\(e\)</span> y <span class="math notranslate nohighlight">\(\Gamma_e\)</span> son, respectivamente, la masa, la carga elemental y la taza de decaimiento del electrón.</p>
 <p>Mediante un procedimiento similar al utilzado para el modelo de Lorentz, derivamos el <strong>modelo de Drude</strong> para conductores:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7babcae6-a4c1-47ae-8b04-9048b1740378">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-7babcae6-a4c1-47ae-8b04-9048b1740378" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-75ca9f97-2e63-4d49-bd61-f3c6ab430ed7">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-75ca9f97-2e63-4d49-bd61-f3c6ab430ed7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty - \frac{\omega_p^2}{\omega^2 + i\Gamma_e \omega},\quad\mathrm{Modelo~de~Drude},
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_ee^2}{\varepsilon_0 m}\)</span> se conoce como frecuencia de plasma, y <span class="math notranslate nohighlight">\(N_e\)</span> es la densidad de número de electrones. Similar al modelo de Lorentz, <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span> representa la polarización neta del material.</p>

@@ -78,7 +78,7 @@
 # >En la figura anterior (divergente), $\nabla\times\vec{f} = 0$ en todos los casos.
 
 # ### Ejemplos de uso de operadores diferenciales
-# Los operadores diferenciales permiten una descripción más compacta en de las formuals basadas en ecuaciones diferenciales parciales.
+# Los operadores diferenciales permiten una descripción más compacta en de las formulas basadas en ecuaciones diferenciales parciales.
 
 # <img src="./images/mass_conservation.png" width="500" align= center>
 
@@ -161,7 +161,7 @@
 
 
 from IPython.display import YouTubeVideo
-YouTubeVideo('CWulQ1ZSE3c', width=600, height=400,  playsinline=0, start=42)
+YouTubeVideo('CWulQ1ZSE3c', width=600, height=400,  playsinline=0)
 
 
 # ### Corrección de la ley de Ampere
@@ -294,7 +294,7 @@ from IPython.display import IFrame, display
 display(IFrame('https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/height/480/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false','700px', '450px'))
 
 
-# Debido a que el campo eléctrico toma la forma $\vec{E} = E_0 e^{i\left(\vec{k}\cdot\vec{r} - \omega t\right)} \hat{e},$$  decimos que se comporta como una **onda plana**, debido a que el campo es constante sobre un plano perpendicular a la dirección de propagación
+# Debido a que el campo eléctrico toma la forma $\vec{E} = E_0 e^{i\left(\vec{k}\cdot\vec{r} - \omega t\right)} \hat{e},$  decimos que se comporta como una **onda plana**, debido a que el campo es constante sobre un plano perpendicular a la dirección de propagación
 
 # <img src="./images/planewave.png" width="400px" align= center>
 
@@ -420,9 +420,13 @@ display(IFrame('https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/h
 # - $\hbar = \frac{h}{2\pi} = 6.582\times10^{−16}$ eV/Hz es la **constante reducida de Planck o constante de Dirac**.
 
 # ## Referencias
-# Griffths D., *Introduction to Electrodynamics*, 4th Ed, Pearson, 2013
+# **Griffths D., *Introduction to Electrodynamics*, 4th Ed, Pearson, 2013**
 # - 1.2 Diferential Calculus
 # - 7.2 Electromagnetic Induction
 # - 7.3 Maxwell's Equations (hasta  7.3.3)
 # - 8 Concervation laws (solo 8.1)
 # - 9 Electromagnetic Waves (hasta 9.2)
+# 
+# **Hetch E., *Óptica*, 5ta Ed, Pearson, 2017**
+# - 2. El movimiento ondulatorio
+# - 3. Teoría electromagnética, fotones y luz
