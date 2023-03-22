@@ -206,9 +206,24 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Apendice/Espectro_electromagnetico/Espectro_electromagnetico.html">
+   Espectro electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Apendice/Teoria_del_color/Teoria_del_color.html">
+   Teoria del color
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../Intro.html">
    Tutoriales
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     empylib
+    </span>
+   </code>
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -390,11 +405,6 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instrucciones-de-instalacion">
-   Instrucciones de instalación
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#distribucion-de-planck-bplanck">
    Distribución de Planck (
    <code class="docutils literal notranslate">
@@ -447,11 +457,6 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instrucciones-de-instalacion">
-   Instrucciones de instalación
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#distribucion-de-planck-bplanck">
    Distribución de Planck (
    <code class="docutils literal notranslate">
@@ -494,27 +499,9 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><strong>M501 - Manejo y conversión de energía solar térmica</strong></p>
-<section class="tex2jax_ignore mathjax_ignore" id="tutorial-2">
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-2">
 <h1>Tutorial 2<a class="headerlink" href="#tutorial-2" title="Permalink to this headline">#</a></h1>
 <p>Este es un tutorial para utilizar el módulo <code class="docutils literal notranslate"><span class="pre">ref_spectra</span></code> de la librería <code class="docutils literal notranslate"><span class="pre">empylib</span></code></p>
-<section id="instrucciones-de-instalacion">
-<h2>Instrucciones de instalación<a class="headerlink" href="#instrucciones-de-instalacion" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>La librería <code class="docutils literal notranslate"><span class="pre">empylib</span></code> esta disponible desde github ejecutando la siguiente sentencia en una celda de este notebook:</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!git clone https://github.com/PanxoPanza/empylib.git
-</pre></div>
-</div>
-<p>Esto descargará una carpeta “empylib” con todos los módulos necesarios. <strong>Ejecutar solo una vez para descar la carpeta</strong> Posteriormente, no es necesario volver a ejecutar esta línea.</p>
-<ul class="simple">
-<li><p>La libería <code class="docutils literal notranslate"><span class="pre">iadpython</span></code> debe ser instalada desde pip, ejecutando el siguiente script en una celda de este notebook</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>import sys
-!{sys.executable} -m pip install iadpython
-</pre></div>
-</div>
-<p>Esta instancia debe ser ejecutada solo una vez.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">empylib.ref_spectra</span> <span class="k">as</span> <span class="nn">rf</span>
@@ -522,7 +509,6 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</section>
 <section id="distribucion-de-planck-bplanck">
 <h2>Distribución de Planck (<code class="docutils literal notranslate"><span class="pre">Bplanck</span></code>)<a class="headerlink" href="#distribucion-de-planck-bplanck" title="Permalink to this headline">#</a></h2>
 <p>La función <code class="docutils literal notranslate"><span class="pre">Bplanck</span></code> permite determinar la radiancia espectral de un cuerpo negro.</p>
