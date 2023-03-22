@@ -1,24 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# **M501 - Manejo y conversión de energía solar térmica**
+# 
 # # Tutorial 2
 # 
 # Este es un tutorial para utilizar el módulo `ref_spectra` de la librería `empylib`
-# 
-# ## Instrucciones de instalación
-# - La librería ```empylib``` esta disponible desde github ejecutando la siguiente sentencia en una celda de este notebook:
-# ```python
-# !git clone https://github.com/PanxoPanza/empylib.git
-# ```
-# Esto descargará una carpeta "empylib" con todos los módulos necesarios. **Ejecutar solo una vez para descar la carpeta** Posteriormente, no es necesario volver a ejecutar esta línea.
-# 
-# - La libería ```iadpython``` debe ser instalada desde pip, ejecutando el siguiente script en una celda de este notebook
-# ```python
-# import sys
-# !{sys.executable} -m pip install iadpython
-# ```
-# Esta instancia debe ser ejecutada solo una vez.
 
 # In[1]:
 

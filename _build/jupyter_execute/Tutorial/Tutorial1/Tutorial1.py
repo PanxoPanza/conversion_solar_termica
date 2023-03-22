@@ -1,28 +1,32 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# **M501 - Manejo y conversión de energía solar térmica**
 # # Tutorial 1
 # 
-# Este es un tutorial para utilizar las librerías de funciones para el curso. Utilizaremos dos librerías:
-# - ```empylib```: Cálculos de reflectividad, transmisividad, scattering de Mie, etc.
-# - ```iadpyathon```: Simulaciones de scattering multiple 
-# 
-# ## Instrucciones de instalación
-# - La librería ```empylib``` esta disponible desde github ejecutando la siguiente sentencia en una celda de este notebook:
-# ```python
-# !git clone https://github.com/PanxoPanza/empylib.git
-# ```
-# Esto descargará una carpeta "empylib" con todos los módulos necesarios. **Ejecutar solo una vez para descar la carpeta** Posteriormente, no es necesario volver a ejecutar esta línea.
-# 
-# - La libería ```iadpython``` debe ser instalada desde pip, ejecutando el siguiente script en una celda de este notebook
-# ```python
-# import sys
-# !{sys.executable} -m pip install iadpython
-# ```
-# Esta instancia debe ser ejecutada solo una vez.
+# Este es un tutorial para utilizar las principales librerías del paquete ```empylib```. Estas son:
+# - Funciones básicas en `empylib`.
+# - `nklib` para estimación de índices de refracción.
+# - `waveoptics` para cálculo de propiedades de reflectancia y transmitancia de ondas electromagnéticas.
+# - `miescattering` para cálculo scattering y absorción de luz
+# - `rad_transfer` para simulaciones de transferencia de energía radiativa.
+
+# Primero, importamos los paquetes estandar de `numpy` y `matplotlib`
+
+# In[1]:
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
 
 # ## Conversión de unidades
+
+# In[2]:
+
+
+import empylib as em
+
+
 # La librería ```empylib``` cuenta con la función ```convert_units(x, x_in, to)``` para convertir unidades. Los parámetros de entrada son:
 # - ```x```: lista de valores a convertir (formato *ndarray*)
 # - ```x_in```: unidad de la lista de valores (formato *string*)
@@ -40,11 +44,8 @@
 
 # Por ejemplo, realicemos la conversión del espectro $\lambda \in [0.3,1.0]$ $\mu$m considerando 8 puntos igualmente espaciados, a unidades de eV.
 
-# In[1]:
+# In[3]:
 
-
-import numpy as np
-import empylib as em
 
 lam = np.linspace(0.3,1.0,8)   # espectro de longitudes de onda en um
 print('longitudes de onda en um:\n', lam)
@@ -53,7 +54,7 @@ lam_in_eV = em.convert_units(lam,'um','eV') # convertimos lam a unidades de eV
 print('longitudes de onda en eV:\n', lam_in_eV)
 
 
-# In[2]:
+# In[4]:
 
 
 # revertimos el proceso para recuperar las longitudes de onda en um
@@ -62,7 +63,14 @@ print('longitudes de onda en um:\n', lam_in_um)
 
 
 # ## Índices de refracción (```nklib```)
-# ### Valores tabulados
+
+# In[5]:
+
+
+import empylib.nklib as nk
+
+
+# ### Índices de refracción tabulados
 # La librería ```empylib.nklib``` contiene una serie de funciones para determinar el coeficiente de refracción complejo, $N = n + i\kappa$.
 # 
 # Entre la lista de materiales disponibles tenemos:
@@ -79,20 +87,14 @@ print('longitudes de onda en um:\n', lam_in_um)
 # 
 # Por ejemplo, supongamos que necesitamos el índice de refracción del sílice en el espectro $\lambda\in[0.5,20]$ $\mu$m.
 
-# In[3]:
+# In[6]:
 
-
-import empylib.nklib as nk
 
 nk.Al(0.5)
 
 
-# In[4]:
+# In[7]:
 
-
-import numpy as np
-import empylib.nklib as nk
-import matplotlib.pyplot as plt
 
 lam = np.linspace(0.5,20,100)   # arreglo de 100 datos entre 0.5 y 5.0 micrones
 N   = nk.SiO2(lam)              # índice de refracción del sílice
@@ -113,7 +115,7 @@ plt.show()
 # 
 # Cada modelo requiere una serie de parámetros. Podemos verificar los parámetros requeridos mediante la función ```help```.
 
-# In[5]:
+# In[8]:
 
 
 help(nk.lorentz)
@@ -129,12 +131,8 @@ help(nk.lorentz)
 
 # **Índice de refracción según modelo de Lorentz**
 
-# In[6]:
+# In[9]:
 
-
-import numpy as np
-import empylib.nklib as nk
-import matplotlib.pyplot as plt
 
 lam = np.linspace(2,20,200)   # arreglo de 100 datos entre 0.5 y 5.0 micrones
 
@@ -156,7 +154,7 @@ plt.show()
 
 # **Constante dieléctrica según modelo de Lorentz**
 
-# In[7]:
+# In[10]:
 
 
 eps_lorentz = Nlorentz**2
@@ -170,7 +168,7 @@ plt.legend()
 plt.show()
 
 
-# In[8]:
+# In[11]:
 
 
 lam = np.linspace(0.3,8,200)   # arreglo de 100 datos entre 0.5 y 5.0 micrones
@@ -205,7 +203,7 @@ plt.plot(lam, epsco2.imag,'b')
 # - $\varepsilon_\infty$ = 2.0
 # 
 
-# In[9]:
+# In[12]:
 
 
 # a partir del video tenemos
@@ -216,7 +214,7 @@ wn
 
 # Generamos nuestro modelo, y graficamos para $\lambda\in[2,10]$ $\mu$m
 
-# In[10]:
+# In[13]:
 
 
 # generamos modelo del agua 
@@ -240,7 +238,13 @@ plt.show()
 
 
 # ## Reflexión/Transmissión (```waveoptics```)
-# 
+
+# In[14]:
+
+
+import empylib.waveoptics as wv
+
+
 # La librería ```empylib.waveoptics``` contiene funciones para calcular los coeficientes de Fresnel y Flujo de energía de la porción transmitida y reflejada de la luz incidente.
 # - ```interface``` para una [interface simple](https://panxopanza.github.io/conversion_solar_termica/2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html#coeficientes-de-fresnel)
 # - ```multilayer``` para multicapas de [película delgada](https://panxopanza.github.io/conversion_solar_termica/2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html#refleccion-y-transmission-en-peliculas-delgadas)
@@ -264,20 +268,15 @@ plt.show()
 # 
 # >Notar que ```n1=1.0``` es un valor ```float``` unidimencional, mientras que ```n2``` es un arreglo en el espectro $\lambda \in [0.3,1.0]$ $\mu$m. En este caso, la función repite ```n1=1.0``` por cada valor espectral de ```n2```. **En el caso que ```n1``` y ```n2``` sean un arreglo, ambos deben tener igual dimención.**
 
-# In[11]:
+# In[15]:
 
 
-import empylib.waveoptics as wv
 R, T = wv.interface(0,1.0,2.0, pol='TM')[:2] # extraer los dos primeros elementos de la función
 print(R, T)
 
 
-# In[12]:
+# In[16]:
 
-
-import numpy as np
-import empylib.waveoptics as wv
-import empylib.nklib as nk
 
 theta = np.radians(30)         # Angulo de incidencia (radianes)
 lam = np.linspace(0.3,1.0,100) # Espectro de longitudes de onda
@@ -297,10 +296,8 @@ Rs, Ts, rs, ts = wv.interface(theta,n1,n2, pol='TE') # polarizacion TE
 
 # Abajo graficamos los coeficientes de Fresnel a la izquierda (solo la parte real) y el flujo de energía a la derecha. Notar como la reflectividad aumenta para $\lambda < 2\pi c_0/\omega_p$
 
-# In[13]:
+# In[17]:
 
-
-import matplotlib.pyplot as plt
 
 fig, ax = plt.subplots(1,2)
 fig.set_size_inches(12,4)
@@ -321,7 +318,7 @@ ax[1].set_title('FLujo de energía')
 ax[1].set_xlabel('Longitud de onda ($\mu$m)')
 ax[1].set_ylabel('Reflectividad / Tranmisividad')
 ax[1].legend()
-plt.show
+plt.show()
 
 
 # ### Luz incidente en arreglos multicapas (```multilayer```)
@@ -344,7 +341,7 @@ plt.show
 # - La luz incide sobre una película de espesor $d = 300$ nm e índice de refracción $N_2 = 1.5$.
 # - La película está depositada sobre un sustrato con índice de refracción $N_3 = 5.0 + 3i$:
 
-# In[14]:
+# In[18]:
 
 
 lam = np.linspace(0.3,0.8,100)  # espectro de longitudes de onda (um)
@@ -364,7 +361,7 @@ Rs, Ts, rs, ts = wv.multilayer(lam,theta, N, d, pol='TE')
 # 
 # Por ejemplo, si ahora queremos determinar la respuesta óptica de un arreglo de una capa delgada de sílice ($d_1 = 100$ nm) sobre una capa de plata ($d_2 = 10$ nm), sobre un sustrato con índice de refracción $n_{back} = 5.0$ 
 
-# In[15]:
+# In[19]:
 
 
 lam = np.linspace(0.3,0.8,100)  # espectro de longitudes de onda (um)
@@ -403,7 +400,7 @@ plt.show()
 # 
 # Por ejemplo, evaluemos el ejemplo de la [clase 2](https://panxopanza.github.io/conversion_solar_termica/2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html#refleccion-y-transmission-en-peliculas-delgadas) ($n_\mathrm{front}= 1.0$, $n_\mathrm{layer}= 1.5$, $n_\mathrm{back} = 4.3$), considerando una capa de espesor $d = 300$ nm, y $\theta_i = 30°$
 
-# In[16]:
+# In[20]:
 
 
 lam = np.linspace(0.3,0.8,100)  # espectro de longitudes de onda (um)
@@ -437,12 +434,8 @@ plt.show()
 
 # En el límite de solo una interface, ```interface```, ```multilayer``` y ```incoh_multilayer``` entregan el mismo resultado
 
-# In[17]:
+# In[21]:
 
-
-import numpy as np
-import empylib.nklib as nk
-import empylib.waveoptics as wv
 
 lam = 0.5                # longitud de onda en micrones
 theta = np.radians(30)   # ángulo de incidencia (en radianes)                    
@@ -456,6 +449,13 @@ print('incoh_multilayer:\t R = %.3f, T = %.3f' % wv.incoh_multilayer(lam,theta,N
 
 
 # ## Scattering de mie (```miescattering```)
+
+# In[22]:
+
+
+import empylib.miescattering as mie
+
+
 # En esta librería, la función principal es ```scatter_efficiency```, que permite determinar las secciones transversales de scattering, absorción y extinción para una partícula esférica de diámetro $D$.
 # 
 # Los pámetros de entrada son:
@@ -475,12 +475,8 @@ print('incoh_multilayer:\t R = %.3f, T = %.3f' % wv.incoh_multilayer(lam,theta,N
 
 # En el ejemplo de abajo, calculamos la $C_\mathrm{abs}$, $C_\mathrm{sca}$ y $C_\mathrm{ext}$ para una partícula de oro de $D = 100$ nm de diámetro, alojada de sílice. El espectro considerado es $\lambda\in[0.3,1.0]$ $\mu$m
 
-# In[18]:
+# In[23]:
 
-
-import empylib.miescattering as mie
-import empylib.nklib as nk
-import matplotlib.pyplot as plt
 
 lam = np.linspace(0.3,1.0,100) #espectro de longitudes de onda (arreglo de 100 puntos entre 0.3 y 1.0 micrones)
 Nh = nk.SiO2(lam) # índice de refracción medio circundante
@@ -508,6 +504,13 @@ plt.show()
 
 
 # ## Transporte Radiativo (```rad_transfer```)
+
+# In[24]:
+
+
+import empylib.rad_transfer as rt
+
+
 # Para transporte radiativo tenemos dos librerías:
 # - ```rad_transfer``` con funciones para cálculos simples (como Beer-Lambert)
 # - ```iadpython``` para simulaciones de scattering multiple
@@ -531,12 +534,8 @@ plt.show()
 
 # En el siguiente ejemplo, consideramos una película de sílice de espesor $1.0$ mm, con porosidad de 0.01% donde los poros tienen un de diámetro $D = 200$ $\mu$m ($N_{poro} = 1.0$). Los medios superior e inferior corresponden a aire. La luz incide en dirección $\theta_i = 0°$.
 
-# In[19]:
+# In[25]:
 
-
-import empylib.rad_transfer as rt
-import numpy as np
-import matplotlib.pyplot as plt
 
 lam = np.linspace(0.3,1.0,100)  # espectro de longitudes de onda (en micrones)
 theta = np.radians(0)           # 30 grados en radianes
@@ -558,9 +557,9 @@ plt.ylim(0,1)
 plt.show()
 
 
-# ### Scattering multiple (```ad_rad_transfer```)
+# ### Scattering multiple (```adm_sphere```)
 # 
-# La función ```ad_rad_transfer``` de la librería ```empylib.rad_transfer``` permite el cálculo de scattering múltiple en una película con incrustaciones entre dos medios semi-infinitos. La función utliza la librería ```iadpython``` la cual utiliza el método *adding doubling* para resolver la RTE numéricamente. 
+# La función ```adm_sphere``` de la librería ```empylib.rad_transfer``` permite el cálculo de scattering múltiple en una película con incrustaciones entre dos medios semi-infinitos. La función utliza la librería ```iadpython``` la cual utiliza el ***adding doubling method (adm)*** para resolver la RTE numéricamente. 
 # 
 # La función requiere los siguientes parámetros de entrada:
 # - ```lam```: Espectro de longitudes de onda (en $\mu$m)
@@ -581,12 +580,8 @@ plt.show()
 # - Tamaño de poro $1.0$ $\mu$m
 # - Espectro $\lambda\in[0.3,1.0]$ $\mu$m
 
-# In[20]:
+# In[26]:
 
-
-import empylib.nklib as nk
-import empylib.rad_transfer as rt
-import numpy as np
 
 lam = np.linspace(0.3,1.0,100) # espectro de longitudes de onda
 tfilm = 100                    # espesor en mm
@@ -595,7 +590,7 @@ fv = 0.6                       # fracción de volúmen de los poros
 D = 1.0                        # diámetro de los poros (micrones)
 Np = 1.0                       # índice de refracción partícula
 
-Rtot, Ttot = rt.ad_rad_transfer(lam,tfilm,N,fv,D,Np)
+Rtot, Ttot = rt.adm_sphere(lam,tfilm,N,fv,D,Np)
 
 plt.plot(lam,Rtot,'-r',label='R')
 plt.plot(lam,Ttot,'-b',label='T')

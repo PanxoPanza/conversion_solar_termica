@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Tutoriales &#8212; MEC501 - Manejo y conversión de energía solar térmica</title>
+    <title>Tutoriales empylib &#8212; MEC501 - Manejo y conversión de energía solar térmica</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,12 +51,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Tutorial 1" href="Tutorial1/Tutorial1.html" />
-    <link rel="prev" title="11. Control pasivo de radiación solar en edificaciones" href="../11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio.html" />
+    <link rel="prev" title="Teoria del color" href="../Apendice/Teoria_del_color/Teoria_del_color.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -205,9 +203,24 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Apendice/Espectro_electromagnetico/Espectro_electromagnetico.html">
+   Espectro electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Apendice/Teoria_del_color/Teoria_del_color.html">
+   Teoria del color
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
    Tutoriales
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     empylib
+    </span>
+   </code>
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -366,23 +379,60 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrucciones-de-instalacion">
+   Instrucciones de instalación
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tutoriales</h1>
+                <h1>Tutoriales empylib</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrucciones-de-instalacion">
+   Instrucciones de instalación
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -390,8 +440,37 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="tutoriales">
-<h1>Tutoriales<a class="headerlink" href="#tutoriales" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="tutoriales-empylib">
+<h1>Tutoriales <code class="docutils literal notranslate"><span class="pre">empylib</span></code><a class="headerlink" href="#tutoriales-empylib" title="Permalink to this headline">#</a></h1>
+<p>En esta sección veremos algunos tutoriales para el uso de la librería <code class="docutils literal notranslate"><span class="pre">empylib</span></code></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="Tutorial1/Tutorial1.html"><span class="doc std std-doc"><strong>Tutorial 1</strong></span></a></p></li>
+<li><p><a class="reference internal" href="Tutorial2/Tutorial2.html"><span class="doc std std-doc"><strong>Tutorial 2</strong></span></a></p></li>
+</ul>
+<section id="instrucciones-de-instalacion">
+<h2>Instrucciones de instalación<a class="headerlink" href="#instrucciones-de-instalacion" title="Permalink to this headline">#</a></h2>
+<p>Antes de ejecutar los tutoriales, instalar los siguiente paquetes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">empylib</span></code>: paquete principal del curso. Esta disponible desde github ejecutando la siguiente sentencia en una celda de este notebook:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!git clone https://github.com/PanxoPanza/empylib.git
+</pre></div>
+</div>
+<p>Esto descargará una carpeta “empylib” con todos los módulos necesarios. <strong>Ejecutar solo una vez para descargar la carpeta</strong> Posteriormente, no es necesario volver a ejecutar esta línea.</p>
+<blockquote>
+<div><p><strong>Nota.</strong> El código debe ser ejecutado en la misma carpeta donde se descargó el paquete <code class="docutils literal notranslate"><span class="pre">empylib</span></code></p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">iadpython</span></code>: paquete para simulaciones de transferencia radiativa de energía. Debe ser instalada desde pip, ejecutando el siguiente script en una celda de este notebook</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>import sys
+!{sys.executable} -m pip install iadpython
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Nota.</strong> Esta instancia debe ser ejecutada solo una vez.</p>
+</div></blockquote>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -423,11 +502,11 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../Apendice/Teoria_del_color/Teoria_del_color.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">11. </span>Control pasivo de radiación solar en edificaciones</p>
+            <p class="prev-next-title">Teoria del color</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Tutorial1/Tutorial1.html" title="next page">

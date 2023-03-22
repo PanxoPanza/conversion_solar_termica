@@ -31,6 +31,8 @@ parts:
   - caption: Apéndice
     numbered: false
     chapters:
+      - file: Apendice/Espectro_electromagnetico/Espectro_electromagnetico
+      - file: Apendice/Teoria_del_color/Teoria_del_color
       - file: Tutorial/Intro
         sections:
         - file: Tutorial/Tutorial1/Tutorial1

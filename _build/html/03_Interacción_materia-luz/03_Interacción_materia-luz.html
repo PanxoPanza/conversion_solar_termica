@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -207,9 +205,24 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Apendice/Espectro_electromagnetico/Espectro_electromagnetico.html">
+   Espectro electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Apendice/Teoria_del_color/Teoria_del_color.html">
+   Teoria del color
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Tutorial/Intro.html">
    Tutoriales
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     empylib
+    </span>
+   </code>
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -447,13 +460,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#espectro-electromagnetico">
-   3.4. Espectro electromagnético
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   3.5. Referencias
+   3.4. Referencias
   </a>
  </li>
 </ul>
@@ -532,13 +540,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#espectro-electromagnetico">
-   3.4. Espectro electromagnético
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   3.5. Referencias
+   3.4. Referencias
   </a>
  </li>
 </ul>
@@ -654,15 +657,15 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 <p>con <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_pq^2}{\varepsilon_0 m}\)</span></p>
 <p>En el caso del agua, la molecula posee un dipolo eléctrico neto adicional al dipolo inducido. El efecto de la polarización neta se puede representar, cambiando el primer término por un valor constante <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span>.</p>
 <p>El modelo completo se conoce como <strong>modelo de Lorentz</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-47f6f901-40ec-4da6-99ef-e06aed2eb70f">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-47f6f901-40ec-4da6-99ef-e06aed2eb70f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e1e08f41-4f5f-437d-a1ed-d5906bf2bdcb">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-e1e08f41-4f5f-437d-a1ed-d5906bf2bdcb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty + \frac{\omega_p^2}{\omega_n^2 - \omega^2 - i\Gamma \omega}\quad\mathrm{Modelo~de~Lorentz},
 \end{equation}\]</div>
 <p>Usaremos la función <code class="docutils literal notranslate"><span class="pre">lorentz</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">empylib.nklib</span></code> para generar el índice de refracción y constante dielectrica a partir del modelo de Lorentz, con los parámetros: <span class="math notranslate nohighlight">\(\varepsilon_\infty = 2.0\)</span>, <span class="math notranslate nohighlight">\(\Gamma = 0.1\omega_n\)</span>, y <span class="math notranslate nohighlight">\(\omega_p = \omega_n\)</span></p>
 <blockquote>
 <div><p>Notar que el modelo de Lorentz está en función de la frecuencia angular <span class="math notranslate nohighlight">\(\omega\)</span> (en <span class="math notranslate nohighlight">\(\mathrm{eV}\)</span>), mientras que las funciones de <code class="docutils literal notranslate"><span class="pre">empylib</span></code> toman longitudes de onda (en <span class="math notranslate nohighlight">\(\mu \mathrm{m}\)</span>).</p>
 </div></blockquote>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -727,7 +730,7 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 </div></div>
 </div>
 <p>Usamos el módulo <code class="docutils literal notranslate"><span class="pre">nklib</span></code> de la librería <code class="docutils literal notranslate"><span class="pre">empylib</span></code> para graficar el índice de refracción del agua</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span> showplot1
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -815,8 +818,8 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 \end{equation*}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(m_e\)</span>, <span class="math notranslate nohighlight">\(e\)</span> y <span class="math notranslate nohighlight">\(\Gamma_e\)</span> son, respectivamente, la masa, la carga elemental y la taza de decaimiento del electrón.</p>
 <p>Mediante un procedimiento similar al utilzado para el modelo de Lorentz, derivamos el <strong>modelo de Drude</strong> para conductores:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-75ca9f97-2e63-4d49-bd61-f3c6ab430ed7">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-75ca9f97-2e63-4d49-bd61-f3c6ab430ed7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-44c889fa-7ab5-4530-9b94-3673eca814e5">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-44c889fa-7ab5-4530-9b94-3673eca814e5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty - \frac{\omega_p^2}{\omega^2 + i\Gamma_e \omega},\quad\mathrm{Modelo~de~Drude},
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_ee^2}{\varepsilon_0 m}\)</span> se conoce como frecuencia de plasma, y <span class="math notranslate nohighlight">\(N_e\)</span> es la densidad de número de electrones. Similar al modelo de Lorentz, <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span> representa la polarización neta del material.</p>
@@ -849,70 +852,8 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 <p>Debido a la absorcion UV, TiO<span class="math notranslate nohighlight">\(_2\)</span> es muy utilizado en cremas para protección solar.</p>
 </section>
 </section>
-<section id="espectro-electromagnetico">
-<h2><span class="section-number">3.4. </span>Espectro electromagnético<a class="headerlink" href="#espectro-electromagnetico" title="Permalink to this headline">#</a></h2>
-<p>Podemos clasificar la radiación electromagnética según su longitud de onda (o frecuencia).</p>
-<a class="reference internal image-reference" href="../_images/em_spectrum1.png"><img alt="../_images/em_spectrum1.png" class="align-center" src="../_images/em_spectrum1.png" style="width: 700px;" /></a>
-<p>Para este curso, los espectros más importantes son:</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Espectro</p></th>
-<th class="text-align:center head"><p>Longitud de onda</p></th>
-<th class="text-align:center head"><p>Frecuecia</p></th>
-<th class="text-align:center head"><p>Energía</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:center"><p>UIltravioleta (UV)</p></td>
-<td class="text-align:center"><p>1 - 400 nm</p></td>
-<td class="text-align:center"><p>100 - 0.75 PHz</p></td>
-<td class="text-align:center"><p>414 - 3.1 eV</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>Visible (vis)</p></td>
-<td class="text-align:center"><p>400 - 750 nm</p></td>
-<td class="text-align:center"><p>750 - 400 THz</p></td>
-<td class="text-align:center"><p>3.1 - 1.65 eV</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>Infrarrojo cercano (near-IR)</p></td>
-<td class="text-align:center"><p>750 nm - 1.4 <span class="math notranslate nohighlight">\(\mu\)</span>m</p></td>
-<td class="text-align:center"><p>400 - 214 THz</p></td>
-<td class="text-align:center"><p>3.1 - 1.65 eV</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>Infrarrojo de onda corta (SWIR)</p></td>
-<td class="text-align:center"><p>1.4 - 3 <span class="math notranslate nohighlight">\(\mu\)</span>m</p></td>
-<td class="text-align:center"><p>214 - 100 THz</p></td>
-<td class="text-align:center"><p>885 - 414 meV</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>Infrarrojo de onda media (MWIR)</p></td>
-<td class="text-align:center"><p>3 - 8 <span class="math notranslate nohighlight">\(\mu\)</span>m</p></td>
-<td class="text-align:center"><p>100 - 37 THz</p></td>
-<td class="text-align:center"><p>414 - 153 meV</p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>Infrarrojo de onda larga (LWIR)</p></td>
-<td class="text-align:center"><p>8 - 15 <span class="math notranslate nohighlight">\(\mu\)</span>m</p></td>
-<td class="text-align:center"><p>37 -20 THz</p></td>
-<td class="text-align:center"><p>153 eV - 82 meV</p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>Infrarrojo lejano (far-IR)</p></td>
-<td class="text-align:center"><p>15 - 1000 <span class="math notranslate nohighlight">\(\mu\)</span>m</p></td>
-<td class="text-align:center"><p>20 -0.3 THz</p></td>
-<td class="text-align:center"><p>82 - 1.24 meV</p></td>
-</tr>
-</tbody>
-</table>
-<ul class="simple">
-<li><p>1 eV = <span class="math notranslate nohighlight">\(1.602\times 10^{−19}\)</span> J es un <strong>electron volt</strong>. Representa la energía cinética de un electron bajo un potencial de 1 volt.</p></li>
-</ul>
-<p>El espectro SWIR + MWIR + LWIR se conoce también como <strong>infrarrojo medio (mid-IR)</strong></p>
-<p>La siguiente tabla es útil para la conversión de unidades:</p>
-<a class="reference internal image-reference" href="../_images/conversion_table1.png"><img alt="../_images/conversion_table1.png" class="align-center" src="../_images/conversion_table1.png" style="width: 600px;" /></a>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(h = 4.136\times 10^{−15}\)</span> eV/Hz es la <strong>constante de Planck</strong>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\hbar = \frac{h}{2\pi} = 6.582\times10^{−16}\)</span> eV/Hz es la <strong>constante reducida de Planck o constante de Dirac</strong>.</p></li>
-</ul>
-</section>
 <section id="referencias">
-<h2><span class="section-number">3.5. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.4. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Rao S. S. <strong>Chapter 4 - Vibration Under General Forcing Conditions</strong> in <em>Mechanical Vibrations</em>, 6th Ed, Pearson, 2018</p></li>
 <li><p>Griffths D., <strong>Chapter 4.1 - Polarization</strong> in <em>Introduction to Electrodynamics</em>, 4th Ed, Pearson, 2013</p></li>

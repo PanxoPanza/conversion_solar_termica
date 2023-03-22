@@ -430,7 +430,7 @@ def plot_glass_silver(fv,D):
     
     qext, qsca = mie.scatter_efficiency(lam2,Nlayers[1],Np,D)[:2]
     qabs = qext - qsca
-    Rtot, Ttot = rt.ad_rad_transfer(lam2,tfilm,Nlayers,fv,D,Np)
+    Rtot, Ttot = rt.adm_sphere(lam2,tfilm,Nlayers,fv,D,Np)
 
     fig, ax = plt.subplots(1,3)
     fig.set_size_inches(20, 5)
@@ -501,7 +501,7 @@ def g(fv=20, D = 70):
 # In[11]:
 
 
-get_ipython().run_cell_magic('capture', 'showplot', "# import empylib.nklib as nk\nimport numpy as np\nimport empylib.rad_transfer as rt\n\n# Solo modificar estos parámetros\n#---------------------------------------------------------------\nlam3 = np.linspace(0.3,1.0,100)   # espectro de longitudes de onda\ntfilm = 10                        # espesor en milímetros\nfv = 0.50                         # fracción de volúmen de los poros\nD = 1.0                           # diámetro de los poros (micrones)\nNh2o = 1.3                        # Índice de refracción del agua\nNoil = 1.5                        # índice de refracción partículas de aceite\n#---------------------------------------------------------------\nRtot, Ttot = rt.ad_rad_transfer(lam3,tfilm,(1.0,Nh2o,1.0),fv,D,Noil)\n\nfig, ax = plt.subplots()\nfig.set_size_inches(7, 5)\nplt.rcParams['font.size'] = '16'\nax.plot(lam3,Rtot,'-r',label='R')\nax.plot(lam3,Ttot,'-b',label='T')\nax.set_xlabel('Longitud de onda ($\\mu$m)')\nax.set_ylabel('Reflectividad / Transmisividad')\nax.set_title(r'Leche (fv = %.0f %%)' % (fv*100))\nax.legend()\nax.set_ylim(0,1.02)\nplt.show\n")
+get_ipython().run_cell_magic('capture', 'showplot', "# import empylib.nklib as nk\nimport numpy as np\nimport empylib.rad_transfer as rt\n\n# Solo modificar estos parámetros\n#---------------------------------------------------------------\nlam3 = np.linspace(0.3,1.0,100)   # espectro de longitudes de onda\ntfilm = 10                        # espesor en milímetros\nfv = 0.50                         # fracción de volúmen de los poros\nD = 1.0                           # diámetro de los poros (micrones)\nNh2o = 1.3                        # Índice de refracción del agua\nNoil = 1.5                        # índice de refracción partículas de aceite\n#---------------------------------------------------------------\nRtot, Ttot = rt.adm_sphere(lam3,tfilm,(1.0,Nh2o,1.0),fv,D,Noil)\n\nfig, ax = plt.subplots()\nfig.set_size_inches(7, 5)\nplt.rcParams['font.size'] = '16'\nax.plot(lam3,Rtot,'-r',label='R')\nax.plot(lam3,Ttot,'-b',label='T')\nax.set_xlabel('Longitud de onda ($\\mu$m)')\nax.set_ylabel('Reflectividad / Transmisividad')\nax.set_title(r'Leche (fv = %.0f %%)' % (fv*100))\nax.legend()\nax.set_ylim(0,1.02)\nplt.show\n")
 
 
 # In[12]:
