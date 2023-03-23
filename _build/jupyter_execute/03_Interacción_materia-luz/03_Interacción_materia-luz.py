@@ -165,7 +165,7 @@ wn = 1.0      # en eV
 gamma = 0.1   # en eV
 
 # espectro 
-w = np.linspace(1E-3,2,1000)            # en "eV"
+w = 1/np.linspace(1E-3,2,1000)            # en "eV"
 lam = em.convert_units(w,'eV','um')     # convertimos a "micrones"
 
 # creamos el modelo de lorentz
@@ -178,15 +178,14 @@ fig.set_size_inches(16, 5)              # tamaño de la figura
 plt.rcParams['font.size'] = '16'        # tamaño de fuente
 
 #ploteamos
-ax[0].plot(w,np.real(eps1),'b',label=r"$\varepsilon'$")
-ax[0].plot(w,np.imag(eps1),'r',label=r"$\varepsilon''$")
-ax[1].plot(w,np.real(N1),'b',label=r"$n$")
-ax[1].plot(w,np.imag(N1),'r',label=r"$\kappa$")
+ax[0].plot(wn/w,np.real(eps1),'b',label=r"$\varepsilon'$")
+ax[0].plot(wn/w,np.imag(eps1),'r',label=r"$\varepsilon''$")
+ax[1].plot(wn/w,np.real(N1),'b',label=r"$n$")
+ax[1].plot(wn/w,np.imag(N1),'r',label=r"$\kappa$")
 
 for i in [0,1]:
     ax[i].set_xlabel('$\omega/\omega_n$ ')
     ax[i].grid()
-    ax[i].set_xlim(0,2)
     ax[i].legend(frameon=False)
 ax[0].set_ylabel(r"Constante dielectrica, $\varepsilon = \varepsilon'+ \varepsilon''$")
 ax[1].set_ylabel(r'Indice de refracción, $N = n + i\kappa$')
@@ -209,7 +208,7 @@ YouTubeVideo('1uE2lvVkKW0', width=600, height=400,  playsinline=0)
 # In[3]:
 
 
-get_ipython().run_cell_magic('capture', 'showplot1', 'import numpy as np\nimport matplotlib.pyplot as plt\nimport empylib.nklib as nk\n\nlam = np.linspace(0.2,10,1000)   # espectro de longitudes de onda\nN1   = nk.H2O(lam)               # índice de refracción\neps1 = N1**2                     # constante dieléctrica\n\n# formateamos el lienzo para graficar\nfig, ax = plt.subplots(1,2)      # número de ejes en la figura\nfig.set_size_inches(16, 5)       # tamaño de la figura\nplt.rcParams[\'font.size\'] = \'16\' # tamaño de fuente\n\n# Graficamos el resultado\nax[0].plot(lam,np.real(eps1),\'b\',label=r"$\\varepsilon\'$")   # constante dieléctrica (parte real)\nax[0].plot(lam,np.imag(eps1),\'r\',label=r"$\\varepsilon\'\'$")  # constante dieléctrica (parte imaginaria)\nax[1].plot(lam,np.real(N1),\'b\',label=r"$n$")                # índice de refracción (parte real)\nax[1].plot(lam,np.imag(N1),\'r\',label=r"$\\kappa$")           # índice de refracción (parte imaginaria)\n\n# marcamos los valores máximos con una línea\nfor i in [280, 599]:\n    ax[0].axvline(x = lam[i], color=\'k\', ls=\'--\', lw=\'1.0\')\n    ax[1].axvline(x = lam[i], color=\'k\', ls=\'--\', lw=\'1.0\')\n    ax[0].text(lam[i]*1.02,np.imag(eps1[i]),r\'%.3f $\\mu$m\'% lam[i], fontsize=\'14\')\n\nfor i in [0,1]:\n    ax[i].set_xlabel(\'Longitud de onda, $\\lambda$ ($\\mu$m)\')\n    ax[i].grid()\n    ax[i].set_xlim(0.2,10)\n    ax[i].legend(frameon=False)\nax[0].set_ylabel(r"Constante dielectrica, $\\varepsilon = \\varepsilon\'+ \\varepsilon\'\'$")\nax[1].set_ylabel(r\'Indice de refracción, $N = n + i\\kappa$\')\nplt.show()\n')
+get_ipython().run_cell_magic('capture', 'showplot1', 'import numpy as np\nimport matplotlib.pyplot as plt\nimport empylib.nklib as nk\n\nlam = np.linspace(0.2,10,1000)   # espectro de longitudes de onda\nN1   = nk.H2O(lam)               # índice de refracción\neps1 = N1**2                     # constante dieléctrica\n\n# formateamos el lienzo para graficar\nfig, ax = plt.subplots(1,2)      # número de ejes en la figura\nfig.set_size_inches(16, 5)       # tamaño de la figura\nplt.rcParams[\'font.size\'] = \'16\' # tamaño de fuente\n\n# Graficamos el resultado\nax[0].plot(lam,eps1.real,\'b\',label=r"$\\varepsilon\'$")   # constante dieléctrica (parte real)\nax[0].plot(lam,eps1.imag,\'r\',label=r"$\\varepsilon\'\'$")  # constante dieléctrica (parte imaginaria)\nax[1].plot(lam,N1.real,\'b\',label=r"$n$")                # índice de refracción (parte real)\nax[1].plot(lam,N1.imag,\'r\',label=r"$\\kappa$")           # índice de refracción (parte imaginaria)\n\n# marcamos los valores máximos con una línea\nfor i in [280, 599]:\n    ax[0].axvline(x = lam[i], color=\'k\', ls=\'--\', lw=\'1.0\')\n    ax[1].axvline(x = lam[i], color=\'k\', ls=\'--\', lw=\'1.0\')\n    ax[0].text(lam[i]*1.02,eps1[i].imag,r\'%.3f $\\mu$m\'% lam[i], fontsize=\'14\')\n\nfor i in [0,1]:\n    ax[i].set_xlabel(\'Longitud de onda, $\\lambda$ ($\\mu$m)\')\n    ax[i].grid()\n    ax[i].set_xlim(0.2,10)\n    ax[i].legend(frameon=False)\nax[0].set_ylabel(r"Constante dielectrica, $\\varepsilon = \\varepsilon\'+ \\varepsilon\'\'$")\nax[1].set_ylabel(r\'Indice de refracción, $N = n + i\\kappa$\')\nplt.show()\n')
 
 
 # Al graficar el índice de refracción notamos que la gráfica muestra dos oscilaciones de Lorentz. 
@@ -251,8 +250,18 @@ showplot1()
 # Debido a que los electrones en un aislante están fuertemente ligados al núcleo, la respuesta óptica de este material está condicionada por los modos de vibración de la red atómica. Así, la constante dieléctrica y el indice de refración siguen un comportamiento similar al modelo de Lorentz.
 
 # Por ejemplo, el sílice (SiO$_2$)
-# 
-# <img src="./images/sio2_nk.svg" width="800px" align= center>
+
+# In[5]:
+
+
+get_ipython().run_cell_magic('capture', 'showplot1', 'import numpy as np\nimport matplotlib.pyplot as plt\nimport empylib.nklib as nk\n\nlam = np.linspace(0.2,30,1000)   # espectro de longitudes de onda\nN1   = nk.SiO2(lam)              # índice de refracción\neps1 = N1**2                     # constante dieléctrica\n\n# formateamos el lienzo para graficar\nfig, ax = plt.subplots(1,2)      # número de ejes en la figura\nfig.set_size_inches(16, 5)       # tamaño de la figura\nplt.rcParams[\'font.size\'] = \'14\' # tamaño de fuente\n\n# Graficamos el resultado\nax[0].plot(lam,eps1.real,\'b\',label=r"$\\varepsilon\'$")   # constante dieléctrica (parte real)\nax[0].plot(lam,eps1.imag,\'r\',label=r"$\\varepsilon\'\'$")  # constante dieléctrica (parte imaginaria)\nax[1].plot(lam,N1.real,\'b\',label=r"$n$")                # índice de refracción (parte real)\nax[1].plot(lam,N1.imag,\'r\',label=r"$\\kappa$")           # índice de refracción (parte imaginaria)\n\nfor i in [0,1]:\n    ax[i].set_xlabel(\'Longitud de onda, $\\lambda$ ($\\mu$m)\')\n    ax[i].grid()\n    ax[i].legend(frameon=False)\nax[0].set_ylabel(r"Constante dielectrica, $\\varepsilon = \\varepsilon\'+ \\varepsilon\'\'$")\nax[1].set_ylabel(r\'Indice de refracción, $N = n + i\\kappa$\')\nplt.show()\n')
+
+
+# In[6]:
+
+
+showplot1()
+
 
 # ### Conductores (modelo de Drude)
 # En este caso los electrónes se mueven libremente por la red atómica.
@@ -273,23 +282,119 @@ showplot1()
 # 
 # donde $\omega_p^2 = \frac{N_ee^2}{\varepsilon_0 m}$ se conoce como frecuencia de plasma, y $N_e$ es la densidad de número de electrones. Similar al modelo de Lorentz, $\varepsilon_\infty$ representa la polarización neta del material.
 
-# En el siguiente ejemplo, $\varepsilon_\infty = 2.0$ y $\Gamma_e = 0.1\omega_p$
-# 
-# <img src="./images/drude_model.svg" width="800px" align= center>
+# En el siguiente ejemplo, $\varepsilon_\infty = 2.0$, $\Gamma_e = 0.1$, y $\omega_p = 1~\mathrm{eV}$
+
+# In[7]:
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+import empylib.nklib as nk
+import empylib as em
+
+w = 1/np.linspace(1E-3,5,1000)         # espectro de energía (eV)
+lam = em.convert_units(w,'eV','um')  # convertimos a longitudes de onda
+epsinf = 2.0 
+wp = 1.0                               # en eV
+gamma = 0.1                            # en eV
+
+N1 = nk.drude(epsinf,wp,gamma,lam)     # índice de refracción
+eps1 = N1**2                           # constante dieléctrica
+
+#ploteamos
+fig, ax = plt.subplots(1,2)
+fig.set_size_inches(14, 5)
+plt.rcParams['font.size'] = '16'
+ax[0].plot(wp/w,eps1.real,'b',label=r"$\varepsilon'$")
+ax[0].plot(wp/w,eps1.imag,'r',label=r"$\varepsilon''$")
+ax[1].plot(wp/w,N1.real,'b',label=r"$n$")
+ax[1].plot(wp/w,N1.imag,'r',label=r"$\kappa$")
+
+for i in [0,1]:
+    ax[i].set_xlabel('$\omega_p/\omega$ ')
+    ax[i].grid()
+    #ax[i].set_xlim(0,5)
+    ax[i].legend(frameon=False)
+ax[0].set_ylabel(r"Constante dielectrica, $\varepsilon = \varepsilon'+ \varepsilon''$")
+ax[1].set_ylabel(r'Indice de refracción, $N = n + i\kappa$')
+plt.show()
+
 
 # Una característica del modelo de Drude es que $\varepsilon' < 0$ para $\omega_p/\omega \gtrsim 1$. Esto se manifiesta en el índice de refracción como $\kappa > n$
 
 # Cuando $\kappa > n$ la reflectividad aumenta significativamente. Así, los materiales conductores tienen alta reflectividad en ambas polarizaciones, cuando $\omega_p/\omega \gtrsim 1$
-# 
-# <img src="./images/reflectance_drude.svg" width="450px" align= center>
 
-# En general, los metales pueden ser bien representados por el modelo de Drude. Por ejemplo, el aluminio:
-# 
-# <img src="./images/aluminium_nk.svg" width="800px" align= center>
+# In[8]:
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+from empylib.waveoptics import interface
+import empylib as em
+import empylib.nklib as nk
+
+w = 1/np.linspace(1E-3,5,1000)
+lam = 2*np.pi*3E14/(w*em.e_charge/em.hbar)
+epsinf = 2.0 
+wp = 1.0     # en eV
+gamma = 0.1  # en eV
+
+n2 = nk.drude(epsinf,wp,gamma,lam) # índice de refracción
+n1 = np.ones(n2.shape)
+
+# Reflectividad en una interface
+Rp = lambda n1,n2 : interface(0,n1,n2, pol='TM')[0] # TM
+Rs = lambda n1,n2 : interface(0,n1,n2, pol='TE')[0] # TE
+
+# preparamos el ploteo
+fig, ax = plt.subplots()
+fig.set_size_inches(7, 5)
+plt.rcParams['font.size'] = '16'
+ax.plot(1/w,Rp(n1,n2), label='$R_\mathrm{TM}$', color='red', lw=3.0)
+ax.plot(1/w,Rs(n1,n2), label='$R_\mathrm{TE}$', color='blue', lw=2.0, ls='--')
+ax.set_xlim([0,5])
+ax.set_ylim([0,1.0])
+ax.set_xlabel('$\omega_p/\omega$')
+ax.set_ylabel('Reflectividad')
+ax.legend(frameon=False)
+plt.show()
+
+
+# En general, los metales pueden ser bien representados por el modelo de Drude. En general, $\omega_p$ se ubica en el espectro UV y, por lo tanto, reflejan la luz visible (efecto espejo)
+
+# Por ejemplo, en el caso de aluminio $\omega_p = 15~\mathrm{eV}\approx 90~\mathrm{nm}$
+
+# In[9]:
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+import empylib.nklib as nk
+
+lam = np.linspace(0.01,1.0,1000)
+
+N1 = nk.Al(lam) # índice de refracción
+eps1 = N1**2     # constante dieléctrica
+
+#ploteamos
+fig, ax = plt.subplots(1,2)
+fig.set_size_inches(14, 5)
+plt.rcParams['font.size'] = '16'
+ax[0].plot(lam,np.real(eps1),'b',label=r"$\varepsilon'$")
+ax[0].plot(lam,np.imag(eps1),'r',label=r"$\varepsilon''$")
+ax[1].plot(lam,np.real(N1),'b',label=r"$n$")
+ax[1].plot(lam,np.imag(N1),'r',label=r"$\kappa$")
+
+for i in [0,1]:
+    ax[i].set_xlabel('Longitud de onda, $\lambda$ ($\mu$m)')
+    ax[i].grid()
+    ax[i].set_xlim(0.01,1.0)
+    ax[i].legend(frameon=False)
+ax[0].set_ylabel(r"Constante dielectrica, $\varepsilon = \varepsilon'+ \varepsilon''$")
+ax[1].set_ylabel(r'Indice de refracción, $N = n + i\kappa$')
+
 
 # Notemos como para $\lambda \approx 0.8$ $\mu$m, la respuesta del material se desvía del modelo de Drude. Esta respuesta esta asociada a un modo de vibración (modelo de Lorentz).
-
-# Además $\omega_p \lesssim 0.1$ $\mu$m, y por lo tanto, refleja todas las longitudes de onda del espectro visible ($\lambda \in [0.38,0.70]$ $\mu$m). Esto explica el efecto espejo del aluminio y otros metales
 
 # ### Semiconductores (absorción interbanda)
 
@@ -313,8 +418,42 @@ showplot1()
 # Debido a esta respuesta, el oro absorbe las longitudes de onda correspondientes al azul y violeta, y refleja el resto de los colores.
 # 
 # La siguiente figura muestra el color del oro según el ángulo de incidencia en base al espectro de reflección de una interface aire/oro.
-# <img src="./images/gold_color.svg" width="500px" align= center>
-# 
+
+# In[10]:
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+from empylib.waveoptics import interface
+from empylib.ref_spectra import AM15
+from empylib.ref_spectra import color_system as cs
+cs = cs.hdtv
+
+lam = np.linspace(0.3,0.8,81)   # longitud de onda (en um)
+n2 = nk.gold(lam) # índice de refracción
+n1 = np.ones(n2.shape)
+
+# Reflectividad en capa delgada
+Rp = lambda tt : interface(tt, n1,n2, pol='TM')[0]
+Rs = lambda tt : interface(tt, n1,n2, pol='TE')[0]
+
+# formateamos la figura
+fig, ax = plt.subplots()
+fig.set_size_inches(9, 5)
+plt.rcParams['font.size'] = '16'
+    
+AM15_spectra = AM15(lam)
+theta = np.linspace(0,90,100) # angulo de incidencia
+for i in range(len(theta)): 
+    R = 0.5*Rp(np.radians(theta[i])) + 0.5*Rs(np.radians(theta[i]))
+    Irad = R*AM15_spectra
+    html_rgb = cs.spec_to_rgb(Irad, lam, out_fmt='html')
+    ax.axvline(theta[i], color=html_rgb, linewidth=6) 
+ax.set_xlim([min(theta),max(theta)])
+ax.set_ylim([0,1.0])
+ax.axes.yaxis.set_visible(False)
+ax.set_xlabel('Ángulo de incidencia (deg)')
+
 
 # Otro ejemplo es el dioxido de titanio (TiO$_2$), el cual presenta absorción interbanda en el espectro ultravioleta, y oscilaciones de Lorentz en el infrarojo.
 # 
