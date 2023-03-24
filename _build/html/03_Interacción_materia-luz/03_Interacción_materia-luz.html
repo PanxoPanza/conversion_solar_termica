@@ -657,8 +657,8 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 <p>con <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_pq^2}{\varepsilon_0 m}\)</span></p>
 <p>En el caso del agua, la molecula posee un dipolo eléctrico neto adicional al dipolo inducido. El efecto de la polarización neta se puede representar, cambiando el primer término por un valor constante <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span>.</p>
 <p>El modelo completo se conoce como <strong>modelo de Lorentz</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-241ae947-8a04-4772-b324-bce8f260d909">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-241ae947-8a04-4772-b324-bce8f260d909" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2fe9627f-d835-49ad-8281-36a2f1639abf">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-2fe9627f-d835-49ad-8281-36a2f1639abf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty + \frac{\omega_p^2}{\omega_n^2 - \omega^2 - i\Gamma \omega}\quad\mathrm{Modelo~de~Lorentz},
 \end{equation}\]</div>
 <p>Usaremos la función <code class="docutils literal notranslate"><span class="pre">lorentz</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">empylib.nklib</span></code> para generar el índice de refracción y constante dielectrica a partir del modelo de Lorentz, con los parámetros: <span class="math notranslate nohighlight">\(\varepsilon_\infty = 2.0\)</span>, <span class="math notranslate nohighlight">\(\Gamma = 0.1\omega_n\)</span>, y <span class="math notranslate nohighlight">\(\omega_p = \omega_n\)</span></p>
@@ -688,7 +688,7 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 
 <span class="c1"># formateamos el lienzo para graficar</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>             <span class="c1"># número de ejes en la figura</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>              <span class="c1"># tamaño de la figura</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>              <span class="c1"># tamaño de la figura</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>        <span class="c1"># tamaño de fuente</span>
 
 <span class="c1">#ploteamos</span>
@@ -743,7 +743,7 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 
 <span class="c1"># formateamos el lienzo para graficar</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>             <span class="c1"># número de ejes en la figura</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>              <span class="c1"># tamaño de la figura</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>              <span class="c1"># tamaño de la figura</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>        <span class="c1"># tamaño de fuente</span>
 
 <span class="c1"># Graficamos el resultado</span>
@@ -819,7 +819,7 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 
 <span class="c1"># formateamos el lienzo para graficar</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>             <span class="c1"># número de ejes en la figura</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>              <span class="c1"># tamaño de la figura</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>              <span class="c1"># tamaño de la figura</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>        <span class="c1"># tamaño de fuente</span>
 
 <span class="c1"># Graficamos el resultado</span>
@@ -860,8 +860,8 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 \end{equation*}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(m_e\)</span>, <span class="math notranslate nohighlight">\(e\)</span> y <span class="math notranslate nohighlight">\(\Gamma_e\)</span> son, respectivamente, la masa, la carga elemental y la taza de decaimiento del electrón.</p>
 <p>Mediante un procedimiento similar al utilzado para el modelo de Lorentz, derivamos el <strong>modelo de Drude</strong> para conductores:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dddcb687-2580-46cb-b862-036025328d87">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-dddcb687-2580-46cb-b862-036025328d87" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-47a85a4d-6301-48b1-b826-04c09b8a93bb">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-47a85a4d-6301-48b1-b826-04c09b8a93bb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty - \frac{\omega_p^2}{\omega^2 + i\Gamma_e \omega},\quad\mathrm{Modelo~de~Drude},
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_ee^2}{\varepsilon_0 m}\)</span> se conoce como frecuencia de plasma, y <span class="math notranslate nohighlight">\(N_e\)</span> es la densidad de número de electrones. Similar al modelo de Lorentz, <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span> representa la polarización neta del material.</p>
@@ -888,7 +888,7 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 
 <span class="c1"># formateamos el lienzo para graficar</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>             <span class="c1"># número de ejes en la figura</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>              <span class="c1"># tamaño de la figura</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>              <span class="c1"># tamaño de la figura</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>        <span class="c1"># tamaño de fuente</span>
 
 <span class="c1"># graficamos constante dielectrica e índice de refracción</span>
@@ -978,7 +978,7 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 
 <span class="c1"># formateamos el lienzo para graficar</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>             <span class="c1"># número de ejes en la figura</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>              <span class="c1"># tamaño de la figura</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>              <span class="c1"># tamaño de la figura</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>        <span class="c1"># tamaño de fuente</span>
 
 <span class="c1"># graficamos</span>

@@ -174,7 +174,7 @@ eps1 = N1**2                            # constante dieléctrica
 
 # formateamos el lienzo para graficar
 fig, ax = plt.subplots(1,2)             # número de ejes en la figura
-fig.set_size_inches(11, 3)              # tamaño de la figura
+fig.set_size_inches(10, 3)              # tamaño de la figura
 plt.rcParams['font.size'] = '12'        # tamaño de fuente
 
 #ploteamos
@@ -208,7 +208,7 @@ YouTubeVideo('1uE2lvVkKW0', width=600, height=400,  playsinline=0)
 # In[3]:
 
 
-get_ipython().run_cell_magic('capture', 'showplot1', 'import numpy as np\nimport matplotlib.pyplot as plt\nimport empylib.nklib as nk\n\n# creamos el espectro\nlam = np.linspace(0.2,10,1000)   # espectro de longitudes de onda\nN1   = nk.H2O(lam)               # índice de refracción\neps1 = N1**2                     # constante dieléctrica\n\n# formateamos el lienzo para graficar\nfig, ax = plt.subplots(1,2)             # número de ejes en la figura\nfig.set_size_inches(11, 3)              # tamaño de la figura\nplt.rcParams[\'font.size\'] = \'12\'        # tamaño de fuente\n\n# Graficamos el resultado\nax[0].plot(lam,eps1.real,\'b\',label=r"$\\varepsilon\'$")   # constante dieléctrica (parte real)\nax[0].plot(lam,eps1.imag,\'r\',label=r"$\\varepsilon\'\'$")  # constante dieléctrica (parte imaginaria)\nax[1].plot(lam,N1.real,\'b\',label=r"$n$")                # índice de refracción (parte real)\nax[1].plot(lam,N1.imag,\'r\',label=r"$\\kappa$")           # índice de refracción (parte imaginaria)\n\n# marcamos los valores máximos con una línea\nfor i in [280, 599]:\n    ax[0].axvline(x = lam[i], color=\'k\', ls=\'--\', lw=\'1.0\')\n    ax[1].axvline(x = lam[i], color=\'k\', ls=\'--\', lw=\'1.0\')\n    ax[0].text(lam[i]*1.02,eps1[i].imag,r\'%.3f $\\mu$m\'% lam[i], fontsize=\'12\')\n\nfor i in [0,1]:\n    ax[i].set_xlabel(\'Longitud de onda, $\\lambda$ ($\\mu$m)\')\n    ax[i].grid()\n    ax[i].set_xlim(0.2,10)\n    ax[i].legend(frameon=False)\nax[0].set_ylabel(r"Constante dielectrica, $\\varepsilon = \\varepsilon\'+ \\varepsilon\'\'$")\nax[1].set_ylabel(r\'Indice de refracción, $N = n + i\\kappa$\')\nplt.show()\n')
+get_ipython().run_cell_magic('capture', 'showplot1', 'import numpy as np\nimport matplotlib.pyplot as plt\nimport empylib.nklib as nk\n\n# creamos el espectro\nlam = np.linspace(0.2,10,1000)   # espectro de longitudes de onda\nN1   = nk.H2O(lam)               # índice de refracción\neps1 = N1**2                     # constante dieléctrica\n\n# formateamos el lienzo para graficar\nfig, ax = plt.subplots(1,2)             # número de ejes en la figura\nfig.set_size_inches(10, 3)              # tamaño de la figura\nplt.rcParams[\'font.size\'] = \'12\'        # tamaño de fuente\n\n# Graficamos el resultado\nax[0].plot(lam,eps1.real,\'b\',label=r"$\\varepsilon\'$")   # constante dieléctrica (parte real)\nax[0].plot(lam,eps1.imag,\'r\',label=r"$\\varepsilon\'\'$")  # constante dieléctrica (parte imaginaria)\nax[1].plot(lam,N1.real,\'b\',label=r"$n$")                # índice de refracción (parte real)\nax[1].plot(lam,N1.imag,\'r\',label=r"$\\kappa$")           # índice de refracción (parte imaginaria)\n\n# marcamos los valores máximos con una línea\nfor i in [280, 599]:\n    ax[0].axvline(x = lam[i], color=\'k\', ls=\'--\', lw=\'1.0\')\n    ax[1].axvline(x = lam[i], color=\'k\', ls=\'--\', lw=\'1.0\')\n    ax[0].text(lam[i]*1.02,eps1[i].imag,r\'%.3f $\\mu$m\'% lam[i], fontsize=\'12\')\n\nfor i in [0,1]:\n    ax[i].set_xlabel(\'Longitud de onda, $\\lambda$ ($\\mu$m)\')\n    ax[i].grid()\n    ax[i].set_xlim(0.2,10)\n    ax[i].legend(frameon=False)\nax[0].set_ylabel(r"Constante dielectrica, $\\varepsilon = \\varepsilon\'+ \\varepsilon\'\'$")\nax[1].set_ylabel(r\'Indice de refracción, $N = n + i\\kappa$\')\nplt.show()\n')
 
 
 # Al graficar el índice de refracción notamos que la gráfica muestra dos oscilaciones de Lorentz. 
@@ -254,7 +254,7 @@ showplot1()
 # In[5]:
 
 
-get_ipython().run_cell_magic('capture', 'showplot1', 'import numpy as np\nimport matplotlib.pyplot as plt\nimport empylib.nklib as nk\n\nlam = np.linspace(0.2,30,1000)   # espectro de longitudes de onda\nN1   = nk.SiO2(lam)              # índice de refracción\neps1 = N1**2                     # constante dieléctrica\n\n# formateamos el lienzo para graficar\nfig, ax = plt.subplots(1,2)             # número de ejes en la figura\nfig.set_size_inches(11, 3)              # tamaño de la figura\nplt.rcParams[\'font.size\'] = \'12\'        # tamaño de fuente\n\n# Graficamos el resultado\nax[0].plot(lam,eps1.real,\'b\',label=r"$\\varepsilon\'$")   # constante dieléctrica (parte real)\nax[0].plot(lam,eps1.imag,\'r\',label=r"$\\varepsilon\'\'$")  # constante dieléctrica (parte imaginaria)\nax[1].plot(lam,N1.real,\'b\',label=r"$n$")                # índice de refracción (parte real)\nax[1].plot(lam,N1.imag,\'r\',label=r"$\\kappa$")           # índice de refracción (parte imaginaria)\n\nfor i in [0,1]:\n    ax[i].set_xlabel(\'Longitud de onda, $\\lambda$ ($\\mu$m)\')\n    ax[i].grid()\n    ax[i].legend(frameon=False)\nax[0].set_ylabel(r"Constante dielectrica, $\\varepsilon = \\varepsilon\'+ \\varepsilon\'\'$")\nax[1].set_ylabel(r\'Indice de refracción, $N = n + i\\kappa$\')\nplt.show()\n')
+get_ipython().run_cell_magic('capture', 'showplot1', 'import numpy as np\nimport matplotlib.pyplot as plt\nimport empylib.nklib as nk\n\nlam = np.linspace(0.2,30,1000)   # espectro de longitudes de onda\nN1   = nk.SiO2(lam)              # índice de refracción\neps1 = N1**2                     # constante dieléctrica\n\n# formateamos el lienzo para graficar\nfig, ax = plt.subplots(1,2)             # número de ejes en la figura\nfig.set_size_inches(10, 3)              # tamaño de la figura\nplt.rcParams[\'font.size\'] = \'12\'        # tamaño de fuente\n\n# Graficamos el resultado\nax[0].plot(lam,eps1.real,\'b\',label=r"$\\varepsilon\'$")   # constante dieléctrica (parte real)\nax[0].plot(lam,eps1.imag,\'r\',label=r"$\\varepsilon\'\'$")  # constante dieléctrica (parte imaginaria)\nax[1].plot(lam,N1.real,\'b\',label=r"$n$")                # índice de refracción (parte real)\nax[1].plot(lam,N1.imag,\'r\',label=r"$\\kappa$")           # índice de refracción (parte imaginaria)\n\nfor i in [0,1]:\n    ax[i].set_xlabel(\'Longitud de onda, $\\lambda$ ($\\mu$m)\')\n    ax[i].grid()\n    ax[i].legend(frameon=False)\nax[0].set_ylabel(r"Constante dielectrica, $\\varepsilon = \\varepsilon\'+ \\varepsilon\'\'$")\nax[1].set_ylabel(r\'Indice de refracción, $N = n + i\\kappa$\')\nplt.show()\n')
 
 
 # In[6]:
@@ -306,7 +306,7 @@ eps1 = N1**2                           # constante dieléctrica
 
 # formateamos el lienzo para graficar
 fig, ax = plt.subplots(1,2)             # número de ejes en la figura
-fig.set_size_inches(11, 3)              # tamaño de la figura
+fig.set_size_inches(10, 3)              # tamaño de la figura
 plt.rcParams['font.size'] = '12'        # tamaño de fuente
 
 # graficamos constante dielectrica e índice de refracción
@@ -392,7 +392,7 @@ eps1 = N1**2                            # constante dieléctrica
 
 # formateamos el lienzo para graficar
 fig, ax = plt.subplots(1,2)             # número de ejes en la figura
-fig.set_size_inches(11, 3)              # tamaño de la figura
+fig.set_size_inches(10, 3)              # tamaño de la figura
 plt.rcParams['font.size'] = '12'        # tamaño de fuente
 
 # graficamos
