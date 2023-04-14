@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -624,7 +626,7 @@ F = -k(r - r_0)
 <p>Consideremos ahora la interacción de una onda electromagnética con una molécula di atómica.</p>
 <a class="reference internal image-reference" href="../_images/molecule_spring_mass.png"><img alt="../_images/molecule_spring_mass.png" class="align-center" src="../_images/molecule_spring_mass.png" style="width: 200px;" /></a>
 <p>El campo eléctrico de la onda oscilatoria (<span class="math notranslate nohighlight">\(E_0e^{-i\omega t}\)</span>), ejerce una fuerza <span class="math notranslate nohighlight">\(F = qE_0e^{-i\omega t}\)</span> sobre cada polo, donde <span class="math notranslate nohighlight">\(q\)</span> es la carga eléctrica del polo positivo (o negativo).</p>
-<p>Consideramos, ademas, una fuerza de amortiguación, <span class="math notranslate nohighlight">\(F_{c} = - m\Gamma \dot{x}\)</span>, que representa la disipación de energía por la colición entre los electrones y los nucleos, además de otras interacciónes electromagnéticas. La constante <strong><span class="math notranslate nohighlight">\(\Gamma\)</span> es la taza de decaimiento</strong> (se mide en unidades 1/s).</p>
+<p>Consideramos, ademas, una fuerza de amortiguación, <span class="math notranslate nohighlight">\(F_{c} = - m\Gamma \dot{x}\)</span>, que representa la disipación de energía por la colición entre los electrones y los nucleos, además de otras interacciónes electromagnéticas. La constante <strong><span class="math notranslate nohighlight">\(\Gamma\)</span> es la tasa de decaimiento</strong> (se mide en unidades 1/s).</p>
 <p><em><strong>El fenómeno, así, representa un sistema forzado amortiguado</strong></em></p>
 <p>Asumiendo un eje de referencia situado en el polo positivo, la ecuación de movimiento está dada por:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -657,8 +659,8 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 <p>con <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_pq^2}{\varepsilon_0 m}\)</span></p>
 <p>En el caso del agua, la molecula posee un dipolo eléctrico neto adicional al dipolo inducido. El efecto de la polarización neta se puede representar, cambiando el primer término por un valor constante <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span>.</p>
 <p>El modelo completo se conoce como <strong>modelo de Lorentz</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2fe9627f-d835-49ad-8281-36a2f1639abf">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-2fe9627f-d835-49ad-8281-36a2f1639abf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-35814ff7-dd33-404d-954d-bb752f0d7721">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-35814ff7-dd33-404d-954d-bb752f0d7721" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty + \frac{\omega_p^2}{\omega_n^2 - \omega^2 - i\Gamma \omega}\quad\mathrm{Modelo~de~Lorentz},
 \end{equation}\]</div>
 <p>Usaremos la función <code class="docutils literal notranslate"><span class="pre">lorentz</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">empylib.nklib</span></code> para generar el índice de refracción y constante dielectrica a partir del modelo de Lorentz, con los parámetros: <span class="math notranslate nohighlight">\(\varepsilon_\infty = 2.0\)</span>, <span class="math notranslate nohighlight">\(\Gamma = 0.1\omega_n\)</span>, y <span class="math notranslate nohighlight">\(\omega_p = \omega_n\)</span></p>
@@ -736,15 +738,15 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
 
-<span class="c1"># creamos el espectro</span>
-<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>   <span class="c1"># espectro de longitudes de onda</span>
-<span class="n">N1</span>   <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">H2O</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>               <span class="c1"># índice de refracción</span>
-<span class="n">eps1</span> <span class="o">=</span> <span class="n">N1</span><span class="o">**</span><span class="mi">2</span>                     <span class="c1"># constante dieléctrica</span>
+<span class="c1"># Creamos el espectro</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>                          <span class="c1"># espectro de longitudes de onda</span>
+<span class="n">N1</span>   <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">H2O</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>                                      <span class="c1"># índice de refracción</span>
+<span class="n">eps1</span> <span class="o">=</span> <span class="n">N1</span><span class="o">**</span><span class="mi">2</span>                                            <span class="c1"># constante dieléctrica</span>
 
-<span class="c1"># formateamos el lienzo para graficar</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>             <span class="c1"># número de ejes en la figura</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>              <span class="c1"># tamaño de la figura</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>        <span class="c1"># tamaño de fuente</span>
+<span class="c1"># Formateamos el lienzo para graficar</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>                             <span class="c1"># número de ejes en la figura</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>                              <span class="c1"># tamaño de la figura</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>                        <span class="c1"># tamaño de fuente</span>
 
 <span class="c1"># Graficamos el resultado</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">eps1</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\varepsilon&#39;$&quot;</span><span class="p">)</span>   <span class="c1"># constante dieléctrica (parte real)</span>
@@ -752,7 +754,7 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">N1</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$n$&quot;</span><span class="p">)</span>                <span class="c1"># índice de refracción (parte real)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">N1</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\kappa$&quot;</span><span class="p">)</span>           <span class="c1"># índice de refracción (parte imaginaria)</span>
 
-<span class="c1"># marcamos los valores máximos con una línea</span>
+<span class="c1"># Marcamos los valores máximos con una línea</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">280</span><span class="p">,</span> <span class="mi">599</span><span class="p">]:</span>
     <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">lam</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;1.0&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">lam</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="s1">&#39;1.0&#39;</span><span class="p">)</span>
@@ -813,14 +815,14 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
 
-<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>   <span class="c1"># espectro de longitudes de onda</span>
-<span class="n">N1</span>   <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">SiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>              <span class="c1"># índice de refracción</span>
-<span class="n">eps1</span> <span class="o">=</span> <span class="n">N1</span><span class="o">**</span><span class="mi">2</span>                     <span class="c1"># constante dieléctrica</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>                          <span class="c1"># espectro de longitudes de onda</span>
+<span class="n">N1</span>   <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">SiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>                                     <span class="c1"># índice de refracción</span>
+<span class="n">eps1</span> <span class="o">=</span> <span class="n">N1</span><span class="o">**</span><span class="mi">2</span>                                            <span class="c1"># constante dieléctrica</span>
 
 <span class="c1"># formateamos el lienzo para graficar</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>             <span class="c1"># número de ejes en la figura</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>              <span class="c1"># tamaño de la figura</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>        <span class="c1"># tamaño de fuente</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>                             <span class="c1"># número de ejes en la figura</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>                              <span class="c1"># tamaño de la figura</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>                        <span class="c1"># tamaño de fuente</span>
 
 <span class="c1"># Graficamos el resultado</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">eps1</span><span class="o">.</span><span class="n">real</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\varepsilon&#39;$&quot;</span><span class="p">)</span>   <span class="c1"># constante dieléctrica (parte real)</span>
@@ -860,8 +862,8 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 \end{equation*}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(m_e\)</span>, <span class="math notranslate nohighlight">\(e\)</span> y <span class="math notranslate nohighlight">\(\Gamma_e\)</span> son, respectivamente, la masa, la carga elemental y la taza de decaimiento del electrón.</p>
 <p>Mediante un procedimiento similar al utilzado para el modelo de Lorentz, derivamos el <strong>modelo de Drude</strong> para conductores:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-47a85a4d-6301-48b1-b826-04c09b8a93bb">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-47a85a4d-6301-48b1-b826-04c09b8a93bb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c80e310b-617f-4a95-9ee6-c8c3278e79a2">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-c80e310b-617f-4a95-9ee6-c8c3278e79a2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty - \frac{\omega_p^2}{\omega^2 + i\Gamma_e \omega},\quad\mathrm{Modelo~de~Drude},
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_ee^2}{\varepsilon_0 m}\)</span> se conoce como frecuencia de plasma, y <span class="math notranslate nohighlight">\(N_e\)</span> es la densidad de número de electrones. Similar al modelo de Lorentz, <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span> representa la polarización neta del material.</p>
@@ -1032,7 +1034,7 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 <span class="n">n2</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">gold</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>               <span class="c1"># índice de refracción oro</span>
 <span class="n">n1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">n2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>          <span class="c1"># índice de refracción aire</span>
 
-<span class="c1"># Reflectividad en capa delgada en función del ángulo &quot;tt&quot;</span>
+<span class="c1"># Reflectividad en interface función del ángulo &quot;tt&quot;</span>
 <span class="n">Rp</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tt</span> <span class="p">:</span> <span class="n">interface</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span> <span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span> <span class="n">pol</span><span class="o">=</span><span class="s1">&#39;TM&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">Rs</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">tt</span> <span class="p">:</span> <span class="n">interface</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span> <span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span> <span class="n">pol</span><span class="o">=</span><span class="s1">&#39;TE&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 

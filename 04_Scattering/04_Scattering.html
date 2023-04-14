@@ -556,12 +556,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font></p>
-<section class="tex2jax_ignore mathjax_ignore" id="scattering-electromagnetico">
+  <section class="tex2jax_ignore mathjax_ignore" id="scattering-electromagnetico">
 <h1><span class="section-number">4. </span>Scattering electromagnético<a class="headerlink" href="#scattering-electromagnetico" title="Permalink to this headline">#</a></h1>
-<p><br><br><br><br>
-Profesor: Francisco Ramírez Cuevas<br>
-Fecha: 2 de Septiembre 2022</p>
 <section id="interaccion-de-luz-segun-el-tamano-de-un-cuerpo">
 <h2><span class="section-number">4.1. </span>Interacción de luz según el tamaño de un cuerpo<a class="headerlink" href="#interaccion-de-luz-segun-el-tamano-de-un-cuerpo" title="Permalink to this headline">#</a></h2>
 <p>Hasta el momento hemos analizado las ecuaciones de Maxwell y condiciones de borde en coordenadas cartesianas. Estas relaciones se aplican a interfaces rectas.</p>
@@ -579,14 +575,30 @@ Fecha: 2 de Septiembre 2022</p>
 <section id="interaccion-de-luz-con-cuerpos-pequenos">
 <h3><span class="section-number">4.1.2. </span>Interacción de luz con cuerpos pequeños<a class="headerlink" href="#interaccion-de-luz-con-cuerpos-pequenos" title="Permalink to this headline">#</a></h3>
 <p>Cuándo las dimensiones del cuerpo, <span class="math notranslate nohighlight">\(D\)</span>, son comparables a la longitud de onda, el radio de curvatura se hace significativo y las soluciones de las ecuaciones de Maxwell para una interface plana no son aplicables</p>
-<p>En este caso, se produce el fenómeno de <strong><em>scattering</em> de luz</strong> asociado a la disperción de luz en múltiples direcciones. Además del scattering, tenemos el fenómeno de <strong>absorción de luz</strong> asociada con la porción de la energía incidente absorbida por el objeto. Por último, llamamos <strong>extinción de luz</strong> a la suma de la energía de scattering y absorción.</p>
+<p>En este caso, se produce el fenómeno de <strong><em>scattering</em> de luz</strong> asociado a la disperción (o esparcimiento) de luz en múltiples direcciones. Además del scattering, tenemos el fenómeno de <strong>absorción de luz</strong> asociada con la porción de la energía incidente absorbida por el objeto. Por último, llamamos <strong>extinción de luz</strong> a la suma de la energía de scattering y absorción.</p>
 <a class="reference internal image-reference" href="../_images/scattering_schematic.png"><img alt="../_images/scattering_schematic.png" class="align-center" src="../_images/scattering_schematic.png" style="width: 450px;" /></a>
+<p>El efecto scattering se presenta cada vez que tenemos material particulado y, por lo tanto, es común en ambientes con polvo o neblina. El siguiente video explica el fenómeno de forma visual, y muestra como el scattering explica el haz de luz producido por un láser rojo cuando interactúa con particular pequeñas dispersas en agua.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="700"
+    height="400"
+    src="https://www.youtube.com/embed/OXoKZPLb6Qo"
+    frameborder="0"
+    allowfullscreen
+
+></iframe>
+</div></div>
+</div>
 </section>
 </section>
 <section id="scattering-en-esferas-solucion-de-mie">
 <h2><span class="section-number">4.2. </span>Scattering en esferas (solución de Mie)<a class="headerlink" href="#scattering-en-esferas-solucion-de-mie" title="Permalink to this headline">#</a></h2>
-<p>Consideremos el modelo simple una onda electromagnética interactuando con una esfera de radio <span class="math notranslate nohighlight">\(R\)</span> y diámetro <span class="math notranslate nohighlight">\(D\)</span> tal que <span class="math notranslate nohighlight">\(D/\lambda \sim 1\)</span>
-<a class="reference internal" href="../_images/em_wave_sphere.png"><img alt="../_images/em_wave_sphere.png" class="align-center" src="../_images/em_wave_sphere.png" style="width: 300px;" /></a></p>
+<p>La solución analítica para predecir el efecto de scattering y absorción en esferas, desarrollada por Gustav Mie, se ha convertido en la principal referencia para entender este fenómeno.</p>
+<p>La fórmula es derivada a partir de la solución de las ecuaciones de Maxwell en coordenadas esféricas, y permite describir con presición la <strong>dependencia del scattering y absorción respecto a las propiedades ópticas de la partícula y el medio circundante, asi como el efecto del diámetro de la partícula.</strong></p>
+<p>Consideremos el modelo simple una onda electromagnética interactuando con una esfera de radio <span class="math notranslate nohighlight">\(R\)</span> y diámetro <span class="math notranslate nohighlight">\(D\)</span> tal que <span class="math notranslate nohighlight">\(D/\lambda \sim 1\)</span></p>
+<a class="reference internal image-reference" href="../_images/em_wave_sphere.png"><img alt="../_images/em_wave_sphere.png" class="align-center" src="../_images/em_wave_sphere.png" style="width: 300px;" /></a>
 <p>Llamaremos al índice de refracción de la esfera <span class="math notranslate nohighlight">\(N_p\)</span>, y al índice de refracción del exterior <span class="math notranslate nohighlight">\(N_h\)</span>.</p>
 <p>En este caso asumimos que el índice de refracción del exterior no tiene componente compleja, es decir <span class="math notranslate nohighlight">\(N_h = n_h\)</span></p>
 <p>El espacio está definido en coordenadas esféricas, donde:</p>
@@ -595,7 +607,7 @@ Fecha: 2 de Septiembre 2022</p>
 <li><p><span class="math notranslate nohighlight">\(\phi\)</span>: ángulo azimutal</p></li>
 <li><p><span class="math notranslate nohighlight">\(r\)</span>: posición radial</p></li>
 </ul>
-<p>La solución, propuesta por Gustav Mie, se basa una expansión en serie de ondas esféricas <span class="math notranslate nohighlight">\(\vec{M}_{lm}(r, \theta,\phi)\)</span> y <span class="math notranslate nohighlight">\(\vec{N}_{lm}(r, \theta,\phi)\)</span> (más información en las referencias).</p>
+<p>La solución se basa una expansión en serie de ondas esféricas <span class="math notranslate nohighlight">\(\vec{M}_{lm}(r, \theta,\phi)\)</span> y <span class="math notranslate nohighlight">\(\vec{N}_{lm}(r, \theta,\phi)\)</span> (más información en las referencias).</p>
 <p>Por ejemplo, la componente del campo eléctrico correspondiente al scattering, <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{sca}\)</span> es:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -697,10 +709,10 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 
 <span class="c1"># etiquetas de ejes y formateo de la figura</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>         <span class="c1"># tamaño de figura</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span>   <span class="c1"># tamaño de fuente</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Longitud de onda, $\lambda$ ($\mu$m)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>   <span class="c1"># tamaño de fuente</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Longitud de onda, $\lambda$ ($\mu$m)&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;scattering partícula de agua&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$C_\mathrm</span><span class="si">{sca}</span><span class="s1">$ ($\mu$m$^2$)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$C_\mathrm</span><span class="si">{sca}</span><span class="s1">$ ($\mu$m$^2$)&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$D$ ($\mu$m)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -714,7 +726,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04_Scattering_39_0.png" src="../_images/04_Scattering_39_0.png" />
+<img alt="../_images/04_Scattering_43_0.png" src="../_images/04_Scattering_43_0.png" />
 </div>
 </div>
 <p>A partir de este gráfico podemos identificar algunos patrones comúnes en scattering:</p>
@@ -758,17 +770,17 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
     <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Qabs</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="mf">1E3</span><span class="p">)))</span> <span class="c1"># grafico Cabs/Ac</span>
 
 <span class="c1"># etiquetas de ejes y formateo de la figura</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>         <span class="c1"># tamaño de figura</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span>   <span class="c1"># tamaño de fuente</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>         <span class="c1"># tamaño de figura</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>   <span class="c1"># tamaño de fuente</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
-    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Longitud de onda, $\lambda$ ($\mu$m)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Longitud de onda, $\lambda$ ($\mu$m)&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">6.2</span><span class="p">)</span>
 
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Scattering partícula de plata&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Absorción partícula de plata&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$C_\mathrm</span><span class="si">{sca}</span><span class="s1"> / \pi R^2$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$C_\mathrm</span><span class="si">{abs}</span><span class="s1"> / \pi R^2$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Scattering partícula de plata&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Absorción partícula de plata&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$C_\mathrm</span><span class="si">{sca}</span><span class="s1"> / \pi R^2$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$C_\mathrm</span><span class="si">{abs}</span><span class="s1"> / \pi R^2$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;D (nm)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -782,7 +794,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04_Scattering_51_0.png" src="../_images/04_Scattering_51_0.png" />
+<img alt="../_images/04_Scattering_55_0.png" src="../_images/04_Scattering_55_0.png" />
 </div>
 </div>
 <ul class="simple">
@@ -798,6 +810,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 <section id="referencias">
 <h2><span class="section-number">4.4. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
+<li><p>Hetch E., <strong>Capítulo 4.2 - Esparcimiento de Rayleigh</strong> en <em>Óptica</em>, 5ta Ed, Pearson, 2017</p></li>
 <li><p>Bohren C. and Huffman D. <strong>Chapter 4 - Absorption and Scattering by a Sphere</strong> in <em>Absorption and Scattering of Light by Small Particles</em>, 1st Ed, John Wiley &amp; Sons, 1983</p></li>
 <li><p>Jackson. J. D., <strong>Chapter 10 - Scattering and Diffraction</strong> in <em>Classical Electrodynamics</em>, 3th Ed, John Wiley &amp; Sons, 1999</p></li>
 </ul>
