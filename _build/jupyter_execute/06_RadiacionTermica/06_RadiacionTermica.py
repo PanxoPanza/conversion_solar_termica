@@ -374,7 +374,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
 
 from ipywidgets import interact
 
-@interact(T=(300,1000,10), d=(0,10,0.01), lam0=(5,10,0.01), theta0=(0,90,1))
+@interact(T=(300,1000,10), d=(0,10,0.1), lam0=(5,10,0.1), theta0=(0,90,1))
 def g(T=300,d=1, lam0=10, theta0=0):
    return plot_emisivity_glass(T,d,lam0,theta0)
 

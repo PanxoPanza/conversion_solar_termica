@@ -324,7 +324,7 @@ YouTubeVideo('dumzvAN12-4', width=600, height=400,  playsinline=0, start=354, en
 
 # Asumiendo dos medios 1 y 2, con índice de refracción real, analicemos la reflectancia en función del ángulo de incidencia:
 # - caso 1, $n_1 < n_2$
-# - caso 1, $n_1 > n_2$
+# - caso 2, $n_1 > n_2$
 
 # In[2]:
 

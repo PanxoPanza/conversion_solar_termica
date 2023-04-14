@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
 # # Scattering electromagnético
-# <br><br><br><br>
-# Profesor: Francisco Ramírez Cuevas<br>
-# Fecha: 2 de Septiembre 2022
 
 # ## Interacción de luz según el tamaño de un cuerpo
 # Hasta el momento hemos analizado las ecuaciones de Maxwell y condiciones de borde en coordenadas cartesianas. Estas relaciones se aplican a interfaces rectas. 
@@ -33,13 +29,29 @@
 
 # Cuándo las dimensiones del cuerpo, $D$, son comparables a la longitud de onda, el radio de curvatura se hace significativo y las soluciones de las ecuaciones de Maxwell para una interface plana no son aplicables
 
-# En este caso, se produce el fenómeno de ***scattering* de luz** asociado a la disperción de luz en múltiples direcciones. Además del scattering, tenemos el fenómeno de **absorción de luz** asociada con la porción de la energía incidente absorbida por el objeto. Por último, llamamos **extinción de luz** a la suma de la energía de scattering y absorción.
+# En este caso, se produce el fenómeno de ***scattering* de luz** asociado a la disperción (o esparcimiento) de luz en múltiples direcciones. Además del scattering, tenemos el fenómeno de **absorción de luz** asociada con la porción de la energía incidente absorbida por el objeto. Por último, llamamos **extinción de luz** a la suma de la energía de scattering y absorción.
 # 
 # <img src="./images/scattering_schematic.png" width="450px" align= center>
 
+# El efecto scattering se presenta cada vez que tenemos material particulado y, por lo tanto, es común en ambientes con polvo o neblina. El siguiente video explica el fenómeno de forma visual, y muestra como el scattering explica el haz de luz producido por un láser rojo cuando interactúa con particular pequeñas dispersas en agua.
+
+# In[1]:
+
+
+from IPython.display import YouTubeVideo
+YouTubeVideo('OXoKZPLb6Qo', width=700, height = 400)
+
+
 # ## Scattering en esferas (solución de Mie)
+# 
+# La solución analítica para predecir el efecto de scattering y absorción en esferas, desarrollada por Gustav Mie, se ha convertido en la principal referencia para entender este fenómeno.
+
+# 
+# 
+# La fórmula es derivada a partir de la solución de las ecuaciones de Maxwell en coordenadas esféricas, y permite describir con presición la **dependencia del scattering y absorción respecto a las propiedades ópticas de la partícula y el medio circundante, asi como el efecto del diámetro de la partícula.**
 
 # Consideremos el modelo simple una onda electromagnética interactuando con una esfera de radio $R$ y diámetro $D$ tal que $D/\lambda \sim 1$
+
 # <img src="./images/em_wave_sphere.png" width="300px" align= center>
 
 # Llamaremos al índice de refracción de la esfera $N_p$, y al índice de refracción del exterior $N_h$. 
@@ -52,7 +64,7 @@
 # - $\phi$: ángulo azimutal
 # - $r$: posición radial
 
-# La solución, propuesta por Gustav Mie, se basa una expansión en serie de ondas esféricas $\vec{M}_{lm}(r, \theta,\phi)$ y $\vec{N}_{lm}(r, \theta,\phi)$ (más información en las referencias).
+# La solución se basa una expansión en serie de ondas esféricas $\vec{M}_{lm}(r, \theta,\phi)$ y $\vec{N}_{lm}(r, \theta,\phi)$ (más información en las referencias).
 
 # Por ejemplo, la componente del campo eléctrico correspondiente al scattering, $\vec{E}_\mathrm{sca}$ es:
 # 
@@ -156,13 +168,13 @@
 # 
 # Notar que $N_p\approx 1.33$ implica $C_\mathrm{abs} = 0$
 
-# In[1]:
-
-
-get_ipython().run_cell_magic('capture', 'show_plot', "import empylib.miescattering as mie\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nlam = np.linspace(0.3,1.4,200)  # espectro de longitudes de onda\nnh = 1.0                        # índice de refracción del material circundante\nNp = 1.33                       # índice de refracción de la partícula\nD = [0.1, 0.3, 0.5, 0.7, 1.0]   # distribución de diámetros \n\nfig, ax = plt.subplots()                # creamos ejes para graficar\ncolors = plt.cm.jet(np.linspace(0,1,len(D))) # set de colores para las curvas\nfor i in range(len(D)):\n    Ac = np.pi*D[i]**2/4                # área transversal de la partícula\n    Qsca = mie.scatter_efficiency(lam,nh,Np,D[i])[1] # determinamos Csca/Ac\n    ax.plot(lam,Qsca*Ac,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Csca\n\n# etiquetas de ejes y formateo de la figura\nfig.set_size_inches(6, 4)         # tamaño de figura\nplt.rcParams['font.size'] = '14'   # tamaño de fuente\nax.set_xlabel(r'Longitud de onda, $\\lambda$ ($\\mu$m)', fontsize=16)\nax.set_title('scattering partícula de agua')\nax.set_ylabel(r'$C_\\mathrm{sca}$ ($\\mu$m$^2$)', fontsize=16)\nax.legend(frameon=False, title=r'$D$ ($\\mu$m)')\nplt.show()\n")
-
-
 # In[2]:
+
+
+get_ipython().run_cell_magic('capture', 'show_plot', "import empylib.miescattering as mie\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nlam = np.linspace(0.3,1.4,200)  # espectro de longitudes de onda\nnh = 1.0                        # índice de refracción del material circundante\nNp = 1.33                       # índice de refracción de la partícula\nD = [0.1, 0.3, 0.5, 0.7, 1.0]   # distribución de diámetros \n\nfig, ax = plt.subplots()                # creamos ejes para graficar\ncolors = plt.cm.jet(np.linspace(0,1,len(D))) # set de colores para las curvas\nfor i in range(len(D)):\n    Ac = np.pi*D[i]**2/4                # área transversal de la partícula\n    Qsca = mie.scatter_efficiency(lam,nh,Np,D[i])[1] # determinamos Csca/Ac\n    ax.plot(lam,Qsca*Ac,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Csca\n\n# etiquetas de ejes y formateo de la figura\nfig.set_size_inches(6, 4)         # tamaño de figura\nplt.rcParams['font.size'] = '12'   # tamaño de fuente\nax.set_xlabel(r'Longitud de onda, $\\lambda$ ($\\mu$m)')\nax.set_title('scattering partícula de agua')\nax.set_ylabel(r'$C_\\mathrm{sca}$ ($\\mu$m$^2$)')\nax.legend(frameon=False, title=r'$D$ ($\\mu$m)')\nplt.show()\n")
+
+
+# In[3]:
 
 
 show_plot()
@@ -197,13 +209,13 @@ show_plot()
 
 # En la siguiente figura, graficamos $C_\mathrm{sca}$ y $C_\mathrm{abs}$ para partículas de distinto diámetro. Ambas variables son normalizadas por al área transversal de la esfera $\pi R^2$, para mejor comparación entre esferas de distintas dimensiones.
 
-# In[3]:
-
-
-get_ipython().run_cell_magic('capture', 'show_plot', "import empylib.miescattering as mie\nimport empylib.nklib as nk\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nlam = np.linspace(0.2,0.8,200)     # espectro de longitudes de onda\nnh = 1.0                           # índice de refracción del material circundante\nNp = nk.silver(lam)                # índice de refracción de la partícula\nD = [0.01, 0.02, 0.05, 0.08, 0.1]  # distribución de diámetros \n\nfig, ax = plt.subplots(1,2)        # creamos ejes para graficar\ncolors = plt.cm.jet(np.linspace(0,1,len(D))) # set de colores para las curvas\nfor i in range(len(D)):\n    Qext, Qsca = mie.scatter_efficiency(lam,nh,Np,D[i])[0:2] # determinamos Cext/Ac y Csca/Ac\n    Qabs = Qext - Qsca\n    ax[0].plot(lam,Qsca,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Csca/Ac\n    ax[1].plot(lam,Qabs,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Cabs/Ac\n\n# etiquetas de ejes y formateo de la figura\nfig.set_size_inches(13, 5)         # tamaño de figura\nplt.rcParams['font.size'] = '14'   # tamaño de fuente\n\nfor i in range(2):\n    ax[i].set_xlabel(r'Longitud de onda, $\\lambda$ ($\\mu$m)', fontsize=16)\n    ax[i].set_ylim(0,6.2)\n\nax[0].set_title('Scattering partícula de plata', fontsize=16)\nax[1].set_title('Absorción partícula de plata', fontsize=16)\nax[0].set_ylabel(r'$C_\\mathrm{sca} / \\pi R^2$', fontsize=16)\nax[1].set_ylabel(r'$C_\\mathrm{abs} / \\pi R^2$', fontsize=16)\nax[1].legend(frameon=False, title=r'D (nm)')\nplt.show()\n")
-
-
 # In[4]:
+
+
+get_ipython().run_cell_magic('capture', 'show_plot', "import empylib.miescattering as mie\nimport empylib.nklib as nk\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nlam = np.linspace(0.2,0.8,200)     # espectro de longitudes de onda\nnh = 1.0                           # índice de refracción del material circundante\nNp = nk.silver(lam)                # índice de refracción de la partícula\nD = [0.01, 0.02, 0.05, 0.08, 0.1]  # distribución de diámetros \n\nfig, ax = plt.subplots(1,2)        # creamos ejes para graficar\ncolors = plt.cm.jet(np.linspace(0,1,len(D))) # set de colores para las curvas\nfor i in range(len(D)):\n    Qext, Qsca = mie.scatter_efficiency(lam,nh,Np,D[i])[0:2] # determinamos Cext/Ac y Csca/Ac\n    Qabs = Qext - Qsca\n    ax[0].plot(lam,Qsca,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Csca/Ac\n    ax[1].plot(lam,Qabs,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Cabs/Ac\n\n# etiquetas de ejes y formateo de la figura\nfig.set_size_inches(10, 3)         # tamaño de figura\nplt.rcParams['font.size'] = '12'   # tamaño de fuente\n\nfor i in range(2):\n    ax[i].set_xlabel(r'Longitud de onda, $\\lambda$ ($\\mu$m)')\n    ax[i].set_ylim(0,6.2)\n\nax[0].set_title('Scattering partícula de plata')\nax[1].set_title('Absorción partícula de plata')\nax[0].set_ylabel(r'$C_\\mathrm{sca} / \\pi R^2$')\nax[1].set_ylabel(r'$C_\\mathrm{abs} / \\pi R^2$')\nax[1].legend(frameon=False, title=r'D (nm)')\nplt.show()\n")
+
+
+# In[5]:
 
 
 show_plot()
@@ -224,6 +236,8 @@ show_plot()
 # Esta copa del periodo romano, esta compuesta de vidrio con nanopartícula de oro y plata en forma de coloides. 
 
 # ## Referencias
+# 
+# - Hetch E., **Capítulo 4.2 - Esparcimiento de Rayleigh** en *Óptica*, 5ta Ed, Pearson, 2017
 # - Bohren C. and Huffman D. **Chapter 4 - Absorption and Scattering by a Sphere** in *Absorption and Scattering of Light by Small Particles*, 1st Ed, John Wiley & Sons, 1983
 # 
 # - Jackson. J. D., **Chapter 10 - Scattering and Diffraction** in *Classical Electrodynamics*, 3th Ed, John Wiley & Sons, 1999
