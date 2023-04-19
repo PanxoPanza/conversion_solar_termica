@@ -1,22 +1,25 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
 # # Transporte Radiativo
-# <br><br><br><br>
-# Profesor: Francisco Ramírez Cuevas<br>
-# Fecha: 9 de Septiembre 2022
+
+# ## Introducción
+
+# En la [unidad 2](../02_ondas_EM_en_la_materia/02_ondas_EM_en_la_materia.ipynb) revisamos el efecto de interferencia en películas de espesor finito, y como está daba lugar a la coloración tornasol caractéristica en derrames de aceites en agua, lentes y discos compactos.
+# 
+# <img src="./images/interference_oils.png" width="700px" align= center>
+
+# Si, teóricamente, el efecto de interferencia ocurre cada vez que tenemos un tercer material intercalado entre dos materiales (iguales o diferentes). **¿Porqué no visualizamos este efecto en ventanas u materiales de gran espesor?**
 
 # ## Coherencia de la luz e interferencia
-# Como veremos en las próximas clases, las vibraciones moleculares en la materia son las responsables de emitir radiación en forma de ondas electromagnéticas. El mecanismo es similar, pero inverso, al mecanismo de absorción de luz, el cual es originado por la interacción de ondas electromagnéticas con las vibraciones moleculares (ver clase 3).
-
-# Dicho esto, dos moléculas pueden emitir radiación con una pequeña variación en la longitud de onda $\Delta\lambda$. Esto ocurre porque las vibraciones no están 100% correlacionadas, es decir, existe un grado de aletoriedad en las vibraciones.
-
-# Esta aletoriedad en las vibraciones da lugar a una distribución del flujo de radiación emitido por una fuente.
+# 
+# Para entender esto, primero debemos revisar la distribución espectral de fuentes reales de luz
 # 
 # <img src="./images/light_source_spectra.png" width="800px" align= center>
 
-# Por ejemplo, consideremos una fuente de luz con una distribución espectral normal, centrada en $\lambda_0$ y con una desviación estandar $\pm\sigma_\lambda\lambda_0$, con $\sigma_\lambda \in [0,1]$. Imaginemos esta fuente como $N$ emisores, donde cada emisor $j$ emite ondas electromagnéticas con longitud de onda $\lambda \pm\Delta \lambda_j$, donde $\Delta \lambda_j$ es escogido aleatoriamente a partir de la distribución normal.
+# Como vemos, una fuente emite luz en varias longitudes de onda y a distinta intensidad. Así, las ondas emitidas se superponen, generando una onda resultante con una forma distinta a $e^{i(\vec{k}\cdot\vec{r} -\omega t)}$.
+
+# Consideremos, por ejemplo, una fuente de luz con una distribución espectral normal, centrada en $\lambda_0$ y con una desviación estandar $\pm\sigma_\lambda\lambda_0$, con $\sigma_\lambda \in [0,1]$. Imaginemos esta fuente como $N$ emisores, donde cada emisor $j$ emite una onda electromagnéticas con longitud de onda $\lambda \pm\Delta \lambda_j$, donde $\Delta \lambda_j$ es escogido aleatoriamente a partir de la distribución normal.
 
 # <img src="./images/normal_distribution.png" width="400px" align= center>
 
@@ -65,8 +68,8 @@ def plot_light_packet(N, t, sig):
     
     # Graficamos
     fig, ax = plt.subplots()
-    fig.set_size_inches(9, 5)
-    plt.rcParams['font.size'] = '18'
+    fig.set_size_inches(6, 3)
+    plt.rcParams['font.size'] = '12'
     
     ax.plot(x,np.real(E), 'k')
     ax.set_xlabel('x ($\mu$m)')
@@ -88,7 +91,7 @@ def g(N=1000, t=0, sig=0.3):
 
 
 # ### Longitud de coherencia
-# Definimos como **longitud de coherencia**, $l_c$, a la distancia donde un grupo de ondas electromagnética mantiene correlación entre las fases. Para longitudes mayores a $l_c$, decimos que la luz es incoherente, es decir, el desface entre las distintas ondas es completamente aleatorio.
+# Definimos como **longitud de coherencia**, $l_c$, a la distancia donde un grupo de ondas electromagnética mantiene correlación entre las fases. Dos puntos en una paquete de onda separados a una distancia mayor a $l_c$ son incoherentes, es decir, no están correlacionados
 
 # <img src="./images/coherence_length.png" width="300px" align= center>
 # 
@@ -113,73 +116,29 @@ def g(N=1000, t=0, sig=0.3):
 # Así, por ejemplo, la radiación solar ($T \approx 5800~\mathrm{K}$) tiene una longitud de coherencia, $l_c \approx 370~\mathrm{nm}$
 
 # ### Régimen de trasporte de luz
-# Consideremos dos paquetes de onda con una longitud de coherencia $l_c$, viajando en sentido opuesto.
+# Los fenómenos de interferencia descritos en las unidades anteriores existen debido a la forma oscilatorioa de la luz. **Dos paquetes de ondas distintos son incoherentes, y la superposición de estos no genera interferencia.**
 
-# Podemos ver que ambos paquetes de luz interfieren en $x = 0$ en un instante $t$. Al continuar su camino, ambos paquetes de onda recuperan su forma original.
-
-# In[3]:
-
-
-def plot_2light_packet(n, t, sig):
-    '''
-    n: número de ondas generadas
-    t: tiempo en ns
-    sig: % de ancho de banda (dlam = sig*lam)
-    '''
-    t = t*1E-9 # convertimos ns a s
-    lam = 0.5
-    
-    # recorrido de la onda
-    x = np.linspace(-2,2,1000)  # desde 0 a 4 micrones
-    k0 = 2*np.pi/lam
-    Efw = light_packet( 1, x - x[ 0], t, lam, sig, n)
-    Ebw = light_packet(-1, x - x[-1], t, lam, sig, n)
-    
-    # Graficamos
-    fig, ax = plt.subplots()
-    fig.set_size_inches(9, 5)
-    plt.rcParams['font.size'] = '18'
-    
-    ax.plot(x,np.real(Efw + Ebw), 'k')
-    ax.set_xlabel('x ($\mu$m)')
-    ax.set_ylabel('Amplitud $|E|/E_0$')
-    ax.set_ylim(-n*2.1,n*2.1)
-    ax.grid()
-
-
-# In[4]:
-
-
-from ipywidgets import interact
-
-@interact( N=(1,1000,1), 
-           t=(0,20,0.1),
-           sig=(0,1,0.01))
-def g(N=1000, t=2, sig=0.3):
-    return plot_2light_packet(N,t,sig)
-
-
-# A partir de esto, podemos concluir que los fenómenos de interferencia en películas de capa delgada de espesor $d$ no serían visibles si $d > l_c$. En otras palabras, el fenómeno de interferencia solo existe si el paquete de onda interfiere consigo mismo.
+# En otras palabras, el fenómeno de interferencia solo existe si el paquete de onda interfiere consigo mismo. Así, podemos concluir que los fenómenos de interferencia en películas de espesor $d$ no serían visibles si $d > l_c$. 
 
 # <img src="./images/interference_thinfilm.png" width="200px" align= center>
 # 
 # <center>Propagación de una onda a través de una película de espesor $d$, con $l_c < d$</center>
 
-# En general, para una longitud características $d$:
+# En general, para una longitud características $d$, la regla es:
 # 
 # - Si $d > l_c$ el **transporte de luz es incoherente** . En este régimen, podemos ignorar las propiedades oscilatorias de la luz, y analizar el problema como el transporte de pequeños paquetes de onda, o simplemente como partículas.
 # 
 # - Si $d < l_c$, el **transporte de luz es coherente**. En este régimen debemos considerar las propiedades oscilatorias a partir de las Ecuaciones de Maxwell.
 
-# Así, los coeficientes de Fresnel para una película delgada solo son válidos para $d < l_c$. 
+# Así, **los coeficientes de Fresnel para una película delgada solo son aplicables si $d < l_c$.**
 
-# Los coeficientes de Fresnel para una interface, en cambio, siempre son válidos.
+# Los coeficientes de Fresnel para una interface, en cambio, siempre son válidos debido a que consideran una interface infinitamente delgada.
 
 # <img src="./images/interference_interface.png" width="350px" align= center>
 # 
 # <center>Refracción y reflexión de una onda incoherente a través de una interfaz</center>
 
-# Igualmente, en medios particulados, los fenómenos de interferencia pueden ocurrir si las partículas están suficientemente cerca y tienen tamaños similares. Llamamos a esto **scattering coherente**
+# En medios particulados, los fenómenos de interferencia pueden ocurrir si las partículas están suficientemente cerca y tienen tamaños similares. Llamamos a esto **scattering coherente**
 
 # <img src="./images/scattering_coherence.png" width="600px" align= center>
 # 
@@ -215,12 +174,7 @@ def g(N=1000, t=2, sig=0.3):
 # 
 # <img src="./images/solid_angle.png" width="450px" align= center>
 
-# Es importante aclarar que los conceptos intensidad específica y vector de Poynting $\langle\vec{S}\rangle$, son equivalentes: $I_\lambda(\hat{k})$ es un término utilizado en radiometría para definir el flujo de energía por unidad de ángulo sólido, mientras que $\langle\vec{S}\rangle$ es un término ulizado en óptica para describir el flujo de energía en dirección $\hat{k}$. Cabe destacar, sin embargo, que $I_\lambda(\hat{k})$ es una magnitud, y $\langle\vec{S}\rangle$ es un vector. Así, podríamos decir que la relación entre estos dos términos está dada por $I_\lambda(\hat{k}) = \langle\vec{S}\rangle\cdot\hat{k}$.
-
-# El ángulo sólido total para una esfera es:
-# \begin{equation*}
-# \int_\mathrm{esfera} d\Omega = \int_0^{2\pi}\int_0^{\pi} \sin\theta d\theta d\phi= 4\pi
-# \end{equation*}
+# Es importante aclarar que los conceptos intensidad específica y vector de Poynting $\langle\vec{S}\rangle$, son equivalentes: $I_\lambda(\hat{k})$ es un término utilizado en radiometría para definir el flujo de energía por unidad de ángulo sólido, mientras que $\langle\vec{S}\rangle$ es un término utilizado en óptica para describir el flujo de energía en dirección $\hat{k}$. Cabe destacar, sin embargo, que $I_\lambda(\hat{k})$ es una magnitud, y $\langle\vec{S}\rangle$ es un vector. Así, podríamos decir que la relación entre estos dos términos está dada por $I_\lambda(\hat{k}) = \langle\vec{S}\rangle\cdot\hat{k}$.
 
 # ### Ecuación de transferencia radiativa
 # La **ecuación de transferencia radiativa** (RTE por sus siglas en ingles), es una ecuación de transporte que describe la propagación de la radiancia espectral, $I_\lambda(\vec{r},\hat{k})$, en función de la posición posición $\vec{r}$ y dirección $\hat{k}$. En su forma más general, para un problema estacionario:
@@ -269,7 +223,7 @@ def g(N=1000, t=2, sig=0.3):
 
 # En este caso, evaluaremos una película de sílice de espesor $1~\mu\mathrm{m}$, sobre un sustrato con íncide de refracción $N_\mathrm{back} = 4.3$, y con aire en la superficie $N_\mathrm{front} = 1.0$. El espectro de longitudes de onda $\lambda\in[0.3,0.8]~\mu\mathrm{m}$ y el ángulo de incidencia $\theta_i = 30°$. Para comparar, determinaremos $R$ y $T$ para el caso de luz coherente.
 
-# In[5]:
+# In[3]:
 
 
 import numpy as np
@@ -280,7 +234,7 @@ lam = np.linspace(2,10,100)  # espectro de longitudes de onda (um)
 theta = np.radians(30)          # ángulo de incidencia
 
 Nfront = 1.0                 # índice de refracción medio superior
-N1     = nk.SiO2(lam)        # índice de refracción capa delgada
+N1     = 1.5        # índice de refracción capa delgada
 Nback  = 4.3                 # índice de refracción medio inferior
 N = (Nfront, N1, Nback)      # indices de refracción (above, mid, below)
 d = 1.0                      # espesor capa intermedia (um)
@@ -291,12 +245,12 @@ Rp_incoh, Tp_incoh = wv.incoh_multilayer(lam,theta, N, d, pol='TM')
 Rp, Tp = wv.multilayer(lam,theta, N, d, pol='TM')[:2]
 
 
-# In[6]:
+# In[4]:
 
 
 fig, ax = plt.subplots()
-fig.set_size_inches(7, 5)
-plt.rcParams['font.size'] = '16'
+fig.set_size_inches(6, 3.5)
+plt.rcParams['font.size'] = '12'
 
 # Graficamos el flujo de energía
 plt.plot(lam,Rp,'--r',label='$R_\mathrm{TM}$ (coh)')
@@ -306,6 +260,7 @@ plt.plot(lam,Tp_incoh,'-b',label='$T_\mathrm{TM}$ (incoh)')
 plt.title('arreglo 1.0/1.5/4.3')
 plt.xlabel('Longitud de onda ($\mu$m)')
 plt.ylabel('Refletividad / Transmisividad')
+plt.ylim(0,1)
 plt.legend()
 plt.show()
 
@@ -336,7 +291,7 @@ plt.show()
 
 # Consideremos una atmosfera compuesta de aire ($N_h = 1.0$) y una pequeña concentración ($f_v = 1\times 10^{-6}~\%$) de partículas de 10 nm de diámetro e índice de refracción $N_p = 1.5$. El espesor de la atmosfera es $t_\mathrm{atm} = 100~\mathrm{km}$
 
-# In[7]:
+# In[5]:
 
 
 import empylib.rad_transfer as rt
@@ -351,8 +306,8 @@ lam1 = np.linspace(0.38,0.78,100) # espectro de longitudes de onda
 cs.interp_internals(lam1)
 def plot_atmosphere(theta_sun):
     fig, ax = plt.subplots()          
-    fig.set_size_inches(8, 5)         # Tamaño del gráfico
-    plt.rcParams['font.size'] = '14'  # tamaño de  fuente
+    fig.set_size_inches(6, 4)         # Tamaño del gráfico
+    plt.rcParams['font.size'] = '12'  # tamaño de  fuente
     
     # parámetros de entrada
     tatm = 100E6                      # espesor de la atmósfera en mm
@@ -386,7 +341,7 @@ def plot_atmosphere(theta_sun):
     ax2.set_facecolor('k')
 
 
-# In[8]:
+# In[6]:
 
 
 from ipywidgets import interact
@@ -403,9 +358,11 @@ def g(theta_sun=0):
 # 
 # <center>Transporte de luz en un medio con scattering múltiple</center>
 
-# Consideremos un material de sílice de espesor $t_\mathrm{film} = 5~\mathrm{mm}$. Evaluaremos los colores de este material en transmisión y reflección para luz incidente normal a la superficie en función de la concentración y el diámetro de las partículas. Utilizamos la función ```ad_rad_transfer``` de la librería ```empylib.rad_transfer```
+# Consideremos un material de sílice de espesor $t_\mathrm{film} = 5~\mathrm{mm}$ con incrustaciones de partículas de plata de forma esférica.
 
-# In[9]:
+# Evaluaremos los colores de este material en transmisión y reflección para luz incidente normal a la superficie en función de la concentración y el diámetro de las partículas. Utilizamos la función ```ad_rad_transfer``` de la librería ```empylib.rad_transfer```
+
+# In[7]:
 
 
 import empylib.rad_transfer as rt
@@ -415,8 +372,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 lam2 = np.linspace(0.3,1.0,100) # espectro de longitudes de onda en micrometros
-Nlayers = (1.0,1.5,1.0)   # indice de refracción superior, intermedio e inferior
-Np = nk.silver(lam2)                # Índice de refracción de las partículas
+Nlayers = (1.0,1.5,1.0)         # indice de refracción superior, intermedio e inferior
+Np = nk.silver(lam2)            # Índice de refracción de las partículas
 cs.interp_internals(lam2)
 
 def plot_glass_silver(fv,D):
@@ -433,8 +390,8 @@ def plot_glass_silver(fv,D):
     Rtot, Ttot = rt.adm_sphere(lam2,tfilm,Nlayers,fv,D,Np)
 
     fig, ax = plt.subplots(1,3)
-    fig.set_size_inches(20, 5)
-    plt.rcParams['font.size'] = '16'
+    fig.set_size_inches(12, 3)
+    plt.rcParams['font.size'] = '10'
     
     ax[0].plot(lam2,qsca,'-r',label='$C_\mathrm{sca} A_c$')
     ax[0].plot(lam2,qabs,'-b',label='$C_\mathrm{abs} A_c$')
@@ -472,7 +429,7 @@ def plot_glass_silver(fv,D):
     plt.subplots_adjust(wspace=0.3)
 
 
-# In[10]:
+# In[8]:
 
 
 from ipywidgets import interact
@@ -498,13 +455,13 @@ def g(fv=20, D = 70):
 
 # Como aproximación, consideremos un medio de espesor $1$ cm, compuesto por agua $N_h = 1.3$ y pequeñas partículas esféricas de aceite $N_p = 1.5$. La emulsión considera un 60% de partículas de aceite por volumen.
 
-# In[11]:
+# In[9]:
 
 
-get_ipython().run_cell_magic('capture', 'showplot', "# import empylib.nklib as nk\nimport numpy as np\nimport empylib.rad_transfer as rt\n\n# Solo modificar estos parámetros\n#---------------------------------------------------------------\nlam3 = np.linspace(0.3,1.0,100)   # espectro de longitudes de onda\ntfilm = 10                        # espesor en milímetros\nfv = 0.50                         # fracción de volúmen de los poros\nD = 1.0                           # diámetro de los poros (micrones)\nNh2o = 1.3                        # Índice de refracción del agua\nNoil = 1.5                        # índice de refracción partículas de aceite\n#---------------------------------------------------------------\nRtot, Ttot = rt.adm_sphere(lam3,tfilm,(1.0,Nh2o,1.0),fv,D,Noil)\n\nfig, ax = plt.subplots()\nfig.set_size_inches(7, 5)\nplt.rcParams['font.size'] = '16'\nax.plot(lam3,Rtot,'-r',label='R')\nax.plot(lam3,Ttot,'-b',label='T')\nax.set_xlabel('Longitud de onda ($\\mu$m)')\nax.set_ylabel('Reflectividad / Transmisividad')\nax.set_title(r'Leche (fv = %.0f %%)' % (fv*100))\nax.legend()\nax.set_ylim(0,1.02)\nplt.show\n")
+get_ipython().run_cell_magic('capture', 'showplot', "# import empylib.nklib as nk\nimport numpy as np\nimport empylib.rad_transfer as rt\n\n# Solo modificar estos parámetros\n#---------------------------------------------------------------\nlam3 = np.linspace(0.3,1.0,100)   # espectro de longitudes de onda\ntfilm = 10                        # espesor en milímetros\nfv = 0.50                         # fracción de volúmen de los poros\nD = 1.0                           # diámetro de los poros (micrones)\nNh2o = 1.3                        # Índice de refracción del agua\nNoil = 1.5                        # índice de refracción partículas de aceite\n#---------------------------------------------------------------\nRtot, Ttot = rt.adm_sphere(lam3,tfilm,(1.0,Nh2o,1.0),fv,D,Noil)\n\nfig, ax = plt.subplots()\nfig.set_size_inches(5, 3.5)\nplt.rcParams['font.size'] = '12'\nax.plot(lam3,Rtot,'-r',label='R')\nax.plot(lam3,Ttot,'-b',label='T')\nax.set_xlabel('Longitud de onda ($\\mu$m)')\nax.set_ylabel('Reflectividad / Transmisividad')\nax.set_title(r'Leche (fv = %.0f %%)' % (fv*100))\nax.legend()\nax.set_ylim(0,1.02)\nplt.show()\n")
 
 
-# In[12]:
+# In[10]:
 
 
 showplot()
