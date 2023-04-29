@@ -9,7 +9,7 @@
 # 
 # <img src="./images/interference_oils.png" width="700px" align= center>
 
-# Si, teóricamente, el efecto de interferencia ocurre cada vez que tenemos un tercer material intercalado entre dos materiales (iguales o diferentes). **¿Porqué no visualizamos este efecto en ventanas u materiales de gran espesor?**
+# Si, teóricamente, el efecto de interferencia ocurre cada vez que tenemos un tercer material intercalado entre dos materiales (iguales o diferentes). **¿Porqué no visualizamos este efecto en ventanas u otros materiales de gran espesor?**
 
 # ## Coherencia de la luz e interferencia
 # 

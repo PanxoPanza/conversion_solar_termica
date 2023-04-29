@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
 # # Radiación Térmica
-# <br><br><br><br>
-# Profesor: Francisco Ramírez Cuevas<br>
-# Fecha: 30 de Septiembre 2022
 
 # ## Introducción a la Transferencia de Calor
 # A nivel molecular, los átomos en la materia siempre están vibrando. La magnitud de estas vibraciones está caracterizada estadísticamente por la temperatura:
@@ -409,7 +405,7 @@ def g(T=300,d=1, lam0=10, theta0=0):
 
 # - En el caso de **gases**, $R_{\lambda,\Omega} \approx 0$, así $A_{\lambda,\Omega} + T_{\lambda,\Omega} = 1$
 
-# ### Irradiancia (G) y Radiosidad (J)
+# ### Irradiancia (G)
 
 # Definimos como **irradiación espectral direccional, $G_{\lambda,\Omega}$** a la radiancia espectral incidente en una superficie.
 # 
@@ -423,6 +419,25 @@ def g(T=300,d=1, lam0=10, theta0=0):
 # 
 # donde $I_i$ es la radiancia espectral incidente sobre una superficie $dA$
 
+# La irradiancia permite determinar valores promedio para la absortancia, transmitancia y reflectancia. Al igual que en los casos anteriores, podemos extraer valores promedio del tipo hemisférico (integración por ángulo sólido) o total (integración por longitudes de onda). Por ejemplo, para la absortancia
+
+# **Absorptancia direccional total**
+# \begin{equation}
+# \alpha_\Omega(\Omega,T) = \frac{\int_0^\infty \alpha_{\lambda,\Omega} G_{\lambda,\Omega} (T)~d\lambda}{\int_0^\infty G_{\lambda,\Omega} (T)~d\lambda}
+# \end{equation}
+
+# **Absorptancia hemisférica espectral**
+# \begin{equation}
+# \alpha_\lambda(\lambda) = \frac{\int_\mathrm{hemi}\alpha_{\lambda,\Omega}G_{\lambda,\Omega}~d\Omega}{\pi G_{\lambda,\Omega}}
+# \end{equation}
+
+# **Absorptancia hemisférica total**
+# \begin{equation}
+# \alpha = \frac{\int_\mathrm{hemi} \int_0^\infty \alpha_{\lambda,\Omega} G_{\lambda,\Omega} (T)~d\lambda d\Omega}{\int_\mathrm{hemi} \int_0^\infty G_{\lambda,\Omega} (T)~d\lambda d\Omega}
+# \end{equation}
+
+# ### Radiosidad (J)
+
 # Definimos como **radiosidad, $J_{\lambda,\Omega}$** a la combinación de radiación emitida y reflejada por una superficie
 
 # 
@@ -433,7 +448,7 @@ def g(T=300,d=1, lam0=10, theta0=0):
 # J_{\lambda,\Omega} = R_{\lambda,\Omega}G_{\lambda,\Omega}+E_{\lambda,\Omega}
 # \end{equation}
 
-# Al igual que con el poder de emisión, la irradiancia ($G_{\lambda,\Omega}$) y la radiosidad ($J_{\lambda,\Omega}$) pueden ser definidas de forma hemisférica (integrando por ángulo sólido) o total (integrando por longitud de onda).
+# Al igual que con el poder de emisión y la irradiancia, la radiosidad ($J_{\lambda,\Omega}$) puede ser definidas de forma hemisférica (integrando por ángulo sólido) o total (integrando por longitud de onda).
 
 # ## Transferencia de calor por radiación
 
