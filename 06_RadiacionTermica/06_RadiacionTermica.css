@@ -33,3 +33,10 @@ div.inner_cell>div.text_cell_render.rendered_html img{
     margin-left: auto;
     margin-right: auto;
 }
+
+.reveal blockquote {
+border-left: 10px solid #ccc;
+margin: 1.5em 10px;
+padding: 0.5em 10px;
+width: 100%;
+}

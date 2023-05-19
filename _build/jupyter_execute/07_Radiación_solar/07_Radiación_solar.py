@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
 # # Radiación Solar
-# <br><br><br><br>
-# Profesor: Francisco Ramírez Cuevas<br>
-# Fecha: 14 de octubre 2022
 
 # ## Ángulos solares
 
@@ -187,7 +183,7 @@
 # 
 # Para diseñar sistemas basados en energía solar, es necesario caracterizar una serie de parámetros de la radiación solar. Estos incluyen, irradiación solar hemisférica, especular y difusa. 
 
-# En general, los instrumentos de medición se basan en sensores termoeléctricos o fotovoltaicos, que permiten medir el flujo de energía y no la componente espectral. La irradiancia espectral, por otro lado, generalmente se obtiene por modelos de transporte radiativo.
+# En general, los instrumentos de medición se basan en sensores termoeléctricos o fotovoltaicos, que permiten medir el flujo de energía y no la componente espectral. La irradiancia espectral, generalmente se obtiene por modelos de transporte radiativo.
 
 # Existen dos tipos de instrumentos para medir la irradiancia solar: el **piranómetro** y el **pirheliómetro**.
 

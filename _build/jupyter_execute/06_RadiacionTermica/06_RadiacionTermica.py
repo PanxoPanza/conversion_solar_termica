@@ -299,7 +299,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     #-------------------------------------------------------------------------
 
     # CÁLCULO DE VARIABLES
-    # 1. Reflectancia y transmitancia esp ectral en theta0
+    # 1. Reflectancia y transmitancia espectral en theta0
     Rs, Ts = wv.incoh_multilayer(lam,radians(theta0), N, d*1E3, pol='TM')
     Rp, Tp = wv.incoh_multilayer(lam,radians(theta0), N, d*1E3, pol='TE')
     
