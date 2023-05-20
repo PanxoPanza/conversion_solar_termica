@@ -169,7 +169,7 @@
 # 
 # - **Difusa del horizonte**: Corresponde a la componente del scattering en el plano del horizonte, la cual es más intensa que la componente isotrópica difusa.
 # 
-# - **Terrestre reflejada o abedo (*ground*)**: radiación reflejada por el suelo.
+# - **Terrestre reflejada o albedo (*ground*)**: radiación reflejada por el suelo.
 
 # Comúnmente, las mediciones de radiación solar se reportan usando tres parámetros de irradiancia (radiación sobre una superficie):
 # 
@@ -222,7 +222,7 @@
 # -45.51°, -73.52°|Aysén | 848.2|1025.9|556.2|
 # -23.92°, -69.49°| Antofagasta | 3330.4 | 2604| 575|
 
-# En el caso de la región de Asyén, la componente normal de la irradiancia sobre una superficie horizontal, es GHI - DIF =  468.7 kW/m$^2$ - año (aproximadamente 45.7% del GHI), mientras que en Antofagasta es, 2029.0 kW/m$^2$ - año (aproximadamente 77.9% del GHI).
+# En el caso de la región de Asyén, la **componente normal de la irradiancia sobre una superficie horizontal**, es GHI - DIF =  468.7 kW/m$^2$ - año (aproximadamente 45.7% del GHI), mientras que en Antofagasta es, 2029.0 kW/m$^2$ - año (aproximadamente 77.9% del GHI).
 
 # Notar, además, que en ninguno de los dos ejemplos el valor GHI - DIF coincide con el DNI. Esto debido a que la primera considera el factor $\cos\theta_i$ asociado al ángulo de incidencia.
 

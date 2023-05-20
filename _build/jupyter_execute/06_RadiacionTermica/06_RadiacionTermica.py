@@ -375,6 +375,8 @@ def g(T=300,d=1, lam0=10, theta0=0):
    return plot_emisivity_glass(T,d,lam0,theta0)
 
 
+# 
+
 # Al igual que con el poder de emisión, la emisividad puede también ser definida de forma hemisférica (integración por ángulo sólido) o total (integración por longitudes de onda)
 
 # **Emisividad direccional total**
