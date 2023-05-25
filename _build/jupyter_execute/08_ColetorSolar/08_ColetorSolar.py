@@ -1,11 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
 # # Colectores solares estacionarios
-# <br><br><br><br>
-# Profesor: Francisco Ramírez Cuevas<br>
-# Fecha: 21 de octubre 2022
+# 
 
 # ## Introducción
 # 
@@ -95,19 +92,21 @@
 
 # ### Absorción de radiación solar
 # 
-# Utilizando el modelo de cielo isotrópico, la radiación solar absorbida por un colector, $s$, puede aproximarse por:
+# Utilizando el modelo de cielo isotrópico, la radiación solar absorbida por un colector, $S$, puede aproximarse por:
 
 # \begin{equation}
-# S = G_\mathrm{DNI}R_\mathrm{B}(\tau \alpha)_\mathrm{B}+G_\mathrm{DIF}(\tau \alpha)_\mathrm{D}\left[\frac{1+\cos\beta}{2}\right]+\rho_\mathrm{G}(G_\mathrm{DNI} + G_\mathrm{DIF})(\tau \alpha)_\mathrm{G}\left[\frac{1-\cos\beta}{2}\right]
+# S = G_\mathrm{GHI}R_\mathrm{B}(\tau \alpha)_\mathrm{B}+G_\mathrm{DIF}(\tau \alpha)_\mathrm{D}\left[\frac{1+\cos\beta}{2}\right]+\rho_\mathrm{G}(G_\mathrm{GHI} + G_\mathrm{DIF})(\tau \alpha)_\mathrm{G}\left[\frac{1-\cos\beta}{2}\right]
 # \end{equation}
 # 
 # Donde:
-# - $G_\mathrm{DNI}$: Irradiación normal directa (DNI) del sol (W/m$^2$)
+# - $G_\mathrm{GHI}$: Irradiación global horizontal (GHI) del sol (W/m$^2$)
 # - $G_\mathrm{DIF}$: Irradiación horizontal difusa (DIF) del sol (W/m$^2$)
 # - $R_\mathrm{B} = \frac{\cos\theta_i}{\cos\theta_s}$: Factor de inclinación de radiación directa.
 # - $\beta$: Ángulo cenital de inclinación del colector.
 # - $\rho_\mathrm{G}$ reflectancia del suelo
-# - $(\tau\alpha)$: Fracción de la radiación absorbida por el colector. Los subíndices $\mathrm{B}$, $\mathrm{D}$ y $\mathrm{G}$, indican el valor correspondiente a la componente directa, difusa y global.
+# - $(\tau\alpha)$: Fracción de la radiación absorbida por el colector. Los subíndices $\mathrm{B}$, $\mathrm{D}$ y $\mathrm{G}$, indican el valor correspondiente a la componente directa (*beam*), difusa y del suelo (*ground*).
+
+# >El parámetro $(\tau\alpha)$ debe ser considerado com una propiedad de la combinación *conbertura - absorbedor*, y no como el producto de la transmitancia y absortancia.
 
 # El valor de $(\tau\alpha)$ considera las múltiples reflecciones y absorciones ocurridas entre la covertura transparente y el absorbedor del colector.
 
