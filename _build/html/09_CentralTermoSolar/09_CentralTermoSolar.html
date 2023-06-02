@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -423,8 +421,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#almacenamiento-y-transporte-de-energia-termica">
-   9.3. Almacenamiento y transporte de energía térmica
+  <a class="reference internal nav-link" href="#transporte-de-energia-termica">
+   9.3. Transporte de energía térmica
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -445,47 +443,64 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#almacenamiento-de-energia-termica-tes">
+   9.4. Almacenamiento de energía térmica (TES)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tes-por-calor-sensible-solidos">
+     9.4.1. TES por calor sensible - Sólidos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     9.4.2. TES por calor sensible - Sólidos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ciclos-termodinamicos-para-conversion-de-energia-solar-termica">
-   9.4. Ciclos termodinámicos para conversión de energía solar térmica
+   9.5. Ciclos termodinámicos para conversión de energía solar térmica
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ciclo-rankine">
-     9.4.1. Ciclo Rankine
+     9.5.1. Ciclo Rankine
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#caracteristicas-de-una-central-termosolar">
-   9.5. Características de una central termosolar
+   9.6. Características de una central termosolar
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#central-solar-de-colectores-parabolicos">
-     9.5.1. Central solar de colectores parabólicos
+     9.6.1. Central solar de colectores parabólicos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#central-solares-de-torre-de-potencia">
-     9.5.2. Central solares de torre de potencia
+     9.6.2. Central solares de torre de potencia
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#central-de-reflector-linear-fresnel">
-     9.5.3. Central de reflector linear Fresnel
+     9.6.3. Central de reflector linear Fresnel
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#centrales-de-disco-parabolico">
-     9.5.4. Centrales de disco parabólico
+     9.6.4. Centrales de disco parabólico
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   9.6. Referencias
+   9.7. Referencias
   </a>
  </li>
 </ul>
@@ -525,8 +540,8 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#almacenamiento-y-transporte-de-energia-termica">
-   9.3. Almacenamiento y transporte de energía térmica
+  <a class="reference internal nav-link" href="#transporte-de-energia-termica">
+   9.3. Transporte de energía térmica
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -547,47 +562,64 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#almacenamiento-de-energia-termica-tes">
+   9.4. Almacenamiento de energía térmica (TES)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tes-por-calor-sensible-solidos">
+     9.4.1. TES por calor sensible - Sólidos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     9.4.2. TES por calor sensible - Sólidos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ciclos-termodinamicos-para-conversion-de-energia-solar-termica">
-   9.4. Ciclos termodinámicos para conversión de energía solar térmica
+   9.5. Ciclos termodinámicos para conversión de energía solar térmica
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#ciclo-rankine">
-     9.4.1. Ciclo Rankine
+     9.5.1. Ciclo Rankine
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#caracteristicas-de-una-central-termosolar">
-   9.5. Características de una central termosolar
+   9.6. Características de una central termosolar
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#central-solar-de-colectores-parabolicos">
-     9.5.1. Central solar de colectores parabólicos
+     9.6.1. Central solar de colectores parabólicos
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#central-solares-de-torre-de-potencia">
-     9.5.2. Central solares de torre de potencia
+     9.6.2. Central solares de torre de potencia
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#central-de-reflector-linear-fresnel">
-     9.5.3. Central de reflector linear Fresnel
+     9.6.3. Central de reflector linear Fresnel
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#centrales-de-disco-parabolico">
-     9.5.4. Centrales de disco parabólico
+     9.6.4. Centrales de disco parabólico
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   9.6. Referencias
+   9.7. Referencias
   </a>
  </li>
 </ul>
@@ -600,12 +632,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font></p>
-<section class="tex2jax_ignore mathjax_ignore" id="central-termosolar">
+  <section class="tex2jax_ignore mathjax_ignore" id="central-termosolar">
 <h1><span class="section-number">9. </span>Central Termosolar<a class="headerlink" href="#central-termosolar" title="Permalink to this headline">#</a></h1>
-<p><br><br><br><br>
-Profesor: Francisco Ramírez Cuevas<br>
-Fecha: 4 de noviembre 2022</p>
 <section id="introduccion">
 <h2><span class="section-number">9.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this headline">#</a></h2>
 <p>Los colectores estacionarios permiten alcanzar temperaturas relativamente bajas. Esto debido a que el absorvedor y la apertura del sistema (definido por la covertura transparente) tiene áreas similares. El formato es ventajoso para sistemas estacionarios, ya que permite capturar gran parte de la radiación solar difusa y directa sin necesidad de cambiar la orientación del colector.</p>
@@ -627,10 +655,12 @@ Fecha: 4 de noviembre 2022</p>
 <p>Una <strong>central termosolar es una instalación de generación de energía eléctrica a través de un ciclo termodinámico de vapor.</strong></p>
 <p>Los principales componentes de una central termosolar son:</p>
 <ul class="simple">
-<li><p>Sistemas de captura de energía solar térmica (concentradores solares)</p></li>
-<li><p>Sistema de transporte y almacenaje de energía térmica (Fluído de transferencia de calor)</p></li>
-<li><p>Sistema de conversión de energía térmica a energía eléctrica (Ciclo termodinámico)</p></li>
+<li><p>Sistemas de <strong>captura de energía solar térmica</strong> (concentradores solares)</p></li>
+<li><p>Sistema de <strong>transporte de energía térmica</strong> (Fluído de transferencia de calor)</p></li>
+<li><p>Sistema de <strong>almacenamiento de energía</strong> (a veces acoplado al sistema de transporte)</p></li>
+<li><p>Sistema de <strong>conversión de energía térmica a energía eléctrica</strong> (Ciclo termodinámico)</p></li>
 </ul>
+<a class="reference internal image-reference" href="../_images/solar_thermal_sistems.png"><img alt="../_images/solar_thermal_sistems.png" class="align-center" src="../_images/solar_thermal_sistems.png" style="width: 500px;" /></a>
 <p>A continuación revisaremos los aspectos principales de cada uno de estos componentes</p>
 </section>
 <section id="sistema-de-captura-de-energia-solar-termica">
@@ -651,8 +681,8 @@ Fecha: 4 de noviembre 2022</p>
 <p>El <strong>receptor</strong> puede ser convexo, plano, cilíndrico o concavo. Suelen también estar cubierto por un material transparente separado a una pequeña distancia de la superficie del receptor, generando así un efecto aislante. El espacio entre el receptor y el material transparente puede ser aire o vacío.</p>
 <a class="reference internal image-reference" href="../_images/solar_reciever.png"><img alt="../_images/solar_reciever.png" class="align-center" src="../_images/solar_reciever.png" style="width: 600px;" /></a>
 <p>Un aspecto fundamental de los colectores solares de concentración es la <strong>relación de concentración, <span class="math notranslate nohighlight">\(C_r\)</span></strong>, definida como:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2bfb2f3d-017c-440f-91b9-bbeb22486fe0">
-<span class="eqno">(9.1)<a class="headerlink" href="#equation-2bfb2f3d-017c-440f-91b9-bbeb22486fe0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e3b64bf6-61fc-42e2-89a4-a0ac7f43ee21">
+<span class="eqno">(9.1)<a class="headerlink" href="#equation-e3b64bf6-61fc-42e2-89a4-a0ac7f43ee21" title="Permalink to this equation">#</a></span>\[\begin{equation}
 C_r = \frac{A_c}{A_r},
 \end{equation}\]</div>
 <p>donde, <span class="math notranslate nohighlight">\(A_c\)</span> es el área del concentrador, y <span class="math notranslate nohighlight">\(A_r\)</span> el área del receptor.</p>
@@ -694,51 +724,69 @@ C_r = \frac{A_c}{A_r},
 <a class="reference internal image-reference" href="../_images/Heliostat_solar_concentrator.png"><img alt="../_images/Heliostat_solar_concentrator.png" class="align-center" src="../_images/Heliostat_solar_concentrator.png" style="width: 700px;" /></a>
 </section>
 </section>
-<section id="almacenamiento-y-transporte-de-energia-termica">
-<h2><span class="section-number">9.3. </span>Almacenamiento y transporte de energía térmica<a class="headerlink" href="#almacenamiento-y-transporte-de-energia-termica" title="Permalink to this headline">#</a></h2>
+<section id="transporte-de-energia-termica">
+<h2><span class="section-number">9.3. </span>Transporte de energía térmica<a class="headerlink" href="#transporte-de-energia-termica" title="Permalink to this headline">#</a></h2>
 <p>El principal componente de este sistema es el <strong>fluido de transferencia de calor (HTF por sus siglas en ingles)</strong>. El HTF es el encargado de transportar y almacenar la energía térmica capturada en el receptor de forma eficiente.</p>
 <p>Las propiedades más importantes son:</p>
 <ul class="simple">
 <li><p>Temperatura de cambio de fase <span class="math notranslate nohighlight">\(T_{fg}\)</span> menor a la temperatura de operación del ciclo</p></li>
 <li><p>Calor específico <span class="math notranslate nohighlight">\(C_p\)</span> alto (almacenamiento de calor)</p></li>
 <li><p>Conductividad térmica <span class="math notranslate nohighlight">\(k_f\)</span> alta</p></li>
-<li><p>viscosidad baja y densidad alta.</p></li>
+<li><p>viscosidad baja</p></li>
+<li><p>Densidad alta</p></li>
 </ul>
 <section id="agua">
 <h3><span class="section-number">9.3.1. </span>Agua<a class="headerlink" href="#agua" title="Permalink to this headline">#</a></h3>
 <p>El agua es el HTF más popular en aplicaciones industriales debido a su gran entalpía de evaporación, calor específico y baja viscosidad.</p>
-<p>En las centrales termosolares contemporaneas, el agua opera como HTF y es convertida en vapor directamente en el receptor. Sin emgargo, esto reduce la conductividad térmica y la capacidad de almacenar calor por tiempos superiores a 1-2 horas.</p>
+<p>En las centrales termosolares contemporaneas, el agua opera como HTF y es convertida en vapor directamente en el receptor. Sin emargo, esto reduce la conductividad térmica y la capacidad de almacenar calor por tiempos superiores a 1-2 horas.</p>
 <p>En las centrales termosolares modernas, el agua es convertida a vapor indirectamente a través de un intercambiador de calor por donde circula un HTF que transporta la energía térmica capturada en el receptor.</p>
 </section>
 <section id="aceites-termicos">
 <h3><span class="section-number">9.3.2. </span>Aceites térmicos<a class="headerlink" href="#aceites-termicos" title="Permalink to this headline">#</a></h3>
-<p>Los aceites térmicos permiten temperaturas de operación de hasta 300 - 400° C. La principal desventaja de estos aceites radica en su flamabilidad y descomposición a temperaturas elevadas.</p>
+<p>Los aceites térmicos permiten temperaturas de operación de hasta 300 - 400° C. La principal desventaja de estos aceites radica en su flamabilidad y descomposición a temperaturas elevadas (<span class="math notranslate nohighlight">\(\sim 600\)</span> °C).</p>
 <p>La siguiente tabla corresponde a las propiedades de un HTF de la compañia <a class="reference external" href="https://globalhtf.com/application/solar/#:~:text=Heat%20Transfer%20Fluid%20for%20Concentrated%20Solar%20Power%20and%20Thermal%20Storage,in%20solar%20thermal%20electricity%20applications.">Omnitech</a>.</p>
 <a class="reference internal image-reference" href="../_images/heat_transfer_fluid_oil.jpg"><img alt="../_images/heat_transfer_fluid_oil.jpg" class="align-center" src="../_images/heat_transfer_fluid_oil.jpg" style="width: 700px;" /></a>
 </section>
 <section id="sales-fundidas">
 <h3><span class="section-number">9.3.3. </span>Sales fundidas<a class="headerlink" href="#sales-fundidas" title="Permalink to this headline">#</a></h3>
 <p>Los líquidos iónicos o sales fundidas, son sales con bajo punto de fusión que permiten operar a temperaturas elevadas entre 250 a 1000° C. Tienen  viscocidad relativamente baja, alta estabilidad térmica y no son inflamables. Debido a su alto calor específico, permiten almacenar calor hasta por 15 horas contínuas.</p>
-<p>Su principal desventaja está asociada a la alta corroción. Esto debido a que las sales son higroscópicas, es decir, absorben la humedad del aire con facilidad. Sin embargo, hay investigación en curso que busca reducir este problema</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html">
-<iframe
-    width="700"
-    height="400"
-    src="https://www.youtube.com/embed/RIUEZ3AhrVE&t"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
-</div>
+<p>Su principal desventaja está asociada a la alta corroción. Esto debido a que las sales son higroscópicas, es decir, absorben la humedad del aire con facilidad.</p>
+</section>
+</section>
+<section id="almacenamiento-de-energia-termica-tes">
+<h2><span class="section-number">9.4. </span>Almacenamiento de energía térmica (TES)<a class="headerlink" href="#almacenamiento-de-energia-termica-tes" title="Permalink to this headline">#</a></h2>
+<p>Podemos clasificar el sistema de almacenamiento térmico en tres tipos:</p>
+<ul class="simple">
+<li><p>TES con calor sensible. Es el tipo más utilizado. La energía térmica almacenada induce un aumento en la temperatura del material de almacenamiento</p></li>
+<li><p>TES con calor latente. Aún en etapa de estudio. Utiliza materiales con cambio de fase (PCM por sus siglas en ingles). La energía térmica almacenada induce un cambio de fase sólido – líquido, normalmente, sin un cambio aparente de temperatura</p></li>
+<li><p>TES termoquímico. Aún en etapa de estudio. Está basado en reacciones químicas reversibles. La energía térmica es almacenada en forma de compuestos químicos, generados a partir de una reacción química endotérmica. La reacción exotérmica, que resulta de la recombinación de los compuestos, libera la energía térmica almacenada.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/thermal_energy_storage.png"><img alt="../_images/thermal_energy_storage.png" class="align-center" src="../_images/thermal_energy_storage.png" style="width: 600px;" /></a>
+<section id="tes-por-calor-sensible-solidos">
+<h3><span class="section-number">9.4.1. </span>TES por calor sensible - Sólidos<a class="headerlink" href="#tes-por-calor-sensible-solidos" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Pueden ser utilizados en un amplio rango de temperaturas</p></li>
+<li><p>El diseño del contenedor es relativamente simple, en comparación con almacenamiento por líquidos</p></li>
+<li><p>Los materiales más comunes son: hormigón, rocas, ripio, cerámicas, ladrillos, y metales como el cobre o hierro.</p></li>
+<li><p>Generalmente, se utiliza concreto, debido a su bajo costo, y resistencia a altas temperaturas</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/concrete_thermal_storage.png"><img alt="../_images/concrete_thermal_storage.png" class="align-center" src="../_images/concrete_thermal_storage.png" style="width: 600px;" /></a>
+</section>
+<section id="id1">
+<h3><span class="section-number">9.4.2. </span>TES por calor sensible - Sólidos<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Pueden ser utilizados en TES y como HTF</p></li>
+<li><p>Los líquidos más comunes son las sales fundidas, debido a su estabilidad a temperaturas elevadas y bajo costo.</p></li>
+<li><p>También se utilizan aceites térmicos, aunque es menos frecuente</p></li>
+</ul>
+<p>La tabla a continuación indica las propiedades de materiales comúnes utilizados en TES sensible.</p>
+<a class="reference internal image-reference" href="../_images/TES_thermal_properties.png"><img alt="../_images/TES_thermal_properties.png" class="align-center" src="../_images/TES_thermal_properties.png" style="width: 800px;" /></a>
 </section>
 </section>
 <section id="ciclos-termodinamicos-para-conversion-de-energia-solar-termica">
-<h2><span class="section-number">9.4. </span>Ciclos termodinámicos para conversión de energía solar térmica<a class="headerlink" href="#ciclos-termodinamicos-para-conversion-de-energia-solar-termica" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">9.5. </span>Ciclos termodinámicos para conversión de energía solar térmica<a class="headerlink" href="#ciclos-termodinamicos-para-conversion-de-energia-solar-termica" title="Permalink to this headline">#</a></h2>
 <section id="ciclo-rankine">
-<h3><span class="section-number">9.4.1. </span>Ciclo Rankine<a class="headerlink" href="#ciclo-rankine" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">9.5.1. </span>Ciclo Rankine<a class="headerlink" href="#ciclo-rankine" title="Permalink to this headline">#</a></h3>
 <p>La mayoría de las centrales termosolares operan en base al <strong>ciclo Rankine</strong>. Este ciclo se basa en la generación de energía mecánica a través de turbinas por donde circula vapor.</p>
 <p>En su forma simplificada, el ciclo Rankine está compuesto de una <strong>caldera (boiler)</strong> que suministra el calor al fluido, una <strong>turbina (turbine)</strong> por donde circula el vapor, un <strong>condensador (condenser)</strong> encargado del rechazo de calor y del cambio de fase vapor-agua, y una <strong>bomba (pump)</strong>, que alimenta a la caldera.</p>
 <a class="reference internal image-reference" href="../_images/Rankin_cycle.png"><img alt="../_images/Rankin_cycle.png" class="align-center" src="../_images/Rankin_cycle.png" style="width: 700px;" /></a>
@@ -750,12 +798,12 @@ C_r = \frac{A_c}{A_r},
 </section>
 </section>
 <section id="caracteristicas-de-una-central-termosolar">
-<h2><span class="section-number">9.5. </span>Características de una central termosolar<a class="headerlink" href="#caracteristicas-de-una-central-termosolar" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">9.6. </span>Características de una central termosolar<a class="headerlink" href="#caracteristicas-de-una-central-termosolar" title="Permalink to this headline">#</a></h2>
 <p>El esquema básico de una central termosolar consiste en un <strong>ciclo térmico donde el calor de la caldera es reemplazado por el calor extraido por el concentrador solar</strong>. Comúnmente, las centrales solares utilizan sistemas de almacenamiento de calor en base a sales fundidas o cerámicos, además de una caldera como backup, que permiten una operación continua duarante periodos nublados y durante la noche.</p>
 <a class="reference internal image-reference" href="../_images/solar_power_plant_general.png"><img alt="../_images/solar_power_plant_general.png" class="align-center" src="../_images/solar_power_plant_general.png" style="width: 500px;" /></a>
 <p>En el caso de sales fundidas, estas pueden operar directamente en el circuito del colector (como HTF), o bien solo para almacenaje de energía. En el segundo caso, se necesita un intercambiador de calor para transferir el calor del HTF a las sales fundidas.</p>
 <section id="central-solar-de-colectores-parabolicos">
-<h3><span class="section-number">9.5.1. </span>Central solar de colectores parabólicos<a class="headerlink" href="#central-solar-de-colectores-parabolicos" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">9.6.1. </span>Central solar de colectores parabólicos<a class="headerlink" href="#central-solar-de-colectores-parabolicos" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Están basadas en colectores de canal parabólico</p></li>
 <li><p>Correponde a la tecnología más madura y popular en centrales solares.</p></li>
@@ -798,7 +846,7 @@ C_r = \frac{A_c}{A_r},
 <a class="reference internal image-reference" href="../_images/Parabolic_plants_registry.png"><img alt="../_images/Parabolic_plants_registry.png" class="align-center" src="../_images/Parabolic_plants_registry.png" style="width: 700px;" /></a>
 </section>
 <section id="central-solares-de-torre-de-potencia">
-<h3><span class="section-number">9.5.2. </span>Central solares de torre de potencia<a class="headerlink" href="#central-solares-de-torre-de-potencia" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">9.6.2. </span>Central solares de torre de potencia<a class="headerlink" href="#central-solares-de-torre-de-potencia" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Es la segunda alternativa más popular en centrales solares</p></li>
 <li><p>Pueden alcanzar temperaturas entre 150 - 2000°C.</p></li>
@@ -825,7 +873,7 @@ C_r = \frac{A_c}{A_r},
 <a class="reference internal image-reference" href="../_images/tower_plants_registry.png"><img alt="../_images/tower_plants_registry.png" class="align-center" src="../_images/tower_plants_registry.png" style="width: 700px;" /></a>
 </section>
 <section id="central-de-reflector-linear-fresnel">
-<h3><span class="section-number">9.5.3. </span>Central de reflector linear Fresnel<a class="headerlink" href="#central-de-reflector-linear-fresnel" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">9.6.3. </span>Central de reflector linear Fresnel<a class="headerlink" href="#central-de-reflector-linear-fresnel" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Una tecnología relativamente nueva en centrales solares</p></li>
 <li><p>Permite alcanzar temperaturas entre 60 - 250°C</p></li>
@@ -855,7 +903,7 @@ C_r = \frac{A_c}{A_r},
 </div>
 </section>
 <section id="centrales-de-disco-parabolico">
-<h3><span class="section-number">9.5.4. </span>Centrales de disco parabólico<a class="headerlink" href="#centrales-de-disco-parabolico" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">9.6.4. </span>Centrales de disco parabólico<a class="headerlink" href="#centrales-de-disco-parabolico" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Permite alcanzar temperaturas de trabajo entre 100 - 1500° C</p></li>
 <li><p>La principal desventaja es el mecanismo para remover la energía térmica.</p></li>
@@ -880,7 +928,7 @@ C_r = \frac{A_c}{A_r},
 </section>
 </section>
 <section id="referencias">
-<h2><span class="section-number">9.6. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">9.7. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
 <p>Kalogirou S. A. <em><strong>Solar Energy Engineering Processes and Systems</strong></em>, 2nd Ed, Academic Press, 2014</p>
 <ul class="simple">
 <li><p>Chapter 3.6 Concentrating collectors</p></li>

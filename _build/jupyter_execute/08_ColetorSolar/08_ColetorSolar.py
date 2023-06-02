@@ -4,6 +4,12 @@
 # # Colectores solares estacionarios
 # 
 
+# In[ ]:
+
+
+
+
+
 # ## Introducción
 # 
 # Los colectores solares son un tipo especial de intercambiador de calor que absorbe la radiación solar, la convierte en calor y la transfiere a un fluido (usualmente agua, aire, o aceite). que fluye a través del colector.

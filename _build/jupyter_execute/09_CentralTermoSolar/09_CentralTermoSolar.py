@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
 # # Central Termosolar
-# <br><br><br><br>
-# Profesor: Francisco Ramírez Cuevas<br>
-# Fecha: 4 de noviembre 2022
 
 # ## Introducción
 # 
@@ -41,9 +37,12 @@
 
 # Los principales componentes de una central termosolar son:
 # 
-# - Sistemas de captura de energía solar térmica (concentradores solares)
-# - Sistema de transporte y almacenaje de energía térmica (Fluído de transferencia de calor)
-# - Sistema de conversión de energía térmica a energía eléctrica (Ciclo termodinámico)
+# - Sistemas de **captura de energía solar térmica** (concentradores solares)
+# - Sistema de **transporte de energía térmica** (Fluído de transferencia de calor)
+# - Sistema de **almacenamiento de energía** (a veces acoplado al sistema de transporte)
+# - Sistema de **conversión de energía térmica a energía eléctrica** (Ciclo termodinámico)
+
+# <img src="./images/solar_thermal_sistems.png" width="500" align= center>
 
 # A continuación revisaremos los aspectos principales de cada uno de estos componentes
 
@@ -122,7 +121,7 @@
 
 # <img src="./images/Heliostat_solar_concentrator.png" width="700" align= center>
 
-# ## Almacenamiento y transporte de energía térmica
+# ## Transporte de energía térmica
 
 # El principal componente de este sistema es el **fluido de transferencia de calor (HTF por sus siglas en ingles)**. El HTF es el encargado de transportar y almacenar la energía térmica capturada en el receptor de forma eficiente. 
 
@@ -130,13 +129,14 @@
 # - Temperatura de cambio de fase $T_{fg}$ menor a la temperatura de operación del ciclo
 # - Calor específico $C_p$ alto (almacenamiento de calor)
 # - Conductividad térmica $k_f$ alta
-# - viscosidad baja y densidad alta. 
+# - viscosidad baja
+# - Densidad alta
 
 # ### Agua
 
 # El agua es el HTF más popular en aplicaciones industriales debido a su gran entalpía de evaporación, calor específico y baja viscosidad.
 
-# En las centrales termosolares contemporaneas, el agua opera como HTF y es convertida en vapor directamente en el receptor. Sin emgargo, esto reduce la conductividad térmica y la capacidad de almacenar calor por tiempos superiores a 1-2 horas.
+# En las centrales termosolares contemporaneas, el agua opera como HTF y es convertida en vapor directamente en el receptor. Sin emargo, esto reduce la conductividad térmica y la capacidad de almacenar calor por tiempos superiores a 1-2 horas.
 
 # 
 # 
@@ -144,7 +144,7 @@
 
 # ### Aceites térmicos
 
-# Los aceites térmicos permiten temperaturas de operación de hasta 300 - 400° C. La principal desventaja de estos aceites radica en su flamabilidad y descomposición a temperaturas elevadas.
+# Los aceites térmicos permiten temperaturas de operación de hasta 300 - 400° C. La principal desventaja de estos aceites radica en su flamabilidad y descomposición a temperaturas elevadas ($\sim 600$ °C).
 
 # La siguiente tabla corresponde a las propiedades de un HTF de la compañia [Omnitech](https://globalhtf.com/application/solar/#:~:text=Heat%20Transfer%20Fluid%20for%20Concentrated%20Solar%20Power%20and%20Thermal%20Storage,in%20solar%20thermal%20electricity%20applications.).
 # 
@@ -154,14 +154,44 @@
 # 
 # Los líquidos iónicos o sales fundidas, son sales con bajo punto de fusión que permiten operar a temperaturas elevadas entre 250 a 1000° C. Tienen  viscocidad relativamente baja, alta estabilidad térmica y no son inflamables. Debido a su alto calor específico, permiten almacenar calor hasta por 15 horas contínuas. 
 
-# Su principal desventaja está asociada a la alta corroción. Esto debido a que las sales son higroscópicas, es decir, absorben la humedad del aire con facilidad. Sin embargo, hay investigación en curso que busca reducir este problema
+# Su principal desventaja está asociada a la alta corroción. Esto debido a que las sales son higroscópicas, es decir, absorben la humedad del aire con facilidad.
 
-# In[1]:
+# ## Almacenamiento de energía térmica (TES)
 
+# Podemos clasificar el sistema de almacenamiento térmico en tres tipos:
+# - TES con calor sensible. Es el tipo más utilizado. La energía térmica almacenada induce un aumento en la temperatura del material de almacenamiento
+# 
+# - TES con calor latente. Aún en etapa de estudio. Utiliza materiales con cambio de fase (PCM por sus siglas en ingles). La energía térmica almacenada induce un cambio de fase sólido – líquido, normalmente, sin un cambio aparente de temperatura
+# 
+# - TES termoquímico. Aún en etapa de estudio. Está basado en reacciones químicas reversibles. La energía térmica es almacenada en forma de compuestos químicos, generados a partir de una reacción química endotérmica. La reacción exotérmica, que resulta de la recombinación de los compuestos, libera la energía térmica almacenada.
 
-from IPython.display import YouTubeVideo
-YouTubeVideo('RIUEZ3AhrVE&t', width=700, height=400)
+# <img src="./images/thermal_energy_storage.png" width="600" align= center>
 
+# ### TES por calor sensible - Sólidos
+# 
+# - Pueden ser utilizados en un amplio rango de temperaturas
+# 
+# - El diseño del contenedor es relativamente simple, en comparación con almacenamiento por líquidos
+# 
+# - Los materiales más comunes son: hormigón, rocas, ripio, cerámicas, ladrillos, y metales como el cobre o hierro.
+# 
+# - Generalmente, se utiliza concreto, debido a su bajo costo, y resistencia a altas temperaturas
+# 
+
+# <img src="./images/concrete_thermal_storage.png" width="600" align= center>
+
+# ### TES por calor sensible - Sólidos
+# 
+# - Pueden ser utilizados en TES y como HTF
+# 
+# - Los líquidos más comunes son las sales fundidas, debido a su estabilidad a temperaturas elevadas y bajo costo.
+# 
+# - También se utilizan aceites térmicos, aunque es menos frecuente
+# 
+
+# La tabla a continuación indica las propiedades de materiales comúnes utilizados en TES sensible.
+# 
+# <img src="./images/TES_thermal_properties.png" width="800" align= center>
 
 # ## Ciclos termodinámicos para conversión de energía solar térmica
 
@@ -200,9 +230,10 @@ YouTubeVideo('RIUEZ3AhrVE&t', width=700, height=400)
 
 # El siguiente video muestra el detalle de una central solar piloto basada en sales fundidas. El proyecto comenzó su operación el 2021, y es llevado a cabo por DLR (Deutsches Zentrum für Luft- und Raumfahrt, Alemania) y University of Évora (Portugal). [Más información acá](https://www.dlr.de/content/en/articles/news/2022/02/20220428_salt-makes-solar-thermal-power-more-cost-effective.html).
 
-# In[2]:
+# In[1]:
 
 
+from IPython.display import YouTubeVideo
 YouTubeVideo('5zHSPFUD1L8', width=700, height=400)
 
 
@@ -212,7 +243,7 @@ YouTubeVideo('5zHSPFUD1L8', width=700, height=400)
 
 # La limpieza de los canales parabólicos es crítica para el correcto funcionamiento del sistema, y existen equipos especializados para esto.
 
-# In[3]:
+# In[2]:
 
 
 YouTubeVideo('41M8GxY12D8', width=700, height=400)
@@ -234,7 +265,7 @@ YouTubeVideo('41M8GxY12D8', width=700, height=400)
 # - En el caso de las sales fundidas, el sistema permite una autonomía de más de 15 horas sin presencia de radiación solar. 
 # - Debido a su gran tamaño, permiten calentar grandes volúmenes de fluido con alto nivel de concentración.
 
-# In[4]:
+# In[3]:
 
 
 YouTubeVideo('JbJ7AVHBQfs', width=700, height=400)
@@ -267,7 +298,7 @@ YouTubeVideo('JbJ7AVHBQfs', width=700, height=400)
 
 # En el siguiente video se muestra el funcionamiento de una planta piloto desarrollada por la compañía [Industrial Solar](https://www.industrial-solar.de/en/)
 
-# In[5]:
+# In[4]:
 
 
 YouTubeVideo('1CatPf-xoC4', width=700, height=400)
@@ -284,7 +315,7 @@ YouTubeVideo('1CatPf-xoC4', width=700, height=400)
 
 # En el siguiente video se explica el funcionamiento de las centrales de disco parabólico.
 
-# In[6]:
+# In[5]:
 
 
 from IPython.display import YouTubeVideo
