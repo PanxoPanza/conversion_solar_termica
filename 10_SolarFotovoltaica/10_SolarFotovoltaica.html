@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -700,12 +698,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font></p>
-<section class="tex2jax_ignore mathjax_ignore" id="conversion-solar-fotovoltaica">
+  <section class="tex2jax_ignore mathjax_ignore" id="conversion-solar-fotovoltaica">
 <h1><span class="section-number">10. </span>Conversión Solar Fotovoltaica<a class="headerlink" href="#conversion-solar-fotovoltaica" title="Permalink to this headline">#</a></h1>
-<p><br><br><br><br>
-Profesor: Francisco Ramírez Cuevas<br>
-Fecha: 11 de noviembre 2022</p>
 <section id="introduccion">
 <h2><span class="section-number">10.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this headline">#</a></h2>
 <p>Los paneles fotoltaicos son <strong>dispositivos de estado sólido</strong> que convierten radiación solar en electricidad, directamente.</p>
@@ -830,7 +824,7 @@ J = J_\mathrm{pv} - J_0\left[\exp{\left(\frac{qV}{k_\mathrm{B}T}\right)} - 1 \ri
 <a class="reference internal image-reference" href="../_images/PV-curve_pv-cell.png"><img alt="../_images/PV-curve_pv-cell.png" class="align-center" src="../_images/PV-curve_pv-cell.png" style="width: 400px;" /></a>
 <p>Como podemos ver en la curva, entre los valores de <span class="math notranslate nohighlight">\(V_\mathrm{oc}\)</span> y <span class="math notranslate nohighlight">\(J_\mathrm{sc}\)</span> la potencia entregada por la celda aumenta hasta un valor máximo.</p>
 <p>Este punto representa la condición donde el desempeño de la celda es óptimo.</p>
-<p>A partir de esto, definimos el <strong>factor de llena (<em>fill factor</em>), <span class="math notranslate nohighlight">\(\mathrm{FF}\)</span></strong> como:</p>
+<p>A partir de esto, definimos el <strong>factor de llenado (<em>fill factor</em>), <span class="math notranslate nohighlight">\(\mathrm{FF}\)</span></strong> como:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \mathrm{FF} = \frac{J_\mathrm{max}V_\mathrm{max}}{J_\mathrm{sc}V_\mathrm{oc}}
@@ -882,7 +876,7 @@ J = J_\mathrm{pv} - J_0\left[\exp{\left(\frac{qV}{k_\mathrm{B}T}\right)} - 1 \ri
 </section>
 <section id="perdidas-de-energia-en-una-celda-fotovoltaica">
 <h3><span class="section-number">10.2.7. </span>Pérdidas de energía en una celda fotovoltaica<a class="headerlink" href="#perdidas-de-energia-en-una-celda-fotovoltaica" title="Permalink to this headline">#</a></h3>
-<p>Además de las pérdidas estimadas mediante la eficiencia temrmodinámica, una celda presenta pérdidas de energía eléctrica debido a aspectos asociados a la fabricación. Podemos representar las pérdidas en una celda mediante dos resistencias:</p>
+<p>Además de las pérdidas estimadas mediante la eficiencia termodinámica, una celda presenta pérdidas de energía eléctrica debido a aspectos asociados a la fabricación. Podemos representar las pérdidas en una celda mediante dos resistencias:</p>
 <a class="reference internal image-reference" href="../_images/equivalent_pv-cell_circuit.png"><img alt="../_images/equivalent_pv-cell_circuit.png" class="align-center" src="../_images/equivalent_pv-cell_circuit.png" style="width: 350px;" /></a>
 <ul class="simple">
 <li><p><strong>Resistencia en serie (<span class="math notranslate nohighlight">\(R_\mathrm{s}\)</span>)</strong>, representando lás pérdidas por resistencia en el semiconductor en la interface de los contactos eléctricos, y en los contactos.</p></li>
@@ -1002,7 +996,7 @@ V_\mathrm{oc}^\mathrm{M} = N_\mathrm{SM}V_\mathrm{oc}
 <h2><span class="section-number">10.5. </span>Situación de la tecnología fotovoltaica<a class="headerlink" href="#situacion-de-la-tecnologia-fotovoltaica" title="Permalink to this headline">#</a></h2>
 <p>La siguiente figura muestra la produción de paneles fotovoltaicos por año (fuente: <a class="reference external" href="https://www.ise.fraunhofer.de/content/dam/ise/de/documents/publications/studies/Photovoltaics-Report.pdf">Fraunhofer Institute for Solar Energy Systems</a>)</p>
 <a class="reference internal image-reference" href="../_images/pv-market.png"><img alt="../_images/pv-market.png" class="align-center" src="../_images/pv-market.png" style="width: 400px;" /></a>
-<p>Hasta hace algunos años el mercado de paneles fotoltaicos era dominado por los de tipo poly-Si. Sin embargo, la mejora en los procesos productivos por parte de la industria China, han catapultado la producción de paneles Mono-Si. Actualmente, esta teconología domina el mercado.</p>
+<p>Hasta hace algunos años el mercado de paneles fotoltaicos era dominado por los de tipo poly-Si (Multi-Si en el gráfico). Sin embargo, la mejora en los procesos productivos por parte de la industria China, han catapultado la producción de paneles Mono-Si. Actualmente, esta teconología domina el mercado.</p>
 <p>Respecto a la eficiencia de las celdas a escala de laboratorio, las celdas mono-Si han mejorado gradualmente en los últimos 20 años, mientras que las de capa delgada han mostrado mejoras considerables en su eficiencia. Otras nuevas tecnologías como celdas multi-unión o de Peroskitas, han mostrado eficiencias superiores. Sin embargo, estas tecnologías aún se encuentran en desarrollo.</p>
 <a class="reference internal image-reference" href="../_images/pv-cells_lab-efficiencies.png"><img alt="../_images/pv-cells_lab-efficiencies.png" class="align-center" src="../_images/pv-cells_lab-efficiencies.png" style="width: 800px;" /></a>
 </section>
