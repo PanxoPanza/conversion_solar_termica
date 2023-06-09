@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
 # # Conversión Solar Fotovoltaica
-# <br><br><br><br>
-# Profesor: Francisco Ramírez Cuevas<br>
-# Fecha: 11 de noviembre 2022
 
 # ## Introducción
 # 
@@ -178,7 +174,7 @@ YouTubeVideo('Coy-WRCfems', width=700, height=400)
 
 # Este punto representa la condición donde el desempeño de la celda es óptimo.
 
-# A partir de esto, definimos el **factor de llena (*fill factor*), $\mathrm{FF}$** como:
+# A partir de esto, definimos el **factor de llenado (*fill factor*), $\mathrm{FF}$** como:
 # 
 # \begin{equation*}
 # \mathrm{FF} = \frac{J_\mathrm{max}V_\mathrm{max}}{J_\mathrm{sc}V_\mathrm{oc}}
@@ -239,7 +235,7 @@ YouTubeVideo('N4n-SiMjqqM', width=700, height=400,  start=17, end=179)
 
 # ### Pérdidas de energía en una celda fotovoltaica
 
-# Además de las pérdidas estimadas mediante la eficiencia temrmodinámica, una celda presenta pérdidas de energía eléctrica debido a aspectos asociados a la fabricación. Podemos representar las pérdidas en una celda mediante dos resistencias:
+# Además de las pérdidas estimadas mediante la eficiencia termodinámica, una celda presenta pérdidas de energía eléctrica debido a aspectos asociados a la fabricación. Podemos representar las pérdidas en una celda mediante dos resistencias:
 
 # <img src="./images/equivalent_pv-cell_circuit.png" width="350" align= center>
 
@@ -366,7 +362,7 @@ YouTubeVideo('2iRfbWOJtog', width=700, height=400)
 
 # <img src="./images/pv-market.png" width="400" align= center>
 
-# Hasta hace algunos años el mercado de paneles fotoltaicos era dominado por los de tipo poly-Si. Sin embargo, la mejora en los procesos productivos por parte de la industria China, han catapultado la producción de paneles Mono-Si. Actualmente, esta teconología domina el mercado.
+# Hasta hace algunos años el mercado de paneles fotoltaicos era dominado por los de tipo poly-Si (Multi-Si en el gráfico). Sin embargo, la mejora en los procesos productivos por parte de la industria China, han catapultado la producción de paneles Mono-Si. Actualmente, esta teconología domina el mercado.
 
 # Respecto a la eficiencia de las celdas a escala de laboratorio, las celdas mono-Si han mejorado gradualmente en los últimos 20 años, mientras que las de capa delgada han mostrado mejoras considerables en su eficiencia. Otras nuevas tecnologías como celdas multi-unión o de Peroskitas, han mostrado eficiencias superiores. Sin embargo, estas tecnologías aún se encuentran en desarrollo.
 # 

@@ -180,7 +180,7 @@
 
 # <img src="./images/concrete_thermal_storage.png" width="600" align= center>
 
-# ### TES por calor sensible - Sólidos
+# ### TES por calor sensible - Sales fundidas
 # 
 # - Pueden ser utilizados en TES y como HTF
 # 
