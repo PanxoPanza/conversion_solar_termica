@@ -1,11 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-#  <font size="6">MEC501 - Manejo y Conversión de Energía Solar Térmica</font>
 # # Control pasivo de radiación solar en edificaciones
-# <br><br><br><br>
-# Profesor: Francisco Ramírez Cuevas<br>
-# Fecha: 18 de noviembre 2022
 
 # ## Introducción
 # 
