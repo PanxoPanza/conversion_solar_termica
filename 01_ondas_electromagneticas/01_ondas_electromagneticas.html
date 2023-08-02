@@ -1,36 +1,46 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>1. La radiación como un fenómeno electromagnético &#8212; MEC501 - Manejo y conversión de energía solar térmica</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom_edits.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -38,12 +48,12 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,60 +61,89 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '01_ondas_electromagneticas/01_ondas_electromagneticas';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="2. Ondas electromagnéticas en la materia" href="../02_ondas_EM_en_la_materia/02_ondas_EM_en_la_materia.html" />
     <link rel="prev" title="Introducción al curso" href="../00_introduccion/00_introduccion.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">MEC501 - Manejo y conversión de energía solar térmica</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">MEC501 - Manejo y conversión de energía solar térmica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,489 +152,217 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introducción
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introducción</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_introduccion/00_introduccion.html">
-   Introducción al curso
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../00_introduccion/00_introduccion.html">Introducción al curso</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Parte 1 - Fundamentos del transporte de fotones
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 1 - Fundamentos del transporte de fotones</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   1. La radiación como un fenómeno electromagnético
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02_ondas_EM_en_la_materia/02_ondas_EM_en_la_materia.html">
-   2. Ondas electromagnéticas en la materia
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03_Interacci%C3%B3n_materia-luz/03_Interacci%C3%B3n_materia-luz.html">
-   3. Interacción materia-luz
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04_Scattering/04_Scattering.html">
-   4. Scattering electromagnético
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../05_TransporteRadiativo/05_TransporteRadiativo.html">
-   5. Transporte Radiativo
-  </a>
- </li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. La radiación como un fenómeno electromagnético</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_ondas_EM_en_la_materia/02_ondas_EM_en_la_materia.html">2. Ondas electromagnéticas en la materia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Interacci%C3%B3n_materia-luz/03_Interacci%C3%B3n_materia-luz.html">3. Interacción materia-luz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_Scattering/04_Scattering.html">4. Scattering electromagnético</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_TransporteRadiativo/05_TransporteRadiativo.html">5. Transporte Radiativo</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Parte 2 - Diseño de sistemas para manejo y conversión de energía solar
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 2 - Diseño de sistemas para manejo y conversión de energía solar</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../06_RadiacionTermica/06_RadiacionTermica.html">
-   6. Radiación Térmica
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../07_Radiaci%C3%B3n_solar/07_Radiaci%C3%B3n_solar.html">
-   7. Radiación Solar
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../08_ColetorSolar/08_ColetorSolar.html">
-   8. Colectores solares estacionarios
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../06_RadiacionTermica/06_RadiacionTermica.html">6. Radiación Térmica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07_Radiaci%C3%B3n_solar/07_Radiaci%C3%B3n_solar.html">7. Radiación Solar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_ColetorSolar/08_ColetorSolar.html">8. Colectores solares estacionarios</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Parte 3 - Aplicaciones
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 3 - Aplicaciones</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../09_CentralTermoSolar/09_CentralTermoSolar.html">
-   9. Central Termosolar
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_SolarFotovoltaica/10_SolarFotovoltaica.html">
-   10. Conversión Solar Fotovoltaica
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio.html">
-   11. Control pasivo de radiación solar en edificaciones
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../09_CentralTermoSolar/09_CentralTermoSolar.html">9. Central Termosolar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_SolarFotovoltaica/10_SolarFotovoltaica.html">10. Conversión Solar Fotovoltaica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio.html">11. Control pasivo de radiación solar en edificaciones</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Apéndice
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndice</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Apendice/Espectro_electromagnetico/Espectro_electromagnetico.html">
-   Espectro electromagnético
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Apendice/Teoria_del_color/Teoria_del_color.html">
-   Teoria del color
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Tutorial/Intro.html">
-   Tutoriales
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     empylib
-    </span>
-   </code>
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Tutorial/Tutorial1/Tutorial1.html">
-     Tutorial 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Tutorial/Tutorial2/Tutorial2.html">
-     Tutorial 2
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Apendice/Espectro_electromagnetico/Espectro_electromagnetico.html">Espectro electromagnético</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Apendice/Teoria_del_color/Teoria_del_color.html">Teoria del color</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorial/Intro.html">Tutoriales <code class="docutils literal notranslate"><span class="pre">empylib</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/Tutorial1/Tutorial1.html">Tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/Tutorial2/Tutorial2.html">Tutorial 2</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/01_ondas_electromagneticas/01_ondas_electromagneticas.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/01_ondas_electromagneticas/01_ondas_electromagneticas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/01_ondas_electromagneticas/01_ondas_electromagneticas.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#repaso-de-calculo-vectorial">
-   1.1. Repaso de cálculo vectorial
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#campo-escalar-y-vectorial">
-     1.1.1. Campo escalar y vectorial
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#operadores-diferenciales">
-     1.1.2. Operadores diferenciales
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ejemplos-de-uso-de-operadores-diferenciales">
-     1.1.3. Ejemplos de uso de operadores diferenciales
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ecuaciones-de-maxwell">
-   1.2. Ecuaciones de Maxwell
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ley-de-gauss">
-     1.2.1. Ley de Gauss
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ley-de-continuidad-del-campo-magnetico">
-     1.2.2. Ley de continuidad del campo magnético
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ley-de-faraday">
-     1.2.3. Ley de Faraday
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ley-de-ampere">
-     1.2.4. Ley de Ampere
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#correccion-de-la-ley-de-ampere">
-     1.2.5. Corrección de la ley de Ampere
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ondas-electromagneticas">
-   1.3. Ondas electromagnéticas
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ondas-electromagneticas-en-el-vacio">
-     1.3.1. Ondas electromagnéticas en el vacío
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vector-de-poynting">
-     1.3.2. Vector de Poynting
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#polarizacion-de-ondas-em">
-     1.3.3. Polarización de ondas EM
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#referencias">
-   1.4. Referencias
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>La radiación como un fenómeno electromagnético</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#repaso-de-calculo-vectorial">
-   1.1. Repaso de cálculo vectorial
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#campo-escalar-y-vectorial">
-     1.1.1. Campo escalar y vectorial
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#operadores-diferenciales">
-     1.1.2. Operadores diferenciales
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ejemplos-de-uso-de-operadores-diferenciales">
-     1.1.3. Ejemplos de uso de operadores diferenciales
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ecuaciones-de-maxwell">
-   1.2. Ecuaciones de Maxwell
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ley-de-gauss">
-     1.2.1. Ley de Gauss
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ley-de-continuidad-del-campo-magnetico">
-     1.2.2. Ley de continuidad del campo magnético
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ley-de-faraday">
-     1.2.3. Ley de Faraday
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ley-de-ampere">
-     1.2.4. Ley de Ampere
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#correccion-de-la-ley-de-ampere">
-     1.2.5. Corrección de la ley de Ampere
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ondas-electromagneticas">
-   1.3. Ondas electromagnéticas
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ondas-electromagneticas-en-el-vacio">
-     1.3.1. Ondas electromagnéticas en el vacío
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#vector-de-poynting">
-     1.3.2. Vector de Poynting
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#polarizacion-de-ondas-em">
-     1.3.3. Polarización de ondas EM
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#referencias">
-   1.4. Referencias
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>La radiación como un fenómeno electromagnético</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repaso-de-calculo-vectorial">1.1. Repaso de cálculo vectorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campo-escalar-y-vectorial">1.1.1. Campo escalar y vectorial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-diferenciales">1.1.2. Operadores diferenciales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-de-maxwell">1.2. Ecuaciones de Maxwell</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ley-de-gauss">1.2.1. Ley de Gauss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ley-de-continuidad-del-campo-magnetico">1.2.2. Ley de continuidad del campo magnético</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ley-de-faraday">1.2.3. Ley de Faraday</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ley-de-ampere">1.2.4. Ley de Ampere</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correccion-de-la-ley-de-ampere">1.2.5. Corrección de la ley de Ampere</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ondas-electromagneticas">1.3. Ondas electromagnéticas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ondas-electromagneticas-en-el-vacio">1.3.1. Ondas electromagnéticas en el vacío</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-poynting">1.3.2. Vector de Poynting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polarizacion-de-ondas-em">1.3.3. Polarización de ondas EM</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">1.4. Referencias</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="la-radiacion-como-un-fenomeno-electromagnetico">
 <h1><span class="section-number">1. </span>La radiación como un fenómeno electromagnético<a class="headerlink" href="#la-radiacion-como-un-fenomeno-electromagnetico" title="Permalink to this headline">#</a></h1>
 <section id="repaso-de-calculo-vectorial">
@@ -619,14 +386,14 @@ title="Print to PDF"
 <h3><span class="section-number">1.1.2. </span>Operadores diferenciales<a class="headerlink" href="#operadores-diferenciales" title="Permalink to this headline">#</a></h3>
 <p><strong>Operador Del</strong></p>
 <p>Definimos el operador <span class="math notranslate nohighlight">\(\nabla\)</span> o “del”, como:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8c9d99fc-f94f-40df-a5c2-e6e6b42922ef">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-8c9d99fc-f94f-40df-a5c2-e6e6b42922ef" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4c283f7b-5343-4829-b997-7f3b6817b0fa">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-4c283f7b-5343-4829-b997-7f3b6817b0fa" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla= \left( \hat{x}\frac{\partial }{\partial x} + \hat{y}\frac{\partial }{\partial y} + \hat{z}\frac{\partial }{\partial z} \right)
 \end{equation}\]</div>
 <p><strong>Operador Gradiente.</strong></p>
 <p>Es equivalente a la derivada de una función, pero en múltiples dimenciones. Permite identificar zonas de crecimiento o decrecimiento de un campo escalar o vectorial. Se define como el operador Del multiplicado por el campo escalar.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7df91ea5-6c91-4dd2-af67-048f827c861c">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-7df91ea5-6c91-4dd2-af67-048f827c861c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-aeca3024-3e62-470b-aeba-a63683c1c249">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-aeca3024-3e62-470b-aeba-a63683c1c249" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla f= \frac{\partial f}{\partial x}\hat{x} + \frac{\partial f}{\partial y}\hat{y}+ \frac{\partial f}{\partial z}\hat{z}
 \end{equation}\]</div>
 <blockquote>
@@ -634,8 +401,8 @@ title="Print to PDF"
 </div></blockquote>
 <p><strong>Operador Divergente.</strong></p>
 <p>Se aplica a campos vectoriales. Es una medida de cuanto un campo vectorial diverge o converge respecto de un punto en cuestión. Se define como el producto punto entre el operador Del y un campo vectorial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0df78bba-3777-48f8-bb68-d73cb46e8786">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-0df78bba-3777-48f8-bb68-d73cb46e8786" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d7849298-ea09-4fc8-8b0b-eae1990567a9">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-d7849298-ea09-4fc8-8b0b-eae1990567a9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla \cdot \vec{f}= \frac{\partial f_x}{\partial x} + \frac{\partial f_y}{\partial y} + \frac{\partial f_z}{\partial z}
 \end{equation}\]</div>
 <p>Por ejemplo:</p>
@@ -645,8 +412,8 @@ title="Print to PDF"
 <p>(c) <span class="math notranslate nohighlight">\(\nabla\cdot\vec{f} \gt 0\)</span></p>
 <p><strong>Operador Rotacional.</strong></p>
 <p>Se aplica a campos vectoriales. Es una medida de cuanto un campo vectorial rota respecto de un punto en cuestión. Se define como el producto cruz entre el operador Del y un campo vectorial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0171fa52-6b1e-4a88-b28b-b764dafb54bb">
-<span class="eqno">(1.4)<a class="headerlink" href="#equation-0171fa52-6b1e-4a88-b28b-b764dafb54bb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3a030f07-de44-45b6-9e30-92c77a83f87e">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-3a030f07-de44-45b6-9e30-92c77a83f87e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla \times \vec{f}= \left(\frac{\partial f_z}{\partial y}- \frac{\partial f_y}{\partial z}\right)\hat{x}+\left(\frac{\partial f_x}{\partial z}- \frac{\partial f_z}{\partial x}\right)\hat{y}+\left(\frac{\partial f_y}{\partial x}- \frac{\partial f_x}{\partial y}\right)\hat{z}
 \end{equation}\]</div>
 <p>Por ejemplo:</p>
@@ -657,22 +424,6 @@ title="Print to PDF"
 <div><p>En la figura anterior (divergente), <span class="math notranslate nohighlight">\(\nabla\times\vec{f} = 0\)</span> en todos los casos.</p>
 </div></blockquote>
 </section>
-<section id="ejemplos-de-uso-de-operadores-diferenciales">
-<h3><span class="section-number">1.1.3. </span>Ejemplos de uso de operadores diferenciales<a class="headerlink" href="#ejemplos-de-uso-de-operadores-diferenciales" title="Permalink to this headline">#</a></h3>
-<p>Los operadores diferenciales permiten una descripción más compacta en de las formulas basadas en ecuaciones diferenciales parciales.</p>
-<a class="reference internal image-reference" href="../_images/mass_conservation.png"><img alt="../_images/mass_conservation.png" class="align-center" src="../_images/mass_conservation.png" style="width: 500px;" /></a>
-<p>Un ejemplo conocido es el caso de la ecuación de conservación de masa en su forma diferencial.</p>
-<div class="math notranslate nohighlight">
-\[\frac{\partial \rho}{\partial t}+\frac{\partial (\rho u)}{\partial x} +\frac{\partial (\rho v)}{\partial y}+\frac{\partial (\rho w)}{\partial z}=0.\]</div>
-<p>Usando el operador Del,</p>
-<div class="math notranslate nohighlight">
-\[\frac{\partial \rho}{\partial t} + \nabla\cdot\left(\rho\vec{V}\right)
-=0,\]</div>
-<p>o bien:</p>
-<div class="math notranslate nohighlight">
-\[\frac{\partial \rho}{\partial t} + \vec{V}\cdot\nabla\rho+ \rho\left(\nabla\cdot\vec{V}\right)
-=0.\]</div>
-</section>
 </section>
 <section id="ecuaciones-de-maxwell">
 <h2><span class="section-number">1.2. </span>Ecuaciones de Maxwell<a class="headerlink" href="#ecuaciones-de-maxwell" title="Permalink to this headline">#</a></h2>
@@ -680,8 +431,8 @@ title="Print to PDF"
 <h3><span class="section-number">1.2.1. </span>Ley de Gauss<a class="headerlink" href="#ley-de-gauss" title="Permalink to this headline">#</a></h3>
 <p><em>El flujo de campo electrico a través de una superficie cerrada es proporcional a la carga eléctrica, <span class="math notranslate nohighlight">\(\rho\)</span>, contenida dentro de esta superficie.</em></p>
 <p>En su forma diferencial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8eee3d17-bffa-4a21-bacf-dff4a13b1cb5">
-<span class="eqno">(1.5)<a class="headerlink" href="#equation-8eee3d17-bffa-4a21-bacf-dff4a13b1cb5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-12cd13f7-8e2d-45ac-8812-501de62b1a33">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-12cd13f7-8e2d-45ac-8812-501de62b1a33" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla\cdot\left(\varepsilon_0\vec{E}\right) = \rho
 \end{equation}\]</div>
 <p>Donde:</p>
@@ -697,8 +448,8 @@ title="Print to PDF"
 <h3><span class="section-number">1.2.2. </span>Ley de continuidad del campo magnético<a class="headerlink" href="#ley-de-continuidad-del-campo-magnetico" title="Permalink to this headline">#</a></h3>
 <p><em>No existen cargas magnéticas que den lugar a un campo magnético</em></p>
 <p>En su forma diferencial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-25c5b2fd-3b81-43a8-8216-376b3d50c3ff">
-<span class="eqno">(1.6)<a class="headerlink" href="#equation-25c5b2fd-3b81-43a8-8216-376b3d50c3ff" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4fd0ba2c-4c8a-4f76-a201-1d15f5fe2c35">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-4fd0ba2c-4c8a-4f76-a201-1d15f5fe2c35" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla\cdot\left(\mu_0\vec{H}\right) = 0
 \end{equation}\]</div>
 <p>Donde:</p>
@@ -715,8 +466,8 @@ title="Print to PDF"
 <section id="ley-de-faraday">
 <h3><span class="section-number">1.2.3. </span>Ley de Faraday<a class="headerlink" href="#ley-de-faraday" title="Permalink to this headline">#</a></h3>
 <p><em>Un campo magnético variable en el tiempo induce un campo eléctrico rotacional</em></p>
-<div class="amsmath math notranslate nohighlight" id="equation-42f7cc90-600c-48a9-89d9-71105f1f9370">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-42f7cc90-600c-48a9-89d9-71105f1f9370" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-030521f2-9cdc-43a2-a511-4d2f6deeade0">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-030521f2-9cdc-43a2-a511-4d2f6deeade0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla\times\vec{E} = -\mu_0\frac{\partial \vec{H}}{\partial t}
 \end{equation}\]</div>
 <ul class="simple">
@@ -726,8 +477,8 @@ title="Print to PDF"
 <section id="ley-de-ampere">
 <h3><span class="section-number">1.2.4. </span>Ley de Ampere<a class="headerlink" href="#ley-de-ampere" title="Permalink to this headline">#</a></h3>
 <p><em>Una corriente eléctrica induce un campo magnético rotacional alrededor de ella</em></p>
-<div class="amsmath math notranslate nohighlight" id="equation-03254b6f-8fe8-4955-a843-e5e8ef1780b2">
-<span class="eqno">(1.8)<a class="headerlink" href="#equation-03254b6f-8fe8-4955-a843-e5e8ef1780b2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-762b6ea5-9711-4394-aa92-128dbfc0f5e2">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-762b6ea5-9711-4394-aa92-128dbfc0f5e2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla\times\vec{H} = \vec{J}
 \end{equation}\]</div>
 <p>Donde:</p>
@@ -738,15 +489,15 @@ title="Print to PDF"
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
-<iframe
-    width="600"
-    height="400"
-    src="https://www.youtube.com/embed/CWulQ1ZSE3c?playsinline=0"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
+        <iframe
+            width="600"
+            height="400"
+            src="https://www.youtube.com/embed/CWulQ1ZSE3c?playsinline=0"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
 </div>
 </section>
 <section id="correccion-de-la-ley-de-ampere">
@@ -771,8 +522,8 @@ title="Print to PDF"
 \nabla\cdot\vec{J} = - \frac{\partial \rho}{\partial t}
 \end{equation*}\]</div>
 <p>Claramente, la ecuación de Ampere no está completa. La corrección, fue propuesta por James Maxwell</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b32bfc00-f697-4e97-8e54-76fae3cc46ec">
-<span class="eqno">(1.9)<a class="headerlink" href="#equation-b32bfc00-f697-4e97-8e54-76fae3cc46ec" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c69ddc18-f155-46c6-8957-210a2fa0792e">
+<span class="eqno">(1.9)<a class="headerlink" href="#equation-c69ddc18-f155-46c6-8957-210a2fa0792e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla\times\vec{H} = \vec{J} + \varepsilon_0\frac{\partial\vec{E}}{\partial t}
 \end{equation}\]</div>
 <p>El último término es conocido como la <em>corriente de desplazamiento de Maxwell.</em></p>
@@ -823,8 +574,8 @@ title="Print to PDF"
 <li><p><span class="math notranslate nohighlight">\(\hat{e}\)</span> es la dirección de oscilación de la onda.</p></li>
 </ul>
 <p>Reemplazando esta solución en la ecuación de onda, determinamos la <strong>relación de dispersión</strong> entre la <strong>magnitud del vector de onda en el vacío</strong>, <span class="math notranslate nohighlight">\(k_0 = |\vec{k}|\)</span>, y la frecuencia angular:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2d81b631-b27e-422e-8d6a-c75a7e1a2e95">
-<span class="eqno">(1.10)<a class="headerlink" href="#equation-2d81b631-b27e-422e-8d6a-c75a7e1a2e95" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ddee5cad-b870-47d5-9687-0cf2d4a62b0a">
+<span class="eqno">(1.10)<a class="headerlink" href="#equation-ddee5cad-b870-47d5-9687-0cf2d4a62b0a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k_0 = \frac{\omega}{c_0},
 \end{equation}\]</div>
 <p>donde</p>
@@ -832,21 +583,21 @@ k_0 = \frac{\omega}{c_0},
 \[c_0 = \frac{1}{\sqrt{\varepsilon_0\mu_0}} \approx 3.00\times10^8~\mathrm{m/s,}\]</div>
 <p>es la velocidad de la luz.</p>
 <p>En general, estamos más familizarizados con los conceptos de <strong>longitud de onda <span class="math notranslate nohighlight">\(\lambda\)</span></strong> y <strong>frecuencia <span class="math notranslate nohighlight">\(\nu\)</span></strong>, para caracterizar ondas electromagnéticas. Estas variables se relacionan con el vector de onda y la frecuencia mediante:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aea9ec69-6b79-4762-b75c-55b551b5310a">
-<span class="eqno">(1.11)<a class="headerlink" href="#equation-aea9ec69-6b79-4762-b75c-55b551b5310a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c2148535-4e51-4317-a28a-bd030404c348">
+<span class="eqno">(1.11)<a class="headerlink" href="#equation-c2148535-4e51-4317-a28a-bd030404c348" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k_0 = \frac{2\pi}{\lambda}, ~~ \omega = 2\pi\nu
 \end{equation}\]</div>
 <p>De igual forma, mediante la relación de dispersión, podemos establecer la siguiente relación entre la longitud de onda y la frecuencia:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3fe628f9-9f55-43e2-b808-4fb04eb0aed3">
-<span class="eqno">(1.12)<a class="headerlink" href="#equation-3fe628f9-9f55-43e2-b808-4fb04eb0aed3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6fd2d390-3d71-4497-90e1-9f82f59cd50d">
+<span class="eqno">(1.12)<a class="headerlink" href="#equation-6fd2d390-3d71-4497-90e1-9f82f59cd50d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lambda\nu = c_0
 \end{equation}\]</div>
 <blockquote>
 <div><p>Esto quiere decir, que un punto <span class="math notranslate nohighlight">\(\vec{r}\)</span> arbitrario de la onda, viaja en el vacío a una velocidad constante <span class="math notranslate nohighlight">\(c_0\)</span>, <strong>independendiente de su frecuencia</strong>.</p>
 </div></blockquote>
 <p><strong>El vector de onda representa la dirección de propagación de la onda</strong>. A partir de la ley de Gauss, podemos demostrar:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9e00b6fd-0662-4a9f-a473-f00a870dd36b">
-<span class="eqno">(1.13)<a class="headerlink" href="#equation-9e00b6fd-0662-4a9f-a473-f00a870dd36b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-16b621f8-6cf1-4044-9d86-e6b7ce5b5a08">
+<span class="eqno">(1.13)<a class="headerlink" href="#equation-16b621f8-6cf1-4044-9d86-e6b7ce5b5a08" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vec{k} \cdot\hat{e} = 0
 \end{equation}\]</div>
 <p>Es decir, el campo eléctrico oscila en dirección perpendicular a la dirección de propagación.</p>
@@ -864,15 +615,15 @@ k_0 = \frac{2\pi}{\lambda}, ~~ \omega = 2\pi\nu
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<iframe
-    width="700px"
-    height="450px"
-    src="https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/height/480/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false"
-    frameborder="0"
-    allowfullscreen
-
-></iframe>
-</div></div>
+        <iframe
+            width="700px"
+            height="450px"
+            src="https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/height/480/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
 </div>
 <p>Debido a que el campo eléctrico toma la forma <span class="math notranslate nohighlight">\(\vec{E} = E_0 e^{i\left(\vec{k}\cdot\vec{r} - \omega t\right)} \hat{e},\)</span>  decimos que se comporta como una <strong>onda plana</strong>, debido a que el campo es constante sobre un plano perpendicular a la dirección de propagación</p>
 <a class="reference internal image-reference" href="../_images/planewave.png"><img alt="../_images/planewave.png" class="align-center" src="../_images/planewave.png" style="width: 400px;" /></a>
@@ -894,7 +645,7 @@ k_0 = \frac{2\pi}{\lambda}, ~~ \omega = 2\pi\nu
 \end{equation*}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(Z_0 = \sqrt{\frac{\mu_0}{\varepsilon_0}}\)</span>, es la <strong>impedancia del vacío</strong> (se mide en <span class="math notranslate nohighlight">\(\Omega\)</span>).</p>
 <p>De esta relación concluímos:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Los campos eléctrico y magnético, y el vector de onda son mutuamente perpendiculares (<span class="math notranslate nohighlight">\(H\perp E\perp k\)</span>)</p></li>
 <li><p>La amplitud de la intensidad de campo magnético y del campo eléctrico, estan relacionadas por: <span class="math notranslate nohighlight">\({H}_0 = \frac{E_0}{Z_0}\)</span></p></li>
 </ol>
@@ -902,8 +653,8 @@ k_0 = \frac{2\pi}{\lambda}, ~~ \omega = 2\pi\nu
 <section id="vector-de-poynting">
 <h3><span class="section-number">1.3.2. </span>Vector de Poynting<a class="headerlink" href="#vector-de-poynting" title="Permalink to this headline">#</a></h3>
 <p>El flujo de energía electromagnética por unidad de área está dado por el vector de Poynting:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-becdd9d9-8ee3-436c-97ee-7f64fac41975">
-<span class="eqno">(1.14)<a class="headerlink" href="#equation-becdd9d9-8ee3-436c-97ee-7f64fac41975" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ba844d17-2f87-4537-8f2b-984714d0cbd6">
+<span class="eqno">(1.14)<a class="headerlink" href="#equation-ba844d17-2f87-4537-8f2b-984714d0cbd6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \langle\vec{S}\rangle = \frac{1}{2}\mathrm{Re}\left(\vec{E}\times\vec{H}^*\right),\quad\quad\mathrm{\frac{W}{m^2}}
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\langle\cdots\rangle\)</span> reprensenta el promedio por un periodo de oscilación, y el símbolo “<span class="math notranslate nohighlight">\(*\)</span>” reprenta el complejo conjugado.</p>
@@ -915,7 +666,7 @@ k_0 = \frac{2\pi}{\lambda}, ~~ \omega = 2\pi\nu
 \end{align*}\]</div>
 <p>Así,  en el vacío, el flujo de energía que transporta una onda electromagnética es <span class="math notranslate nohighlight">\(\frac{E_0^2}{2Z_0}\)</span></p>
 <p>En resumen, en una onda EM en el vacío:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\vec{E}\)</span> y <span class="math notranslate nohighlight">\(\vec{H}\)</span> se comportan como <strong>ondas trasversales</strong> de la forma <span class="math notranslate nohighlight">\(\propto e^{ i\left(\vec{k}\cdot\vec{r} - \omega t\right)}\)</span>.</p></li>
 <li><p>El <strong>vector de onda</strong> <span class="math notranslate nohighlight">\(\vec{k}\)</span> representa la <strong>dirección de propagación</strong> de <span class="math notranslate nohighlight">\(\vec{E}\)</span> y <span class="math notranslate nohighlight">\(\vec{H}\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\vec{E}\)</span> y <span class="math notranslate nohighlight">\(\vec{H}\)</span> se propagan a una velocidad constante <span class="math notranslate nohighlight">\(c_0 = \frac{1}{\sqrt{\mu_0\varepsilon_0}} \approx 3.00\times10^8\)</span> m/s.</p></li>
@@ -968,11 +719,11 @@ k_0 = \frac{2\pi}{\lambda}, ~~ \omega = 2\pi\nu
 </ul>
 <p><strong>Hetch E., <em>Óptica</em>, 5ta Ed, Pearson, 2017</strong></p>
 <ul class="simple">
-<li><ol class="simple">
+<li><ol class="arabic simple" start="2">
 <li><p>El movimiento ondulatorio</p></li>
 </ol>
 </li>
-<li><ol class="simple">
+<li><ol class="arabic simple" start="3">
 <li><p>Teoría electromagnética, fotones y luz</p></li>
 </ol>
 </li>
@@ -992,7 +743,7 @@ k_0 = \frac{2\pi}{\lambda}, ~~ \omega = 2\pi\nu
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./01_ondas_electromagneticas"
         },
         predefinedOutput: true
@@ -1000,50 +751,124 @@ k_0 = \frac{2\pi}{\lambda}, ~~ \omega = 2\pi\nu
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../00_introduccion/00_introduccion.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Introducción al curso</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../00_introduccion/00_introduccion.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introducción al curso</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../02_ondas_EM_en_la_materia/02_ondas_EM_en_la_materia.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../02_ondas_EM_en_la_materia/02_ondas_EM_en_la_materia.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">2. </span>Ondas electromagnéticas en la materia</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Francisco V. Ramirez-Cuevas<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repaso-de-calculo-vectorial">1.1. Repaso de cálculo vectorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#campo-escalar-y-vectorial">1.1.1. Campo escalar y vectorial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-diferenciales">1.1.2. Operadores diferenciales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecuaciones-de-maxwell">1.2. Ecuaciones de Maxwell</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ley-de-gauss">1.2.1. Ley de Gauss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ley-de-continuidad-del-campo-magnetico">1.2.2. Ley de continuidad del campo magnético</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ley-de-faraday">1.2.3. Ley de Faraday</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ley-de-ampere">1.2.4. Ley de Ampere</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correccion-de-la-ley-de-ampere">1.2.5. Corrección de la ley de Ampere</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ondas-electromagneticas">1.3. Ondas electromagnéticas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ondas-electromagneticas-en-el-vacio">1.3.1. Ondas electromagnéticas en el vacío</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-de-poynting">1.3.2. Vector de Poynting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#polarizacion-de-ondas-em">1.3.3. Polarización de ondas EM</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">1.4. Referencias</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Francisco V. Ramirez-Cuevas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

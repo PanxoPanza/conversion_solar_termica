@@ -1,36 +1,46 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Tutorial 1 &#8212; MEC501 - Manejo y conversión de energía solar térmica</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom_edits.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -38,12 +48,12 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -51,60 +61,89 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorial/Tutorial1/Tutorial1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Tutorial 2" href="../Tutorial2/Tutorial2.html" />
     <link rel="prev" title="Tutoriales empylib" href="../Intro.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">MEC501 - Manejo y conversión de energía solar térmica</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">MEC501 - Manejo y conversión de energía solar térmica</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,567 +152,215 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introducción
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introducción</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../00_introduccion/00_introduccion.html">
-   Introducción al curso
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../00_introduccion/00_introduccion.html">Introducción al curso</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Parte 1 - Fundamentos del transporte de fotones
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 1 - Fundamentos del transporte de fotones</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../01_ondas_electromagneticas/01_ondas_electromagneticas.html">
-   1. La radiación como un fenómeno electromagnético
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../02_ondas_EM_en_la_materia/02_ondas_EM_en_la_materia.html">
-   2. Ondas electromagnéticas en la materia
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../03_Interacci%C3%B3n_materia-luz/03_Interacci%C3%B3n_materia-luz.html">
-   3. Interacción materia-luz
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../04_Scattering/04_Scattering.html">
-   4. Scattering electromagnético
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../05_TransporteRadiativo/05_TransporteRadiativo.html">
-   5. Transporte Radiativo
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_ondas_electromagneticas/01_ondas_electromagneticas.html">1. La radiación como un fenómeno electromagnético</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../02_ondas_EM_en_la_materia/02_ondas_EM_en_la_materia.html">2. Ondas electromagnéticas en la materia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../03_Interacci%C3%B3n_materia-luz/03_Interacci%C3%B3n_materia-luz.html">3. Interacción materia-luz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../04_Scattering/04_Scattering.html">4. Scattering electromagnético</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../05_TransporteRadiativo/05_TransporteRadiativo.html">5. Transporte Radiativo</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Parte 2 - Diseño de sistemas para manejo y conversión de energía solar
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 2 - Diseño de sistemas para manejo y conversión de energía solar</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../06_RadiacionTermica/06_RadiacionTermica.html">
-   6. Radiación Térmica
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../07_Radiaci%C3%B3n_solar/07_Radiaci%C3%B3n_solar.html">
-   7. Radiación Solar
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../08_ColetorSolar/08_ColetorSolar.html">
-   8. Colectores solares estacionarios
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../06_RadiacionTermica/06_RadiacionTermica.html">6. Radiación Térmica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../07_Radiaci%C3%B3n_solar/07_Radiaci%C3%B3n_solar.html">7. Radiación Solar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../08_ColetorSolar/08_ColetorSolar.html">8. Colectores solares estacionarios</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Parte 3 - Aplicaciones
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 3 - Aplicaciones</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../09_CentralTermoSolar/09_CentralTermoSolar.html">
-   9. Central Termosolar
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../10_SolarFotovoltaica/10_SolarFotovoltaica.html">
-   10. Conversión Solar Fotovoltaica
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio.html">
-   11. Control pasivo de radiación solar en edificaciones
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../09_CentralTermoSolar/09_CentralTermoSolar.html">9. Central Termosolar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../10_SolarFotovoltaica/10_SolarFotovoltaica.html">10. Conversión Solar Fotovoltaica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio.html">11. Control pasivo de radiación solar en edificaciones</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Apéndice
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndice</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../Apendice/Espectro_electromagnetico/Espectro_electromagnetico.html">
-   Espectro electromagnético
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../Apendice/Teoria_del_color/Teoria_del_color.html">
-   Teoria del color
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../Intro.html">
-   Tutoriales
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     empylib
-    </span>
-   </code>
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Tutorial 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Tutorial2/Tutorial2.html">
-     Tutorial 2
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../Apendice/Espectro_electromagnetico/Espectro_electromagnetico.html">Espectro electromagnético</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../Apendice/Teoria_del_color/Teoria_del_color.html">Teoria del color</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Intro.html">Tutoriales <code class="docutils literal notranslate"><span class="pre">empylib</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Tutorial 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial2/Tutorial2.html">Tutorial 2</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Tutorial/Tutorial1/Tutorial1.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Tutorial/Tutorial1/Tutorial1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
+
+
+
 
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/Tutorial/Tutorial1/Tutorial1.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conversion-de-unidades">
-   Conversión de unidades
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#indices-de-refraccion-nklib">
-   Índices de refracción (
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     nklib
-    </span>
-   </code>
-   )
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#indices-de-refraccion-tabulados">
-     Índices de refracción tabulados
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modelos-de-drude-y-lorentz">
-     Modelos de Drude y Lorentz
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reflexion-transmission-waveoptics">
-   Reflexión/Transmissión (
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     waveoptics
-    </span>
-   </code>
-   )
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#luz-incidente-en-una-interface-interface">
-     Luz incidente en una interface (
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       interface
-      </span>
-     </code>
-     )
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#luz-incidente-en-arreglos-multicapas-multilayer">
-     Luz incidente en arreglos multicapas (
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       multilayer
-      </span>
-     </code>
-     )
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#luz-incoherente-en-arreglos-multicapas-incoh-multilayer">
-     Luz incoherente en arreglos multicapas (
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       incoh_multilayer
-      </span>
-     </code>
-     )
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#scattering-de-mie-miescattering">
-   Scattering de mie (
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     miescattering
-    </span>
-   </code>
-   )
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#transporte-radiativo-rad-transfer">
-   Transporte Radiativo (
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     rad_transfer
-    </span>
-   </code>
-   )
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#beer-lambert-t-beer-lambert">
-     Beer-Lambert (
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       T_beer_lambert
-      </span>
-     </code>
-     )
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scattering-multiple-adm-sphere">
-     Scattering multiple (
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       adm_sphere
-      </span>
-     </code>
-     )
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tutorial 1</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#conversion-de-unidades">
-   Conversión de unidades
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#indices-de-refraccion-nklib">
-   Índices de refracción (
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     nklib
-    </span>
-   </code>
-   )
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#indices-de-refraccion-tabulados">
-     Índices de refracción tabulados
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modelos-de-drude-y-lorentz">
-     Modelos de Drude y Lorentz
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reflexion-transmission-waveoptics">
-   Reflexión/Transmissión (
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     waveoptics
-    </span>
-   </code>
-   )
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#luz-incidente-en-una-interface-interface">
-     Luz incidente en una interface (
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       interface
-      </span>
-     </code>
-     )
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#luz-incidente-en-arreglos-multicapas-multilayer">
-     Luz incidente en arreglos multicapas (
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       multilayer
-      </span>
-     </code>
-     )
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#luz-incoherente-en-arreglos-multicapas-incoh-multilayer">
-     Luz incoherente en arreglos multicapas (
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       incoh_multilayer
-      </span>
-     </code>
-     )
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#scattering-de-mie-miescattering">
-   Scattering de mie (
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     miescattering
-    </span>
-   </code>
-   )
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#transporte-radiativo-rad-transfer">
-   Transporte Radiativo (
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     rad_transfer
-    </span>
-   </code>
-   )
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#beer-lambert-t-beer-lambert">
-     Beer-Lambert (
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       T_beer_lambert
-      </span>
-     </code>
-     )
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#scattering-multiple-adm-sphere">
-     Scattering multiple (
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       adm_sphere
-      </span>
-     </code>
-     )
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tutorial 1</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-unidades">Conversión de unidades</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-de-refraccion-nklib">Índices de refracción (<code class="docutils literal notranslate"><span class="pre">nklib</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-de-refraccion-tabulados">Índices de refracción tabulados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-drude-y-lorentz">Modelos de Drude y Lorentz</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflexion-transmission-waveoptics">Reflexión/Transmissión (<code class="docutils literal notranslate"><span class="pre">waveoptics</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#luz-incidente-en-una-interface-interface">Luz incidente en una interface (<code class="docutils literal notranslate"><span class="pre">interface</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#luz-incidente-en-arreglos-multicapas-multilayer">Luz incidente en arreglos multicapas (<code class="docutils literal notranslate"><span class="pre">multilayer</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#luz-incoherente-en-arreglos-multicapas-incoh-multilayer">Luz incoherente en arreglos multicapas (<code class="docutils literal notranslate"><span class="pre">incoh_multilayer</span></code>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scattering-de-mie-miescattering">Scattering de mie (<code class="docutils literal notranslate"><span class="pre">miescattering</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transporte-radiativo-rad-transfer">Transporte Radiativo (<code class="docutils literal notranslate"><span class="pre">rad_transfer</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beer-lambert-t-beer-lambert">Beer-Lambert (<code class="docutils literal notranslate"><span class="pre">T_beer_lambert</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scattering-multiple-adm-sphere">Scattering multiple (<code class="docutils literal notranslate"><span class="pre">adm_sphere</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-1">
 <h1>Tutorial 1<a class="headerlink" href="#tutorial-1" title="Permalink to this headline">#</a></h1>
 <p>Este es un tutorial para utilizar las principales librerías del paquete <code class="docutils literal notranslate"><span class="pre">empylib</span></code>. Estas son:</p>
@@ -808,7 +495,7 @@ longitudes de onda en eV:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_13_0.png" src="../../_images/Tutorial1_13_0.png" />
+<img alt="../../_images/e8ed2386846077ad270af710353b2f242e01252c03c228718390ec7776ed5be8.png" src="../../_images/e8ed2386846077ad270af710353b2f242e01252c03c228718390ec7776ed5be8.png" />
 </div>
 </div>
 </section>
@@ -882,7 +569,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_18_0.png" src="../../_images/Tutorial1_18_0.png" />
+<img alt="../../_images/c43d8af87c1d20d9cc34f2229b2afa79b145fab75825f59e76f712e01457c85d.png" src="../../_images/c43d8af87c1d20d9cc34f2229b2afa79b145fab75825f59e76f712e01457c85d.png" />
 </div>
 </div>
 <p><strong>Constante dieléctrica según modelo de Lorentz</strong></p>
@@ -901,7 +588,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_20_0.png" src="../../_images/Tutorial1_20_0.png" />
+<img alt="../../_images/fda180ce0e72cfe967ebfc0a19a7f7b2dc9983eefc1909e536b75c6879255569.png" src="../../_images/fda180ce0e72cfe967ebfc0a19a7f7b2dc9983eefc1909e536b75c6879255569.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -922,10 +609,10 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f751097de80&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f4aa1d80580&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/Tutorial1_21_1.png" src="../../_images/Tutorial1_21_1.png" />
+<img alt="../../_images/8fef460e650026ebabe2bc196cc797d3e0ac33fc5540dd50267a0f957a794db8.png" src="../../_images/8fef460e650026ebabe2bc196cc797d3e0ac33fc5540dd50267a0f957a794db8.png" />
 </div>
 </div>
 <p><strong>Constante dieléctrica del agua modelo de Lorentz</strong></p>
@@ -982,7 +669,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_26_0.png" src="../../_images/Tutorial1_26_0.png" />
+<img alt="../../_images/86ec410c957d7a42ea177c0dd436da5eef725b34f47da997c771aa80653649e6.png" src="../../_images/86ec410c957d7a42ea177c0dd436da5eef725b34f47da997c771aa80653649e6.png" />
 </div>
 </div>
 </section>
@@ -1081,7 +768,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_35_0.png" src="../../_images/Tutorial1_35_0.png" />
+<img alt="../../_images/8d8c860604ab5678b1c2daee020f48df6ec9c0b5589b39f10fe8b1e842f20f75.png" src="../../_images/8d8c860604ab5678b1c2daee020f48df6ec9c0b5589b39f10fe8b1e842f20f75.png" />
 </div>
 </div>
 </section>
@@ -1158,7 +845,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_40_0.png" src="../../_images/Tutorial1_40_0.png" />
+<img alt="../../_images/9e8c09d39c06a06b8b376475ab88817cfdab586f76e2505164774d546e9e1cd2.png" src="../../_images/9e8c09d39c06a06b8b376475ab88817cfdab586f76e2505164774d546e9e1cd2.png" />
 </div>
 </div>
 </section>
@@ -1203,7 +890,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_42_0.png" src="../../_images/Tutorial1_42_0.png" />
+<img alt="../../_images/d4060777b26a888c77c87429e1adbd802d30ccab9a66c56779d2b977454629ce.png" src="../../_images/d4060777b26a888c77c87429e1adbd802d30ccab9a66c56779d2b977454629ce.png" />
 </div>
 </div>
 <p>En el límite de solo una interface, <code class="docutils literal notranslate"><span class="pre">interface</span></code>, <code class="docutils literal notranslate"><span class="pre">multilayer</span></code> y <code class="docutils literal notranslate"><span class="pre">incoh_multilayer</span></code> entregan el mismo resultado</p>
@@ -1286,7 +973,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_49_0.png" src="../../_images/Tutorial1_49_0.png" />
+<img alt="../../_images/c2467163e0df5e499cdda71955070abac3b5eed39beb6050895b952369844e17.png" src="../../_images/c2467163e0df5e499cdda71955070abac3b5eed39beb6050895b952369844e17.png" />
 </div>
 </div>
 </section>
@@ -1348,7 +1035,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_54_0.png" src="../../_images/Tutorial1_54_0.png" />
+<img alt="../../_images/3133956d120553ccc660a403dff580672820162bc4b4ed65a749df99bbab3841.png" src="../../_images/3133956d120553ccc660a403dff580672820162bc4b4ed65a749df99bbab3841.png" />
 </div>
 </div>
 </section>
@@ -1400,7 +1087,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_56_0.png" src="../../_images/Tutorial1_56_0.png" />
+<img alt="../../_images/fa2e6693c2be49ffbc9e2121bd4ddd7fdb486bbaf90ba7456ff29e71e1891c78.png" src="../../_images/fa2e6693c2be49ffbc9e2121bd4ddd7fdb486bbaf90ba7456ff29e71e1891c78.png" />
 </div>
 </div>
 </section>
@@ -1419,7 +1106,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./Tutorial/Tutorial1"
         },
         predefinedOutput: true
@@ -1427,50 +1114,122 @@ incoh_multilayer:	 R = 0.025, T = 0.975
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../Intro.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Tutoriales <code class="docutils literal notranslate"><span class="pre">empylib</span></code></p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Tutoriales <code class="docutils literal notranslate"><span class="pre">empylib</span></code></p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../Tutorial2/Tutorial2.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../Tutorial2/Tutorial2.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Tutorial 2</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Francisco V. Ramirez-Cuevas<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-de-unidades">Conversión de unidades</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-de-refraccion-nklib">Índices de refracción (<code class="docutils literal notranslate"><span class="pre">nklib</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indices-de-refraccion-tabulados">Índices de refracción tabulados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelos-de-drude-y-lorentz">Modelos de Drude y Lorentz</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reflexion-transmission-waveoptics">Reflexión/Transmissión (<code class="docutils literal notranslate"><span class="pre">waveoptics</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#luz-incidente-en-una-interface-interface">Luz incidente en una interface (<code class="docutils literal notranslate"><span class="pre">interface</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#luz-incidente-en-arreglos-multicapas-multilayer">Luz incidente en arreglos multicapas (<code class="docutils literal notranslate"><span class="pre">multilayer</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#luz-incoherente-en-arreglos-multicapas-incoh-multilayer">Luz incoherente en arreglos multicapas (<code class="docutils literal notranslate"><span class="pre">incoh_multilayer</span></code>)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scattering-de-mie-miescattering">Scattering de mie (<code class="docutils literal notranslate"><span class="pre">miescattering</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transporte-radiativo-rad-transfer">Transporte Radiativo (<code class="docutils literal notranslate"><span class="pre">rad_transfer</span></code>)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beer-lambert-t-beer-lambert">Beer-Lambert (<code class="docutils literal notranslate"><span class="pre">T_beer_lambert</span></code>)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scattering-multiple-adm-sphere">Scattering multiple (<code class="docutils literal notranslate"><span class="pre">adm_sphere</span></code>)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Francisco V. Ramirez-Cuevas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
