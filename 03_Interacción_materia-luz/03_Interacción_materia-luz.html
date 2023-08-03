@@ -154,7 +154,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introducción</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../00_introduccion/00_introduccion.html">Introducción al curso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../00_introduccion/00_introduccion.html">Introducción</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 1 - Fundamentos del transporte de fotones</span></p>
 <ul class="current nav bd-sidenav">
@@ -164,7 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../04_Scattering/04_Scattering.html">4. Scattering electromagnético</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_TransporteRadiativo/05_TransporteRadiativo.html">5. Transporte Radiativo</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 2 - Diseño de sistemas para manejo y conversión de energía solar</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 2 - Diseño de sistemas de manejo y conversión solar</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../06_RadiacionTermica/06_RadiacionTermica.html">6. Radiación Térmica</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../07_Radiaci%C3%B3n_solar/07_Radiaci%C3%B3n_solar.html">7. Radiación Solar</a></li>
@@ -463,8 +463,8 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 <p>con <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_pq^2}{\varepsilon_0 m}\)</span></p>
 <p>En el caso del agua, la molecula posee un dipolo eléctrico neto adicional al dipolo inducido. El efecto de la polarización neta se puede representar, cambiando el primer término por un valor constante <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span>.</p>
 <p>El modelo completo se conoce como <strong>modelo de Lorentz</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8bb78e37-15e8-4f5d-8236-5f620fbd2fc3">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-8bb78e37-15e8-4f5d-8236-5f620fbd2fc3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b850e8f6-597c-4224-9890-2f9a7700b2dd">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-b850e8f6-597c-4224-9890-2f9a7700b2dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty + \frac{\omega_p^2}{\omega_n^2 - \omega^2 - i\Gamma \omega}\quad\mathrm{Modelo~de~Lorentz},
 \end{equation}\]</div>
 <p>Usaremos la función <code class="docutils literal notranslate"><span class="pre">lorentz</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">empylib.nklib</span></code> para generar el índice de refracción y constante dielectrica a partir del modelo de Lorentz, con los parámetros: <span class="math notranslate nohighlight">\(\varepsilon_\infty = 2.0\)</span>, <span class="math notranslate nohighlight">\(\Gamma = 0.1\omega_n\)</span>, y <span class="math notranslate nohighlight">\(\omega_p = \omega_n\)</span></p>
@@ -520,7 +520,7 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/f9358aae59f636e43baf9c8c3a0a970e252cabcbe0d30f8eb06e7e5387615f0b.png" src="../_images/f9358aae59f636e43baf9c8c3a0a970e252cabcbe0d30f8eb06e7e5387615f0b.png" />
+<img alt="../_images/3e7a10c00a2d68357cd54c1f0aec1adbcb50dd928a953b4982204506ae8f19e2.png" src="../_images/3e7a10c00a2d68357cd54c1f0aec1adbcb50dd928a953b4982204506ae8f19e2.png" />
 </div>
 </div>
 <blockquote>
@@ -602,7 +602,7 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/b8f959c3bc1b5e7b860e8ac1b647330ee4f8c31206d4d8209bf26b5efa737ef3.png" src="../_images/b8f959c3bc1b5e7b860e8ac1b647330ee4f8c31206d4d8209bf26b5efa737ef3.png" />
+<img alt="../_images/8752ca0468dac76387f0b1485b75d77451e8c53bf6478fc557131874a4b86bab.png" src="../_images/8752ca0468dac76387f0b1485b75d77451e8c53bf6478fc557131874a4b86bab.png" />
 </div>
 </div>
 <p>La resonancia en <span class="math notranslate nohighlight">\(\lambda =\)</span> 2.98 <span class="math notranslate nohighlight">\(\mu\)</span>m (3351 cm<span class="math notranslate nohighlight">\(^{-1}\)</span>) no está presente en el espectro.</p>
@@ -676,7 +676,7 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/11b9303ae7224cd44b3d65f171866ae84154e469248e2d6667f2936cd07bf71d.png" src="../_images/11b9303ae7224cd44b3d65f171866ae84154e469248e2d6667f2936cd07bf71d.png" />
+<img alt="../_images/925e291761123cdac5e3221c7fd06955ae4aeafd5316e6c255a889ed8a0d0c05.png" src="../_images/925e291761123cdac5e3221c7fd06955ae4aeafd5316e6c255a889ed8a0d0c05.png" />
 </div>
 </div>
 </section>
@@ -690,8 +690,8 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 \end{equation*}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(m_e\)</span>, <span class="math notranslate nohighlight">\(e\)</span> y <span class="math notranslate nohighlight">\(\Gamma_e\)</span> son, respectivamente, la masa, la carga elemental y la taza de decaimiento del electrón.</p>
 <p>Mediante un procedimiento similar al utilzado para el modelo de Lorentz, derivamos el <strong>modelo de Drude</strong> para conductores:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e936b312-6bb1-41ec-ba51-d682ac591443">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-e936b312-6bb1-41ec-ba51-d682ac591443" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4992160a-6cd4-4128-88ac-b6619bc8369f">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-4992160a-6cd4-4128-88ac-b6619bc8369f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty - \frac{\omega_p^2}{\omega^2 + i\Gamma_e \omega},\quad\mathrm{Modelo~de~Drude},
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_ee^2}{\varepsilon_0 m}\)</span> se conoce como frecuencia de plasma, y <span class="math notranslate nohighlight">\(N_e\)</span> es la densidad de número de electrones. Similar al modelo de Lorentz, <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span> representa la polarización neta del material.</p>
@@ -746,7 +746,7 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/d1d79c8dd823cdfe56a32c6896191f496c14ba44f8f480ef2b2385552c85d751.png" src="../_images/d1d79c8dd823cdfe56a32c6896191f496c14ba44f8f480ef2b2385552c85d751.png" />
+<img alt="../_images/e15873e9aa1d175d35346ee2693474ed95ae814bb838c8e00f99200c5ad7533e.png" src="../_images/e15873e9aa1d175d35346ee2693474ed95ae814bb838c8e00f99200c5ad7533e.png" />
 </div>
 </div>
 <p>Una característica del modelo de Drude es que <span class="math notranslate nohighlight">\(\varepsilon' &lt; 0\)</span> para <span class="math notranslate nohighlight">\(\omega_p/\omega \gtrsim 1\)</span>. Esto se manifiesta en el índice de refracción como <span class="math notranslate nohighlight">\(\kappa &gt; n\)</span></p>
@@ -802,7 +802,7 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/63813956d8b3c9263887311b437994929e7ca45cb403793d2603733ef42f93c0.png" src="../_images/63813956d8b3c9263887311b437994929e7ca45cb403793d2603733ef42f93c0.png" />
+<img alt="../_images/95406c9256a1ce16a6d040b5c608f41deb2d6cf7dbf2548aab6412e4a4c4cd6b.png" src="../_images/95406c9256a1ce16a6d040b5c608f41deb2d6cf7dbf2548aab6412e4a4c4cd6b.png" />
 </div>
 </div>
 <p>En general, los metales pueden ser bien representados por el modelo de Drude. En general, <span class="math notranslate nohighlight">\(\omega_p\)</span> se ubica en el espectro UV y, por lo tanto, reflejan la luz visible (efecto espejo)</p>
@@ -848,7 +848,7 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3dbfd48bb608cbae9f79cee0bf1b2240aa3f041586dcdd85b6858a51b6d6567a.png" src="../_images/3dbfd48bb608cbae9f79cee0bf1b2240aa3f041586dcdd85b6858a51b6d6567a.png" />
+<img alt="../_images/987201361fa827aef3d9d298ba5f6834115af5abfab90bf8dbeb97e78893a31b.png" src="../_images/987201361fa827aef3d9d298ba5f6834115af5abfab90bf8dbeb97e78893a31b.png" />
 </div>
 </div>
 <p>Notemos como para <span class="math notranslate nohighlight">\(\lambda \approx 0.8\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m, la respuesta del material se desvía del modelo de Drude. Esta respuesta esta asociada a un modo de vibración (modelo de Lorentz).</p>
@@ -911,7 +911,7 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/74a0a670da5542b64ccc80317290b1c7924f3b29c09387b4913c2ddcbc6eafd4.png" src="../_images/74a0a670da5542b64ccc80317290b1c7924f3b29c09387b4913c2ddcbc6eafd4.png" />
+<img alt="../_images/29ad6106bdcefb8b4a6c773d449e99956a85bfda8a01d45dc3318c253d217fdd.png" src="../_images/29ad6106bdcefb8b4a6c773d449e99956a85bfda8a01d45dc3318c253d217fdd.png" />
 </div>
 </div>
 <p>Otro ejemplo es el dioxido de titanio (TiO<span class="math notranslate nohighlight">\(_2\)</span>), el cual presenta absorción interbanda en el espectro ultravioleta, y oscilaciones de Lorentz en el infrarojo.</p>
