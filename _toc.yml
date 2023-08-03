@@ -16,7 +16,7 @@ parts:
     - file: 03_Interacción_materia-luz/03_Interacción_materia-luz
     - file: 04_Scattering/04_Scattering
     - file: 05_TransporteRadiativo/05_TransporteRadiativo
-  - caption: Parte 2 - Diseño de sistemas para manejo y conversión de energía solar
+  - caption: Parte 2 - Diseño de sistemas de manejo y conversión solar
     numbered: true
     chapters:
     - file: 06_RadiacionTermica/06_RadiacionTermica
