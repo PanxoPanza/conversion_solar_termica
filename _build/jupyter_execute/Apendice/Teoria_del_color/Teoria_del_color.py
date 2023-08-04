@@ -1,6 +1,17 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[1]:
+
+
+# instalar librerías para ejectutar .ipynb en la nube
+
+import os, sys
+if not os.path.exists("empylib"):
+    get_ipython().system('git clone https://github.com/PanxoPanza/empylib.git')
+    get_ipython().system('{sys.executable} -m pip install iadpython')
+
+
 # # Teoria del color
 
 # ## Introducción
@@ -26,7 +37,7 @@
 
 # Analicemos el comportamiento de las funciones de combinación de colores.
 
-# In[1]:
+# In[2]:
 
 
 import matplotlib.pyplot as plt
@@ -79,7 +90,7 @@ plt.legend();
 
 # Analicemos el siguiente modelo de colores aditivos.
 
-# In[2]:
+# In[3]:
 
 
 # importamos librerías necesarias
@@ -134,7 +145,7 @@ def plot_additive_color(R,G,B):
     ax2.set_facecolor('k');
 
 
-# In[3]:
+# In[4]:
 
 
 from ipywidgets import interact
@@ -153,7 +164,7 @@ def g(R = 1, G = 1, B = 1):
 
 # El siguiente modelo explica el concepto de coloración sustractiva
 
-# In[4]:
+# In[5]:
 
 
 # importamos librerías necesarias
@@ -209,7 +220,7 @@ def plot_substractive_color(R,G,B):
     ax2.set_facecolor('k');
 
 
-# In[5]:
+# In[6]:
 
 
 from ipywidgets import interact
