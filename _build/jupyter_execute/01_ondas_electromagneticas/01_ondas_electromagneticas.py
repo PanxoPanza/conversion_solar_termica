@@ -77,25 +77,6 @@
 # 
 # >En la figura anterior (divergente), $\nabla\times\vec{f} = 0$ en todos los casos.
 
-# ### Ejemplos de uso de operadores diferenciales
-# Los operadores diferenciales permiten una descripción más compacta en de las formulas basadas en ecuaciones diferenciales parciales.
-
-# <img src="./images/mass_conservation.png" width="500" align= center>
-
-# Un ejemplo conocido es el caso de la ecuación de conservación de masa en su forma diferencial.
-# 
-# $$\frac{\partial \rho}{\partial t}+\frac{\partial (\rho u)}{\partial x} +\frac{\partial (\rho v)}{\partial y}+\frac{\partial (\rho w)}{\partial z}=0.$$
-# 
-# Usando el operador Del,
-# 
-# $$\frac{\partial \rho}{\partial t} + \nabla\cdot\left(\rho\vec{V}\right)
-# =0,$$
-# 
-# o bien:
-# 
-# $$\frac{\partial \rho}{\partial t} + \vec{V}\cdot\nabla\rho+ \rho\left(\nabla\cdot\vec{V}\right)
-# =0.$$
-
 # ## Ecuaciones de Maxwell
 
 # ### Ley de Gauss

@@ -3,7 +3,24 @@
 
 # # Introducción al curso
 
+# ## Utilización del recurso solar
+# 
+# El sol es la única fuente de energía externa disponible.
+# <img src="./images/solar-earth_energy-balance.png" width="800" align= center>
+
+# Si realizamos un balance de energía en la tierra tenemos que, necesariamente, **toda la energía absorbida por el sol ($\dot{E}_\mathrm{sun}$) debe ser rechazada hacia el universo ($\dot{E}_\mathrm{universe}$).** *El efecto del cambio climático es, por consecuencia, el resultado de un desbalance ocacionado por la incapacidad de la tierra de disipar esta energía.*
+
+# \begin{equation*}
+# \frac{d}{dt}E_\mathrm{earth} = \dot{E}_\mathrm{sun} - \dot{E}_\mathrm{universe} = 0
+# \end{equation*}
+
+# Cuando utilizamos una fuente de energía distina a la solar estamos, entonces, utilizando parte de las reservas acumuladas. **Reservas que también tiene su origen en la energía solar**.
+
 # ## Situación actual del sistema energético
+
+# ### Generación de energía
+# 
+# A nivel mundial, el consumo de combustibles fósiles sigue en aumento. El siguiente reporte considera el consumo de energía, incluyendo consumo domiciliario, industrial y transporte (aereo, marítimo, etc). Los valores indicados en este gráfico, representan la cantidad de energía equivalente en combustible fósil considerando la [generación por una central termoeléctrica con eficiencia 38.8% - 45%](https://www.energyinst.org/statistical-review/about).
 
 # In[1]:
 
@@ -12,43 +29,62 @@ from IPython.display import display, HTML, IFrame
 IFrame('https://ourworldindata.org/grapher/energy-consumption-by-source-and-region?stackMode=absolute', '100%', '600px')
 
 
-# **Datos relevantes**
-# - El consumo mundial de combustibles fósiles (petróleo, gas y carbón) a aumentado en casi 65% desde el año 1990 hasta el año 2021.
-# - El porcentaje de energía proveniente de combustibles fósiles, ha disminuido de casi un 87% en 1990 a 83% en el 2021 (en Chile, este porcentaje cayó desde 82% a 76.5%).
-# - Actualmente en Chile, las energías renovables representan un 23.5%, donde un 6.25% proviene de energía solar.
-
-# >Por otro lado, **la disponiblidad de combustilbes fósiles es limitada**. Segun estudios ´[las reservas de petroleo, gas y carbón se agotarán para los años 2052, 2060 y 2090, respectivamente.](https://earthbuddies.net/when-will-we-run-out-of-fossil-fuel/)
+# Respecto a la generación de energía, en Chile se generaron 83 TWh durante el 2022, de los cuales un 55.7% fue generado por fuentes renovables.
 # 
-# >Esto significa que los precios de los combustibles fósiles seguirán aumentando en las próximas décadas.
-
-# ## Problemas ambientales asociados al sistema energético actual
-# Como vimos, aunque el consumo de energías renovables ha ido en aumento, la quema de combustibles fósiles sigue siendo la principal fuente de energía en el mundo.
-
-# Además de los problemas asociados a la disponibilidad limitada y aumento de precio de los combustibles fósiles, existen consecuencias medioambientales que tienen asociado un costo indirecto, tales como:
-# - Lluvia ácida asociada a la emisión de SO$_2$ y NO$_x$
-# - Disminución de la capa de ozono por emisión de CFC y NO$_x$. (*Aunque se han tomado una serie de medidas para reducir las emisiones de CFC, se estima que el daño en zonas como la Antartica seguirá presenta hasta, al menos, el año 2075.*)
-# - Cambio climático producto del aumento de gases de efecto invernadero
-
-# ## Tecnologías de manejo y conversión de energía solar
-
-# ### Aspectos generales de la energía solar
-# - El sol es la única fuente externa de energía en la tierra
-# - Todas la formas de energía disponibles tiene origen solar (combustibles fósiles, mareomotríz, eólica, etc)
-
-# ### Disponibilidad de energía solar
-# 
+# **Participación relativa por fuente de generación (%).** (Fuente: [Generadoras de Chile](http://generadoras.cl/))
 
 # In[2]:
 
 
-IFrame('https://globalsolaratlas.info/map','100%','600px')
+from IPython.display import display, HTML, IFrame
+IFrame('https://docs.google.com/spreadsheets/d/e/2PACX-1vSupsaku1SZ9F-OqbhRnZQ7FFAZ4yDnj2FGe8ACY00UCOXgga5PA5Z5Z2Y_wXH-EkLEkcAHTNXmgelW/pubchart?oid=1101314265&amp;format=interactive', '100%', '450px')
 
 
-# Chile es el país con mayores niveles de radiación en el mundo. 
+# La demanda de combustibles fósiles se ha reducido. Sin embargo, el porcentage de reducción es pequeño.
 # 
-# Por ejemplo, en base al atlas solar del [World Bank Group](https://globalsolaratlas.info/map?c=11.523088,8.261719,3), si calculamos la energía generada por el área con mayores niveles de radiación considerando paneles con [potencia máxima de 500 Wp](https://solarity.cz/blog/500-wp-solar-modules-era/)
+# **Volumen de energía generada por fuente (GWh).** (Fuente: [Generadoras de Chile](http://generadoras.cl/))
+# 
+# 
 
 # In[3]:
+
+
+from IPython.display import display, HTML, IFrame
+IFrame('https://docs.google.com/spreadsheets/d/e/2PACX-1vSupsaku1SZ9F-OqbhRnZQ7FFAZ4yDnj2FGe8ACY00UCOXgga5PA5Z5Z2Y_wXH-EkLEkcAHTNXmgelW/pubchart?oid=1025565804&amp;format=interactive', '100%', '450px')
+
+
+# ### Consumo de reservas
+# 
+# Como revisabamos en la sección anterior, seguimos utilizando gran parte de las reservas disponibles. Esto, según la *Global Footprint Network*, a una tasa mayor que nuestra capacidad para generarlas. Por ejemplo, **las reservas regeneradas proyectadas para el 2023 se agotaron el 2 de agosto**. Esta fecha, denominada Día de la Sobrecarga de la Tierra o [*Earth overshoot day*](https://www.overshootday.org/) se hace cada año más corta.
+
+# In[4]:
+
+
+from IPython.display import display, HTML, IFrame
+IFrame('https://data.footprintnetwork.org/#/', '100%', '600px')
+
+
+# ### Manejo de ganancias y pérdidas energéticas
+# 
+# Por otro lado, tenemos un uso ineficiente de esta energía, principalmente en los sistemas de enfriamiento y calefacción. Según la *international energy agency*, [el consumo de energía para enfriamiento de espacios representa un 10% del consumo global, y puede alcanzar hasta el 50% durante el verano en regiones con temperaturas altas](https://www.iea.org/commentaries/keeping-cool-in-a-hotter-world-is-using-more-energy-making-efficiency-more-important-than-ever). 
+# 
+# **Consumo eléctrico diario en acondicionamiento de aire versus temperatura en India (mayo y junio, 2019 y 2023)**
+# 
+# <img src="./images/daily-electricity-load-versus-temperature-in-india-may-and-june-2019-and-2023.png" width="800" align= center>
+
+# En sintesis, podemos deducir que el desarrollo sustentable en la tierra dependerá de nuestra capacidad de:
+# 
+# - Generar energía directa del sol y otras fuentes renovables
+# - Producir reservas con fuentes limpias
+# - Manejar el balance entre las ganancias ($\dot{E}_\mathrm{sun}$) y pérdidas ($\dot{E}_\mathrm{universe}$) de energía radiativa.
+
+# ## Tecnologías de manejo y conversión de energía solar
+
+# ### El recurso solar en Chile y el mundo
+
+# Chile es el país con mayores niveles de radiación en el mundo. Por ejemplo, en base al atlas solar del [World Bank Group](https://globalsolaratlas.info/map?c=11.523088,8.261719,3), si calculamos la energía generada por el área con mayores niveles de radiación considerando paneles con [potencia máxima de 500 Wp](https://solarity.cz/blog/500-wp-solar-modules-era/)
+
+# In[5]:
 
 
 A     = 304707.40 # Superficie total (km^2)
@@ -62,22 +98,10 @@ print("Energía eléctrica suministrada: %.1f TWh (Energía consumida en Chile 4
 
 # > "*Para abastecer toda la energía que requiere Chile si tuviéramos almacenamiento suficiente necesitamos unos mil kilómetros cuadrados, algo menos que el 1% del desierto y equivalente más o menos a la superficie de la comuna de Melipilla.*"  [Rodrigo Palma, director de SERC, 2022](https://www.revistaei.cl/2019/09/04/con-todo-el-potencial-de-energia-solar-de-chile-se-podria-abastecer-60-veces-el-consumo-del-pais-y-el-20-del-mundo/#)
 
-# ### Principales de tecnologías para conversión y manejo  de energía solar
+# Sin embargo, como revisamos anteriormente, estos áltos niveles de radiación implican un calentamiento excesivo en hogares durante el verano.
 
-# **Tecnologías conversionales**
-# 
-# <img src="./images/fotovoltaica_termosolar.png" width="600" align= center>
-
-# **Tecnologías emergentes**
-# 
-# <img src="./images/emerging_solar_energy_conversion.png" width="600" align= center>
-
-# **Combustibles solares**
-# 
-# <img src="./images/solar_fuels.png" width="600" align= center>
-
-# ### La energía solar en Chile
-# En Chile las principales tecnologías son la fotovoltaica y termosolar, [con una capacidad instalada total de 4.6 GW](https://www.pv-magazine-latam.com/2021/04/13/chile-alcanza-46-gw-fotovoltaicos-de-potencia-instalada/). Con excepción de la planta termosolar Cerro Dominador, la mayoría de este simunistro corresponde a plantas solares fotovoltaicas, de las cuales la más grande es El Romero Solar.
+# ### Tecnologías convencionales
+# Las principales tecnologías son la fotovoltaica y termosolar. En Chile, [la capacidad instalada total es de 4.6 GW](https://www.pv-magazine-latam.com/2021/04/13/chile-alcanza-46-gw-fotovoltaicos-de-potencia-instalada/). Con excepción de la planta termosolar Cerro Dominador, la mayor parte de este simunistro corresponde a plantas solares fotovoltaicas.
 
 # <img src="./images/planta_fotovoltaica_ElRomero_chile.jpg" width="500" align= center>
 # 
@@ -87,36 +111,34 @@ print("Energía eléctrica suministrada: %.1f TWh (Energía consumida en Chile 4
 # 
 # <center><a href="https://laderasur.com/articulo/recorriendo-cerro-dominador-la-unica-planta-termosolar-que-funciona-en-medio-del-desierto-de-atacama/">Planta termosolar cerro dominador (110 MW)</a></center>
 
-# ### Estado del arte de las tecnologías de conversión y manejo de energía solar
-# Las actuales tecnologias basadas en energía solar (principalmente fotovoltaica y termosolar) presentan una serie de deseventajas:
+# ### Estado del arte de las tecnologías convecionales
+# Las actuales tecnologias basadas en energía solar (principalmente fotovoltaica y termosolar) presentan una serie de deseventajas, tales como:
 
-# - **Baja eficiencia.** *Hoy en día la eficiencia de un panel fotovoltaico es cercana al 30%. En el caso de una central termosolar, la eficiencia es menor al 20%.* 
+# - **Baja eficiencia.** Hoy en día la eficiencia de un panel fotovoltaico es cercana al 30%. En el caso de una central termosolar, la eficiencia es menor al 20%.
+# 
+# - **Almacenamiento de energía limitado.** Esto particularmente en centrales fotovoltaicas. Si bien, las centrales termosolares pueden almacenar energía hasta por 24 horas, el costo nivelado de esta energía es superior a la energía por combustibles fósiles. Similar con el costo de almacenamiento por hidrógeno.
+# 
+# - **Limitada capacidad de reutilización.** Los paneles fotovoltaicos, la principal tecnología de conversión solar, tienen una vida útil promedio de 25 años. Luego de esto, la recuperación de los componentes es aún compleja y costosa.
+# 
+# - **Manejo ineficiente de la energía.** En hogares y oficinas, el control de las ganancias y pérdidas de calor por radiación es aún deficiente.([El consumo de aire acondicionado en edificios representa el 20% del consumo total](https://www.iea.org/reports/the-future-of-cooling))
+
+# ### Tecnologías emergentes
+# 
+# La investigación en tecnologías de conversión y manejo del recurso solar ha avanzado en diversas direcciones. Algunos ejemplos relevantes son:
 
 # 
-# 
-# - **Almacenamiento de energía limitado.** *Esto particularmente en centrales fotovoltaicas. Si bien, las centrales termosolares puede almacenar energía hasta por 24 horas, el costo nivelado de esta energía es superior a la energía por combustibles fósiles. Similar con el costo de almacenamiento por hidrógeno.* 
+# <img src="./images/emerging_solar_energy_conversion.png" width="600" align= center>
 
-# - **Limitada capacidad de reutilización.** *Los paneles fotovoltaicos, la principal tecnología de conversión solar, tienen una vida útil promedio de 25 años. Luego de esto, la recuperación de los componentes es aún compleja y costosa.*
+# <img src="./images/solar_fuels.png" width="600" align= center>
 
-# - **Manejo infeciente de la energía.** *Además de fuentes de energía renovables, un desarrollo sustentable también requiere un manejo eficiente de la energía. Particularmente en hogares y oficinas, el control de las ganancias y pérdidas de calor por radiación es aún deficiente.*
-
-# ## Manejo de la radiación solar
+# ## Nanotecnología para el control de la radiación
 # 
 # El control de la radiación solar es clave en aspectos, tales como, mejorar la captura de energía solar o reducir el consumo de energía para enfriamiento y calefacción
 
-# ### Espectros de energía radiativa
-# 
-# El sol y, en general, todos los cuerpos a temperaturas sobre 0K emiten radiación, la cual está compuesta de ondas electromagnéticas con un amplio espectro de longitudes de onda.
-# <img src="./images/thermal_radiation_spectra.png" width="450" align= center>
-
-# Cada región del espectro genera una respuesta particular en los materiales. El adecuado manejo de este espectro es, así, fundamental para el aprovechamiento eficiente de la energía solar.
-
-# ### Nanotecnología para el control de la radiación
-
 # El desarrollo de la manufactura de nanomateriales ha prograsado significativamente en las últimas décadas. Hoy en día, es común encontrar nanoestructuras en dispositivos electrónicos, productos cosméticos, entre otros.
 # 
-# <img src="./images/transistor_evolution.png" width="500" align= center>
+# <img src="./images/transistor_evolution.png" width="800" align= center>
 
 # Esta manipulación de estructuras a escala nanométrica, deriva en materiales articiales con propiedades ópticas que permiten optimizar el intercambio de energía por radiación.
 # 
-# <img src="./images/photonic_nanostructures.png" width="500" align= center>
+# <img src="./images/photonic_nanostructures.png" width="800" align= center>

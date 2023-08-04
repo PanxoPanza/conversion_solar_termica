@@ -225,8 +225,7 @@ epsinf = 2
 
 lam = np.linspace(2.0,10,100)   # espectro de longitudes de onda
 # constante dielectrica del agua
-eps_agua = epsinf + nk.lorentz(0, wp[0], wn[0], gamma, lam)**2 \
-                  + nk.lorentz(0, wp[1], wn[1], gamma, lam)**2
+eps_agua = epsinf + nk.lorentz(0, wp[0], wn[0], gamma, lam)**2                   + nk.lorentz(0, wp[1], wn[1], gamma, lam)**2
 
 # graficamos el índice de refracción
 plt.plot(lam, eps_agua.real,'-b', label = 'n')

@@ -268,7 +268,7 @@
 # In[1]:
 
 
-get_ipython().run_cell_magic('capture', 'showplot', "import numpy as np\nimport empylib.nklib as nk\nimport matplotlib.pyplot as plt\n\nlam = np.linspace(0.3,15,100) #longitud de onda en um\nplt.plot(lam,nk.SiO2(lam).real,'-r',label='$n$')\nplt.plot(lam,nk.SiO2(lam).imag,'-b',label='$\\kappa$')\nplt.xlabel('Longitud de onda, $\\lambda$ ($\\mu$m)',fontsize=16)\nplt.ylabel('$n$, $\\kappa$',fontsize=16)\nplt.title('Índice de refracción SiO$_2$',fontsize=18)\nplt.legend(frameon=False,fontsize=16)\nplt.tick_params(labelsize=16)\n")
+get_ipython().run_cell_magic('capture', 'showplot', "import numpy as np\nimport empylib.nklib as nk\nimport matplotlib.pyplot as plt\n\nlam = np.linspace(0.3,15,100) #longitud de onda en um\nplt.plot(lam,nk.SiO2(lam).real,'-r',label='$n$')\nplt.plot(lam,nk.SiO2(lam).imag,'-b',label='$\\kappa$')\nplt.xlabel('Longitud de onda, $\\lambda$ ($\\mu$m)',fontsize=16)\nplt.ylabel('$n$, $\\kappa$',fontsize=16)\nplt.title('Índice de refracción SiO$_2$',fontsize=18)\nplt.legend(frameon=False,fontsize=16)\nplt.tick_params(labelsize=16)")
 
 
 # In[2]:

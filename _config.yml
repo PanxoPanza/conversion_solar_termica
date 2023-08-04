@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: MEC501 - Manejo y conversión de energía solar térmica
+title: MEC501 - Manejo y conversión solar
 author: Francisco V. Ramirez-Cuevas
 
 # Force re-execution of notebooks on each build.
