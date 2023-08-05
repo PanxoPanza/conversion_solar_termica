@@ -300,7 +300,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Tutorial/Tutorial2/Tutorial2.ipynb"
+        <a href="https://mybinder.org/v2/gh/PanxoPanza/conversion_solar_termica/main?urlpath=tree/Tutorial/Tutorial2/Tutorial2.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -313,6 +313,24 @@ title="Launch on Binder"
     <img src="../../_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/PanxoPanza/conversion_solar_termica/blob/main/Tutorial/Tutorial2/Tutorial2.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
 </a>
 
       </li>
@@ -546,7 +564,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial2_3_0.png" src="../../_images/Tutorial2_3_0.png" />
+<img alt="../../_images/Tutorial2_4_0.png" src="../../_images/Tutorial2_4_0.png" />
 </div>
 </div>
 <p>Con esto podemos analizar la variación del poder de emisión espectral hemisférico del cuerpo negro, <span class="math notranslate nohighlight">\(\pi I_{\mathrm{bb},\lambda}\)</span>, en función de la temperatura</p>
@@ -588,11 +606,11 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/mnt/c/Users/frami/Onedrive - Universidad Adolfo Ibanez/ComputerCodes/Python/custom_packages/empylib/ref_spectra/ref_spectra.py:161: RuntimeWarning: overflow encountered in exp
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/panxopanza/miniconda3/lib/python3.10/site-packages/empylib/ref_spectra/ref_spectra.py:161: RuntimeWarning: overflow encountered in exp
   Ibb = 2*h*c0**2./ll**5*1/(np.exp(h*c0/(ll*T*kB)) - 1)*1E-6
 </pre></div>
 </div>
-<img alt="../../_images/Tutorial2_5_1.png" src="../../_images/Tutorial2_5_1.png" />
+<img alt="../../_images/Tutorial2_6_1.png" src="../../_images/Tutorial2_6_1.png" />
 </div>
 </div>
 <p>Además podemos comprobar la ley de Stefan-Boltzmann para el poder de emisión hemisférico total:</p>
@@ -666,7 +684,7 @@ I_\mathrm{sun,out} = \frac{G_\mathrm{sun}}{\sigma T^4_\mathrm{sun}} \pi I_{\math
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial2_10_0.png" src="../../_images/Tutorial2_10_0.png" />
+<img alt="../../_images/Tutorial2_11_0.png" src="../../_images/Tutorial2_11_0.png" />
 </div>
 </div>
 </section>
@@ -707,7 +725,7 @@ I_\mathrm{sun,out} = \frac{G_\mathrm{sun}}{\sigma T^4_\mathrm{sun}} \pi I_{\math
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial2_12_0.png" src="../../_images/Tutorial2_12_0.png" />
+<img alt="../../_images/Tutorial2_13_0.png" src="../../_images/Tutorial2_13_0.png" />
 </div>
 </div>
 <p><strong>Nota</strong> Para valores <span class="math notranslate nohighlight">\(\lambda &gt; 20\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m y <span class="math notranslate nohighlight">\(\lambda &lt; 0.8\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m, <code class="docutils literal notranslate"><span class="pre">T_atmosphere</span> <span class="pre">=</span> <span class="pre">0</span></code> automáticamente. Aunque no es consistente con la realidad, esta condicion no induce un error significativo, ya que el espectro de emisión de la atmosféra ocurre en el infrarojo medio. Esto último, considerando a la atmósfera como un cuerpo negro a temperatura <span class="math notranslate nohighlight">\(T_\mathrm{atm}\sim 0-35\)</span>°C.</p>
@@ -735,7 +753,7 @@ G_{\mathrm{atm},\lambda} = (1 - \tau_{\mathrm{atm},\lambda})\pi I_{\mathrm{bb},\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial2_15_0.png" src="../../_images/Tutorial2_15_0.png" />
+<img alt="../../_images/Tutorial2_16_0.png" src="../../_images/Tutorial2_16_0.png" />
 </div>
 </div>
 </section>
