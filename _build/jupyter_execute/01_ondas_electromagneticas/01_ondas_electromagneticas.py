@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[1]:
+
+
+import importlib.util
+if importlib.util.find_spec('empylib') is None:
+    get_ipython().system('pip install git+https://github.com/PanxoPanza/empylib.git')
+
+
 # # La radiación como un fenómeno electromagnético
 
 # ## Repaso de cálculo vectorial
@@ -138,7 +146,7 @@
 
 # La ley de Ampere y de Faraday son la base del funcionamiento de motores de inducción, motores DC, transformadores, etc.
 
-# In[1]:
+# In[2]:
 
 
 from IPython.display import YouTubeVideo
@@ -268,7 +276,7 @@ YouTubeVideo('CWulQ1ZSE3c', width=600, height=400,  playsinline=0)
 
 # En general, tenemos dos tipos de ondas, transversales, y longitudinales
 
-# In[2]:
+# In[3]:
 
 
 from IPython.display import IFrame, display

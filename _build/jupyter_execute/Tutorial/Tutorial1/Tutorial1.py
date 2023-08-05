@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[1]:
+
+
+import importlib.util
+if importlib.util.find_spec('empylib') is None:
+    get_ipython().system('pip install git+https://github.com/PanxoPanza/empylib.git')
+
+
 # # Tutorial 1
 # 
 # Este es un tutorial para utilizar las principales librerías del paquete ```empylib```. Estas son:
@@ -12,7 +20,7 @@
 
 # Primero, importamos los paquetes estandar de `numpy` y `matplotlib`
 
-# In[1]:
+# In[2]:
 
 
 import numpy as np
@@ -21,7 +29,7 @@ import matplotlib.pyplot as plt
 
 # ## Conversión de unidades
 
-# In[2]:
+# In[3]:
 
 
 import empylib as em
@@ -44,7 +52,7 @@ import empylib as em
 
 # Por ejemplo, realicemos la conversión del espectro $\lambda \in [0.3,1.0]$ $\mu$m considerando 8 puntos igualmente espaciados, a unidades de eV.
 
-# In[3]:
+# In[4]:
 
 
 lam = np.linspace(0.3,1.0,8)   # espectro de longitudes de onda en um
@@ -54,7 +62,7 @@ lam_in_eV = em.convert_units(lam,'um','eV') # convertimos lam a unidades de eV
 print('longitudes de onda en eV:\n', lam_in_eV)
 
 
-# In[4]:
+# In[5]:
 
 
 # revertimos el proceso para recuperar las longitudes de onda en um
@@ -64,7 +72,7 @@ print('longitudes de onda en um:\n', lam_in_um)
 
 # ## Índices de refracción (```nklib```)
 
-# In[5]:
+# In[6]:
 
 
 import empylib.nklib as nk
@@ -87,13 +95,13 @@ import empylib.nklib as nk
 # 
 # Por ejemplo, supongamos que necesitamos el índice de refracción del sílice en el espectro $\lambda\in[0.5,20]$ $\mu$m.
 
-# In[6]:
+# In[7]:
 
 
 nk.Al(0.5)
 
 
-# In[7]:
+# In[8]:
 
 
 lam = np.linspace(0.5,20,100)   # arreglo de 100 datos entre 0.5 y 5.0 micrones
@@ -115,7 +123,7 @@ plt.show()
 # 
 # Cada modelo requiere una serie de parámetros. Podemos verificar los parámetros requeridos mediante la función ```help```.
 
-# In[8]:
+# In[9]:
 
 
 help(nk.lorentz)
@@ -131,7 +139,7 @@ help(nk.lorentz)
 
 # **Índice de refracción según modelo de Lorentz**
 
-# In[9]:
+# In[10]:
 
 
 lam = np.linspace(2,20,200)   # arreglo de 100 datos entre 0.5 y 5.0 micrones
@@ -154,7 +162,7 @@ plt.show()
 
 # **Constante dieléctrica según modelo de Lorentz**
 
-# In[10]:
+# In[11]:
 
 
 eps_lorentz = Nlorentz**2
@@ -168,7 +176,7 @@ plt.legend()
 plt.show()
 
 
-# In[11]:
+# In[12]:
 
 
 lam = np.linspace(0.3,8,200)   # arreglo de 100 datos entre 0.5 y 5.0 micrones
@@ -203,7 +211,7 @@ plt.plot(lam, epsco2.imag,'b')
 # - $\varepsilon_\infty$ = 2.0
 # 
 
-# In[12]:
+# In[13]:
 
 
 # a partir del video tenemos
@@ -214,7 +222,7 @@ wn
 
 # Generamos nuestro modelo, y graficamos para $\lambda\in[2,10]$ $\mu$m
 
-# In[13]:
+# In[14]:
 
 
 # generamos modelo del agua 
@@ -238,7 +246,7 @@ plt.show()
 
 # ## Reflexión/Transmissión (```waveoptics```)
 
-# In[14]:
+# In[15]:
 
 
 import empylib.waveoptics as wv
@@ -267,14 +275,14 @@ import empylib.waveoptics as wv
 # 
 # >Notar que ```n1=1.0``` es un valor ```float``` unidimencional, mientras que ```n2``` es un arreglo en el espectro $\lambda \in [0.3,1.0]$ $\mu$m. En este caso, la función repite ```n1=1.0``` por cada valor espectral de ```n2```. **En el caso que ```n1``` y ```n2``` sean un arreglo, ambos deben tener igual dimención.**
 
-# In[15]:
+# In[16]:
 
 
 R, T = wv.interface(0,1.0,2.0, pol='TM')[:2] # extraer los dos primeros elementos de la función
 print(R, T)
 
 
-# In[16]:
+# In[17]:
 
 
 theta = np.radians(30)         # Angulo de incidencia (radianes)
@@ -295,7 +303,7 @@ Rs, Ts, rs, ts = wv.interface(theta,n1,n2, pol='TE') # polarizacion TE
 
 # Abajo graficamos los coeficientes de Fresnel a la izquierda (solo la parte real) y el flujo de energía a la derecha. Notar como la reflectividad aumenta para $\lambda < 2\pi c_0/\omega_p$
 
-# In[17]:
+# In[18]:
 
 
 fig, ax = plt.subplots(1,2)
@@ -340,7 +348,7 @@ plt.show()
 # - La luz incide sobre una película de espesor $d = 300$ nm e índice de refracción $N_2 = 1.5$.
 # - La película está depositada sobre un sustrato con índice de refracción $N_3 = 5.0 + 3i$:
 
-# In[18]:
+# In[19]:
 
 
 lam = np.linspace(0.3,0.8,100)  # espectro de longitudes de onda (um)
@@ -360,7 +368,7 @@ Rs, Ts, rs, ts = wv.multilayer(lam,theta, N, d, pol='TE')
 # 
 # Por ejemplo, si ahora queremos determinar la respuesta óptica de un arreglo de una capa delgada de sílice ($d_1 = 100$ nm) sobre una capa de plata ($d_2 = 10$ nm), sobre un sustrato con índice de refracción $n_{back} = 5.0$ 
 
-# In[19]:
+# In[20]:
 
 
 lam = np.linspace(0.3,0.8,100)  # espectro de longitudes de onda (um)
@@ -399,7 +407,7 @@ plt.show()
 # 
 # Por ejemplo, evaluemos el ejemplo de la [clase 2](https://panxopanza.github.io/conversion_solar_termica/2_ondas_EM_en_la_materia/2_ondas_EM_en_la_materia.html#refleccion-y-transmission-en-peliculas-delgadas) ($n_\mathrm{front}= 1.0$, $n_\mathrm{layer}= 1.5$, $n_\mathrm{back} = 4.3$), considerando una capa de espesor $d = 300$ nm, y $\theta_i = 30°$
 
-# In[20]:
+# In[21]:
 
 
 lam = np.linspace(0.3,0.8,100)  # espectro de longitudes de onda (um)
@@ -433,7 +441,7 @@ plt.show()
 
 # En el límite de solo una interface, ```interface```, ```multilayer``` y ```incoh_multilayer``` entregan el mismo resultado
 
-# In[21]:
+# In[22]:
 
 
 lam = 0.5                # longitud de onda en micrones
@@ -449,7 +457,7 @@ print('incoh_multilayer:\t R = %.3f, T = %.3f' % wv.incoh_multilayer(lam,theta,N
 
 # ## Scattering de mie (```miescattering```)
 
-# In[22]:
+# In[23]:
 
 
 import empylib.miescattering as mie
@@ -474,7 +482,7 @@ import empylib.miescattering as mie
 
 # En el ejemplo de abajo, calculamos la $C_\mathrm{abs}$, $C_\mathrm{sca}$ y $C_\mathrm{ext}$ para una partícula de oro de $D = 100$ nm de diámetro, alojada de sílice. El espectro considerado es $\lambda\in[0.3,1.0]$ $\mu$m
 
-# In[23]:
+# In[24]:
 
 
 lam = np.linspace(0.3,1.0,100) #espectro de longitudes de onda (arreglo de 100 puntos entre 0.3 y 1.0 micrones)

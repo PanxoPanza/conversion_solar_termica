@@ -9,12 +9,11 @@
 # * [**Tutorial 2**](./Tutorial2/Tutorial2.ipynb)
 
 # ## Instrucciones de instalación
-# Antes de ejecutar los tutoriales, instalar las siguientes librerías:
+# Antes de ejecutar los tutoriales, instalar la librería ```empylib``` ejecutando la siguiente sentencia en una celda de este notebook:
 # 
-# - ```empylib```: paquete principal del curso. Esta disponible desde github ejecutando la siguiente sentencia en una celda de este notebook:
-#     ```python
-#     !pip install git+https://github.com/PanxoPanza/empylib.git
-#     ```
-#     Al ejecutar el comando, se instalará la dependencia ```iadpython```, librería para simulaciones de transferencia radiativa  de energía.
+# ```python
+# !pip install git+https://github.com/PanxoPanza/empylib.git
+# ```
+# El comando instalará la dependencia ```iadpython```, una librería para simulaciones de transferencia radiativa  de energía.
 # 
 # >**Nota.** Esta instancia debe ser ejecutada solo una vez.

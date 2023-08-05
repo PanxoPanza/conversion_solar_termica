@@ -1,12 +1,20 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[1]:
+
+
+import importlib.util
+if importlib.util.find_spec('empylib') is None:
+    get_ipython().system('pip install git+https://github.com/PanxoPanza/empylib.git')
+
+
 # 
 # # Tutorial 2
 # 
 # Este es un tutorial para utilizar el módulo `ref_spectra` de la librería `empylib`
 
-# In[1]:
+# In[2]:
 
 
 import empylib.ref_spectra as rf
@@ -22,7 +30,7 @@ import empylib.ref_spectra as rf
 # 
 # Como parámetro de salida, la función entregará la radiancia espectral
 
-# In[2]:
+# In[3]:
 
 
 # -------------------------------------------------------------------
@@ -52,7 +60,7 @@ plt.show()
 
 # Con esto podemos analizar la variación del poder de emisión espectral hemisférico del cuerpo negro, $\pi I_{\mathrm{bb},\lambda}$, en función de la temperatura
 
-# In[3]:
+# In[4]:
 
 
 from empylib.ref_spectra import color_system as cs
@@ -97,7 +105,7 @@ plt.show()
 # 
 # Para la integración ocupamos la regla del trapecio a travéz de la función `numpy.trapz` (también disponible en la librería `scipy.integrate` como `trapezoid` o `trapz`). [Más info acá](https://panxopanza.github.io/metodos_numericos_mec301/7-Integracion/7-Integracion.html#regla-del-trapecio-scipy-integrate-trapezoid)
 
-# In[4]:
+# In[5]:
 
 
 T = 300
@@ -129,7 +137,7 @@ print('Poder de emisión de cuerpo negro (Stefan-Boltzmann): %.3f W/m^2' % E_sb)
 # 
 # donde $T_\mathrm{sun} = 5777$ K y $G_\mathrm{sun} = 1367$ W/m$^2$.
 
-# In[5]:
+# In[6]:
 
 
 lam = np.linspace(0.1,3.0,1000)
@@ -162,7 +170,7 @@ plt.show()
 # 
 # En el siguiente ejemplo graficaremos la radiación de cuerpo negro con $T = 300$ K, el AM1.5 global y la transmitancia atmosférica. Debido a la diferencia de escalas, **utilizaremos el eje de la derecha para cuantificar la transmitancia atmosférica ($\tau_{\mathrm{atm},\lambda}$), y el eje de la izquierda para la radiación solar y de cuerpo negro**.
 
-# In[6]:
+# In[7]:
 
 
 import matplotlib.pyplot as plt
@@ -204,7 +212,7 @@ plt.show()
 # 
 # donde asumimos $\rho_{\mathrm{atm},\lambda} = 0$ debido a que la atmosféra esta compuesta de gases.
 
-# In[7]:
+# In[8]:
 
 
 Tatm = 300                                           # Temperatura de la atmósfera (K)

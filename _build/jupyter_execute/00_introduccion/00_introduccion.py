@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[1]:
+
+
+import importlib.util
+if importlib.util.find_spec('empylib') is None:
+    get_ipython().system('pip install git+https://github.com/PanxoPanza/empylib.git')
+
+
 # # Introducción al curso
 
 # ## Utilización del recurso solar
@@ -22,7 +30,7 @@
 # 
 # A nivel mundial, el consumo de combustibles fósiles sigue en aumento. El siguiente reporte considera el consumo de energía, incluyendo consumo domiciliario, industrial y transporte (aereo, marítimo, etc). Los valores indicados en este gráfico, representan la cantidad de energía equivalente en combustible fósil considerando la [generación por una central termoeléctrica con eficiencia 38.8% - 45%](https://www.energyinst.org/statistical-review/about).
 
-# In[1]:
+# In[2]:
 
 
 from IPython.display import display, HTML, IFrame
@@ -33,7 +41,7 @@ IFrame('https://ourworldindata.org/grapher/energy-consumption-by-source-and-regi
 # 
 # **Participación relativa por fuente de generación (%).** (Fuente: [Generadoras de Chile](http://generadoras.cl/))
 
-# In[2]:
+# In[3]:
 
 
 from IPython.display import display, HTML, IFrame
@@ -46,7 +54,7 @@ IFrame('https://docs.google.com/spreadsheets/d/e/2PACX-1vSupsaku1SZ9F-OqbhRnZQ7F
 # 
 # 
 
-# In[3]:
+# In[4]:
 
 
 from IPython.display import display, HTML, IFrame
@@ -57,7 +65,7 @@ IFrame('https://docs.google.com/spreadsheets/d/e/2PACX-1vSupsaku1SZ9F-OqbhRnZQ7F
 # 
 # Como revisabamos en la sección anterior, seguimos utilizando gran parte de las reservas disponibles. Esto, según la *Global Footprint Network*, a una tasa mayor que nuestra capacidad para generarlas. Por ejemplo, **las reservas regeneradas proyectadas para el 2023 se agotaron el 2 de agosto**. Esta fecha, denominada Día de la Sobrecarga de la Tierra o [*Earth overshoot day*](https://www.overshootday.org/) se hace cada año más corta.
 
-# In[4]:
+# In[5]:
 
 
 from IPython.display import display, HTML, IFrame
@@ -84,7 +92,7 @@ IFrame('https://data.footprintnetwork.org/#/', '100%', '600px')
 
 # Chile es el país con mayores niveles de radiación en el mundo. Por ejemplo, en base al atlas solar del [World Bank Group](https://globalsolaratlas.info/map?c=11.523088,8.261719,3), si calculamos la energía generada por el área con mayores niveles de radiación considerando paneles con [potencia máxima de 500 Wp](https://solarity.cz/blog/500-wp-solar-modules-era/)
 
-# In[5]:
+# In[6]:
 
 
 A     = 304707.40 # Superficie total (km^2)
