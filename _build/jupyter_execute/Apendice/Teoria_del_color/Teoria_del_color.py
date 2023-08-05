@@ -4,12 +4,9 @@
 # In[1]:
 
 
-# instalar librerías para ejectutar .ipynb en la nube
-
-import os, sys
-if not os.path.exists("empylib"):
-    get_ipython().system('git clone https://github.com/PanxoPanza/empylib.git')
-    get_ipython().system('{sys.executable} -m pip install iadpython')
+import importlib.util
+if importlib.util.find_spec('empylib') is None:
+    get_ipython().system('pip install git+https://github.com/PanxoPanza/empylib.git')
 
 
 # # Teoria del color
@@ -182,13 +179,13 @@ def plot_substractive_color(R,G,B):
     plt.rcParams['font.size'] = '14'  # tamaño de  fuente
 
     # Espectro de longitudes de onda entre 300 y 800 nm
-    lam = np.linspace(0.3,0.8,500)
+    lam = np.linspace(0.3,0.8,100)
 
     # Generamos un material con emisividad en rojo, verde y azul
     wn = em.convert_units(np.array([450, 520, 630]),'nm','eV')
     wp = [B*0.02,G*0.02,R*0.02]  # Frecuencia wp (eV)
-    T  = 0.05    # Taza de decaimiento (eV)
-
+    T  = 0.05                    # Tasa de decaimiento (eV)
+    
     eps_mat = complex(1,0)
     for i in range(len(wn)):
         # constante dieléctrica según modelo de Lorentz
@@ -218,6 +215,8 @@ def plot_substractive_color(R,G,B):
     ax2.set_xticks([])
     ax2.set_yticks([])
     ax2.set_facecolor('k');
+    
+    plt.show()
 
 
 # In[6]:

@@ -469,24 +469,15 @@ title="Print to PDF"
 </ul>
 <section id="instrucciones-de-instalacion">
 <h2>Instrucciones de instalación<a class="headerlink" href="#instrucciones-de-instalacion" title="Permalink to this headline">#</a></h2>
-<p>Antes de ejecutar los tutoriales, instalar los siguiente paquetes:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">empylib</span></code>: paquete principal del curso. Esta disponible desde github ejecutando la siguiente sentencia en una celda de este notebook:</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!git clone https://github.com/PanxoPanza/empylib.git
+<p>Antes de ejecutar los tutoriales, instalar las siguientes librerías:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">empylib</span></code>: paquete principal del curso. Esta disponible desde github ejecutando la siguiente sentencia en una celda de este notebook:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install git+https://github.com/PanxoPanza/empylib.git
 </pre></div>
 </div>
-<p>Esto descargará una carpeta “empylib” con todos los módulos necesarios. <strong>Ejecutar solo una vez para descargar la carpeta</strong> Posteriormente, no es necesario volver a ejecutar esta línea.</p>
-<blockquote>
-<div><p><strong>Nota.</strong> El código debe ser ejecutado en la misma carpeta donde se descargó el paquete <code class="docutils literal notranslate"><span class="pre">empylib</span></code></p>
-</div></blockquote>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">iadpython</span></code>: paquete para simulaciones de transferencia radiativa de energía. Debe ser instalada desde pip, ejecutando el siguiente script en una celda de este notebook</p></li>
+<p>Al ejecutar el comando, se instalará la dependencia <code class="docutils literal notranslate"><span class="pre">iadpython</span></code>, librería para simulaciones de transferencia radiativa  de energía.</p>
+</li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>import sys
-!{sys.executable} -m pip install iadpython
-</pre></div>
-</div>
 <blockquote>
 <div><p><strong>Nota.</strong> Esta instancia debe ser ejecutada solo una vez.</p>
 </div></blockquote>
