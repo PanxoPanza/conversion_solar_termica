@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -657,8 +659,8 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 <p>con <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_pq^2}{\varepsilon_0 m}\)</span></p>
 <p>En el caso del agua, la molecula posee un dipolo eléctrico neto adicional al dipolo inducido. El efecto de la polarización neta se puede representar, cambiando el primer término por un valor constante <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span>.</p>
 <p>El modelo completo se conoce como <strong>modelo de Lorentz</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e3908487-8cb6-4d8d-8875-400b4966c76b">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-e3908487-8cb6-4d8d-8875-400b4966c76b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-086871d8-d2d8-4986-b246-d1a24fb1576a">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-086871d8-d2d8-4986-b246-d1a24fb1576a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty + \frac{\omega_p^2}{\omega_n^2 - \omega^2 - i\Gamma \omega}\quad\mathrm{Modelo~de~Lorentz},
 \end{equation}\]</div>
 <p>Usaremos la función <code class="docutils literal notranslate"><span class="pre">lorentz</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">empylib.nklib</span></code> para generar el índice de refracción y constante dielectrica a partir del modelo de Lorentz, con los parámetros: <span class="math notranslate nohighlight">\(\varepsilon_\infty = 2.0\)</span>, <span class="math notranslate nohighlight">\(\Gamma = 0.1\omega_n\)</span>, y <span class="math notranslate nohighlight">\(\omega_p = \omega_n\)</span></p>
@@ -778,7 +780,10 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03_Interacción_materia-luz_44_0.png" src="../_images/03_Interacción_materia-luz_44_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/panxopanza/miniconda3/lib/python3.10/site-packages/empylib/nklib/
+</pre></div>
+</div>
+<img alt="../_images/03_Interacción_materia-luz_44_1.png" src="../_images/03_Interacción_materia-luz_44_1.png" />
 </div>
 </div>
 <p>La resonancia en <span class="math notranslate nohighlight">\(\lambda =\)</span> 2.98 <span class="math notranslate nohighlight">\(\mu\)</span>m (3351 cm<span class="math notranslate nohighlight">\(^{-1}\)</span>) no está presente en el espectro.</p>
@@ -846,7 +851,10 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03_Interacción_materia-luz_56_0.png" src="../_images/03_Interacción_materia-luz_56_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/panxopanza/miniconda3/lib/python3.10/site-packages/empylib/nklib/
+</pre></div>
+</div>
+<img alt="../_images/03_Interacción_materia-luz_56_1.png" src="../_images/03_Interacción_materia-luz_56_1.png" />
 </div>
 </div>
 </section>
@@ -860,8 +868,8 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 \end{equation*}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(m_e\)</span>, <span class="math notranslate nohighlight">\(e\)</span> y <span class="math notranslate nohighlight">\(\Gamma_e\)</span> son, respectivamente, la masa, la carga elemental y la taza de decaimiento del electrón.</p>
 <p>Mediante un procedimiento similar al utilzado para el modelo de Lorentz, derivamos el <strong>modelo de Drude</strong> para conductores:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-58ebc96d-e431-4c38-8d8e-8b6f185eb18a">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-58ebc96d-e431-4c38-8d8e-8b6f185eb18a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1ba0ac4d-1ab9-4cfe-85a4-1a4a3393f72e">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-1ba0ac4d-1ab9-4cfe-85a4-1a4a3393f72e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty - \frac{\omega_p^2}{\omega^2 + i\Gamma_e \omega},\quad\mathrm{Modelo~de~Drude},
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_ee^2}{\varepsilon_0 m}\)</span> se conoce como frecuencia de plasma, y <span class="math notranslate nohighlight">\(N_e\)</span> es la densidad de número de electrones. Similar al modelo de Lorentz, <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span> representa la polarización neta del material.</p>
@@ -1000,7 +1008,10 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03_Interacción_materia-luz_68_0.png" src="../_images/03_Interacción_materia-luz_68_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/panxopanza/miniconda3/lib/python3.10/site-packages/empylib/nklib/
+</pre></div>
+</div>
+<img alt="../_images/03_Interacción_materia-luz_68_1.png" src="../_images/03_Interacción_materia-luz_68_1.png" />
 </div>
 </div>
 <p>Notemos como para <span class="math notranslate nohighlight">\(\lambda \approx 0.8\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m, la respuesta del material se desvía del modelo de Drude. Esta respuesta esta asociada a un modo de vibración (modelo de Lorentz).</p>
@@ -1057,7 +1068,10 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/03_Interacción_materia-luz_78_0.png" src="../_images/03_Interacción_materia-luz_78_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/panxopanza/miniconda3/lib/python3.10/site-packages/empylib/nklib/
+</pre></div>
+</div>
+<img alt="../_images/03_Interacción_materia-luz_78_1.png" src="../_images/03_Interacción_materia-luz_78_1.png" />
 </div>
 </div>
 <p>Otro ejemplo es el dioxido de titanio (TiO<span class="math notranslate nohighlight">\(_2\)</span>), el cual presenta absorción interbanda en el espectro ultravioleta, y oscilaciones de Lorentz en el infrarojo.</p>
