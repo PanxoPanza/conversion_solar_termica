@@ -512,7 +512,7 @@ plt.show()
 
 # ## Transporte Radiativo (```rad_transfer```)
 
-# In[ ]:
+# In[25]:
 
 
 import empylib.rad_transfer as rt
@@ -541,7 +541,7 @@ import empylib.rad_transfer as rt
 
 # En el siguiente ejemplo, consideramos una película de sílice de espesor $1.0$ mm, con porosidad de 0.01% donde los poros tienen un de diámetro $D = 200$ $\mu$m ($N_{poro} = 1.0$). Los medios superior e inferior corresponden a aire. La luz incide en dirección $\theta_i = 0°$.
 
-# In[ ]:
+# In[26]:
 
 
 lam = np.linspace(0.3,1.0,100)  # espectro de longitudes de onda (en micrones)
@@ -587,7 +587,7 @@ plt.show()
 # - Tamaño de poro $1.0$ $\mu$m
 # - Espectro $\lambda\in[0.3,1.0]$ $\mu$m
 
-# In[ ]:
+# In[27]:
 
 
 lam = np.linspace(0.3,1.0,100) # espectro de longitudes de onda

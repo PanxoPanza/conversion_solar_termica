@@ -356,7 +356,7 @@ display(IFrame('https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/h
 # Podemos deducir la forma del campo magnético a partir de la relación $\hat{e}\times\hat{h} = \hat{k}$:
 # 
 # \begin{equation*}
-# \vec{H} = \frac{E_0}{Z_0}e^{\left(k_0zi - \omega t\right)}-\hat{y}\quad\quad\quad\vec{H} = \frac{E_0}{Z_0}e^{\left(k_0zi - \omega t\right)}\hat{x}
+# \vec{H} = \frac{E_0}{Z_0}e^{\left(k_0zi - \omega t\right)}(-\hat{y})\quad\quad\quad\vec{H} = \frac{E_0}{Z_0}e^{\left(k_0zi - \omega t\right)}\hat{x}
 # \end{equation*}
 
 # Finalmente, calculamos el flujo de energía usando el vector de Poynting:
@@ -366,7 +366,7 @@ display(IFrame('https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/h
 # &=&\frac{E_0^2}{2Z_0} \hat{z} &&&=&\frac{E_0^2}{2Z_0} \hat{z}
 # \end{eqnarray*}
 
-# Como vemos, dos ondas con polarizaciones **lineal mente independientes** transportan la misma energía. Sin embargo, la interacción con un marterial dependerá de la polarización de la onda (lo veremos en la próxima unidad)
+# Como vemos, dos ondas con polarizaciones **linealmente independientes** transportan la misma energía. Sin embargo, la interacción con un marterial dependerá de la polarización de la onda (lo veremos en la próxima unidad)
 
 # Una mejor forma de visualicar el concepto de polarización, es mediante esta 
 # <a href="https://www.compadre.org/osp/EJSS/4128/156.htm">aplicación</a>
