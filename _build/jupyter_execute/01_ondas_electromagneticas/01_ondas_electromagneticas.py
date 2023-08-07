@@ -347,7 +347,7 @@ display(IFrame('https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/h
 
 # Una característica de las ondas transversales es la **polarización**, que define la dirección de oscilación de la onda.
 
-# Por ejemplo, consideremos dos ondas propagandose en el eje *z*; una con el campo eléctrico ***polarizado* en el eje *x* y otra, en el eje *y***:
+# Por ejemplo, consideremos dos ondas propagandose en el eje *z*; una con el campo eléctrico **polarizado en el eje $x$ y otra, en el eje $y$**:
 # 
 # \begin{equation*}
 # \vec{E} = E_0e^{\left(k_0zi - \omega t\right)}\hat{x}\quad\quad\quad\vec{E} = E_0e^{\left(k_0zi - \omega t\right)}\hat{y}
