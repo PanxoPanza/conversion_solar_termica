@@ -347,23 +347,23 @@ display(IFrame('https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/h
 
 # Una característica de las ondas transversales es la **polarización**, que define la dirección de oscilación de la onda.
 
-# Por ejemplo, consideremos dos ondas propagandose en el eje *z*; una con el campo eléctrico **polarizado en el eje $x$ y otra, en el eje $y$**:
+# Por ejemplo, consideremos dos ondas propagandose en el eje *z* ($\hat{k} = \hat{z}$); una con el campo eléctrico **polarizado en el eje $x$ ($\hat{e} = \hat{x}$) y otra, en el eje $y$ ($\hat{e} = \hat{y}$)**:
 # 
 # \begin{equation*}
-# \vec{E} = E_0e^{\left(k_0zi - \omega t\right)}\hat{x}\quad\quad\quad\vec{E} = E_0e^{\left(k_0zi - \omega t\right)}\hat{y}
+# \vec{E} = E_0e^{i\left(k_0z - \omega t\right)}\hat{x}\quad\quad\quad\vec{E} = E_0e^{i\left(k_0z - \omega t\right)}\hat{y}
 # \end{equation*}
 
 # Podemos deducir la forma del campo magnético a partir de la relación $\hat{e}\times\hat{h} = \hat{k}$:
 # 
 # \begin{equation*}
-# \vec{H} = \frac{E_0}{Z_0}e^{\left(k_0zi - \omega t\right)}(-\hat{y})\quad\quad\quad\vec{H} = \frac{E_0}{Z_0}e^{\left(k_0zi - \omega t\right)}\hat{x}
+# \vec{H} = \frac{E_0}{Z_0}e^{i\left(k_0z - \omega t\right)}(-\hat{y})\quad\quad\quad\vec{H} = \frac{E_0}{Z_0}e^{i\left(k_0z - \omega t\right)}\hat{x}
 # \end{equation*}
 
 # Finalmente, calculamos el flujo de energía usando el vector de Poynting:
 # 
 # \begin{eqnarray*}
-# \langle\vec{S}\rangle &=&\frac{1}{2}\mathrm{Re}\left[E_0 e^{i\left(k_0z - \omega t\right)}\frac{E_0}{Z_0}e^{-i\left(k_0z - \omega t\right)}\right] \left[\hat{x}\times(-\hat{y})\right]\quad\quad\quad&&\langle\vec{S}\rangle &=&\frac{1}{2}\mathrm{Re}\left[E_0 e^{i\left(k_0z - \omega t\right)}\frac{E_0}{Z_0}e^{-i\left(k_0z - \omega t\right)}\right] \left[\hat{y}\times\hat{x}\right]\\
-# &=&\frac{E_0^2}{2Z_0} \hat{z} &&&=&\frac{E_0^2}{2Z_0} \hat{z}
+# \langle\vec{S}\rangle &=&\frac{1}{2}\mathrm{Re}\left[E_0 e^{i\left(k_0z - \omega t\right)}\frac{E_0}{Z_0}e^{-i\left(k_0z - \omega t\right)}\right] \left[\hat{x}\times(-\hat{y})\right]\quad\quad\quad && \langle\vec{S}\rangle &=&\frac{1}{2}\mathrm{Re}\left[E_0 e^{i\left(k_0z - \omega t\right)}\frac{E_0}{Z_0}e^{-i\left(k_0z - \omega t\right)}\right] \left[\hat{y}\times\hat{x}\right]\\
+# &=&\frac{E_0^2}{2Z_0} \hat{z} && &=&\frac{E_0^2}{2Z_0} \hat{z}
 # \end{eqnarray*}
 
 # Como vemos, dos ondas con polarizaciones **linealmente independientes** transportan la misma energía. Sin embargo, la interacción con un marterial dependerá de la polarización de la onda (lo veremos en la próxima unidad)
@@ -374,7 +374,7 @@ display(IFrame('https://www.geogebra.org/material/iframe/id/auyft2pd/width/640/h
 # Si una de las componentes de la onda del campo eléctrico (o magnético) está desfazada respecto a la otra, por ejemplo:
 
 # \begin{equation*}
-# \vec{E} = E_0e^{\left(k_0zi - \omega t\right)}\hat{x} + E_0e^{\left(k_0zi - \omega t + \phi\right)}\hat{y},
+# \vec{E} = E_0e^{i\left(k_0z - \omega t\right)}\hat{x} + E_0e^{i\left(k_0z - \omega t + \varphi\right)}\hat{y},
 # \end{equation*}
 
 # la onda resultante es una **<a href="https://www.compadre.org/osp/EJSS/4129/157.htm">onda circular</a>**
