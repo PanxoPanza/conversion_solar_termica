@@ -56,14 +56,12 @@ if importlib.util.find_spec('empylib') is None:
 # 
 # donde $N = \sqrt{\varepsilon} = n +i\kappa$, es el **índice de refracción complejo**. Aquí, $n$ se conoce como el **índice de refracción**, y $\kappa$ como **extinción**.
 
-# import empylib.nklib as nk
-# import numpy as np
-# import matplotlib.pyplot as pltEl **índice de refracción complejo es una propiedad del material**. En general, este valor varía con la longitud de onda (o frecuencia). 
+# El **índice de refracción complejo es una propiedad del material**. En general, este valor varía con la longitud de onda (o frecuencia). 
 
 # In[2]:
 
 
-get_ipython().run_cell_magic('capture', 'show1', "import empylib.nklib as nk\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nlam = np.linspace(0.3,1.0,100) # espectro de longitudes de onda (en micrones)\nN   = nk.gold(lam)              # índice de refracción complejo del agua\n\nplt.plot(lam,N.real,'-k' ,label='$n$')\nplt.plot(lam,N.imag,'--k',label='$\\kappa$')\nplt.xlabel('longitud de onda ($\\mu$m)')\nplt.ylabel('índice de refracción')\nplt.title('Índice de refracción del oro')\nplt.ylim(0)\nplt.legend()\nplt.show()")
+get_ipython().run_cell_magic('capture', 'show1', "import empylib.nklib as nk\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nlam = np.linspace(0.3,1.0,100) # espectro de longitudes de onda (en micrones)\nN   = nk.gold(lam)              # índice de refracción complejo del oro\n\nplt.plot(lam,N.real,'-k' ,label='$n$')\nplt.plot(lam,N.imag,'--k',label='$\\kappa$')\nplt.xlabel('longitud de onda ($\\mu$m)')\nplt.ylabel('índice de refracción')\nplt.title('Índice de refracción del oro')\nplt.ylim(0)\nplt.legend()\nplt.show()")
 
 
 # In[3]:
