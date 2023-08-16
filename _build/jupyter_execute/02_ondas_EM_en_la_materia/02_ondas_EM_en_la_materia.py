@@ -422,14 +422,11 @@ YouTubeVideo('5SIxEiL8ujA', width=600, height=400,  playsinline=0, start=0)
 # Este mecanismo se llama **reflección interna total** y es la base para el funcionamiento de fibras ópticas y lasers
 # <img src="./images/optical_fiber.png" width="450px" align= center>
 
-# El siguiente video resume los procesos de reflexión interna total y refracción que ocurren producto del cambio en el índice de refracción. En el ejemplo, la interfaz es entre agua (1.33) y aceite (1.47). Al agregar sal al agua (parte final del video), se induce un cambio gradual del índice de refracción (fuente: [@uaiphysics](https://www.instagram.com/uaiphysics/?hl=es)).
+# El siguiente video resume los procesos de reflexión interna total y refracción que ocurren producto del cambio en el índice de refracción.
 
-# In[7]:
+# En el ejemplo, la interfaz es entre agua ($N_\mathrm{agua} =1.33$) y aceite ($N_\mathrm{oil} = 1.47$). Al agregar sal al agua (parte final del video), se induce un cambio gradual del índice de refracción (fuente [@uaiphysics](https://www.instagram.com/uaiphysics/?hl=es)).
 
-
-from IPython.display import Video
-Video("images/refraccíon_uaiphysics.mp4", width=600, height=400,  )
-
+# <center><video controls muted src="../_static/videos/refraccíon_uaiphysics.mp4"  width="400px" align=center></video></center>
 
 # ## Reflección y transmissión en películas delgadas
 # En el caso materiales de película delgada, las ondas electromagnéticas se reflejan y transmiten múltiples veces.
@@ -477,7 +474,7 @@ Video("images/refraccíon_uaiphysics.mp4", width=600, height=400,  )
 # - espesor del sílice, $d$: variable
 # - ángulo de incidencia $\theta_i$: variable
 
-# In[8]:
+# In[7]:
 
 
 import numpy as np
@@ -508,7 +505,7 @@ def plot_R_multi(theta,d):
     plt.show()
 
 
-# In[9]:
+# In[8]:
 
 
 from ipywidgets import interact
@@ -530,7 +527,7 @@ def g(theta=30, d=0.3):
 
 # Analicemos como se manifiesta este fenómeno en forma de color:
 
-# In[10]:
+# In[9]:
 
 
 import numpy as np
@@ -568,7 +565,7 @@ def color_R_film(d):
     plt.show()
 
 
-# In[11]:
+# In[10]:
 
 
 from ipywidgets import interact
