@@ -274,8 +274,8 @@ show1()
 
 # La primera ($\theta_i = \theta_r$), indica que el ángulo de reflexión es siempre igual al ángulo de incidencia.
 
-# La segúnda ($n_1\sin\theta_i = n_2\sin\theta_t$), indica el ángulo de transmisión de una onda EM al atravesar por un medio distinto
-
+# La segunda ($n_1\sin\theta_i = n_2\sin\theta_t$), indica el ángulo de transmisión de una onda EM al atravesar por un medio distinto
+# 
 # <img src="./images/refraction.png" width="700px" align= center>
 
 # Aplicando la ley de Snell en la condición de borde del campo eléctrico (Eq. 2.5):
