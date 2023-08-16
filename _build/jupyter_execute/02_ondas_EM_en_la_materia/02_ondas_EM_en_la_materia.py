@@ -290,7 +290,7 @@ show1()
 # n_1E_i - n_1E_r  - n_2E_t = 0 \label{eq:boundaryH}
 # \end{equation}
 
-# A partir de estas dos ecuaciones, determinamos los coeficientes de Fresnel de reflexión ($r_\mathrm{TM}$) y transmisión ($t_\mathrm{TM}$) para una onda TM:
+# A partir de estas dos ecuaciones, determinamos **los coeficientes de Fresnel de reflexión ($r_\mathrm{TM}$) y transmisión ($t_\mathrm{TM}$) para una onda TM**:
 # 
 # \begin{align}
 # r_\mathrm{TM} &= \frac{E_r^\mathrm{TM}}{E_i^\mathrm{TM}} = \frac{n_1\cos\theta_t-n_2\cos\theta_i}
@@ -300,7 +300,7 @@ show1()
 # {n_1\cos\theta_t+n_2\cos\theta_i}
 # \end{align}
 
-# Similarmente, para una onda transversal eléctrica (TE), los coeficientes de Fresnel son:
+# Mediante un procedimiento similar, podemos determinar **los coeficientes de Fresnel de reflexión ($r_\mathrm{TE}$) y transmisión ($t_\mathrm{TE}$) para una onda TE**:
 # 
 # \begin{align}
 # r_\mathrm{TE} &= \frac{E_r^\mathrm{TE}}{E_i^\mathrm{TE}} = \frac{n_1\cos\theta_i -n_2\cos\theta_t}
