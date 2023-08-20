@@ -1,70 +1,211 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[1]:
+
+
+import importlib.util
+if importlib.util.find_spec('empylib') is None:
+    get_ipython().system('pip install git+https://github.com/PanxoPanza/empylib.git')
+
+
 # # Interacción materia-luz
 
-# ## Repaso de vibraciones mecánicas
+# ## Fundamentos del movimiento oscilatorio
 
 # ### Frecuencia natural de un sistema vibratorio
-
-# La frecuencia natural de un sistema vibratorio representa la frecuencia de oscilación del sistema en ausencia de amortiguación y fuerzas externas.
-
-# Por ejemplo, en el caso simplificado de un sistema masa resorte
 # 
-# <img src="./images/free_sistem_one_degree.png" width="250px" align= center>
+# Analicemos el caso simplificado de un sistema masa resorte
+
+# <img src="./images/free_sistem_one_degree.png" width="400px" align= center>
 # 
 # donde, $k$ es la constante de rigidez del resorte, y $m$ es la masa.
 
-# La ecuación gobernante está dada por:
+# El resorte ejerce una **fuerza de restauración**, $F_\mathrm{res} = kx$, que actúa en sentido contrario al desplazamiento de la masa.
+# 
+# <img src="./images/dcl_mass-spring.png" width="400px" align= center>
+
+# Mediante un equilibrio de fuerzas, concluimos que la ecuación gobernante es:
 # 
 # \begin{equation*}
 # \ddot{x} + \omega_n^2 x = 0 
 # \end{equation*}
 # 
-# donde $\omega_n = \sqrt{k/m}$, es la frecuencia natural del sistema
+# donde **$\omega_n = \sqrt{k/m}$, es la frecuencia natural del sistema**
+
+# **La frecuencia natural** de un sistema vibratorio **representa la frecuencia de oscilación del sistema en ausencia de amortiguación y fuerzas externas**.
+
+# Es una firma espectral que **solo se puede cambiar ajustando la masa $m$ o la constante de rigidez del sistema $k$.**
+
+# Esto significa que, **ante cualquier perturbación del sistema en equilibrio, el sistema oscilará en su frecuencia natural $\omega_n$.**
+# 
+# <img src="./images/1dof-1spring.gif" width="300px" align= center></img>
+# <center> <small>Sistema con 1 grado de libertad (Fuente: <a href="https://www.acs.psu.edu/drussell/demos.html">Daniel A. Russell)</a></small></center>
+# 
+# Cada sistema tiene una frecuencia natural, que puede estar definida por distintos parámetros. Sin embargo, **la característica más importante, es la presencia de una fuerza de restauración opuesta al movimiento del cuerpo.**
+
+# Por ejemplo, en un péndulo, la fuerza de restauración corresponde a la componente de la fuerza de gravedad que actúa en sentido contrario a la aceleración del cuerpo.
+# 
+# <img src="./images/pendulum_forces.gif" width="400px" align= center>
 
 # ### Vibración forzada amortiguada con un grado de libertad
 # La frecuencia natural cobra relevancia cuando analizamos vibraciones forzadas.
 # 
-# Consideremos, por ejemplo, el sistema masa-resorte amortiguado, con constante de amortiguación $c$, excitado por una fuerza externa oscilatoria de la forma $F(t) = F_0 e^{i\omega t}$, donde $F_0$ es una constante. 
+# Consideremos, por ejemplo, un sistema masa-resorte amortiguado, donde $c$ es la constante de amortiguación. El sistema es excitado por una fuerza externa oscilatoria de la forma $F(t) = F_0 e^{i\omega t}$, donde $F_0$ es una constante. 
 
-# <img src="./images/forced_damped_system.png" width="150px" align= center>
+# <img src="./images/forced_damped_system.png" width="400px" align= center>
 
 # La ecuación gobernante de este sistema está dada por:
 # 
 # \begin{equation*}
-# \ddot{x} + 2\zeta\omega_n\dot{x} +  \omega_n^2 x = \frac{F_0}{m} e^{i\omega t},
+# \ddot{x} + \frac{c}{m}\dot{x} +  \omega_n^2 x = \frac{F_0}{m} e^{- i\omega t},
 # \end{equation*}
 # 
-# donde $\zeta = \frac{c}{2\omega_nm}$ es la razón de amortiguación
 
-# En su forma general, la solución a este sistema está dada $x(t) = x_p(t) + x_h(t)$, donde:
-
-# \begin{eqnarray*}
-# x_h(t) &=& C e^{-\zeta \omega_n t}e^{i\omega_n\sqrt{1 - \zeta^2} t} &\quad&\mathrm{solución~homogenea}
-# \\[10pt]
-# x_p(t) &=& \frac{F_0/k}{\omega^2 - \omega_n^2 + 2i\zeta \omega_n \omega}e^{i\omega t} &\quad&\mathrm{solución~particular}
-# \end{eqnarray*}
-# 
-# donde $C$ es una amplitud arbitraria definida por las condiciones iniciales del sistema.
-
-# En estado estacionario, solo la solución particular $x_p(t)$ es relevante. La solución homogénea $x_h(t)$, decae en el tiempo y se le conoce como **respuesta transciente**. 
-
-# <img src="./images/forced_damped_motion.png" width="400px" align= center>
-
-# Podemos repesentar la amplitud de $x_p = Ae^{i\omega t}$, como $A = |A|e^{i\phi}$, donde $\phi$ es la fase. Asi, la solución estacionaria queda de la forma:
+# Cuya solución estacionaria es de la forma $x = Ae^{-i\omega t}$:
 # 
 # \begin{equation*}
-# x_p = |A|e^{i\left(\omega t + \phi\right)}
+# x(t) = - \frac{F_0/m}{\omega^2 - \omega_n^2 + i\frac{c}{m} \omega}e^{- i\omega t}
 # \end{equation*}
-
-# Cuando $\omega/\omega_n = 1$, el sistema entra en resonancia. Esta respuesta se manifiesta con la característica amplificación de $|A|$.
 # 
-# <img src="./images/resonance.png" width="600px" align= center>
+# donde $A = - \frac{F_0/m}{\omega^2 - \omega_n^2 + i\frac{c}{m} \omega}$ representa la amplitud de la respuesta oscilatoria.
+# 
 
-# Revisemos esta herramienta interactiva del <a href="https://www.compadre.org/osp/EJSS/4026/134.htm?F=1">movimiento forzado amortiguado</a>
+# La ecuación indica que **la amplitud de la respuesta depende principalmente, de la frecuencia de la fuerza externa $\omega$**.
 
-# ## Interacción de luz con moléculas
+# Más aún, como vemos en esta herramienta interactiva de [movimiento forzado amortiguado](https://www.compadre.org/osp/EJSS/4026/134.htm?F=1), cuando $\omega \approx \omega_n$ la amplitud aumenta a un límite crítico.
+
+# <img src="./images/forced.gif" width="300px" align= center></img>
+# <center> <small>Respuesta ante fuerza oscilatoria  (Fuente: <a href="https://www.acs.psu.edu/drussell/demos.html">Daniel A. Russell)</a></small></center>
+
+# En este caso decimos que el **sistema está en resonancia**.
+
+# La mejor forma de visualizar este fenómeno es analizando la amplitud en función de la frecuencia de la fuerza externa $\omega$. En el gráfico a continuación mostramos el valor del módulo de la amplitud, $|A|$ (izquierda) y la parte real e imaginaria de la amplitud (derecha).
+
+# In[2]:
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def x_amplitude(k,c):
+    
+    m = 1                                           # masa del cuerpo
+    w = np.linspace(0,2,200)                       # rango de frecuencias
+    F0 = 1                                          # Amplitud de la fuerza
+    wn = np.sqrt(k/m)                               # frencuencia natural
+    A  = lambda x: - F0/m/(x**2 - wn**2 + 1j*c/m*x) # amplitud de la respuesta
+    
+    # formateamos el lienzo para graficar
+    fig, ax = plt.subplots(1,2)             # número de ejes en la figura
+    fig.set_size_inches(10, 3)              # tamaño de la figura
+    plt.rcParams['font.size'] = '12'        # tamaño de fuente
+    
+    # Ploteamos gráfico izquierdo
+    ax[0].plot(w,np.absolute(A(w)),'k',label="$|A|$")     # módulo de la amplitud
+    
+    # marcar línea de frecuencia natural
+    ax[0].axvline(x = wn, color='r', ls='--', lw='1.0')  
+    ax[0].text(wn*1.01,np.absolute(A(wn)),'$\omega_n$', fontsize='12', color='r')
+    
+    # etiquetar valores de m y F0 en el gráfico
+    x0, y0 = 0.1, 100
+    ax[0].text(x0, y0,r'$m$ = %.0f kg'   % m , fontsize='10', color='k')
+    ax[0].text(x0, y0*0.55,r'$F_0$ = %.0f N'% F0, fontsize='10', color='k')
+    
+    # Ploteamos gráfico derecho
+    ax[1].plot(w,A(w).real,'b',label=r"$\mathrm{Re}(A)$") # parte real de la amplitud
+    ax[1].plot(w,A(w).imag,'r',label=r"$\mathrm{Im}(A)$") # parte imaginaria de la amplitud
+    
+    for i in [0,1]:
+        ax[i].set_xlabel('$\omega$ ')
+        #ax[i].grid() 
+        ax[i].set_xlim(0,2.0)
+        ax[i].legend(frameon=False)
+    ax[0].set_yscale('log')
+    ax[0].set_ylim(0.1,200)
+    ax[0].set_ylabel('Módulo de la amplitud')
+    ax[1].set_ylabel('Amplitud')
+    plt.subplots_adjust(wspace=0.3)
+    plt.show()
+
+
+# In[3]:
+
+
+from ipywidgets import interact
+
+@interact( k=(0.3,2.0,0.1), 
+           c=(0.02,0.2,0.01))
+def g(k=1, c=0):
+    return x_amplitude(k,c)
+
+
+# La frecuencia de resonancia es fundamental en el diseño de puentes, edificios, instrumentos acústicos y otras. 
+
+# Un ejemplo emblemático es el [colapso del puente Tacoma en 1940](https://es.wikipedia.org/wiki/Puente_de_Tacoma_(1940)).
+# 
+# <img src="./images/tacoma-narrows-bridge-shaking.gif" width="400px" align= center>
+# 
+# El puente se derrumbó debido al aleteo aeroelástico producido por los vientos, el cual coincidía con la frecuencia natural del puente
+
+# Otro ejemplo típico es el columpio
+# 
+# <img src="./images/swing_resonance.gif" width="300px" align= center>
+# 
+# En este caso, la fuerza externa son las piernas. La resonancia se alcanza cuando estas se mueven en sincronía con la frecuencia natural del péndulo. El efecto de amortiguación en este caso, está dado por el arrastre del viento, fricción, etc.
+
+# ### Sistemas vibratorios con más de un grado de libertad
+# 
+# Un sistema vibratorio puede tener más de una frecuencia natural. **El número de frecuencias naturales está directamente relacionado con el número de grados de libertad del sistema**. 
+
+# **Sistema con 1 grado de libertad** (aquí la frecuencia natural cambia a $\omega_n = \sqrt{2k/m}$, debido a la presencia de 2 resortes)
+# 
+# |modo | $\omega_n$   |
+# |:---:|:------------:|
+# | 1   | $1.414\sqrt{k/m}$ | 
+# 
+# <img src="./images/1dof.gif" width="200px" align= center></img>
+# <center> <small>Sistema con 1 grado de libertad (Fuente: <a href="https://www.acs.psu.edu/drussell/demos.html">Daniel A. Russell)</a></small></center>
+
+# **Sistema con 2 grados de libertad**
+# 
+# |modo | $\omega_n$   |
+# |:---:|:------------:|
+# | 1   | $1.000\sqrt{k/m}$ |
+# | 2   | $1.732\sqrt{k/m}$| 
+# 
+# <img src="./images/2dof-mode-1.gif" width="300px" align= center></img>
+# <img src="./images/2dof-mode-2.gif" width="300px" align= center></img>
+# <center> <small>Sistema con 2 grados de libertad (Fuente: <a href="https://www.acs.psu.edu/drussell/demos.html">Daniel A. Russell)</a></small></center>
+
+# **Sistema con 3 grados de libertad**
+# 
+# |modo | $\omega_n$   |
+# |:---:|:------------:|
+# | 1   | $0.765\sqrt{k/m}$ |
+# | 2   | $1.414\sqrt{k/m}$| 
+# | 3   | $1.868\sqrt{k/m}$| 
+# 
+# <img src="./images/3dof-mode-1.gif" width="300px" align= center></img>
+# <img src="./images/3dof-mode-2.gif" width="300px" align= center></img>
+# <img src="./images/3dof-mode-3.gif" width="300px" align= center></img>
+# <center> <small>Sistema con 3 grados de libertad (Fuente: <a href="https://www.acs.psu.edu/drussell/demos.html">Daniel A. Russell)</a></small></center>
+
+# Notar la forma en que las frecuencias naturales se distribuye a medida que aumentamos los grados de libertad del sistema (*Las flechas rojas indican la dirección de las masas asociada a cada modo de vibración*):
+# 
+# 
+# <img src="./images/nat_frequency_hybrid.png" width="800px" align= center>
+
+# En este caso, para **activar la resonancia de un modo mediante una fuerza oscilatoria externa** debe cumplir dos condiciones:
+# 
+# - **Debe oscilar en la frecuencia natural del modo respectivo**
+# - **El movimiento de la fuerza debe ser compatible con el movimiento de cada grado de libertad**
+
+# ## Interacción de luz gases
+# 
+# La interacción de luz con gases es el modelo más simple. En este caso, cada molécula representa un sistema oscilatorio
+
 # ### El oscilador armónico
 # Consideremos la molecula de agua.
 
@@ -90,11 +231,11 @@
 # 
 # Consideremos ahora la interacción de una onda electromagnética con una molécula di atómica.
 
-# <img src="./images/molecule_spring_mass.png" width="200px" align= center>
+# <img src="./images/molecule_spring_mass.png" width="300px" align= center>
 
-# El campo eléctrico de la onda oscilatoria ($E_0e^{-i\omega t}$), ejerce una fuerza $F = qE_0e^{-i\omega t}$ sobre cada polo, donde $q$ es la carga eléctrica del polo positivo (o negativo). 
+# El campo eléctrico de la onda EM ($E_0e^{-i\omega t}$), ejerce una fuerza $F = qE_0e^{-i\omega t}$ sobre cada polo, donde $q$ es la carga eléctrica del polo positivo (o negativo). 
 
-# Consideramos, ademas, una fuerza de amortiguación, $F_{c} = - m\Gamma \dot{x}$, que representa la disipación de energía por la colición entre los electrones y los nucleos, además de otras interacciónes electromagnéticas. La constante **$\Gamma$ es la tasa de decaimiento** (se mide en unidades 1/s).
+# Consideramos, ademas, una fuerza de amortiguación, $F_{c} = - m\Gamma \dot{x}$, que **representa la disipación de energía** por la colición entre los electrones y los nucleos, además de otras interacciónes electromagnéticas. La constante **$\Gamma$** es la **tasa de decaimiento** (se mide en unidades 1/s).
 
 # 
 # 
@@ -122,7 +263,7 @@
 # 
 # donde $\hat{e}$ es la dirección del campo eléctrico
 
-# Definimos como **densidad de polarización**, $\vec{P}$, al momento dipolar total por unidad de volumen:
+# En el caso real, este fenómenos se da en un volumen con miles de moleculas de agua. Así, definimos la **densidad de polarización**, $\vec{P}$, como el **momento dipolar inducido total por unidad de volumen**:
 # 
 # \begin{equation*}
 # \vec{P} = N_p \vec{p} = \frac{N_pq^2/m}{\omega_n^2 - \omega^2 - i\Gamma \omega}\vec{E}\quad\mathrm{\left[\frac{C\cdot m}{m^3}\right]}
@@ -146,11 +287,9 @@
 # \varepsilon = \varepsilon_\infty + \frac{\omega_p^2}{\omega_n^2 - \omega^2 - i\Gamma \omega}\quad\mathrm{Modelo~de~Lorentz},
 # \end{equation}
 
-# Usaremos la función `lorentz` del módulo `empylib.nklib` para generar el índice de refracción y constante dielectrica a partir del modelo de Lorentz, con los parámetros: $\varepsilon_\infty = 2.0$, $\Gamma = 0.1\omega_n$, y $\omega_p = \omega_n$
+# Usaremos la función `lorentz` del módulo `empylib.nklib` para generar el índice de refracción y constante dielectrica a partir del modelo de Lorentz.
 
-# > Notar que el modelo de Lorentz está en función de la frecuencia angular $\omega$ (en $\mathrm{eV}$), mientras que la función de `lorentz` de `empylib.nklib` requiere valores de $\lambda$ en longitudes de onda (en $\mu \mathrm{m}$).
-
-# In[1]:
+# In[4]:
 
 
 import numpy as np
@@ -158,72 +297,85 @@ import matplotlib.pyplot as plt
 import empylib.nklib as nk
 import empylib as em
 
-# parámetros del modelo
-epsinf = 2.0  # adimensional
-wp = 1.0      # en eV
-wn = 1.0      # en eV
-gamma = 0.1   # en eV
+def lorentz_model(epsinf,wn,wp,gamma):
+    # espectro 
+    lam = np.linspace(1E-3,3,1000)     # convertimos a "micrones"
 
-# espectro 
-w = 1/np.linspace(1E-3,2,1000)          # en "eV"
-lam = em.convert_units(w,'eV','um')     # convertimos a "micrones"
+    # creamos el modelo de lorentz
+    N1 = nk.lorentz(epsinf,wp,wn,gamma,lam) # índice de refracción a partir del modelo de Lorentz
+    eps1 = N1**2                            # constante dieléctrica
 
-# creamos el modelo de lorentz
-N1 = nk.lorentz(epsinf,wp,wn,gamma,lam) # índice de refracción a partir del modelo de Lorentz
-eps1 = N1**2                            # constante dieléctrica
+    # formateamos el lienzo para graficar
+    fig, ax = plt.subplots(1,2)             # número de ejes en la figura
+    fig.set_size_inches(10, 3)              # tamaño de la figura
+    plt.rcParams['font.size'] = '10'        # tamaño de fuente
 
-# formateamos el lienzo para graficar
-fig, ax = plt.subplots(1,2)             # número de ejes en la figura
-fig.set_size_inches(10, 3)              # tamaño de la figura
-plt.rcParams['font.size'] = '12'        # tamaño de fuente
+    #ploteamos
+    ax[0].plot(lam,eps1.real,'b',label=r"$\varepsilon'$")
+    ax[0].plot(lam,eps1.imag,'r',label=r"$\varepsilon''$")
+    ax[1].plot(lam,N1.real,'b',label=r"$n$")
+    ax[1].plot(lam,N1.imag,'r',label=r"$\kappa$")
+    
+    # marcar línea de frecuencia natural
+    lam_n = em.convert_units(wn,'eV','um')
+    ax[0].axvline(x = lam_n, color='k', ls='--', lw='1.0')  
+    ax[0].text(lam_n*1.01,-10,'$\omega_n$', fontsize='12', color='k')
 
-#ploteamos
-ax[0].plot(wn/w,np.real(eps1),'b',label=r"$\varepsilon'$")
-ax[0].plot(wn/w,np.imag(eps1),'r',label=r"$\varepsilon''$")
-ax[1].plot(wn/w,np.real(N1),'b',label=r"$n$")
-ax[1].plot(wn/w,np.imag(N1),'r',label=r"$\kappa$")
+    for i in [0,1]:
+        ax[i].set_xlabel('Longitud de onda, $\lambda$ ($\mu$m)')
+        ax[i].grid()
+        ax[i].legend(frameon=False)
+        ax[i].set_xlim(0.5,3.0)
+    ax[0].set_ylabel(r"Constante dielectrica, $\varepsilon = \varepsilon'+ \varepsilon''$")
+    ax[1].set_ylabel(r'Indice de refracción, $N = n + i\kappa$')
+    ax[0].set_ylim(-20,30)
+    ax[1].set_ylim(0,5)
+    plt.show()
 
-for i in [0,1]:
-    ax[i].set_xlabel('$\omega/\omega_n$ ')
-    ax[i].grid()
-    ax[i].legend(frameon=False)
-ax[0].set_ylabel(r"Constante dielectrica, $\varepsilon = \varepsilon'+ \varepsilon''$")
-ax[1].set_ylabel(r'Indice de refracción, $N = n + i\kappa$')
-plt.show()
+
+# In[5]:
+
+
+from ipywidgets import interact
+
+@interact( epsinf=(1,10,0.5), 
+           wp=(0.3,1.0,0.1), 
+           wn=(0.5,2.0,0.1), 
+           gamma=(0.01,0.05,0.005))
+def g(epsinf=7,wp=0.8,wn=0.7, gamma=0.04):
+    return lorentz_model(epsinf,wn,wp,gamma)
 
 
 # >**El modelo de Lorentz se utiliza como modelo de ajuste para representar la interacción de la luz con los modos vibratorios en la materia**
 
 # Por ejemplo, la molécula de agua tiene 3 modos de vibración fundamentales en las longitudes de onda $\lambda = $ 2.98, 2.93 y 5.91 $\mu$m (3351, 3412 y 1691 cm$^{-1}$)
 
-# In[2]:
+# In[6]:
 
 
 from IPython.display import YouTubeVideo
 YouTubeVideo('1uE2lvVkKW0', width=600, height=400,  playsinline=0)
 
 
-# Usamos el módulo `nklib` de la librería `empylib` para graficar el índice de refracción del agua
+# Al graficar el índice de refracción notamos que la gráfica muestra dos oscilaciones de Lorentz. Usamos el módulo `nklib` de la librería `empylib` para graficar el índice de refracción del agua
 
-# In[3]:
-
-
-get_ipython().run_cell_magic('capture', 'showplot1', 'import numpy as np\nimport matplotlib.pyplot as plt\nimport empylib.nklib as nk\n\n# Creamos el espectro\nlam = np.linspace(0.2,10,1000)                          # espectro de longitudes de onda\nN1   = nk.H2O(lam)                                      # índice de refracción\neps1 = N1**2                                            # constante dieléctrica\n\n# Formateamos el lienzo para graficar\nfig, ax = plt.subplots(1,2)                             # número de ejes en la figura\nfig.set_size_inches(10, 3)                              # tamaño de la figura\nplt.rcParams[\'font.size\'] = \'12\'                        # tamaño de fuente\n\n# Graficamos el resultado\nax[0].plot(lam,eps1.real,\'b\',label=r"$\\varepsilon\'$")   # constante dieléctrica (parte real)\nax[0].plot(lam,eps1.imag,\'r\',label=r"$\\varepsilon\'\'$")  # constante dieléctrica (parte imaginaria)\nax[1].plot(lam,N1.real,\'b\',label=r"$n$")                # índice de refracción (parte real)\nax[1].plot(lam,N1.imag,\'r\',label=r"$\\kappa$")           # índice de refracción (parte imaginaria)\n\n# Marcamos los valores máximos con una línea\nfor i in [280, 599]:\n    ax[0].axvline(x = lam[i], color=\'k\', ls=\'--\', lw=\'1.0\')\n    ax[1].axvline(x = lam[i], color=\'k\', ls=\'--\', lw=\'1.0\')\n    ax[0].text(lam[i]*1.02,eps1[i].imag,r\'%.3f $\\mu$m\'% lam[i], fontsize=\'12\')\n\nfor i in [0,1]:\n    ax[i].set_xlabel(\'Longitud de onda, $\\lambda$ ($\\mu$m)\')\n    ax[i].grid()\n    ax[i].set_xlim(0.2,10)\n    ax[i].legend(frameon=False)\nax[0].set_ylabel(r"Constante dielectrica, $\\varepsilon = \\varepsilon\'+ \\varepsilon\'\'$")\nax[1].set_ylabel(r\'Indice de refracción, $N = n + i\\kappa$\')\nplt.show()')
+# In[7]:
 
 
-# Al graficar el índice de refracción notamos que la gráfica muestra dos oscilaciones de Lorentz. 
+get_ipython().run_cell_magic('capture', 'showplot1', 'import numpy as np\nimport matplotlib.pyplot as plt\nimport empylib.nklib as nk\n\n# Creamos el espectro\nlam = np.linspace(0.2,10,1000)                          # espectro de longitudes de onda\nN1   = nk.H2O(lam)                                      # índice de refracción\neps1 = N1**2                                            # constante dieléctrica\n\n# Formateamos el lienzo para graficar\nfig, ax = plt.subplots(1,2)                             # número de ejes en la figura\nfig.set_size_inches(10, 3)                              # tamaño de la figura\nplt.rcParams[\'font.size\'] = \'12\'                        # tamaño de fuente\n\n# Graficamos el resultado\nax[0].plot(lam,eps1.real,\'b\',label=r"$\\varepsilon\'$")   # constante dieléctrica (parte real)\nax[0].plot(lam,eps1.imag,\'r\',label=r"$\\varepsilon\'\'$")  # constante dieléctrica (parte imaginaria)\nax[1].plot(lam,N1.real,\'b\',label=r"$n$")                # índice de refracción (parte real)\nax[1].plot(lam,N1.imag,\'r\',label=r"$\\kappa$")           # índice de refracción (parte imaginaria)\n\n# Marcamos los valores máximos con una línea\nfor i in [280, 599]:\n    ax[0].axvline(x = lam[i], color=\'k\', ls=\'--\', lw=\'1.0\')\n    ax[1].axvline(x = lam[i], color=\'k\', ls=\'--\', lw=\'1.0\')\n    ax[0].text(lam[i]*1.02,eps1[i].imag,r\'%.3f $\\mu$m\'% lam[i], fontsize=\'10\')\n\nfor i in [0,1]:\n    ax[i].set_xlabel(\'Longitud de onda, $\\lambda$ ($\\mu$m)\')\n    ax[i].grid()\n    ax[i].set_xlim(0.2,10)\n    ax[i].legend(frameon=False)\nax[0].set_ylabel(r"Constante dielectrica, $\\varepsilon = \\varepsilon\'+ \\varepsilon\'\'$")\nax[1].set_ylabel(r\'Indice de refracción, $N = n + i\\kappa$\')\nplt.show()')
 
-# In[4]:
+
+# In[8]:
 
 
 showplot1()
 
 
-# La resonancia en $\lambda =$ 2.98 $\mu$m (3351 cm$^{-1}$) no está presente en el espectro.
+# Notar que la resonancia en $\lambda =$ 2.98 $\mu$m (3351 cm$^{-1}$) no está presente en el espectro.
 
 # Este modo no es compatible con la oscilación de una onda electromagnética plana. Así la luz no interactúa con esta vibración y, por lo tanto, no se ve representada en el espectro del índice de refracción.
 
-# ## Interacción de la luz con materiales sólidos
+# ## Interacción de la luz con sólidos
 # El análisis anterior generalmente se aplica a gases, donde las moléculas no interactúan entre sí. En el caso de materiales sólidos, la interacción entre moléculas es fuerte, y genera bandas electrónicas de energía.
 
 # - **Banda de valencia**: corresponde a la banda ocupada por electrones con el mayor nivel de energía. En esta banda los electrones permanecen en un estado "ligado" al núcleo.
@@ -236,7 +388,7 @@ showplot1()
 
 # A partir de la separación entre la banda de conducción y la banda de valencia, podemos clasificar tres tipos de materiales en función de sus propiedades electrónicas:
 # 
-# <img src="./images/energy_bands_clasification.png" width="450px" align= center>
+# <img src="./images/energy_bands_clasification.png" width="700px" align= center>
 
 # - **Conductor**, donde las bandas de conducción y valencia están traslapadas (bandgap = 0). En estos materiales, parte de los electrones están alojados en la banda de conducción y, por lo tanto, son capaces de conducir corriente eléctrica en presencia de un campo eléctrico.
 # 
@@ -251,13 +403,17 @@ showplot1()
 
 # Por ejemplo, el sílice (SiO$_2$)
 
-# In[5]:
+# <img src="./images/silica_fig.png" width="700px" align= center>
+
+# Tiene un índice de refracción donde podemos ver con claridad los modos de resonancia típicos del modelo de Lorentz
+
+# In[9]:
 
 
-get_ipython().run_cell_magic('capture', 'showplot1', 'import numpy as np\nimport matplotlib.pyplot as plt\nimport empylib.nklib as nk\n\nlam = np.linspace(0.2,30,1000)                          # espectro de longitudes de onda\nN1   = nk.SiO2(lam)                                     # índice de refracción\neps1 = N1**2                                            # constante dieléctrica\n\n# formateamos el lienzo para graficar\nfig, ax = plt.subplots(1,2)                             # número de ejes en la figura\nfig.set_size_inches(10, 3)                              # tamaño de la figura\nplt.rcParams[\'font.size\'] = \'12\'                        # tamaño de fuente\n\n# Graficamos el resultado\nax[0].plot(lam,eps1.real,\'b\',label=r"$\\varepsilon\'$")   # constante dieléctrica (parte real)\nax[0].plot(lam,eps1.imag,\'r\',label=r"$\\varepsilon\'\'$")  # constante dieléctrica (parte imaginaria)\nax[1].plot(lam,N1.real,\'b\',label=r"$n$")                # índice de refracción (parte real)\nax[1].plot(lam,N1.imag,\'r\',label=r"$\\kappa$")           # índice de refracción (parte imaginaria)\n\nfor i in [0,1]:\n    ax[i].set_xlabel(\'Longitud de onda, $\\lambda$ ($\\mu$m)\')\n    ax[i].grid()\n    ax[i].legend(frameon=False)\nax[0].set_ylabel(r"Constante dielectrica, $\\varepsilon = \\varepsilon\'+ \\varepsilon\'\'$")\nax[1].set_ylabel(r\'Indice de refracción, $N = n + i\\kappa$\')\nplt.show()')
+get_ipython().run_cell_magic('capture', 'showplot1', 'import numpy as np\nimport matplotlib.pyplot as plt\nimport empylib.nklib as nk\n\nlam = np.linspace(0.2,30,1000)                          # espectro de longitudes de onda\nN1   = nk.SiO2(lam)                                     # índice de refracción\neps1 = N1**2                                            # constante dieléctrica\n\n# formateamos el lienzo para graficar\nfig, ax = plt.subplots(1,2)                             # número de ejes en la figura\nfig.set_size_inches(10, 3)                              # tamaño de la figura\nplt.rcParams[\'font.size\'] = \'10\'                        # tamaño de fuente\n\n# Graficamos el resultado\nax[0].plot(lam,eps1.real,\'b\',label=r"$\\varepsilon\'$")   # constante dieléctrica (parte real)\nax[0].plot(lam,eps1.imag,\'r\',label=r"$\\varepsilon\'\'$")  # constante dieléctrica (parte imaginaria)\nax[1].plot(lam,N1.real,\'b\',label=r"$n$")                # índice de refracción (parte real)\nax[1].plot(lam,N1.imag,\'r\',label=r"$\\kappa$")           # índice de refracción (parte imaginaria)\n\nfor i in [0,1]:\n    ax[i].set_xlabel(\'Longitud de onda, $\\lambda$ ($\\mu$m)\')\n    ax[i].grid()\n    ax[i].legend(frameon=False)\nax[0].set_ylabel(r"Constante dielectrica, $\\varepsilon = \\varepsilon\'+ \\varepsilon\'\'$")\nax[1].set_ylabel(r\'Indice de refracción, $N = n + i\\kappa$\')\nplt.show()')
 
 
-# In[6]:
+# In[10]:
 
 
 showplot1()
@@ -266,7 +422,7 @@ showplot1()
 # ### Conductores (modelo de Drude)
 # En este caso los electrónes se mueven libremente por la red atómica.
 
-# Podemos representar la interacción de los electrones libres con una onda electromagnética utilizando la ecuación de movimiento. En este caso, la fuerza de restauración $kx = 0$, y la ecuación es:
+# Podemos representar la interacción de los electrones libres con una onda electromagnética utilizando la ecuación de movimiento. En este caso, no hay fuerza de restauración ($kx = 0$), y la ecuación es:
 # 
 # \begin{equation*}
 # m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
@@ -282,11 +438,9 @@ showplot1()
 # 
 # donde $\omega_p^2 = \frac{N_ee^2}{\varepsilon_0 m}$ se conoce como frecuencia de plasma, y $N_e$ es la densidad de número de electrones. Similar al modelo de Lorentz, $\varepsilon_\infty$ representa la polarización neta del material.
 
-# Usaremos la función `drude` del módulo `empylib.nklib` para generar el índice de refracción y constante dielectrica a partir del modelo de Drude, con los parámetros: $\varepsilon_\infty = 2.0$, $\Gamma_e = 0.1$, y $\omega_p = 1~\mathrm{eV}$
+# Usaremos la función `drude` del módulo `empylib.nklib` para generar el índice de refracción y constante dielectrica a partir del modelo de Drude. *En el gráfico marcamos el equivalente a $\omega_p$ en longitud de onda $\lambda_p = 2\pi c_0/\omega_p$.*
 
-# > Notar que el modelo de Drude está en función de la frecuencia angular $\omega$ (en $\mathrm{eV}$), mientras que la función `drude` de `empylib.nklib` requiere longitudes de onda en unidades $\mu \mathrm{m}$.
-
-# In[7]:
+# In[11]:
 
 
 import numpy as np
@@ -294,122 +448,89 @@ import matplotlib.pyplot as plt
 import empylib.nklib as nk
 import empylib as em
 
-w = 1/np.linspace(1E-3,5,1000)         # espectro de energía (eV)
-lam = em.convert_units(w,'eV','um')    # convertimos a longitudes de onda
+def drude_model(epsinf,wp,gamma):
+    lam = np.linspace(1E-3,5,1000)    # longitudes de onda
 
-# contruimos el modelo de Drude
-epsinf = 2.0 
-wp = 1.0                               # en eV
-gamma = 0.1                            # en eV
-N1 = nk.drude(epsinf,wp,gamma,lam)     # índice de refracción
-eps1 = N1**2                           # constante dieléctrica
+    # contruimos el modelo de Drude
+    N1 = nk.drude(epsinf,wp,gamma,lam)     # índice de refra]cción
+    eps1 = N1**2                           # constante dieléctrica
 
-# formateamos el lienzo para graficar
-fig, ax = plt.subplots(1,2)             # número de ejes en la figura
-fig.set_size_inches(10, 3)              # tamaño de la figura
-plt.rcParams['font.size'] = '12'        # tamaño de fuente
+    # formateamos el lienzo para graficar
+    fig, ax = plt.subplots(1,2)             # número de ejes en la figura
+    fig.set_size_inches(10, 3)              # tamaño de la figura
+    plt.rcParams['font.size'] = '10'        # tamaño de fuente
 
-# graficamos constante dielectrica e índice de refracción
-ax[0].plot(wp/w,eps1.real,'b',label=r"$\varepsilon'$")
-ax[0].plot(wp/w,eps1.imag,'r',label=r"$\varepsilon''$")
-ax[1].plot(wp/w,N1.real,'b',label=r"$n$")
-ax[1].plot(wp/w,N1.imag,'r',label=r"$\kappa$")
+    # graficamos constante dielectrica e índice de refracción
+    ax[0].plot(lam,eps1.real,'b',label=r"$\varepsilon'$")
+    ax[0].plot(lam,eps1.imag,'r',label=r"$\varepsilon''$")
+    ax[1].plot(lam,N1.real,'b',label=r"$n$")
+    ax[1].plot(lam,N1.imag,'r',label=r"$\kappa$")
+    
+    # marcar línea de frecuencia natural
+    lam_p = em.convert_units(wp,'eV','um')
+    ax[0].axvline(x = lam_p, color='k', ls='--', lw='1.0')  
+    ax[0].text(lam_p*1.1,-9,r'$\lambda_p =%.3f$ $\mu$m' % lam_p, fontsize='10', color='k')
 
-# formateamos los ejes
-for i in [0,1]:
-    ax[i].set_xlabel('$\omega_p/\omega$ ')
-    ax[i].grid()
-    #ax[i].set_xlim(0,5)
-    ax[i].legend(frameon=False)
-ax[0].set_ylabel(r"Constante dielectrica, $\varepsilon = \varepsilon'+ \varepsilon''$")
-ax[1].set_ylabel(r'Indice de refracción, $N = n + i\kappa$')
-plt.show()
-
-
-# Una característica del modelo de Drude es que $\varepsilon' < 0$ para $\omega_p/\omega \gtrsim 1$. Esto se manifiesta en el índice de refracción como $\kappa > n$
-
-# Cuando $\kappa > n$ la reflectividad aumenta significativamente. Así, los materiales conductores tienen alta reflectividad en ambas polarizaciones, cuando $\omega_p/\omega \gtrsim 1$
-
-# In[8]:
+    for i in [0,1]:
+        ax[i].set_xlabel('Longitud de onda, $\lambda$ ($\mu$m)')
+        ax[i].grid()
+        ax[i].legend(frameon=False)
+        ax[i].set_xlim(0,5.0)
+    ax[0].set_ylabel(r"Constante dielectrica, $\varepsilon = \varepsilon'+ \varepsilon''$")
+    ax[1].set_ylabel(r'Indice de refracción, $N = n + i\kappa$')
+    ax[0].set_ylim(-10,10)
+    ax[1].set_ylim(0,5)
+    plt.show()
 
 
-import numpy as np
-import matplotlib.pyplot as plt
-from empylib.waveoptics import interface
-import empylib as em
-import empylib.nklib as nk
+# In[12]:
 
-# espectro para graficar
-w = 1/np.linspace(1E-3,5,1000)             # espectro de energía (eV)
-lam = em.convert_units(w,'eV','um')        # convertimos espectro a longitudes de onda
 
-# Modelo de Drude
-epsinf = 2.0 
-wp = 1.0                                   # en eV
-gamma = 0.1                                # en eV
-n2 = nk.drude(epsinf,wp,gamma,lam)         # índice de refracción
+from ipywidgets import interact
 
-# índice de refracción aire
-n1 = np.ones(n2.shape)                    
+@interact( epsinf=(1,5,0.1), 
+           wp=(0.4,2.0,0.05), 
+           gamma=(0.01,0.2,0.01))
+def g(epsinf=1,wp=1.0, gamma=0.1):
+    return drude_model(epsinf,wp,gamma)
 
-# Reflectividad en una interface entre un material de Drude y aire
-Rp = interface(0,n1,n2, pol='TM')[0] # TM
-Rs = interface(0,n1,n2, pol='TE')[0] # TE
 
-# formateamos el lienzo para graficar
-fig, ax = plt.subplots()             # número de ejes en la figura
-fig.set_size_inches(6, 3)              # tamaño de la figura
-plt.rcParams['font.size'] = '12'        # tamaño de fuente
+# Notar que en modelo de Drude la condición $\varepsilon' < 0$ se manifiesta en el índice de refracción como $\kappa > n$. Esta condición se da cuando $\lambda_p \lesssim \lambda$
 
-# graficamos 
-ax.plot(1/w,Rp, label='$R_\mathrm{TM}$', color='red', lw=3.0)
-ax.plot(1/w,Rs, label='$R_\mathrm{TE}$', color='blue', lw=2.0, ls='--')
+# Cuando $\kappa > n$ la reflectividad aumenta significativamente. Esto explica la alta reflectividad en los conductores eléctricos
 
-# formateamos los ejes
-ax.set_xlim([0,5])
-ax.set_ylim([0,1.0])
-ax.set_xlabel('$\omega_p/\omega$')
-ax.set_ylabel('Reflectividad')
-ax.legend(frameon=False)
-plt.show()
+# In[13]:
+
+
+get_ipython().run_cell_magic('capture', 'showplot3', '\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom empylib.waveoptics import interface\nimport empylib as em\nimport empylib.nklib as nk\n\ndef drude_reflection(epsinf,wp,gamma):\n    lam = np.linspace(1E-3,5,1000)    # longitudes de onda\n\n    # contruimos el modelo de Drude\n    n2 = nk.drude(epsinf,wp,gamma,lam)     # índice de refracción\n    \n    # índice de refracción aire\n    n1 = np.ones(n2.shape)                    \n\n    # Reflectividad en una interface entre un material de Drude y aire\n    Rp = interface(0,n1,n2, pol=\'TM\')[0] # TM\n    Rs = interface(0,n1,n2, pol=\'TE\')[0] # TE\n\n    # formateamos el lienzo para graficar\n    fig, ax = plt.subplots(1,2)             # número de ejes en la figura\n    fig.set_size_inches(10, 3)              # tamaño de la figura\n    plt.rcParams[\'font.size\'] = \'10\'        # tamaño de fuente\n\n    # graficamos constante dielectrica e índice de refracción\n    ax[0].plot(lam,n2.real,\'b\',label=r"$n$")\n    ax[0].plot(lam,n2.imag,\'r\',label=r"$\\kappa$")\n    ax[1].plot(lam,Rp, label=\'$R_\\mathrm{TM}$\', color=\'red\', lw=3.0)\n    ax[1].plot(lam,Rs, label=\'$R_\\mathrm{TE}$\', color=\'blue\', lw=2.0, ls=\'--\')\n    \n    \n    # marcar línea de frecuencia natural\n    lam_p = em.convert_units(wp,\'eV\',\'um\')\n    ax[0].axvline(x = lam_p, color=\'k\', ls=\'--\', lw=\'1.0\')  \n    ax[0].text(lam_p*1.1,4,r\'$\\lambda_p =%.3f$ $\\mu$m\' % lam_p, fontsize=\'10\', color=\'k\')\n\n    for i in [0,1]:\n        ax[i].set_xlabel(\'Longitud de onda, $\\lambda$ ($\\mu$m)\')\n        ax[i].grid()\n        ax[i].legend(frameon=False)\n        ax[i].set_xlim(0,5.0)\n    ax[0].set_ylabel(r\'Indice de refracción, $N = n + i\\kappa$\')\n    ax[1].set_ylabel(\'Reflectividad\')\n    ax[0].set_ylim(0,5)\n    ax[1].set_ylim(0,1.0)\n    plt.show()')
+
+
+# In[14]:
+
+
+from ipywidgets import interact
+
+@interact( epsinf=(1,5,0.1), 
+           wp=(0.4,2.0,0.05), 
+           gamma=(0.01,0.2,0.01))
+def g(epsinf=1,wp=1.0, gamma=0.1):
+    return drude_reflection(epsinf,wp,gamma)
 
 
 # En general, los metales pueden ser bien representados por el modelo de Drude. En general, $\omega_p$ se ubica en el espectro UV y, por lo tanto, reflejan la luz visible (efecto espejo)
 
 # Por ejemplo, en el caso de aluminio $\omega_p = 15~\mathrm{eV}\approx 90~\mathrm{nm}$
 
-# In[9]:
+# In[15]:
 
 
-import numpy as np
-import matplotlib.pyplot as plt
-import empylib.nklib as nk
+get_ipython().run_cell_magic('capture', 'showplot4', 'import numpy as np\nimport matplotlib.pyplot as plt\nimport empylib.nklib as nk\n\n# índice de refracción y constante dielectrica aluminio\nlam = np.linspace(0.01,1.0,1000)        # espectro de longitudes de onda (um)\nN1 = nk.Al(lam)                         # índice de refracción\neps1 = N1**2                            # constante dieléctrica\n\n# formateamos el lienzo para graficar\nfig, ax = plt.subplots(1,2)             # número de ejes en la figura\nfig.set_size_inches(10, 3)              # tamaño de la figura\nplt.rcParams[\'font.size\'] = \'10\'        # tamaño de fuente\n\n# graficamos\nax[0].plot(lam,eps1.real,\'b\',label=r"$\\varepsilon\'$")\nax[0].plot(lam,eps1.imag,\'r\',label=r"$\\varepsilon\'\'$")\nax[1].plot(lam,N1.real,\'b\',label=r"$n$")\nax[1].plot(lam,N1.imag,\'r\',label=r"$\\kappa$")\n\n# formateamos los ejes\nfor i in [0,1]:\n    ax[i].set_xlabel(\'Longitud de onda, $\\lambda$ ($\\mu$m)\')\n    ax[i].grid()\n    ax[i].set_xlim(0.01,1.0)\n    ax[i].legend(frameon=False)\nax[0].set_ylabel(r"Constante dielectrica, $\\varepsilon = \\varepsilon\'+ \\varepsilon\'\'$")\nax[1].set_ylabel(r\'Indice de refracción, $N = n + i\\kappa$\')\nplt.show()')
 
-# índice de refracción y constante dielectrica aluminio
-lam = np.linspace(0.01,1.0,1000)        # espectro de longitudes de onda (um)
-N1 = nk.Al(lam)                         # índice de refracción
-eps1 = N1**2                            # constante dieléctrica
 
-# formateamos el lienzo para graficar
-fig, ax = plt.subplots(1,2)             # número de ejes en la figura
-fig.set_size_inches(10, 3)              # tamaño de la figura
-plt.rcParams['font.size'] = '12'        # tamaño de fuente
+# In[16]:
 
-# graficamos
-ax[0].plot(lam,eps1.real,'b',label=r"$\varepsilon'$")
-ax[0].plot(lam,eps1.imag,'r',label=r"$\varepsilon''$")
-ax[1].plot(lam,N1.real,'b',label=r"$n$")
-ax[1].plot(lam,N1.imag,'r',label=r"$\kappa$")
 
-# formateamos los ejes
-for i in [0,1]:
-    ax[i].set_xlabel('Longitud de onda, $\lambda$ ($\mu$m)')
-    ax[i].grid()
-    ax[i].set_xlim(0.01,1.0)
-    ax[i].legend(frameon=False)
-ax[0].set_ylabel(r"Constante dielectrica, $\varepsilon = \varepsilon'+ \varepsilon''$")
-ax[1].set_ylabel(r'Indice de refracción, $N = n + i\kappa$')
-plt.show()
+showplot4()
 
 
 # Notemos como para $\lambda \approx 0.8$ $\mu$m, la respuesta del material se desvía del modelo de Drude. Esta respuesta esta asociada a un modo de vibración (modelo de Lorentz).
@@ -420,59 +541,35 @@ plt.show()
 # 
 # Este fenómeno se conoce como **absorpción interbanda**, y ocurre cuando la energía del fotón $\hbar\omega$ ($\hbar = 6.58\times 10^16$ eV$\cdot$s) es superior al bandgap del material.
 
-# <img src="./images/photoexcited_electrons.png" width="300px" align= center>
+# <img src="./images/photoexcited_electrons.png" width="400px" align= center>
 
 # Los semiconductores son los materiales fundamentales en transistores, LED y celdas fotovoltaicas. El semiconductor más conocido es el silicio (Si).
 # 
-# El índice de refracción del silicio es:
+# <img src="./images/silicon_fig.png" width="800px" align= center>
 
+# El índice de refracción del silicio es:
+# 
 # <img src="./images/si_nk.png" width="700px" align= center>
 
 # En general, los materiales pueden presentar más de un tipo de respuesta.
 
 # Por ejemplo, el oro tiene absorción interbanda en longitudes de onda $\lambda < 0.5$ $\mu$m, combinado con el modelo de Drude.
-# <img src="./images/gold_nk.png" width="350px" align= center>
+# <img src="./images/gold_nk.png" width="800px" align= center>
 
 # Debido a esta respuesta, el oro absorbe las longitudes de onda correspondientes al azul y violeta, y refleja el resto de los colores.
 # 
 # La siguiente figura muestra el color del oro según el ángulo de incidencia en base al espectro de reflección de una interface aire/oro.
 
-# In[10]:
+# In[17]:
 
 
-import numpy as np
-import matplotlib.pyplot as plt
-from empylib.waveoptics import interface
-from empylib.ref_spectra import AM15
-from empylib.ref_spectra import color_system as cs
-cs = cs.hdtv
+get_ipython().run_cell_magic('capture', 'showplot5', 'import numpy as np\nimport matplotlib.pyplot as plt\nfrom empylib.waveoptics import interface\nfrom empylib.ref_spectra import AM15\nfrom empylib.ref_spectra import color_system as cs\ncs = cs.hdtv\n\n# creamos índices de refracción\nlam = np.linspace(0.3,0.8,81)   # espectro de longitudes de onda (en um)\nn2 = nk.gold(lam)               # índice de refracción oro\nn1 = np.ones(n2.shape)          # índice de refracción aire\n\n# Reflectividad en interface función del ángulo "tt"\nRp = lambda tt : interface(tt, n1,n2, pol=\'TM\')[0]\nRs = lambda tt : interface(tt, n1,n2, pol=\'TE\')[0]\n\n# formateamos la figura\nfig, ax = plt.subplots()                # número de ejes en la figura\nfig.set_size_inches(6, 3)               # tamaño de la figura\nplt.rcParams[\'font.size\'] = \'12\'        # tamaño de fuente        \n\n# graficamos el color reflejado según el ángulo de incidencia\ntheta = np.linspace(0,90,100)           # angulo de incidencia\nfor i in range(len(theta)): \n    R = 0.5*Rp(np.radians(theta[i])) + 0.5*Rs(np.radians(theta[i]))\n    Irad = R*AM15(lam)\n    html_rgb = cs.spec_to_rgb(Irad, lam, out_fmt=\'html\')\n    ax.axvline(theta[i], color=html_rgb, linewidth=6) \nax.set_xlim([min(theta),max(theta)])\nax.set_ylim([0,1.0])\nax.axes.yaxis.set_visible(False)\nax.set_xlabel(\'Ángulo de incidencia (deg)\')\nplt.show()')
 
-# creamos índices de refracción
-lam = np.linspace(0.3,0.8,81)   # espectro de longitudes de onda (en um)
-n2 = nk.gold(lam)               # índice de refracción oro
-n1 = np.ones(n2.shape)          # índice de refracción aire
 
-# Reflectividad en interface función del ángulo "tt"
-Rp = lambda tt : interface(tt, n1,n2, pol='TM')[0]
-Rs = lambda tt : interface(tt, n1,n2, pol='TE')[0]
+# In[18]:
 
-# formateamos la figura
-fig, ax = plt.subplots()                # número de ejes en la figura
-fig.set_size_inches(6, 3)               # tamaño de la figura
-plt.rcParams['font.size'] = '12'        # tamaño de fuente        
 
-# graficamos el color reflejado según el ángulo de incidencia
-theta = np.linspace(0,90,100)           # angulo de incidencia
-for i in range(len(theta)): 
-    R = 0.5*Rp(np.radians(theta[i])) + 0.5*Rs(np.radians(theta[i]))
-    Irad = R*AM15(lam)
-    html_rgb = cs.spec_to_rgb(Irad, lam, out_fmt='html')
-    ax.axvline(theta[i], color=html_rgb, linewidth=6) 
-ax.set_xlim([min(theta),max(theta)])
-ax.set_ylim([0,1.0])
-ax.axes.yaxis.set_visible(False)
-ax.set_xlabel('Ángulo de incidencia (deg)')
-plt.show()
+showplot5()
 
 
 # Otro ejemplo es el dioxido de titanio (TiO$_2$), el cual presenta absorción interbanda en el espectro ultravioleta, y oscilaciones de Lorentz en el infrarojo.
@@ -480,6 +577,8 @@ plt.show()
 # <img src="./images/tio2_nk.png" width="700px" align= center>
 
 # Debido a la absorcion UV, TiO$_2$ es muy utilizado en cremas para protección solar.
+# 
+# <img src="./images/tio2_fig.png" width="800px" align= center>
 
 # ## Referencias
 # - Rao S. S. **Chapter 4 - Vibration Under General Forcing Conditions** in *Mechanical Vibrations*, 6th Ed, Pearson, 2018
