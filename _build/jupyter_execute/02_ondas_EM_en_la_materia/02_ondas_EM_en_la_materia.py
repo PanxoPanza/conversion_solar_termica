@@ -61,7 +61,7 @@ if importlib.util.find_spec('empylib') is None:
 # In[2]:
 
 
-get_ipython().run_cell_magic('capture', 'show1', "import empylib.nklib as nk\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nlam = np.linspace(0.3,1.0,100) # espectro de longitudes de onda (en micrones)\nN   = nk.H2O(lam)             # índice de refracción complejo del oro\n\nplt.plot(lam,N.real,'-k' ,label='$n$')\nplt.plot(lam,N.imag,'--k',label='$\\kappa$')\nplt.xlabel('longitud de onda ($\\mu$m)')\nplt.ylabel('índice de refracción')\nplt.title('Índice de refracción del oro')\nplt.ylim(0)\nplt.legend()\nplt.show()")
+get_ipython().run_cell_magic('capture', 'show1', "import empylib.nklib as nk\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nlam = np.linspace(0.3,1.0,100) # espectro de longitudes de onda (en micrones)\nN   = nk.H2O(lam)             # índice de refracción complejo del oro\n\nplt.plot(lam,N.real,'-k' ,label='$n$')\nplt.plot(lam,N.imag,'--k',label='$\\kappa$')\nplt.xlabel('longitud de onda ($\\mu$m)')\nplt.ylabel('índice de refracción')\nplt.title('Índice de refracción del oro')\nplt.ylim(0)\nplt.legend()\nplt.show()\n")
 
 
 # In[3]:
@@ -360,7 +360,7 @@ from numpy import radians as rad # convertimos grados a radianes
 import matplotlib.pyplot as plt
 from empylib.waveoptics import interface
 
-theta = np.linspace(0,90,100) # Ángulo de incidencia
+theta = np.linspace(0,90,1000) # Ángulo de incidencia
 
 # preparamos el ploteo
 def plot_R_interface(n1,n2):
