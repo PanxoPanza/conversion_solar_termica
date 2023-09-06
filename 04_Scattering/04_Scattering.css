@@ -27,7 +27,7 @@ div.inner_cell>div.text_cell_render.rendered_html h3{
 
 div.inner_cell>div.text_cell_render.rendered_html img{
     max-height: 450px;
-    max-width: 1000px;
+    max-width: 90%;
     height: auto;
     width: auto;
     margin-left: auto;

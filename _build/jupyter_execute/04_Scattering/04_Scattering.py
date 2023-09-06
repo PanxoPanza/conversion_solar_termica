@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[1]:
+
+
+import importlib.util
+if importlib.util.find_spec('empylib') is None:
+    get_ipython().system('pip install git+https://github.com/PanxoPanza/empylib.git')
+
+
 # # Scattering electromagnético
 
 # ## Interacción de luz según el tamaño de un cuerpo
@@ -9,7 +17,7 @@
 
 # En el caso de cuerpos curvos, los coeficientes de Fresnel y otras fórmulas relacionadas aún son aplicables, siembre y cuando el radio de curvartura del cuerpo $R \gg \lambda$ 
 # 
-# <img src="./images/fresnel_curvature.png" width="500px" align= center>
+# <img src="./images/fresnel_curvature.png" width="600px" align= center>
 
 # ### Interacción de luz con cuerpos grandes
 
@@ -17,7 +25,7 @@
 
 # Primero, es importante notar que el índice de refracción del agua en el espectro visible no es constante. Este índice tiene un pequeño grado de dispersión, y decae a medida que la longitud de onda crece. Así, a partir de la ley de Snell, el ángulo de transmisión de cada onda (o color), crece proporcional a la longitud de onda.
 # 
-# <img src="./images/rainbow_refraction.png" width="600px" align= center>
+# <img src="./images/rainbow_refraction.png" width="800px" align= center>
 
 # Este fenómeno produce que las ondas se separen en el espacio en función de su longitud de onda. 
 # 
@@ -27,15 +35,17 @@
 
 # ### Interacción de luz con cuerpos pequeños
 
-# Cuándo las dimensiones del cuerpo, $D$, son comparables a la longitud de onda, el radio de curvatura se hace significativo y las soluciones de las ecuaciones de Maxwell para una interface plana no son aplicables
-
-# En este caso, se produce el fenómeno de ***scattering* de luz** asociado a la disperción (o esparcimiento) de luz en múltiples direcciones. Además del scattering, tenemos el fenómeno de **absorción de luz** asociada con la porción de la energía incidente absorbida por el objeto. Por último, llamamos **extinción de luz** a la suma de la energía de scattering y absorción.
+# Cuándo las dimensiones del cuerpo, $D$, son comparables a la longitud de onda, el radio de curvatura se hace significativo y las soluciones de las ecuaciones de Maxwell para una interface plana no son aplicables. En este caso, se produce el fenómeno de ***scattering* de luz** asociado a la disperción (o esparcimiento) de luz en múltiples direcciones.
 # 
-# <img src="./images/scattering_schematic.png" width="450px" align= center>
+# <img src="./images/scattering_schematic.png" width="800px" align= center>
 
-# El efecto scattering se presenta cada vez que tenemos material particulado y, por lo tanto, es común en ambientes con polvo o neblina. El siguiente video explica el fenómeno de forma visual, y muestra como el scattering explica el haz de luz producido por un láser rojo cuando interactúa con particular pequeñas dispersas en agua.
+# Además del scattering, tenemos el fenómeno de **absorción de luz**, asociada con la porción de la energía incidente absorbida por el objeto, y la **extinción de luz**, que corresponde a la suma de la energía de scattering y absorción.
 
-# In[1]:
+# El efecto scattering se presenta cada vez que tenemos material particulado y, por lo tanto, es común en ambientes con polvo o neblina. 
+
+# El siguiente video explica el fenómeno de forma visual. Aquí, el haz de luz producido por un láser rojo ocurre debido al scattering del laser al interactuar con particular pequeñas dispersas en agua.
+
+# In[2]:
 
 
 from IPython.display import YouTubeVideo
@@ -48,7 +58,7 @@ YouTubeVideo('OXoKZPLb6Qo', width=700, height = 400)
 
 # 
 # 
-# La fórmula es derivada a partir de la solución de las ecuaciones de Maxwell en coordenadas esféricas, y permite describir con presición la **dependencia del scattering y absorción respecto a las propiedades ópticas de la partícula y el medio circundante, asi como el efecto del diámetro de la partícula.**
+# La fórmula es derivada a partir de la solución de las ecuaciones de Maxwell en coordenadas esféricas, y permite describir con precisión la **dependencia del scattering y absorción respecto a las propiedades ópticas de la partícula y el medio circundante, asi como del diámetro de la partícula.**
 
 # Consideremos el modelo simple una onda electromagnética interactuando con una esfera de radio $R$ y diámetro $D$ tal que $D/\lambda \sim 1$
 
@@ -92,15 +102,17 @@ YouTubeVideo('OXoKZPLb6Qo', width=700, height = 400)
 # ### Distribución del campo eléctrico
 # A partir de esta solución, podemos visualizar la distribución del campo eléctrico durante el fenómeno de scattering.
 
-# La siguiente figura representa el scattering electromagnético a partir de la solución de Mie. La dirección de la onda incidente es $\hat{k}_\mathrm{inc} = \hat{x}$, con el campo eléctrico polarizado en dirección $\hat{e}=\hat{z}$. En la figura de la izquierda mostramos la distribución del campo electrico total, es decir el campo eléctrico incidente ($\vec{E}_\mathrm{inc}$) y de scattering ($\vec{E}_\mathrm{sca}$). En la figura de la derecha, hemos removido $\vec{E}_\mathrm{inc}$ para poder visualizar $\vec{E}_\mathrm{sca}$
+# La siguiente figura representa el scattering electromagnético a partir de la solución de Mie. La dirección de la onda incidente es $\hat{k}_\mathrm{inc} = \hat{x}$, con el campo eléctrico polarizado en dirección $\hat{e}=\hat{z}$.
 # 
-# <img src="./images/scattering_distribution.png" width="600px" align= center>
+# <img src="./images/scattering_distribution.png" width="700px" align= center>
+# 
+# En la figura de la izquierda mostramos la distribución del campo electrico total, es decir el campo eléctrico incidente ($\vec{E}_\mathrm{inc}$) y de scattering ($\vec{E}_\mathrm{sca}$). En la figura de la derecha, hemos removido $\vec{E}_\mathrm{inc}$ para poder visualizar $\vec{E}_\mathrm{sca}$
 
 # Utilizando la dirección de la onda incidente como referencia, podemos ver que la intensidad del scattering es mayor hacia adelante ($\theta = 0^o$) y decrece a medida de $\theta$ aumenta. Debido a la simetría axial, el scattering no varía en $\phi$.
 
 # En general, la distribución del scattering depende del tamaño de la partícula en relación la longitud de onda.
 # 
-# <img src="./images/scattering_vs_size.png" width="550px" align= center>
+# <img src="./images/scattering_vs_size.png" width="700px" align= center>
 
 # Particularmente, cuando $D/\lambda \ll 1$, se denomina Rayleight scattering. En este caso el campo scattering está distribuido uniformemente alrededor de la partícula
 
@@ -118,17 +130,17 @@ YouTubeVideo('OXoKZPLb6Qo', width=700, height = 400)
 # \\
 # &= \int_0^{2\pi}\int_0^{\pi} \left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]R^2 \sin\theta d\theta~d\phi
 # \\
-# &= \Phi_\mathrm{inc}~2\pi\int_0^{\pi}  P_\mathrm{sca}(\theta) \sin\theta d\theta
+# &= I_\mathrm{inc}~2\pi\int_0^{\pi}  P_\mathrm{sca}(\theta) \sin\theta d\theta
 # \quad\mathrm{[W]}
 # \end{align*}
 
-# donde $\Phi_\mathrm{inc} = \frac{n_hE_0}{2Z_0}~\mathrm{[W/m^2]}$ es el flujo de energía o intensidad de la onda incidente, y $P_\mathrm{sca}(\theta)  = \frac{R^2}{\Phi_\mathrm{inc}}\left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]$, es la **función de distribución de scattering** o **función de fase**.
+# donde $I_\mathrm{inc} = \frac{n_hE_0}{2Z_0}~\mathrm{[W/m^2]}$ es el flujo de energía o intensidad de la onda incidente, y $P_\mathrm{sca}(\theta)  = \frac{R^2}{I_\mathrm{inc}}\left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]$, es la **función de distribución de scattering** o **función de fase**.
 
-# La función de fase se define como la **energía de scattering por unidad de ángulo sólido $d\Omega = \sin\theta d\theta d\phi$ relativo al flujo de energía de la onda incidente, $\Phi_\mathrm{inc}$**.
+# La función de fase se define como la **energía de scattering por unidad de ángulo sólido $d\Omega = \sin\theta d\theta d\phi$ relativo al flujo de energía de la onda incidente, $I_\mathrm{inc}$**.
 
-# En otras palabras, para una onda incidente con intensidad $\Phi_\mathrm{inc}$, la energía de scattering en dirección $\theta$ es $\Phi_\mathrm{inc} P_\mathrm{sca}(\theta)d\Omega$
+# En otras palabras, para una onda incidente con intensidad $I_\mathrm{inc}$, la energía de scattering en dirección $\theta$ es $I_\mathrm{inc} P_\mathrm{sca}(\theta)d\Omega$
 # 
-# <img src="./images/phase_function.png" width="300px" align= center>
+# <img src="./images/phase_function.png" width="500px" align= center>
 
 # Mediante un proceso similar, podemos determinar la potencia extinguida, $W_\mathrm{ext}$, a partir del campo total $\vec{E}_\mathrm{tot} = \vec{E}_\mathrm{inc} + \vec{E}_\mathrm{sca}$
 
@@ -147,7 +159,7 @@ YouTubeVideo('OXoKZPLb6Qo', width=700, height = 400)
 # ### Parámetro de asimetría
 # El parámetro de asimetría, $\mu_\mathrm{sca} \in [-1,1]$, nos permite cuantificar la anisotropía en la distribución del scattering.
 # 
-# <img src="./images/asymmetry_parameter.png" width="550px" align= center>
+# <img src="./images/asymmetry_parameter.png" width="700px" align= center>
 
 # En el caso de esferas, se define por:
 # 
@@ -162,19 +174,27 @@ YouTubeVideo('OXoKZPLb6Qo', width=700, height = 400)
 
 # Los parámetros $C_\mathrm{sca}$, $C_\mathrm{abs}$ y $C_\mathrm{ext}$ permiten cuantificar la energía de scattering, absorción y extinción relativa a la intensidad de la fuente $I_\mathrm{inc}$, así como también su distribución en el espectro.
 
-# ### Particulas con índice de refracción real (dieléctricos)
+# A continuación revisaremos tres casos particulares.
+
+# ### Particulas con índice de refracción real ($\kappa_p \approx 0$)
+# 
+# El primer caso de *scattering* que analizaremos es para materiales cuyo valor de $\kappa_p$ es cero o relativamente pequeño ($N_p \approx n_p$). Debido a que el material no absorbe luz, tenemos que $C_\mathrm{abs} = 0$.
+
+# Aunque sabemos que esta clasificación es relativa al espectro que estemos analizando, es una buena aproximación para entender algunos fenómenos naturales.
+
+# En este grupo tenemos, por ejemplo, agua, aceite, vidrio y algunos polímeros transparentes, todos en el espectro visible.
 
 # Por ejemplo, analicemos el scattering de una esfera de agua ($N_p\approx 1.33$) en el aire ($n_h = 1.0$).
 # 
 # Notar que $N_p\approx 1.33$ implica $C_\mathrm{abs} = 0$
 
-# In[2]:
+# In[3]:
 
 
 get_ipython().run_cell_magic('capture', 'show_plot', "import empylib.miescattering as mie\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nlam = np.linspace(0.3,1.4,200)  # espectro de longitudes de onda\nnh = 1.0                        # índice de refracción del material circundante\nNp = 1.33                       # índice de refracción de la partícula\nD = [0.1, 0.3, 0.5, 0.7, 1.0]   # distribución de diámetros \n\nfig, ax = plt.subplots()                # creamos ejes para graficar\ncolors = plt.cm.jet(np.linspace(0,1,len(D))) # set de colores para las curvas\nfor i in range(len(D)):\n    Ac = np.pi*D[i]**2/4                # área transversal de la partícula\n    Qsca = mie.scatter_efficiency(lam,nh,Np,D[i])[1] # determinamos Csca/Ac\n    ax.plot(lam,Qsca*Ac,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Csca\n\n# etiquetas de ejes y formateo de la figura\nfig.set_size_inches(6, 4)         # tamaño de figura\nplt.rcParams['font.size'] = '12'   # tamaño de fuente\nax.set_xlabel(r'Longitud de onda, $\\lambda$ ($\\mu$m)')\nax.set_title('scattering partícula de agua')\nax.set_ylabel(r'$C_\\mathrm{sca}$ ($\\mu$m$^2$)')\nax.legend(frameon=False, title=r'$D$ ($\\mu$m)')\nplt.show()\n")
 
 
-# In[3]:
+# In[4]:
 
 
 show_plot()
@@ -185,21 +205,51 @@ show_plot()
 # 
 # - A medida que el tamaño aumenta, la longitud de onda para scattering máximo crece (*red-shifting*)
 
-# Esta es una característica general del scattering de partículas dieléctricas.
+# Esta es una característica general del scattering en este tipo de materiales.
 
 # A partir de este gráfico podemos entender muchas situaciones de la vida cotidiana.
 
-# Por ejemplo, en la niebla las partículas de agua tienen un tamaño microscópico ($D\sim 1\mu$m) y, por lo tanto, dispersan la mayor parte de la luz visible.
+# Por ejemplo, las partículas de agua en la neblina tienen un tamaño microscópico ($D\sim 1\mu$m). A partir del gráfico anterior observamos que este tamaño de partícula induce scattering en todo el espectro visible, con mayor intensidad en longitudes de onda $\lambda \sim 0.5$ $\mu$m.
+
+# Esto significa que la luz en la niebla será dispersada, independientemente de su longitud de onda. Así, la niebla toma el color de la luz de la fuente.
 # 
-# <img src="./images/difuse_and_specular.png" width="600px" align= center>
+# <img src="./images/difuse_and_specular.png" width="800px" align= center>
 
 # Para un haz de luz incidente en un medio con partículas, llamamos **componente difusa** a la porción de la luz dispersada por scattering, y como **componente especular** a la porción no dispersada.
 
-# En el cielo, en cambio, las moleculas del aire son mucho más pequeñas, y el scattering es más intenso para ondas en el espectro del color azul y violeta ($\lambda < 450$ nm)
+# Otro ejemplo es el azul del cielo. En este caso las moleculas del aire son mucho más pequeñas, y el scattering es más intenso para ondas en el espectro del color azul y violeta ($\lambda < 450$ nm)
 # 
-# <img src="./images/sky_scattering.png" width="600px" align= center>
+# <img src="./images/sky_scattering.png" width="700px" align= center>
 
 # La componente difusa, así, corresponde a los colores azul y violeta. La componente especular, corresponde al resto de los colores del espectro visible. El fenómeno expica el color azul del cielo durante el día.
+
+# ### Partículas no-metálicas con índice de refracción complejo
+# 
+# Este grupo corresponde a materiales semiconductores, como el silicio y el dióxido de titanio. También incluye materiales asilantes en el espectro infrarojo, como sílice o polímeros.
+
+# En este caso, tenemos un efecto de scattering y absorción combinados. La magnitud de $C_\mathrm{sca}$ estará definida por el tamaño de la partícula (similar al caso de partículas con índice de refracción real). La magnitud de $C_\mathrm{abs}$, por otro lado, dependerá de la magnitud de $\kappa_p$.
+
+# Analicemos, por ejemplo, el scattering de partículas de dióxido de titanio (TiO$_2$) en agua ($n_h = 1.33$)
+
+# In[5]:
+
+
+get_ipython().run_cell_magic('capture', 'show_plot1', "import empylib.miescattering as mie\nimport empylib.nklib as nk\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nlam = np.linspace(0.2,1.0,200)     # espectro de longitudes de onda\nnh = 1.33                          # índice de refracción del material circundante\nNp = nk.TiO2(lam)                  # índice de refracción de la partícula\nD = [0.05, 0.1, 0.2, 0.3]          # distribución de diámetros \n\nfig, ax = plt.subplots(1,3)        # creamos ejes para graficar\n\n# graficamos el índice de refracción\nax[0].plot(lam,Np.real, '-r', label = '$n$')\nax[0].plot(lam,Np.imag, '-b', label = '$\\kappa$')\n\ncolors = plt.cm.jet(np.linspace(0,1,len(D))) # set de colores para las curvas\nfor i in range(len(D)):\n    Qext, Qsca = mie.scatter_efficiency(lam,nh,Np,D[i])[0:2] # determinamos Cext/Ac y Csca/Ac\n    Qabs = Qext - Qsca\n    ax[1].plot(lam,Qsca,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Csca/Ac\n    ax[2].plot(lam,Qabs,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Cabs/Ac\n\n# etiquetas de ejes y formateo de la figura\nfig.set_size_inches(12, 3)         # tamaño de figura\nplt.rcParams['font.size'] = '10'   # tamaño de fuente\n\nfor i in range(3):\n    ax[i].set_xlabel(r'Longitud de onda, $\\lambda$ ($\\mu$m)')\n    #ax[i].set_ylim(0,6.2)\n\nax[0].set_title('Indice de refracción de TiO$_2$')\nax[1].set_title('Scattering partícula de TiO$_2$')\nax[2].set_title('Absorción partícula de TiO$_2$')\nax[1].set_ylabel(r'$C_\\mathrm{sca} / \\pi R^2$')\nax[2].set_ylabel(r'$C_\\mathrm{abs} / \\pi R^2$')\nax[0].legend(frameon=False)\nax[2].legend(frameon=False, title=r'D (nm)')\nplt.subplots_adjust(wspace=0.3)\nplt.show()\n")
+
+
+# In[6]:
+
+
+show_plot1()
+
+
+# En este caso, vemos que $C_\mathrm{abs}$ esta condicionado a valores donde $\kappa_p \neq 0$ (en el espectro UV, en este caso particular). El valor de $C_\mathrm{sca}$, en cambio, se extiende en el espectro visible, similar a lo que ocurre con el efecto de la neblina.
+
+# Este efecto de scattering en particulas de TiO$_2$, explica el color blanco de los protectores solares. Las particulas de TiO$_2$ se agregan a la crema para absorver la radiación UV. El color blanco ocurre debido al scattering de luz visible, tal como indica la gráfica anterior.
+
+# <img src="./images/tio2_sun-screen.png" width="700px" align= center>
+
+# A diferencia de la neblina, sin embargo, en este caso tenemos un blanco más intenso. Como veremos en la siguiente unidad, este efecto se debe al *scattering múltiple*, asociado a la alta concentración de partículas de TiO$_2$ 
 
 # ### Partículas metálicas
 
@@ -209,19 +259,19 @@ show_plot()
 
 # En la siguiente figura, graficamos $C_\mathrm{sca}$ y $C_\mathrm{abs}$ para partículas de distinto diámetro. Ambas variables son normalizadas por al área transversal de la esfera $\pi R^2$, para mejor comparación entre esferas de distintas dimensiones.
 
-# In[4]:
+# In[7]:
 
 
-get_ipython().run_cell_magic('capture', 'show_plot', "import empylib.miescattering as mie\nimport empylib.nklib as nk\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nlam = np.linspace(0.2,0.8,200)     # espectro de longitudes de onda\nnh = 1.0                           # índice de refracción del material circundante\nNp = nk.silver(lam)                # índice de refracción de la partícula\nD = [0.01, 0.02, 0.05, 0.08, 0.1]  # distribución de diámetros \n\nfig, ax = plt.subplots(1,2)        # creamos ejes para graficar\ncolors = plt.cm.jet(np.linspace(0,1,len(D))) # set de colores para las curvas\nfor i in range(len(D)):\n    Qext, Qsca = mie.scatter_efficiency(lam,nh,Np,D[i])[0:2] # determinamos Cext/Ac y Csca/Ac\n    Qabs = Qext - Qsca\n    ax[0].plot(lam,Qsca,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Csca/Ac\n    ax[1].plot(lam,Qabs,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Cabs/Ac\n\n# etiquetas de ejes y formateo de la figura\nfig.set_size_inches(10, 3)         # tamaño de figura\nplt.rcParams['font.size'] = '12'   # tamaño de fuente\n\nfor i in range(2):\n    ax[i].set_xlabel(r'Longitud de onda, $\\lambda$ ($\\mu$m)')\n    ax[i].set_ylim(0,6.2)\n\nax[0].set_title('Scattering partícula de plata')\nax[1].set_title('Absorción partícula de plata')\nax[0].set_ylabel(r'$C_\\mathrm{sca} / \\pi R^2$')\nax[1].set_ylabel(r'$C_\\mathrm{abs} / \\pi R^2$')\nax[1].legend(frameon=False, title=r'D (nm)')\nplt.show()\n")
+get_ipython().run_cell_magic('capture', 'show_plot', "import empylib.miescattering as mie\nimport empylib.nklib as nk\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nlam = np.linspace(0.2,0.8,200)     # espectro de longitudes de onda\nnh = 1.0                           # índice de refracción del material circundante\nNp = nk.silver(lam)                # índice de refracción de la partícula\nD = [0.01, 0.02, 0.05, 0.08, 0.1]  # distribución de diámetros \n\nfig, ax = plt.subplots(1,2)        # creamos ejes para graficar\ncolors = plt.cm.jet(np.linspace(0,1,len(D))) # set de colores para las curvas\nfor i in range(len(D)):\n    Qext, Qsca = mie.scatter_efficiency(lam,nh,Np,D[i])[0:2] # determinamos Cext/Ac y Csca/Ac\n    Qabs = Qext - Qsca\n    ax[0].plot(lam,Qsca,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Csca/Ac\n    ax[1].plot(lam,Qabs,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Cabs/Ac\n\n# etiquetas de ejes y formateo de la figura\nfig.set_size_inches(9, 3)         # tamaño de figura\nplt.rcParams['font.size'] = '10'   # tamaño de fuente\n\nfor i in range(2):\n    ax[i].set_xlabel(r'Longitud de onda, $\\lambda$ ($\\mu$m)')\n    ax[i].set_ylim(0,6.2)\n\nax[0].set_title('Scattering partícula de plata')\nax[1].set_title('Absorción partícula de plata')\nax[0].set_ylabel(r'$C_\\mathrm{sca} / \\pi R^2$')\nax[1].set_ylabel(r'$C_\\mathrm{abs} / \\pi R^2$')\nax[1].legend(frameon=False, title=r'D (nm)')\nplt.show()\n")
 
 
-# In[5]:
+# In[8]:
 
 
 show_plot()
 
 
-# - Para $D < 20$ nm, $C_\mathrm{sca}$ es despreciable en comparación con $C_\mathrm{abs}$. El peak en $C_\mathrm{abs}$ es el resultado de la resonancia del sistema, similar al modelo de Lorentz.
+# - Para $D < 20$ nm, $C_\mathrm{sca}$ es despreciable en comparación con $C_\mathrm{abs}$. El peak en $C_\mathrm{abs}$ es el resultado de la excitación de frecuencias de resonancia en la partícula, similar al modelo de Lorentz.
 # 
 # - Para $D > 50$ nm, $C_\mathrm{sca}$ crece significativamente, superando $C_\mathrm{abs}$ para $D > 80$ nm.
 # 
@@ -229,7 +279,7 @@ show_plot()
 
 # Este fenómeno se repite en otros metales, aunque con distintas magnitudes y frecuencias de resonancia.
 
-# El efecto de de scattering en nanopartículas metálicas permite explicar el cambio en los colores en la copa de Lycurgus.
+# El efecto de de scattering en nanopartículas metálicas permite explicar el cambio en los colores en la [copa de Lycurgus](https://es.wikipedia.org/wiki/Copa_de_Licurgo).
 # 
 # <img src="./images/LycurgusCup.jpg" width="300px" align= center>
 
