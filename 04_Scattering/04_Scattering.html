@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -450,13 +448,22 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#particulas-con-indice-de-refraccion-real-dielectricos">
-     4.3.1. Particulas con índice de refracción real (dieléctricos)
+    <a class="reference internal nav-link" href="#particulas-con-indice-de-refraccion-real-kappa-p-approx-0">
+     4.3.1. Particulas con índice de refracción real (
+     <span class="math notranslate nohighlight">
+      \(\kappa_p \approx 0\)
+     </span>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#particulas-no-metalicas-con-indice-de-refraccion-complejo">
+     4.3.2. Partículas no-metálicas con índice de refracción complejo
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#particulas-metalicas">
-     4.3.2. Partículas metálicas
+     4.3.3. Partículas metálicas
     </a>
    </li>
   </ul>
@@ -530,13 +537,22 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#particulas-con-indice-de-refraccion-real-dielectricos">
-     4.3.1. Particulas con índice de refracción real (dieléctricos)
+    <a class="reference internal nav-link" href="#particulas-con-indice-de-refraccion-real-kappa-p-approx-0">
+     4.3.1. Particulas con índice de refracción real (
+     <span class="math notranslate nohighlight">
+      \(\kappa_p \approx 0\)
+     </span>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#particulas-no-metalicas-con-indice-de-refraccion-complejo">
+     4.3.2. Partículas no-metálicas con índice de refracción complejo
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#particulas-metalicas">
-     4.3.2. Partículas metálicas
+     4.3.3. Partículas metálicas
     </a>
    </li>
   </ul>
@@ -562,22 +578,23 @@ title="Print to PDF"
 <h2><span class="section-number">4.1. </span>Interacción de luz según el tamaño de un cuerpo<a class="headerlink" href="#interaccion-de-luz-segun-el-tamano-de-un-cuerpo" title="Permalink to this headline">#</a></h2>
 <p>Hasta el momento hemos analizado las ecuaciones de Maxwell y condiciones de borde en coordenadas cartesianas. Estas relaciones se aplican a interfaces rectas.</p>
 <p>En el caso de cuerpos curvos, los coeficientes de Fresnel y otras fórmulas relacionadas aún son aplicables, siembre y cuando el radio de curvartura del cuerpo <span class="math notranslate nohighlight">\(R \gg \lambda\)</span></p>
-<a class="reference internal image-reference" href="../_images/fresnel_curvature.png"><img alt="../_images/fresnel_curvature.png" class="align-center" src="../_images/fresnel_curvature.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/fresnel_curvature.png"><img alt="../_images/fresnel_curvature.png" class="align-center" src="../_images/fresnel_curvature.png" style="width: 600px;" /></a>
 <section id="interaccion-de-luz-con-cuerpos-grandes">
 <h3><span class="section-number">4.1.1. </span>Interacción de luz con cuerpos grandes<a class="headerlink" href="#interaccion-de-luz-con-cuerpos-grandes" title="Permalink to this headline">#</a></h3>
 <p>A través de este principio podemos explicar la separación de colores en un arcoiris.</p>
 <p>Primero, es importante notar que el índice de refracción del agua en el espectro visible no es constante. Este índice tiene un pequeño grado de dispersión, y decae a medida que la longitud de onda crece. Así, a partir de la ley de Snell, el ángulo de transmisión de cada onda (o color), crece proporcional a la longitud de onda.</p>
-<a class="reference internal image-reference" href="../_images/rainbow_refraction.png"><img alt="../_images/rainbow_refraction.png" class="align-center" src="../_images/rainbow_refraction.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../_images/rainbow_refraction.png"><img alt="../_images/rainbow_refraction.png" class="align-center" src="../_images/rainbow_refraction.png" style="width: 800px;" /></a>
 <p>Este fenómeno produce que las ondas se separen en el espacio en función de su longitud de onda.</p>
 <p>En una gota de agua, el efecto de separación de colores se magnifica a medida que la luz se refleja en el interior</p>
 <a class="reference internal image-reference" href="../_images/rainbows.jpg"><img alt="../_images/rainbows.jpg" class="align-center" src="../_images/rainbows.jpg" style="width: 300px;" /></a>
 </section>
 <section id="interaccion-de-luz-con-cuerpos-pequenos">
 <h3><span class="section-number">4.1.2. </span>Interacción de luz con cuerpos pequeños<a class="headerlink" href="#interaccion-de-luz-con-cuerpos-pequenos" title="Permalink to this headline">#</a></h3>
-<p>Cuándo las dimensiones del cuerpo, <span class="math notranslate nohighlight">\(D\)</span>, son comparables a la longitud de onda, el radio de curvatura se hace significativo y las soluciones de las ecuaciones de Maxwell para una interface plana no son aplicables</p>
-<p>En este caso, se produce el fenómeno de <strong><em>scattering</em> de luz</strong> asociado a la disperción (o esparcimiento) de luz en múltiples direcciones. Además del scattering, tenemos el fenómeno de <strong>absorción de luz</strong> asociada con la porción de la energía incidente absorbida por el objeto. Por último, llamamos <strong>extinción de luz</strong> a la suma de la energía de scattering y absorción.</p>
-<a class="reference internal image-reference" href="../_images/scattering_schematic.png"><img alt="../_images/scattering_schematic.png" class="align-center" src="../_images/scattering_schematic.png" style="width: 450px;" /></a>
-<p>El efecto scattering se presenta cada vez que tenemos material particulado y, por lo tanto, es común en ambientes con polvo o neblina. El siguiente video explica el fenómeno de forma visual, y muestra como el scattering explica el haz de luz producido por un láser rojo cuando interactúa con particular pequeñas dispersas en agua.</p>
+<p>Cuándo las dimensiones del cuerpo, <span class="math notranslate nohighlight">\(D\)</span>, son comparables a la longitud de onda, el radio de curvatura se hace significativo y las soluciones de las ecuaciones de Maxwell para una interface plana no son aplicables. En este caso, se produce el fenómeno de <strong><em>scattering</em> de luz</strong> asociado a la disperción (o esparcimiento) de luz en múltiples direcciones.</p>
+<a class="reference internal image-reference" href="../_images/scattering_schematic.png"><img alt="../_images/scattering_schematic.png" class="align-center" src="../_images/scattering_schematic.png" style="width: 800px;" /></a>
+<p>Además del scattering, tenemos el fenómeno de <strong>absorción de luz</strong>, asociada con la porción de la energía incidente absorbida por el objeto, y la <strong>extinción de luz</strong>, que corresponde a la suma de la energía de scattering y absorción.</p>
+<p>El efecto scattering se presenta cada vez que tenemos material particulado y, por lo tanto, es común en ambientes con polvo o neblina.</p>
+<p>El siguiente video explica el fenómeno de forma visual. Aquí, el haz de luz producido por un láser rojo ocurre debido al scattering del laser al interactuar con particular pequeñas dispersas en agua.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
@@ -596,7 +613,7 @@ title="Print to PDF"
 <section id="scattering-en-esferas-solucion-de-mie">
 <h2><span class="section-number">4.2. </span>Scattering en esferas (solución de Mie)<a class="headerlink" href="#scattering-en-esferas-solucion-de-mie" title="Permalink to this headline">#</a></h2>
 <p>La solución analítica para predecir el efecto de scattering y absorción en esferas, desarrollada por Gustav Mie, se ha convertido en la principal referencia para entender este fenómeno.</p>
-<p>La fórmula es derivada a partir de la solución de las ecuaciones de Maxwell en coordenadas esféricas, y permite describir con presición la <strong>dependencia del scattering y absorción respecto a las propiedades ópticas de la partícula y el medio circundante, asi como el efecto del diámetro de la partícula.</strong></p>
+<p>La fórmula es derivada a partir de la solución de las ecuaciones de Maxwell en coordenadas esféricas, y permite describir con precisión la <strong>dependencia del scattering y absorción respecto a las propiedades ópticas de la partícula y el medio circundante, asi como del diámetro de la partícula.</strong></p>
 <p>Consideremos el modelo simple una onda electromagnética interactuando con una esfera de radio <span class="math notranslate nohighlight">\(R\)</span> y diámetro <span class="math notranslate nohighlight">\(D\)</span> tal que <span class="math notranslate nohighlight">\(D/\lambda \sim 1\)</span></p>
 <a class="reference internal image-reference" href="../_images/em_wave_sphere.png"><img alt="../_images/em_wave_sphere.png" class="align-center" src="../_images/em_wave_sphere.png" style="width: 300px;" /></a>
 <p>Llamaremos al índice de refracción de la esfera <span class="math notranslate nohighlight">\(N_p\)</span>, y al índice de refracción del exterior <span class="math notranslate nohighlight">\(N_h\)</span>.</p>
@@ -630,11 +647,12 @@ b_l = \frac{\psi_l(px)\psi'_l(x) - p\psi_l(x)\psi'_l(px)}{\psi_l(px)\xi'_l(x) - 
 <section id="distribucion-del-campo-electrico">
 <h3><span class="section-number">4.2.1. </span>Distribución del campo eléctrico<a class="headerlink" href="#distribucion-del-campo-electrico" title="Permalink to this headline">#</a></h3>
 <p>A partir de esta solución, podemos visualizar la distribución del campo eléctrico durante el fenómeno de scattering.</p>
-<p>La siguiente figura representa el scattering electromagnético a partir de la solución de Mie. La dirección de la onda incidente es <span class="math notranslate nohighlight">\(\hat{k}_\mathrm{inc} = \hat{x}\)</span>, con el campo eléctrico polarizado en dirección <span class="math notranslate nohighlight">\(\hat{e}=\hat{z}\)</span>. En la figura de la izquierda mostramos la distribución del campo electrico total, es decir el campo eléctrico incidente (<span class="math notranslate nohighlight">\(\vec{E}_\mathrm{inc}\)</span>) y de scattering (<span class="math notranslate nohighlight">\(\vec{E}_\mathrm{sca}\)</span>). En la figura de la derecha, hemos removido <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{inc}\)</span> para poder visualizar <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{sca}\)</span></p>
-<a class="reference internal image-reference" href="../_images/scattering_distribution.png"><img alt="../_images/scattering_distribution.png" class="align-center" src="../_images/scattering_distribution.png" style="width: 600px;" /></a>
+<p>La siguiente figura representa el scattering electromagnético a partir de la solución de Mie. La dirección de la onda incidente es <span class="math notranslate nohighlight">\(\hat{k}_\mathrm{inc} = \hat{x}\)</span>, con el campo eléctrico polarizado en dirección <span class="math notranslate nohighlight">\(\hat{e}=\hat{z}\)</span>.</p>
+<a class="reference internal image-reference" href="../_images/scattering_distribution.png"><img alt="../_images/scattering_distribution.png" class="align-center" src="../_images/scattering_distribution.png" style="width: 700px;" /></a>
+<p>En la figura de la izquierda mostramos la distribución del campo electrico total, es decir el campo eléctrico incidente (<span class="math notranslate nohighlight">\(\vec{E}_\mathrm{inc}\)</span>) y de scattering (<span class="math notranslate nohighlight">\(\vec{E}_\mathrm{sca}\)</span>). En la figura de la derecha, hemos removido <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{inc}\)</span> para poder visualizar <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{sca}\)</span></p>
 <p>Utilizando la dirección de la onda incidente como referencia, podemos ver que la intensidad del scattering es mayor hacia adelante (<span class="math notranslate nohighlight">\(\theta = 0^o\)</span>) y decrece a medida de <span class="math notranslate nohighlight">\(\theta\)</span> aumenta. Debido a la simetría axial, el scattering no varía en <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
 <p>En general, la distribución del scattering depende del tamaño de la partícula en relación la longitud de onda.</p>
-<a class="reference internal image-reference" href="../_images/scattering_vs_size.png"><img alt="../_images/scattering_vs_size.png" class="align-center" src="../_images/scattering_vs_size.png" style="width: 550px;" /></a>
+<a class="reference internal image-reference" href="../_images/scattering_vs_size.png"><img alt="../_images/scattering_vs_size.png" class="align-center" src="../_images/scattering_vs_size.png" style="width: 700px;" /></a>
 <p>Particularmente, cuando <span class="math notranslate nohighlight">\(D/\lambda \ll 1\)</span>, se denomina Rayleight scattering. En este caso el campo scattering está distribuido uniformemente alrededor de la partícula</p>
 </section>
 <section id="flujo-de-energia">
@@ -649,13 +667,13 @@ W_\mathrm{sca} &amp;= \oint_{S} \langle\vec{S_\mathrm{sca}}\rangle\cdot\hat{r}dS
 \\
 &amp;= \int_0^{2\pi}\int_0^{\pi} \left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]R^2 \sin\theta d\theta~d\phi
 \\
-&amp;= \Phi_\mathrm{inc}~2\pi\int_0^{\pi}  P_\mathrm{sca}(\theta) \sin\theta d\theta
+&amp;= I_\mathrm{inc}~2\pi\int_0^{\pi}  P_\mathrm{sca}(\theta) \sin\theta d\theta
 \quad\mathrm{[W]}
 \end{align*}\]</div>
-<p>donde <span class="math notranslate nohighlight">\(\Phi_\mathrm{inc} = \frac{n_hE_0}{2Z_0}~\mathrm{[W/m^2]}\)</span> es el flujo de energía o intensidad de la onda incidente, y <span class="math notranslate nohighlight">\(P_\mathrm{sca}(\theta)  = \frac{R^2}{\Phi_\mathrm{inc}}\left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]\)</span>, es la <strong>función de distribución de scattering</strong> o <strong>función de fase</strong>.</p>
-<p>La función de fase se define como la <strong>energía de scattering por unidad de ángulo sólido <span class="math notranslate nohighlight">\(d\Omega = \sin\theta d\theta d\phi\)</span> relativo al flujo de energía de la onda incidente, <span class="math notranslate nohighlight">\(\Phi_\mathrm{inc}\)</span></strong>.</p>
-<p>En otras palabras, para una onda incidente con intensidad <span class="math notranslate nohighlight">\(\Phi_\mathrm{inc}\)</span>, la energía de scattering en dirección <span class="math notranslate nohighlight">\(\theta\)</span> es <span class="math notranslate nohighlight">\(\Phi_\mathrm{inc} P_\mathrm{sca}(\theta)d\Omega\)</span></p>
-<a class="reference internal image-reference" href="../_images/phase_function.png"><img alt="../_images/phase_function.png" class="align-center" src="../_images/phase_function.png" style="width: 300px;" /></a>
+<p>donde <span class="math notranslate nohighlight">\(I_\mathrm{inc} = \frac{n_hE_0}{2Z_0}~\mathrm{[W/m^2]}\)</span> es el flujo de energía o intensidad de la onda incidente, y <span class="math notranslate nohighlight">\(P_\mathrm{sca}(\theta)  = \frac{R^2}{I_\mathrm{inc}}\left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]\)</span>, es la <strong>función de distribución de scattering</strong> o <strong>función de fase</strong>.</p>
+<p>La función de fase se define como la <strong>energía de scattering por unidad de ángulo sólido <span class="math notranslate nohighlight">\(d\Omega = \sin\theta d\theta d\phi\)</span> relativo al flujo de energía de la onda incidente, <span class="math notranslate nohighlight">\(I_\mathrm{inc}\)</span></strong>.</p>
+<p>En otras palabras, para una onda incidente con intensidad <span class="math notranslate nohighlight">\(I_\mathrm{inc}\)</span>, la energía de scattering en dirección <span class="math notranslate nohighlight">\(\theta\)</span> es <span class="math notranslate nohighlight">\(I_\mathrm{inc} P_\mathrm{sca}(\theta)d\Omega\)</span></p>
+<a class="reference internal image-reference" href="../_images/phase_function.png"><img alt="../_images/phase_function.png" class="align-center" src="../_images/phase_function.png" style="width: 500px;" /></a>
 <p>Mediante un proceso similar, podemos determinar la potencia extinguida, <span class="math notranslate nohighlight">\(W_\mathrm{ext}\)</span>, a partir del campo total <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{tot} = \vec{E}_\mathrm{inc} + \vec{E}_\mathrm{sca}\)</span></p>
 <p>Al igual que con los coeficientes de Fresnel, es común definir la energía relativa a <span class="math notranslate nohighlight">\(I_\mathrm{inc}\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
@@ -670,7 +688,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 <section id="parametro-de-asimetria">
 <h3><span class="section-number">4.2.3. </span>Parámetro de asimetría<a class="headerlink" href="#parametro-de-asimetria" title="Permalink to this headline">#</a></h3>
 <p>El parámetro de asimetría, <span class="math notranslate nohighlight">\(\mu_\mathrm{sca} \in [-1,1]\)</span>, nos permite cuantificar la anisotropía en la distribución del scattering.</p>
-<a class="reference internal image-reference" href="../_images/asymmetry_parameter.png"><img alt="../_images/asymmetry_parameter.png" class="align-center" src="../_images/asymmetry_parameter.png" style="width: 550px;" /></a>
+<a class="reference internal image-reference" href="../_images/asymmetry_parameter.png"><img alt="../_images/asymmetry_parameter.png" class="align-center" src="../_images/asymmetry_parameter.png" style="width: 700px;" /></a>
 <p>En el caso de esferas, se define por:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -684,11 +702,15 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 <section id="analisis-de-scattering">
 <h2><span class="section-number">4.3. </span>Analisis de scattering<a class="headerlink" href="#analisis-de-scattering" title="Permalink to this headline">#</a></h2>
 <p>Los parámetros <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span>, <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> y <span class="math notranslate nohighlight">\(C_\mathrm{ext}\)</span> permiten cuantificar la energía de scattering, absorción y extinción relativa a la intensidad de la fuente <span class="math notranslate nohighlight">\(I_\mathrm{inc}\)</span>, así como también su distribución en el espectro.</p>
-<section id="particulas-con-indice-de-refraccion-real-dielectricos">
-<h3><span class="section-number">4.3.1. </span>Particulas con índice de refracción real (dieléctricos)<a class="headerlink" href="#particulas-con-indice-de-refraccion-real-dielectricos" title="Permalink to this headline">#</a></h3>
+<p>A continuación revisaremos tres casos particulares.</p>
+<section id="particulas-con-indice-de-refraccion-real-kappa-p-approx-0">
+<h3><span class="section-number">4.3.1. </span>Particulas con índice de refracción real (<span class="math notranslate nohighlight">\(\kappa_p \approx 0\)</span>)<a class="headerlink" href="#particulas-con-indice-de-refraccion-real-kappa-p-approx-0" title="Permalink to this headline">#</a></h3>
+<p>El primer caso de <em>scattering</em> que analizaremos es para materiales cuyo valor de <span class="math notranslate nohighlight">\(\kappa_p\)</span> es cero o relativamente pequeño (<span class="math notranslate nohighlight">\(N_p \approx n_p\)</span>). Debido a que el material no absorbe luz, tenemos que <span class="math notranslate nohighlight">\(C_\mathrm{abs} = 0\)</span>.</p>
+<p>Aunque sabemos que esta clasificación es relativa al espectro que estemos analizando, es una buena aproximación para entender algunos fenómenos naturales.</p>
+<p>En este grupo tenemos, por ejemplo, agua, aceite, vidrio y algunos polímeros transparentes, todos en el espectro visible.</p>
 <p>Por ejemplo, analicemos el scattering de una esfera de agua (<span class="math notranslate nohighlight">\(N_p\approx 1.33\)</span>) en el aire (<span class="math notranslate nohighlight">\(n_h = 1.0\)</span>).</p>
 <p>Notar que <span class="math notranslate nohighlight">\(N_p\approx 1.33\)</span> implica <span class="math notranslate nohighlight">\(C_\mathrm{abs} = 0\)</span></p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span> show_plot
 <span class="kn">import</span> <span class="nn">empylib.miescattering</span> <span class="k">as</span> <span class="nn">mie</span>
@@ -719,14 +741,14 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_plot</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04_Scattering_43_0.png" src="../_images/04_Scattering_43_0.png" />
+<img alt="../_images/04_Scattering_48_0.png" src="../_images/04_Scattering_48_0.png" />
 </div>
 </div>
 <p>A partir de este gráfico podemos identificar algunos patrones comúnes en scattering:</p>
@@ -734,21 +756,89 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 <li><p>La energía de scattering aumenta con el tamaño de la partícula</p></li>
 <li><p>A medida que el tamaño aumenta, la longitud de onda para scattering máximo crece (<em>red-shifting</em>)</p></li>
 </ul>
-<p>Esta es una característica general del scattering de partículas dieléctricas.</p>
+<p>Esta es una característica general del scattering en este tipo de materiales.</p>
 <p>A partir de este gráfico podemos entender muchas situaciones de la vida cotidiana.</p>
-<p>Por ejemplo, en la niebla las partículas de agua tienen un tamaño microscópico (<span class="math notranslate nohighlight">\(D\sim 1\mu\)</span>m) y, por lo tanto, dispersan la mayor parte de la luz visible.</p>
-<a class="reference internal image-reference" href="../_images/difuse_and_specular.png"><img alt="../_images/difuse_and_specular.png" class="align-center" src="../_images/difuse_and_specular.png" style="width: 600px;" /></a>
+<p>Por ejemplo, las partículas de agua en la neblina tienen un tamaño microscópico (<span class="math notranslate nohighlight">\(D\sim 1\mu\)</span>m). A partir del gráfico anterior observamos que este tamaño de partícula induce scattering en todo el espectro visible, con mayor intensidad en longitudes de onda <span class="math notranslate nohighlight">\(\lambda \sim 0.5\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m.</p>
+<p>Esto significa que la luz en la niebla será dispersada, independientemente de su longitud de onda. Así, la niebla toma el color de la luz de la fuente.</p>
+<a class="reference internal image-reference" href="../_images/difuse_and_specular.png"><img alt="../_images/difuse_and_specular.png" class="align-center" src="../_images/difuse_and_specular.png" style="width: 800px;" /></a>
 <p>Para un haz de luz incidente en un medio con partículas, llamamos <strong>componente difusa</strong> a la porción de la luz dispersada por scattering, y como <strong>componente especular</strong> a la porción no dispersada.</p>
-<p>En el cielo, en cambio, las moleculas del aire son mucho más pequeñas, y el scattering es más intenso para ondas en el espectro del color azul y violeta (<span class="math notranslate nohighlight">\(\lambda &lt; 450\)</span> nm)</p>
-<a class="reference internal image-reference" href="../_images/sky_scattering.png"><img alt="../_images/sky_scattering.png" class="align-center" src="../_images/sky_scattering.png" style="width: 600px;" /></a>
+<p>Otro ejemplo es el azul del cielo. En este caso las moleculas del aire son mucho más pequeñas, y el scattering es más intenso para ondas en el espectro del color azul y violeta (<span class="math notranslate nohighlight">\(\lambda &lt; 450\)</span> nm)</p>
+<a class="reference internal image-reference" href="../_images/sky_scattering.png"><img alt="../_images/sky_scattering.png" class="align-center" src="../_images/sky_scattering.png" style="width: 700px;" /></a>
 <p>La componente difusa, así, corresponde a los colores azul y violeta. La componente especular, corresponde al resto de los colores del espectro visible. El fenómeno expica el color azul del cielo durante el día.</p>
 </section>
+<section id="particulas-no-metalicas-con-indice-de-refraccion-complejo">
+<h3><span class="section-number">4.3.2. </span>Partículas no-metálicas con índice de refracción complejo<a class="headerlink" href="#particulas-no-metalicas-con-indice-de-refraccion-complejo" title="Permalink to this headline">#</a></h3>
+<p>Este grupo corresponde a materiales semiconductores, como el silicio y el dióxido de titanio. También incluye materiales asilantes en el espectro infrarojo, como sílice o polímeros.</p>
+<p>En este caso, tenemos un efecto de scattering y absorción combinados. La magnitud de <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span> estará definida por el tamaño de la partícula (similar al caso de partículas con índice de refracción real). La magnitud de <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span>, por otro lado, dependerá de la magnitud de <span class="math notranslate nohighlight">\(\kappa_p\)</span>.</p>
+<p>Analicemos, por ejemplo, el scattering de partículas de dióxido de titanio (TiO<span class="math notranslate nohighlight">\(_2\)</span>) en agua (<span class="math notranslate nohighlight">\(n_h = 1.33\)</span>)</p>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span> show_plot1
+<span class="kn">import</span> <span class="nn">empylib.miescattering</span> <span class="k">as</span> <span class="nn">mie</span>
+<span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>     <span class="c1"># espectro de longitudes de onda</span>
+<span class="n">nh</span> <span class="o">=</span> <span class="mf">1.33</span>                          <span class="c1"># índice de refracción del material circundante</span>
+<span class="n">Np</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">TiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>                  <span class="c1"># índice de refracción de la partícula</span>
+<span class="n">D</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>          <span class="c1"># distribución de diámetros </span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>        <span class="c1"># creamos ejes para graficar</span>
+
+<span class="c1"># graficamos el índice de refracción</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Np</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$n$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Np</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$\kappa$&#39;</span><span class="p">)</span>
+
+<span class="n">colors</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">jet</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">D</span><span class="p">)))</span> <span class="c1"># set de colores para las curvas</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">D</span><span class="p">)):</span>
+    <span class="n">Qext</span><span class="p">,</span> <span class="n">Qsca</span> <span class="o">=</span> <span class="n">mie</span><span class="o">.</span><span class="n">scatter_efficiency</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">nh</span><span class="p">,</span><span class="n">Np</span><span class="p">,</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">])[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># determinamos Cext/Ac y Csca/Ac</span>
+    <span class="n">Qabs</span> <span class="o">=</span> <span class="n">Qext</span> <span class="o">-</span> <span class="n">Qsca</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Qsca</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="mf">1E3</span><span class="p">)))</span> <span class="c1"># grafico Csca/Ac</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Qabs</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="mf">1E3</span><span class="p">)))</span> <span class="c1"># grafico Cabs/Ac</span>
+
+<span class="c1"># etiquetas de ejes y formateo de la figura</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>         <span class="c1"># tamaño de figura</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;10&#39;</span>   <span class="c1"># tamaño de fuente</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Longitud de onda, $\lambda$ ($\mu$m)&#39;</span><span class="p">)</span>
+    <span class="c1">#ax[i].set_ylim(0,6.2)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Indice de refracción de TiO$_2$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Scattering partícula de TiO$_2$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Absorción partícula de TiO$_2$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$C_\mathrm</span><span class="si">{sca}</span><span class="s1"> / \pi R^2$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$C_\mathrm</span><span class="si">{abs}</span><span class="s1"> / \pi R^2$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;D (nm)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">wspace</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_plot1</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04_Scattering_61_0.png" src="../_images/04_Scattering_61_0.png" />
+</div>
+</div>
+<p>En este caso, vemos que <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> esta condicionado a valores donde <span class="math notranslate nohighlight">\(\kappa_p \neq 0\)</span> (en el espectro UV, en este caso particular). El valor de <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span>, en cambio, se extiende en el espectro visible, similar a lo que ocurre con el efecto de la neblina.</p>
+<p>Este efecto de scattering en particulas de TiO<span class="math notranslate nohighlight">\(_2\)</span>, explica el color blanco de los protectores solares. Las particulas de TiO<span class="math notranslate nohighlight">\(_2\)</span> se agregan a la crema para absorver la radiación UV. El color blanco ocurre debido al scattering de luz visible, tal como indica la gráfica anterior.</p>
+<a class="reference internal image-reference" href="../_images/tio2_sun-screen.png"><img alt="../_images/tio2_sun-screen.png" class="align-center" src="../_images/tio2_sun-screen.png" style="width: 700px;" /></a>
+<p>A diferencia de la neblina, sin embargo, en este caso tenemos un blanco más intenso. Como veremos en la siguiente unidad, este efecto se debe al <em>scattering múltiple</em>, asociado a la alta concentración de partículas de TiO<span class="math notranslate nohighlight">\(_2\)</span></p>
+</section>
 <section id="particulas-metalicas">
-<h3><span class="section-number">4.3.2. </span>Partículas metálicas<a class="headerlink" href="#particulas-metalicas" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.3.3. </span>Partículas metálicas<a class="headerlink" href="#particulas-metalicas" title="Permalink to this headline">#</a></h3>
 <p>El naturaleza del scattering es diferente para los metales. En este caso, el movimiento libre de los electrones genera acumulación de carga en la superficie de la partícula. Como resultado, la partícula se polariza generando fenómenos de resonancia en determinadas longitudes de onda.</p>
 <a class="reference internal image-reference" href="../_images/surface_plasmon.png"><img alt="../_images/surface_plasmon.png" class="align-center" src="../_images/surface_plasmon.png" style="width: 350px;" /></a>
 <p>En la siguiente figura, graficamos <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span> y <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> para partículas de distinto diámetro. Ambas variables son normalizadas por al área transversal de la esfera <span class="math notranslate nohighlight">\(\pi R^2\)</span>, para mejor comparación entre esferas de distintas dimensiones.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%capture</span> show_plot
 <span class="kn">import</span> <span class="nn">empylib.miescattering</span> <span class="k">as</span> <span class="nn">mie</span>
@@ -770,8 +860,8 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
     <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Qabs</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">D</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="mf">1E3</span><span class="p">)))</span> <span class="c1"># grafico Cabs/Ac</span>
 
 <span class="c1"># etiquetas de ejes y formateo de la figura</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>         <span class="c1"># tamaño de figura</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>   <span class="c1"># tamaño de fuente</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>         <span class="c1"># tamaño de figura</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;10&#39;</span>   <span class="c1"># tamaño de fuente</span>
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
     <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Longitud de onda, $\lambda$ ($\mu$m)&#39;</span><span class="p">)</span>
@@ -787,22 +877,22 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_plot</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/04_Scattering_55_0.png" src="../_images/04_Scattering_55_0.png" />
+<img alt="../_images/04_Scattering_70_0.png" src="../_images/04_Scattering_70_0.png" />
 </div>
 </div>
 <ul class="simple">
-<li><p>Para <span class="math notranslate nohighlight">\(D &lt; 20\)</span> nm, <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span> es despreciable en comparación con <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span>. El peak en <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> es el resultado de la resonancia del sistema, similar al modelo de Lorentz.</p></li>
+<li><p>Para <span class="math notranslate nohighlight">\(D &lt; 20\)</span> nm, <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span> es despreciable en comparación con <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span>. El peak en <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> es el resultado de la excitación de frecuencias de resonancia en la partícula, similar al modelo de Lorentz.</p></li>
 <li><p>Para <span class="math notranslate nohighlight">\(D &gt; 50\)</span> nm, <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span> crece significativamente, superando <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> para <span class="math notranslate nohighlight">\(D &gt; 80\)</span> nm.</p></li>
 </ul>
 <p>Este fenómeno se repite en otros metales, aunque con distintas magnitudes y frecuencias de resonancia.</p>
-<p>El efecto de de scattering en nanopartículas metálicas permite explicar el cambio en los colores en la copa de Lycurgus.</p>
+<p>El efecto de de scattering en nanopartículas metálicas permite explicar el cambio en los colores en la <a class="reference external" href="https://es.wikipedia.org/wiki/Copa_de_Licurgo">copa de Lycurgus</a>.</p>
 <a class="reference internal image-reference" href="../_images/LycurgusCup.jpg"><img alt="../_images/LycurgusCup.jpg" class="align-center" src="../_images/LycurgusCup.jpg" style="width: 300px;" /></a>
 <p>Esta copa del periodo romano, esta compuesta de vidrio con nanopartícula de oro y plata en forma de coloides.</p>
 </section>
