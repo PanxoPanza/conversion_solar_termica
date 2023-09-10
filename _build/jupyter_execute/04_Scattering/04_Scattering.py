@@ -134,7 +134,7 @@ YouTubeVideo('OXoKZPLb6Qo', width=700, height = 400)
 # \quad\mathrm{[W]}
 # \end{align*}
 
-# donde $I_\mathrm{inc} = \frac{n_hE_0}{2Z_0}~\mathrm{[W/m^2]}$ es el flujo de energía o intensidad de la onda incidente, y $P_\mathrm{sca}(\theta)  = \frac{R^2}{I_\mathrm{inc}}\left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]$, es la **función de distribución de scattering** o **función de fase**.
+# donde $I_\mathrm{inc} = \frac{n_hE_0^2}{2Z_0}~\mathrm{[W/m^2]}$ es el flujo de energía o intensidad de la onda incidente, y $P_\mathrm{sca}(\theta)  = \frac{R^2}{I_\mathrm{inc}}\left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]$, es la **función de distribución de scattering** o **función de fase**.
 
 # La función de fase se define como la **energía de scattering por unidad de ángulo sólido $d\Omega = \sin\theta d\theta d\phi$ relativo al flujo de energía de la onda incidente, $I_\mathrm{inc}$**.
 
@@ -191,7 +191,7 @@ YouTubeVideo('OXoKZPLb6Qo', width=700, height = 400)
 # In[3]:
 
 
-get_ipython().run_cell_magic('capture', 'show_plot', "import empylib.miescattering as mie\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nlam = np.linspace(0.3,1.4,200)  # espectro de longitudes de onda\nnh = 1.0                        # índice de refracción del material circundante\nNp = 1.33                       # índice de refracción de la partícula\nD = [0.1, 0.3, 0.5, 0.7, 1.0]   # distribución de diámetros \n\nfig, ax = plt.subplots()                # creamos ejes para graficar\ncolors = plt.cm.jet(np.linspace(0,1,len(D))) # set de colores para las curvas\nfor i in range(len(D)):\n    Ac = np.pi*D[i]**2/4                # área transversal de la partícula\n    Qsca = mie.scatter_efficiency(lam,nh,Np,D[i])[1] # determinamos Csca/Ac\n    ax.plot(lam,Qsca*Ac,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Csca\n\n# etiquetas de ejes y formateo de la figura\nfig.set_size_inches(6, 4)         # tamaño de figura\nplt.rcParams['font.size'] = '12'   # tamaño de fuente\nax.set_xlabel(r'Longitud de onda, $\\lambda$ ($\\mu$m)')\nax.set_title('scattering partícula de agua')\nax.set_ylabel(r'$C_\\mathrm{sca}$ ($\\mu$m$^2$)')\nax.legend(frameon=False, title=r'$D$ ($\\mu$m)')\nplt.show()\n")
+get_ipython().run_cell_magic('capture', 'show_plot', "import empylib.miescattering as mie\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nlam = np.linspace(0.3,1.4,200)  # espectro de longitudes de onda\nnh = 1.0                        # índice de refracción del material circundante\nNp = 1.33                       # índice de refracción de la partícula\nD = [0.1, 0.3, 0.5, 0.7, 1.0]   # distribución de diámetros \n\nfig, ax = plt.subplots()                # creamos ejes para graficar\ncolors = plt.cm.jet(np.linspace(0,1,len(D))) # set de colores para las curvas\nfor i in range(len(D)):\n    Ac = np.pi*D[i]**2/4                # área transversal de la partícula\n    Qsca = mie.scatter_efficiency(lam,nh,Np,D[i])[1] # determinamos Csca/Ac\n    ax.plot(lam,Qsca*Ac,'-', color=colors[i], label=('%i' % (D[i]*1E3))) # grafico Csca\n\n# etiquetas de ejes y formateo de la figura\nfig.set_size_inches(6, 4)         # tamaño de figura\nplt.rcParams['font.size'] = '12'   # tamaño de fuente\nax.set_xlabel(r'Longitud de onda, $\\lambda$ ($\\mu$m)')\nax.set_title('scattering partícula de agua')\nax.set_ylabel(r'$C_\\mathrm{sca}$ ($\\mu$m$^2$)')\nax.legend(frameon=False, title=r'$D$ (nm)')\nplt.show()\n")
 
 
 # In[4]:

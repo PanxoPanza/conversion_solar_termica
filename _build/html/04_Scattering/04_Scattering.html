@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -670,7 +672,7 @@ W_\mathrm{sca} &amp;= \oint_{S} \langle\vec{S_\mathrm{sca}}\rangle\cdot\hat{r}dS
 &amp;= I_\mathrm{inc}~2\pi\int_0^{\pi}  P_\mathrm{sca}(\theta) \sin\theta d\theta
 \quad\mathrm{[W]}
 \end{align*}\]</div>
-<p>donde <span class="math notranslate nohighlight">\(I_\mathrm{inc} = \frac{n_hE_0}{2Z_0}~\mathrm{[W/m^2]}\)</span> es el flujo de energía o intensidad de la onda incidente, y <span class="math notranslate nohighlight">\(P_\mathrm{sca}(\theta)  = \frac{R^2}{I_\mathrm{inc}}\left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]\)</span>, es la <strong>función de distribución de scattering</strong> o <strong>función de fase</strong>.</p>
+<p>donde <span class="math notranslate nohighlight">\(I_\mathrm{inc} = \frac{n_hE_0^2}{2Z_0}~\mathrm{[W/m^2]}\)</span> es el flujo de energía o intensidad de la onda incidente, y <span class="math notranslate nohighlight">\(P_\mathrm{sca}(\theta)  = \frac{R^2}{I_\mathrm{inc}}\left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]\)</span>, es la <strong>función de distribución de scattering</strong> o <strong>función de fase</strong>.</p>
 <p>La función de fase se define como la <strong>energía de scattering por unidad de ángulo sólido <span class="math notranslate nohighlight">\(d\Omega = \sin\theta d\theta d\phi\)</span> relativo al flujo de energía de la onda incidente, <span class="math notranslate nohighlight">\(I_\mathrm{inc}\)</span></strong>.</p>
 <p>En otras palabras, para una onda incidente con intensidad <span class="math notranslate nohighlight">\(I_\mathrm{inc}\)</span>, la energía de scattering en dirección <span class="math notranslate nohighlight">\(\theta\)</span> es <span class="math notranslate nohighlight">\(I_\mathrm{inc} P_\mathrm{sca}(\theta)d\Omega\)</span></p>
 <a class="reference internal image-reference" href="../_images/phase_function.png"><img alt="../_images/phase_function.png" class="align-center" src="../_images/phase_function.png" style="width: 500px;" /></a>
@@ -735,7 +737,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Longitud de onda, $\lambda$ ($\mu$m)&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;scattering partícula de agua&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$C_\mathrm</span><span class="si">{sca}</span><span class="s1">$ ($\mu$m$^2$)&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$D$ ($\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$D$ (nm)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>

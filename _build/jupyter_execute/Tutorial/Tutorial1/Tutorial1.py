@@ -98,12 +98,6 @@ import empylib.nklib as nk
 # In[7]:
 
 
-nk.Al(0.5)
-
-
-# In[8]:
-
-
 lam = np.linspace(0.5,20,100)   # arreglo de 100 datos entre 0.5 y 5.0 micrones
 N   = nk.SiO2(lam)              # índice de refracción del sílice
 
@@ -114,6 +108,15 @@ plt.xlabel('longitud de onda ($\mu$m)')
 plt.ylabel('Índice de refracción')
 plt.legend()
 plt.show()
+
+
+# También podemos extraer un valor puntual, para una longitud de onda específica. Por ejemplo, si necesitamos el índice de refracción del aluminio en $\lambda = 0.5$ $\mu$m, hacemos:
+
+# In[8]:
+
+
+lam0 = 0.5
+nk.Al(lam0)
 
 
 # ### Modelos de Drude y Lorentz
