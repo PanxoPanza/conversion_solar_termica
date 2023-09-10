@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -782,18 +780,6 @@ longitudes de onda en eV:
 <p>Por ejemplo, supongamos que necesitamos el índice de refracción del sílice en el espectro <span class="math notranslate nohighlight">\(\lambda\in[0.5,20]\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nk</span><span class="o">.</span><span class="n">Al</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.81256537+6.04805673j])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>   <span class="c1"># arreglo de 100 datos entre 0.5 y 5.0 micrones</span>
 <span class="n">N</span>   <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">SiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>              <span class="c1"># índice de refracción del sílice</span>
 
@@ -808,7 +794,21 @@ longitudes de onda en eV:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_14_0.png" src="../../_images/Tutorial1_14_0.png" />
+<img alt="../../_images/Tutorial1_13_0.png" src="../../_images/Tutorial1_13_0.png" />
+</div>
+</div>
+<p>También podemos extraer un valor puntual, para una longitud de onda específica. Por ejemplo, si necesitamos el índice de refracción del aluminio en <span class="math notranslate nohighlight">\(\lambda = 0.5\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m, hacemos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lam0</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">nk</span><span class="o">.</span><span class="n">Al</span><span class="p">(</span><span class="n">lam0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.81256537+6.04805673j])
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -882,7 +882,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_19_0.png" src="../../_images/Tutorial1_19_0.png" />
+<img alt="../../_images/Tutorial1_20_0.png" src="../../_images/Tutorial1_20_0.png" />
 </div>
 </div>
 <p><strong>Constante dieléctrica según modelo de Lorentz</strong></p>
@@ -901,7 +901,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_21_0.png" src="../../_images/Tutorial1_21_0.png" />
+<img alt="../../_images/Tutorial1_22_0.png" src="../../_images/Tutorial1_22_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -922,10 +922,10 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7efdb02b7460&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fac884c5970&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/Tutorial1_22_1.png" src="../../_images/Tutorial1_22_1.png" />
+<img alt="../../_images/Tutorial1_23_1.png" src="../../_images/Tutorial1_23_1.png" />
 </div>
 </div>
 <p><strong>Constante dieléctrica del agua modelo de Lorentz</strong></p>
@@ -982,7 +982,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_27_0.png" src="../../_images/Tutorial1_27_0.png" />
+<img alt="../../_images/Tutorial1_28_0.png" src="../../_images/Tutorial1_28_0.png" />
 </div>
 </div>
 </section>
@@ -1081,7 +1081,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_36_0.png" src="../../_images/Tutorial1_36_0.png" />
+<img alt="../../_images/Tutorial1_37_0.png" src="../../_images/Tutorial1_37_0.png" />
 </div>
 </div>
 </section>
@@ -1158,7 +1158,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_41_0.png" src="../../_images/Tutorial1_41_0.png" />
+<img alt="../../_images/Tutorial1_42_0.png" src="../../_images/Tutorial1_42_0.png" />
 </div>
 </div>
 </section>
@@ -1203,7 +1203,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_43_0.png" src="../../_images/Tutorial1_43_0.png" />
+<img alt="../../_images/Tutorial1_44_0.png" src="../../_images/Tutorial1_44_0.png" />
 </div>
 </div>
 <p>En el límite de solo una interface, <code class="docutils literal notranslate"><span class="pre">interface</span></code>, <code class="docutils literal notranslate"><span class="pre">multilayer</span></code> y <code class="docutils literal notranslate"><span class="pre">incoh_multilayer</span></code> entregan el mismo resultado</p>
@@ -1227,11 +1227,11 @@ multilayer:		 R = 0.025, T = 0.975
 incoh_multilayer:	 R = 0.025, T = 0.975
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3539/3211510611.py:7: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_10377/3211510611.py:7: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   print(&#39;interface:\t\t R = %.3f, T = %.3f&#39; % wv.interface(theta,N[0],N[1])[:2])
-/tmp/ipykernel_3539/3211510611.py:8: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+/tmp/ipykernel_10377/3211510611.py:8: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   print(&#39;multilayer:\t\t R = %.3f, T = %.3f&#39; % wv.multilayer(lam,theta,N,d)[:2])
-/tmp/ipykernel_3539/3211510611.py:9: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+/tmp/ipykernel_10377/3211510611.py:9: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
   print(&#39;incoh_multilayer:\t R = %.3f, T = %.3f&#39; % wv.incoh_multilayer(lam,theta,N,d))
 </pre></div>
 </div>
@@ -1294,7 +1294,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_50_0.png" src="../../_images/Tutorial1_50_0.png" />
+<img alt="../../_images/Tutorial1_51_0.png" src="../../_images/Tutorial1_51_0.png" />
 </div>
 </div>
 </section>
@@ -1356,7 +1356,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_55_0.png" src="../../_images/Tutorial1_55_0.png" />
+<img alt="../../_images/Tutorial1_56_0.png" src="../../_images/Tutorial1_56_0.png" />
 </div>
 </div>
 </section>
@@ -1408,7 +1408,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial1_57_0.png" src="../../_images/Tutorial1_57_0.png" />
+<img alt="../../_images/Tutorial1_58_0.png" src="../../_images/Tutorial1_58_0.png" />
 </div>
 </div>
 </section>
