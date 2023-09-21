@@ -116,7 +116,7 @@ def g(N=1000, t=0, sig=0.3):
 # Así, por ejemplo, la radiación solar ($T \approx 5800~\mathrm{K}$) tiene una longitud de coherencia, $l_c \approx 370~\mathrm{nm}$
 
 # ### Régimen de trasporte de luz
-# Los fenómenos de interferencia descritos en las unidades anteriores existen debido a la forma oscilatorioa de la luz. **Dos paquetes de ondas distintos son incoherentes, y la superposición de estos no genera interferencia.**
+# Los fenómenos de interferencia descritos en las unidades anteriores existen debido a la forma oscilatoria de la luz. **Dos paquetes de ondas distintos son incoherentes, y la superposición de estos no genera interferencia.**
 
 # En otras palabras, el fenómeno de interferencia solo existe si el paquete de onda interfiere consigo mismo. Así, podemos concluir que los fenómenos de interferencia en películas de espesor $d$ no serían visibles si $d > l_c$. 
 
@@ -230,7 +230,7 @@ import numpy as np
 import empylib.waveoptics as wv
 import empylib.nklib as nk
 
-lam = np.linspace(2,10,100)  # espectro de longitudes de onda (um)
+lam = np.linspace(0.3,0.8,100)  # espectro de longitudes de onda (um)
 theta = np.radians(30)          # ángulo de incidencia
 
 Nfront = 1.0                 # índice de refracción medio superior
@@ -316,7 +316,7 @@ def plot_atmosphere(theta_sun):
     Dp = 0.010                        # diámetro de las partículas
     Np = 1.5                          # índice de refracción de las partículas
     
-    # transmitancia total y especular
+    # transmitancia total y especular|
     theta = np.radians(theta_sun)    # posición del sol en radianes
     Ttot, Tspec = rt.T_beer_lambert(lam1,theta,tatm,N,fvp,Dp,Np)[:2]
     

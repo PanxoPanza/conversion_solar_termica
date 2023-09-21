@@ -44,7 +44,7 @@
 
 # <img src="./images/heat_transfer_mechanism.png" width="500px" align= center>
 
-# ### Conducción de Calor
+# ### Transferencia de calor por conducción
 # **Definimos como *conducción de calor* al calor transferido a través de un material en reposo**. El mecanismo generalmente se asocia a **sólidos**, donde el calor es transferido a travéz de la red atómica del material. Sin embargo, la definición también incluye **líquidos y gases en reposo.** En este caso, las moléculas se mueven aleatoriamente, de manera tal que la velocidad neta del fluido es cero.
 
 # Matemáticamente, para un material de espesor $t$ y diferencia de temperatura $\Delta T$, la **taza de transferencia de calor por conducción** a través de una superficie $A$, es:
@@ -53,7 +53,7 @@
 
 # La conductividad térmica, $k_c$, es una propiedad del material que varía según la temperatura.
 # 
-# <img src="./images/thermal_conductivity.png" width="800px" align= center>
+# <img src="./images/thermal_conductivity.png" width="900px" align= center>
 
 # En su forma diferencial, $\dot{Q}_\mathrm{cond}= - k\nabla T$, y para el caso unidimensional:
 # 
@@ -65,7 +65,7 @@
 
 # <img src="./images/heat_conduction_resistance.png" width="600px" align= center>
 
-# Notar que, como fórmula general, podemos expresar la taza de conducción de calor en la forma:
+# Notar que en los tres casos podemos expresar la taza de conducción de calor en la forma:
 # 
 # \begin{equation*}
 # \dot{Q}_\mathrm{cond} = \frac{T_H - T_C}{R_\mathrm{cond}},\quad\mathrm{W}
@@ -73,7 +73,7 @@
 # 
 # donde, $R_\mathrm{cond}$ (K/W) es la **resistencia térmica** asociada al mecanismo de conducción.
 
-# ### Convección de Calor
+# ### Transferencia de calor por convección
 # **Definimos como *convección de calor* al calor transferido a través de fluidos en movimiento.** El movimiento de un fluido puede ocurrir naturalmente, debido a los efectos de flotación a raíz de los cambio de densidad con la temperatura; o de forma inducida, como por ejemplo mediante un ventilador.
 
 # A partir de esto, clasificamos la transferencia de calor por convección, respectivamente, como:
@@ -103,11 +103,18 @@
 # - Convección forzada, $\mathrm{Nu} \sim 5 - 1000 $
 # - Convección natural, $\mathrm{Nu} \sim 0 - 100$
 
-# ### Transferencia de calor en estado estacionario
+# ### Transferencia de calor por radiación
+# **Definimos como *radiación de calor* al calor transferido por ondas electromagnéticas.**
+
+# Aquí también, el calor fluye desde la fuente de mayor temperatura all sumidero de menor temperatura. Sin embargo, a diferencia de la convección y conducción, la transferencia de calor por radiación no requiere de un medio y, por lo tanto, puede recorrer grandes distancias.
+
+# <img src="./images/heat_radiation_schematic.png" width="300px" align= center>
+
+# En general, la transferencia de calor depende de las propiedades ópticas de la fuente y receptor. Sin embargo, considerando un caso simplifado, podemos definir la relación en base a la emisividad promedio del emisor, y absortividad promedio del receptor:
 # 
-# En estado estacionario, el flujo de calor es constante. En este caso, podemos simplificar el análisis de transferencia de calor por convección y conducción utilizando resistencias térmicas.
-# 
-# <img src="./images/stationary_heat_transfer.png" width="700px" align= center>
+# <img src="./images/heat_radiation_formula.png" width="700px" align= center>
+
+# Sin embargo, como veremos en este capítulo, esta regla no es general. La mejor forma de entender esta fórmula es estudiando su origen.
 
 # ## Fundamentos de la radiación térmica
 # 
@@ -115,19 +122,19 @@
 # 
 # <img src="./images/radiating_dipole.png" width="700px" align= center>
 
-# En la siguiente animación podemos ver el proceso de emisión de ondas electromagnéticas de un dipolo oscilatorio. El mapa de colores representa la intensidad del campo magnético, es decir $|\vec{H}|$, donde rojo y azul corresponden, respectivamente, a los valorse máximos y mínimos.
+# En la siguiente animación podemos ver el proceso de emisión de ondas electromagnéticas de un dipolo oscilatorio. El mapa de colores representa la intensidad del campo magnético, es decir $|\vec{H}|$, donde rojo y azul corresponden, respectivamente, a los valores máximos y mínimos.
 # 
 # <img src="./images/HW_vertical_noground.gif" width="300px" align= center>
 
 # ### Poder de emisión
 # Un cuerpo a temperatura $T$ emite ondas electromagnéticas en todas las direcciones y en un espectro de longitudes de onda. En general, la distribución angular ($\Omega$) y espectral ($\lambda$) de la radiación emitida depende de las propiedades ópticas de la superficie y la temperatura del material. 
 
-# Para caracterizar la intensidad de la radiación emitida por una superficie a tempertura $T$, usamos la **intensidad específica o radiancia espectral**, $I_\lambda(\lambda,\Omega,T)$.
+# Para caracterizar la intensidad de la radiación emitida por una superficie a tempertura $T$, usamos la **intensidad específica o radiancia espectral**, $I_\lambda(\Omega,T)$.
 
 # La taza de calor total emitido por una superficie $dA$ de un cuerpo negro en función de $\lambda$ y $\Omega$, $d\dot{Q}_\mathrm{rad}$, está dada por:
 # 
 # \begin{equation}
-# d\dot{Q}_\mathrm{rad} = I_{\lambda}(\lambda,T,\theta,\phi) \cos\theta dA d\Omega d\lambda
+# d\dot{Q}_\mathrm{rad} = I_{\lambda}(T,\Omega) \cos\theta dA d\Omega d\lambda
 # \end{equation}
 
 # El término $\cos\theta dA$ corresponde a la proyección de $dA$ en la dirección $\Omega$
@@ -149,22 +156,22 @@
 # - **Poder de emisión hemisférica espectral**, 
 # 
 # \begin{align*}
-# E_{\lambda}(T) = \frac{d\dot{Q}}{dA d\lambda} &= \int_0^{2\pi}\int_0^{\pi/2}I_{\lambda}(\lambda,\Omega)\cos\theta~\sin\theta  d\theta d\phi
+# E_{\lambda}(T) = \frac{d\dot{Q}}{dA d\lambda} &= \int_0^{2\pi}\int_0^{\pi/2}I_{\lambda}(\Omega, T)\cos\theta~\sin\theta  d\theta d\phi
 #   \\ 
-#   &=\int_\mathrm{hemi} I_{\lambda}(\lambda,\Omega)\cos\theta~d\Omega
+#   &=\int_\mathrm{hemi} I_{\lambda}(\Omega, T)\cos\theta~d\Omega
 #   ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}}
 # \end{align*}
 
 # - **Poder de emisión direccional total**,
 # 
 # \begin{equation*}
-# E_\Omega(T) = \frac{d\dot{Q}}{dAd\Omega}=\cos\theta \int_0^\infty~ I_{\lambda}(\lambda,\Omega)~d\lambda  ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2 \cdot\mathrm{sr}}
+# E_\Omega(T) = \frac{d\dot{Q}}{dAd\Omega}=\cos\theta \int_0^\infty~ I_{\lambda}(\Omega, T)~d\lambda  ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2 \cdot\mathrm{sr}}
 # \end{equation*}
 
 # - **Poder de emisión hemisfética total**, 
 # 
 # \begin{equation*}
-# E(T) = \frac{d\dot{Q}}{dA}=\int_0^\infty\int_\mathrm{hemi}I_{\lambda}(\lambda,\Omega)\cos\theta~d\Omega d\lambda ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
+# E(T) = \frac{d\dot{Q}}{dA}=\int_0^\infty\int_\mathrm{hemi}I_{\lambda}(\Omega, T)\cos\theta~d\Omega d\lambda ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
 # \end{equation*}
 
 # ### Distribución de Planck
@@ -172,7 +179,7 @@
 # Max Planck en 1901 determinó que la **máxima radiancia espectral o intensidad específica** (flujo de energía por unidad de longitud de onda y ángulo sólido) emitida por un cuerpo a temperatura $T$, en un medio con índice de refracción $n_1$, está dada por:
 # 
 # \begin{equation}
-# I_{\mathrm{bb},\lambda}(\lambda,T) = \frac{C_1}{n_1\lambda^5\left[\exp\left(C_2/\lambda T\right) - 1\right]},\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}\cdot\mathrm{sr}}
+# I_{\mathrm{bb},\lambda}(\Omega, T) = \frac{C_1}{n_1\lambda^5\left[\exp\left(C_2/\lambda T\right) - 1\right]},\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}\cdot\mathrm{sr}}
 # \end{equation}
 # 
 # donde 
@@ -185,16 +192,37 @@
 
 # Esta es la **distribución de Planck**. Representa la radiancia espectral emitida por un cuerpo idealizado, denominado **cuerpo negro**. Un cuerpo negro, así, representa un emisor perfecto, capaz de emitir la máxima radiacion posible a una temperatura $T$.
 
+# En el curso utilizaremos la función `BPlank(lam, T)` parte del módulo `ref_spectra` de `èmpylib`. 
+
+# En el siguiente ejemplo, garficamos la distribución de cuerpo negro a $T = 100~^\circ\mathrm{C}= 373~\mathrm{K}$, en el espectro $\lambda\in[2,100]$ $\mu$m.
+
+# In[1]:
+
+
+get_ipython().run_cell_magic('capture', 'showplot0', "import numpy as np\nimport empylib.ref_spectra as rf\nimport matplotlib.pyplot as plt\n\nT = 100 + 273                   # Temperatura del cuerpo negro (K)\nlam = np.linspace(2,100,1000)   # espectro de longitudes de onda (um)\nIbb = rf.Bplanck(lam,T)         # irradiancia espectral de cuerpo negro\n\nplt.plot(lam,Ibb)\nplt.xlabel('Longitud de onda ($\\mu$m)')\nplt.ylabel('Irradiancia espectral de cuerpo negro, (W/m$^2$-$\\mu$m-sr)')\nplt.show()\n")
+
+
+# In[2]:
+
+
+showplot0()
+
+
 # El poder de emisión hemisférico espectral de la superficie de un cuerpo negro, $E_\mathrm{bb}(\lambda,T)$, se obtiene integrando la radiancia espectral por ángulo sólido en el límite de una hemiesfera:
 # 
-# \begin{equation}
-# \int_\mathrm{hemi} I_{\mathrm{bb},\lambda}(\lambda,T)\cos\theta d\Omega = \pi I_{\mathrm{bb},\lambda}(\lambda,T) = E_{\mathrm{bb},\lambda}(\lambda,T),\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}}
-# \end{equation}
+# \begin{align*}
+# E_{\mathrm{bb},\lambda}(T) = \int_\mathrm{hemi} I_{\mathrm{bb},\lambda}(\Omega, T)\cos\theta d\Omega &= I_{\mathrm{bb},\lambda}(\Omega, T)\int_\mathrm{hemi} \cos\theta d\Omega
+#   \\ 
+#   &=\pi I_{\mathrm{bb},\lambda}(\lambda,T) 
+#   ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}}
+# \end{align*}
+
+# Note que $I_{\mathrm{bb},\lambda}$ no depende de $\Omega$ (la irradiancia de cuerpon negro es igual en todas las direcciones) y, por lo tanto, sale de la integral respecto a $d\Omega$.
 
 # A partir de la integral de $E_\mathrm{bb}(\lambda,T)$ en el espectro de longitudes de onda, obtenemos el poder de emisión hemisferico total de un cuerpo negro:
 # 
 # \begin{equation}
-# \int_0^\infty E_{\mathrm{bb},\lambda}(\lambda,T) d\lambda = \sigma T^4,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
+# E_\mathrm{bb}(T) = \int_0^\infty E_{\mathrm{bb},\lambda}(\lambda,T) d\lambda = \pi\int_0^\infty I_{\mathrm{bb},\lambda}(\lambda,T) d\lambda = \sigma T^4,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
 # \end{equation}
 # 
 # donde $\sigma = 5.670\times10^{-8}$ W/m$^2\cdot$K$^4$, es la *constante de Stefan-Boltzmann.* Esta fórmula se conoce como la **ley de Stefan-Boltzmann**
@@ -233,7 +261,9 @@
 # \epsilon_{\lambda,\Omega} = A_{\lambda,\Omega}
 # \end{equation}
 
-# En otras palabras, las propiedades de un material como receptor o emisor de radiación, son iguales. Este concepto, denominado *reciprocidad*, es consecuencia de las ecuaciones de Maxwell y es la base fundamental para el diseño de antenas y radares.
+# En otras palabras, las propiedades de un material como receptor o emisor de radiación, son iguales. Sin embargo, notar que esta igualdad solo existe para la misma longitud de onda y ángulo sólido.
+
+# Este concepto, denominado *reciprocidad*, es consecuencia de las ecuaciones de Maxwell y es la base fundamental para el diseño de antenas y radares.
 
 # Por conservación de energía:
 # \begin{equation}
@@ -265,13 +295,13 @@
 
 # Antes, analicemos el índice de refracción del vidrio (sílicice, SiO$_2$), en el espectro $\lambda\in[0.3,15]$ $\mu$m.
 
-# In[1]:
+# In[3]:
 
 
 get_ipython().run_cell_magic('capture', 'showplot', "import numpy as np\nimport empylib.nklib as nk\nimport matplotlib.pyplot as plt\n\nlam = np.linspace(0.3,15,100) #longitud de onda en um\nplt.plot(lam,nk.SiO2(lam).real,'-r',label='$n$')\nplt.plot(lam,nk.SiO2(lam).imag,'-b',label='$\\kappa$')\nplt.xlabel('Longitud de onda, $\\lambda$ ($\\mu$m)',fontsize=16)\nplt.ylabel('$n$, $\\kappa$',fontsize=16)\nplt.title('Índice de refracción SiO$_2$',fontsize=18)\nplt.legend(frameon=False,fontsize=16)\nplt.tick_params(labelsize=16)\n")
 
 
-# In[2]:
+# In[4]:
 
 
 showplot()
@@ -279,7 +309,7 @@ showplot()
 
 # Comparamos $E_{\lambda,\Omega}(T)$ con el poder de emisión espectral direccional del cuerpo negro, $E_{\mathrm{bb},\lambda,\Omega} = I_{\mathrm{bb},\lambda}\cos\theta$
 
-# In[3]:
+# In[5]:
 
 
 import empylib.waveoptics as wv
@@ -299,7 +329,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     #-------------------------------------------------------------------------
 
     # CÁLCULO DE VARIABLES
-    # 1. Reflectancia y transmitancia espectral en theta0
+    # 1. Gráfico 1: Reflectancia y transmitancia espectral en theta0
     Rs, Ts = wv.incoh_multilayer(lam,radians(theta0), N, d*1E3, pol='TM')
     Rp, Tp = wv.incoh_multilayer(lam,radians(theta0), N, d*1E3, pol='TE')
     
@@ -307,7 +337,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     T_lam = (Ts + Tp)/2
     A_lam = 1 - T_lam - R_lam  # absortancia espectral
     
-   # 2. Reflectancia y transmitancia direccional en lam0
+   # 2. Gráfico 2: Reflectancia y transmitancia direccional en lam0
     theta = np.linspace(0,90,100)
     N = (Nfront, nk.SiO2(lam0), Nback) # indices de refracción (above, mid, below)
     
@@ -320,7 +350,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
         A_theta.append(1 - T - R)
     A_theta = np.array(A_theta).flatten() # convertimos la lista a ndarray
     
-    # 3. Poder de emisión direccional espectral
+    # 3. Gráfico 3: Poder de emisión direccional espectral
     E_lam = A_lam*Bplanck(lam,Temp)*cos(radians(theta0)) # poder de emisión material
     E_bb  =       Bplanck(lam,Temp)*cos(radians(theta0)) # poder de emisión de cuerpo negro
     #-------------------------------------------------------------------------
@@ -365,7 +395,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     plt.show()
 
 
-# In[4]:
+# In[6]:
 
 
 from ipywidgets import interact
@@ -374,8 +404,6 @@ from ipywidgets import interact
 def g(T=300,d=1, lam0=10, theta0=0):
    return plot_emisivity_glass(T,d,lam0,theta0)
 
-
-# 
 
 # Al igual que con el poder de emisión, la emisividad puede también ser definida de forma hemisférica (integración por ángulo sólido) o total (integración por longitudes de onda)
 
@@ -406,6 +434,75 @@ def g(T=300,d=1, lam0=10, theta0=0):
 # tenemos $A_{\lambda,\Omega} + R_{\lambda,\Omega} = 1$
 
 # - En el caso de **gases**, $R_{\lambda,\Omega} \approx 0$, así $A_{\lambda,\Omega} + T_{\lambda,\Omega} = 1$
+
+# Por ejemplo, calculemos la emisividad de la pintura blanca a $T = 25\mathrm{°C}$.
+
+# Como supuestos, consideraremos que la pintura blanca tiene: 
+# - 1 mm de espesor
+# - Está compuesta de una solución de partículas de TiO$_2$ de 1 $\mu\mathrm{m}$ de diámetro, con concentración de 40% v/v 
+# - sumerjidas en un solvente con índice de refracción $N_\mathrm{solvente} = 1.5$.
+# - También asumiremos aire a ambos lados de la película de pintura. 
+
+# En este caso, debido a la rugosidad de la pintura, es normal **asumir que la superficie se comporta como superficie opaca** y, por lo tanto, calcularemos la emisividad espectral en dirección normal.
+
+# Usamos la función `adm_sphere` de `empylib.rad_transfer` que calcula al reflectancia y transmitancia total (especular + difusa) en dirección normal
+
+# Primero, graficamos el espectro de reflectancia ($R$), transmitancia ($T$) y absortancia ($A$).
+
+# In[7]:
+
+
+import empylib.rad_transfer as rt
+import empylib.nklib as nk
+from matplotlib.ticker import ScalarFormatter, FuncFormatter
+
+lam   = np.linspace(0.2,100,1000) # espectro de longitudes de onda (um)
+tfilm = 1                         # espesor de la película (mm)
+Nlayers = (1.0,1.5,1.0)           # índice de refracción aire / solvente / aire
+fv = 0.4                          # concentración (fracción de volúmen)
+Np = nk.TiO2(lam)                 # índice de refracción de las partículas
+D  = 1.000                        # diámetro de las partículas (um)
+
+R, T = rt.adm_sphere(lam,tfilm,Nlayers,fv,D,Np)
+A = 1 - R - T
+
+fig, ax1 = plt.subplots(figsize=(8,3))
+ax1.plot(lam,R,'-r', label = 'R')
+ax1.plot(lam,T,'-b', label = 'T')
+ax1.plot(lam,A,'-k', label = 'A')
+
+ax1.set_xlabel('Longitud de onda, $\mu$m')
+ax1.set_xscale('log')
+ax1.set_xticks([0.3,0.4,0.75,1.4,3,8,15,30, 50, 100])
+ax1.set_ylabel('Irradiancia espectral (W/m$^2$-$\mu$m)')
+ax1.set_xlim(0.3,100)
+
+ax1.xaxis.set_major_formatter(FuncFormatter(lambda y, _: '{:.16g}'.format(y)))
+ax1.legend(frameon=False)
+plt.show()
+
+
+# Calculamos la emisividad total hemisférica mediante la ecuación (6.14):
+# 
+# \begin{align*}
+# \epsilon(T) &=\frac{1}{\sigma T^4}\int_0^\infty \int \epsilon_{\lambda} I_{\mathrm{bb},\lambda} (T)\cos\theta~d\Omega~d\lambda \\
+# &=\frac{1}{\sigma T^4}\pi\int_0^\infty \epsilon_{\lambda} I_{\mathrm{bb},\lambda} (T)~d\lambda
+# \end{align*}
+# 
+# *Notar que $\epsilon_{\lambda}$ sale de la integral de $d\Omega$ debido a que consideramos superficie difusa.*
+
+# Numericamente, integramos usando la regla del trapecio (`numpy.trapz`)
+
+# In[8]:
+
+
+T = 25 + 273                        # Temperatura de la pintura 
+eps_lambda = A                      # Emisividad espectral de la pintura
+sigma = 5.67E-8                     # Constante de Steffan-Boltzmann 
+eps_white_paint = 1/(sigma*T**4)*np.pi*np.trapz(eps_lambda*rf.Bplanck(lam,T),lam)
+
+print('la emisividad de la pintura blanca es : %.3f' % eps_white_paint)
+
 
 # ### Irradiancia (G)
 
@@ -524,7 +621,7 @@ def g(T=300,d=1, lam0=10, theta0=0):
 # ## Referencias
 # - Çengel Y. A y Ghanjar A. J. **Capítulo 12 - Fundamentos de la radiación térmica** en *Transferencia de calor y masa*, 4ta Ed, McGraw Hill, 2011
 
-# In[5]:
+# In[9]:
 
 
 from IPython.display import YouTubeVideo
