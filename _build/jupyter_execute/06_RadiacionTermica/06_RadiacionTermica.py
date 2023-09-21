@@ -142,7 +142,7 @@ if importlib.util.find_spec('empylib') is None:
 # La taza de calor total emitido por una superficie $dA$ de un cuerpo negro en función de $\lambda$ y $\Omega$, $d\dot{Q}_\mathrm{rad}$, está dada por:
 # 
 # \begin{equation}
-# d\dot{Q}_\mathrm{rad} = I_{\lambda}(T,\Omega) \cos\theta dA d\Omega d\lambda
+# d\dot{Q}_\mathrm{rad} = I_{\lambda}(\Omega, T) \cos\theta dA d\Omega d\lambda
 # \end{equation}
 
 # El término $\cos\theta dA$ corresponde a la proyección de $dA$ en la dirección $\Omega$
@@ -152,7 +152,7 @@ if importlib.util.find_spec('empylib') is None:
 # Definimos como **poder de emisión direccional espectral** a la relación:
 # 
 # \begin{equation}
-# E_{\lambda,\Omega}(T) = \frac{d\dot{Q}_\mathrm{rad}}{dAd\Omega d\lambda}=I_{\lambda}(\lambda,\Omega)\cos\theta ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}\cdot\mathrm{sr}}
+# E_{\lambda,\Omega}(T) = \frac{d\dot{Q}_\mathrm{rad}}{dAd\Omega d\lambda}=I_{\lambda}(\Omega, T)\cos\theta ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}\cdot\mathrm{sr}}
 # \end{equation}
 
 # A diferencia de la intensidad específica, el poder de emisión considera la radiación effectiva emitida por una superficie.
@@ -164,7 +164,7 @@ if importlib.util.find_spec('empylib') is None:
 # - **Poder de emisión hemisférica espectral**, 
 # 
 # \begin{align*}
-# E_{\lambda}(T) = \frac{d\dot{Q}}{dA d\lambda} &= \int_0^{2\pi}\int_0^{\pi/2}I_{\lambda}(\Omega, T)\cos\theta~\sin\theta  d\theta d\phi
+# E_{\lambda}(T) = \frac{d\dot{Q}}{dA d\lambda} &= \int_0^{2\pi}\int_0^{\pi/2}I_{\lambda}(\Omega, T)\cos\theta~\sin\theta ~d\theta~ d\phi
 #   \\ 
 #   &=\int_\mathrm{hemi} I_{\lambda}(\Omega, T)\cos\theta~d\Omega
 #   ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}}
@@ -198,16 +198,18 @@ if importlib.util.find_spec('empylib') is None:
 # 
 # $k_\mathrm{B} = 1.381\times 10^{-23}$ J/K $=8.617\times 10^{-5}$ eV/K, es la constante de Boltzmann. La unidad "sr" correponde a un esteroradian.
 
-# Esta es la **distribución de Planck**. Representa la radiancia espectral emitida por un cuerpo idealizado, denominado **cuerpo negro**. Un cuerpo negro, así, representa un emisor perfecto, capaz de emitir la máxima radiacion posible a una temperatura $T$.
+# Esta es la **distribución de Planck**, que *representa la máxima radiancia espectral emitida en dirección $\Omega$ por una fuente a una temperatura $T$*. Esta fuente, denominada **cuerpo negro** representa, así, un **emisor perfecto**.
 
-# En el curso utilizaremos la función `BPlank(lam, T)` parte del módulo `ref_spectra` de `èmpylib`. 
+# Notar también que la radiancia del cuerpo negro es uniforme en todas las direcciones y, por lo tanto, no depende de $\Omega$.
 
-# En el siguiente ejemplo, garficamos la distribución de cuerpo negro a $T = 100~^\circ\mathrm{C}= 373~\mathrm{K}$, en el espectro $\lambda\in[2,100]$ $\mu$m.
+# En el curso utilizaremos la función `Bplank(lam, T)` parte del módulo `ref_spectra` de `èmpylib`. 
+
+# En el siguiente ejemplo, graficamos la distribución de cuerpo negro a $T = 100~^\circ\mathrm{C}= 373~\mathrm{K}$, en el espectro $\lambda\in[2,100]$ $\mu$m.
 
 # In[2]:
 
 
-get_ipython().run_cell_magic('capture', 'showplot0', "import numpy as np\nimport empylib.ref_spectra as rf\nimport matplotlib.pyplot as plt\n\nT = 100 + 273                   # Temperatura del cuerpo negro (K)\nlam = np.linspace(2,100,1000)   # espectro de longitudes de onda (um)\nIbb = rf.Bplanck(lam,T)         # irradiancia espectral de cuerpo negro\n\nplt.plot(lam,Ibb)\nplt.xlabel('Longitud de onda ($\\mu$m)')\nplt.ylabel('Irradiancia espectral de cuerpo negro, (W/m$^2$-$\\mu$m-sr)')\nplt.show()\n")
+get_ipython().run_cell_magic('capture', 'showplot0', "import numpy as np\nimport empylib.ref_spectra as rf\nimport matplotlib.pyplot as plt\n\nlam = np.linspace(2,100,1000)  # espectro de longitudes de onda (um)\nT = 100 + 273                  # Temperatura del cuerpo negro (K)\nIbb = rf.Bplanck(lam,T)        # Radiancia espectral de cuerpo negro\n\nplt.plot(lam,Ibb)\nplt.xlabel('Longitud de onda, $\\lambda$ ($\\mu$m)')\nplt.ylabel('$I_{\\mathrm{bb},\\lambda} (T)$, (W/m$^2$-$\\mu$m-sr)')\nplt.title('Radiancia espectral de cuerpo negro a %i K' % T)\nplt.show()\n")
 
 
 # In[3]:
@@ -216,21 +218,23 @@ get_ipython().run_cell_magic('capture', 'showplot0', "import numpy as np\nimport
 showplot0()
 
 
-# El poder de emisión hemisférico espectral de la superficie de un cuerpo negro, $E_\mathrm{bb}(\lambda,T)$, se obtiene integrando la radiancia espectral por ángulo sólido en el límite de una hemiesfera:
+# El poder de emisión hemisférico espectral de la superficie de un cuerpo negro, $E_{\mathrm{bb},\lambda}(T)$, se obtiene integrando la radiancia espectral por ángulo sólido en el límite de una hemiesfera:
 # 
 # \begin{align*}
-# E_{\mathrm{bb},\lambda}(T) = \int_\mathrm{hemi} I_{\mathrm{bb},\lambda}(\Omega, T)\cos\theta d\Omega &= I_{\mathrm{bb},\lambda}(\Omega, T)\int_\mathrm{hemi} \cos\theta d\Omega
+# E_{\mathrm{bb},\lambda}(T) = \int_\mathrm{hemi} I_{\mathrm{bb},\lambda}(T)\cos\theta d\Omega &= I_{\mathrm{bb},\lambda}(T)\int_\mathrm{hemi} \cos\theta d\Omega
 #   \\ 
-#   &=\pi I_{\mathrm{bb},\lambda}(\lambda,T) 
+#   &= I_{\mathrm{bb},\lambda}(T)\int_0^{2\pi} \int_0^{\pi/2}\cos\theta \sin \theta~d\theta~d\phi 
+#   \\ 
+#   &=\pi I_{\mathrm{bb},\lambda}(T)
 #   ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}}
 # \end{align*}
 
-# Note que $I_{\mathrm{bb},\lambda}$ no depende de $\Omega$ (la irradiancia de cuerpon negro es igual en todas las direcciones) y, por lo tanto, sale de la integral respecto a $d\Omega$.
+# Note que $I_{\mathrm{bb},\lambda}$ no depende de $\Omega$ y, por lo tanto, sale de la integral respecto a $d\Omega$.
 
-# A partir de la integral de $E_\mathrm{bb}(\lambda,T)$ en el espectro de longitudes de onda, obtenemos el poder de emisión hemisferico total de un cuerpo negro:
+# A partir de la integral de $E_{\mathrm{bb},\lambda}(T)$ en el espectro de longitudes de onda, obtenemos el poder de emisión hemisferico total de un cuerpo negro:
 # 
 # \begin{equation}
-# E_\mathrm{bb}(T) = \int_0^\infty E_{\mathrm{bb},\lambda}(\lambda,T) d\lambda = \pi\int_0^\infty I_{\mathrm{bb},\lambda}(\lambda,T) d\lambda = \sigma T^4,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
+# E_\mathrm{bb}(T) = \int_0^\infty E_{\mathrm{bb},\lambda}(T) d\lambda = \pi\int_0^\infty I_{\mathrm{bb},\lambda}(T) d\lambda = \sigma T^4,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
 # \end{equation}
 # 
 # donde $\sigma = 5.670\times10^{-8}$ W/m$^2\cdot$K$^4$, es la *constante de Stefan-Boltzmann.* Esta fórmula se conoce como la **ley de Stefan-Boltzmann**
@@ -253,10 +257,10 @@ showplot0()
 
 # ### Propiedades Radiativas
 # 
-# Definimos como **emisividad direccional espectral, $\epsilon_{\lambda,\Omega}$,** a la *razón entre la radiación emitida por una superficie, $I_\lambda(\lambda,T,\Omega)$, y la radiación emitida por un cuerpo negro, ambas a temperatura $T$*:
+# Definimos como **emisividad direccional espectral, $\epsilon_{\lambda,\Omega}$,** a la *razón entre la radiación emitida por una superficie, $I_\lambda(\Omega, T)$, y la radiación emitida por un cuerpo negro, ambas a temperatura $T$*:
 # 
 # \begin{equation}
-# \epsilon_{\lambda,\Omega} = \frac{I_\lambda(\lambda,T,\Omega)}{I_{\mathrm{bb},\lambda}(\lambda,T,\Omega)}
+# \epsilon_{\lambda,\Omega} = \frac{I_\lambda(\Omega, T)}{I_{\mathrm{bb},\lambda}(T)}
 # \end{equation}
 # 
 # De esta forma, $\epsilon$ es una propiedad adimensional de superfice que varía entre $0 \le \epsilon \le 1$.
@@ -294,11 +298,11 @@ showplot0()
 
 # En este curso, seguiremos utilizando los términos y notación de óptica, es decir $R_{\lambda,\Omega}$, $T_{\lambda,\Omega}$ y $A_{\lambda,\Omega}$, para evitar confusiones. 
 
-# Como ejemplo, analicemos el poder de emisión espectral direccional, $E_{\lambda,\Omega}(T)$ y la emisividad $\epsilon(\lambda,\Omega)$ de una capa de vidrio en función de la temperatura ($T$), espesor ($d$) y dirección ($\theta$). En este caso: 
+# Como ejemplo, analicemos el poder de emisión espectral direccional, $E_{\lambda,\Omega}(T)$ y la emisividad $\epsilon_{\lambda,\Omega}$ de una capa de vidrio en función de la temperatura ($T$), espesor ($d$) y dirección ($\theta$). En este caso: 
 # 
 # \begin{align*}
-# E_{\lambda,\Omega}(T) &= \epsilon(\lambda,\Omega)I_{\mathrm{bb},\lambda}(\lambda,\Omega,T)\cos\theta \\[10pt]
-#  &= \left[1 - R_{\lambda,\Omega} - T_{\lambda,\Omega}\right]I_{\mathrm{bb},\lambda}(\lambda,\Omega,T)\cos\theta
+# E_{\lambda,\Omega}(T) &= \epsilon_{\lambda,\Omega}I_{\mathrm{bb},\lambda}(T)\cos\theta \\[10pt]
+#  &= \left[1 - R_{\lambda,\Omega} - T_{\lambda,\Omega}\right]I_{\mathrm{bb},\lambda}(T)\cos\theta
 # \end{align*}
 
 # Antes, analicemos el índice de refracción del vidrio (sílicice, SiO$_2$), en el espectro $\lambda\in[0.3,15]$ $\mu$m.
@@ -408,7 +412,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
 
 from ipywidgets import interact
 
-@interact(T=(300,1000,10), d=(0,10,0.1), lam0=(5,10,0.1), theta0=(0,90,1))
+@interact(T=(300,1000,10), d=(0,10,1), lam0=(5,10,0.5), theta0=(0,90,5))
 def g(T=300,d=1, lam0=10, theta0=0):
    return plot_emisivity_glass(T,d,lam0,theta0)
 
@@ -417,12 +421,12 @@ def g(T=300,d=1, lam0=10, theta0=0):
 
 # **Emisividad direccional total**
 # \begin{equation}
-# \epsilon_\Omega(\Omega,T) = \frac{E_\Omega(T)}{E_{\Omega,bb}(T)} =\frac{\int_0^\infty \epsilon_{\lambda,\Omega} I_{\mathrm{bb},\lambda} (T)\cos\theta~d\lambda}{\int_0^\infty I_{\mathrm{bb},\lambda} (T)\cos\theta~d\lambda} = \frac{\pi}{\sigma T^4}\int_0^\infty \epsilon_{\lambda,\Omega} I_{\mathrm{bb},\lambda} (T)~d\lambda
+# \epsilon_\Omega(T) = \frac{E_\Omega(T)}{E_{\Omega,bb}(T)} =\frac{\int_0^\infty \epsilon_{\lambda,\Omega} I_{\mathrm{bb},\lambda} (T)\cos\theta~d\lambda}{\int_0^\infty I_{\mathrm{bb},\lambda} (T)\cos\theta~d\lambda} = \frac{\pi}{\sigma T^4}\int_0^\infty \epsilon_{\lambda,\Omega} I_{\mathrm{bb},\lambda} (T)~d\lambda
 # \end{equation}
 
 # **Emisividad hemisférica espectral**
 # \begin{equation}
-# \epsilon_\lambda(\lambda) = \frac{E_\lambda(T)}{E_{\lambda,bb}(T)} = \frac{\int_\mathrm{hemi}\epsilon_{\lambda,\Omega}I_{\mathrm{bb},\lambda}(T)\cos\theta~d\Omega}{\pi I_{\mathrm{bb},\lambda}(T)}  = \frac{1}{\pi}\int_\mathrm{hemi}\epsilon_{\lambda,\Omega}\cos\theta~d\Omega
+# \epsilon_\lambda(T) = \frac{E_\lambda(T)}{E_{\lambda,bb}(T)} = \frac{\int_\mathrm{hemi}\epsilon_{\lambda,\Omega}I_{\mathrm{bb},\lambda}(T)\cos\theta~d\Omega}{\pi I_{\mathrm{bb},\lambda}(T)}  = \frac{1}{\pi}\int_\mathrm{hemi}\epsilon_{\lambda,\Omega}\cos\theta~d\Omega
 # \end{equation}
 
 # **Emisividad hemisférica total**
@@ -430,7 +434,7 @@ def g(T=300,d=1, lam0=10, theta0=0):
 # \epsilon(T) = \frac{E(T)}{\sigma T^4} =\frac{1}{\sigma T^4}\int\int_0^\infty \epsilon_{\lambda,\Omega} I_{\mathrm{bb},\lambda} (T)\cos\theta~d\lambda~d\Omega
 # \end{equation}
 
-# Notar que las valores totales (integración en el espectro), implícitamente dependen de $T$ debido al factor $\sigma T^4$.
+# Notar que, debido al factor $\sigma T^4$, la emisividad hemisférica total y direccional total dependen de $T$, aún cuando $\epsilon_{\lambda,\Omega}$ puede no depender de $T$.
 
 # ### Materiales idealizados
 
@@ -455,7 +459,7 @@ def g(T=300,d=1, lam0=10, theta0=0):
 
 # Usamos la función `adm_sphere` de `empylib.rad_transfer` que calcula al reflectancia y transmitancia total (especular + difusa) en dirección normal
 
-# Primero, graficamos el espectro de reflectancia ($R$), transmitancia ($T$) y absortancia ($A$).
+# Primero, graficamos el espectro de reflectancia ($R_\lambda$), transmitancia ($T_\lambda$) y absortancia ($A_\lambda$) espectral (igual en todas las direcciones).
 
 # In[8]:
 
@@ -471,18 +475,18 @@ fv = 0.4                          # concentración (fracción de volúmen)
 Np = nk.TiO2(lam)                 # índice de refracción de las partículas
 D  = 1.000                        # diámetro de las partículas (um)
 
-R, T = rt.adm_sphere(lam,tfilm,Nlayers,fv,D,Np)
-A = 1 - R - T
+R, T = rt.adm_sphere(lam,tfilm,Nlayers,fv,D,Np) # Reflectancia y transmitancia
+A = 1 - R - T                                   # Absortancia
 
 fig, ax1 = plt.subplots(figsize=(8,3))
-ax1.plot(lam,R,'-r', label = 'R')
-ax1.plot(lam,T,'-b', label = 'T')
-ax1.plot(lam,A,'-k', label = 'A')
+ax1.plot(lam,R,'-r', label = '$R_\lambda$')
+ax1.plot(lam,T,'-b', label = '$T_\lambda$')
+ax1.plot(lam,A,'-k', label = '$A_\lambda$')
 
 ax1.set_xlabel('Longitud de onda, $\mu$m')
 ax1.set_xscale('log')
 ax1.set_xticks([0.3,0.4,0.75,1.4,3,8,15,30, 50, 100])
-ax1.set_ylabel('Irradiancia espectral (W/m$^2$-$\mu$m)')
+ax1.set_ylabel('$R_\lambda$, $T_\lambda$ y $A_\lambda$')
 ax1.set_xlim(0.3,100)
 
 ax1.xaxis.set_major_formatter(FuncFormatter(lambda y, _: '{:.16g}'.format(y)))
@@ -493,7 +497,7 @@ plt.show()
 # Calculamos la emisividad total hemisférica mediante la ecuación (6.14):
 # 
 # \begin{align*}
-# \epsilon(T) &=\frac{1}{\sigma T^4}\int_0^\infty \int \epsilon_{\lambda} I_{\mathrm{bb},\lambda} (T)\cos\theta~d\Omega~d\lambda \\
+# \epsilon(T) &=\frac{1}{\sigma T^4}\int_0^\infty \int_\mathrm{hemi} \epsilon_{\lambda} I_{\mathrm{bb},\lambda} (T)\cos\theta~d\Omega~d\lambda \\
 # &=\frac{1}{\sigma T^4}\pi\int_0^\infty \epsilon_{\lambda} I_{\mathrm{bb},\lambda} (T)~d\lambda
 # \end{align*}
 # 
@@ -530,17 +534,17 @@ print('la emisividad de la pintura blanca es : %.3f' % eps_white_paint)
 
 # **Absorptancia direccional total**
 # \begin{equation}
-# \alpha_\Omega(\Omega,T) = \frac{\int_0^\infty \alpha_{\lambda,\Omega} G_{\lambda,\Omega} (T)~d\lambda}{\int_0^\infty G_{\lambda,\Omega} (T)~d\lambda}
+# \alpha_\Omega = \frac{\int_0^\infty \alpha_{\lambda,\Omega} G_{\lambda,\Omega}~d\lambda}{\int_0^\infty G_{\lambda,\Omega} ~d\lambda}
 # \end{equation}
 
 # **Absorptancia hemisférica espectral**
 # \begin{equation}
-# \alpha_\lambda(\lambda) = \frac{\int_\mathrm{hemi}\alpha_{\lambda,\Omega}G_{\lambda,\Omega}~d\Omega}{\pi G_{\lambda,\Omega}}
+# \alpha_\lambda = \frac{\int_\mathrm{hemi}\alpha_{\lambda,\Omega}G_{\lambda,\Omega}~d\Omega}{\pi G_{\lambda,\Omega}}
 # \end{equation}
 
 # **Absorptancia hemisférica total**
 # \begin{equation}
-# \alpha = \frac{\int_\mathrm{hemi} \int_0^\infty \alpha_{\lambda,\Omega} G_{\lambda,\Omega} (T)~d\lambda d\Omega}{\int_\mathrm{hemi} \int_0^\infty G_{\lambda,\Omega} (T)~d\lambda d\Omega}
+# \alpha = \frac{\int_\mathrm{hemi} \int_0^\infty \alpha_{\lambda,\Omega} G_{\lambda,\Omega}~d\lambda d\Omega}{\int_\mathrm{hemi} \int_0^\infty G_{\lambda,\Omega}~d\lambda d\Omega}
 # \end{equation}
 
 # ### Radiosidad (J)
