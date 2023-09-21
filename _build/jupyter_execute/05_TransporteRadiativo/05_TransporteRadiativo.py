@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[1]:
+
+
+import importlib.util
+if importlib.util.find_spec('empylib') is None:
+    get_ipython().system('pip install git+https://github.com/PanxoPanza/empylib.git')
+
+
 # # Transporte Radiativo
 
 # ## Introducción
@@ -33,7 +41,7 @@
 
 # Analicemos el comportamiento de $\vec{E}_\mathrm{tot} /E_0$ para $\lambda_0 = 500$ nm
 
-# In[1]:
+# In[2]:
 
 
 import numpy as np
@@ -78,7 +86,7 @@ def plot_light_packet(N, t, sig):
     ax.grid()
 
 
-# In[2]:
+# In[3]:
 
 
 from ipywidgets import interact
@@ -223,7 +231,7 @@ def g(N=1000, t=0, sig=0.3):
 
 # En este caso, evaluaremos una película de sílice de espesor $1~\mu\mathrm{m}$, sobre un sustrato con íncide de refracción $N_\mathrm{back} = 4.3$, y con aire en la superficie $N_\mathrm{front} = 1.0$. El espectro de longitudes de onda $\lambda\in[0.3,0.8]~\mu\mathrm{m}$ y el ángulo de incidencia $\theta_i = 30°$. Para comparar, determinaremos $R$ y $T$ para el caso de luz coherente.
 
-# In[3]:
+# In[4]:
 
 
 import numpy as np
@@ -245,7 +253,7 @@ Rp_incoh, Tp_incoh = wv.incoh_multilayer(lam,theta, N, d, pol='TM')
 Rp, Tp = wv.multilayer(lam,theta, N, d, pol='TM')[:2]
 
 
-# In[4]:
+# In[5]:
 
 
 fig, ax = plt.subplots()
@@ -291,7 +299,7 @@ plt.show()
 
 # Consideremos una atmosfera compuesta de aire ($N_h = 1.0$) y una pequeña concentración ($f_v = 1\times 10^{-6}~\%$) de partículas de 10 nm de diámetro e índice de refracción $N_p = 1.5$. El espesor de la atmosfera es $t_\mathrm{atm} = 100~\mathrm{km}$
 
-# In[5]:
+# In[6]:
 
 
 import empylib.rad_transfer as rt
@@ -339,9 +347,10 @@ def plot_atmosphere(theta_sun):
     ax2.set_xticks([])
     ax2.set_yticks([])
     ax2.set_facecolor('k')
+    plt.show()
 
 
-# In[6]:
+# In[7]:
 
 
 from ipywidgets import interact
@@ -362,7 +371,7 @@ def g(theta_sun=0):
 
 # Evaluaremos los colores de este material en transmisión y reflección para luz incidente normal a la superficie en función de la concentración y el diámetro de las partículas. Utilizamos la función ```adm_sphere``` de la librería ```empylib.rad_transfer```
 
-# In[7]:
+# In[8]:
 
 
 import empylib.rad_transfer as rt
@@ -427,9 +436,10 @@ def plot_glass_silver(fv,D):
     ax[2].set_yticks([])
     ax[2].set_facecolor('k')
     plt.subplots_adjust(wspace=0.3)
+    plt.show()
 
 
-# In[8]:
+# In[9]:
 
 
 from ipywidgets import interact
@@ -455,13 +465,13 @@ def g(fv=20, D = 70):
 
 # Como aproximación, consideremos un medio de espesor $1$ cm, compuesto por agua $N_h = 1.3$ y pequeñas partículas esféricas de aceite $N_p = 1.5$. La emulsión considera un 60% de partículas de aceite por volumen.
 
-# In[9]:
+# In[10]:
 
 
 get_ipython().run_cell_magic('capture', 'showplot', "# import empylib.nklib as nk\nimport numpy as np\nimport empylib.rad_transfer as rt\n\n# Solo modificar estos parámetros\n#---------------------------------------------------------------\nlam3 = np.linspace(0.3,1.0,100)   # espectro de longitudes de onda\ntfilm = 10                        # espesor en milímetros\nfv = 0.50                         # fracción de volúmen de los poros\nD = 1.0                           # diámetro de los poros (micrones)\nNh2o = 1.3                        # Índice de refracción del agua\nNoil = 1.5                        # índice de refracción partículas de aceite\n#---------------------------------------------------------------\nRtot, Ttot = rt.adm_sphere(lam3,tfilm,(1.0,Nh2o,1.0),fv,D,Noil)\n\nfig, ax = plt.subplots()\nfig.set_size_inches(5, 3.5)\nplt.rcParams['font.size'] = '12'\nax.plot(lam3,Rtot,'-r',label='R')\nax.plot(lam3,Ttot,'-b',label='T')\nax.set_xlabel('Longitud de onda ($\\mu$m)')\nax.set_ylabel('Reflectividad / Transmisividad')\nax.set_title(r'Leche (fv = %.0f %%)' % (fv*100))\nax.legend()\nax.set_ylim(0,1.02)\nplt.show()\n")
 
 
-# In[10]:
+# In[11]:
 
 
 showplot()

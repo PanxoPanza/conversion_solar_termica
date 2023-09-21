@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[1]:
+
+
+import importlib.util
+if importlib.util.find_spec('empylib') is None:
+    get_ipython().system('pip install git+https://github.com/PanxoPanza/empylib.git')
+
+
 # # Radiación Térmica
 
 # ## Introducción a la Transferencia de Calor
@@ -196,13 +204,13 @@
 
 # En el siguiente ejemplo, garficamos la distribución de cuerpo negro a $T = 100~^\circ\mathrm{C}= 373~\mathrm{K}$, en el espectro $\lambda\in[2,100]$ $\mu$m.
 
-# In[1]:
+# In[2]:
 
 
 get_ipython().run_cell_magic('capture', 'showplot0', "import numpy as np\nimport empylib.ref_spectra as rf\nimport matplotlib.pyplot as plt\n\nT = 100 + 273                   # Temperatura del cuerpo negro (K)\nlam = np.linspace(2,100,1000)   # espectro de longitudes de onda (um)\nIbb = rf.Bplanck(lam,T)         # irradiancia espectral de cuerpo negro\n\nplt.plot(lam,Ibb)\nplt.xlabel('Longitud de onda ($\\mu$m)')\nplt.ylabel('Irradiancia espectral de cuerpo negro, (W/m$^2$-$\\mu$m-sr)')\nplt.show()\n")
 
 
-# In[2]:
+# In[3]:
 
 
 showplot0()
@@ -295,13 +303,13 @@ showplot0()
 
 # Antes, analicemos el índice de refracción del vidrio (sílicice, SiO$_2$), en el espectro $\lambda\in[0.3,15]$ $\mu$m.
 
-# In[3]:
+# In[4]:
 
 
 get_ipython().run_cell_magic('capture', 'showplot', "import numpy as np\nimport empylib.nklib as nk\nimport matplotlib.pyplot as plt\n\nlam = np.linspace(0.3,15,100) #longitud de onda en um\nplt.plot(lam,nk.SiO2(lam).real,'-r',label='$n$')\nplt.plot(lam,nk.SiO2(lam).imag,'-b',label='$\\kappa$')\nplt.xlabel('Longitud de onda, $\\lambda$ ($\\mu$m)',fontsize=16)\nplt.ylabel('$n$, $\\kappa$',fontsize=16)\nplt.title('Índice de refracción SiO$_2$',fontsize=18)\nplt.legend(frameon=False,fontsize=16)\nplt.tick_params(labelsize=16)\n")
 
 
-# In[4]:
+# In[5]:
 
 
 showplot()
@@ -309,7 +317,7 @@ showplot()
 
 # Comparamos $E_{\lambda,\Omega}(T)$ con el poder de emisión espectral direccional del cuerpo negro, $E_{\mathrm{bb},\lambda,\Omega} = I_{\mathrm{bb},\lambda}\cos\theta$
 
-# In[5]:
+# In[6]:
 
 
 import empylib.waveoptics as wv
@@ -395,7 +403,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     plt.show()
 
 
-# In[6]:
+# In[7]:
 
 
 from ipywidgets import interact
@@ -449,7 +457,7 @@ def g(T=300,d=1, lam0=10, theta0=0):
 
 # Primero, graficamos el espectro de reflectancia ($R$), transmitancia ($T$) y absortancia ($A$).
 
-# In[7]:
+# In[8]:
 
 
 import empylib.rad_transfer as rt
@@ -493,7 +501,7 @@ plt.show()
 
 # Numericamente, integramos usando la regla del trapecio (`numpy.trapz`)
 
-# In[8]:
+# In[9]:
 
 
 T = 25 + 273                        # Temperatura de la pintura 
@@ -621,7 +629,7 @@ print('la emisividad de la pintura blanca es : %.3f' % eps_white_paint)
 # ## Referencias
 # - Çengel Y. A y Ghanjar A. J. **Capítulo 12 - Fundamentos de la radiación térmica** en *Transferencia de calor y masa*, 4ta Ed, McGraw Hill, 2011
 
-# In[9]:
+# In[10]:
 
 
 from IPython.display import YouTubeVideo

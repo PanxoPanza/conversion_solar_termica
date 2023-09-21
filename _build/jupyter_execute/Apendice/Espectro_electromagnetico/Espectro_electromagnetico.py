@@ -9,7 +9,7 @@ if importlib.util.find_spec('empylib') is None:
     get_ipython().system('pip install git+https://github.com/PanxoPanza/empylib.git')
 
 
-# ## Espectro electromagnético
+# # Espectro electromagnético
 
 # Podemos clasificar la radiación electromagnética según su longitud de onda (o frecuencia).
 # 
