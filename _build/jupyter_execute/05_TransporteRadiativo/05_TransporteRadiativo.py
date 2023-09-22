@@ -242,7 +242,7 @@ lam = np.linspace(0.3,0.8,100)  # espectro de longitudes de onda (um)
 theta = np.radians(30)          # ángulo de incidencia
 
 Nfront = 1.0                 # índice de refracción medio superior
-N1     = 1.5        # índice de refracción capa delgada
+N1     = 1.5                 # índice de refracción capa delgada
 Nback  = 4.3                 # índice de refracción medio inferior
 N = (Nfront, N1, Nback)      # indices de refracción (above, mid, below)
 d = 1.0                      # espesor capa intermedia (um)
@@ -361,13 +361,13 @@ def g(theta_sun=0):
 
 
 # ### Pelicula de material particulado (simulaciones de transferencia radiativa)
-# Este caso corresponde a materiales con $\Lambda_\mathrm{sca} > t_\mathrm{film}$. En este caso los eventos de scattering se producen más de una vez, y decimos que estámos en un régimen de **scattering múltiple**. Como resultado, los tres términos de la RTE son relevantes y debemos resolver la ecuación mediante simulación computacional.
+# Este caso corresponde a materiales con $\Lambda_\mathrm{sca} < t_\mathrm{film}$. En este caso los eventos de scattering se producen más de una vez, y decimos que estámos en un régimen de **scattering múltiple**. Como resultado, los tres términos de la RTE son relevantes y debemos resolver la ecuación mediante simulación computacional.
 # 
 # <img src="./images/multiple_scattering.png" width="400px" align= center>
 # 
 # <center>Transporte de luz en un medio con scattering múltiple</center>
 
-# Consideremos un material de sílice de espesor $t_\mathrm{film} = 5~\mathrm{mm}$ con incrustaciones de partículas de plata de forma esférica.
+# Analicemos la [copa de Licurgo](https://es.wikipedia.org/wiki/Copa_de_Licurgo), considerando un material de sílice de espesor $t_\mathrm{film} = 5~\mathrm{mm}$ con incrustaciones de partículas de plata de forma esférica.
 
 # Evaluaremos los colores de este material en transmisión y reflección para luz incidente normal a la superficie en función de la concentración y el diámetro de las partículas. Utilizamos la función ```adm_sphere``` de la librería ```empylib.rad_transfer```
 
@@ -422,12 +422,12 @@ def plot_glass_silver(fv,D):
     html_rgb = cs.spec_to_rgb(Ttot*AM15(lam2), out_fmt='html')
     Circle = plt.Circle((0, 0), Dcircle, color=html_rgb)
     ax[2].add_patch(Circle)
-    ax[2].annotate('Luz Trasera', xy=(0, 0), va='center', ha='center')
+    ax[2].annotate('Luz Transmitida', xy=(0, 0), va='center', ha='center')
 
     html_rgb = cs.spec_to_rgb(Rtot*AM15(lam2), out_fmt='html')
     Circle = plt.Circle((Dcircle*1.2*2, 0), Dcircle, color=html_rgb)
     ax[2].add_patch(Circle)
-    ax[2].annotate('Luz Frontal', xy=(Dcircle*1.2*2, 0), va='center', ha='center')
+    ax[2].annotate('Luz Reflejada', xy=(Dcircle*1.2*2, 0), va='center', ha='center')
 
     ax[2].set_aspect('equal')
     ax[2].set_xlim(-Dcircle*1.2,Dcircle*1.2*3)

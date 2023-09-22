@@ -279,7 +279,7 @@ show_plot()
 
 # Este fenómeno se repite en otros metales, aunque con distintas magnitudes y frecuencias de resonancia.
 
-# El efecto de de scattering en nanopartículas metálicas permite explicar el cambio en los colores en la [copa de Lycurgus](https://es.wikipedia.org/wiki/Copa_de_Licurgo).
+# El efecto de de scattering en nanopartículas metálicas permite explicar el cambio en los colores en la [copa de Licurgo](https://es.wikipedia.org/wiki/Copa_de_Licurgo).
 # 
 # <img src="./images/LycurgusCup.jpg" width="300px" align= center>
 
