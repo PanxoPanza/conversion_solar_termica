@@ -49,7 +49,7 @@
 
 # ### Ángulo de incidencia
 # 
-# El ángulo de incidencia del sol, $\theta_\mathrm{i}$, corresponde al ángulo cenital relativo a la norla de una superficie. En la siguiente figura se muestra una superficie inclinada con ángulo cenital $\beta$ y ángulo acimutal $\Phi$ respecto a la dirección normal al plano horizontal
+# El ángulo de incidencia del sol, $\theta_\mathrm{i}$, corresponde al ángulo cenital relativo a la normal de una superficie. En la siguiente figura se muestra una superficie inclinada con ángulo cenital $\beta$ y ángulo acimutal $\Phi$ respecto a la dirección normal al plano horizontal
 
 # <img src="./images/incidence_angle.png" width="650px" align= center>
 

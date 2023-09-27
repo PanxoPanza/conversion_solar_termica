@@ -175,7 +175,7 @@ show1()
 
 # >**Las componentes de $\vec{E}$ y $\vec{H}$ paralelas a la interfaz entre dos medios $1$ y $2$, se conservan.**
 
-# Estas condiciones de borde nos darán la base para entender los fenómenos de refracción y reflección.
+# Estas condiciones de borde nos darán la base para entender los fenómenos de refracción y reflexión.
 
 # ### Coeficientes de Fresnel
 
@@ -322,7 +322,7 @@ show1()
 # \biggl\langle{\vec{S}_t^\mathrm{TM}}\biggl\rangle &=& \frac{1}{2}\mathrm{Re}\left[\vec{E}_t\times\vec{H}_t^*\right] &=& \mathrm{Re}\left[N_2^* \hat{k}_t\right]\frac{{\left(E_t^\mathrm{TM}\right)}^2}{2Z_0}
 # \end{eqnarray*}
 
-# La **reflectividad ($R$)** y **transmissivitdad ($T$)** se definen, repectivamente, como **el flujo de energía reflejada y transmitida relativa al flujo de energía incidente, y en dirección normal a la interfaz.** 
+# La **reflectividad ($R$)** y **transmisivitdad ($T$)** se definen, repectivamente, como **el flujo de energía reflejada y transmitida relativa al flujo de energía incidente, y en dirección normal a la interfaz.** 
 
 # Estamos interesados en el flujo de energía a través de la interfaz. Así, consideramos la componente del vector de Poynting paralela a $\hat{n}$ (notar que $\hat{n} = - \hat{z}$ en nuestro ejemplo), de donde obtenemos:
 # 
@@ -394,7 +394,7 @@ def g(n1=1.0, n2=1.5):
 
 # Cuando $n_1 < n_2$ vemos que $R_\mathrm{TM} = 0$ en un cierto ángulo. Este ángulo se denomina **ángulo de Brewster.** En este ángulo solo la componente TE es reflejada. 
 
-# Los lentes polarizados toman ventaja del ángulo de Brewster. Estos lentes están diseñados para bloquear las ondas TE, y de esta forma reducir el brillo enceguecedor generado por la reflección de la luz solar
+# Los lentes polarizados toman ventaja del ángulo de Brewster. Estos lentes están diseñados para bloquear las ondas TE, y de esta forma reducir el brillo enceguecedor generado por la reflexión de la luz solar
 
 # <img src="./images/polarized_glasses.jpg" width="350px" align= center>
 
@@ -419,7 +419,7 @@ YouTubeVideo('5SIxEiL8ujA', width=600, height=400,  playsinline=0, start=0)
 # 
 # **Para $\theta_i > \theta_c$, $R_\mathrm{TE} = R_\mathrm{TM} = 1$.**
 
-# Este mecanismo se llama **reflección interna total** y es la base para el funcionamiento de fibras ópticas y lasers
+# Este mecanismo se llama **reflexión interna total** y es la base para el funcionamiento de fibras ópticas y lasers
 # <img src="./images/optical_fiber.png" width="450px" align= center>
 
 # El siguiente video resume los procesos de reflexión interna total y refracción que ocurren producto del cambio en el índice de refracción.
@@ -428,7 +428,7 @@ YouTubeVideo('5SIxEiL8ujA', width=600, height=400,  playsinline=0, start=0)
 
 # <center><video controls muted src="../_static/videos/refraccíon_uaiphysics.mp4"  width="400px" align=center></video></center>
 
-# ## Reflección y transmissión en películas delgadas
+# ## Reflexión y transmisión en películas delgadas
 # En el caso materiales de película delgada, las ondas electromagnéticas se reflejan y transmiten múltiples veces.
 # 
 # <img src="./images/reflectance_thinfilm.png" width="600px" align= center>
