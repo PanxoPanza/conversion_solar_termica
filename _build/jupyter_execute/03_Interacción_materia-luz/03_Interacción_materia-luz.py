@@ -558,7 +558,7 @@ showplot4()
 
 # Debido a esta respuesta, el oro absorbe las longitudes de onda correspondientes al azul y violeta, y refleja el resto de los colores.
 # 
-# La siguiente figura muestra el color del oro según el ángulo de incidencia en base al espectro de reflección de una interface aire/oro.
+# La siguiente figura muestra el color del oro según el ángulo de incidencia en base al espectro de reflexión de una interface aire/oro.
 
 # In[17]:
 

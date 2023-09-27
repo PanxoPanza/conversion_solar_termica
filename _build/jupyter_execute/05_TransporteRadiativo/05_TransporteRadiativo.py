@@ -369,7 +369,7 @@ def g(theta_sun=0):
 
 # Analicemos la [copa de Licurgo](https://es.wikipedia.org/wiki/Copa_de_Licurgo), considerando un material de sílice de espesor $t_\mathrm{film} = 5~\mathrm{mm}$ con incrustaciones de partículas de plata de forma esférica.
 
-# Evaluaremos los colores de este material en transmisión y reflección para luz incidente normal a la superficie en función de la concentración y el diámetro de las partículas. Utilizamos la función ```adm_sphere``` de la librería ```empylib.rad_transfer```
+# Evaluaremos los colores de este material en transmisión y reflexión para luz incidente normal a la superficie en función de la concentración y el diámetro de las partículas. Utilizamos la función ```adm_sphere``` de la librería ```empylib.rad_transfer```
 
 # In[8]:
 

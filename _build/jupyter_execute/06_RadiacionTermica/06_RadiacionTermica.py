@@ -193,7 +193,7 @@ if importlib.util.find_spec('empylib') is None:
 # donde 
 # \begin{align*}
 # C_1 &= 2hc_0^2 = 1.19104238\times 10^8 ~\mathrm{W}\cdot\mu\mathrm{m}^4/\mathrm{m}^2 \\
-# C_2 &= hc_0/k_\mathrm{B} = 1.43878\times10^{4}~\mu\mathrm{m}\cdot\mathrm{K}
+# C_2 &= hc_0/k_\mathrm{B} = 1.438776877\times10^{4}~\mu\mathrm{m}\cdot\mathrm{K}
 # \end{align*}
 # 
 # $k_\mathrm{B} = 1.381\times 10^{-23}$ J/K $=8.617\times 10^{-5}$ eV/K, es la constante de Boltzmann. La unidad "sr" correponde a un esteroradian.
@@ -449,17 +449,17 @@ def g(T=300,d=1, lam0=10, theta0=0):
 
 # Por ejemplo, calculemos la emisividad de la pintura blanca a $T = 25\mathrm{°C}$.
 
-# Como supuestos, consideraremos que la pintura blanca tiene: 
-# - 1 mm de espesor
-# - Está compuesta de una solución de partículas de TiO$_2$ de 1 $\mu\mathrm{m}$ de diámetro, con concentración de 40% v/v 
-# - sumerjidas en un solvente con índice de refracción $N_\mathrm{solvente} = 1.5$.
-# - También asumiremos aire a ambos lados de la película de pintura. 
+# Como supuestos, consideraremos que la pintura blanca tiene las siguientes características: 
+# - capa de 0.5 mm de espesor
+# - compuesta de una solución de partículas de TiO$_2$ de 1 $\mu\mathrm{m}$ de diámetro, con concentración de 7% v/v. 
+# - solvente con índice de refracción $N_\mathrm{solvente} = 1.3$.
+# - También asumiremos que la capa de pintura se encuentra entre aire ($n_1 = 1.0$) y un material con índice de refracción $n_3 = 1.5$
 
-# En este caso, debido a la rugosidad de la pintura, es normal **asumir que la superficie se comporta como superficie opaca** y, por lo tanto, calcularemos la emisividad espectral en dirección normal.
+# En este caso, debido a la rugosidad de la pintura, es normal **asumir que la superficie se comporta como superficie difusa** y, por lo tanto, calcularemos la emisividad espectral en dirección normal.
 
 # Usamos la función `adm_sphere` de `empylib.rad_transfer` que calcula al reflectancia y transmitancia total (especular + difusa) en dirección normal
 
-# Primero, graficamos el espectro de reflectancia ($R_\lambda$), transmitancia ($T_\lambda$) y absortancia ($A_\lambda$) espectral (igual en todas las direcciones).
+# Primero, calculamos el espectro de reflectancia ($R_\lambda$), transmitancia ($T_\lambda$) y absortancia ($A_\lambda$) espectral (igual en todas las direcciones).
 
 # In[8]:
 
@@ -468,33 +468,33 @@ import empylib.rad_transfer as rt
 import empylib.nklib as nk
 from matplotlib.ticker import ScalarFormatter, FuncFormatter
 
-lam   = np.linspace(0.2,100,1000) # espectro de longitudes de onda (um)
-tfilm = 1                         # espesor de la película (mm)
-Nlayers = (1.0,1.5,1.0)           # índice de refracción aire / solvente / aire
-fv = 0.4                          # concentración (fracción de volúmen)
-Np = nk.TiO2(lam)                 # índice de refracción de las partículas
-D  = 1.000                        # diámetro de las partículas (um)
+lam   = np.logspace(np.log10(0.2),np.log10(100),1000) # espectro de longitudes de onda (um)
+tfilm = 0.5                                           # espesor de la película (mm)
+nh = 1.3                                              # índice de refracción del solvente
+Nlayers = (1.0,nh,1.5)                                # índices de refracción aire / solvente / aire
+fv = 0.07                                             # concentración (fracción de volúmen)
+Np = nk.TiO2(lam)                                     # índice de refracción de las partículas
+D  = 1.0                                              # diámetro de las partículas (um)
 
-R, T = rt.adm_sphere(lam,tfilm,Nlayers,fv,D,Np) # Reflectancia y transmitancia
-A = 1 - R - T                                   # Absortancia
-
-fig, ax1 = plt.subplots(figsize=(8,3))
-ax1.plot(lam,R,'-r', label = '$R_\lambda$')
-ax1.plot(lam,T,'-b', label = '$T_\lambda$')
-ax1.plot(lam,A,'-k', label = '$A_\lambda$')
-
-ax1.set_xlabel('Longitud de onda, $\mu$m')
-ax1.set_xscale('log')
-ax1.set_xticks([0.3,0.4,0.75,1.4,3,8,15,30, 50, 100])
-ax1.set_ylabel('$R_\lambda$, $T_\lambda$ y $A_\lambda$')
-ax1.set_xlim(0.3,100)
-
-ax1.xaxis.set_major_formatter(FuncFormatter(lambda y, _: '{:.16g}'.format(y)))
-ax1.legend(frameon=False)
-plt.show()
+R, T = rt.adm_sphere(lam,tfilm,Nlayers,fv,D,Np)       # Reflectancia y transmitancia
+A = 1 - R - T                                         # Absortancia
 
 
-# Calculamos la emisividad total hemisférica mediante la ecuación (6.14):
+# Luego, graficamos ($R_\lambda$), transmitancia ($T_\lambda$) y absortancia ($A_\lambda$). Como referencia, graficamos el índice de refracción del $\mathrm{TiO_2}$ y el scattering de una partícula de $\mathrm{TiO_2}$ en el solvente.
+
+# In[9]:
+
+
+get_ipython().run_cell_magic('capture', 'showplot1', "import empylib.miescattering as mie\n\nAp = np.pi*D**2/4\nQext, Qsca = mie.scatter_efficiency(lam,nh,Np,D)[:2]\nCsca, Cabs = Qsca*Ap, (Qext - Qsca)*Ap\n    \nfig, ax1 = plt.subplots(3,1,figsize=(8,8))\nplt.rcParams['font.size'] = '12'\nfig.tight_layout()\n\n# Graficamos el índice de refracción (parte real e imaginaria)\nax1[0].plot(lam,Np.real,'-b',label = '$n$')\nax1[0].plot(lam,Np.imag,'-r',label = '$\\kappa$')\n\n# Graficamos la sección transversal de scattering y absorción\nax1[1].plot(lam,Csca,'-b',label = '$C_\\mathrm{sca}$')\nax1[1].plot(lam,Cabs,'-r',label = '$C_\\mathrm{abs}$')\n\n# Graficamos la reflectancia, transmitancia y absortancia espectral\nax1[2].plot(lam,R,'-b', label = '$R_\\lambda$')\nax1[2].plot(lam,T,'-g', label = '$T_\\lambda$')\nax1[2].plot(lam,A,'-r', label = '$A_\\lambda$')\n\n\nfor i in range(len(ax1)):\n    ax1[i].set_xlabel('')\n    ax1[i].set_xscale('log')\n    ax1[i].set_xticks([0.3,0.4,0.75,1.4,3,8,15,30, 50, 100])\n    ax1[i].set_xlim(0.3,100)\n    ax1[i].xaxis.set_major_formatter(FuncFormatter(lambda y, _: '{:.16g}'.format(y)))\n    ax1[i].legend(frameon=False)\n\n    \nax1[2].set_xlabel('Longitud de onda, $\\lambda$ $\\mu$m')\nax1[0].set_ylabel('Índice de refracción $\\mathrm{TiO_2}$')\nax1[1].set_ylabel('$C_\\mathrm{sca}$ y $C_\\mathrm{sca}$ esfera de $\\mathrm{TiO_2}$ ($\\mu$m$^2$)')\nax1[2].set_ylabel('$R_\\lambda$, $T_\\lambda$ y $A_\\lambda$')\nplt.show()\n")
+
+
+# In[10]:
+
+
+showplot1()
+
+
+# Para finalizar, usamos la ley de Kirchhoff ($A_\lambda = \epsilon_\lambda$), y calculamos la emisividad total hemisférica mediante la ecuación (6.14):
 # 
 # \begin{align*}
 # \epsilon(T) &=\frac{1}{\sigma T^4}\int_0^\infty \int_\mathrm{hemi} \epsilon_{\lambda} I_{\mathrm{bb},\lambda} (T)\cos\theta~d\Omega~d\lambda \\
@@ -505,7 +505,7 @@ plt.show()
 
 # Numericamente, integramos usando la regla del trapecio (`numpy.trapz`)
 
-# In[9]:
+# In[11]:
 
 
 T = 25 + 273                        # Temperatura de la pintura 
@@ -633,7 +633,7 @@ print('la emisividad de la pintura blanca es : %.3f' % eps_white_paint)
 # ## Referencias
 # - Çengel Y. A y Ghanjar A. J. **Capítulo 12 - Fundamentos de la radiación térmica** en *Transferencia de calor y masa*, 4ta Ed, McGraw Hill, 2011
 
-# In[10]:
+# In[12]:
 
 
 from IPython.display import YouTubeVideo
