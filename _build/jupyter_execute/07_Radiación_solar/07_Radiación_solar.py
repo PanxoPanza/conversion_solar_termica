@@ -173,11 +173,11 @@
 
 # Comúnmente, las mediciones de radiación solar se reportan usando tres parámetros de irradiancia (radiación sobre una superficie):
 # 
-# - **Irradiancia directa normal (*Direct normal irradiance* DNI)**: Corresponde a la radiación sobre una superficie apuntando en dirección normal a los rayos del sol. **Considera la componente directa y circumsolar de la radiación solar**.
+# - **Irradiancia normal directa (*Direct Normal Irradiance* o DNI)**: Corresponde a la radiación sobre una superficie apuntando en dirección normal a los rayos del sol. **Considera la componente directa y circumsolar de la radiación solar**.
 # 
-# - **Irradiancia difusa horizontal (*Diffuse horizontal irradiance* DIF)**: Corresponde a la radiación **isotrópica difusa y difusa del horizonte** que incide sobre una superficie horizontal.
+# - **Irradiancia horizontal difusa (*Diffuse Horizontal Irradiance* o DHI)**: Corresponde a la radiación **isotrópica difusa y difusa del horizonte** que incide sobre una superficie horizontal.
 # 
-# - **Irradiancia global horizontal (*Global horizontal irradiance* GHI)**. Corresponde a $\mathrm{GHI} = \mathrm{DNI}\cos\theta_i + \mathrm{DIF}$
+# - **Irradiancia horizontal global (*Global Horizontal Irradiance* o GHI)**. Corresponde a $\mathrm{GHI} = \mathrm{DNI}\cos\theta_i + \mathrm{DHI}$
 
 # ## Instrumentos de medición de radiación solar
 # 
@@ -194,7 +194,7 @@
 
 # Esta compuesto de un **domo superior (*glass dome*)** conformado por dos cámaras de vidrio, donde el aire atrapado actúa como aislante térmico. Al interior del domo se ubica un **detector** que absorbe la radiación solar. El cambio de temperatura del absorbedor es correlacionado con el flujo de calor por radiación. El detector está rodado de una **cubierta aislante (*housing*)** y un **escudo de radiación solar (*sun shield*)** para evitar ganancias parasíticas de calor.
 
-# El piranómetro también puede ser utilizado para **medir la componente DIF**. En este caso se utiliza una banda que **bloquea la componente directa y circumsolar.**
+# El piranómetro también puede ser utilizado para **medir la componente DHI**. En este caso se utiliza una banda que **bloquea la componente directa y circumsolar.**
 
 # <img src="./images/pyranometer_diffuse.png" width="400px" align= center>
 # 
@@ -207,24 +207,24 @@
 
 # ## Mapas solares
 # 
-# Existen diversos mapas solares disponibles en línea. En general, estos reportan valores de GHI, DNI y DIF medidos a lo largo de un año. 
+# Existen diversos mapas solares disponibles en línea. En general, estos reportan valores de GHI, DNI y DHI medidos a lo largo de un año. 
 
 # Los más recomendados son:
 # 
-# - **[Explorador solar](https://solar.minenergia.cl/exploracion) del ministerio de energía**. Entrega información detallada de las componentes DNI, DIF y GHI por més y año en el territorio chileno. La herramienta permite exportar los datos en formato .csv con información detallada de irradiancia directa y difusa para superficies orientadas en distintos ángulos. Además, permite estimar el desempeño de un colector solar y paneles fotovoltaicos. 
+# - **[Explorador solar](https://solar.minenergia.cl/exploracion) del ministerio de energía**. Entrega información detallada de las componentes DNI, DHI y GHI por més y año en el territorio chileno. La herramienta permite exportar los datos en formato .csv con información detallada de irradiancia directa y difusa para superficies orientadas en distintos ángulos. Además, permite estimar el desempeño de un colector solar y paneles fotovoltaicos. 
 # 
-# - **[Global Solar Atlas](https://globalsolaratlas.info/), del World Bank Group**. Corresponde a un mapa global de la radiación solar, con reportes de DNI, DIF y GHI anuales, y reportes detallados del DNI distribuido por mes y día. Además permite estimar el desempeño de paneles fotolvaicos por kWp (kiloWatt peak) a través del parámetro PVOUT.
+# - **[Global Solar Atlas](https://globalsolaratlas.info/), del World Bank Group**. Corresponde a un mapa global de la radiación solar, con reportes de DNI, DHI y GHI anuales, y reportes detallados del DNI distribuido por mes y día. Además permite estimar el desempeño de paneles fotolvaicos por kWp (kiloWatt peak) a través del parámetro PVOUT.
 
 # Es importante mencionar que la componente DNI no siembre es dominante. 
 # 
-# |Coordenadas| Localidad | DNI<br />(kWh/m$^2$-año) | GHI<br />(kWh/m$^2$-año) | DIF<br />(kWh/m$^2$-año)|
+# |Coordenadas| Localidad | DNI<br />(kWh/m$^2$-año) | GHI<br />(kWh/m$^2$-año) | DHI<br />(kWh/m$^2$-año)|
 # |:---------:|:---------:|:-------------------:|:-------------------------:|:-------------------------:|
 # -45.51°, -73.52°|Aysén | 848.2|1025.9|556.2|
 # -23.92°, -69.49°| Antofagasta | 3330.4 | 2604| 575|
 
-# En el caso de la región de Asyén, la **componente normal de la irradiancia sobre una superficie horizontal**, es GHI - DIF =  468.7 kW/m$^2$ - año (aproximadamente 45.7% del GHI), mientras que en Antofagasta es, 2029.0 kW/m$^2$ - año (aproximadamente 77.9% del GHI).
+# En el caso de la región de Asyén, la **componente normal de la irradiancia sobre una superficie horizontal**, es GHI - DHI =  468.7 kW/m$^2$ - año (aproximadamente 45.7% del GHI), mientras que en Antofagasta es, 2029.0 kW/m$^2$ - año (aproximadamente 77.9% del GHI).
 
-# Notar, además, que en ninguno de los dos ejemplos el valor GHI - DIF coincide con el DNI. Esto debido a que la primera considera el factor $\cos\theta_i$ asociado al ángulo de incidencia.
+# Notar, además, que en ninguno de los dos ejemplos el valor GHI - DHI coincide con el DNI. Esto debido a que la primera considera el factor $\cos\theta_i$ asociado al ángulo de incidencia.
 
 # ## Referencias
 # - Kalogirou S. A. **Chapter 2: Environmental Characteristics** en *Solar Energy Engineering Processes and Systems*, 2nd Ed, Academic Press, 2014

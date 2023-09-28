@@ -127,7 +127,13 @@ print('Poder de emisión de cuerpo negro (Stefan-Boltzmann): %.3f W/m^2' % E_sb)
 # 
 # La función `AM15` entrega el espectro global y directo del AM1.5 para un arreglo de longitudes de onda.
 # 
-# Como valor de entrada la función requiere el espectro de longitudes de onda `lam` en unidades de micrometros. El tipo de espectro (global o directo) se puede controlar mediante un segúndo argumento `spectra_type`, con `spectra_type='global'` para espectro directo, y `spectra_type='direct'` para espectro difuso. Por defecto `spectra_type='global'`
+# Como valor de entrada la función requiere el espectro de longitudes de onda `lam` en unidades de micrometros. La componente del espectro (horizonal global o normal directa) se puede controlar mediante un segúndo argumento `spectra_type`, con:
+# 
+# - `spectra_type='global'`para componente horizontal global (GHI) del espectro solar. Su flujo total, integrado en el espectro de longitudes de onda, es $1000~\mathrm{W/m^2}$.
+# 
+# - `spectra_type='direct'` para componente normal directa (DNI) del espectro solar. Su flujo total, integrado en el espectro de longitudes de onda, es $900~\mathrm{W/m^2}$.
+# 
+# Por defecto `spectra_type='global'`
 # 
 # En el siguiente código graficaremos el espectro AM1.5 directo y global comparándolo con la radiación solar extraterrestre, $I_\mathrm{sun,out}$. Para este último, consideraremos la radiación de cuerpo negro mediante `Bplanck` escalada a partir de la constante solar.
 # 
@@ -140,7 +146,7 @@ print('Poder de emisión de cuerpo negro (Stefan-Boltzmann): %.3f W/m^2' % E_sb)
 # In[6]:
 
 
-lam = np.linspace(0.1,3.0,1000)
+lam = np.linspace(0.1,5.0,10000)
 
 sigma = 5.6704E-8 # constante de Stefan-Boltzmann
 Tsun = 5777     # temperatura efectiva del sol (K)
@@ -164,13 +170,22 @@ ax.legend()
 plt.show()
 
 
+# Comprobamos el valor integrado de cada espectro
+
+# In[7]:
+
+
+print('Flujo de energía, componente horizontal global:\t %.1f W/m2' % np.trapz(Gsun_global,lam))
+print('Flujo de energía, componente normal directa:\t %.1f W/m2' % np.trapz(Gsun_direct,lam))
+
+
 # ## Transmitancia atmosférica (`T_atmosphere`)
 # 
 # Esta función permite determinar la transmitancia atmosférica a partir de un espectro de longitudes de onda. Como valor de entrada la función requiere el espectro de longitudes de onda `lam` en unidades de micrometros. 
 # 
 # En el siguiente ejemplo graficaremos la radiación de cuerpo negro con $T = 300$ K, el AM1.5 global y la transmitancia atmosférica. Debido a la diferencia de escalas, **utilizaremos el eje de la derecha para cuantificar la transmitancia atmosférica ($\tau_{\mathrm{atm},\lambda}$), y el eje de la izquierda para la radiación solar y de cuerpo negro**.
 
-# In[7]:
+# In[8]:
 
 
 import matplotlib.pyplot as plt
@@ -212,7 +227,7 @@ plt.show()
 # 
 # donde asumimos $\rho_{\mathrm{atm},\lambda} = 0$ debido a que la atmosféra esta compuesta de gases.
 
-# In[8]:
+# In[9]:
 
 
 Tatm = 300                                           # Temperatura de la atmósfera (K)
