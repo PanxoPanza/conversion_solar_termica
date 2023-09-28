@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -590,7 +590,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/panxopanza/miniconda3/lib/python3.9/site-packages/empylib/ref_spectra/ref_spectra.py:161: RuntimeWarning: overflow encountered in exp
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/panxopanza/s/miniconda3/lib/python3.9/site-packages/empylib/ref_spectra/ref_spectra.py:161: RuntimeWarning: overflow encountered in exp
   Ibb = 2*h*c0**2./ll**5*1/(np.exp(h*c0/(ll*T*kB)) - 1)*1E-6
 </pre></div>
 </div>
@@ -633,7 +633,12 @@ Poder de emisión de cuerpo negro (Stefan-Boltzmann): 459.302 W/m^2
 <section id="irradiacion-solar-espectro-am1-5-am15">
 <h2>Irradiación solar, espectro AM1.5 (<code class="docutils literal notranslate"><span class="pre">AM15</span></code>)<a class="headerlink" href="#irradiacion-solar-espectro-am1-5-am15" title="Permalink to this headline">#</a></h2>
 <p>La función <code class="docutils literal notranslate"><span class="pre">AM15</span></code> entrega el espectro global y directo del AM1.5 para un arreglo de longitudes de onda.</p>
-<p>Como valor de entrada la función requiere el espectro de longitudes de onda <code class="docutils literal notranslate"><span class="pre">lam</span></code> en unidades de micrometros. El tipo de espectro (global o directo) se puede controlar mediante un segúndo argumento <code class="docutils literal notranslate"><span class="pre">spectra_type</span></code>, con <code class="docutils literal notranslate"><span class="pre">spectra_type='global'</span></code> para espectro directo, y <code class="docutils literal notranslate"><span class="pre">spectra_type='direct'</span></code> para espectro difuso. Por defecto <code class="docutils literal notranslate"><span class="pre">spectra_type='global'</span></code></p>
+<p>Como valor de entrada la función requiere el espectro de longitudes de onda <code class="docutils literal notranslate"><span class="pre">lam</span></code> en unidades de micrometros. La componente del espectro (horizonal global o normal directa) se puede controlar mediante un segúndo argumento <code class="docutils literal notranslate"><span class="pre">spectra_type</span></code>, con:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">spectra_type='global'</span></code>para componente horizontal global (GHI) del espectro solar. Su flujo total, integrado en el espectro de longitudes de onda, es <span class="math notranslate nohighlight">\(1000~\mathrm{W/m^2}\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spectra_type='direct'</span></code> para componente normal directa (DNI) del espectro solar. Su flujo total, integrado en el espectro de longitudes de onda, es <span class="math notranslate nohighlight">\(900~\mathrm{W/m^2}\)</span>.</p></li>
+</ul>
+<p>Por defecto <code class="docutils literal notranslate"><span class="pre">spectra_type='global'</span></code></p>
 <p>En el siguiente código graficaremos el espectro AM1.5 directo y global comparándolo con la radiación solar extraterrestre, <span class="math notranslate nohighlight">\(I_\mathrm{sun,out}\)</span>. Para este último, consideraremos la radiación de cuerpo negro mediante <code class="docutils literal notranslate"><span class="pre">Bplanck</span></code> escalada a partir de la constante solar.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -642,7 +647,7 @@ I_\mathrm{sun,out} = \frac{G_\mathrm{sun}}{\sigma T^4_\mathrm{sun}} \pi I_{\math
 <p>donde <span class="math notranslate nohighlight">\(T_\mathrm{sun} = 5777\)</span> K y <span class="math notranslate nohighlight">\(G_\mathrm{sun} = 1367\)</span> W/m<span class="math notranslate nohighlight">\(^2\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">3.0</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">5.0</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span>
 
 <span class="n">sigma</span> <span class="o">=</span> <span class="mf">5.6704E-8</span> <span class="c1"># constante de Stefan-Boltzmann</span>
 <span class="n">Tsun</span> <span class="o">=</span> <span class="mi">5777</span>     <span class="c1"># temperatura efectiva del sol (K)</span>
@@ -669,6 +674,21 @@ I_\mathrm{sun,out} = \frac{G_\mathrm{sun}}{\sigma T^4_\mathrm{sun}} \pi I_{\math
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/Tutorial2_11_0.png" src="../../_images/Tutorial2_11_0.png" />
+</div>
+</div>
+<p>Comprobamos el valor integrado de cada espectro</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Flujo de energía, componente horizontal global:</span><span class="se">\t</span><span class="s1"> </span><span class="si">%.1f</span><span class="s1"> W/m2&#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">Gsun_global</span><span class="p">,</span><span class="n">lam</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Flujo de energía, componente normal directa:</span><span class="se">\t</span><span class="s1"> </span><span class="si">%.1f</span><span class="s1"> W/m2&#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">Gsun_direct</span><span class="p">,</span><span class="n">lam</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Flujo de energía, componente horizontal global:	 1000.4 W/m2
+Flujo de energía, componente normal directa:	 900.1 W/m2
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -709,7 +729,7 @@ I_\mathrm{sun,out} = \frac{G_\mathrm{sun}}{\sigma T^4_\mathrm{sun}} \pi I_{\math
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial2_13_0.png" src="../../_images/Tutorial2_13_0.png" />
+<img alt="../../_images/Tutorial2_15_0.png" src="../../_images/Tutorial2_15_0.png" />
 </div>
 </div>
 <p><strong>Nota</strong> Para valores <span class="math notranslate nohighlight">\(\lambda &gt; 20\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m y <span class="math notranslate nohighlight">\(\lambda &lt; 0.8\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m, <code class="docutils literal notranslate"><span class="pre">T_atmosphere</span> <span class="pre">=</span> <span class="pre">0</span></code> automáticamente. Aunque no es consistente con la realidad, esta condicion no induce un error significativo, ya que el espectro de emisión de la atmosféra ocurre en el infrarojo medio. Esto último, considerando a la atmósfera como un cuerpo negro a temperatura <span class="math notranslate nohighlight">\(T_\mathrm{atm}\sim 0-35\)</span>°C.</p>
@@ -737,7 +757,7 @@ G_{\mathrm{atm},\lambda} = (1 - \tau_{\mathrm{atm},\lambda})\pi I_{\mathrm{bb},\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/Tutorial2_16_0.png" src="../../_images/Tutorial2_16_0.png" />
+<img alt="../../_images/Tutorial2_18_0.png" src="../../_images/Tutorial2_18_0.png" />
 </div>
 </div>
 </section>

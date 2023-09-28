@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -922,7 +924,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fac884c5970&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe470d01400&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/Tutorial1_23_1.png" src="../../_images/Tutorial1_23_1.png" />
@@ -1225,14 +1227,6 @@ lorentz(epsinf, wp, wn, gamma, lam)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>interface:		 R = 0.025, T = 0.975
 multilayer:		 R = 0.025, T = 0.975
 incoh_multilayer:	 R = 0.025, T = 0.975
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_10377/3211510611.py:7: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
-  print(&#39;interface:\t\t R = %.3f, T = %.3f&#39; % wv.interface(theta,N[0],N[1])[:2])
-/tmp/ipykernel_10377/3211510611.py:8: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
-  print(&#39;multilayer:\t\t R = %.3f, T = %.3f&#39; % wv.multilayer(lam,theta,N,d)[:2])
-/tmp/ipykernel_10377/3211510611.py:9: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
-  print(&#39;incoh_multilayer:\t R = %.3f, T = %.3f&#39; % wv.incoh_multilayer(lam,theta,N,d))
 </pre></div>
 </div>
 </div>
