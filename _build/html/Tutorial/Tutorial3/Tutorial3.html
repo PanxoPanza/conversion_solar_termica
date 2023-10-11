@@ -51,8 +51,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Tutorial 4 - Modelación módulo PV" href="../Tutorial4/Tutorial4.html" />
@@ -790,7 +788,7 @@ title="Print to PDF"
 <section id="estimar-angulos-solares-get-solarposition">
 <h3>Estimar ángulos solares (<code class="docutils literal notranslate"><span class="pre">get_solarposition</span></code>)<a class="headerlink" href="#estimar-angulos-solares-get-solarposition" title="Permalink to this headline">#</a></h3>
 <p>Para acceder a los ángulos solares usamos la función <code class="docutils literal notranslate"><span class="pre">get_solarposition</span></code> del objeto <code class="docutils literal notranslate"><span class="pre">loc_pvlib</span></code>. Esta función crea un <em>dataframe</em> con los ángulos solares</p>
-<div class="cell docutils container">
+<div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol_pos</span> <span class="o">=</span> <span class="n">loc_pvlib</span><span class="o">.</span><span class="n">get_solarposition</span><span class="p">(</span><span class="n">times</span> <span class="o">=</span> <span class="n">time_study</span><span class="p">)</span>
 <span class="n">sol_pos</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>

@@ -26,6 +26,8 @@ import pvlib
 # - `pvlib.temperature`: para estimación de la temperatura de las celdas en condiciones de operación.
 # - `pvlib.pvsystem`: para análisis de módulos pv y estimación de curvas IV.
 
+# > Para mayor información, revisar la [documentación oficial de `pvlib`](https://pvlib-python.readthedocs.io/en/stable/reference/index.html)
+
 # ## Selección de módulo pv (`pvsystem.retrieve_sam`)
 
 # ### La biblioteca de módulos CEC (`'CECmod'`)
@@ -113,12 +115,12 @@ pv_model
 # Para simular la curva IV de un módulo debemos considerar los siguientes pasos:
 # - Definir las condiciones de operación (niveles de irradiancia y condiciones climatológicas del sitio)
 # - Determinar irradiación sobre el módulo
-# - Determinar la temperatura de la celda
+# - Determinar la temperatura de las celdas dentro del módulo
 # - Determinar los [cinco parámetros del SDM](../../10_SolarFotovoltaica/10_SolarFotovoltaica.ipynb) para los niveles de irradiancia y temperatura de la celda.
 # - Caracterizar la curva IV en las condiciones de operación.
 # - Graficar curva IV según condiciones de operación.
 
-# ### Definir condiciones de operación
+# ### Condiciones de operación
 
 # En este caso consideraremos un panel solar con ángulos de inclinación $\theta = 30°$ y $\phi = 90°$.
 
@@ -202,31 +204,68 @@ Geff = dni*np.cos(np.radians(aoi)) + dhi
 print('Irradiación efectiva:', Geff)
 
 
-# ### Estimación de la temperatura de la celda (`pvlib.temperature`)
+# ### Temperatura de las celdas (`pvlib.temperature`)
 # 
-# Existen distintos modelos para determinar la temperatura de la celda. En este curso usaremos el modelo de Faiman, D. (2008):
-# \begin{equation*}
-# T_\mathrm{cell} = T_a + \frac{\alpha E(1 -\eta_m )}{U_c + U_v V_\mathrm{wind}}\quad\quad(\mathrm{°C})
-# \end{equation*}
+# Existen distintos modelos para determinar la temperatura de la celda $T_\mathrm{cell}$. En este curso usaremos el [*Sandia Array Performance Model*](https://www.osti.gov/servlets/purl/919131) de *Sandia National Laboratories*. El modelo está compuesto por dos ecuaciones:
 # 
-# donde $T_a$ es la temperatura del aire (°C), $\alpha$ es el coeficiente de absorción, $E$ es la irradiancia efectiva sobre el módulo ($\mathrm{W/m^2}$), $\eta_m$ es la eficiencia extena del módulo, $U_c$ y $U_c$ son los coeficientes de transferencia de calor  global y por el viento (en $\mathrm{W/m^2~K}$), respectivamente, y $V_\mathrm{wind}$ es la velocidad del viento (m/s).
+# \begin{align*}
+# T_\mathrm{mod} &= G_\mathrm{eff} e^{a + b V_\mathrm{wind}} + T_a \\
+# T_\mathrm{cell} &= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
+# \end{align*}
 # 
-# Este modelo está implementado en la función `pvsyst_cell` del módulo `pvlib.temperature`. La función requiere de los siguientes parámetros:
-# - `poa_cell`: Irradiación efectiva sobre el módulo
-# - `temp_air`: Temperatura del aire
-# - `wind_speed`: Velocidad del viento (`wind_speed=1.0`, por defecto)
-# - `u_c`: Coeficiente global de transferencia de calor (`u_c=29.0`, por defecto)
-# - `u_v`: Coeficiente de transferencia de calor asociado al viento (`u_v=0`, por defecto)
-# - `module_efficiency`: Eficiencia externa del módulo (`module_efficiency=0.1`, por defecto)
-# - `alpha_absorption`: Coeficiente de absorción (`alpha_absorption = 0.9`, por defecto)
+# donde $T_a$ es la temperatura del aire, $G_\mathrm{eff}$ es la irradiancia efectiva sobre el módulo, $G_0$ es la irradiancia de referencia, $V_\mathrm{wind}$ es la velocidad del viento, $T_\mathrm{mod}$ es la temperatura del módulo, y $a$, $b$ y $\Delta T$ son parámetros de ajuste.
+# 
+# Este modelo está implementado en la función `sapm_cell` del módulo `pvlib.temperature`. La función requiere de los siguientes parámetros:
+# - `poa_global`: Irradiación efectiva sobre el módulo ($\mathrm{W/m^2}$)
+# - `temp_air`: Temperatura del aire (°C)
+# - `wind_speed`: Velocidad del viento (m/s)
+# - `a`: Parámetro $a$.
+# - `b`: Parámetro $b$.
+# - `deltaT`: Parámetro $\Delta T$.
+# - `irrad_ref`: Irradiancia de referencia, $E_0$ ($\mathrm{W/m^2}$). `irrad_ref` = 1000, por defecto).
+# 
+
+# Los parámetros de ajuste $a$, $b$ y $\Delta T$ dependen, en general, de la construcción del módulo pv (protección frontal y trasera) y de su montaje. La variable `TEMPERATURE_MODEL_PARAMETERS` del módulo `pvlib.temperature` contiene una lista de referencia:
+# 
+# | front / backsheet | montaje | variable |
+# |:--------------------:|:-------:|:--------:|
+# |vidrio / vidrio|rack abierto|`open_rack_glass_glass`|
+# |vidrio / vidrio|rack cerrado|`close_mount_glass_glass`|
+# |vidrio / polímero|rack abierto|`open_rack_glass_polymer`|
+# |vidrio / polímero|rack aislado|`insulated_glass_polymer`|
 
 # In[13]:
 
 
+from pvlib.temperature import TEMPERATURE_MODEL_PARAMETERS
+TEMPERATURE_MODEL_PARAMETERS['sapm']
+
+
+# En este caso, consideraremos los parámetros de un módulo sin aislar y protegido por un polímero en la parte trasera (`open_rack_glass_polymer`); adecuado para la mayoría de los sistemas actuales.
+
+# In[14]:
+
+
+parameters = TEMPERATURE_MODEL_PARAMETERS['sapm']['open_rack_glass_polymer']
+
+
+# Ahora procedemos a determinar la temperatura de la celda.
+# 
+# > **Nota:** usamos el argumento `**parameters` para extraer los parámetros `a`, `b` y `deltaT` de forma automática. Omitimos el parámetro `irrad_ref` para usar el valor por defecto.
+
+# In[15]:
+
+
+# Extraemos datos de temperatura del aire y viento
 temp_air = site_conditions['temp_air'].values
-temp_cell = pvlib.temperature.pvsyst_cell(
-    poa_global = Geff, 
-    temp_air = temp_air)
+wind_speed = site_conditions['wind_speed'].values
+
+# Calculamos la temperatura de la celda
+temp_cell = pvlib.temperature.sapm_cell(   
+    poa_global = Geff,
+    temp_air   = temp_air,
+    wind_speed = wind_speed,
+    **parameters)
 
 print('Temperatura de la celda: ', temp_cell)
 
@@ -245,13 +284,13 @@ print('Temperatura de la celda: ', temp_cell)
 # **En `pvlib` usamos la función `calcparams_cec` del módulo `pvlib.pvsystem` para derterminar `IL`, `I0`, `Rs`, `Rsh` y `nNsVth` en las condiciones de operación.** El último parámetro (`nNsVth`), corresponde al producto entre $n$, el número de celdas ($N_s$) y el voltaje térmico ($V_T$).
 
 # Como parámetros de entrada, `pvsystem.calcparams_cec` requiere: 
-# - Niveles de irradiancia (`effective_irradiance`)
-# - Temperatura de la celda (`temp_cell`)
-# - Parámetros CEC `alpha_sc`, `a_ref`, `I_L_ref`, `I_o_ref`, `R_sh_ref` y `Adjust`, asociados al módulo seleccionado.
-# - Bandgap de la celda (`EgRef = 1.121` en todos los casos)
-# - Variación del bandgap con la temperatura (`dEgdT = -0.0002677` en todos los casos)
+# - `effective_irradiance`: Niveles de irradiancia
+# - `temp_cell`: Temperatura de la celda
+# - `alpha_sc`, `a_ref`, `I_L_ref`, `I_o_ref`, `R_sh_ref` y `Adjust`: Parámetros CEC asociados al módulo seleccionado.
+# - `EgRef`: Bandgap de la celda (`EgRef = 1.121` en todos los casos)
+# - `dEgdT`: Variación del bandgap con la temperatura (`dEgdT = -0.0002677` en todos los casos)
 
-# In[14]:
+# In[16]:
 
 
 IL, I0, Rs, Rsh, nNsVth = pvlib.pvsystem.calcparams_cec(
@@ -270,7 +309,7 @@ IL, I0, Rs, Rsh, nNsVth = pvlib.pvsystem.calcparams_cec(
 
 # El resultado de cada variable se almacena en un arreglo asociado a las condiciones de irradiación y temperatura.
 
-# In[15]:
+# In[17]:
 
 
 # Mostramos resultado en formato dataframe (solo para visualización)
@@ -291,7 +330,7 @@ pd.DataFrame(data = np.vstack((Geff, temp_cell, IL, I0, Rs, Rsh, nNsVth)).T,
 # - `resistance_shunt`: Resistencia en derivación
 # - `nNsVth`: producto $nN_sV_T$.
 
-# In[16]:
+# In[18]:
 
 
 curve_info = pvlib.pvsystem.singlediode(
@@ -311,7 +350,7 @@ curve_info = pvlib.pvsystem.singlediode(
 # - `i_x`: corriente en `v = 0.5*v_oc` (A).
 # - `i_xx`: corriente en `v = 0.5*(v_oc + v_mp)` (A).
 
-# In[17]:
+# In[19]:
 
 
 curve_info
@@ -319,7 +358,7 @@ curve_info
 
 # Suponiendo que el módulo opera en el punto mpp (utilizando un mpp tracker, por ejemplo), tenemos que entre la hora 0 y 3, el módulo entregará:
 
-# In[18]:
+# In[20]:
 
 
 print('Energía total entregada por el módulo: %.3f Wh' % np.sum(curve_info['p_mp']))
@@ -337,7 +376,7 @@ print('Energía total entregada por el módulo: %.3f Wh' % np.sum(curve_info['p_
 
 # Primero, generamos un arreglo `numpy` para el voltaje $v$ en el intervalo $V\in[0,V_\mathrm{oc}]$
 
-# In[19]:
+# In[21]:
 
 
 v = np.linspace(0., curve_info['v_oc'], 100)
@@ -345,11 +384,11 @@ v = np.linspace(0., curve_info['v_oc'], 100)
 
 # Luego determinamos la corriente en base al SDM y los parámetros de operación `IL`, `I0`, `Rs`, `Rsh` y `nNsVth`.
 
-# In[20]:
+# In[22]:
 
 
 i = pvlib.pvsystem.i_from_v(
-    voltage           =v,
+    voltage           = v,
     photocurrent      = IL,
     saturation_current= I0,
     resistance_series = Rs,
@@ -359,7 +398,7 @@ i = pvlib.pvsystem.i_from_v(
 
 # Ahora graficamos las curvas IV para las 4 condicones de operación.
 
-# In[21]:
+# In[23]:
 
 
 import matplotlib.pyplot as plt
