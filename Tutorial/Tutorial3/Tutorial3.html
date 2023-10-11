@@ -1,0 +1,1129 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Tutorial 3 - Datos solares y climatológicos &#8212; MEC501 - Manejo y conversión solar</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_edits.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tutorial 4 - Modelación módulo PV" href="../Tutorial4/Tutorial4.html" />
+    <link rel="prev" title="Tutorial 2 - Espectros de referencia" href="../Tutorial2/Tutorial2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">MEC501 - Manejo y conversión solar</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Bienvenidos al curso
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../00_introduccion/00_introduccion.html">
+   Introducción al curso
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parte 1 - Fundamentos del transporte de fotones
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../01_ondas_electromagneticas/01_ondas_electromagneticas.html">
+   1. La radiación como un fenómeno electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../02_ondas_EM_en_la_materia/02_ondas_EM_en_la_materia.html">
+   2. Ondas electromagnéticas en la materia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../03_Interacci%C3%B3n_materia-luz/03_Interacci%C3%B3n_materia-luz.html">
+   3. Interacción materia-luz
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../04_Scattering/04_Scattering.html">
+   4. Scattering electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../05_TransporteRadiativo/05_TransporteRadiativo.html">
+   5. Transporte Radiativo
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parte 2 - Diseño de sistemas de manejo y conversión solar
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../06_RadiacionTermica/06_RadiacionTermica.html">
+   6. Radiación Térmica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../07_Radiaci%C3%B3n_solar/07_Radiaci%C3%B3n_solar.html">
+   7. Radiación Solar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../08_ColetorSolar/08_ColetorSolar.html">
+   8. Colectores solares estacionarios
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Parte 3 - Aplicaciones
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../09_CentralTermoSolar/09_CentralTermoSolar.html">
+   9. Central Termosolar
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../10_SolarFotovoltaica/10_SolarFotovoltaica.html">
+   10. Conversión Solar Fotovoltaica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio.html">
+   11. Control pasivo de radiación solar en edificaciones
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Apéndice
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Apendice/Espectro_electromagnetico/Espectro_electromagnetico.html">
+   Espectro electromagnético
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Apendice/Teoria_del_color/Teoria_del_color.html">
+   Teoria del color
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../Intro.html">
+   Tutoriales
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorial1/Tutorial1.html">
+     Tutorial 1 - Modelos ópticos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorial2/Tutorial2.html">
+     Tutorial 2 - Espectros de referencia
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Tutorial 3 - Datos solares y climatológicos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorial4/Tutorial4.html">
+     Tutorial 4 - Modelación módulo PV
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://colab.research.google.com/github/PanxoPanza/conversion_solar_termica/blob/main/Tutorial/Tutorial3/Tutorial3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/Tutorial/Tutorial3/Tutorial3.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definir-localizacion-y-tiempo-de-estudio">
+   Definir localización y tiempo de estudio
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#latitud-longitud-y-altitud-del-sitio">
+     Latitud, longitud y altitud del sitio
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zonas-horaria">
+     Zonas horaria
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tiempo-de-estudio">
+     Tiempo de estudio
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimacion-de-angulos-solares-e-irradiacion-pvlib">
+   Estimación de ángulos solares e irradiación (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pvlib
+    </span>
+   </code>
+   )
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inicializar-localizacion-y-tiempo-de-estudio-en-pvlib">
+     Inicializar localización y tiempo de estudio en
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pvlib
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimar-angulos-solares-get-solarposition">
+     Estimar ángulos solares (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       get_solarposition
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimar-irradiacion-solar-get-clearsky">
+     Estimar irradiación solar (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       get_clearsky
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimacion-de-condiciones-ambientales-meteostat">
+   Estimación de condiciones ambientales (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     meteostat
+    </span>
+   </code>
+   )
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inicializar-localizacion-y-tiempo-de-estudio-en-meteostat">
+     Inicializar localización y tiempo de estudio en
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       meteostat
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Tutorial 3 - Datos solares y climatológicos</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definir-localizacion-y-tiempo-de-estudio">
+   Definir localización y tiempo de estudio
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#latitud-longitud-y-altitud-del-sitio">
+     Latitud, longitud y altitud del sitio
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zonas-horaria">
+     Zonas horaria
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tiempo-de-estudio">
+     Tiempo de estudio
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimacion-de-angulos-solares-e-irradiacion-pvlib">
+   Estimación de ángulos solares e irradiación (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pvlib
+    </span>
+   </code>
+   )
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inicializar-localizacion-y-tiempo-de-estudio-en-pvlib">
+     Inicializar localización y tiempo de estudio en
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pvlib
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimar-angulos-solares-get-solarposition">
+     Estimar ángulos solares (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       get_solarposition
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimar-irradiacion-solar-get-clearsky">
+     Estimar irradiación solar (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       get_clearsky
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimacion-de-condiciones-ambientales-meteostat">
+   Estimación de condiciones ambientales (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     meteostat
+    </span>
+   </code>
+   )
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inicializar-localizacion-y-tiempo-de-estudio-en-meteostat">
+     Inicializar localización y tiempo de estudio en
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       meteostat
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-3-datos-solares-y-climatologicos">
+<h1>Tutorial 3 - Datos solares y climatológicos<a class="headerlink" href="#tutorial-3-datos-solares-y-climatologicos" title="Permalink to this headline">#</a></h1>
+<p>Este es un tutorial para utilizar las librerías:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pvlib</span></code> para determinar ángulos solares y niveles de irradiación solar.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">meteostat</span></code> para determinar condiciones climáticas.</p></li>
+</ul>
+<section id="definir-localizacion-y-tiempo-de-estudio">
+<h2>Definir localización y tiempo de estudio<a class="headerlink" href="#definir-localizacion-y-tiempo-de-estudio" title="Permalink to this headline">#</a></h2>
+<p>Antes de cualquier estudio debemos definir la localización y tiempo de estudio.</p>
+<section id="latitud-longitud-y-altitud-del-sitio">
+<h3>Latitud, longitud y altitud del sitio<a class="headerlink" href="#latitud-longitud-y-altitud-del-sitio" title="Permalink to this headline">#</a></h3>
+<p>Como sugerencia, recomendamos usar <a class="reference external" href="https://www.google.es/intl/es/earth/index.html">google earth</a>. para detetrminar las coordenadas y altitud del sitio. Esta información  se encuentra en la esquina inferior derecha. Otra alternativa es revisar las coordenadas en la dirección web del sitio.</p>
+<p>Por ejemplo, consideramos las coordenadas del <a class="reference external" href="https://earth.google.com/web/search/Universidad+Adolfo+Ib%c3%a1%c3%b1ez+-+Avenida+Diagonal+Las+Torres,+Santiago,+Pe%c3%b1alol%c3%a9n/&#64;-33.48459063,-70.51846296,890.86619233a,397.56893117d,35y,0h,0t,0r/data=CmMaORIzCiUweDk2NjJkMjE5NzFkMWM0NTc6MHhhMmQwYWVmZDlhMDcwZDA2KgpFZGlmaWNpbyBBGAIgASImCiQJJzw65qu9QMARKyzNGmi-QMAZprJq4cKgUcAhENuZjZuhUcA6AwoBMA">Edificio A del campus de Peñalolén de la Universidad Adolfo Ibañez</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definimos latitud y longitud del lugar</span>
+<span class="n">lat</span><span class="p">,</span> <span class="n">lon</span> <span class="o">=</span> <span class="o">-</span><span class="mf">33.485</span><span class="p">,</span> <span class="o">-</span><span class="mf">70.518</span>
+
+<span class="c1"># Altitud (en metros)</span>
+<span class="n">alt</span> <span class="o">=</span> <span class="mf">890.86619233</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="zonas-horaria">
+<h3>Zonas horaria<a class="headerlink" href="#zonas-horaria" title="Permalink to this headline">#</a></h3>
+<p>Para identificar la zona horaria podemos usar la función <code class="docutils literal notranslate"><span class="pre">pytz.country_timezones</span></code>.</p>
+<blockquote>
+<div><p><strong>Nota</strong> La librería <code class="docutils literal notranslate"><span class="pre">pytz</span></code> viene incluída dentro del paquete de instalación de <code class="docutils literal notranslate"><span class="pre">pvlib</span></code> y, por lo tanto, no requiere instalación.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pytz</span>
+
+<span class="n">pytz</span><span class="o">.</span><span class="n">country_timezones</span><span class="p">(</span><span class="s1">&#39;CL&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;America/Santiago&#39;, &#39;America/Punta_Arenas&#39;, &#39;Pacific/Easter&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>En Chile, la zona horaria es <code class="docutils literal notranslate"><span class="pre">America/Santiago</span></code> en casi todo el territorio, excepto en Punta Arenas e Isla de Pascua.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tz_uai</span> <span class="o">=</span> <span class="s1">&#39;America/Santiago&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>La lista completa de zonas horarias se encuentra disponible en <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Wikipedia</a></p>
+</div></blockquote>
+<p>Otra alternativa es usar la librería <code class="docutils literal notranslate"><span class="pre">timezonefinder</span></code> para identificar zonas horarias basadas en coordenadas de latitud y longitud.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">timezonefinder</span> <span class="kn">import</span> <span class="n">TimezoneFinder</span>
+
+<span class="n">tz_uai</span> <span class="o">=</span> <span class="n">TimezoneFinder</span><span class="p">()</span><span class="o">.</span><span class="n">timezone_at</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="n">lat</span><span class="p">,</span> <span class="n">lng</span><span class="o">=</span><span class="n">lon</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La zona horaria en la UAI es:&#39;</span><span class="p">,</span> <span class="n">tz_uai</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La zona horaria en la UAI es: America/Santiago
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tiempo-de-estudio">
+<h3>Tiempo de estudio<a class="headerlink" href="#tiempo-de-estudio" title="Permalink to this headline">#</a></h3>
+<p>Una vez definida la ubicación, debemos definir el intervalo de tiempo para nuestro estudio. Las librerías <code class="docutils literal notranslate"><span class="pre">pvlib</span></code> y <code class="docutils literal notranslate"><span class="pre">meteostat</span></code> utilizan distintos formatos para definir el intervalo de tiempo. Sin embargo, algo común en ambas es la definición de la fecha de comienzo y termino en formato <code class="docutils literal notranslate"><span class="pre">datetime</span></code>.</p>
+<p>En este tutorial, consideraremos el periodo comprendido entre el 21 y 22 de diciembre del 2022</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">start_date</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="mi">2022</span><span class="p">,</span> <span class="n">month</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">day</span> <span class="o">=</span> <span class="mi">21</span><span class="p">,</span> <span class="n">hour</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">minute</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">end_date</span>   <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="mi">2022</span><span class="p">,</span> <span class="n">month</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">day</span> <span class="o">=</span> <span class="mi">22</span><span class="p">,</span> <span class="n">hour</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">minute</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">start_date</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">end_date</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-21 00:00:00
+2022-12-22 00:00:00
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>La frecuencia entre este intervalo será en horas.</strong> Sin embargo, la definición de esto es particular para cada librería.</p>
+</section>
+</section>
+<section id="estimacion-de-angulos-solares-e-irradiacion-pvlib">
+<h2>Estimación de ángulos solares e irradiación (<code class="docutils literal notranslate"><span class="pre">pvlib</span></code>)<a class="headerlink" href="#estimacion-de-angulos-solares-e-irradiacion-pvlib" title="Permalink to this headline">#</a></h2>
+<section id="inicializar-localizacion-y-tiempo-de-estudio-en-pvlib">
+<h3>Inicializar localización y tiempo de estudio en <code class="docutils literal notranslate"><span class="pre">pvlib</span></code><a class="headerlink" href="#inicializar-localizacion-y-tiempo-de-estudio-en-pvlib" title="Permalink to this headline">#</a></h3>
+<p>Para inicializar la localización usamos la función <code class="docutils literal notranslate"><span class="pre">pvlib.location.Location()</span></code>. Esta función crea un objeto <code class="docutils literal notranslate"><span class="pre">Location</span></code> que utilizaremos después para determinar los ángulos solares e irradiación solar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pvlib.location</span> <span class="kn">import</span> <span class="n">Location</span>
+
+<span class="n">loc_pvlib</span> <span class="o">=</span> <span class="n">Location</span><span class="p">(</span><span class="n">latitude</span>  <span class="o">=</span> <span class="n">lat</span><span class="p">,</span> 
+                     <span class="n">longitude</span> <span class="o">=</span> <span class="n">lon</span><span class="p">,</span> 
+                     <span class="n">tz</span>        <span class="o">=</span> <span class="n">tz_uai</span><span class="p">,</span>
+                     <span class="n">altitude</span>  <span class="o">=</span> <span class="n">alt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Luego, debemos definir el intervalo de tiempo. Usamos la función <code class="docutils literal notranslate"><span class="pre">data_range</span></code> de pandas para generar un arreglo con las fechas para la zona horaria correspondiente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">time_study</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="n">start_date</span><span class="p">,</span> 
+                           <span class="n">end</span>   <span class="o">=</span> <span class="n">end_date</span><span class="p">,</span> 
+                           <span class="n">freq</span>  <span class="o">=</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> 
+                           <span class="n">tz</span>    <span class="o">=</span> <span class="n">tz_uai</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para verificar, usamos <code class="docutils literal notranslate"><span class="pre">print</span></code> para imprimir cada elemento del arreglo <code class="docutils literal notranslate"><span class="pre">times</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time_study</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">time_study</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-12-21 00:00:00-03:00
+2022-12-21 01:00:00-03:00
+2022-12-21 02:00:00-03:00
+2022-12-21 03:00:00-03:00
+2022-12-21 04:00:00-03:00
+2022-12-21 05:00:00-03:00
+2022-12-21 06:00:00-03:00
+2022-12-21 07:00:00-03:00
+2022-12-21 08:00:00-03:00
+2022-12-21 09:00:00-03:00
+2022-12-21 10:00:00-03:00
+2022-12-21 11:00:00-03:00
+2022-12-21 12:00:00-03:00
+2022-12-21 13:00:00-03:00
+2022-12-21 14:00:00-03:00
+2022-12-21 15:00:00-03:00
+2022-12-21 16:00:00-03:00
+2022-12-21 17:00:00-03:00
+2022-12-21 18:00:00-03:00
+2022-12-21 19:00:00-03:00
+2022-12-21 20:00:00-03:00
+2022-12-21 21:00:00-03:00
+2022-12-21 22:00:00-03:00
+2022-12-21 23:00:00-03:00
+2022-12-22 00:00:00-03:00
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="estimar-angulos-solares-get-solarposition">
+<h3>Estimar ángulos solares (<code class="docutils literal notranslate"><span class="pre">get_solarposition</span></code>)<a class="headerlink" href="#estimar-angulos-solares-get-solarposition" title="Permalink to this headline">#</a></h3>
+<p>Para acceder a los ángulos solares usamos la función <code class="docutils literal notranslate"><span class="pre">get_solarposition</span></code> del objeto <code class="docutils literal notranslate"><span class="pre">loc_pvlib</span></code>. Esta función crea un <em>dataframe</em> con los ángulos solares</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol_pos</span> <span class="o">=</span> <span class="n">loc_pvlib</span><span class="o">.</span><span class="n">get_solarposition</span><span class="p">(</span><span class="n">times</span> <span class="o">=</span> <span class="n">time_study</span><span class="p">)</span>
+<span class="n">sol_pos</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>apparent_zenith</th>
+      <th>zenith</th>
+      <th>apparent_elevation</th>
+      <th>elevation</th>
+      <th>azimuth</th>
+      <th>equation_of_time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2022-12-21 00:00:00-03:00</th>
+      <td>118.310953</td>
+      <td>118.310953</td>
+      <td>-28.310953</td>
+      <td>-28.310953</td>
+      <td>206.108725</td>
+      <td>2.160758</td>
+    </tr>
+    <tr>
+      <th>2022-12-21 01:00:00-03:00</th>
+      <td>122.292222</td>
+      <td>122.292222</td>
+      <td>-32.292222</td>
+      <td>-32.292222</td>
+      <td>190.845847</td>
+      <td>2.140015</td>
+    </tr>
+    <tr>
+      <th>2022-12-21 02:00:00-03:00</th>
+      <td>122.881072</td>
+      <td>122.881072</td>
+      <td>-32.881072</td>
+      <td>-32.881072</td>
+      <td>174.524133</td>
+      <td>2.119271</td>
+    </tr>
+    <tr>
+      <th>2022-12-21 03:00:00-03:00</th>
+      <td>119.976535</td>
+      <td>119.976535</td>
+      <td>-29.976535</td>
+      <td>-29.976535</td>
+      <td>158.754981</td>
+      <td>2.098524</td>
+    </tr>
+    <tr>
+      <th>2022-12-21 04:00:00-03:00</th>
+      <td>114.043325</td>
+      <td>114.043325</td>
+      <td>-24.043325</td>
+      <td>-24.043325</td>
+      <td>144.812625</td>
+      <td>2.077775</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>En este curso, solo usaremos:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'apperent_zenith'</span></code>: ángulo cenital solar aparente (con corrección por el índice de refracción)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'apperent_elevation'</span></code>: ángulo de elevación solar aparente (con corrección por el índice de refracción)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'azimuth'</span></code>: ángulo acimutal solar</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_study</span><span class="p">,</span> <span class="n">sol_pos</span><span class="p">[</span><span class="s1">&#39;apparent_zenith&#39;</span><span class="p">],</span><span class="s1">&#39;o:r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Zenith ($\theta_s$)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_study</span><span class="p">,</span> <span class="n">sol_pos</span><span class="p">[</span><span class="s1">&#39;azimuth&#39;</span><span class="p">],</span><span class="s1">&#39;o:b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Azimuth ($\phi_s$)&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;tiempo (horas)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">mdates</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s1">&#39;%H:%M&#39;</span><span class="p">,</span> <span class="n">tz</span> <span class="o">=</span> <span class="n">tz_uai</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Ángulo (grados)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Tutorial3_28_0.png" src="../../_images/Tutorial3_28_0.png" />
+</div>
+</div>
+</section>
+<section id="estimar-irradiacion-solar-get-clearsky">
+<h3>Estimar irradiación solar (<code class="docutils literal notranslate"><span class="pre">get_clearsky</span></code>)<a class="headerlink" href="#estimar-irradiacion-solar-get-clearsky" title="Permalink to this headline">#</a></h3>
+<p>Para acceder a la irradiación solar usamos la función <code class="docutils literal notranslate"><span class="pre">get_clearsky</span></code> del objeto <code class="docutils literal notranslate"><span class="pre">loc_pvlib</span></code>. Esta función crea un <em>dataframe</em> con los niveles de irradiación horizontal global (<code class="docutils literal notranslate"><span class="pre">ghi</span></code>), normal directa (<code class="docutils literal notranslate"><span class="pre">dni</span></code>) y horizontal difusa (<code class="docutils literal notranslate"><span class="pre">dhi</span></code>), calculados en base al modelo de <a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/S0038092X02000452">Ineichen y Perez (2022)</a>.`</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol_irr</span> <span class="o">=</span> <span class="n">loc_pvlib</span><span class="o">.</span><span class="n">get_clearsky</span><span class="p">(</span><span class="n">times</span> <span class="o">=</span> <span class="n">time_study</span><span class="p">)</span>
+<span class="n">sol_irr</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ghi</th>
+      <th>dni</th>
+      <th>dhi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2022-12-21 00:00:00-03:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-21 01:00:00-03:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-21 02:00:00-03:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-21 03:00:00-03:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2022-12-21 04:00:00-03:00</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_study</span><span class="p">,</span> <span class="n">sol_irr</span><span class="p">[</span><span class="s1">&#39;ghi&#39;</span><span class="p">],</span><span class="s1">&#39;o:r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;GHI&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_study</span><span class="p">,</span> <span class="n">sol_irr</span><span class="p">[</span><span class="s1">&#39;dni&#39;</span><span class="p">],</span><span class="s1">&#39;o:b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;DNI&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_study</span><span class="p">,</span> <span class="n">sol_irr</span><span class="p">[</span><span class="s1">&#39;dhi&#39;</span><span class="p">],</span><span class="s1">&#39;o:g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;DHI&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;tiempo (horas)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">mdates</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s1">&#39;%H:%M&#39;</span><span class="p">,</span> <span class="n">tz</span> <span class="o">=</span> <span class="n">tz_uai</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Irradiación solar ($\mathrm{W/m^2}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Tutorial3_31_0.png" src="../../_images/Tutorial3_31_0.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="estimacion-de-condiciones-ambientales-meteostat">
+<h2>Estimación de condiciones ambientales (<code class="docutils literal notranslate"><span class="pre">meteostat</span></code>)<a class="headerlink" href="#estimacion-de-condiciones-ambientales-meteostat" title="Permalink to this headline">#</a></h2>
+<section id="inicializar-localizacion-y-tiempo-de-estudio-en-meteostat">
+<h3>Inicializar localización y tiempo de estudio en <code class="docutils literal notranslate"><span class="pre">meteostat</span></code><a class="headerlink" href="#inicializar-localizacion-y-tiempo-de-estudio-en-meteostat" title="Permalink to this headline">#</a></h3>
+<p>Lo primero que debemos hacer es inicializar la localización usando la función <code class="docutils literal notranslate"><span class="pre">meteostat.Point()</span></code>. Esta función crea un objeto que generará la información meteorologica a través de la interpolación de datos de estaciones meterológicas cercanas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">meteostat</span>
+
+<span class="n">loc_meteo</span> <span class="o">=</span> <span class="n">meteostat</span><span class="o">.</span><span class="n">Point</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="n">lat</span><span class="p">,</span> 
+                            <span class="n">lon</span><span class="o">=</span><span class="n">lon</span><span class="p">,</span> 
+                            <span class="n">alt</span><span class="o">=</span> <span class="n">alt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Luego, para extraer los datos horarios, utilizamos la función <code class="docutils literal notranslate"><span class="pre">meteostat.Hourly</span></code> indicando la ubicación del objeto <code class="docutils literal notranslate"><span class="pre">Point</span></code>, el inicio (<code class="docutils literal notranslate"><span class="pre">start</span></code>), el término (<code class="docutils literal notranslate"><span class="pre">end</span></code>) y la zona horaria (<code class="docutils literal notranslate"><span class="pre">timezone</span></code>) del periodo donde queremos extraer los datos.</p>
+<blockquote>
+<div><p>La función entregará un objeto, el cual podemos convertir a un <em>dataframe</em> usando <code class="docutils literal notranslate"><span class="pre">.fetch()</span></code></p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">meteostat</span> <span class="kn">import</span> <span class="n">Hourly</span>
+
+<span class="c1"># Creamos un objeto con las condiciones climáticas</span>
+<span class="n">meteo_data</span> <span class="o">=</span> <span class="n">Hourly</span><span class="p">(</span><span class="n">loc</span>      <span class="o">=</span> <span class="n">loc_meteo</span><span class="p">,</span>   <span class="c1"># localización</span>
+                    <span class="n">start</span>    <span class="o">=</span> <span class="n">start_date</span><span class="p">,</span>  <span class="c1"># inicio</span>
+                    <span class="n">end</span>      <span class="o">=</span> <span class="n">end_date</span><span class="p">,</span>    <span class="c1"># término</span>
+                    <span class="n">timezone</span> <span class="o">=</span> <span class="n">tz_uai</span><span class="p">)</span>      <span class="c1"># zona horaria</span>
+
+<span class="c1"># convertimos a dataframe</span>
+<span class="n">meteo_data</span> <span class="o">=</span> <span class="n">meteo_data</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p>De este <em>dataframe</em> identificamos:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">temp</span></code>: Temperatura ambiente (°C)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dwpt</span></code>: Temperatura de punto de rocío (°C)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rhum</span></code>: Humedad relativa (%)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">prcp</span></code>: Precipitación total en una hora (mm)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">snow</span></code>: Nieve acumulada (mm)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wdir</span></code>: Dirección del viento (°)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wspd</span></code>: Velocidad promedio del viento (km/h)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pres</span></code>: Presión atmosférica (hPa)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time_study</span><span class="p">,</span> <span class="n">meteo_data</span><span class="p">[</span><span class="s1">&#39;temp&#39;</span><span class="p">],</span><span class="s1">&#39;o:r&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;tiempo (horas)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">mdates</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s1">&#39;%H:%M&#39;</span><span class="p">,</span> <span class="n">tz</span> <span class="o">=</span> <span class="n">tz_uai</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Temperatura (°C)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Temperatura ambiente (lat, lon = </span><span class="si">%.1f</span><span class="s1">°, </span><span class="si">%.1f</span><span class="s1">°)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">lat</span><span class="p">,</span> <span class="n">lon</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Tutorial3_38_0.png" src="../../_images/Tutorial3_38_0.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Tutorial/Tutorial3"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../Tutorial2/Tutorial2.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Tutorial 2 - Espectros de referencia</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Tutorial4/Tutorial4.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tutorial 4 - Modelación módulo PV</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Francisco V. Ramirez-Cuevas<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

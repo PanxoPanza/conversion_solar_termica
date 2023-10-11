@@ -220,11 +220,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Tutorial/Intro.html">
    Tutoriales
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     empylib
-    </span>
-   </code>
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -234,12 +229,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Tutorial/Tutorial1/Tutorial1.html">
-     Tutorial 1
+     Tutorial 1 - Modelos ópticos
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Tutorial/Tutorial2/Tutorial2.html">
-     Tutorial 2
+     Tutorial 2 - Espectros de referencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorial/Tutorial3/Tutorial3.html">
+     Tutorial 3 - Datos solares y climatológicos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorial/Tutorial4/Tutorial4.html">
+     Tutorial 4 - Modelación módulo PV
     </a>
    </li>
   </ul>
@@ -451,8 +456,13 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#el-modelo-del-diodo-unico-sdm">
+     10.2.8. El modelo del diodo único (SDM)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fabricacion-de-celdas-fotovoltaicas">
-     10.2.8. Fabricación de celdas fotovoltaicas
+     10.2.9. Fabricación de celdas fotovoltaicas
     </a>
    </li>
   </ul>
@@ -603,8 +613,13 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#el-modelo-del-diodo-unico-sdm">
+     10.2.8. El modelo del diodo único (SDM)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#fabricacion-de-celdas-fotovoltaicas">
-     10.2.8. Fabricación de celdas fotovoltaicas
+     10.2.9. Fabricación de celdas fotovoltaicas
     </a>
    </li>
   </ul>
@@ -888,8 +903,25 @@ J = J_\mathrm{pv} - J_0\left[\exp{\left(\frac{qV}{k_\mathrm{B}T}\right)} - 1 \ri
 <a class="reference internal image-reference" href="../_images/shunt_and_series_resistance.png"><img alt="../_images/shunt_and_series_resistance.png" class="align-center" src="../_images/shunt_and_series_resistance.png" style="width: 400px;" /></a>
 <p>En la práctica <span class="math notranslate nohighlight">\(R_\mathrm{s}\)</span> debe ser lo más baja posible, y <span class="math notranslate nohighlight">\(R_\mathrm{sh}\)</span> debe ser lo más alta posible.</p>
 </section>
+<section id="el-modelo-del-diodo-unico-sdm">
+<h3><span class="section-number">10.2.8. </span>El modelo del diodo único (SDM)<a class="headerlink" href="#el-modelo-del-diodo-unico-sdm" title="Permalink to this headline">#</a></h3>
+<p>Considerando todas las pérdidas que ocurren en una celda pv, podemos generar un modelo para la curva IV. Este modelo se basa en el circuito eléctrico descrito anteriormente, y se denomina <strong>“modelo de diodo único” o SDM</strong>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*} I = I_L - I_o \left[ \exp \left( \frac{V + I R_\mathrm{s}}{n V_T} \right) - 1 \right] - \frac{V + I R_\mathrm{s}}{R_\mathrm{sh}},
+\end{equation*}\]</div>
+<p>donde:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(I_L\)</span>: es la corriente fotoinducida (análogo a <span class="math notranslate nohighlight">\(I_\mathrm{ph}\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(I_o\)</span>: es la corriente de saturación</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_\mathrm{sh}\)</span>: es la resistancia en derivación</p></li>
+<li><p><span class="math notranslate nohighlight">\(R_\mathrm{s}\)</span>: es la resistencia en serie</p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span>: es el factor de idealidad del diodo</p></li>
+<li><p><span class="math notranslate nohighlight">\(V_T = k_\mathrm{B}/q_e\)</span>: es el <em>voltaje térmico</em> (<span class="math notranslate nohighlight">\(q_e = 1.602\times10^{-19}~\mathrm{C}\)</span> es la carga elemental)</p></li>
+</ul>
+<p><strong>Con excepción de <span class="math notranslate nohighlight">\(V_T\)</span>, los otros 5 parámetros definen el modelo SDM.</strong></p>
+</section>
 <section id="fabricacion-de-celdas-fotovoltaicas">
-<h3><span class="section-number">10.2.8. </span>Fabricación de celdas fotovoltaicas<a class="headerlink" href="#fabricacion-de-celdas-fotovoltaicas" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">10.2.9. </span>Fabricación de celdas fotovoltaicas<a class="headerlink" href="#fabricacion-de-celdas-fotovoltaicas" title="Permalink to this headline">#</a></h3>
 <p>Los métodos de fabricación de las celdas dependen del tipo de material y la cristalinidad deseada.</p>
 <p>El video a continuación muestra el procedimiento de fabricación de celdas de silicio cristalino, el material más utilizado en paneles.</p>
 <div class="cell tag_remove-input docutils container">
