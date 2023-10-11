@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Tutoriales empylib &#8212; MEC501 - Manejo y conversión solar</title>
+    <title>Tutoriales &#8212; MEC501 - Manejo y conversión solar</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,11 +51,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Tutorial 1" href="Tutorial1/Tutorial1.html" />
+    <link rel="next" title="Tutorial 1 - Modelos ópticos" href="Tutorial1/Tutorial1.html" />
     <link rel="prev" title="Teoria del color" href="../Apendice/Teoria_del_color/Teoria_del_color.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -218,11 +216,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
    Tutoriales
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     empylib
-    </span>
-   </code>
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -232,12 +225,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="Tutorial1/Tutorial1.html">
-     Tutorial 1
+     Tutorial 1 - Modelos ópticos
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Tutorial2/Tutorial2.html">
-     Tutorial 2
+     Tutorial 2 - Espectros de referencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Tutorial3/Tutorial3.html">
+     Tutorial 3 - Datos solares y climatológicos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Tutorial4/Tutorial4.html">
+     Tutorial 4 - Modelación módulo PV
     </a>
    </li>
   </ul>
@@ -417,7 +420,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tutoriales empylib</h1>
+                <h1>Tutoriales</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -442,23 +445,41 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="tutoriales-empylib">
-<h1>Tutoriales <code class="docutils literal notranslate"><span class="pre">empylib</span></code><a class="headerlink" href="#tutoriales-empylib" title="Permalink to this headline">#</a></h1>
-<p>En esta sección veremos algunos tutoriales para el uso de la librería <code class="docutils literal notranslate"><span class="pre">empylib</span></code></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="tutoriales">
+<h1>Tutoriales<a class="headerlink" href="#tutoriales" title="Permalink to this headline">#</a></h1>
+<p>En esta sección veremos algunos tutoriales para el uso de las librería <code class="docutils literal notranslate"><span class="pre">empylib</span></code>, <code class="docutils literal notranslate"><span class="pre">pvlib</span></code> y <code class="docutils literal notranslate"><span class="pre">meteostat</span></code></p>
 <ul class="simple">
-<li><p><a class="reference internal" href="Tutorial1/Tutorial1.html"><span class="doc std std-doc"><strong>Tutorial 1</strong></span></a></p></li>
-<li><p><a class="reference internal" href="Tutorial2/Tutorial2.html"><span class="doc std std-doc"><strong>Tutorial 2</strong></span></a></p></li>
+<li><p><a class="reference internal" href="Tutorial1/Tutorial1.html"><span class="doc std std-doc"><strong>Tutorial 1 - Modelos ópticos</strong></span></a></p></li>
+<li><p><a class="reference internal" href="Tutorial2/Tutorial2.html"><span class="doc std std-doc"><strong>Tutorial 2 - Espectros de referencia</strong></span></a></p></li>
+<li><p><a class="reference internal" href="Tutorial3/Tutorial3.html"><span class="doc std std-doc"><strong>Tutorial 3 - Datos solares y climatológicos</strong></span></a></p></li>
+<li><p><a class="reference internal" href="Tutorial4/Tutorial4.html"><span class="doc std std-doc"><strong>Tutorial 4 - Modelación de módulo PV</strong></span></a></p></li>
 </ul>
 <section id="instrucciones-de-instalacion">
 <h2>Instrucciones de instalación<a class="headerlink" href="#instrucciones-de-instalacion" title="Permalink to this headline">#</a></h2>
-<p>Antes de ejecutar los tutoriales, instalar la librería <code class="docutils literal notranslate"><span class="pre">empylib</span></code> ejecutando la siguiente sentencia en una celda de este notebook:</p>
+<p>Antes de ejecutar los tutoriales, instalar las librerías respectivas.</p>
+<ul>
+<li><p>Para <code class="docutils literal notranslate"><span class="pre">empylib</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install git+https://github.com/PanxoPanza/empylib.git
 </pre></div>
 </div>
-<p>El comando instalará la dependencia <code class="docutils literal notranslate"><span class="pre">iadpython</span></code>, una librería para simulaciones de transferencia radiativa  de energía.</p>
+</li>
+</ul>
 <blockquote>
-<div><p><strong>Nota.</strong> Esta instancia debe ser ejecutada solo una vez.</p>
+<div><p>El comando instalará la dependencia <code class="docutils literal notranslate"><span class="pre">iadpython</span></code>, una librería para simulaciones de transferencia radiativa  de energía.</p>
 </div></blockquote>
+<ul>
+<li><p>Para <code class="docutils literal notranslate"><span class="pre">meteostat</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install meteostat
+</pre></div>
+</div>
+</li>
+<li><p>Para <code class="docutils literal notranslate"><span class="pre">pvlib</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install pvlib
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Importante</strong> ejecutar los comandos de instalación solo una vez.</p>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -501,7 +522,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="Tutorial1/Tutorial1.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tutorial 1</p>
+        <p class="prev-next-title">Tutorial 1 - Modelos ópticos</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

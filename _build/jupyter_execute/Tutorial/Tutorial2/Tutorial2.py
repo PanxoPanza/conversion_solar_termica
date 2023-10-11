@@ -10,7 +10,7 @@ if importlib.util.find_spec('empylib') is None:
 
 
 # 
-# # Tutorial 2
+# # Tutorial 2 - Espectros de referencia
 # 
 # Este es un tutorial para utilizar el módulo `ref_spectra` de la librería `empylib`
 

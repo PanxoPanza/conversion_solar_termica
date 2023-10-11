@@ -202,14 +202,14 @@ if importlib.util.find_spec('empylib') is None:
 
 # Notar también que la radiancia del cuerpo negro es uniforme en todas las direcciones y, por lo tanto, no depende de $\Omega$.
 
-# En el curso utilizaremos la función `Bplank(lam, T)` parte del módulo `ref_spectra` de `èmpylib`. 
+# En el curso utilizaremos la función `Bplanck(lam, T)` parte del módulo `ref_spectra` de `èmpylib`. 
 
 # En el siguiente ejemplo, graficamos la distribución de cuerpo negro a $T = 100~^\circ\mathrm{C}= 373~\mathrm{K}$, en el espectro $\lambda\in[2,100]$ $\mu$m.
 
 # In[2]:
 
 
-get_ipython().run_cell_magic('capture', 'showplot0', "import numpy as np\nimport empylib.ref_spectra as rf\nimport matplotlib.pyplot as plt\n\nlam = np.linspace(2,100,1000)  # espectro de longitudes de onda (um)\nT = 100 + 273                  # Temperatura del cuerpo negro (K)\nIbb = rf.Bplanck(lam,T)        # Radiancia espectral de cuerpo negro\n\nplt.plot(lam,Ibb)\nplt.xlabel('Longitud de onda, $\\lambda$ ($\\mu$m)')\nplt.ylabel('$I_{\\mathrm{bb},\\lambda} (T)$, (W/m$^2$-$\\mu$m-sr)')\nplt.title('Radiancia espectral de cuerpo negro a %i K' % T)\nplt.show()\n")
+get_ipython().run_cell_magic('capture', 'showplot0', "import numpy as np\nimport empylib.ref_spectra as rf\nimport matplotlib.pyplot as plt\n\nlam = np.linspace(0.1,100,1000)  # espectro de longitudes de onda (um)\nT = 100 + 273                  # Temperatura del cuerpo negro (K)\nIbb = rf.Bplanck(lam,T)        # Radiancia espectral de cuerpo negro\n\nplt.plot(lam,Ibb)\nplt.xlabel('Longitud de onda, $\\lambda$ ($\\mu$m)')\nplt.ylabel('$I_{\\mathrm{bb},\\lambda} (T)$, (W/m$^2$-$\\mu$m-sr)')\nplt.title('Radiancia espectral de cuerpo negro a %i K' % T)\nplt.show()\n")
 
 
 # In[3]:
@@ -273,7 +273,7 @@ showplot0()
 # \epsilon_{\lambda,\Omega} = A_{\lambda,\Omega}
 # \end{equation}
 
-# En otras palabras, las propiedades de un material como receptor o emisor de radiación, son iguales. Sin embargo, notar que esta igualdad solo existe para la misma longitud de onda y ángulo sólido.
+# En otras palabras, las propiedades de un material como receptor o emisor de radiación, son iguales. Sin embargo, notar que **esta igualdad solo existe para la misma longitud de onda y ángulo sólido.**
 
 # Este concepto, denominado *reciprocidad*, es consecuencia de las ecuaciones de Maxwell y es la base fundamental para el diseño de antenas y radares.
 
@@ -336,7 +336,7 @@ def plot_emisivity_glass(Temp,d,lam0,theta0):
     lam = np.linspace(0.3,15,100)
     Nfront = 1.0                 # índice de refracción medio superior
     N1     = nk.SiO2(lam)        # índice de refracción capa intermedia
-    Nback  = 4.3                 # índice de refracción medio inferior
+    Nback  = 1.0                 # índice de refracción medio inferior
     N = (Nfront, N1, Nback)      # indices de refracción (above, mid, below)
     #-------------------------------------------------------------------------
 
@@ -469,10 +469,10 @@ import empylib.nklib as nk
 
 lam   = np.logspace(np.log10(0.2),np.log10(100),1000) # espectro de longitudes de onda (um)
 tfilm = 0.5                                           # espesor de la película (mm)
-nh = 1.3                                              # índice de refracción del solvente
+nh = 1.5                                              # índice de refracción del solvente
 Nlayers = (1.0,nh,1.5)                                # índices de refracción aire / solvente / aire
 fv = 0.07                                             # concentración (fracción de volúmen)
-Np = nk.TiO2(lam)                                     # índice de refracción de las partículas
+Np = nk.SiO2(lam)                                     # índice de refracción de las partículas
 D  = 1.0                                              # diámetro de las partículas (um)
 
 R, T = rt.adm_sphere(lam,tfilm,Nlayers,fv,D,Np)       # Reflectancia y transmitancia
@@ -484,7 +484,7 @@ A = 1 - R - T                                         # Absortancia
 # In[9]:
 
 
-get_ipython().run_cell_magic('capture', 'showplot1', "import empylib.miescattering as mie\nfrom matplotlib.ticker import FuncFormatter\n\nAp = np.pi*D**2/4\nQext, Qsca = mie.scatter_efficiency(lam,nh,Np,D)[:2]\nCsca, Cabs = Qsca*Ap, (Qext - Qsca)*Ap\n    \nfig, ax1 = plt.subplots(3,1,figsize=(8,8))\nplt.rcParams['font.size'] = '12'\nfig.tight_layout()\n\n# Graficamos el índice de refracción (parte real e imaginaria)\nax1[0].plot(lam,Np.real,'-b',label = '$n$')\nax1[0].plot(lam,Np.imag,'-r',label = '$\\kappa$')\n\n# Graficamos la sección transversal de scattering y absorción\nax1[1].plot(lam,Csca,'-b',label = '$C_\\mathrm{sca}$')\nax1[1].plot(lam,Cabs,'-r',label = '$C_\\mathrm{abs}$')\n\n# Graficamos la reflectancia, transmitancia y absortancia espectral\nax1[2].plot(lam,R,'-b', label = '$R_\\lambda$')\nax1[2].plot(lam,T,'-g', label = '$T_\\lambda$')\nax1[2].plot(lam,A,'-r', label = '$A_\\lambda$')\n\n\nfor i in range(len(ax1)):\n    ax1[i].set_xlabel('')\n    ax1[i].set_xscale('log')\n    ax1[i].set_xticks([0.3,0.4,0.75,1.4,3,8,15,30, 50, 100])\n    ax1[i].set_xlim(0.3,100)\n    ax1[i].xaxis.set_major_formatter(FuncFormatter(lambda y, _: '{:.16g}'.format(y)))\n    ax1[i].legend(frameon=False)\n\n    \nax1[2].set_xlabel('Longitud de onda, $\\lambda$ $\\mu$m')\nax1[0].set_ylabel('Índice de refracción $\\mathrm{TiO_2}$')\nax1[1].set_ylabel('$C_\\mathrm{sca}$ y $C_\\mathrm{sca}$ esfera de $\\mathrm{TiO_2}$ ($\\mu$m$^2$)')\nax1[2].set_ylabel('$R_\\lambda$, $T_\\lambda$ y $A_\\lambda$')\nplt.show()\n")
+get_ipython().run_cell_magic('capture', 'showplot1', "import empylib.miescattering as mie\nfrom matplotlib.ticker import FuncFormatter\n\nAp = np.pi*D**2/4\nQext, Qsca = mie.scatter_efficiency(lam,nh,Np,D)[:2]\nCsca, Cabs = Qsca*Ap, (Qext - Qsca)*Ap\n    \nfig, ax1 = plt.subplots(3,1,figsize=(8,8))\nplt.rcParams['font.size'] = '14'\nfig.tight_layout()\n\n# Graficamos el índice de refracción (parte real e imaginaria)\nax1[0].plot(lam,Np.real,'-b',label = '$n$')\nax1[0].plot(lam,Np.imag,'-r',label = '$\\kappa$')\n\n# Graficamos la sección transversal de scattering y absorción\nax1[1].plot(lam,Csca,'-b',label = '$C_\\mathrm{sca}$')\nax1[1].plot(lam,Cabs,'-r',label = '$C_\\mathrm{abs}$')\n\n# Graficamos la reflectancia, transmitancia y absortancia espectral\nax1[2].plot(lam,R,'-b', label = '$R_\\lambda$')\nax1[2].plot(lam,T,'-g', label = '$T_\\lambda$')\nax1[2].plot(lam,A,'-r', label = '$A_\\lambda$')\n\n\nfor i in range(len(ax1)):\n    ax1[i].set_xlabel('')\n    ax1[i].set_xscale('log')\n    ax1[i].set_xticks([0.3,0.4,0.75,1.4,3,8,15,30, 50, 100])\n    ax1[i].set_xlim(0.3,100)\n    ax1[i].xaxis.set_major_formatter(FuncFormatter(lambda y, _: '{:.16g}'.format(y)))\n    ax1[i].legend(frameon=False)\n\n    \nax1[2].set_xlabel('Longitud de onda, $\\lambda$ $\\mu$m')\nax1[0].set_ylabel('Índice de refracción $\\mathrm{TiO_2}$')\nax1[1].set_ylabel('$C_\\mathrm{sca}$ y $C_\\mathrm{sca}$ esfera de $\\mathrm{TiO_2}$ ($\\mu$m$^2$)')\nax1[2].set_ylabel('$R_\\lambda$, $T_\\lambda$ y $A_\\lambda$')\nplt.show()\n")
 
 
 # In[10]:

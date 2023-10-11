@@ -37,3 +37,5 @@ parts:
         sections:
         - file: Tutorial/Tutorial1/Tutorial1
         - file: Tutorial/Tutorial2/Tutorial2
+        - file: Tutorial/Tutorial3/Tutorial3
+        - file: Tutorial/Tutorial4/Tutorial4

@@ -9,7 +9,7 @@ if importlib.util.find_spec('empylib') is None:
     get_ipython().system('pip install git+https://github.com/PanxoPanza/empylib.git')
 
 
-# # Tutorial 1
+# # Tutorial 1 - Modelos ópticos
 # 
 # Este es un tutorial para utilizar las principales librerías del paquete ```empylib```. Estas son:
 # - Funciones básicas en `empylib`.

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Tutorial 1 &#8212; MEC501 - Manejo y conversión solar</title>
+    <title>Tutorial 1 - Modelos ópticos &#8212; MEC501 - Manejo y conversión solar</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -57,8 +57,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Tutorial 2" href="../Tutorial2/Tutorial2.html" />
-    <link rel="prev" title="Tutoriales empylib" href="../Intro.html" />
+    <link rel="next" title="Tutorial 2 - Espectros de referencia" href="../Tutorial2/Tutorial2.html" />
+    <link rel="prev" title="Tutoriales" href="../Intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -220,11 +220,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../Intro.html">
    Tutoriales
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     empylib
-    </span>
-   </code>
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -234,12 +229,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Tutorial 1
+     Tutorial 1 - Modelos ópticos
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Tutorial2/Tutorial2.html">
-     Tutorial 2
+     Tutorial 2 - Espectros de referencia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorial3/Tutorial3.html">
+     Tutorial 3 - Datos solares y climatológicos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Tutorial4/Tutorial4.html">
+     Tutorial 4 - Modelación módulo PV
     </a>
    </li>
   </ul>
@@ -534,7 +539,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tutorial 1</h1>
+                <h1>Tutorial 1 - Modelos ópticos</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -674,8 +679,8 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-1">
-<h1>Tutorial 1<a class="headerlink" href="#tutorial-1" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-1-modelos-opticos">
+<h1>Tutorial 1 - Modelos ópticos<a class="headerlink" href="#tutorial-1-modelos-opticos" title="Permalink to this headline">#</a></h1>
 <p>Este es un tutorial para utilizar las principales librerías del paquete <code class="docutils literal notranslate"><span class="pre">empylib</span></code>. Estas son:</p>
 <ul class="simple">
 <li><p>Funciones básicas en <code class="docutils literal notranslate"><span class="pre">empylib</span></code>.</p></li>
@@ -924,7 +929,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe470d01400&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f757fe6f850&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/Tutorial1_23_1.png" src="../../_images/Tutorial1_23_1.png" />
@@ -1229,6 +1234,14 @@ multilayer:		 R = 0.025, T = 0.975
 incoh_multilayer:	 R = 0.025, T = 0.975
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_3278/3211510611.py:7: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  print(&#39;interface:\t\t R = %.3f, T = %.3f&#39; % wv.interface(theta,N[0],N[1])[:2])
+/tmp/ipykernel_3278/3211510611.py:8: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  print(&#39;multilayer:\t\t R = %.3f, T = %.3f&#39; % wv.multilayer(lam,theta,N,d)[:2])
+/tmp/ipykernel_3278/3211510611.py:9: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  print(&#39;incoh_multilayer:\t R = %.3f, T = %.3f&#39; % wv.incoh_multilayer(lam,theta,N,d))
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -1440,13 +1453,13 @@ incoh_multilayer:	 R = 0.025, T = 0.975
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Tutoriales <code class="docutils literal notranslate"><span class="pre">empylib</span></code></p>
+            <p class="prev-next-title">Tutoriales</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../Tutorial2/Tutorial2.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tutorial 2</p>
+        <p class="prev-next-title">Tutorial 2 - Espectros de referencia</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

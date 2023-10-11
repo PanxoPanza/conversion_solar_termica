@@ -249,6 +249,23 @@ YouTubeVideo('N4n-SiMjqqM', width=700, height=400,  start=17, end=179)
 
 # En la práctica $R_\mathrm{s}$ debe ser lo más baja posible, y $R_\mathrm{sh}$ debe ser lo más alta posible.
 
+# ### El modelo del diodo único (SDM)
+
+# Considerando todas las pérdidas que ocurren en una celda pv, podemos generar un modelo para la curva IV. Este modelo se basa en el circuito eléctrico descrito anteriormente, y se denomina **"modelo de diodo único" o SDM**:
+# 
+# \begin{equation*} I = I_L - I_o \left[ \exp \left( \frac{V + I R_\mathrm{s}}{n V_T} \right) - 1 \right] - \frac{V + I R_\mathrm{s}}{R_\mathrm{sh}},
+# \end{equation*}
+
+# donde:
+# - $I_L$: es la corriente fotoinducida (análogo a $I_\mathrm{ph}$)
+# - $I_o$: es la corriente de saturación
+# - $R_\mathrm{sh}$: es la resistancia en derivación
+# - $R_\mathrm{s}$: es la resistencia en serie
+# - $n$: es el factor de idealidad del diodo
+# - $V_T = k_\mathrm{B}/q_e$: es el *voltaje térmico* ($q_e = 1.602\times10^{-19}~\mathrm{C}$ es la carga elemental)
+
+# **Con excepción de $V_T$, los otros 5 parámetros definen el modelo SDM.**
+
 # ### Fabricación de celdas fotovoltaicas
 
 # Los métodos de fabricación de las celdas dependen del tipo de material y la cristalinidad deseada. 
