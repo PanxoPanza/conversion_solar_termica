@@ -22,6 +22,8 @@ if importlib.util.find_spec('timezonefinder') is None:
 # Este es un tutorial para utilizar las librerías:
 # - `pvlib` para determinar ángulos solares y niveles de irradiación solar.
 # - `meteostat` para determinar condiciones climáticas.
+# 
+# > Para mayor información de las funciones de este tutorial, revisar la documentación oficial de [`pvlib`](https://pvlib-python.readthedocs.io/en/stable/reference/index.html) y [`meteostat`](https://dev.meteostat.net/python/)
 
 # ## Definir localización y tiempo de estudio
 # 

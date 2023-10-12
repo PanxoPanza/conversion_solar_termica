@@ -26,31 +26,31 @@ import pvlib
 # - `pvlib.temperature`: para estimación de la temperatura de las celdas en condiciones de operación.
 # - `pvlib.pvsystem`: para análisis de módulos pv y estimación de curvas IV.
 
-# > Para mayor información, revisar la [documentación oficial de `pvlib`](https://pvlib-python.readthedocs.io/en/stable/reference/index.html)
+# > Para mayor información de las funciones de este tutorial, revisar la documentación oficial de [`pvlib`](https://pvlib-python.readthedocs.io/en/stable/reference/index.html)
 
 # ## Selección de módulo pv (`pvsystem.retrieve_sam`)
 
 # ### La biblioteca de módulos CEC (`'CECmod'`)
 # 
-# El *California Energy Commission Comisión* (CEC) contrató laboratorios de pruebas autorizados para medir en condiciones de medición estandar (*standard test conditions* o STC) corriente en corto circuito ($I_\mathrm{sc}$), voltaje en circuito abierto ($V_\mathrm{oc}$); voltaje, corriente y potencia en punto de potencia máxima o mpp ($V_\mathrm{mpp}$,  $I_\mathrm{mpp}$ y $P_\mathrm{mpp}$); coeficientes de temperatura de voltaje y corriente, dimensiones del módulo, número de celdas en serie ($N_s$), subcadenas paralelas ($N_p$), área del módulo en $\mathrm{m^2}$ ($A_c$) y más. Las tablas de los parámetros del módulo CEC están disponibles en las [Listas de equipos solares](https://solarequipment.energy.ca.gov/Home/PVModuleList).  Estas mediciones se han ajustado al modelo de diodo único (SDM, por sus siglas en inglés) mediante el modelo *System Advisor Model* (SAM) del *National Renewable Energy Laboratory* (NREL) y se han almacenado en un archivo CSV incluido con SAM.
+# El *California Energy Commission Comisión* (CEC) contrató laboratorios de pruebas autorizados para caracterizar una variedad de módulos pv en condiciones de medición estandar (*standard test conditions* o STC). Los resultados incluyen: corriente en corto circuito ($I_\mathrm{sc}$), voltaje en circuito abierto ($V_\mathrm{oc}$); voltaje, corriente y potencia en punto de potencia máxima o mpp ($V_\mathrm{mpp}$,  $I_\mathrm{mpp}$ y $P_\mathrm{mpp}$); coeficientes de temperatura de voltaje y corriente, dimensiones del módulo, número de celdas en serie ($N_s$), subcadenas paralelas ($N_p$), área del módulo en $\mathrm{m^2}$ ($A_c$), entre otros. La base de datos CEC está disponibles en la [Lista de equipos solares](https://solarequipment.energy.ca.gov/Home/PVModuleList) y en un archivo CSV incluido en el *System Advisor Model* (SAM) del *National Renewable Energy Laboratory* (NREL).
 
-# En `pvlib` podemos acceder a esta librería mediante la función `retrieve_sam` del módulo `pvlib.pvsystem`. Para acceder a la librería del CEC, indicamos el argumento `name = 'CECMod'`
+# En `pvlib` podemos acceder a la biblioteca CEC mediante la función `retrieve_sam` del módulo `pvlib.pvsystem`, usando el argumento `name = 'CECMod'`
 
 # In[3]:
 
 
-module_db = pvlib.pvsystem.retrieve_sam(name = 'CECMod')
+pv_module_db = pvlib.pvsystem.retrieve_sam(name = 'CECMod')
 
 
-# La información de esta librería está desplegada en formato *dataframe*, donde los modelos de paneles están en anexados por columnas.
+# La información está desplegada en formato *dataframe*, donde los modelos de paneles están en anexados por columnas.
 
 # In[4]:
 
 
-module_db.T.head() # Trasponemos la lista con ".T", para visualizar los paneles por filas
+pv_module_db.T.head() # Trasponemos la lista con ".T", para visualizar los paneles por filas
 
 
-# Cada módulo CEC está caracterizado por los siguientes parámetros:
+# Cada módulo está caracterizado por los siguientes parámetros:
 # 
 # | parámetro    | tipo de variable | Unidades o descripción                                                                         |
 # | :----------- | :--------: | :-------------------------------------------------------------------------------------------- |
@@ -80,7 +80,7 @@ module_db.T.head() # Trasponemos la lista con ".T", para visualizar los paneles 
 
 # ### Selección de modelo de panel
 
-# Como vemos, en la biblioteca CEC, los módulos se nombran según el esquema 
+# Como vemos, en la biblioteca CEC los módulos se nombran según el esquema 
 # 
 #     <nombre del fabricante><modelo>
 # Los espacios en blanco, los guiones y otros caracteres no alfanuméricos se reemplazan por `_` en pvlib python. Por ejemplo, “Canadian Solar Inc. CS5M-220M” existe en la base de datos como: `Canadiense_Solar_Inc__CS5P_220M`
@@ -90,8 +90,8 @@ module_db.T.head() # Trasponemos la lista con ".T", para visualizar los paneles 
 # In[5]:
 
 
-module_index = module_db.T.index.str.startswith('Canadian_Solar_Inc__CS6X')
-module_db.T[module_index]
+pv_module_index = pv_module_db.T.index.str.startswith('Canadian_Solar_Inc__CS6X')
+pv_module_db.T[pv_module_index]
 
 
 # De aquí identificamos que el modelo está bajo el nombre `Canadian_Solar_Inc__CS6X_300M`
@@ -99,7 +99,7 @@ module_db.T[module_index]
 # In[6]:
 
 
-pv_model = module_db.Canadian_Solar_Inc__CS6X_300M
+pv_model = pv_module_db.Canadian_Solar_Inc__CS6X_300M
 
 
 # Los parámetros CEC de este módulo son
@@ -127,8 +127,8 @@ pv_model
 # In[8]:
 
 
-module_zenith  = 30 # ángulo cenital
-module_azimuth = 90 # ángulo acimutal
+pv_module_zenith  = 30 # ángulo cenital
+pv_module_azimuth = 90 # ángulo acimutal
 
 
 # Respecto a las condiciones climáticas y de irradiación, consideraremos la siguiente serie de datos.
@@ -174,8 +174,8 @@ sun_zenith  = site_conditions['apparent_zenith'].values
 sun_azimuth = site_conditions['azimuth'].values
 
 aoi = pvlib.irradiance.aoi(
-    surface_tilt    = module_zenith,
-    surface_azimuth = module_azimuth,
+    surface_tilt    = pv_module_zenith,
+    surface_azimuth = pv_module_azimuth,
     solar_zenith    = sun_zenith,
     solar_azimuth   = sun_azimuth)
 
@@ -206,7 +206,7 @@ print('Irradiación efectiva:', Geff)
 
 # ### Temperatura de las celdas (`pvlib.temperature`)
 # 
-# Existen distintos modelos para determinar la temperatura de la celda $T_\mathrm{cell}$. En este curso usaremos el [*Sandia Array Performance Model*](https://www.osti.gov/servlets/purl/919131) de *Sandia National Laboratories*. El modelo está compuesto por dos ecuaciones:
+# Existen distintos modelos para determinar la temperatura de las celdas $T_\mathrm{cell}$. En este curso usaremos el [*Sandia Array Performance Model*](https://www.osti.gov/servlets/purl/919131) de *Sandia National Laboratories*. El modelo está compuesto por dos ecuaciones:
 # 
 # \begin{align*}
 # T_\mathrm{mod} &= G_\mathrm{eff} e^{a + b V_\mathrm{wind}} + T_a \\
@@ -222,7 +222,7 @@ print('Irradiación efectiva:', Geff)
 # - `a`: Parámetro $a$.
 # - `b`: Parámetro $b$.
 # - `deltaT`: Parámetro $\Delta T$.
-# - `irrad_ref`: Irradiancia de referencia, $E_0$ ($\mathrm{W/m^2}$). `irrad_ref` = 1000, por defecto).
+# - `irrad_ref`: Irradiancia de referencia, $E_0$ ($\mathrm{W/m^2}$). `irrad_ref = 1000`, por defecto).
 # 
 
 # Los parámetros de ajuste $a$, $b$ y $\Delta T$ dependen, en general, de la construcción del módulo pv (protección frontal y trasera) y de su montaje. La variable `TEMPERATURE_MODEL_PARAMETERS` del módulo `pvlib.temperature` contiene una lista de referencia:
@@ -279,9 +279,9 @@ print('Temperatura de la celda: ', temp_cell)
 # - Resistencia en serie, `Rsh`.
 # - Factor de idealidad del diodo, $n$.
 # 
-# Si bien estos parámetros están indicados en la biblioteca CEC, ellos están asociados a condiciones de operación estandar  (o STC). Así, debemos determinar el valor efectivo de estos parámetros en las condiciones de operación del módulo
+# Es importante considerar que **los parámetros de la biblioteca CEC fueron determinados en condiciones de operación estandar  (o STC)**. Así, debemos **determinar el valor efectivo de estos parámetros en las condiciones de operación del módulo pv.**
 
-# **En `pvlib` usamos la función `calcparams_cec` del módulo `pvlib.pvsystem` para derterminar `IL`, `I0`, `Rs`, `Rsh` y `nNsVth` en las condiciones de operación.** El último parámetro (`nNsVth`), corresponde al producto entre $n$, el número de celdas ($N_s$) y el voltaje térmico ($V_T$).
+# **En `pvlib` usamos la función `calcparams_cec` del módulo `pvlib.pvsystem` para derterminar `IL`, `I0`, `Rs`, `Rsh` y `nNsVth` en las condiciones de operación.** El último parámetro (`nNsVth`), corresponde al producto entre $n$, el número de celdas en serie ($N_s$) y el voltaje térmico ($V_T$).
 
 # Como parámetros de entrada, `pvsystem.calcparams_cec` requiere: 
 # - `effective_irradiance`: Niveles de irradiancia
@@ -403,20 +403,26 @@ i = pvlib.pvsystem.i_from_v(
 
 import matplotlib.pyplot as plt
 
-# plot the calculated curves:
-plt.figure()
+# Graficamos las curvas IV para cada condición de operación
 for idx in site_conditions.index:
+    
+    # Etiqueta de la curva IV
     label = ('$G_{eff}=$ %.1f $W/m^2$\n' % Geff[idx] +
             '$T_{cell}=$ %.1f $\\degree C$' % temp_cell[idx])
+    
+    # Gráfica de la curva IV
     plt.plot(v[:,idx], i[:,idx], label=label)
-    v_mp = curve_info['v_mp'][idx]
-    i_mp = curve_info['i_mp'][idx]
-    # mark the MPP
-    plt.plot([v_mp], [i_mp], ls='', marker='o', c='k')
+    
+    # Marcamos el mpp en el gráfico
+    v_mp = curve_info['v_mp'][idx] # Valor de V_mp en condiciones de operación
+    i_mp = curve_info['i_mp'][idx] # Valor de I_mp en condiciones de operación
+    
+    plt.plot([v_mp], [i_mp], ls='', marker='o', c='k') # punto mpp
 
+# Etiqueta de los ejes y título del gráfico
 plt.xlabel('Voltaje [V]')
 plt.ylabel('Corriente [A]')
+plt.title('Curva IV módulo - %s' % pv_model.name)
 plt.legend()
-plt.title('Curva IV módulo %s' % pv_model.name)
 plt.show()
 
