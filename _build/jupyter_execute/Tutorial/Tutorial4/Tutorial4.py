@@ -85,7 +85,7 @@ pv_module_db.T.head() # Trasponemos la lista con ".T", para visualizar los panel
 #     <nombre del fabricante><modelo>
 # Los espacios en blanco, los guiones y otros caracteres no alfanuméricos se reemplazan por `_` en pvlib python. Por ejemplo, “Canadian Solar Inc. CS5M-220M” existe en la base de datos como: `Canadiense_Solar_Inc__CS5P_220M`
 
-# Alternativamente, podemos usar el comando `.T.index.str.startswith` para buscar el modelo. Por ejemplo, para buscar e modelo [CS6X-300M de Canadian Solar Inc](./pv_datasheet/MaxPower_CS6X-M.pdf), buscamos todos los modelos cuyo nombre incluye `'Canadian_Solar_Inc__CS6X'`
+# Alternativamente, podemos usar el comando `.T.index.str.startswith` para buscar el modelo. Por ejemplo, para buscar e modelo [CS6X-300M de Canadian Solar Inc](https://s3.amazonaws.com/ecodirect_docs/CANADIAN/MaxPower_CS6X-M.pdf), buscamos todos los modelos cuyo nombre incluye `'Canadian_Solar_Inc__CS6X'`
 
 # In[5]:
 
