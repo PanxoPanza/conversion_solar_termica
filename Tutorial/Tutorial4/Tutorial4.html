@@ -645,25 +645,25 @@ title="Print to PDF"
 <li><p><code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem</span></code>: para análisis de módulos pv y estimación de curvas IV.</p></li>
 </ul>
 <blockquote>
-<div><p>Para mayor información, revisar la <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/index.html">documentación oficial de <code class="docutils literal notranslate"><span class="pre">pvlib</span></code></a></p>
+<div><p>Para mayor información de las funciones de este tutorial, revisar la documentación oficial de <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/index.html"><code class="docutils literal notranslate"><span class="pre">pvlib</span></code></a></p>
 </div></blockquote>
 <section id="seleccion-de-modulo-pv-pvsystem-retrieve-sam">
 <h2>Selección de módulo pv (<code class="docutils literal notranslate"><span class="pre">pvsystem.retrieve_sam</span></code>)<a class="headerlink" href="#seleccion-de-modulo-pv-pvsystem-retrieve-sam" title="Permalink to this headline">#</a></h2>
 <section id="la-biblioteca-de-modulos-cec-cecmod">
 <h3>La biblioteca de módulos CEC (<code class="docutils literal notranslate"><span class="pre">'CECmod'</span></code>)<a class="headerlink" href="#la-biblioteca-de-modulos-cec-cecmod" title="Permalink to this headline">#</a></h3>
-<p>El <em>California Energy Commission Comisión</em> (CEC) contrató laboratorios de pruebas autorizados para medir en condiciones de medición estandar (<em>standard test conditions</em> o STC) corriente en corto circuito (<span class="math notranslate nohighlight">\(I_\mathrm{sc}\)</span>), voltaje en circuito abierto (<span class="math notranslate nohighlight">\(V_\mathrm{oc}\)</span>); voltaje, corriente y potencia en punto de potencia máxima o mpp (<span class="math notranslate nohighlight">\(V_\mathrm{mpp}\)</span>,  <span class="math notranslate nohighlight">\(I_\mathrm{mpp}\)</span> y <span class="math notranslate nohighlight">\(P_\mathrm{mpp}\)</span>); coeficientes de temperatura de voltaje y corriente, dimensiones del módulo, número de celdas en serie (<span class="math notranslate nohighlight">\(N_s\)</span>), subcadenas paralelas (<span class="math notranslate nohighlight">\(N_p\)</span>), área del módulo en <span class="math notranslate nohighlight">\(\mathrm{m^2}\)</span> (<span class="math notranslate nohighlight">\(A_c\)</span>) y más. Las tablas de los parámetros del módulo CEC están disponibles en las <a class="reference external" href="https://solarequipment.energy.ca.gov/Home/PVModuleList">Listas de equipos solares</a>.  Estas mediciones se han ajustado al modelo de diodo único (SDM, por sus siglas en inglés) mediante el modelo <em>System Advisor Model</em> (SAM) del <em>National Renewable Energy Laboratory</em> (NREL) y se han almacenado en un archivo CSV incluido con SAM.</p>
-<p>En <code class="docutils literal notranslate"><span class="pre">pvlib</span></code> podemos acceder a esta librería mediante la función <code class="docutils literal notranslate"><span class="pre">retrieve_sam</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem</span></code>. Para acceder a la librería del CEC, indicamos el argumento <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">'CECMod'</span></code></p>
+<p>El <em>California Energy Commission Comisión</em> (CEC) contrató laboratorios de pruebas autorizados para caracterizar una variedad de módulos pv en condiciones de medición estandar (<em>standard test conditions</em> o STC). Los resultados incluyen: corriente en corto circuito (<span class="math notranslate nohighlight">\(I_\mathrm{sc}\)</span>), voltaje en circuito abierto (<span class="math notranslate nohighlight">\(V_\mathrm{oc}\)</span>); voltaje, corriente y potencia en punto de potencia máxima o mpp (<span class="math notranslate nohighlight">\(V_\mathrm{mpp}\)</span>,  <span class="math notranslate nohighlight">\(I_\mathrm{mpp}\)</span> y <span class="math notranslate nohighlight">\(P_\mathrm{mpp}\)</span>); coeficientes de temperatura de voltaje y corriente, dimensiones del módulo, número de celdas en serie (<span class="math notranslate nohighlight">\(N_s\)</span>), subcadenas paralelas (<span class="math notranslate nohighlight">\(N_p\)</span>), área del módulo en <span class="math notranslate nohighlight">\(\mathrm{m^2}\)</span> (<span class="math notranslate nohighlight">\(A_c\)</span>), entre otros. La base de datos CEC está disponibles en la <a class="reference external" href="https://solarequipment.energy.ca.gov/Home/PVModuleList">Lista de equipos solares</a> y en un archivo CSV incluido en el <em>System Advisor Model</em> (SAM) del <em>National Renewable Energy Laboratory</em> (NREL).</p>
+<p>En <code class="docutils literal notranslate"><span class="pre">pvlib</span></code> podemos acceder a la biblioteca CEC mediante la función <code class="docutils literal notranslate"><span class="pre">retrieve_sam</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem</span></code>, usando el argumento <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">'CECMod'</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">module_db</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">pvsystem</span><span class="o">.</span><span class="n">retrieve_sam</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CECMod&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pv_module_db</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">pvsystem</span><span class="o">.</span><span class="n">retrieve_sam</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;CECMod&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>La información de esta librería está desplegada en formato <em>dataframe</em>, donde los modelos de paneles están en anexados por columnas.</p>
+<p>La información está desplegada en formato <em>dataframe</em>, donde los modelos de paneles están en anexados por columnas.</p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">module_db</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># Trasponemos la lista con &quot;.T&quot;, para visualizar los paneles por filas</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pv_module_db</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># Trasponemos la lista con &quot;.T&quot;, para visualizar los paneles por filas</span>
 </pre></div>
 </div>
 </div>
@@ -835,7 +835,7 @@ title="Print to PDF"
 <p>5 rows × 25 columns</p>
 </div></div></div>
 </div>
-<p>Cada módulo CEC está caracterizado por los siguientes parámetros:</p>
+<p>Cada módulo está caracterizado por los siguientes parámetros:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>parámetro</p></th>
@@ -941,7 +941,7 @@ title="Print to PDF"
 </section>
 <section id="seleccion-de-modelo-de-panel">
 <h3>Selección de modelo de panel<a class="headerlink" href="#seleccion-de-modelo-de-panel" title="Permalink to this headline">#</a></h3>
-<p>Como vemos, en la biblioteca CEC, los módulos se nombran según el esquema</p>
+<p>Como vemos, en la biblioteca CEC los módulos se nombran según el esquema</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nombre del fabricante&gt;&lt;modelo&gt;
 </pre></div>
 </div>
@@ -949,8 +949,8 @@ title="Print to PDF"
 <p>Alternativamente, podemos usar el comando <code class="docutils literal notranslate"><span class="pre">.T.index.str.startswith</span></code> para buscar el modelo. Por ejemplo, para buscar e modelo <span class="xref myst">CS6X-300M de Canadian Solar Inc</span>, buscamos todos los modelos cuyo nombre incluye <code class="docutils literal notranslate"><span class="pre">'Canadian_Solar_Inc__CS6X'</span></code></p>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">module_index</span> <span class="o">=</span> <span class="n">module_db</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Canadian_Solar_Inc__CS6X&#39;</span><span class="p">)</span>
-<span class="n">module_db</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">module_index</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pv_module_index</span> <span class="o">=</span> <span class="n">pv_module_db</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;Canadian_Solar_Inc__CS6X&#39;</span><span class="p">)</span>
+<span class="n">pv_module_db</span><span class="o">.</span><span class="n">T</span><span class="p">[</span><span class="n">pv_module_index</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2109,7 +2109,7 @@ title="Print to PDF"
 <p>De aquí identificamos que el modelo está bajo el nombre <code class="docutils literal notranslate"><span class="pre">Canadian_Solar_Inc__CS6X_300M</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pv_model</span> <span class="o">=</span> <span class="n">module_db</span><span class="o">.</span><span class="n">Canadian_Solar_Inc__CS6X_300M</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pv_model</span> <span class="o">=</span> <span class="n">pv_module_db</span><span class="o">.</span><span class="n">Canadian_Solar_Inc__CS6X_300M</span>
 </pre></div>
 </div>
 </div>
@@ -2170,8 +2170,8 @@ Name: Canadian_Solar_Inc__CS6X_300M, dtype: object
 <p>En este caso consideraremos un panel solar con ángulos de inclinación <span class="math notranslate nohighlight">\(\theta = 30°\)</span> y <span class="math notranslate nohighlight">\(\phi = 90°\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">module_zenith</span>  <span class="o">=</span> <span class="mi">30</span> <span class="c1"># ángulo cenital</span>
-<span class="n">module_azimuth</span> <span class="o">=</span> <span class="mi">90</span> <span class="c1"># ángulo acimutal</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pv_module_zenith</span>  <span class="o">=</span> <span class="mi">30</span> <span class="c1"># ángulo cenital</span>
+<span class="n">pv_module_azimuth</span> <span class="o">=</span> <span class="mi">90</span> <span class="c1"># ángulo acimutal</span>
 </pre></div>
 </div>
 </div>
@@ -2289,8 +2289,8 @@ G_\mathrm{eff} = G_\mathrm{DNI}\cos\theta_i + G_\mathrm{DHI}
 <span class="n">sun_azimuth</span> <span class="o">=</span> <span class="n">site_conditions</span><span class="p">[</span><span class="s1">&#39;azimuth&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 
 <span class="n">aoi</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">irradiance</span><span class="o">.</span><span class="n">aoi</span><span class="p">(</span>
-    <span class="n">surface_tilt</span>    <span class="o">=</span> <span class="n">module_zenith</span><span class="p">,</span>
-    <span class="n">surface_azimuth</span> <span class="o">=</span> <span class="n">module_azimuth</span><span class="p">,</span>
+    <span class="n">surface_tilt</span>    <span class="o">=</span> <span class="n">pv_module_zenith</span><span class="p">,</span>
+    <span class="n">surface_azimuth</span> <span class="o">=</span> <span class="n">pv_module_azimuth</span><span class="p">,</span>
     <span class="n">solar_zenith</span>    <span class="o">=</span> <span class="n">sun_zenith</span><span class="p">,</span>
     <span class="n">solar_azimuth</span>   <span class="o">=</span> <span class="n">sun_azimuth</span><span class="p">)</span>
 </pre></div>
@@ -2335,7 +2335,7 @@ G_\mathrm{eff} = G_\mathrm{DNI}\cos\theta_i + G_\mathrm{DHI}
 </section>
 <section id="temperatura-de-las-celdas-pvlib-temperature">
 <h3>Temperatura de las celdas (<code class="docutils literal notranslate"><span class="pre">pvlib.temperature</span></code>)<a class="headerlink" href="#temperatura-de-las-celdas-pvlib-temperature" title="Permalink to this headline">#</a></h3>
-<p>Existen distintos modelos para determinar la temperatura de la celda <span class="math notranslate nohighlight">\(T_\mathrm{cell}\)</span>. En este curso usaremos el <a class="reference external" href="https://www.osti.gov/servlets/purl/919131"><em>Sandia Array Performance Model</em></a> de <em>Sandia National Laboratories</em>. El modelo está compuesto por dos ecuaciones:</p>
+<p>Existen distintos modelos para determinar la temperatura de las celdas <span class="math notranslate nohighlight">\(T_\mathrm{cell}\)</span>. En este curso usaremos el <a class="reference external" href="https://www.osti.gov/servlets/purl/919131"><em>Sandia Array Performance Model</em></a> de <em>Sandia National Laboratories</em>. El modelo está compuesto por dos ecuaciones:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
 T_\mathrm{mod} &amp;= G_\mathrm{eff} e^{a + b V_\mathrm{wind}} + T_a \\
@@ -2350,7 +2350,7 @@ T_\mathrm{cell} &amp;= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
 <li><p><code class="docutils literal notranslate"><span class="pre">a</span></code>: Parámetro <span class="math notranslate nohighlight">\(a\)</span>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">b</span></code>: Parámetro <span class="math notranslate nohighlight">\(b\)</span>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">deltaT</span></code>: Parámetro <span class="math notranslate nohighlight">\(\Delta T\)</span>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">irrad_ref</span></code>: Irradiancia de referencia, <span class="math notranslate nohighlight">\(E_0\)</span> (<span class="math notranslate nohighlight">\(\mathrm{W/m^2}\)</span>). <code class="docutils literal notranslate"><span class="pre">irrad_ref</span></code> = 1000, por defecto).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">irrad_ref</span></code>: Irradiancia de referencia, <span class="math notranslate nohighlight">\(E_0\)</span> (<span class="math notranslate nohighlight">\(\mathrm{W/m^2}\)</span>). <code class="docutils literal notranslate"><span class="pre">irrad_ref</span> <span class="pre">=</span> <span class="pre">1000</span></code>, por defecto).</p></li>
 </ul>
 <p>Los parámetros de ajuste <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> y <span class="math notranslate nohighlight">\(\Delta T\)</span> dependen, en general, de la construcción del módulo pv (protección frontal y trasera) y de su montaje. La variable <code class="docutils literal notranslate"><span class="pre">TEMPERATURE_MODEL_PARAMETERS</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">pvlib.temperature</span></code> contiene una lista de referencia:</p>
 <table class="colwidths-auto table">
@@ -2441,8 +2441,8 @@ T_\mathrm{cell} &amp;= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
 <li><p>Resistencia en serie, <code class="docutils literal notranslate"><span class="pre">Rsh</span></code>.</p></li>
 <li><p>Factor de idealidad del diodo, <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
 </ul>
-<p>Si bien estos parámetros están indicados en la biblioteca CEC, ellos están asociados a condiciones de operación estandar  (o STC). Así, debemos determinar el valor efectivo de estos parámetros en las condiciones de operación del módulo</p>
-<p><strong>En <code class="docutils literal notranslate"><span class="pre">pvlib</span></code> usamos la función <code class="docutils literal notranslate"><span class="pre">calcparams_cec</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem</span></code> para derterminar <code class="docutils literal notranslate"><span class="pre">IL</span></code>, <code class="docutils literal notranslate"><span class="pre">I0</span></code>, <code class="docutils literal notranslate"><span class="pre">Rs</span></code>, <code class="docutils literal notranslate"><span class="pre">Rsh</span></code> y <code class="docutils literal notranslate"><span class="pre">nNsVth</span></code> en las condiciones de operación.</strong> El último parámetro (<code class="docutils literal notranslate"><span class="pre">nNsVth</span></code>), corresponde al producto entre <span class="math notranslate nohighlight">\(n\)</span>, el número de celdas (<span class="math notranslate nohighlight">\(N_s\)</span>) y el voltaje térmico (<span class="math notranslate nohighlight">\(V_T\)</span>).</p>
+<p>Es importante considerar que <strong>los parámetros de la biblioteca CEC fueron determinados en condiciones de operación estandar  (o STC)</strong>. Así, debemos <strong>determinar el valor efectivo de estos parámetros en las condiciones de operación del módulo pv.</strong></p>
+<p><strong>En <code class="docutils literal notranslate"><span class="pre">pvlib</span></code> usamos la función <code class="docutils literal notranslate"><span class="pre">calcparams_cec</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem</span></code> para derterminar <code class="docutils literal notranslate"><span class="pre">IL</span></code>, <code class="docutils literal notranslate"><span class="pre">I0</span></code>, <code class="docutils literal notranslate"><span class="pre">Rs</span></code>, <code class="docutils literal notranslate"><span class="pre">Rsh</span></code> y <code class="docutils literal notranslate"><span class="pre">nNsVth</span></code> en las condiciones de operación.</strong> El último parámetro (<code class="docutils literal notranslate"><span class="pre">nNsVth</span></code>), corresponde al producto entre <span class="math notranslate nohighlight">\(n\)</span>, el número de celdas en serie (<span class="math notranslate nohighlight">\(N_s\)</span>) y el voltaje térmico (<span class="math notranslate nohighlight">\(V_T\)</span>).</p>
 <p>Como parámetros de entrada, <code class="docutils literal notranslate"><span class="pre">pvsystem.calcparams_cec</span></code> requiere:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">effective_irradiance</span></code>: Niveles de irradiancia</p></li>
@@ -2718,21 +2718,27 @@ T_\mathrm{cell} &amp;= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="c1"># plot the calculated curves:</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="c1"># Graficamos las curvas IV para cada condición de operación</span>
 <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">site_conditions</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+    
+    <span class="c1"># Etiqueta de la curva IV</span>
     <span class="n">label</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;$G_</span><span class="si">{eff}</span><span class="s1">=$ </span><span class="si">%.1f</span><span class="s1"> $W/m^2$</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">Geff</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">+</span>
             <span class="s1">&#39;$T_</span><span class="si">{cell}</span><span class="s1">=$ </span><span class="si">%.1f</span><span class="s1"> $</span><span class="se">\\</span><span class="s1">degree C$&#39;</span> <span class="o">%</span> <span class="n">temp_cell</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+    
+    <span class="c1"># Gráfica de la curva IV</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">[:,</span><span class="n">idx</span><span class="p">],</span> <span class="n">i</span><span class="p">[:,</span><span class="n">idx</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
-    <span class="n">v_mp</span> <span class="o">=</span> <span class="n">curve_info</span><span class="p">[</span><span class="s1">&#39;v_mp&#39;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
-    <span class="n">i_mp</span> <span class="o">=</span> <span class="n">curve_info</span><span class="p">[</span><span class="s1">&#39;i_mp&#39;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
-    <span class="c1"># mark the MPP</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">v_mp</span><span class="p">],</span> <span class="p">[</span><span class="n">i_mp</span><span class="p">],</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Marcamos el mpp en el gráfico</span>
+    <span class="n">v_mp</span> <span class="o">=</span> <span class="n">curve_info</span><span class="p">[</span><span class="s1">&#39;v_mp&#39;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="c1"># Valor de V_mp en condiciones de operación</span>
+    <span class="n">i_mp</span> <span class="o">=</span> <span class="n">curve_info</span><span class="p">[</span><span class="s1">&#39;i_mp&#39;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span> <span class="c1"># Valor de I_mp en condiciones de operación</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">v_mp</span><span class="p">],</span> <span class="p">[</span><span class="n">i_mp</span><span class="p">],</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span> <span class="c1"># punto mpp</span>
 
+<span class="c1"># Etiqueta de los ejes y título del gráfico</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Voltaje [V]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Corriente [A]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Curva IV módulo - </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">pv_model</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Curva IV módulo </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">pv_model</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
