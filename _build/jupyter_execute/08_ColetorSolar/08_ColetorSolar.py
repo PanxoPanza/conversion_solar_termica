@@ -4,12 +4,6 @@
 # # Colectores solares estacionarios
 # 
 
-# In[ ]:
-
-
-
-
-
 # ## Introducción
 # 
 # Los colectores solares son un tipo especial de intercambiador de calor que absorbe la radiación solar, la convierte en calor y la transfiere a un fluido (usualmente agua, aire, o aceite). que fluye a través del colector.
@@ -109,7 +103,7 @@
 # - $G_\mathrm{DIF}$: Irradiación horizontal difusa (DIF) del sol (W/m$^2$)
 # - $R_\mathrm{B} = \frac{\cos\theta_i}{\cos\theta_s}$: Factor de inclinación de radiación directa.
 # - $\beta$: Ángulo cenital de inclinación del colector.
-# - $\rho_\mathrm{G}$ reflectancia del suelo
+# - $\rho_\mathrm{G}$ reflectancia del suelo (albedo)
 # - $(\tau\alpha)$: Fracción de la radiación absorbida por el colector. Los subíndices $\mathrm{B}$, $\mathrm{D}$ y $\mathrm{G}$, indican el valor correspondiente a la componente directa (*beam*), difusa y del suelo (*ground*).
 
 # >El parámetro $(\tau\alpha)$ debe ser considerado com una propiedad de la combinación *conbertura - absorbedor*, y no como el producto de la transmitancia y absortancia.

@@ -4,8 +4,23 @@
 # # Conversión Solar Fotovoltaica
 
 # ## Introducción
+
+# ### El contexto global de la tecnología fotovoltaica
 # 
-# Los paneles fotoltaicos son **dispositivos de estado sólido** que convierten radiación solar en electricidad, directamente.
+# 
+# 
+# **La tecnología fotovoltaica es el método más económico de conversión de energía solar a electricidad**. En algunos paises, con precios por kWh incluso menores que los combustibles fósiles.
+
+# In[1]:
+
+
+from IPython.display import display, HTML, IFrame
+display(IFrame('https://ourworldindata.org/grapher/levelized-cost-of-energy', '700px', '600px'))
+
+
+# ### Principales componentes de un sistema fotovoltaico
+# 
+# La tecnología fotoltaica esta basada en **dispositivos de estado sólido** que convierten, directamente, radiación solar en electricidad.
 # 
 
 # <img src="./images/from_pvcell_to_pvsystem.png" width="400" align= center>
@@ -20,20 +35,11 @@
 # 
 # <img src="./images/solar_cell.png" width="600" align= center>
 
-# - Dos capas de silicio cargado negativa y positivamente se encargan de producir voltaje a través del efecto fotoeléctrico
+# - Dos capas de semiconductor dopado negativa y positivamente, se encargan de producir voltaje a través del efecto fotoeléctrico
 # 
 # - La capa antireflectante tiene la función de mejorar la absorción de luz en el semiconductor
 # 
 # - Los contactos metálicos en la parte superior e inferior de la celda tienen la función de recolectar la corriente fotogenerada.
-
-# **La tecnología fotovoltaica es el método más económico de conversión de energía solar a electricidad**. En algunos paises, con precios por kWh incluso menores que los combustibles fósiles.
-
-# In[1]:
-
-
-from IPython.display import display, HTML, IFrame
-display(IFrame('https://ourworldindata.org/grapher/levelized-cost-of-energy', '700px', '600px'))
-
 
 # ## Fundamentos de la conversión fotovoltaica en semiconductores
 
@@ -136,10 +142,10 @@ YouTubeVideo('Coy-WRCfems', width=700, height=400)
 
 # Matemáticamente:
 # \begin{equation*}
-# J = J_\mathrm{dark} = J_0\left[\exp{\left(\frac{eV}{k_\mathrm{B}T}\right)} - 1 \right]
+# J = J_\mathrm{dark} = J_0\left[\exp{\left(\frac{q_eV}{k_\mathrm{B}T}\right)} - 1 \right]
 # \end{equation*}
 # 
-# donde $e$ es la carga elemental del electrón ($1.602\times10^{-19}~\mathrm{J/V}$), $k_B$ es la constante de Boltzmann, $T$ es la temperatura del diodo, y $J_0$ es la **densidad de corriente de saturación**. El valor de $J_0$ es pequeño y depende de la temperatura de la celda.
+# donde $q_e$ es la carga elemental del electrón ($1.602\times10^{-19}~\mathrm{J/V}$), $k_B$ es la constante de Boltzmann, $T$ es la temperatura del diodo, y $J_0$ es la **densidad de corriente de saturación**. El valor de $J_0$ es pequeño y depende de la temperatura de la celda.
 
 # Cuando la unión pn es iluminada, la corriente fotoinducida desplaza la curva J-V del diodo.
 
@@ -148,44 +154,85 @@ YouTubeVideo('Coy-WRCfems', width=700, height=400)
 # Matemáticamente:
 # 
 # \begin{equation*}
-# J = J_\mathrm{pv} - J_0\left[\exp{\left(\frac{qV}{k_\mathrm{B}T}\right)} - 1 \right]
+# J = J_0\left[\exp{\left(\frac{q_eV}{k_\mathrm{B}T}\right)} - 1 \right]  - J_\mathrm{L}
 # \end{equation*}
 # 
-# donde $J_\mathrm{pv}$ es la densidad corriente fotoinducida.
+# donde $J_\mathrm{L}$ es la densidad corriente fotoinducida.
+
+# Cabe destacar que la discución anterior está basada en parámetros por unidad de área. Generalmente, la información del fabricante de las celdas está dada en valores de corriente total, $I = AJ$, donde $A$ es la superficie expuesta del panel. 
+
+# ### Pérdidas de energía en una celda fotovoltaica
+# 
+# El comportamiento descrito anteriormente, representa una celda (of fotodiodo) idealizada. En la práctica, la celda presenta pérdidas eléctricas asociadas a su fabricación, las cuales diferenciamos mediante dos resistencias:
+
+# - **Resistencia en serie ($R_\mathrm{s}$)**, representando lás pérdidas por resistencia en el semiconductor en la interface de los contactos eléctricos, y en los contactos.
+# 
+# - **Resistencia shunt ($R_\mathrm{sh}$)**, representando lás pérdidas por derivación de corriente a lo largo de grietas en el material, o en los bordes de la celda.
+
+# El efecto de ambas resistencias en la forma de la curva I-V se ilustra en la figura.
+
+# <img src="./images/shunt_and_series_resistance.png" width="700" align= center>
+
+# En la práctica $R_\mathrm{s}$ debe ser lo más baja posible, y $R_\mathrm{sh}$ debe ser lo más alta posible.
+
+# ### El modelo del diodo único (SDM)
+# 
+# Podemos resumir todos los conceptos revisados anteriormente mediante un circuito eléctrico equivalente, como:
+
+# 
+# 
+# <img src="./images/equivalent_pv-cell_circuit.png" width="350" align= center>
+
+# En base a este circuito, y considerando la corriente $I_L$ en sentido positivo, tenemos que la corriente generada por la celda, $I$, es: 
+# 
+# \begin{equation*}
+# I = I_L - I_\mathrm{dark} - I_\mathrm{sh}
+# \end{equation*}
+# 
+# donde $I_\mathrm{sh} = V_a/R_\mathrm{sh}$ representa las pérdidas por derivación, con $V_a = V + IR_\mathrm{s}$, y parámetro $I_\mathrm{dark} = I_0\left[\exp\left(\frac{q_eV_a}{k_\mathrm{B}T}\right) - 1 \right]$
+
+# Explicitamente, el resultado es un modelo definido por 5 parámetros ($I_L$, $I_0$, $R_\mathrm{s}$, $R_\mathrm{sh}$ y $n$), denominado **modelo de diodo único o SDM:**
+# 
+# \begin{equation*} I = I_L - I_0 \left[ \exp \left( \frac{V + I R_\mathrm{s}}{n V_T} \right) - 1 \right] - \frac{V + I R_\mathrm{s}}{R_\mathrm{sh}},
+# \end{equation*}
+# 
+# donde $n$ es el factor de idealidad del diodo y $V_T = k_\mathrm{B}T/q_e$ es el *voltaje térmico*.
 
 # ### Caracterización de una celda fotoltaica
 # 
-# Debido a que la curva J-V anterior estaba basada en un diodo, la corriente es considerada positiva en la dirección del sesgo hacia adelante. En el caso de una celda fotovoltaica, el objetivo es generar corriente en el sentido contrario. Así, la curva J-V se grafica en sentido inverso:
+# En base al SDM, la curva I-V (o J-V) de una celda fotovoltaica tiene la siguiente forma:
 
 # <img src="./images/JV-curve_pv-cell.png" width="400" align= center>
 
-# - La corriente de corto circuito $J_\mathrm{sc}$ representa la máxima densidad de corriente que puede entregar la celda sin carga eléctrica ($V_\mathrm{sc} = 0$)
+# De esta curva distinguimos:
 # 
-# - El voltaje en circuito abierto $V_\mathrm{oc}$ representa el máximo voltage que puede entregar la celda
-# ($J_\mathrm{oc} = 0$)
+# - Corriente de corto circuito $I_\mathrm{sc}$:   máxima corriente que puede entregar la celda sin carga eléctrica ($V_\mathrm{sc} = 0$)
+# 
+# - Voltaje en circuito abierto $V_\mathrm{oc}$: máximo voltage que puede entregar la celda
+# ($I_\mathrm{oc} = 0$)
 
-# Si los términales de la celda son conectados a una resistencia $R$, el punto de operación está dado por la intersección de la curva J-V y la curva $J = V/R$.
+# Si los términales de la celda son conectados a una resistencia $R$, el punto de operación está dado por la intersección de la curva I-V y la curva $I = V/R$.
 
-# La densidad de potencia de la celda, $P$, está dada por $P= JV$
+# La potencia de la celda, $P$, está dada por $P= IV$
 
 # <img src="./images/PV-curve_pv-cell.png" width="400" align= center>
 
-# Como podemos ver en la curva, entre los valores de $V_\mathrm{oc}$ y $J_\mathrm{sc}$ la potencia entregada por la celda aumenta hasta un valor máximo. 
+# Como podemos ver en la curva, entre los valores de $V_\mathrm{oc}$ y $I_\mathrm{sc}$ la potencia entregada por la celda aumenta hasta un valor máximo. 
 
 # Este punto representa la condición donde el desempeño de la celda es óptimo.
 
 # A partir de esto, definimos el **factor de llenado (*fill factor*), $\mathrm{FF}$** como:
 # 
 # \begin{equation*}
-# \mathrm{FF} = \frac{J_\mathrm{max}V_\mathrm{max}}{J_\mathrm{sc}V_\mathrm{oc}}
+# \mathrm{FF} = \frac{I_\mathrm{max}V_\mathrm{max}}{I_\mathrm{sc}V_\mathrm{oc}}
 # \end{equation*}
 
-# Este es un parámetro de diseño de la celda. A través de este parámetro podemos determinar la densidad de potencia máxima del sistema como $P_\mathrm{max} = \mathrm{FF}J_\mathrm{sc}V_\mathrm{oc}$
+# Este es un parámetro de diseño de la celda. A través de este parámetro podemos determinar la densidad de potencia máxima del sistema como $P_\mathrm{max} = \mathrm{FF}I_\mathrm{sc}V_\mathrm{oc}$
 
 # Otro parámetro de interés es la máxima eficiencia de la celda, definida por:
 # 
 # \begin{equation*}
-# \eta_\mathrm{max} = \frac{J_\mathrm{max}V_\mathrm{max}}{G_t}
+# \eta_\mathrm{max} = \frac{I_\mathrm{max}V_\mathrm{max}}{G_t A}
 # \end{equation*}
 
 # En la práctica, estas curvas se obtienen mediante un ensayo de cada panel en condiciones estándar. Esto es, radiación según AM1.5 y temperatura 25°C.
@@ -197,9 +244,7 @@ from IPython.display import YouTubeVideo
 YouTubeVideo('N4n-SiMjqqM', width=700, height=400,  start=17, end=179)
 
 
-# Cabe destacar que la discución anterior está basada en parámetros por unidad de área. Generalmente, la información del fabricante está dada en valores de corriente total, $I = AJ$, donde $A$ es la superficie expuesta del panel. 
-
-# De forma similar, los valores de $P_\mathrm{max}$ se entregan en valores de watts. En este caso, es común utilizar la unidad $\mathrm{Wp}$ o *watt peak*, que representa la potencia en el punto de operación óptimo del panel
+# De forma similar, los valores de $P_\mathrm{max}$ se entregan unidades, $\mathrm{Wp}$ o *watt peak*, que representa la potencia en el punto de operación óptimo del panel
 
 # La siguiente tabla, muestra información de catálogo de un [panel fotovoltaico del fabricante Sunceco](https://sunceco.com/solar-modules/).
 
@@ -232,39 +277,6 @@ YouTubeVideo('N4n-SiMjqqM', width=700, height=400,  start=17, end=179)
 # - 42% para celdas de doble unión, y 49% para celdas de triple unión
 # 
 # - 65% para celdas de 5 uniones con concentración de radiación
-
-# ### Pérdidas de energía en una celda fotovoltaica
-
-# Además de las pérdidas estimadas mediante la eficiencia termodinámica, una celda presenta pérdidas de energía eléctrica debido a aspectos asociados a la fabricación. Podemos representar las pérdidas en una celda mediante dos resistencias:
-
-# <img src="./images/equivalent_pv-cell_circuit.png" width="350" align= center>
-
-# - **Resistencia en serie ($R_\mathrm{s}$)**, representando lás pérdidas por resistencia en el semiconductor en la interface de los contactos eléctricos, y en los contactos.
-# 
-# - **Resistencia shunt ($R_\mathrm{sh}$)**, representando lás pérdidas por derivación de corriente a lo largo de grietas en el material, o en los bordes de la celda.
-
-# Ambas series afectan el desempeño de la celda, disminuyendo la potencia máxima.
-
-# <img src="./images/shunt_and_series_resistance.png" width="400" align= center>
-
-# En la práctica $R_\mathrm{s}$ debe ser lo más baja posible, y $R_\mathrm{sh}$ debe ser lo más alta posible.
-
-# ### El modelo del diodo único (SDM)
-
-# Considerando todas las pérdidas que ocurren en una celda pv, podemos generar un modelo para la curva IV. Este modelo se basa en el circuito eléctrico descrito anteriormente, y se denomina **"modelo de diodo único" o SDM**:
-# 
-# \begin{equation*} I = I_L - I_o \left[ \exp \left( \frac{V + I R_\mathrm{s}}{n V_T} \right) - 1 \right] - \frac{V + I R_\mathrm{s}}{R_\mathrm{sh}},
-# \end{equation*}
-
-# donde:
-# - $I_L$: es la corriente fotoinducida (análogo a $I_\mathrm{ph}$)
-# - $I_o$: es la corriente de saturación
-# - $R_\mathrm{sh}$: es la resistancia en derivación
-# - $R_\mathrm{s}$: es la resistencia en serie
-# - $n$: es el factor de idealidad del diodo
-# - $V_T = k_\mathrm{B}/q_e$: es el *voltaje térmico* ($q_e = 1.602\times10^{-19}~\mathrm{C}$ es la carga elemental)
-
-# **Con excepción de $V_T$, los otros 5 parámetros definen el modelo SDM.**
 
 # ### Fabricación de celdas fotovoltaicas
 
@@ -310,7 +322,7 @@ YouTubeVideo('2iRfbWOJtog', width=700, height=400)
 
 # <img src="./images/pv-module_assembly.png" width="350" align= center>
 
-# - El **encapsulante** tiene como fin adherir las celdas con la superficie superior e inferior del módulo. Comúnmente se utiliza EVA (acertato de etilo vinilo) 
+# - El **encapsulante** se utiliza para adherir las celdas con la superficie superior e inferior del módulo. Comúnmente se utiliza EVA (acertato de etilo vinilo) 
 # 
 # - Un **vidrio con bajo nivel de hierro (*low-Fe glass*)** se ubica en la parte superior para proteger el módulo.
 # 
@@ -373,7 +385,7 @@ YouTubeVideo('2iRfbWOJtog', width=700, height=400)
 # 
 # - Los coeficientes de pérdida de eficiencia son 0.3 - 0.4 %/°C
 
-# ## Situación de la tecnología fotovoltaica
+# ## Evolución del mercado de tecnologías fotovoltaica
 # 
 # La siguiente figura muestra la produción de paneles fotovoltaicos por año (fuente: [Fraunhofer Institute for Solar Energy Systems](https://www.ise.fraunhofer.de/content/dam/ise/de/documents/publications/studies/Photovoltaics-Report.pdf))
 

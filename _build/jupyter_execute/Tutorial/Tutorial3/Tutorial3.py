@@ -30,7 +30,7 @@ if importlib.util.find_spec('timezonefinder') is None:
 # Antes de cualquier estudio debemos definir la localización y tiempo de estudio.
 
 # ### Latitud, longitud y altitud del sitio
-# Como sugerencia, recomendamos usar [google earth](https://www.google.es/intl/es/earth/index.html). para detetrminar las coordenadas y altitud del sitio. Esta información  se encuentra en la esquina inferior derecha. Otra alternativa es revisar las coordenadas en la dirección web del sitio.
+# Como sugerencia, recomendamos usar [google earth](https://www.google.es/intl/es/earth/index.html). para determinar las coordenadas y altitud del sitio. Esta información  se encuentra en la esquina inferior derecha. Otra alternativa es revisar las coordenadas en la dirección web del sitio.
 # 
 # Por ejemplo, consideramos las coordenadas del [Edificio A del campus de Peñalolén de la Universidad Adolfo Ibañez](https://earth.google.com/web/search/Universidad+Adolfo+Ib%c3%a1%c3%b1ez+-+Avenida+Diagonal+Las+Torres,+Santiago,+Pe%c3%b1alol%c3%a9n/@-33.48459063,-70.51846296,890.86619233a,397.56893117d,35y,0h,0t,0r/data=CmMaORIzCiUweDk2NjJkMjE5NzFkMWM0NTc6MHhhMmQwYWVmZDlhMDcwZDA2KgpFZGlmaWNpbyBBGAIgASImCiQJJzw65qu9QMARKyzNGmi-QMAZprJq4cKgUcAhENuZjZuhUcA6AwoBMA).
 
