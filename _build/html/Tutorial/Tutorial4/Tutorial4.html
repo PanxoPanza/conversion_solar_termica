@@ -2050,10 +2050,10 @@ G_\mathrm{eff} = G_\mathrm{DNI}\cos\theta_i + G_\mathrm{DHI}
 \end{equation*}\]</div>
 <p>Para determinar el <strong>ángulo de incidencia (<em>angle of incidence</em> o AOI)</strong>, usamos la función <code class="docutils literal notranslate"><span class="pre">aoi</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">pvlib.irradiance</span></code>. Tal como se discutió en la <span class="xref myst">unidad 7</span>, el ángulo de incidencia depende de los ángulos de inclinación del módulo y del sol. En la función <code class="docutils literal notranslate"><span class="pre">aoi</span></code>, estos parámetros son:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">surface_tilt</span></code>: ángulo cenital del módulo</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">surface_azimuth</span></code>: ángulo acimutal del módulo</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">solar_zenith</span></code>: ángulo cenital solar</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">solar_azimuth</span></code>: ángulo acimutal solar</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">surface_tilt</span></code>: ángulo cenital del módulo (en grados)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">surface_azimuth</span></code>: ángulo acimutal del módulo (en grados)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">solar_zenith</span></code>: ángulo cenital solar (en grados)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">solar_azimuth</span></code>: ángulo acimutal solar (en grados)</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2328,7 +2328,8 @@ T_\mathrm{cell} &amp;= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
 </section>
 <section id="caracterizacion-curva-iv-pvlib-pvsystem-singlediode">
 <h3>Caracterización curva IV (<code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.singlediode</span></code>)<a class="headerlink" href="#caracterizacion-curva-iv-pvlib-pvsystem-singlediode" title="Permalink to this heading">#</a></h3>
-<p>Una vez determinados los parámetros <code class="docutils literal notranslate"><span class="pre">IL</span></code>, <code class="docutils literal notranslate"><span class="pre">I0</span></code>, <code class="docutils literal notranslate"><span class="pre">Rs</span></code>, <code class="docutils literal notranslate"><span class="pre">Rsh</span></code> y <code class="docutils literal notranslate"><span class="pre">nNsVth</span></code> en las condiciones de operación, lo siguiente es resolver el SDM para caracterizar la curva IV del módulo en operación. Esto lo ejecutamos mediante la función <code class="docutils literal notranslate"><span class="pre">singlediode</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">pvlib.pvystem</span></code>.</p>
+<p>Una vez determinados los parámetros <code class="docutils literal notranslate"><span class="pre">IL</span></code>, <code class="docutils literal notranslate"><span class="pre">I0</span></code>, <code class="docutils literal notranslate"><span class="pre">Rs</span></code>, <code class="docutils literal notranslate"><span class="pre">Rsh</span></code> y <code class="docutils literal notranslate"><span class="pre">nNsVth</span></code> en las condiciones de operación, lo siguiente es resolver el SDM para caracterizar la curva IV del módulo en operación. Es decir, determinar <span class="math notranslate nohighlight">\(V_\mathrm{oc}\)</span>, <span class="math notranslate nohighlight">\(I_\mathrm{sc}\)</span>, <span class="math notranslate nohighlight">\(V_\mathrm{mpp}\)</span>, <span class="math notranslate nohighlight">\(I_\mathrm{mpp}\)</span>, etc.</p>
+<p>Para esto usamos la función <code class="docutils literal notranslate"><span class="pre">singlediode</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">pvlib.pvystem</span></code>.</p>
 <p>Los parámetros de entrada de <code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.singlediode</span></code> son:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">photocurrent</span></code>: corriente fotoinducida</p></li>
@@ -2438,7 +2439,7 @@ T_\mathrm{cell} &amp;= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
 </table>
 </div></div></div>
 </div>
-<p>Suponiendo que el módulo opera en el punto mpp (utilizando un mpp tracker, por ejemplo), tenemos que entre la hora 0 y 3, el módulo entregará:</p>
+<p>Suponiendo que el módulo opera en el punto mpp (utilizando un mpp tracker, por ejemplo), tenemos que entre la hora 0 y 3 la energía total entregada por el módulo está dada por la suma de los valores <code class="docutils literal notranslate"><span class="pre">p_mp</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Energía total entregada por el módulo: </span><span class="si">%.3f</span><span class="s1"> Wh&#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">curve_info</span><span class="p">[</span><span class="s1">&#39;p_mp&#39;</span><span class="p">]))</span>
@@ -2471,7 +2472,7 @@ T_\mathrm{cell} &amp;= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
 </div>
 </div>
 </div>
-<p>Luego determinamos la corriente en base al SDM y los parámetros de operación <code class="docutils literal notranslate"><span class="pre">IL</span></code>, <code class="docutils literal notranslate"><span class="pre">I0</span></code>, <code class="docutils literal notranslate"><span class="pre">Rs</span></code>, <code class="docutils literal notranslate"><span class="pre">Rsh</span></code> y <code class="docutils literal notranslate"><span class="pre">nNsVth</span></code>.</p>
+<p>Luego determinamos la corriente, <span class="math notranslate nohighlight">\(I\)</span>, usando los parámetros <code class="docutils literal notranslate"><span class="pre">IL</span></code>, <code class="docutils literal notranslate"><span class="pre">I0</span></code>, <code class="docutils literal notranslate"><span class="pre">Rs</span></code>, <code class="docutils literal notranslate"><span class="pre">Rsh</span></code> y <code class="docutils literal notranslate"><span class="pre">nNsVth</span></code> en operación, obtenidos anteriormente por <code class="docutils literal notranslate"><span class="pre">calcparams_cec</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">pvlib</span><span class="o">.</span><span class="n">pvsystem</span><span class="o">.</span><span class="n">i_from_v</span><span class="p">(</span>
