@@ -1,49 +1,61 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>7. Radiación Solar &#8212; MEC501 - Manejo y conversión solar</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/custom_edits.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -53,56 +65,97 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '07_Radiación_solar/07_Radiación_solar';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="8. Colectores solares estacionarios" href="../08_ColetorSolar/08_ColetorSolar.html" />
     <link rel="prev" title="6. Radiación Térmica" href="../06_RadiacionTermica/06_RadiacionTermica.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">MEC501 - Manejo y conversión solar</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">MEC501 - Manejo y conversión solar</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -111,500 +164,256 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Introducción
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introducción</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../00_introduccion/00_introduccion.html">
-   Introducción al curso
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../00_introduccion/00_introduccion.html">Introducción al curso</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Parte 1 - Fundamentos del transporte de fotones
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 1 - Fundamentos del transporte de fotones</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../01_ondas_electromagneticas/01_ondas_electromagneticas.html">
-   1. La radiación como un fenómeno electromagnético
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02_ondas_EM_en_la_materia/02_ondas_EM_en_la_materia.html">
-   2. Ondas electromagnéticas en la materia
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03_Interacci%C3%B3n_materia-luz/03_Interacci%C3%B3n_materia-luz.html">
-   3. Interacción materia-luz
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04_Scattering/04_Scattering.html">
-   4. Scattering electromagnético
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../05_TransporteRadiativo/05_TransporteRadiativo.html">
-   5. Transporte Radiativo
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../01_ondas_electromagneticas/01_ondas_electromagneticas.html">1. La radiación como un fenómeno electromagnético</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_ondas_EM_en_la_materia/02_ondas_EM_en_la_materia.html">2. Ondas electromagnéticas en la materia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Interacci%C3%B3n_materia-luz/03_Interacci%C3%B3n_materia-luz.html">3. Interacción materia-luz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_Scattering/04_Scattering.html">4. Scattering electromagnético</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_TransporteRadiativo/05_TransporteRadiativo.html">5. Transporte Radiativo</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Parte 2 - Diseño de sistemas de manejo y conversión solar
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 2 - Diseño de sistemas de manejo y conversión solar</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../06_RadiacionTermica/06_RadiacionTermica.html">
-   6. Radiación Térmica
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   7. Radiación Solar
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../08_ColetorSolar/08_ColetorSolar.html">
-   8. Colectores solares estacionarios
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../06_RadiacionTermica/06_RadiacionTermica.html">6. Radiación Térmica</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">7. Radiación Solar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08_ColetorSolar/08_ColetorSolar.html">8. Colectores solares estacionarios</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Parte 3 - Aplicaciones
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 3 - Aplicaciones</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../09_CentralTermoSolar/09_CentralTermoSolar.html">
-   9. Central Termosolar
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../10_SolarFotovoltaica/10_SolarFotovoltaica.html">
-   10. Conversión Solar Fotovoltaica
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio.html">
-   11. Control pasivo de radiación solar en edificaciones
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../09_CentralTermoSolar/09_CentralTermoSolar.html">9. Central Termosolar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10_SolarFotovoltaica/10_SolarFotovoltaica.html">10. Conversión Solar Fotovoltaica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio.html">11. Control pasivo de radiación solar en edificaciones</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Apéndice
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndice</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Apendice/Espectro_electromagnetico/Espectro_electromagnetico.html">
-   Espectro electromagnético
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Apendice/Teoria_del_color/Teoria_del_color.html">
-   Teoria del color
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Tutorial/Intro.html">
-   Tutoriales
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Tutorial/Tutorial1/Tutorial1.html">
-     Tutorial 1 - Modelos ópticos
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Tutorial/Tutorial2/Tutorial2.html">
-     Tutorial 2 - Espectros de referencia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Tutorial/Tutorial3/Tutorial3.html">
-     Tutorial 3 - Datos solares y climatológicos
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Tutorial/Tutorial4/Tutorial4.html">
-     Tutorial 4 - Modelación módulo PV
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../Apendice/Espectro_electromagnetico/Espectro_electromagnetico.html">Espectro electromagnético</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Apendice/Teoria_del_color/Teoria_del_color.html">Teoria del color</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorial/Intro.html">Tutoriales</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/Tutorial1/Tutorial1.html">Tutorial 1 - Modelos ópticos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/Tutorial2/Tutorial2.html">Tutorial 2 - Espectros de referencia</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/Tutorial3/Tutorial3.html">Tutorial 3 - Datos solares y climatológicos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial/Tutorial4/Tutorial4.html">Tutorial 4 - Modelación módulo PV</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://colab.research.google.com/github/PanxoPanza/conversion_solar_termica/blob/main/07_Radiación_solar/07_Radiación_solar.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/PanxoPanza/conversion_solar_termica/blob/main/07_Radiación_solar/07_Radiación_solar.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_colab.png">
   </span>
-<span class="headerbtn__text-container">Colab</span>
+<span class="btn__text-container">Colab</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/07_Radiación_solar/07_Radiación_solar.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/07_Radiación_solar/07_Radiación_solar.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#angulos-solares">
-   7.1. Ángulos solares
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#caracteristicas-de-la-orbita-de-la-tierra">
-     7.1.1. Características de la órbita de la tierra
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#trayectoria-del-sol">
-     7.1.2. Trayectoria del sol
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#posicion-del-sol-en-coordenadas-ecuatoriales">
-     7.1.3. Posición del sol en coordenadas ecuatoriales
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#posicion-del-sol-respecto-al-plano-horizontal-local">
-     7.1.4. Posición del sol respecto al plano horizontal local
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#angulo-de-incidencia">
-     7.1.5. Ángulo de incidencia
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#radiacion-solar-disponible">
-   7.2. Radiación solar disponible
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#constante-solar">
-     7.2.1. Constante solar
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#atenuacion-atmosferica">
-     7.2.2. Atenuación atmosférica
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#componentes-de-la-radiacion-solar">
-   7.3. Componentes de la radiación solar
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instrumentos-de-medicion-de-radiacion-solar">
-   7.4. Instrumentos de medición de radiación solar
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#piranometro">
-     7.4.1. Piranómetro
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pirheliometro">
-     7.4.2. Pirheliómetro
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mapas-solares">
-   7.5. Mapas solares
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#referencias">
-   7.6. Referencias
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Radiación Solar</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#angulos-solares">
-   7.1. Ángulos solares
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#caracteristicas-de-la-orbita-de-la-tierra">
-     7.1.1. Características de la órbita de la tierra
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#trayectoria-del-sol">
-     7.1.2. Trayectoria del sol
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#posicion-del-sol-en-coordenadas-ecuatoriales">
-     7.1.3. Posición del sol en coordenadas ecuatoriales
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#posicion-del-sol-respecto-al-plano-horizontal-local">
-     7.1.4. Posición del sol respecto al plano horizontal local
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#angulo-de-incidencia">
-     7.1.5. Ángulo de incidencia
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#radiacion-solar-disponible">
-   7.2. Radiación solar disponible
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#constante-solar">
-     7.2.1. Constante solar
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#atenuacion-atmosferica">
-     7.2.2. Atenuación atmosférica
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#componentes-de-la-radiacion-solar">
-   7.3. Componentes de la radiación solar
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instrumentos-de-medicion-de-radiacion-solar">
-   7.4. Instrumentos de medición de radiación solar
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#piranometro">
-     7.4.1. Piranómetro
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pirheliometro">
-     7.4.2. Pirheliómetro
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mapas-solares">
-   7.5. Mapas solares
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#referencias">
-   7.6. Referencias
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Radiación Solar</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angulos-solares">7.1. Ángulos solares</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-la-orbita-de-la-tierra">7.1.1. Características de la órbita de la tierra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trayectoria-del-sol">7.1.2. Trayectoria del sol</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-del-sol-en-coordenadas-ecuatoriales">7.1.3. Posición del sol en coordenadas ecuatoriales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-del-sol-respecto-al-plano-horizontal-local">7.1.4. Posición del sol respecto al plano horizontal local</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angulo-de-incidencia">7.1.5. Ángulo de incidencia</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radiacion-solar-disponible">7.2. Radiación solar disponible</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constante-solar">7.2.1. Constante solar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atenuacion-atmosferica">7.2.2. Atenuación atmosférica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#componentes-de-la-radiacion-solar">7.3. Componentes de la radiación solar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instrumentos-de-medicion-de-radiacion-solar">7.4. Instrumentos de medición de radiación solar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piranometro">7.4.1. Piranómetro</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pirheliometro">7.4.2. Pirheliómetro</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapas-solares">7.5. Mapas solares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">7.6. Referencias</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="radiacion-solar">
-<h1><span class="section-number">7. </span>Radiación Solar<a class="headerlink" href="#radiacion-solar" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">7. </span>Radiación Solar<a class="headerlink" href="#radiacion-solar" title="Permalink to this heading">#</a></h1>
 <section id="angulos-solares">
-<h2><span class="section-number">7.1. </span>Ángulos solares<a class="headerlink" href="#angulos-solares" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.1. </span>Ángulos solares<a class="headerlink" href="#angulos-solares" title="Permalink to this heading">#</a></h2>
 <section id="caracteristicas-de-la-orbita-de-la-tierra">
-<h3><span class="section-number">7.1.1. </span>Características de la órbita de la tierra<a class="headerlink" href="#caracteristicas-de-la-orbita-de-la-tierra" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.1.1. </span>Características de la órbita de la tierra<a class="headerlink" href="#caracteristicas-de-la-orbita-de-la-tierra" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>La órbita de la tierra aproximadamente circular, con una pequeña excentricidad (<span class="math notranslate nohighlight">\(e = 1.673\)</span>%).</p></li>
 <li><p>La distancia entre el sol y la tierra está dada por: <span class="math notranslate nohighlight">\(d_\mathrm{e-s} = 1.495\times 10^{11}~\mathrm{m}\pm 1.7\)</span>%.</p></li>
@@ -613,12 +422,12 @@ title="Print to PDF"
 <a class="reference internal image-reference" href="../_images/earth_orbit.png"><img alt="../_images/earth_orbit.png" class="align-center" src="../_images/earth_orbit.png" style="width: 600px;" /></a>
 </section>
 <section id="trayectoria-del-sol">
-<h3><span class="section-number">7.1.2. </span>Trayectoria del sol<a class="headerlink" href="#trayectoria-del-sol" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.1.2. </span>Trayectoria del sol<a class="headerlink" href="#trayectoria-del-sol" title="Permalink to this heading">#</a></h3>
 <p>A raíz de estas caracteristicas, <strong>la trayectoria del sol vista desde la tierra forma un arco</strong>. En el hemisferio sur de la tierra, este arco aparece desplazado hacia el norte(sur) del eje Este-Oeste en el solsticio del 21 de junio (21 de diciembre). En el hemisferio norte ocurre lo opuesto. Durante los equinoccios el arco está centrado en el eje Este-Oeste independiente del lado del hemisferio.</p>
 <a class="reference internal image-reference" href="../_images/sun_trayectory.png"><img alt="../_images/sun_trayectory.png" class="align-center" src="../_images/sun_trayectory.png" style="width: 600px;" /></a>
 </section>
 <section id="posicion-del-sol-en-coordenadas-ecuatoriales">
-<h3><span class="section-number">7.1.3. </span>Posición del sol en coordenadas ecuatoriales<a class="headerlink" href="#posicion-del-sol-en-coordenadas-ecuatoriales" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.1.3. </span>Posición del sol en coordenadas ecuatoriales<a class="headerlink" href="#posicion-del-sol-en-coordenadas-ecuatoriales" title="Permalink to this heading">#</a></h3>
 <p>Utilizando el plano ecuatorial como referencia, podemos definir la posición del sol respecto a dos ángulos, <strong>declinación solar</strong> y <strong>ascención recta</strong></p>
 <a class="reference internal image-reference" href="../_images/solar_position_ecuator.png"><img alt="../_images/solar_position_ecuator.png" class="align-center" src="../_images/solar_position_ecuator.png" style="width: 400px;" /></a>
 <ul class="simple">
@@ -633,7 +442,7 @@ title="Print to PDF"
 <a class="reference internal image-reference" href="../_images/declination_year.png"><img alt="../_images/declination_year.png" class="align-center" src="../_images/declination_year.png" style="width: 500px;" /></a>
 </section>
 <section id="posicion-del-sol-respecto-al-plano-horizontal-local">
-<h3><span class="section-number">7.1.4. </span>Posición del sol respecto al plano horizontal local<a class="headerlink" href="#posicion-del-sol-respecto-al-plano-horizontal-local" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.1.4. </span>Posición del sol respecto al plano horizontal local<a class="headerlink" href="#posicion-del-sol-respecto-al-plano-horizontal-local" title="Permalink to this heading">#</a></h3>
 <p>Una forma más intuitiva de definir la posición del sol, es utilizando el plano horizontal local. En este caso, caracterizamos la posición del sol respecto a los ángulos, <strong>elevación solar (<span class="math notranslate nohighlight">\(\alpha_\mathrm{s}\)</span>)</strong> y <strong>acimut solar (<span class="math notranslate nohighlight">\(\phi_\mathrm{s}\)</span>)</strong>.</p>
 <a class="reference internal image-reference" href="../_images/solar_position_horizon.png"><img alt="../_images/solar_position_horizon.png" class="align-center" src="../_images/solar_position_horizon.png" style="width: 350px;" /></a>
 <ul class="simple">
@@ -646,28 +455,28 @@ title="Print to PDF"
 <p>En este curso utilizaremos <span class="math notranslate nohighlight">\(\alpha_\mathrm{s}\)</span> y <span class="math notranslate nohighlight">\(\phi_\mathrm{s}\)</span> directamente utilizando <a class="reference external" href="https://www.suncalc.org/">fuentes disponibles en línea</a>.</p>
 </section>
 <section id="angulo-de-incidencia">
-<h3><span class="section-number">7.1.5. </span>Ángulo de incidencia<a class="headerlink" href="#angulo-de-incidencia" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.1.5. </span>Ángulo de incidencia<a class="headerlink" href="#angulo-de-incidencia" title="Permalink to this heading">#</a></h3>
 <p>El ángulo de incidencia del sol, <span class="math notranslate nohighlight">\(\theta_\mathrm{i}\)</span>, corresponde al ángulo cenital relativo a la normal de una superficie. En la siguiente figura se muestra una superficie inclinada con ángulo cenital <span class="math notranslate nohighlight">\(\beta\)</span> y ángulo acimutal <span class="math notranslate nohighlight">\(\Phi\)</span> respecto a la dirección normal al plano horizontal</p>
 <a class="reference internal image-reference" href="../_images/incidence_angle.png"><img alt="../_images/incidence_angle.png" class="align-center" src="../_images/incidence_angle.png" style="width: 650px;" /></a>
 <p>Considerando la posición del sol relativa al plano horizontal, el ángulo de incidencia es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-69dc2241-c8e8-4d7d-a4f1-f0cfbcc4ef8f">
-<span class="eqno">(7.1)<a class="headerlink" href="#equation-69dc2241-c8e8-4d7d-a4f1-f0cfbcc4ef8f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c87efe05-22bc-4cfb-89d7-60c415bffb6c">
+<span class="eqno">(7.1)<a class="headerlink" href="#equation-c87efe05-22bc-4cfb-89d7-60c415bffb6c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \cos\theta_i = \cos\theta_\mathrm{s}\cos\beta+\sin\theta_\mathrm{s}\sin\beta\cos(\phi_\mathrm{s} - \Phi)
 \end{equation}\]</div>
 <p>Para una superficie en posición horizontal, <span class="math notranslate nohighlight">\(\theta_\mathrm{i} = \theta_\mathrm{s}\)</span></p>
 </section>
 </section>
 <section id="radiacion-solar-disponible">
-<h2><span class="section-number">7.2. </span>Radiación solar disponible<a class="headerlink" href="#radiacion-solar-disponible" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.2. </span>Radiación solar disponible<a class="headerlink" href="#radiacion-solar-disponible" title="Permalink to this heading">#</a></h2>
 <p>La radiación solar puede ser estimada como un cuerpo negro a temperatura <span class="math notranslate nohighlight">\(T_\mathrm{sun} = 5777 K\)</span>. Sin embargo, la radiación solar es el resultado de la emisión de muchas capas con diferente composición, y cuya temperatura puede alcanzar más de 100,000 K.</p>
 <a class="reference internal image-reference" href="../_images/sun_structure.png"><img alt="../_images/sun_structure.png" class="align-center" src="../_images/sun_structure.png" style="width: 400px;" /></a>
 <section id="constante-solar">
-<h3><span class="section-number">7.2.1. </span>Constante solar<a class="headerlink" href="#constante-solar" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.2.1. </span>Constante solar<a class="headerlink" href="#constante-solar" title="Permalink to this heading">#</a></h3>
 <p>Consideremos el sol como un cuerpo negro a temperatura <span class="math notranslate nohighlight">\(T_\mathrm{sun} = 5777\)</span> K.</p>
 <p>El calor total por radiación emitido por el sol es <span class="math notranslate nohighlight">\(\pi D_\mathrm{sun}^2 E_\mathrm{sun}\)</span>, donde <span class="math notranslate nohighlight">\(D_\mathrm{sun} = 1.39\times 10^9\)</span> m es el diámetro del sol.</p>
 <p>Considerando la distancia entre el sol y la tierra, <span class="math notranslate nohighlight">\(d_\mathrm{e-s} = 1.495\times 10^{11}\)</span> m, el flujo de radiación sobre la superficie de la tierra, <span class="math notranslate nohighlight">\(G_\mathrm{sc}\)</span>, es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4417526c-90d1-4d3c-850e-fea4da6ddd82">
-<span class="eqno">(7.2)<a class="headerlink" href="#equation-4417526c-90d1-4d3c-850e-fea4da6ddd82" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5bd6e5d8-4f7b-4863-b196-e8fb55ef9fb1">
+<span class="eqno">(7.2)<a class="headerlink" href="#equation-5bd6e5d8-4f7b-4863-b196-e8fb55ef9fb1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 G_\mathrm{sc} = \sigma T_\mathrm{sun}^4 \frac{\pi D_\mathrm{sun}^2}{4\pi d_\mathrm{e-s}^2}=1367\frac{\mathrm{W}}{\mathrm{m}^2}
 \end{equation}\]</div>
 <p>La <strong>constante solar <span class="math notranslate nohighlight">\(G_\mathrm{sc} = 1367\)</span> W/m<span class="math notranslate nohighlight">\(^2\)</span></strong> es el flujo de energía sobre una superficie perpendicular a los rayos solares y a la distancia media entre la tierra y el sol. En otras palabras, corresponde <strong>radiación extraterrestre del sol</strong> que incide sobre 1 m<span class="math notranslate nohighlight">\(^2\)</span> en la tierra.</p>
@@ -675,24 +484,24 @@ G_\mathrm{sc} = \sigma T_\mathrm{sun}^4 \frac{\pi D_\mathrm{sun}^2}{4\pi d_\math
 <p>La siguiente figura ilustra la variación espectral de la constante solar, según reportado en la norma <a class="reference external" href="https://webstore.ansi.org/Standards/ASTM/ASTME49000a2019?gclid=Cj0KCQjwnP-ZBhDiARIsAH3FSRdkNPhMjh2Ru8irt-P5F2A2SPQYGY5liGc31hHI6lPK7VyEygeZHy4aAh99EALw_wcB">ASTM E-490</a></p>
 <a class="reference internal image-reference" href="../_images/extraterrestial_solar_radiation.png"><img alt="../_images/extraterrestial_solar_radiation.png" class="align-center" src="../_images/extraterrestial_solar_radiation.png" style="width: 600px;" /></a>
 <p>Debido a la excentricidad de la órbita de la tierra, la constante solar varía alrededor de un 3.3% largo del año. Para un día <span class="math notranslate nohighlight">\(N\)</span> de un total de 365, la constante solar está dada por:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f7e38391-28b8-4972-bc45-4e6aea976820">
-<span class="eqno">(7.3)<a class="headerlink" href="#equation-f7e38391-28b8-4972-bc45-4e6aea976820" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-508a5427-1e2d-4d3e-ab6e-085c085fb879">
+<span class="eqno">(7.3)<a class="headerlink" href="#equation-508a5427-1e2d-4d3e-ab6e-085c085fb879" title="Permalink to this equation">#</a></span>\[\begin{equation}
 G_\mathrm{sc,N} = G_\mathrm{sc}\left[1+0.033\cos\left(\frac{360N}{365}\right)\right]
 \end{equation}\]</div>
 <a class="reference internal image-reference" href="../_images/solar_constant_daily.png"><img alt="../_images/solar_constant_daily.png" class="align-center" src="../_images/solar_constant_daily.png" style="width: 600px;" /></a>
 <p>La constante solar también cambia según la elevación solar o, de forma complementaria, con el cenit solar en la forma:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-87c1faf3-4b57-4241-a705-ccd84dde7b5c">
-<span class="eqno">(7.4)<a class="headerlink" href="#equation-87c1faf3-4b57-4241-a705-ccd84dde7b5c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e6ae6e57-47c9-4b6b-9a35-14f3815190cb">
+<span class="eqno">(7.4)<a class="headerlink" href="#equation-e6ae6e57-47c9-4b6b-9a35-14f3815190cb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 G_{\mathrm{sc},t} = G_\mathrm{sc}\cos\theta_\mathrm{s}
 \end{equation}\]</div>
 <p>Para una superficie inclinada, con un ángulo de incidencia <span class="math notranslate nohighlight">\(\theta_i\)</span> la constate solar es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d1a8e80e-63dd-4bc0-b704-83398eaf909e">
-<span class="eqno">(7.5)<a class="headerlink" href="#equation-d1a8e80e-63dd-4bc0-b704-83398eaf909e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-109b987d-e2e7-4350-a64c-5270934ae7ab">
+<span class="eqno">(7.5)<a class="headerlink" href="#equation-109b987d-e2e7-4350-a64c-5270934ae7ab" title="Permalink to this equation">#</a></span>\[\begin{equation}
 G_{\mathrm{sc},s} = G_\mathrm{sc}\cos\theta_\mathrm{i}
 \end{equation}\]</div>
 </section>
 <section id="atenuacion-atmosferica">
-<h3><span class="section-number">7.2.2. </span>Atenuación atmosférica<a class="headerlink" href="#atenuacion-atmosferica" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.2.2. </span>Atenuación atmosférica<a class="headerlink" href="#atenuacion-atmosferica" title="Permalink to this heading">#</a></h3>
 <p>La radiación solar definida por <span class="math notranslate nohighlight">\(G_\mathrm{sc}\)</span> corresponde al valor fuera de la atmosfera de la tierra. En la superficie de la tierra, este valor es atenuado debido a fenómenos de absoción y <em>scattering</em> asociado a los gases atmosfpericos, tales como vapor de agua, ozono, nubes, etc.</p>
 <a class="reference internal image-reference" href="../_images/Solar_Spectrum_atmosphere.png"><img alt="../_images/Solar_Spectrum_atmosphere.png" class="align-center" src="../_images/Solar_Spectrum_atmosphere.png" style="width: 400px;" /></a>
 <p>En general esta atenuación dependen de la ángulo de elevación del sol y, por lo tanto varía según el día del año y la latitud en la que se encuentra el observador</p>
@@ -704,8 +513,8 @@ G_{\mathrm{sc},s} = G_\mathrm{sc}\cos\theta_\mathrm{i}
 <p>donde <span class="math notranslate nohighlight">\(L_0\)</span> es la distancia (espesor de la atmósfera) normal a la superficie de la tierra y al nivel del mar, y <span class="math notranslate nohighlight">\(L\)</span> es la distancia al nivel del mar a un ángulo <span class="math notranslate nohighlight">\(\theta_\mathrm{s}\)</span></p>
 <a class="reference internal image-reference" href="../_images/AM_diagram.png"><img alt="../_images/AM_diagram.png" class="align-center" src="../_images/AM_diagram.png" style="width: 300px;" /></a>
 <p>Una forma simplificada de representar el coeficiente de masa de aire es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-82457ca2-8c6f-4c84-979f-65fd9c53ec06">
-<span class="eqno">(7.6)<a class="headerlink" href="#equation-82457ca2-8c6f-4c84-979f-65fd9c53ec06" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6fbbe60a-da5e-414b-8528-89505bd5e87f">
+<span class="eqno">(7.6)<a class="headerlink" href="#equation-6fbbe60a-da5e-414b-8528-89505bd5e87f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \mathrm{AM} = \frac{1}{\cos\theta_\mathrm{s}}
 \end{equation}\]</div>
 <ul class="simple">
@@ -717,15 +526,15 @@ G_{\mathrm{sc},s} = G_\mathrm{sc}\cos\theta_\mathrm{i}
 <a class="reference internal image-reference" href="../_images/am1.5.png"><img alt="../_images/am1.5.png" class="align-center" src="../_images/am1.5.png" style="width: 400px;" /></a>
 <p>Debido al <em>scattering</em> atmosférico, el espectro <span class="math notranslate nohighlight">\(\mathrm{AM}1.5\)</span> considera una componente global (directa + difusa) y una directa.</p>
 <p>La irradiancia hemisférica total del espectro <span class="math notranslate nohighlight">\(\mathrm{AM}1.5\)</span>, es</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a305ed52-2ec3-4ebf-aa9b-4a54e326b015">
-<span class="eqno">(7.7)<a class="headerlink" href="#equation-a305ed52-2ec3-4ebf-aa9b-4a54e326b015" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e5548240-9f98-49e4-b774-2ee96eac378b">
+<span class="eqno">(7.7)<a class="headerlink" href="#equation-e5548240-9f98-49e4-b774-2ee96eac378b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 G_\mathrm{AM1.5} = 1000~\frac{\mathrm{W}}{\mathrm{m}^2} = 1~\mathrm{sun}
 \end{equation}\]</div>
 <p>Existen distintas fuentes con valores tabulados del espectro AM1.5, por ejemplo: <a class="reference external" href="https://www.nrel.gov/grid/solar-resource/spectra-am1.5.html">NREL AM1.5</a></p>
 </section>
 </section>
 <section id="componentes-de-la-radiacion-solar">
-<h2><span class="section-number">7.3. </span>Componentes de la radiación solar<a class="headerlink" href="#componentes-de-la-radiacion-solar" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.3. </span>Componentes de la radiación solar<a class="headerlink" href="#componentes-de-la-radiacion-solar" title="Permalink to this heading">#</a></h2>
 <p>La radiación solar no esta compuesta únicamente de un haz de rayos especulares. Si así fuera, no tendríamos visibilidad al bloquear el sol con nuestras manos.</p>
 <p>En efecto, la radiación solar está compuesta por una série de componentes.</p>
 <a class="reference internal image-reference" href="../_images/solar_components.jpg"><img alt="../_images/solar_components.jpg" class="align-center" src="../_images/solar_components.jpg" style="width: 400px;" /></a>
@@ -745,12 +554,12 @@ G_\mathrm{AM1.5} = 1000~\frac{\mathrm{W}}{\mathrm{m}^2} = 1~\mathrm{sun}
 </ul>
 </section>
 <section id="instrumentos-de-medicion-de-radiacion-solar">
-<h2><span class="section-number">7.4. </span>Instrumentos de medición de radiación solar<a class="headerlink" href="#instrumentos-de-medicion-de-radiacion-solar" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.4. </span>Instrumentos de medición de radiación solar<a class="headerlink" href="#instrumentos-de-medicion-de-radiacion-solar" title="Permalink to this heading">#</a></h2>
 <p>Para diseñar sistemas basados en energía solar, es necesario caracterizar una serie de parámetros de la radiación solar. Estos incluyen, irradiación solar hemisférica, especular y difusa.</p>
 <p>En general, los instrumentos de medición se basan en sensores termoeléctricos o fotovoltaicos, que permiten medir el flujo de energía y no la componente espectral. La irradiancia espectral, generalmente se obtiene por modelos de transporte radiativo.</p>
 <p>Existen dos tipos de instrumentos para medir la irradiancia solar: el <strong>piranómetro</strong> y el <strong>pirheliómetro</strong>.</p>
 <section id="piranometro">
-<h3><span class="section-number">7.4.1. </span>Piranómetro<a class="headerlink" href="#piranometro" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.4.1. </span>Piranómetro<a class="headerlink" href="#piranometro" title="Permalink to this heading">#</a></h3>
 <p>Este instrumento <strong>mide la componente GHI</strong></p>
 <a class="reference internal image-reference" href="../_images/pyranometer.jpg"><img alt="../_images/pyranometer.jpg" class="align-center" src="../_images/pyranometer.jpg" style="width: 800px;" /></a>
 <p>Esta compuesto de un <strong>domo superior (<em>glass dome</em>)</strong> conformado por dos cámaras de vidrio, donde el aire atrapado actúa como aislante térmico. Al interior del domo se ubica un <strong>detector</strong> que absorbe la radiación solar. El cambio de temperatura del absorbedor es correlacionado con el flujo de calor por radiación. El detector está rodado de una <strong>cubierta aislante (<em>housing</em>)</strong> y un <strong>escudo de radiación solar (<em>sun shield</em>)</strong> para evitar ganancias parasíticas de calor.</p>
@@ -758,13 +567,13 @@ G_\mathrm{AM1.5} = 1000~\frac{\mathrm{W}}{\mathrm{m}^2} = 1~\mathrm{sun}
 <a class="reference internal image-reference" href="../_images/pyranometer_diffuse.png"><img alt="../_images/pyranometer_diffuse.png" class="align-center" src="../_images/pyranometer_diffuse.png" style="width: 400px;" /></a>
 </section>
 <section id="pirheliometro">
-<h3><span class="section-number">7.4.2. </span>Pirheliómetro<a class="headerlink" href="#pirheliometro" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">7.4.2. </span>Pirheliómetro<a class="headerlink" href="#pirheliometro" title="Permalink to this heading">#</a></h3>
 <p>Este instrumento <strong>permite medir la componente DNI</strong> de la radiación solar.</p>
 <a class="reference internal image-reference" href="../_images/pyrheliometer.jpg"><img alt="../_images/pyrheliometer.jpg" class="align-center" src="../_images/pyrheliometer.jpg" style="width: 300px;" /></a>
 </section>
 </section>
 <section id="mapas-solares">
-<h2><span class="section-number">7.5. </span>Mapas solares<a class="headerlink" href="#mapas-solares" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.5. </span>Mapas solares<a class="headerlink" href="#mapas-solares" title="Permalink to this heading">#</a></h2>
 <p>Existen diversos mapas solares disponibles en línea. En general, estos reportan valores de GHI, DNI y DHI medidos a lo largo de un año.</p>
 <p>Los más recomendados son:</p>
 <ul class="simple">
@@ -774,25 +583,25 @@ G_\mathrm{AM1.5} = 1000~\frac{\mathrm{W}}{\mathrm{m}^2} = 1~\mathrm{sun}
 <p>Es importante mencionar que la componente DNI no siembre es dominante.</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Coordenadas</p></th>
-<th class="text-align:center head"><p>Localidad</p></th>
-<th class="text-align:center head"><p>DNI<br />(kWh/m<span class="math notranslate nohighlight">\(^2\)</span>-año)</p></th>
-<th class="text-align:center head"><p>GHI<br />(kWh/m<span class="math notranslate nohighlight">\(^2\)</span>-año)</p></th>
-<th class="text-align:center head"><p>DHI<br />(kWh/m<span class="math notranslate nohighlight">\(^2\)</span>-año)</p></th>
+<tr class="row-odd"><th class="text-center head"><p>Coordenadas</p></th>
+<th class="text-center head"><p>Localidad</p></th>
+<th class="text-center head"><p>DNI<br />(kWh/m<span class="math notranslate nohighlight">\(^2\)</span>-año)</p></th>
+<th class="text-center head"><p>GHI<br />(kWh/m<span class="math notranslate nohighlight">\(^2\)</span>-año)</p></th>
+<th class="text-center head"><p>DHI<br />(kWh/m<span class="math notranslate nohighlight">\(^2\)</span>-año)</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>-45.51°, -73.52°</p></td>
-<td class="text-align:center"><p>Aysén</p></td>
-<td class="text-align:center"><p>848.2</p></td>
-<td class="text-align:center"><p>1025.9</p></td>
-<td class="text-align:center"><p>556.2</p></td>
+<tr class="row-even"><td class="text-center"><p>-45.51°, -73.52°</p></td>
+<td class="text-center"><p>Aysén</p></td>
+<td class="text-center"><p>848.2</p></td>
+<td class="text-center"><p>1025.9</p></td>
+<td class="text-center"><p>556.2</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>-23.92°, -69.49°</p></td>
-<td class="text-align:center"><p>Antofagasta</p></td>
-<td class="text-align:center"><p>3330.4</p></td>
-<td class="text-align:center"><p>2604</p></td>
-<td class="text-align:center"><p>575</p></td>
+<tr class="row-odd"><td class="text-center"><p>-23.92°, -69.49°</p></td>
+<td class="text-center"><p>Antofagasta</p></td>
+<td class="text-center"><p>3330.4</p></td>
+<td class="text-center"><p>2604</p></td>
+<td class="text-center"><p>575</p></td>
 </tr>
 </tbody>
 </table>
@@ -800,7 +609,7 @@ G_\mathrm{AM1.5} = 1000~\frac{\mathrm{W}}{\mathrm{m}^2} = 1~\mathrm{sun}
 <p>Notar, además, que en ninguno de los dos ejemplos el valor GHI - DHI coincide con el DNI. Esto debido a que la primera considera el factor <span class="math notranslate nohighlight">\(\cos\theta_i\)</span> asociado al ángulo de incidencia.</p>
 </section>
 <section id="referencias">
-<h2><span class="section-number">7.6. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">7.6. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Kalogirou S. A. <strong>Chapter 2: Environmental Characteristics</strong> en <em>Solar Energy Engineering Processes and Systems</em>, 2nd Ed, Academic Press, 2014</p></li>
 <li><p>Duffie J. A., Beckman W. A. and Blair N. <strong>Chapter 1: Solar Radiation</strong> and <strong>Chapter 2: Available Solar Radiation</strong> en <em>Solar Engineering of Thermal Processes</em>, 5th Ed, Jhon Wiley and Sons, 2020</p></li>
@@ -820,7 +629,7 @@ G_\mathrm{AM1.5} = 1000~\frac{\mathrm{W}}{\mathrm{m}^2} = 1~\mathrm{sun}
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./07_Radiación_solar"
         },
         predefinedOutput: true
@@ -828,50 +637,121 @@ G_\mathrm{AM1.5} = 1000~\frac{\mathrm{W}}{\mathrm{m}^2} = 1~\mathrm{sun}
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../06_RadiacionTermica/06_RadiacionTermica.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">6. </span>Radiación Térmica</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../06_RadiacionTermica/06_RadiacionTermica.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Radiación Térmica</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="../08_ColetorSolar/08_ColetorSolar.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="../08_ColetorSolar/08_ColetorSolar.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">8. </span>Colectores solares estacionarios</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#angulos-solares">7.1. Ángulos solares</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-de-la-orbita-de-la-tierra">7.1.1. Características de la órbita de la tierra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trayectoria-del-sol">7.1.2. Trayectoria del sol</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-del-sol-en-coordenadas-ecuatoriales">7.1.3. Posición del sol en coordenadas ecuatoriales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#posicion-del-sol-respecto-al-plano-horizontal-local">7.1.4. Posición del sol respecto al plano horizontal local</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angulo-de-incidencia">7.1.5. Ángulo de incidencia</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radiacion-solar-disponible">7.2. Radiación solar disponible</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constante-solar">7.2.1. Constante solar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atenuacion-atmosferica">7.2.2. Atenuación atmosférica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#componentes-de-la-radiacion-solar">7.3. Componentes de la radiación solar</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instrumentos-de-medicion-de-radiacion-solar">7.4. Instrumentos de medición de radiación solar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#piranometro">7.4.1. Piranómetro</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pirheliometro">7.4.2. Pirheliómetro</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapas-solares">7.5. Mapas solares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">7.6. Referencias</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Francisco V. Ramirez-Cuevas<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Francisco V. Ramirez-Cuevas
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
