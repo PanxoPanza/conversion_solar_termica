@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -389,8 +389,18 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fabricacion-y-tipos">11.3.4. Fabricación y tipos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ventanas-inteligentes">11.4. Ventanas inteligentes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enfriamiento-radiativo-pasivo">11.5. Enfriamiento radiativo pasivo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ventanas-inteligentes">11.4. Ventanas inteligentes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-de-las-ventanas-termocromicas">11.4.1. Fundamentos de las ventanas termocrómicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fabricacion-y-desempeno">11.4.2. Fabricación y desempeño</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enfriamiento-radiativo-pasivo">11.5. Enfriamiento radiativo pasivo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principio-de-funcionamiento">11.5.1. Principio de funcionamiento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prc-en-la-naturaleza">11.5.2. PRC en la naturaleza</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#materiales-prc">11.5.3. Materiales PRC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones">11.5.4. Aplicaciones</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">11.6. Referencias</a></li>
 </ul>
             </nav>
@@ -491,7 +501,7 @@ document.write(`
 <h3><span class="section-number">11.3.1. </span>Composición<a class="headerlink" href="#composicion" title="Permalink to this heading">#</a></h3>
 <p>Los recubrimientos <em>low-E</em> están formados de multiples capas alternadas de metal (comúnmente plata) y óxidos metálicos (<span class="math notranslate nohighlight">\(\mathrm{TiO_2}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{ZnO}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{SiO_2}\)</span>, etc), cada una de espesor nanométrico.</p>
 <a class="reference internal image-reference" href="../_images/low-E_coating_composition.png"><img alt="../_images/low-E_coating_composition.png" class="align-center" src="../_images/low-E_coating_composition.png" style="width: 800px;" /></a>
-<center> <small>Composición de un recubrimiento low-E (<a href="https://www.fortemp.com/news/triple_silver_glass_tempering">Fuente</a>) </small></center><p>En general, una capa de metal como la plata refleja la radiación visible y NIR. Sin embargo, al intercalar múltiples capas se produce interferencia constructiva en la luz de longitudes de onda corta (visible). Las longitudes de onda largas (como las del espectro NIR) no sufren el efecto de interferencia y son reflejadas por metal. Por otro lado, tanto la plata como los óxidos metálicos absorben la radiación UV.</p>
+<center> <small>Composición de un recubrimiento low-E (<a href="https://www.fortemp.com/news/triple_silver_glass_tempering">Fuente</a>) </small></center><p>En general, una capa de metal como la plata refleja la radiación visible y NIR. Sin embargo, <strong>al intercalar múltiples capas se produce interferencia destructiva</strong> en longitudes de onda corta que suprime la <strong>reflectancia en el espectro visible</strong> y, en consecuencia, aumenta la transmitancia. En el <strong>espectro NIR</strong>, donde las longitudes de onda son más largas, el efecto de <strong>interferencia desaparece y la radiación es reflejada por metal</strong>. Por otro lado, <strong>tanto la plata como los óxidos metálicos absorben la radiación UV</strong>.</p>
 <a class="reference internal image-reference" href="../_images/low-E_coating_spectrum.png"><img alt="../_images/low-E_coating_spectrum.png" class="align-center" src="../_images/low-E_coating_spectrum.png" style="width: 600px;" /></a>
 <center> <small>Transmitancia espectral de una ventana con recubrimiento low-E (<a href="https://www.jinjing-glass.com/energy-efficient-low-e-coated-glass-product/?gclid=Cj0KCQiA6vaqBhCbARIsACF9M6nsmyagglcvGAAy-XxyGqVYI4wGzDAa7iNv8X9gAtu9frBDAL_vstAaAjEGEALw_wcB">Fuente</a>) </small></center></section>
 <section id="desempeno">
@@ -580,7 +590,7 @@ T_\mathrm{sol} = \frac{\int_{300~\mathrm{nm}}^{2500~\mathrm{nm}}T_\lambda I_\mat
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/a44eab81fbf35d5b2f7df43b02646870a0b66bb2ccba20c4c11fa2b895976945.png" src="../_images/a44eab81fbf35d5b2f7df43b02646870a0b66bb2ccba20c4c11fa2b895976945.png" />
+<img alt="../_images/3298a90743149e4024be4b32b9df27e50517a7cb5725f051f83e6f4a1751a947.png" src="../_images/3298a90743149e4024be4b32b9df27e50517a7cb5725f051f83e6f4a1751a947.png" />
 </div>
 </div>
 <p>Calculamos el desempeño de nuestro recubrimiento evaluando <span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span> y <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span>.</p>
@@ -648,11 +658,28 @@ Ganancia solar: 46.7%
 <h3><span class="section-number">11.3.4. </span>Fabricación y tipos<a class="headerlink" href="#fabricacion-y-tipos" title="Permalink to this heading">#</a></h3>
 <p>La fabricación del recubrimiento low-E puede ser:</p>
 <ul class="simple">
-<li><p><strong>Aplicada directamente en el vidrio mediante pulverización catódica o <em>magnétic sputtering</em></strong>. Esto permite una mejor adhesión y duración del recubrimiento.</p></li>
+<li><p><strong>Aplicación directa mediante pirólisis (<em>hard-coated</em>)</strong> Este proceso se realiza antes de finalizar la fabricación del vidrio, aprovechando las altas temperaturas del material (<span class="math notranslate nohighlight">\(\sim\)</span> 600°C) para depositar el recubrimiento mediante <em>Chemical Vapor Deposition</em> (CVD).* El recubrimiento es más resistente a la oxidación y por lo tanto tiene una duración mayor comparada con otros métodos. Sin embargo, el proceso premite aplicar pocas capas de recubrimiento</p></li>
 </ul>
 <ul class="simple">
-<li><p><strong>Aplicado indirectamente mediante recubrimientos adhesivos en base a polímeros</strong>. El método es más económico ya que no necesita el cambio de las ventanas. Sin embargo, el uso de polímeros expone el recubrimiento a una degradación más rápida y un posible desprendimiento del recubrimiento.</p></li>
+<li><p><strong>Aplicación directa en el vidrio pre-fabricado (<em>soft-coated</em>)</strong> Este proceso se realiza luego de fabricar el vidrio. El recubrimiento se aplica mediante pulverización catódica o <em>magnétic sputtering</em>. Es el método más utilizado, ya que permite aplicar multiples capas a lo largo de la línea de producción. La adhesión y resitencia del recubrimiento, sin embargo, es menor al método <em>hard-coated</em>.</p></li>
 </ul>
+<ul class="simple">
+<li><p><strong>Recubrimientos adhesivos en base a polímeros</strong>. EL recubrimiento se fabrica mediante múltiples etapas de metalización sobre sustrato de polímero (comúnmente, PET). El resultado es un recubrimiento adhesivo y flexible que puede ser aplicado directamente sobre las ventanas corrientes. Sin embargo, debido al uso de polímeros, el recubrimiento sufre una degradación más rápida que lo hace menos resistente en comparación con los dos métodos anteriores.</p></li>
+</ul>
+<p>El siguiente video muestra el proceso de producción de un vidrio con recubrimiento low-E con el método <em>soft-coated</em>.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+        <iframe
+            width="700"
+            height="400"
+            src="https://www.youtube.com/embed/p9H0ahGVRMM"
+            frameborder="0"
+            allowfullscreen
+            
+        ></iframe>
+        </div></div>
+</div>
 </section>
 </section>
 <section id="ventanas-inteligentes">
@@ -666,6 +693,8 @@ Ganancia solar: 46.7%
 </ul>
 <p>Dependiendo de la aplicación, una ventana inteligente puede ser diseñada para regular el paso de la radiación solar visible, UV o del infrarojo cercano (NIR).</p>
 <p>Debido a su caracter pasivo, en esta unidad nos enfocaremos en <strong>ventanas termocrómicas para modulación de radiación NIR</strong>.</p>
+<section id="fundamentos-de-las-ventanas-termocromicas">
+<h3><span class="section-number">11.4.1. </span>Fundamentos de las ventanas termocrómicas<a class="headerlink" href="#fundamentos-de-las-ventanas-termocromicas" title="Permalink to this heading">#</a></h3>
 <p>Las ventanas termocrómicas están diseñadas para regular el paso la radiación térmica (infrarojo cercano) solar entre el verano y el invierno.</p>
 <a class="reference internal image-reference" href="../_images/smart_window_schematic.png"><img alt="../_images/smart_window_schematic.png" class="align-center" src="../_images/smart_window_schematic.png" style="width: 800px;" /></a>
 <p>Para producir este efecto se utilizan <strong>materiales termocrómicos con cambio de fase aislante-conductor eléctrico.</strong></p>
@@ -673,6 +702,9 @@ Ganancia solar: 46.7%
 <a class="reference internal image-reference" href="../_images/vanadium_dioxide.png"><img alt="../_images/vanadium_dioxide.png" class="align-center" src="../_images/vanadium_dioxide.png" style="width: 400px;" /></a>
 <p>Sobre la temperatura de transición, el VO<span class="math notranslate nohighlight">\(_2\)</span> se comporta como un conductor eléctrico, con alta reflectancia en el espectro NIR. Bajo la temperatura de transición, el material se comporta como aislante térmico y la reflectancia dismuye.</p>
 <p>La temperatura de transición intrínseca del VO<span class="math notranslate nohighlight">\(_2\)</span> es ~70°C. Sin embargo, <strong>esta temperatura puede ser modificada mediante dopaje</strong> desde los 70°C hasta cerca de los 10°C</p>
+</section>
+<section id="fabricacion-y-desempeno">
+<h3><span class="section-number">11.4.2. </span>Fabricación y desempeño<a class="headerlink" href="#fabricacion-y-desempeno" title="Permalink to this heading">#</a></h3>
 <p>Las ventanas termocrómicas operan agregando VO<span class="math notranslate nohighlight">\(_2\)</span> en pequeñas cantidades. Esto puede ser mediate una capa delgada sobre vidrio, o mediante particulas dispersas en un polímero transparente.</p>
 <a class="reference internal image-reference" href="../_images/vo2_smart_windows.png"><img alt="../_images/vo2_smart_windows.png" class="align-center" src="../_images/vo2_smart_windows.png" style="width: 700px;" /></a>
 <p>El desempeño de una ventana inteligente se caracteriza por la transmitancia lumínica (<span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span>), y la modulación de transmitancia solar (<span class="math notranslate nohighlight">\(\Delta T_\mathrm{sol} = T_\mathrm{sol}^\mathrm{frio} - T_\mathrm{sol}^\mathrm{caliente}\)</span>)</p>
@@ -682,9 +714,12 @@ Ganancia solar: 46.7%
 <a class="reference internal image-reference" href="../_images/smart_windows_closing.jpg"><img alt="../_images/smart_windows_closing.jpg" class="align-center" src="../_images/smart_windows_closing.jpg" style="width: 800px;" /></a>
 <center> <small>Esquema de operación de ventanas termocrómicas (<a href="https://onlinelibrary.wiley.com/doi/full/10.1002/aenm.201602209">Fuente</a>) </small></center><p>Las ventanas inteligentes son una tecnología relativamente nueva. Hoy en día, la mayoría de los fabricantes se enfocan en ventanas electrocrómicas. Las termocrómicas aun requieren mejoras para extender su vida útil, debido a que los materiales termocrómicos son sencibles a la oxidación.</p>
 </section>
+</section>
 <section id="enfriamiento-radiativo-pasivo">
 <h2><span class="section-number">11.5. </span>Enfriamiento radiativo pasivo<a class="headerlink" href="#enfriamiento-radiativo-pasivo" title="Permalink to this heading">#</a></h2>
-<p>Los materiales para enfriamiento radiativo pasivo, consisten en materiales con reflectancia selectiva, es decir, alta reflectancia solar (&gt; 95%), y alta emisividad o transparencia en el espectro mid-IR.</p>
+<section id="principio-de-funcionamiento">
+<h3><span class="section-number">11.5.1. </span>Principio de funcionamiento<a class="headerlink" href="#principio-de-funcionamiento" title="Permalink to this heading">#</a></h3>
+<p>Los materiales para enfriamiento radiativo pasivo (PRC por sus siglas en inglés), consisten en materiales con reflectancia selectiva, es decir, alta reflectancia solar (&gt; 95%), y alta emisividad o transparencia en el espectro mid-IR.</p>
 <a class="reference internal image-reference" href="../_images/thermal_radiation_spectra.png"><img alt="../_images/thermal_radiation_spectra.png" class="align-center" src="../_images/thermal_radiation_spectra.png" style="width: 500px;" /></a>
 <p>La reflectancia selectiva permite reducir las ganancias de calor por radiación solar, y al mismo tiempo, canalizar el calor radiativo disipado por los cuerpos a temperaturas bajo 400K.</p>
 <p>Según estudios, esta tecnología podría reducir el consumo eléctrico en sistemas de aire acondicionado entre 15-40%.</p>
@@ -694,16 +729,25 @@ Ganancia solar: 46.7%
 <p>En otras palabras, <strong>el enfriamiento radiativo utiliza al universo como sumidero térmico</strong></p>
 <p>Como resultado <strong>el material es capaz de alcanzar temperaturas de equilibrio bajo la temperatura ambiente a plena luz del día</strong>.</p>
 <p>El enfriamiento radiativo pasivo es un mecanismo que ocurre naturalmente en climas secos. Este fenómeno explica las altas fluctuaciones térmicas que ocurren en el desierto entre el día y la noche.</p>
+</section>
+<section id="prc-en-la-naturaleza">
+<h3><span class="section-number">11.5.2. </span>PRC en la naturaleza<a class="headerlink" href="#prc-en-la-naturaleza" title="Permalink to this heading">#</a></h3>
 <p>Algunos seres vivos utilizan este mecanismo para enfriar su cuerpo naturalmente. Tal es el caso de las <a class="reference external" href="https://www.science.org/doi/10.1126/science.aab3564">hormigas de plata en el desierto del Sahara</a>.</p>
 <a class="reference internal image-reference" href="../_images/silver_ants.png"><img alt="../_images/silver_ants.png" class="align-center" src="../_images/silver_ants.png" style="width: 700px;" /></a>
 <p>En el caso de las hormigas de plata. Los pelos producen efectos de scattering para longitudes de onda corta, aumentando la reflectancia, selectívamente, en el espectro visible. Como resultado, la hormiga adquire el color plateado característico.</p>
 <a class="reference internal image-reference" href="../_images/silver_ants_scattering.png"><img alt="../_images/silver_ants_scattering.png" class="align-center" src="../_images/silver_ants_scattering.png" style="width: 700px;" /></a>
+</section>
+<section id="materiales-prc">
+<h3><span class="section-number">11.5.3. </span>Materiales PRC<a class="headerlink" href="#materiales-prc" title="Permalink to this heading">#</a></h3>
 <p>Artificialmente, el fenómeno puede ser reproducido utilizando materiales transparentes con porosidad inducida.</p>
 <p>Para esto, comúnmente se utilizan polímeros. La porosidad puede ser inducida mediante un proceso llamado <em>separación de fases</em>.</p>
 <a class="reference internal image-reference" href="../_images/radiative_cooling_film.png"><img alt="../_images/radiative_cooling_film.png" class="align-center" src="../_images/radiative_cooling_film.png" style="width: 900px;" /></a>
 <p>El <a class="reference external" href="http://www.sciencemag.org/lookup/doi/10.1126/science.aat9513">siguiente estudio utiliza PVDF como polímero base</a></p>
 <p>La investigación en enfriamiento radiativo pasivo ha avanzado rápidamente en los últimos años. A partir de estos estudios se han elavorado diversas alternativas en formato de pinturas, ropa, materiales estructurales o láminas adhesivas</p>
 <a class="reference internal image-reference" href="../_images/radiative_cooling_format.png"><img alt="../_images/radiative_cooling_format.png" class="align-center" src="../_images/radiative_cooling_format.png" style="width: 900px;" /></a>
+</section>
+<section id="aplicaciones">
+<h3><span class="section-number">11.5.4. </span>Aplicaciones<a class="headerlink" href="#aplicaciones" title="Permalink to this heading">#</a></h3>
 <p>Enfriamiento radiativo pasivo es una tecnología emergente, con al menos 10 emprendimientos en el mundo. <a class="reference external" href="https://www.skycoolsystems.com/">Skycool</a>, es uno de los primeros en patentar esta tecnología. El siguiente video explica el funcionamiento de sus paneles de enfrmiamiento radiativo.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -718,6 +762,7 @@ Ganancia solar: 46.7%
         ></iframe>
         </div></div>
 </div>
+</section>
 </section>
 <section id="referencias">
 <h2><span class="section-number">11.6. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this heading">#</a></h2>
@@ -801,8 +846,18 @@ Ganancia solar: 46.7%
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fabricacion-y-tipos">11.3.4. Fabricación y tipos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ventanas-inteligentes">11.4. Ventanas inteligentes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enfriamiento-radiativo-pasivo">11.5. Enfriamiento radiativo pasivo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ventanas-inteligentes">11.4. Ventanas inteligentes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-de-las-ventanas-termocromicas">11.4.1. Fundamentos de las ventanas termocrómicas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fabricacion-y-desempeno">11.4.2. Fabricación y desempeño</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enfriamiento-radiativo-pasivo">11.5. Enfriamiento radiativo pasivo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principio-de-funcionamiento">11.5.1. Principio de funcionamiento</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prc-en-la-naturaleza">11.5.2. PRC en la naturaleza</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#materiales-prc">11.5.3. Materiales PRC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones">11.5.4. Aplicaciones</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">11.6. Referencias</a></li>
 </ul>
   </nav></div>
@@ -851,8 +906,8 @@ By Francisco V. Ramirez-Cuevas
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
   </footer>
