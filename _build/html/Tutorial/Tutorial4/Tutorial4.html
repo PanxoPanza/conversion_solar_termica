@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -2253,27 +2253,77 @@ T_\mathrm{cell} &amp;= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Mostramos resultado en formato dataframe (solo para visualización)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">column_values</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Geff (W/m2)&#39;</span><span class="p">,</span> <span class="s1">&#39;Tcell (°C)&#39;</span><span class="p">,</span> <span class="s1">&#39;IL (A)&#39;</span><span class="p">,</span> <span class="s1">&#39;I0 (A)&#39;</span><span class="p">,</span> <span class="s1">&#39;Rs (Ohm)&#39;</span><span class="p">,</span> <span class="s1">&#39;Rsh (Ohm)&#39;</span><span class="p">,</span> <span class="s1">&#39;nNsVth (V)&#39;</span><span class="p">]</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">Geff</span><span class="p">,</span> <span class="n">temp_cell</span><span class="p">,</span> <span class="n">IL</span><span class="p">,</span> <span class="n">I0</span><span class="p">,</span> <span class="n">Rs</span><span class="p">,</span> <span class="n">Rsh</span><span class="p">,</span> <span class="n">nNsVth</span><span class="p">))</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>  
-<span class="g g-Whitespace">      </span><span class="mi">5</span>             <span class="n">columns</span> <span class="o">=</span> <span class="n">column_values</span><span class="p">)</span> 
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="nn">File &lt;__array_function__ internals&gt;:180,</span> in <span class="ni">vstack</span><span class="nt">(*args, **kwargs)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="nn">File ~/s/miniconda3/lib/python3.9/site-packages/numpy/core/shape_base.py:282,</span> in <span class="ni">vstack</span><span class="nt">(tup)</span>
-<span class="g g-Whitespace">    </span><span class="mi">280</span> <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">281</span>     <span class="n">arrs</span> <span class="o">=</span> <span class="p">[</span><span class="n">arrs</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">282</span> <span class="k">return</span> <span class="n">_nx</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span><span class="n">arrs</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
-<span class="nn">File &lt;__array_function__ internals&gt;:180,</span> in <span class="ni">concatenate</span><span class="nt">(*args, **kwargs)</span>
-
-<span class="ne">ValueError</span>: all the input array dimensions for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 4 and the array at index 4 has size 1
-</pre></div>
-</div>
-</div>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Geff (W/m2)</th>
+      <th>Tcell (°C)</th>
+      <th>IL (A)</th>
+      <th>I0 (A)</th>
+      <th>Rs (Ohm)</th>
+      <th>Rsh (Ohm)</th>
+      <th>nNsVth (V)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>514.312151</td>
+      <td>23.525905</td>
+      <td>4.494982</td>
+      <td>2.133634e-10</td>
+      <td>0.366101</td>
+      <td>1060.014990</td>
+      <td>1.851982</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>557.540096</td>
+      <td>24.412551</td>
+      <td>4.874823</td>
+      <td>2.479015e-10</td>
+      <td>0.366101</td>
+      <td>977.828487</td>
+      <td>1.857517</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>996.778599</td>
+      <td>34.021405</td>
+      <td>8.754759</td>
+      <td>1.194023e-09</td>
+      <td>0.366101</td>
+      <td>546.940504</td>
+      <td>1.917500</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>923.429072</td>
+      <td>33.628814</td>
+      <td>8.109032</td>
+      <td>1.121840e-09</td>
+      <td>0.366101</td>
+      <td>590.384910</td>
+      <td>1.915049</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="caracterizacion-curva-iv-pvlib-pvsystem-singlediode">
@@ -2589,8 +2639,8 @@ By Francisco V. Ramirez-Cuevas
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
 
   <footer class="bd-footer">
   </footer>
