@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,9 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -542,8 +542,8 @@ T_\mathrm{sol} = \frac{\int_{300~\mathrm{nm}}^{2500~\mathrm{nm}}T_\lambda I_\mat
 <span class="n">n_glass</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">SiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>          <span class="c1"># índice de refracción del vidrio</span>
 <span class="n">n_silver</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">silver</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>       <span class="c1"># íncide de refracción de la plata</span>
 <span class="n">n_mox</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">TiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>            <span class="c1"># íncide de refracción de TiO2</span>
-<span class="n">d_silver</span> <span class="o">=</span> <span class="mf">0.008</span>                <span class="c1"># espesor capa de plata</span>
-<span class="n">d_mox</span>   <span class="o">=</span> <span class="mf">0.030</span>                 <span class="c1"># espesor capa de óxido metálico (tio2 en este caso)</span>
+<span class="n">d_silver</span> <span class="o">=</span> <span class="mf">0.008</span>                <span class="c1"># espesor capa de plata (um)</span>
+<span class="n">d_mox</span>   <span class="o">=</span> <span class="mf">0.030</span>                 <span class="c1"># espesor capa de óxido metálico (tio2 en este caso) (um)</span>
 
 <span class="c1"># construimos estructura multicapas</span>
 <span class="n">n_layers</span> <span class="o">=</span> <span class="mi">3</span>                    <span class="c1"># tres bi-capas plata/tio2</span>
@@ -590,7 +590,7 @@ T_\mathrm{sol} = \frac{\int_{300~\mathrm{nm}}^{2500~\mathrm{nm}}T_\lambda I_\mat
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/3298a90743149e4024be4b32b9df27e50517a7cb5725f051f83e6f4a1751a947.png" src="../_images/3298a90743149e4024be4b32b9df27e50517a7cb5725f051f83e6f4a1751a947.png" />
+<img alt="../_images/a44eab81fbf35d5b2f7df43b02646870a0b66bb2ccba20c4c11fa2b895976945.png" src="../_images/a44eab81fbf35d5b2f7df43b02646870a0b66bb2ccba20c4c11fa2b895976945.png" />
 </div>
 </div>
 <p>Calculamos el desempeño de nuestro recubrimiento evaluando <span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span> y <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span>.</p>
@@ -906,8 +906,8 @@ By Francisco V. Ramirez-Cuevas
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
 
   <footer class="bd-footer">
   </footer>
