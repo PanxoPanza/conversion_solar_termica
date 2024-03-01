@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>4. Scattering electromagnético &#8212; MEC501 - Manejo y conversión solar</title>
   
@@ -19,57 +18,53 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom_edits.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_edits.css?v=4f657593" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '04_Scattering/04_Scattering';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5. Transporte Radiativo" href="../05_TransporteRadiativo/05_TransporteRadiativo.html" />
-    <link rel="prev" title="3. Interacción materia-luz" href="../03_Interacci%C3%B3n_materia-luz/03_Interacci%C3%B3n_materia-luz.html" />
+    <link rel="prev" title="3. Propiedades ópticas de los materiales" href="../03_Interacci%C3%B3n_materia-luz/03_Interacci%C3%B3n_materia-luz.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -79,10 +74,9 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -123,11 +117,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -142,6 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
@@ -154,7 +152,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">MEC501 - Manejo y conversión solar</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -172,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01_ondas_electromagneticas/01_ondas_electromagneticas.html">1. La radiación como un fenómeno electromagnético</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02_ondas_EM_en_la_materia/02_ondas_EM_en_la_materia.html">2. Ondas electromagnéticas en la materia</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../03_Interacci%C3%B3n_materia-luz/03_Interacci%C3%B3n_materia-luz.html">3. Interacción materia-luz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_Interacci%C3%B3n_materia-luz/03_Interacci%C3%B3n_materia-luz.html">3. Propiedades ópticas de los materiales</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Scattering electromagnético</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_TransporteRadiativo/05_TransporteRadiativo.html">5. Transporte Radiativo</a></li>
 </ul>
@@ -336,6 +345,7 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -345,6 +355,7 @@ document.write(`
   </button>
 `);
 </script>
+
 
 <script>
 document.write(`
@@ -403,17 +414,17 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="scattering-electromagnetico">
-<h1><span class="section-number">4. </span>Scattering electromagnético<a class="headerlink" href="#scattering-electromagnetico" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4. </span>Scattering electromagnético<a class="headerlink" href="#scattering-electromagnetico" title="Link to this heading">#</a></h1>
 <section id="interaccion-de-luz-segun-el-tamano-de-un-cuerpo">
-<h2><span class="section-number">4.1. </span>Interacción de luz según el tamaño de un cuerpo<a class="headerlink" href="#interaccion-de-luz-segun-el-tamano-de-un-cuerpo" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1. </span>Interacción de luz según el tamaño de un cuerpo<a class="headerlink" href="#interaccion-de-luz-segun-el-tamano-de-un-cuerpo" title="Link to this heading">#</a></h2>
 <p>Hasta el momento hemos analizado las ecuaciones de Maxwell y condiciones de borde en coordenadas cartesianas. Estas relaciones se aplican a interfaces rectas.</p>
 <p>En el caso de cuerpos curvos, los coeficientes de Fresnel y otras fórmulas relacionadas aún son aplicables, siembre y cuando el radio de curvartura del cuerpo <span class="math notranslate nohighlight">\(R \gg \lambda\)</span></p>
 <a class="reference internal image-reference" href="../_images/fresnel_curvature.png"><img alt="../_images/fresnel_curvature.png" class="align-center" src="../_images/fresnel_curvature.png" style="width: 600px;" /></a>
 <section id="interaccion-de-luz-con-cuerpos-grandes">
-<h3><span class="section-number">4.1.1. </span>Interacción de luz con cuerpos grandes<a class="headerlink" href="#interaccion-de-luz-con-cuerpos-grandes" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.1.1. </span>Interacción de luz con cuerpos grandes<a class="headerlink" href="#interaccion-de-luz-con-cuerpos-grandes" title="Link to this heading">#</a></h3>
 <p>A través de este principio podemos explicar la separación de colores en un arcoiris.</p>
 <p>Primero, es importante notar que el índice de refracción del agua en el espectro visible no es constante. Este índice tiene un pequeño grado de dispersión, y decae a medida que la longitud de onda crece. Así, a partir de la ley de Snell, el ángulo de transmisión de cada onda (o color), crece proporcional a la longitud de onda.</p>
 <a class="reference internal image-reference" href="../_images/rainbow_refraction.png"><img alt="../_images/rainbow_refraction.png" class="align-center" src="../_images/rainbow_refraction.png" style="width: 800px;" /></a>
@@ -422,7 +433,7 @@ document.write(`
 <a class="reference internal image-reference" href="../_images/rainbows.jpg"><img alt="../_images/rainbows.jpg" class="align-center" src="../_images/rainbows.jpg" style="width: 300px;" /></a>
 </section>
 <section id="interaccion-de-luz-con-cuerpos-pequenos">
-<h3><span class="section-number">4.1.2. </span>Interacción de luz con cuerpos pequeños<a class="headerlink" href="#interaccion-de-luz-con-cuerpos-pequenos" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.1.2. </span>Interacción de luz con cuerpos pequeños<a class="headerlink" href="#interaccion-de-luz-con-cuerpos-pequenos" title="Link to this heading">#</a></h3>
 <p>Cuándo las dimensiones del cuerpo, <span class="math notranslate nohighlight">\(D\)</span>, son comparables a la longitud de onda, el radio de curvatura se hace significativo y las soluciones de las ecuaciones de Maxwell para una interface plana no son aplicables. En este caso, se produce el fenómeno de <strong><em>scattering</em> de luz</strong> asociado a la disperción (o esparcimiento) de luz en múltiples direcciones.</p>
 <a class="reference internal image-reference" href="../_images/scattering_schematic.png"><img alt="../_images/scattering_schematic.png" class="align-center" src="../_images/scattering_schematic.png" style="width: 800px;" /></a>
 <p>Además del scattering, tenemos el fenómeno de <strong>absorción de luz</strong>, asociada con la porción de la energía incidente absorbida por el objeto, y la <strong>extinción de luz</strong>, que corresponde a la suma de la energía de scattering y absorción.</p>
@@ -444,7 +455,7 @@ document.write(`
 </section>
 </section>
 <section id="scattering-en-esferas-solucion-de-mie">
-<h2><span class="section-number">4.2. </span>Scattering en esferas (solución de Mie)<a class="headerlink" href="#scattering-en-esferas-solucion-de-mie" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.2. </span>Scattering en esferas (solución de Mie)<a class="headerlink" href="#scattering-en-esferas-solucion-de-mie" title="Link to this heading">#</a></h2>
 <p>La solución analítica para predecir el efecto de scattering y absorción en esferas, desarrollada por Gustav Mie, se ha convertido en la principal referencia para entender este fenómeno.</p>
 <p>La fórmula es derivada a partir de la solución de las ecuaciones de Maxwell en coordenadas esféricas, y permite describir con precisión la <strong>dependencia del scattering y absorción respecto a las propiedades ópticas de la partícula y el medio circundante, asi como del diámetro de la partícula.</strong></p>
 <p>Consideremos el modelo simple una onda electromagnética interactuando con una esfera de radio <span class="math notranslate nohighlight">\(R\)</span> y diámetro <span class="math notranslate nohighlight">\(D\)</span> tal que <span class="math notranslate nohighlight">\(D/\lambda \sim 1\)</span></p>
@@ -478,7 +489,7 @@ b_l = \frac{\psi_l(px)\psi'_l(x) - p\psi_l(x)\psi'_l(px)}{\psi_l(px)\xi'_l(x) - 
 <li><p><span class="math notranslate nohighlight">\(px = N_pk_0R\approx D/\lambda_p\)</span> que representa la proporción entre el tamaño de la particula y la longitud de onda dentro de la partícula (<span class="math notranslate nohighlight">\(\lambda_p=\lambda_0/n_p\)</span>).</p></li>
 </ul>
 <section id="distribucion-del-campo-electrico">
-<h3><span class="section-number">4.2.1. </span>Distribución del campo eléctrico<a class="headerlink" href="#distribucion-del-campo-electrico" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.2.1. </span>Distribución del campo eléctrico<a class="headerlink" href="#distribucion-del-campo-electrico" title="Link to this heading">#</a></h3>
 <p>A partir de esta solución, podemos visualizar la distribución del campo eléctrico durante el fenómeno de scattering.</p>
 <p>La siguiente figura representa el scattering electromagnético a partir de la solución de Mie. La dirección de la onda incidente es <span class="math notranslate nohighlight">\(\hat{k}_\mathrm{inc} = \hat{x}\)</span>, con el campo eléctrico polarizado en dirección <span class="math notranslate nohighlight">\(\hat{e}=\hat{z}\)</span>.</p>
 <a class="reference internal image-reference" href="../_images/scattering_distribution.png"><img alt="../_images/scattering_distribution.png" class="align-center" src="../_images/scattering_distribution.png" style="width: 700px;" /></a>
@@ -489,7 +500,7 @@ b_l = \frac{\psi_l(px)\psi'_l(x) - p\psi_l(x)\psi'_l(px)}{\psi_l(px)\xi'_l(x) - 
 <p>Particularmente, cuando <span class="math notranslate nohighlight">\(D/\lambda \ll 1\)</span>, se denomina Rayleight scattering. En este caso el campo scattering está distribuido uniformemente alrededor de la partícula</p>
 </section>
 <section id="flujo-de-energia">
-<h3><span class="section-number">4.2.2. </span>Flujo de energía<a class="headerlink" href="#flujo-de-energia" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.2.2. </span>Flujo de energía<a class="headerlink" href="#flujo-de-energia" title="Link to this heading">#</a></h3>
 <p>Al igual que con el estudio de reflexión y transmisión, la solución <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{sca}\)</span> nos permite determinar el el vector de Poyinting asociado a scattering, <span class="math notranslate nohighlight">\(\langle\vec{S_\mathrm{sca}}\rangle = \frac{1}{2}\mathrm{Re}\left(\vec{E}_\mathrm{sca}\times\vec{H}^*_\mathrm{sca}\right)~\mathrm{[W/m^2]}\)</span>.</p>
 <p>Notar que, en general, <span class="math notranslate nohighlight">\(\langle\vec{S_\mathrm{sca}}\rangle\)</span> varía según <span class="math notranslate nohighlight">\(\theta\)</span>, <span class="math notranslate nohighlight">\(\phi\)</span> y <span class="math notranslate nohighlight">\(r\)</span>.</p>
 <a class="reference internal image-reference" href="../_images/poynting_vector.png"><img alt="../_images/poynting_vector.png" class="align-center" src="../_images/poynting_vector.png" style="width: 300px;" /></a>
@@ -519,7 +530,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 <p>Por conservación de energía, la sección transversal de absorción, <span class="math notranslate nohighlight">\(C_\mathrm{abs} = C_\mathrm{ext} - C_\mathrm{sca}\)</span>.</p>
 </section>
 <section id="parametro-de-asimetria">
-<h3><span class="section-number">4.2.3. </span>Parámetro de asimetría<a class="headerlink" href="#parametro-de-asimetria" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.2.3. </span>Parámetro de asimetría<a class="headerlink" href="#parametro-de-asimetria" title="Link to this heading">#</a></h3>
 <p>El parámetro de asimetría, <span class="math notranslate nohighlight">\(\mu_\mathrm{sca} \in [-1,1]\)</span>, nos permite cuantificar la anisotropía en la distribución del scattering.</p>
 <a class="reference internal image-reference" href="../_images/asymmetry_parameter.png"><img alt="../_images/asymmetry_parameter.png" class="align-center" src="../_images/asymmetry_parameter.png" style="width: 700px;" /></a>
 <p>En el caso de esferas, se define por:</p>
@@ -533,11 +544,11 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </section>
 </section>
 <section id="analisis-de-scattering">
-<h2><span class="section-number">4.3. </span>Analisis de scattering<a class="headerlink" href="#analisis-de-scattering" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.3. </span>Analisis de scattering<a class="headerlink" href="#analisis-de-scattering" title="Link to this heading">#</a></h2>
 <p>Los parámetros <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span>, <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> y <span class="math notranslate nohighlight">\(C_\mathrm{ext}\)</span> permiten cuantificar la energía de scattering, absorción y extinción relativa a la intensidad de la fuente <span class="math notranslate nohighlight">\(I_\mathrm{inc}\)</span>, así como también su distribución en el espectro.</p>
 <p>A continuación revisaremos tres casos particulares.</p>
 <section id="particulas-con-indice-de-refraccion-real-kappa-p-approx-0">
-<h3><span class="section-number">4.3.1. </span>Particulas con índice de refracción real (<span class="math notranslate nohighlight">\(\kappa_p \approx 0\)</span>)<a class="headerlink" href="#particulas-con-indice-de-refraccion-real-kappa-p-approx-0" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.3.1. </span>Particulas con índice de refracción real (<span class="math notranslate nohighlight">\(\kappa_p \approx 0\)</span>)<a class="headerlink" href="#particulas-con-indice-de-refraccion-real-kappa-p-approx-0" title="Link to this heading">#</a></h3>
 <p>El primer caso de <em>scattering</em> que analizaremos es para materiales cuyo valor de <span class="math notranslate nohighlight">\(\kappa_p\)</span> es cero o relativamente pequeño (<span class="math notranslate nohighlight">\(N_p \approx n_p\)</span>). Debido a que el material no absorbe luz, tenemos que <span class="math notranslate nohighlight">\(C_\mathrm{abs} = 0\)</span>.</p>
 <p>Aunque sabemos que esta clasificación es relativa al espectro que estemos analizando, es una buena aproximación para entender algunos fenómenos naturales.</p>
 <p>En este grupo tenemos, por ejemplo, agua, aceite, vidrio y algunos polímeros transparentes, todos en el espectro visible.</p>
@@ -593,7 +604,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/af142253b6622b7599507cd032f211df0722c89bf6a439b2dcc5c22cb7017dd8.png" src="../_images/af142253b6622b7599507cd032f211df0722c89bf6a439b2dcc5c22cb7017dd8.png" />
+<img alt="../_images/eb159b65513fe3df4950dae820ec88a54a45f49a03f7c6026bc65acfb4beb039.png" src="../_images/eb159b65513fe3df4950dae820ec88a54a45f49a03f7c6026bc65acfb4beb039.png" />
 </div>
 </div>
 <p>A partir de este gráfico podemos identificar algunos patrones comúnes en scattering:</p>
@@ -612,7 +623,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 <p>La componente difusa, así, corresponde a los colores azul y violeta. La componente especular, corresponde al resto de los colores del espectro visible. El fenómeno expica el color azul del cielo durante el día.</p>
 </section>
 <section id="particulas-no-metalicas-con-indice-de-refraccion-complejo">
-<h3><span class="section-number">4.3.2. </span>Partículas no-metálicas con índice de refracción complejo<a class="headerlink" href="#particulas-no-metalicas-con-indice-de-refraccion-complejo" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.3.2. </span>Partículas no-metálicas con índice de refracción complejo<a class="headerlink" href="#particulas-no-metalicas-con-indice-de-refraccion-complejo" title="Link to this heading">#</a></h3>
 <p>Este grupo corresponde a materiales semiconductores, como el silicio y el dióxido de titanio. También incluye materiales asilantes en el espectro infrarojo, como sílice o polímeros.</p>
 <p>En este caso, tenemos un efecto de scattering y absorción combinados. La magnitud de <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span> estará definida por el tamaño de la partícula (similar al caso de partículas con índice de refracción real). La magnitud de <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span>, por otro lado, dependerá de la magnitud de <span class="math notranslate nohighlight">\(\kappa_p\)</span>.</p>
 <p>Analicemos, por ejemplo, el scattering de partículas de dióxido de titanio (TiO<span class="math notranslate nohighlight">\(_2\)</span>) en agua (<span class="math notranslate nohighlight">\(n_h = 1.33\)</span>)</p>
@@ -682,7 +693,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/9b2864334237ae629f5324c9b8d65399b63cb8412547a61208d977c6a2eeb07a.png" src="../_images/9b2864334237ae629f5324c9b8d65399b63cb8412547a61208d977c6a2eeb07a.png" />
+<img alt="../_images/c085abbdb8411e4f9cf45ebbc8b4588ebd4fab05b286a5ebcb3b651ed374f7ce.png" src="../_images/c085abbdb8411e4f9cf45ebbc8b4588ebd4fab05b286a5ebcb3b651ed374f7ce.png" />
 </div>
 </div>
 <p>En este caso, vemos que <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> esta condicionado a valores donde <span class="math notranslate nohighlight">\(\kappa_p \neq 0\)</span> (en el espectro UV, en este caso particular). El valor de <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span>, en cambio, se extiende en el espectro visible, similar a lo que ocurre con el efecto de la neblina.</p>
@@ -691,7 +702,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 <p>A diferencia de la neblina, sin embargo, en este caso tenemos un blanco más intenso. Como veremos en la siguiente unidad, este efecto se debe al <em>scattering múltiple</em>, asociado a la alta concentración de partículas de TiO<span class="math notranslate nohighlight">\(_2\)</span></p>
 </section>
 <section id="particulas-metalicas">
-<h3><span class="section-number">4.3.3. </span>Partículas metálicas<a class="headerlink" href="#particulas-metalicas" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">4.3.3. </span>Partículas metálicas<a class="headerlink" href="#particulas-metalicas" title="Link to this heading">#</a></h3>
 <p>El naturaleza del scattering es diferente para los metales. En este caso, el movimiento libre de los electrones genera acumulación de carga en la superficie de la partícula. Como resultado, la partícula se polariza generando fenómenos de resonancia en determinadas longitudes de onda.</p>
 <a class="reference internal image-reference" href="../_images/surface_plasmon.png"><img alt="../_images/surface_plasmon.png" class="align-center" src="../_images/surface_plasmon.png" style="width: 350px;" /></a>
 <p>En la siguiente figura, graficamos <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span> y <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> para partículas de distinto diámetro. Ambas variables son normalizadas por al área transversal de la esfera <span class="math notranslate nohighlight">\(\pi R^2\)</span>, para mejor comparación entre esferas de distintas dimensiones.</p>
@@ -753,7 +764,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/7143491bd6051f20a0bf1cfa2b6a5e686d786c98419dec19ab0644ccce46e5e3.png" src="../_images/7143491bd6051f20a0bf1cfa2b6a5e686d786c98419dec19ab0644ccce46e5e3.png" />
+<img alt="../_images/5053de9f7b61a52b81e412528562b329bdde8c74e2e8f05fcfffb87691af122d.png" src="../_images/5053de9f7b61a52b81e412528562b329bdde8c74e2e8f05fcfffb87691af122d.png" />
 </div>
 </div>
 <ul class="simple">
@@ -767,7 +778,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </section>
 </section>
 <section id="referencias">
-<h2><span class="section-number">4.4. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.4. </span>Referencias<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Hetch E., <strong>Capítulo 4.2 - Esparcimiento de Rayleigh</strong> en <em>Óptica</em>, 5ta Ed, Pearson, 2017</p></li>
 <li><p>Bohren C. and Huffman D. <strong>Chapter 4 - Absorption and Scattering by a Sphere</strong> in <em>Absorption and Scattering of Light by Small Particles</em>, 1st Ed, John Wiley &amp; Sons, 1983</p></li>
@@ -804,7 +815,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../03_Interacci%C3%B3n_materia-luz/03_Interacci%C3%B3n_materia-luz.html"
@@ -812,7 +823,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Interacción materia-luz</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Propiedades ópticas de los materiales</p>
       </div>
     </a>
     <a class="right-next"
@@ -832,6 +843,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -878,9 +890,10 @@ By Francisco V. Ramirez-Cuevas
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -904,8 +917,8 @@ By Francisco V. Ramirez-Cuevas
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
