@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -666,7 +666,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f921803d110&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f85b4d631d0&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/53a78ecd4743bc63928d5fd51711543127f091c866a0de275aeb67bdfe2f6999.png" src="../../_images/53a78ecd4743bc63928d5fd51711543127f091c866a0de275aeb67bdfe2f6999.png" />
@@ -1078,7 +1078,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 <span class="n">D</span> <span class="o">=</span> <span class="mf">0.2</span>                         <span class="c1"># diámetro de los poros (micrones)</span>
 <span class="n">Np</span> <span class="o">=</span> <span class="mf">1.0</span>                        <span class="c1"># índice de refracción de las incrustaciones</span>
 
-<span class="n">Ttot</span><span class="p">,</span> <span class="n">Tspec</span><span class="p">,</span> <span class="n">Rtot</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">T_beer_lambert</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">tfilm</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">fv</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">Np</span><span class="p">)</span>
+<span class="n">Ttot</span><span class="p">,</span> <span class="n">Rtot</span><span class="p">,</span> <span class="n">Tspec</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">T_beer_lambert</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">theta</span><span class="p">,</span><span class="n">tfilm</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">fv</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">Np</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Tspec</span><span class="p">,</span><span class="s1">&#39;--k&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Tspec&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ttot</span><span class="p">,</span><span class="s1">&#39;-k&#39;</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Ttot&#39;</span><span class="p">)</span>
@@ -1111,32 +1111,36 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </ul>
 <p>Los parámetros de salida son:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Rtot</span></code>: Reflectividad total</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Ttot</span></code>: Transmisividad total</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rtot</span></code>: Reflectividad total</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tspec</span></code>: Transmisividad specular</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Rspec</span></code>: Reflectividad specular</p></li>
 </ul>
-<p>En el ejemplo, se modela un sílice poroso con las siguientes características:</p>
+<p>En el ejemplo, se modela una pekícula de agua con partículas de sílice suspendidas con las siguientes características:</p>
 <ul class="simple">
-<li><p>Espesor de 10 cm (<code class="docutils literal notranslate"><span class="pre">tfilm</span> <span class="pre">=</span> <span class="pre">100</span></code>, unidades en mm)</p></li>
-<li><p>porosidad 60%</p></li>
-<li><p>Tamaño de poro <span class="math notranslate nohighlight">\(1.0\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m</p></li>
+<li><p>Espesor de la película de agua: 1 mm</p></li>
+<li><p>concentración de partículas de sílice: 0.1 % v/v</p></li>
+<li><p>Tamaño de las partículas: <span class="math notranslate nohighlight">\(0.3\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m</p></li>
 <li><p>Espectro <span class="math notranslate nohighlight">\(\lambda\in[0.3,1.0]\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># espectro de longitudes de onda</span>
-<span class="n">tfilm</span> <span class="o">=</span> <span class="mi">100</span>                    <span class="c1"># espesor en mm</span>
-<span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="n">nk</span><span class="o">.</span><span class="n">SiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>     <span class="c1"># indice de refracción superior, intermedio e inferior</span>
-<span class="n">fv</span> <span class="o">=</span> <span class="mf">0.6</span>                       <span class="c1"># fracción de volúmen de los poros</span>
-<span class="n">D</span> <span class="o">=</span> <span class="mf">1.0</span>                        <span class="c1"># diámetro de los poros (micrones)</span>
-<span class="n">Np</span> <span class="o">=</span> <span class="mf">1.0</span>                       <span class="c1"># índice de refracción partícula</span>
+<span class="n">tfilm</span> <span class="o">=</span> <span class="mi">1</span>                      <span class="c1"># espesor en mm</span>
+<span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.33</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>             <span class="c1"># indice de refracción superior, intermedio e inferior</span>
+<span class="n">fv</span> <span class="o">=</span> <span class="mf">0.001</span>                     <span class="c1"># fracción de volúmen de los poros</span>
+<span class="n">D</span> <span class="o">=</span> <span class="mf">0.3</span>                        <span class="c1"># diámetro de los poros (micrones)</span>
+<span class="n">Np</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">SiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>              <span class="c1"># índice de refracción partícula</span>
 
-<span class="n">Rtot</span><span class="p">,</span> <span class="n">Ttot</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">adm_sphere</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">tfilm</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">fv</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">Np</span><span class="p">)</span>
+<span class="n">Ttot</span><span class="p">,</span> <span class="n">Rtot</span><span class="p">,</span> <span class="n">Tspec</span><span class="p">,</span> <span class="n">Rspec</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">adm_sphere</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">tfilm</span><span class="p">,</span><span class="n">N</span><span class="p">,</span><span class="n">fv</span><span class="p">,</span><span class="n">D</span><span class="p">,</span><span class="n">Np</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Rtot</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;R&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ttot</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Rtot</span><span class="p">,</span><span class="s1">&#39;-r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$R_\mathrm</span><span class="si">{tot}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ttot</span><span class="p">,</span><span class="s1">&#39;-b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$T_\mathrm</span><span class="si">{tot}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Rspec</span><span class="p">,</span><span class="s1">&#39;--r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$R_\mathrm</span><span class="si">{spec}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Tspec</span><span class="p">,</span><span class="s1">&#39;--b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$T_\mathrm</span><span class="si">{spec}</span><span class="s1">$&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Reflectividad / Transmisividad&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Sílice poroso (fv = 60% v/v)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Sílice suspendido en agua (fv = </span><span class="si">%.1f</span><span class="s1"> </span><span class="si">%%</span><span class="s1"> v/v)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">fv</span><span class="o">*</span><span class="mi">100</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1144,7 +1148,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3781a8666993957f93c429525b6cdc88d99ffe87c51dca29c7ef4239c9626305.png" src="../../_images/3781a8666993957f93c429525b6cdc88d99ffe87c51dca29c7ef4239c9626305.png" />
+<img alt="../../_images/cb4014e22decacde734bb42edd62cfff6f39dd91433141d1cde877c85bf22676.png" src="../../_images/cb4014e22decacde734bb42edd62cfff6f39dd91433141d1cde877c85bf22676.png" />
 </div>
 </div>
 </section>
