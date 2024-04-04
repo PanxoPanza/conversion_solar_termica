@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -590,6 +590,19 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">empylib.miescattering</span> <span class="k">as</span> <span class="nn">mie</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">1.4</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>  <span class="c1"># espectro de longitudes de onda</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -603,9 +616,6 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<img alt="../_images/eb159b65513fe3df4950dae820ec88a54a45f49a03f7c6026bc65acfb4beb039.png" src="../_images/eb159b65513fe3df4950dae820ec88a54a45f49a03f7c6026bc65acfb4beb039.png" />
-</div>
 </div>
 <p>A partir de este gráfico podemos identificar algunos patrones comúnes en scattering:</p>
 <ul class="simple">
@@ -679,6 +689,20 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">empylib.miescattering</span> <span class="k">as</span> <span class="nn">mie</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>     <span class="c1"># espectro de longitudes de onda</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -693,7 +717,13 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/c085abbdb8411e4f9cf45ebbc8b4588ebd4fab05b286a5ebcb3b651ed374f7ce.png" src="../_images/c085abbdb8411e4f9cf45ebbc8b4588ebd4fab05b286a5ebcb3b651ed374f7ce.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\k&#39;
+/tmp/ipykernel_207/574985932.py:15: SyntaxWarning: invalid escape sequence &#39;\k&#39;
+  ax[0].plot(lam,Np.imag, &#39;-b&#39;, label = &#39;$\kappa$&#39;)
+/tmp/ipykernel_207/574985932.py:15: SyntaxWarning: invalid escape sequence &#39;\k&#39;
+  ax[0].plot(lam,Np.imag, &#39;-b&#39;, label = &#39;$\kappa$&#39;)
+</pre></div>
+</div>
 </div>
 </div>
 <p>En este caso, vemos que <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> esta condicionado a valores donde <span class="math notranslate nohighlight">\(\kappa_p \neq 0\)</span> (en el espectro UV, en este caso particular). El valor de <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span>, en cambio, se extiende en el espectro visible, similar a lo que ocurre con el efecto de la neblina.</p>
@@ -750,6 +780,20 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">empylib.miescattering</span> <span class="k">as</span> <span class="nn">mie</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>     <span class="c1"># espectro de longitudes de onda</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -763,9 +807,6 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<img alt="../_images/5053de9f7b61a52b81e412528562b329bdde8c74e2e8f05fcfffb87691af122d.png" src="../_images/5053de9f7b61a52b81e412528562b329bdde8c74e2e8f05fcfffb87691af122d.png" />
-</div>
 </div>
 <ul class="simple">
 <li><p>Para <span class="math notranslate nohighlight">\(D &lt; 20\)</span> nm, <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span> es despreciable en comparación con <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span>. El peak en <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> es el resultado de la excitación de frecuencias de resonancia en la partícula, similar al modelo de Lorentz.</p></li>

@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -417,6 +417,13 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pvlib</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/panxopanza/miniconda3/lib/python3.12/site-packages/numpy/core/getlimits.py:542: UserWarning: Signature b&#39;\x00\xd0\xcc\xcc\xcc\xcc\xcc\xcc\xfb\xbf\x00\x00\x00\x00\x00\x00&#39; for &lt;class &#39;numpy.longdouble&#39;&gt; does not match any known type: falling back to type probe function.
+This warnings indicates broken support for the dtype!
+  machar = _get_machar(dtype)
 </pre></div>
 </div>
 </div>
@@ -2528,7 +2535,18 @@ T_\mathrm{cell} &amp;= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bff0f6f1693c2dade0cead1fb542cb9c3e46dc46cc55a3518dd646f583c4e414.png" src="../../_images/bff0f6f1693c2dade0cead1fb542cb9c3e46dc46cc55a3518dd646f583c4e414.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Graficamos las curvas IV para cada condición de operación</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">site_conditions</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="c1"># Etiqueta de la curva IV</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
 </div>
 </div>
 </section>

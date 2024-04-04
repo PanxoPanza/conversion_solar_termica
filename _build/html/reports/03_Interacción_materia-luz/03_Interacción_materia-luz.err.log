@@ -1,40 +1,91 @@
 Traceback (most recent call last):
-  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/home/panxopanza/miniconda3/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+  File "/home/panxopanza/miniconda3/lib/python3.12/site-packages/nbclient/client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "/home/panxopanza/miniconda3/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/panxopanza/miniconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+  File "/home/panxopanza/miniconda3/lib/python3.12/asyncio/base_events.py", line 685, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+  File "/home/panxopanza/miniconda3/lib/python3.12/site-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+  File "/home/panxopanza/miniconda3/lib/python3.12/site-packages/nbclient/client.py", line 1058, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+  File "/home/panxopanza/miniconda3/lib/python3.12/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from ipywidgets import interact
+import numpy as np
+import matplotlib.pyplot as plt
 
-@interact( k=(0.3,2.0,0.1), 
-           c=(0.02,0.2,0.01))
-def g(k=1, c=0):
-    return x_amplitude(k,c)
+def x_amplitude(k,c):
+    
+    m = 1                                           # masa del cuerpo
+    w = np.linspace(0,2,200)                       # rango de frecuencias
+    F0 = 1                                          # Amplitud de la fuerza
+    wn = np.sqrt(k/m)                               # frencuencia natural
+    A  = lambda x: - F0/m/(x**2 - wn**2 + 1j*c/m*x) # amplitud de la respuesta
+    
+    # formateamos el lienzo para graficar
+    fig, ax = plt.subplots(1,2)             # número de ejes en la figura
+    fig.set_size_inches(10, 3)              # tamaño de la figura
+    plt.rcParams['font.size'] = '12'        # tamaño de fuente
+    
+    # Ploteamos gráfico izquierdo
+    ax[0].plot(w,np.absolute(A(w)),'k',label="$|A|$")     # módulo de la amplitud
+    
+    # marcar línea de frecuencia natural
+    ax[0].axvline(x = wn, color='r', ls='--', lw='1.0')  
+    ax[0].text(wn*1.01,np.absolute(A(wn)),'$\omega_n$', fontsize='12', color='r')
+    
+    # etiquetar valores de m y F0 en el gráfico
+    x0, y0 = 0.1, 100
+    ax[0].text(x0, y0,r'$m$ = %.0f kg'   % m , fontsize='10', color='k')
+    ax[0].text(x0, y0*0.55,r'$F_0$ = %.0f N'% F0, fontsize='10', color='k')
+    
+    # Ploteamos gráfico derecho
+    ax[1].plot(w,A(w).real,'b',label=r"$\mathrm{Re}(A)$") # parte real de la amplitud
+    ax[1].plot(w,A(w).imag,'r',label=r"$\mathrm{Im}(A)$") # parte imaginaria de la amplitud
+    
+    for i in [0,1]:
+        ax[i].set_xlabel('$\omega$ ')
+        #ax[i].grid() 
+        ax[i].set_xlim(0,2.0)
+        ax[i].legend(frameon=False)
+    ax[0].set_yscale('log')
+    ax[0].set_ylim(0.1,200)
+    ax[0].set_ylabel('Módulo de la amplitud')
+    ax[1].set_ylabel('Amplitud')
+    plt.subplots_adjust(wspace=0.3)
+    plt.show()
 ------------------
 
+----- stderr -----
+<>:22: SyntaxWarning: invalid escape sequence '\o'
+<>:34: SyntaxWarning: invalid escape sequence '\o'
+<>:22: SyntaxWarning: invalid escape sequence '\o'
+<>:34: SyntaxWarning: invalid escape sequence '\o'
+/tmp/ipykernel_189/542248836.py:22: SyntaxWarning: invalid escape sequence '\o'
+  ax[0].text(wn*1.01,np.absolute(A(wn)),'$\omega_n$', fontsize='12', color='r')
+/tmp/ipykernel_189/542248836.py:34: SyntaxWarning: invalid escape sequence '\o'
+  ax[i].set_xlabel('$\omega$ ')
+----- stderr -----
+/tmp/ipykernel_189/542248836.py:22: SyntaxWarning: invalid escape sequence '\o'
+  ax[0].text(wn*1.01,np.absolute(A(wn)),'$\omega_n$', fontsize='12', color='r')
+/tmp/ipykernel_189/542248836.py:34: SyntaxWarning: invalid escape sequence '\o'
+  ax[i].set_xlabel('$\omega$ ')
+------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[3], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mipywidgets[39;00m [38;5;28;01mimport[39;00m interact
-[1;32m      3[0m [38;5;129m@interact[39m( k[38;5;241m=[39m([38;5;241m0.3[39m,[38;5;241m2.0[39m,[38;5;241m0.1[39m), 
-[1;32m      4[0m            c[38;5;241m=[39m([38;5;241m0.02[39m,[38;5;241m0.2[39m,[38;5;241m0.01[39m))
-[1;32m      5[0m [38;5;28;01mdef[39;00m [38;5;21mg[39m(k[38;5;241m=[39m[38;5;241m1[39m, c[38;5;241m=[39m[38;5;241m0[39m):
-[1;32m      6[0m     [38;5;28;01mreturn[39;00m x_amplitude(k,c)
+Cell [0;32mIn[2], line 2[0m
+[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[0;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[1;32m      4[0m [38;5;28;01mdef[39;00m [38;5;21mx_amplitude[39m(k,c):
+[1;32m      6[0m     m [38;5;241m=[39m [38;5;241m1[39m                                           [38;5;66;03m# masa del cuerpo[39;00m
 
-[0;31mModuleNotFoundError[0m: No module named 'ipywidgets'
+[0;31mModuleNotFoundError[0m: No module named 'matplotlib'
 

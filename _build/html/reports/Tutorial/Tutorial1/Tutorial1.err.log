@@ -18,41 +18,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
+import numpy as np
 import matplotlib.pyplot as plt
-
-# Graficamos las curvas IV para cada condición de operación
-for idx in site_conditions.index:
-    
-    # Etiqueta de la curva IV
-    label = ('$G_{eff}=$ %.1f $W/m^2$\n' % Geff[idx] +
-            '$T_{cell}=$ %.1f $\\degree C$' % temp_cell[idx])
-    
-    # Gráfica de la curva IV
-    plt.plot(v[:,idx], i[:,idx], label=label)
-    
-    # Marcamos el mpp en el gráfico
-    v_mp = curve_info['v_mp'][idx] # Valor de V_mp en condiciones de operación
-    i_mp = curve_info['i_mp'][idx] # Valor de I_mp en condiciones de operación
-    
-    plt.plot([v_mp], [i_mp], ls='', marker='o', c='k') # punto mpp
-
-# Etiqueta de los ejes y título del gráfico
-plt.xlabel('Voltaje [V]')
-plt.ylabel('Corriente [A]')
-plt.title('Curva IV módulo - %s' % pv_model.name)
-plt.legend()
-plt.show()
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[23], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
-[1;32m      3[0m [38;5;66;03m# Graficamos las curvas IV para cada condición de operación[39;00m
-[1;32m      4[0m [38;5;28;01mfor[39;00m idx [38;5;129;01min[39;00m site_conditions[38;5;241m.[39mindex:
-[1;32m      5[0m     
-[1;32m      6[0m     [38;5;66;03m# Etiqueta de la curva IV[39;00m
+Cell [0;32mIn[2], line 2[0m
+[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
+[0;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
 
 [0;31mModuleNotFoundError[0m: No module named 'matplotlib'
 
