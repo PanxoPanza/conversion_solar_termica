@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -517,6 +517,35 @@ x(t) = - \frac{F_0/m}{\omega^2 - \omega_n^2 + i\frac{c}{m} \omega}e^{- i\omega t
 </div>
 </div>
 </details>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:22: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+&lt;&gt;:34: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+&lt;&gt;:22: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+&lt;&gt;:34: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+/tmp/ipykernel_189/542248836.py:22: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+  ax[0].text(wn*1.01,np.absolute(A(wn)),&#39;$\omega_n$&#39;, fontsize=&#39;12&#39;, color=&#39;r&#39;)
+/tmp/ipykernel_189/542248836.py:34: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+  ax[i].set_xlabel(&#39;$\omega$ &#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_189/542248836.py:22: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+  ax[0].text(wn*1.01,np.absolute(A(wn)),&#39;$\omega_n$&#39;, fontsize=&#39;12&#39;, color=&#39;r&#39;)
+/tmp/ipykernel_189/542248836.py:34: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+  ax[i].set_xlabel(&#39;$\omega$ &#39;)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">x_amplitude</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>                                           <span class="c1"># masa del cuerpo</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -536,19 +565,7 @@ x(t) = - \frac{F_0/m}{\omega^2 - \omega_n^2 + i\frac{c}{m} \omega}e^{- i\omega t
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nd">@interact</span><span class="p">(</span> <span class="n">k</span><span class="o">=</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span> 
-<span class="g g-Whitespace">      </span><span class="mi">4</span>            <span class="n">c</span><span class="o">=</span><span class="p">(</span><span class="mf">0.02</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.01</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">return</span> <span class="n">x_amplitude</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;ipywidgets&#39;
-</pre></div>
-</div>
-</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "5614c017822e4d5ba3a89f2c446de90d", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <p>La frecuencia de resonancia es fundamental en el diseño de puentes, edificios, instrumentos acústicos y otras.</p>
 <p>Un ejemplo emblemático es el <a class="reference external" href="https://es.wikipedia.org/wiki/Puente_de_Tacoma_(1940)">colapso del puente Tacoma en 1940</a>.</p>
@@ -680,8 +697,8 @@ x_p(t) = \frac{q/mE_0}{\omega_n^2 - \omega^2 - i\Gamma \omega}e^{-i\omega t}
 <p>con <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_pq^2}{\varepsilon_0 m}\)</span></p>
 <p>En el caso del agua, la molecula posee un dipolo eléctrico neto adicional al dipolo inducido. El efecto de la polarización neta se puede representar, cambiando el primer término por un valor constante <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span>.</p>
 <p>El modelo completo se conoce como <strong>modelo de Lorentz</strong>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ee3b0b27-a1a4-43e9-96e6-4a1b23b670de">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-ee3b0b27-a1a4-43e9-96e6-4a1b23b670de" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-09a5e2be-956a-42ba-9fb8-6447dde1fb62">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-09a5e2be-956a-42ba-9fb8-6447dde1fb62" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty + \frac{\omega_p^2}{\omega_n^2 - \omega^2 - i\Gamma \omega}\quad\mathrm{Modelo~de~Lorentz},
 \end{equation}\]</div>
 <p>Usaremos la función <code class="docutils literal notranslate"><span class="pre">lorentz</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">empylib.nklib</span></code> para generar el índice de refracción y constante dielectrica a partir del modelo de Lorentz.</p>
@@ -926,8 +943,8 @@ m_e\ddot{x} + m_e\Gamma_e \dot{x} = eE_0 e^{-i\omega t},
 \end{equation*}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(m_e\)</span>, <span class="math notranslate nohighlight">\(e\)</span> y <span class="math notranslate nohighlight">\(\Gamma_e\)</span> son, respectivamente, la masa, la carga elemental y la taza de decaimiento del electrón.</p>
 <p>Mediante un procedimiento similar al utilzado para el modelo de Lorentz, derivamos el <strong>modelo de Drude</strong> para conductores:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-450fda10-3d2c-4f54-a39b-c23d7165fda7">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-450fda10-3d2c-4f54-a39b-c23d7165fda7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d492a46d-7120-4e6f-a206-023d512a4859">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-d492a46d-7120-4e6f-a206-023d512a4859" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \varepsilon = \varepsilon_\infty - \frac{\omega_p^2}{\omega^2 + i\Gamma_e \omega},\quad\mathrm{Modelo~de~Drude},
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\omega_p^2 = \frac{N_ee^2}{\varepsilon_0 m}\)</span> se conoce como frecuencia de plasma, y <span class="math notranslate nohighlight">\(N_e\)</span> es la densidad de número de electrones. Similar al modelo de Lorentz, <span class="math notranslate nohighlight">\(\varepsilon_\infty\)</span> representa la polarización neta del material.</p>

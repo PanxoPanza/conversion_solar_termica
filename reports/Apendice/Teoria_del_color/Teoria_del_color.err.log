@@ -1,38 +1,80 @@
 Traceback (most recent call last):
-  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+  File "/home/panxopanza/miniconda3/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
     executenb(
-  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+  File "/home/panxopanza/miniconda3/lib/python3.12/site-packages/nbclient/client.py", line 1305, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+  File "/home/panxopanza/miniconda3/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
     return loop.run_until_complete(inner)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/panxopanza/miniconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+  File "/home/panxopanza/miniconda3/lib/python3.12/asyncio/base_events.py", line 685, in run_until_complete
     return future.result()
            ^^^^^^^^^^^^^^^
-  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+  File "/home/panxopanza/miniconda3/lib/python3.12/site-packages/nbclient/client.py", line 705, in async_execute
     await self.async_execute_cell(
-  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+  File "/home/panxopanza/miniconda3/lib/python3.12/site-packages/nbclient/client.py", line 1058, in async_execute_cell
     await self._check_raise_for_error(cell, cell_index, exec_reply)
-  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+  File "/home/panxopanza/miniconda3/lib/python3.12/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from ipywidgets import interact
+import matplotlib.pyplot as plt
 
-@interact(R=(0,1,0.1), G=(0,1,0.1), B=(0,1,0.1))
-def g(R = 1, G = 1, B = 1):
-    return plot_additive_color(R,G,B)
+# librería para transformación de espectro a código RGB
+from empylib.ref_spectra import color_system as cs
+cs = cs.srgb
+
+# formateamos el lienzo de la figura
+fig, ax = plt.subplots()
+fig.set_size_inches(6, 4)
+plt.rcParams['font.size'] = '14'
+
+# Graficamos cada curva del estandar CIE XYZ
+plt.fill(cs.lam_cmf,cs.cmf[:,0],color='red'  ,alpha=0.5,edgecolor=None,label='$\overline{x}~(\lambda)$')
+plt.fill(cs.lam_cmf,cs.cmf[:,1],color='green',alpha=0.5,edgecolor=None,label='$\overline{y}~(\lambda)$')
+plt.fill(cs.lam_cmf,cs.cmf[:,2],color='blue' ,alpha=0.5,edgecolor=None,label='$\overline{z}~(\lambda)$')
+
+# Ajustamos formato de ejes
+plt.ylim(0,2)
+plt.tick_params(left = False,labelleft = False)
+plt.xlabel('Longitud de onda ($\mu$m)')
+plt.legend();
 ------------------
 
+----- stderr -----
+<>:13: SyntaxWarning: invalid escape sequence '\o'
+<>:14: SyntaxWarning: invalid escape sequence '\o'
+<>:15: SyntaxWarning: invalid escape sequence '\o'
+<>:20: SyntaxWarning: invalid escape sequence '\m'
+<>:13: SyntaxWarning: invalid escape sequence '\o'
+<>:14: SyntaxWarning: invalid escape sequence '\o'
+<>:15: SyntaxWarning: invalid escape sequence '\o'
+<>:20: SyntaxWarning: invalid escape sequence '\m'
+/tmp/ipykernel_396/3794988094.py:13: SyntaxWarning: invalid escape sequence '\o'
+  plt.fill(cs.lam_cmf,cs.cmf[:,0],color='red'  ,alpha=0.5,edgecolor=None,label='$\overline{x}~(\lambda)$')
+/tmp/ipykernel_396/3794988094.py:14: SyntaxWarning: invalid escape sequence '\o'
+  plt.fill(cs.lam_cmf,cs.cmf[:,1],color='green',alpha=0.5,edgecolor=None,label='$\overline{y}~(\lambda)$')
+/tmp/ipykernel_396/3794988094.py:15: SyntaxWarning: invalid escape sequence '\o'
+  plt.fill(cs.lam_cmf,cs.cmf[:,2],color='blue' ,alpha=0.5,edgecolor=None,label='$\overline{z}~(\lambda)$')
+/tmp/ipykernel_396/3794988094.py:20: SyntaxWarning: invalid escape sequence '\m'
+  plt.xlabel('Longitud de onda ($\mu$m)')
+/tmp/ipykernel_396/3794988094.py:13: SyntaxWarning: invalid escape sequence '\o'
+  plt.fill(cs.lam_cmf,cs.cmf[:,0],color='red'  ,alpha=0.5,edgecolor=None,label='$\overline{x}~(\lambda)$')
+/tmp/ipykernel_396/3794988094.py:14: SyntaxWarning: invalid escape sequence '\o'
+  plt.fill(cs.lam_cmf,cs.cmf[:,1],color='green',alpha=0.5,edgecolor=None,label='$\overline{y}~(\lambda)$')
+/tmp/ipykernel_396/3794988094.py:15: SyntaxWarning: invalid escape sequence '\o'
+  plt.fill(cs.lam_cmf,cs.cmf[:,2],color='blue' ,alpha=0.5,edgecolor=None,label='$\overline{z}~(\lambda)$')
+----- stderr -----
+/tmp/ipykernel_396/3794988094.py:20: SyntaxWarning: invalid escape sequence '\m'
+  plt.xlabel('Longitud de onda ($\mu$m)')
+------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[4], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mipywidgets[39;00m [38;5;28;01mimport[39;00m interact
-[1;32m      3[0m [38;5;129m@interact[39m(R[38;5;241m=[39m([38;5;241m0[39m,[38;5;241m1[39m,[38;5;241m0.1[39m), G[38;5;241m=[39m([38;5;241m0[39m,[38;5;241m1[39m,[38;5;241m0.1[39m), B[38;5;241m=[39m([38;5;241m0[39m,[38;5;241m1[39m,[38;5;241m0.1[39m))
-[1;32m      4[0m [38;5;28;01mdef[39;00m [38;5;21mg[39m(R [38;5;241m=[39m [38;5;241m1[39m, G [38;5;241m=[39m [38;5;241m1[39m, B [38;5;241m=[39m [38;5;241m1[39m):
-[1;32m      5[0m     [38;5;28;01mreturn[39;00m plot_additive_color(R,G,B)
+Cell [0;32mIn[2], line 1[0m
+[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[1;32m      3[0m [38;5;66;03m# librería para transformación de espectro a código RGB[39;00m
+[1;32m      4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mempylib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mref_spectra[39;00m [38;5;28;01mimport[39;00m color_system [38;5;28;01mas[39;00m cs
 
-[0;31mModuleNotFoundError[0m: No module named 'ipywidgets'
+[0;31mModuleNotFoundError[0m: No module named 'matplotlib'
 

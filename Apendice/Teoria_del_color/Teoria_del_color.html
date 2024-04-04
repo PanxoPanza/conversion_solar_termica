@@ -28,7 +28,7 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -459,7 +459,44 @@ Z = \int_{0}^\infty I_\mathrm{spec}(\lambda)\bar{z}(\lambda) d\lambda,
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/34987aa4cfd7a2c09a40c9b42411ccb9835f5b0c4fa16920923a7ea6fba5a866.png" src="../../_images/34987aa4cfd7a2c09a40c9b42411ccb9835f5b0c4fa16920923a7ea6fba5a866.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:13: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+&lt;&gt;:14: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+&lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:13: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+&lt;&gt;:14: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+&lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+/tmp/ipykernel_396/3794988094.py:13: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+  plt.fill(cs.lam_cmf,cs.cmf[:,0],color=&#39;red&#39;  ,alpha=0.5,edgecolor=None,label=&#39;$\overline{x}~(\lambda)$&#39;)
+/tmp/ipykernel_396/3794988094.py:14: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+  plt.fill(cs.lam_cmf,cs.cmf[:,1],color=&#39;green&#39;,alpha=0.5,edgecolor=None,label=&#39;$\overline{y}~(\lambda)$&#39;)
+/tmp/ipykernel_396/3794988094.py:15: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+  plt.fill(cs.lam_cmf,cs.cmf[:,2],color=&#39;blue&#39; ,alpha=0.5,edgecolor=None,label=&#39;$\overline{z}~(\lambda)$&#39;)
+/tmp/ipykernel_396/3794988094.py:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  plt.xlabel(&#39;Longitud de onda ($\mu$m)&#39;)
+/tmp/ipykernel_396/3794988094.py:13: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+  plt.fill(cs.lam_cmf,cs.cmf[:,0],color=&#39;red&#39;  ,alpha=0.5,edgecolor=None,label=&#39;$\overline{x}~(\lambda)$&#39;)
+/tmp/ipykernel_396/3794988094.py:14: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+  plt.fill(cs.lam_cmf,cs.cmf[:,1],color=&#39;green&#39;,alpha=0.5,edgecolor=None,label=&#39;$\overline{y}~(\lambda)$&#39;)
+/tmp/ipykernel_396/3794988094.py:15: SyntaxWarning: invalid escape sequence &#39;\o&#39;
+  plt.fill(cs.lam_cmf,cs.cmf[:,2],color=&#39;blue&#39; ,alpha=0.5,edgecolor=None,label=&#39;$\overline{z}~(\lambda)$&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_396/3794988094.py:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  plt.xlabel(&#39;Longitud de onda ($\mu$m)&#39;)
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># librería para transformación de espectro a código RGB</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">empylib.ref_spectra</span> <span class="kn">import</span> <span class="n">color_system</span> <span class="k">as</span> <span class="n">cs</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;matplotlib&#39;
+</pre></div>
+</div>
 </div>
 </div>
 <p>Posterior a esto, el código de colores <span class="math notranslate nohighlight">\(\mathrm{RGB}\)</span> se determina a partir del sistema:</p>
@@ -564,18 +601,7 @@ x = \frac{X}{X+Y+Z},\quad\quad\quad y = \frac{Y}{X+Y+Z},\quad\quad\quad z = \fra
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nd">@interact</span><span class="p">(</span><span class="n">R</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span> <span class="n">G</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">),</span> <span class="n">B</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">R</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">G</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="k">return</span> <span class="n">plot_additive_color</span><span class="p">(</span><span class="n">R</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">B</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;ipywidgets&#39;
-</pre></div>
-</div>
-</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0a07ab5861ce482faeaac1f11f002199", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="coloracion-sustractiva">
