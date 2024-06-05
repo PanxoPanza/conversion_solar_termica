@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>10. Conversión Solar Fotovoltaica &#8212; MEC501 - Manejo y conversión solar</title>
   
@@ -14,50 +15,54 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom_edits.css?v=4f657593" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_edits.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '10_SolarFotovoltaica/10_SolarFotovoltaica';</script>
@@ -74,27 +79,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -116,8 +117,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -152,18 +158,7 @@
     <p class="title logo__title">MEC501 - Manejo y conversión solar</p>
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -201,13 +196,13 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Apendice/Espectro_electromagnetico/Espectro_electromagnetico.html">Espectro electromagnético</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Apendice/Teoria_del_color/Teoria_del_color.html">Teoria del color</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorial/Intro.html">Tutoriales</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorial/Intro.html">Tutoriales</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial/Tutorial1/Tutorial1.html">Tutorial 1 - Modelos ópticos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial/Tutorial2/Tutorial2.html">Tutorial 2 - Espectros de referencia</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial/Tutorial3/Tutorial3.html">Tutorial 3 - Datos solares y climatológicos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial/Tutorial4/Tutorial4.html">Tutorial 4 - Modelación módulo PV</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -223,7 +218,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -232,7 +227,7 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -437,11 +432,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="conversion-solar-fotovoltaica">
-<h1><span class="section-number">10. </span>Conversión Solar Fotovoltaica<a class="headerlink" href="#conversion-solar-fotovoltaica" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">10. </span>Conversión Solar Fotovoltaica<a class="headerlink" href="#conversion-solar-fotovoltaica" title="Permalink to this heading">#</a></h1>
 <section id="introduccion">
-<h2><span class="section-number">10.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
 <section id="el-contexto-global-de-la-tecnologia-fotovoltaica">
-<h3><span class="section-number">10.1.1. </span>El contexto global de la tecnología fotovoltaica<a class="headerlink" href="#el-contexto-global-de-la-tecnologia-fotovoltaica" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.1.1. </span>El contexto global de la tecnología fotovoltaica<a class="headerlink" href="#el-contexto-global-de-la-tecnologia-fotovoltaica" title="Permalink to this heading">#</a></h3>
 <p><strong>La tecnología fotovoltaica es el método más económico de conversión de energía solar a electricidad</strong>. En algunos paises, con precios por kWh incluso menores que los combustibles fósiles.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -458,7 +453,7 @@ document.write(`
 </div>
 </section>
 <section id="principales-componentes-de-un-sistema-fotovoltaico">
-<h3><span class="section-number">10.1.2. </span>Principales componentes de un sistema fotovoltaico<a class="headerlink" href="#principales-componentes-de-un-sistema-fotovoltaico" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.1.2. </span>Principales componentes de un sistema fotovoltaico<a class="headerlink" href="#principales-componentes-de-un-sistema-fotovoltaico" title="Permalink to this heading">#</a></h3>
 <p>La tecnología fotoltaica esta basada en <strong>dispositivos de estado sólido</strong> que convierten, directamente, radiación solar en electricidad.</p>
 <a class="reference internal image-reference" href="../_images/from_pvcell_to_pvsystem.png"><img alt="../_images/from_pvcell_to_pvsystem.png" class="align-center" src="../_images/from_pvcell_to_pvsystem.png" style="width: 400px;" /></a>
 <p>Denominamos como <strong>celda fotovoltaica</strong> a la unidad fundamental de un panel fotovoltaico. Este elemento es el encargado de la generación de electricidad mediante el <strong>efecto fotoeléctrico</strong></p>
@@ -474,9 +469,9 @@ document.write(`
 </section>
 </section>
 <section id="fundamentos-de-la-conversion-fotovoltaica-en-semiconductores">
-<h2><span class="section-number">10.2. </span>Fundamentos de la conversión fotovoltaica en semiconductores<a class="headerlink" href="#fundamentos-de-la-conversion-fotovoltaica-en-semiconductores" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.2. </span>Fundamentos de la conversión fotovoltaica en semiconductores<a class="headerlink" href="#fundamentos-de-la-conversion-fotovoltaica-en-semiconductores" title="Permalink to this heading">#</a></h2>
 <section id="semiconductores">
-<h3><span class="section-number">10.2.1. </span>Semiconductores<a class="headerlink" href="#semiconductores" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.2.1. </span>Semiconductores<a class="headerlink" href="#semiconductores" title="Permalink to this heading">#</a></h3>
 <p>Como discutimos en la <a class="reference external" href="https://panxopanza.github.io/conversion_solar_termica/3_Interacci%C3%B3n_materia-luz/3_Interacci%C3%B3n_materia-luz.html#interaccion-de-la-luz-con-materiales-solidos">unidad 3 del curso</a>, un semiconductor es un material caracterizado por un <em>bandgap</em> (<span class="math notranslate nohighlight">\(E_g\)</span>) relativamente pequeño (<span class="math notranslate nohighlight">\(\sim 1 - 2\)</span> eV), de manera tal que un electrón puede ser llevado a la banda de conducción mediante una onda electromagnética o un potencial eléctrico.</p>
 <a class="reference internal image-reference" href="../_images/semiconductor_energy_band.png"><img alt="../_images/semiconductor_energy_band.png" class="align-center" src="../_images/semiconductor_energy_band.png" style="width: 500px;" /></a>
 <p>En el silicio, por ejemplo, <span class="math notranslate nohighlight">\(E_g = 1.12\)</span> eV. Así los fotones del espectro visible pueden ser absorbidos por el material.</p>
@@ -485,7 +480,7 @@ document.write(`
 <p>Debido al potencial eléctrico inducido entre las bandas de conducción y valencia, el electrón retorna a la posición inicial ocupando el espacio del agujero. Llamamos a este fenómeno <strong>recombinación</strong></p>
 </section>
 <section id="dopaje-de-semiconductores">
-<h3><span class="section-number">10.2.2. </span>Dopaje de semiconductores<a class="headerlink" href="#dopaje-de-semiconductores" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.2.2. </span>Dopaje de semiconductores<a class="headerlink" href="#dopaje-de-semiconductores" title="Permalink to this heading">#</a></h3>
 <p>El dopaje de semiconductores consiste en introducir impuresas intencionalmente, con el fin de modular las propiedades eléctricas, ópticas o estructurales.</p>
 <p>Para entender esto, consideremos el cristal de silicio. Este elemento tiene 4 electrones de valencia.</p>
 <a class="reference internal image-reference" href="../_images/intrinsic_silicon_crystal.png"><img alt="../_images/intrinsic_silicon_crystal.png" class="align-center" src="../_images/intrinsic_silicon_crystal.png" style="width: 400px;" /></a>
@@ -504,7 +499,7 @@ document.write(`
 <p>En este caso, decimos que el <strong>semiconductor es de tipo p</strong>.</p>
 </section>
 <section id="union-p-n">
-<h3><span class="section-number">10.2.3. </span>Unión p-n<a class="headerlink" href="#union-p-n" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.2.3. </span>Unión p-n<a class="headerlink" href="#union-p-n" title="Permalink to this heading">#</a></h3>
 <p>Cuando un semiconductor tipo n se une a un semiconductor tipo p, las cargas negativas y positivas de cada semiconductor se mueven hacia el lado contrario debido a la diferencia de concentraciones en cada semiconductor.</p>
 <a class="reference internal image-reference" href="../_images/pn-junction.png"><img alt="../_images/pn-junction.png" class="align-center" src="../_images/pn-junction.png" style="width: 400px;" /></a>
 <p>El flujo de cargas eléctricas y la recombinación en cada semiconductor forma una región intermedia denominada <strong>región de agotamiento</strong></p>
@@ -515,7 +510,7 @@ document.write(`
 <p>Notar en el esquema que los llamados <strong>portadores minoritarios</strong> (agujeros en el semiconductor n y electrones en el semiconductor p), son los encargados de producir una corriente eléctrica</p>
 </section>
 <section id="operacion-de-una-celda-fotovoltaica">
-<h3><span class="section-number">10.2.4. </span>Operación de una celda fotovoltaica<a class="headerlink" href="#operacion-de-una-celda-fotovoltaica" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.2.4. </span>Operación de una celda fotovoltaica<a class="headerlink" href="#operacion-de-una-celda-fotovoltaica" title="Permalink to this heading">#</a></h3>
 <p>En ausencia de iluminación la unión pn se comporta como un <strong>diodo</strong></p>
 <p>Cuando se aplica un voltage opuesto a la dirección del campo eléctrico en la unión pn, nos referimos a un <strong>sesgo hacia atrás (<em>reverse bias</em>)</strong>.</p>
 <a class="reference internal image-reference" href="../_images/pn-junction_reverse-bias.png"><img alt="../_images/pn-junction_reverse-bias.png" class="align-center" src="../_images/pn-junction_reverse-bias.png" style="width: 350px;" /></a>
@@ -556,7 +551,7 @@ J = J_0\left[\exp{\left(\frac{q_eV}{k_\mathrm{B}T}\right)} - 1 \right]  - J_\mat
 <p>Cabe destacar que la discución anterior está basada en parámetros por unidad de área. Generalmente, la información del fabricante de las celdas está dada en valores de corriente total, <span class="math notranslate nohighlight">\(I = AJ\)</span>, donde <span class="math notranslate nohighlight">\(A\)</span> es la superficie expuesta del panel.</p>
 </section>
 <section id="perdidas-de-energia-en-una-celda-fotovoltaica">
-<h3><span class="section-number">10.2.5. </span>Pérdidas de energía en una celda fotovoltaica<a class="headerlink" href="#perdidas-de-energia-en-una-celda-fotovoltaica" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.2.5. </span>Pérdidas de energía en una celda fotovoltaica<a class="headerlink" href="#perdidas-de-energia-en-una-celda-fotovoltaica" title="Permalink to this heading">#</a></h3>
 <p>El comportamiento descrito anteriormente, representa una celda (of fotodiodo) idealizada. En la práctica, la celda presenta pérdidas eléctricas asociadas a su fabricación, las cuales diferenciamos mediante dos resistencias:</p>
 <ul class="simple">
 <li><p><strong>Resistencia en serie (<span class="math notranslate nohighlight">\(R_\mathrm{s}\)</span>)</strong>, representando lás pérdidas por resistencia en el semiconductor en la interface de los contactos eléctricos, y en los contactos.</p></li>
@@ -567,7 +562,7 @@ J = J_0\left[\exp{\left(\frac{q_eV}{k_\mathrm{B}T}\right)} - 1 \right]  - J_\mat
 <p>En la práctica <span class="math notranslate nohighlight">\(R_\mathrm{s}\)</span> debe ser lo más baja posible, y <span class="math notranslate nohighlight">\(R_\mathrm{sh}\)</span> debe ser lo más alta posible.</p>
 </section>
 <section id="el-modelo-del-diodo-unico-sdm">
-<h3><span class="section-number">10.2.6. </span>El modelo del diodo único (SDM)<a class="headerlink" href="#el-modelo-del-diodo-unico-sdm" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.2.6. </span>El modelo del diodo único (SDM)<a class="headerlink" href="#el-modelo-del-diodo-unico-sdm" title="Permalink to this heading">#</a></h3>
 <p>Podemos resumir todos los conceptos revisados anteriormente mediante un circuito eléctrico equivalente, como:</p>
 <a class="reference internal image-reference" href="../_images/equivalent_pv-cell_circuit.png"><img alt="../_images/equivalent_pv-cell_circuit.png" class="align-center" src="../_images/equivalent_pv-cell_circuit.png" style="width: 350px;" /></a>
 <p>En base a este circuito, y considerando la corriente <span class="math notranslate nohighlight">\(I_L\)</span> en sentido positivo, tenemos que la corriente generada por la celda, <span class="math notranslate nohighlight">\(I\)</span>, es:</p>
@@ -583,7 +578,7 @@ I = I_L - I_\mathrm{dark} - I_\mathrm{sh}
 <p>donde <span class="math notranslate nohighlight">\(n\)</span> es el factor de idealidad del diodo y <span class="math notranslate nohighlight">\(V_T = k_\mathrm{B}T/q_e\)</span> es el <em>voltaje térmico</em>.</p>
 </section>
 <section id="caracterizacion-de-una-celda-fotoltaica">
-<h3><span class="section-number">10.2.7. </span>Caracterización de una celda fotoltaica<a class="headerlink" href="#caracterizacion-de-una-celda-fotoltaica" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.2.7. </span>Caracterización de una celda fotoltaica<a class="headerlink" href="#caracterizacion-de-una-celda-fotoltaica" title="Permalink to this heading">#</a></h3>
 <p>En base al SDM, la curva I-V (o J-V) de una celda fotovoltaica tiene la siguiente forma:</p>
 <a class="reference internal image-reference" href="../_images/JV-curve_pv-cell.png"><img alt="../_images/JV-curve_pv-cell.png" class="align-center" src="../_images/JV-curve_pv-cell.png" style="width: 400px;" /></a>
 <p>De esta curva distinguimos:</p>
@@ -634,7 +629,7 @@ I = I_L - I_\mathrm{dark} - I_\mathrm{sh}
 </ul>
 </section>
 <section id="maxima-eficiencia-en-celdas-fotovoltaicas">
-<h3><span class="section-number">10.2.8. </span>Máxima eficiencia en celdas fotovoltaicas<a class="headerlink" href="#maxima-eficiencia-en-celdas-fotovoltaicas" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.2.8. </span>Máxima eficiencia en celdas fotovoltaicas<a class="headerlink" href="#maxima-eficiencia-en-celdas-fotovoltaicas" title="Permalink to this heading">#</a></h3>
 <p>Debido a que la conversión de energía fotovoltaica está basada en el efecto fotoeléctrico, la eficiencia termodinámica de una celda está condicionada por el bandgap del semiconductor utilizado.</p>
 <p>Por ejemplo, en el caso del silicio (<span class="math notranslate nohighlight">\(E_\mathrm{g} = 1.12~\mathrm{eV}\)</span>), solo una porción del espectro solar es efectivamente convertido a electricidad.</p>
 <a class="reference internal image-reference" href="../_images/si_spectral-utilization.png"><img alt="../_images/si_spectral-utilization.png" class="align-center" src="../_images/si_spectral-utilization.png" style="width: 500px;" /></a>
@@ -647,7 +642,7 @@ I = I_L - I_\mathrm{dark} - I_\mathrm{sh}
 </ul>
 </section>
 <section id="fabricacion-de-celdas-fotovoltaicas">
-<h3><span class="section-number">10.2.9. </span>Fabricación de celdas fotovoltaicas<a class="headerlink" href="#fabricacion-de-celdas-fotovoltaicas" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.2.9. </span>Fabricación de celdas fotovoltaicas<a class="headerlink" href="#fabricacion-de-celdas-fotovoltaicas" title="Permalink to this heading">#</a></h3>
 <p>Los métodos de fabricación de las celdas dependen del tipo de material y la cristalinidad deseada.</p>
 <p>El video a continuación muestra el procedimiento de fabricación de celdas de silicio cristalino, el material más utilizado en paneles.</p>
 <div class="cell tag_remove-input docutils container">
@@ -666,9 +661,9 @@ I = I_L - I_\mathrm{dark} - I_\mathrm{sh}
 </section>
 </section>
 <section id="paneles-fotovoltaicos">
-<h2><span class="section-number">10.3. </span>Paneles fotovoltaicos<a class="headerlink" href="#paneles-fotovoltaicos" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.3. </span>Paneles fotovoltaicos<a class="headerlink" href="#paneles-fotovoltaicos" title="Permalink to this heading">#</a></h2>
 <section id="ensamblaje-de-celdas-fotovoltaicas">
-<h3><span class="section-number">10.3.1. </span>Ensamblaje de celdas fotovoltaicas<a class="headerlink" href="#ensamblaje-de-celdas-fotovoltaicas" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.3.1. </span>Ensamblaje de celdas fotovoltaicas<a class="headerlink" href="#ensamblaje-de-celdas-fotovoltaicas" title="Permalink to this heading">#</a></h3>
 <p>En la práctica, las celdas fotovoltaicas se agrupan en un módulo mediante conexiones en serie y paralelo con el fin de aumentar la corriente y voltaje total.</p>
 <a class="reference internal image-reference" href="../_images/assembled_pv-cells.png"><img alt="../_images/assembled_pv-cells.png" class="align-center" src="../_images/assembled_pv-cells.png" style="width: 600px;" /></a>
 <p>En el siguiente esquema se muestra un módulo con un arreglo de <span class="math notranslate nohighlight">\(N_\mathrm{SM}\)</span> celdas en serie y <span class="math notranslate nohighlight">\(N_\mathrm{PM}\)</span> en paralelo.</p>
@@ -685,7 +680,7 @@ V_\mathrm{oc}^\mathrm{M} = N_\mathrm{SM}V_\mathrm{oc}
 \end{equation*}\]</div>
 </section>
 <section id="componentes-de-un-modulo-fotovoltaico">
-<h3><span class="section-number">10.3.2. </span>Componentes de un módulo fotovoltaico<a class="headerlink" href="#componentes-de-un-modulo-fotovoltaico" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.3.2. </span>Componentes de un módulo fotovoltaico<a class="headerlink" href="#componentes-de-un-modulo-fotovoltaico" title="Permalink to this heading">#</a></h3>
 <p>El módulo, además esta cubierto por una serie de capas que buscan proteger las celdas contra los efectos del medioambiente</p>
 <a class="reference internal image-reference" href="../_images/pv-module_assembly.png"><img alt="../_images/pv-module_assembly.png" class="align-center" src="../_images/pv-module_assembly.png" style="width: 350px;" /></a>
 <ul class="simple">
@@ -698,9 +693,9 @@ V_\mathrm{oc}^\mathrm{M} = N_\mathrm{SM}V_\mathrm{oc}
 </section>
 </section>
 <section id="principales-tecnologias-fotovoltaicas">
-<h2><span class="section-number">10.4. </span>Principales tecnologías fotovoltaicas<a class="headerlink" href="#principales-tecnologias-fotovoltaicas" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.4. </span>Principales tecnologías fotovoltaicas<a class="headerlink" href="#principales-tecnologias-fotovoltaicas" title="Permalink to this heading">#</a></h2>
 <section id="silicio-monocristalino-mono-si">
-<h3><span class="section-number">10.4.1. </span>Silicio monocristalino (mono-Si)<a class="headerlink" href="#silicio-monocristalino-mono-si" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.4.1. </span>Silicio monocristalino (mono-Si)<a class="headerlink" href="#silicio-monocristalino-mono-si" title="Permalink to this heading">#</a></h3>
 <a class="reference internal image-reference" href="../_images/mono-Si_panel.png"><img alt="../_images/mono-Si_panel.png" class="align-center" src="../_images/mono-Si_panel.png" style="width: 400px;" /></a>
 <ul class="simple">
 <li><p>La eficiencia de los módulos puede ser entre 18 - 20%.</p></li>
@@ -710,7 +705,7 @@ V_\mathrm{oc}^\mathrm{M} = N_\mathrm{SM}V_\mathrm{oc}
 </ul>
 </section>
 <section id="silicio-policristalino-poly-si">
-<h3><span class="section-number">10.4.2. </span>Silicio policristalino (poly-Si)<a class="headerlink" href="#silicio-policristalino-poly-si" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.4.2. </span>Silicio policristalino (poly-Si)<a class="headerlink" href="#silicio-policristalino-poly-si" title="Permalink to this heading">#</a></h3>
 <a class="reference internal image-reference" href="../_images/poly-Si_panel.png"><img alt="../_images/poly-Si_panel.png" class="align-center" src="../_images/poly-Si_panel.png" style="width: 400px;" /></a>
 <ul class="simple">
 <li><p>La eficiencia de los módulos puede ser entre 15 - 18%</p></li>
@@ -719,7 +714,7 @@ V_\mathrm{oc}^\mathrm{M} = N_\mathrm{SM}V_\mathrm{oc}
 </ul>
 </section>
 <section id="silicio-amorfo-a-si-pelicula-delgada">
-<h3><span class="section-number">10.4.3. </span>Silicio amorfo (a-Si) - Película delgada<a class="headerlink" href="#silicio-amorfo-a-si-pelicula-delgada" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.4.3. </span>Silicio amorfo (a-Si) - Película delgada<a class="headerlink" href="#silicio-amorfo-a-si-pelicula-delgada" title="Permalink to this heading">#</a></h3>
 <a class="reference internal image-reference" href="../_images/a-Si_panel.jpg"><img alt="../_images/a-Si_panel.jpg" class="align-center" src="../_images/a-Si_panel.jpg" style="width: 400px;" /></a>
 <ul class="simple">
 <li><p>El silicio amorfo absorbe la luz mejor que el silicio cristalino o policristalino</p></li>
@@ -731,7 +726,7 @@ V_\mathrm{oc}^\mathrm{M} = N_\mathrm{SM}V_\mathrm{oc}
 </ul>
 </section>
 <section id="telurio-cadmio-cdte-pelicula-delgada">
-<h3><span class="section-number">10.4.4. </span>Telurio Cadmio (CdTe)  - Película delgada<a class="headerlink" href="#telurio-cadmio-cdte-pelicula-delgada" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.4.4. </span>Telurio Cadmio (CdTe)  - Película delgada<a class="headerlink" href="#telurio-cadmio-cdte-pelicula-delgada" title="Permalink to this heading">#</a></h3>
 <a class="reference internal image-reference" href="../_images/CdTe_panel.png"><img alt="../_images/CdTe_panel.png" class="align-center" src="../_images/CdTe_panel.png" style="width: 400px;" /></a>
 <ul class="simple">
 <li><p>También se fabrican en formato <em>Thin film</em></p></li>
@@ -743,7 +738,7 @@ V_\mathrm{oc}^\mathrm{M} = N_\mathrm{SM}V_\mathrm{oc}
 </ul>
 </section>
 <section id="cigs-cu-i-ga-se-pelicula-delgada">
-<h3><span class="section-number">10.4.5. </span>CIGS (Cu-I-Ga-Se) - Película delgada<a class="headerlink" href="#cigs-cu-i-ga-se-pelicula-delgada" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.4.5. </span>CIGS (Cu-I-Ga-Se) - Película delgada<a class="headerlink" href="#cigs-cu-i-ga-se-pelicula-delgada" title="Permalink to this heading">#</a></h3>
 <a class="reference internal image-reference" href="../_images/CIGS_panel.png"><img alt="../_images/CIGS_panel.png" class="align-center" src="../_images/CIGS_panel.png" style="width: 400px;" /></a>
 <ul class="simple">
 <li><p>Una de las tecnologías de película delgada más nuevas.</p></li>
@@ -753,7 +748,7 @@ V_\mathrm{oc}^\mathrm{M} = N_\mathrm{SM}V_\mathrm{oc}
 </section>
 </section>
 <section id="evolucion-del-mercado-de-tecnologias-fotovoltaica">
-<h2><span class="section-number">10.5. </span>Evolución del mercado de tecnologías fotovoltaica<a class="headerlink" href="#evolucion-del-mercado-de-tecnologias-fotovoltaica" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.5. </span>Evolución del mercado de tecnologías fotovoltaica<a class="headerlink" href="#evolucion-del-mercado-de-tecnologias-fotovoltaica" title="Permalink to this heading">#</a></h2>
 <p>La siguiente figura muestra la produción de paneles fotovoltaicos por año (fuente: <a class="reference external" href="https://www.ise.fraunhofer.de/content/dam/ise/de/documents/publications/studies/Photovoltaics-Report.pdf">Fraunhofer Institute for Solar Energy Systems</a>)</p>
 <a class="reference internal image-reference" href="../_images/pv-market.png"><img alt="../_images/pv-market.png" class="align-center" src="../_images/pv-market.png" style="width: 400px;" /></a>
 <p>Hasta hace algunos años el mercado de paneles fotoltaicos era dominado por los de tipo poly-Si (Multi-Si en el gráfico). Sin embargo, la mejora en los procesos productivos por parte de la industria China, han catapultado la producción de paneles Mono-Si. Actualmente, esta teconología domina el mercado.</p>
@@ -761,16 +756,16 @@ V_\mathrm{oc}^\mathrm{M} = N_\mathrm{SM}V_\mathrm{oc}
 <a class="reference internal image-reference" href="../_images/pv-cells_lab-efficiencies.png"><img alt="../_images/pv-cells_lab-efficiencies.png" class="align-center" src="../_images/pv-cells_lab-efficiencies.png" style="width: 800px;" /></a>
 </section>
 <section id="nuevas-tecnologias-de-conversion-fotovoltaica">
-<h2><span class="section-number">10.6. </span>Nuevas tecnologías de conversión fotovoltaica<a class="headerlink" href="#nuevas-tecnologias-de-conversion-fotovoltaica" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.6. </span>Nuevas tecnologías de conversión fotovoltaica<a class="headerlink" href="#nuevas-tecnologias-de-conversion-fotovoltaica" title="Permalink to this heading">#</a></h2>
 <section id="superficies-multifuncionales">
-<h3><span class="section-number">10.6.1. </span>Superficies multifuncionales<a class="headerlink" href="#superficies-multifuncionales" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.6.1. </span>Superficies multifuncionales<a class="headerlink" href="#superficies-multifuncionales" title="Permalink to this heading">#</a></h3>
 <p>Una de las alternativas para mejorar la eficiencia de las celdas solares es mediante la <a class="reference external" href="https://pubs.acs.org/doi/abs/10.1021/acsnano.0c05497">nanoestructuración de la superficie del semiconductor</a>. El efecto principal de esta técnica es reducir el contraste del índice de refracción entre el silicio y el aire. La nanoestructuración de la superficie del silicio induce un índice de refracción efectivo que cambia gradualmente entre el aire y el material, reduciendo así las pérdidas por reflección.</p>
 <a class="reference internal image-reference" href="../_images/nanostructured-silicon.png"><img alt="../_images/nanostructured-silicon.png" class="align-center" src="../_images/nanostructured-silicon.png" style="width: 900px;" /></a>
 <p>Como consecuencia de la nanostructuración, la superficie adquiere <a class="reference external" href="https://pubs.acs.org/doi/10.1021/acs.langmuir.1c01310">propiedades superhidrofóbicas</a>. Esto permite que el panel adquiera propiedades autolimpiantes, similar a lo que ocurre en algunas plantas como las hojas de la flor de loto.</p>
 <a class="reference internal image-reference" href="../_images/super-hydrophobic-surfaces.png"><img alt="../_images/super-hydrophobic-surfaces.png" class="align-center" src="../_images/super-hydrophobic-surfaces.png" style="width: 800px;" /></a>
 </section>
 <section id="conversion-termofotovoltaica-tpv">
-<h3><span class="section-number">10.6.2. </span>Conversión termofotovoltaica (TPV)<a class="headerlink" href="#conversion-termofotovoltaica-tpv" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.6.2. </span>Conversión termofotovoltaica (TPV)<a class="headerlink" href="#conversion-termofotovoltaica-tpv" title="Permalink to this heading">#</a></h3>
 <p>La tecnología de conversión termofotovoltaica consiste en cambiar el sol, como fuente de radiación, por un emisor térmico cercano a la celda. Esto permite una mejor aprovechamiento de la radiación, ya que parte de los fotones que no son convertidos a corriente, pueden ser reflejados de vuelta al emisor.</p>
 <a class="reference internal image-reference" href="../_images/thermophotovoltaics-intro.png"><img alt="../_images/thermophotovoltaics-intro.png" class="align-center" src="../_images/thermophotovoltaics-intro.png" style="width: 600px;" /></a>
 <p>El límite teórico definido por Shockley–Queisser es de 85%. En la práctica, <a class="reference external" href="https://www.nature.com/articles/s41586-022-04473-y.pdf?origin=ppub">las celdas TPV han alcanzado eficiencias de hasta 40%</a>.</p>
@@ -786,7 +781,7 @@ V_\mathrm{oc}^\mathrm{M} = N_\mathrm{SM}V_\mathrm{oc}
 <p>A pesar de que está técnica podría alcanzar mayores eficiencias que las tpv comúnes, las eficiencias experimentales son menores a 10%.</p>
 </section>
 <section id="concentradores-solares-luminiscentes">
-<h3><span class="section-number">10.6.3. </span>Concentradores solares luminiscentes<a class="headerlink" href="#concentradores-solares-luminiscentes" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">10.6.3. </span>Concentradores solares luminiscentes<a class="headerlink" href="#concentradores-solares-luminiscentes" title="Permalink to this heading">#</a></h3>
 <p>Otra tecnología aún en desarrollo son los <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/aenm.202002883">concentradores solares luminiscentes</a>. Este concepto consiste en la concentración solar usando materiales con luminiscencia. La radiación solar es absorbida y reemitida por pigmentos luminiscentes, canalizada hasta los bordes y luego convertida a elecricidad mediante celdas fotovoltaicas.</p>
 <a class="reference internal image-reference" href="../_images/lsc_solar.png"><img alt="../_images/lsc_solar.png" class="align-center" src="../_images/lsc_solar.png" style="width: 700px;" /></a>
 <p>Esta tecnología no pretende competir con las tecnologías de conversión solar convencionales, sino que ofrecer una alternativa de conversión de energía solar en ventanas para edificios.</p>
@@ -806,7 +801,7 @@ V_\mathrm{oc}^\mathrm{M} = N_\mathrm{SM}V_\mathrm{oc}
 </section>
 </section>
 <section id="referencias">
-<h2><span class="section-number">10.7. </span>Referencias<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">10.7. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this heading">#</a></h2>
 <p>Kalogirou S. A. <em>Chapter 9. Photovoltaic Systems</em> in <strong>Solar Energy Engineering Processes and Systems</strong>, 2nd Ed, Academic Press, 2014</p>
 </section>
 </section>
@@ -838,7 +833,7 @@ V_\mathrm{oc}^\mathrm{M} = N_\mathrm{SM}V_\mathrm{oc}
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -937,7 +932,7 @@ By Francisco V. Ramirez-Cuevas
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>
@@ -961,8 +956,8 @@ By Francisco V. Ramirez-Cuevas
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>

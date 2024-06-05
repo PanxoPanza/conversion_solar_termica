@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>11. Control pasivo de radiación solar en edificaciones &#8212; MEC501 - Manejo y conversión solar</title>
   
@@ -14,50 +15,54 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom_edits.css?v=4f657593" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom_edits.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio';</script>
@@ -74,27 +79,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -116,8 +117,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -152,18 +158,7 @@
     <p class="title logo__title">MEC501 - Manejo y conversión solar</p>
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -201,13 +196,13 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Apendice/Espectro_electromagnetico/Espectro_electromagnetico.html">Espectro electromagnético</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Apendice/Teoria_del_color/Teoria_del_color.html">Teoria del color</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorial/Intro.html">Tutoriales</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorial/Intro.html">Tutoriales</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial/Tutorial1/Tutorial1.html">Tutorial 1 - Modelos ópticos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial/Tutorial2/Tutorial2.html">Tutorial 2 - Espectros de referencia</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial/Tutorial3/Tutorial3.html">Tutorial 3 - Datos solares y climatológicos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial/Tutorial4/Tutorial4.html">Tutorial 4 - Modelación módulo PV</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -223,7 +218,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -232,7 +227,7 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -425,9 +420,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="control-pasivo-de-radiacion-solar-en-edificaciones">
-<h1><span class="section-number">11. </span>Control pasivo de radiación solar en edificaciones<a class="headerlink" href="#control-pasivo-de-radiacion-solar-en-edificaciones" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">11. </span>Control pasivo de radiación solar en edificaciones<a class="headerlink" href="#control-pasivo-de-radiacion-solar-en-edificaciones" title="Permalink to this heading">#</a></h1>
 <section id="introduccion">
-<h2><span class="section-number">11.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
 <p>Hasta ahora hemos revisado tecnologías de conversión de energía solar. En estas aplicaciones el objetivo es convertir eficientemente la mayor cantidad de radiación solar.</p>
 <p>Sin embargo, hay situaciones donde la exposición solar induce efectos indeseables, tales como sobrecalentamiento de ambientes, degradación de materiales o efectos dañinos en la piel.</p>
 <p>Particularmente en edificios y hogares, el aumento de la temperatura en días cálidos por exceso de radiación solar conduce a un mayor consumo eléctrico asociado a sistemas de acondicionamiento de aire. Por el contrario, en invierno, necesitamos aprovechar el calor del sol al máximo para reducir el consumo por calefacción. <strong>El manejo eficiente de la energía solar térmica en edificios, así, juega un rol fundamental en la reducción de gases de efecto invernadero</strong>.</p>
@@ -435,9 +430,9 @@ document.write(`
 <a class="reference internal image-reference" href="../_images/passive_solar_management.png"><img alt="../_images/passive_solar_management.png" class="align-center" src="../_images/passive_solar_management.png" style="width: 700px;" /></a>
 </section>
 <section id="metodos-tradicionales">
-<h2><span class="section-number">11.2. </span>Métodos tradicionales<a class="headerlink" href="#metodos-tradicionales" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.2. </span>Métodos tradicionales<a class="headerlink" href="#metodos-tradicionales" title="Permalink to this heading">#</a></h2>
 <section id="masa-termica-y-desface-termico-en-materiales-de-construccion">
-<h3><span class="section-number">11.2.1. </span>Masa térmica y desface térmico en materiales de construcción<a class="headerlink" href="#masa-termica-y-desface-termico-en-materiales-de-construccion" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.2.1. </span>Masa térmica y desface térmico en materiales de construcción<a class="headerlink" href="#masa-termica-y-desface-termico-en-materiales-de-construccion" title="Permalink to this heading">#</a></h3>
 <p>El calor puede ser almacenado en materiales de construcción para reducir la temperatura interior, reducir las cargas de enfriamiento, o para retrasar el momento donde la carga térmica es máxima.</p>
 <p>En arquitectura y construcción, la <strong>capacidad de un material para almacenar calor se conoce como, <em>masa térmica</em></strong> y corresponde al producto entre la densidad y el calor específico del material.</p>
 <a class="reference internal image-reference" href="../_images/masa_termica_tabla.png"><img alt="../_images/masa_termica_tabla.png" class="align-center" src="../_images/masa_termica_tabla.png" style="width: 500px;" /></a>
@@ -486,7 +481,7 @@ document.write(`
 <p>Lo más importante es la dirección donde debe apuntar este muro. En el hemisferio norte el muro debe apuntar hacia el sur, mientras que en el hemisferio sur, el muro debe apuntar preferentemente hacia la dirección norte.</p>
 </section>
 <section id="manejo-termico-a-traves-de-ventanas">
-<h3><span class="section-number">11.2.2. </span>Manejo térmico a través de ventanas<a class="headerlink" href="#manejo-termico-a-traves-de-ventanas" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.2.2. </span>Manejo térmico a través de ventanas<a class="headerlink" href="#manejo-termico-a-traves-de-ventanas" title="Permalink to this heading">#</a></h3>
 <p>Otro elemento importante para el manejo solar térmico son las ventanas. Dependiendo del diseño, una ventana puede ser utilizada para manejar las ganancias y pérdidas de energía por radiación.</p>
 <a class="reference internal image-reference" href="../_images/window_sunspaces.png"><img alt="../_images/window_sunspaces.png" class="align-center" src="../_images/window_sunspaces.png" style="width: 400px;" /></a>
 <p>En la figura se muestran tres diseños de ventanas utilizados para este propósito. En todos los casos, <strong>la cara vertical debe apuntar hacia el norte (sur para hemisferio norte) para maximizar la captura de radiación solar</strong>.</p>
@@ -498,7 +493,7 @@ document.write(`
 </section>
 </section>
 <section id="control-solar-en-ventanas-low-e-coating">
-<h2><span class="section-number">11.3. </span>Control solar en ventanas (<em>Low-E coating</em>)<a class="headerlink" href="#control-solar-en-ventanas-low-e-coating" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.3. </span>Control solar en ventanas (<em>Low-E coating</em>)<a class="headerlink" href="#control-solar-en-ventanas-low-e-coating" title="Permalink to this heading">#</a></h2>
 <p>Los recubrimientos para control solar o <em>Low-E coating</em>, están diseñados para reducir la componente UV y NIR de la radiación solar a través de ventanas, sin afectar la transparencia a la luz visible.</p>
 <a class="reference internal image-reference" href="../_images/low-E_glass_spectrum.png"><img alt="../_images/low-E_glass_spectrum.png" class="align-center" src="../_images/low-E_glass_spectrum.png" style="width: 400px;" /></a>
 <center> <small>Operación de un recubrimiento low-E (<a href="https://www.fortemp.com/news/triple_silver_glass_tempering">Fuente</a>) </small></center><p>Esto permite reducir el deterioro ocacionado por la radiación UV y las ganancias de calor producida por la irradiación NIR al interior de una habitación.</p>
@@ -509,14 +504,14 @@ document.write(`
 <li><p>53% radiación infraroja cercana</p></li>
 </ul>
 <section id="composicion">
-<h3><span class="section-number">11.3.1. </span>Composición<a class="headerlink" href="#composicion" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.3.1. </span>Composición<a class="headerlink" href="#composicion" title="Permalink to this heading">#</a></h3>
 <p>Los recubrimientos <em>low-E</em> están formados de multiples capas alternadas de metal (comúnmente plata) y óxidos metálicos (<span class="math notranslate nohighlight">\(\mathrm{TiO_2}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{ZnO}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{SiO_2}\)</span>, etc), cada una de espesor nanométrico.</p>
 <a class="reference internal image-reference" href="../_images/low-E_coating_composition.png"><img alt="../_images/low-E_coating_composition.png" class="align-center" src="../_images/low-E_coating_composition.png" style="width: 800px;" /></a>
 <center> <small>Composición de un recubrimiento low-E (<a href="https://www.fortemp.com/news/triple_silver_glass_tempering">Fuente</a>) </small></center><p>En general, una capa de metal como la plata refleja la radiación visible y NIR. Sin embargo, <strong>al intercalar múltiples capas se produce interferencia destructiva</strong> en longitudes de onda corta que suprime la <strong>reflectancia en el espectro visible</strong> y, en consecuencia, aumenta la transmitancia. En el <strong>espectro NIR</strong>, donde las longitudes de onda son más largas, el efecto de <strong>interferencia desaparece y la radiación es reflejada por metal</strong>. Por otro lado, <strong>tanto la plata como los óxidos metálicos absorben la radiación UV</strong>.</p>
 <a class="reference internal image-reference" href="../_images/low-E_coating_spectrum.png"><img alt="../_images/low-E_coating_spectrum.png" class="align-center" src="../_images/low-E_coating_spectrum.png" style="width: 600px;" /></a>
 <center> <small>Transmitancia espectral de una ventana con recubrimiento low-E (<a href="https://www.jinjing-glass.com/energy-efficient-low-e-coated-glass-product/?gclid=Cj0KCQiA6vaqBhCbARIsACF9M6nsmyagglcvGAAy-XxyGqVYI4wGzDAa7iNv8X9gAtu9frBDAL_vstAaAjEGEALw_wcB">Fuente</a>) </small></center></section>
 <section id="desempeno">
-<h3><span class="section-number">11.3.2. </span>Desempeño<a class="headerlink" href="#desempeno" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.3.2. </span>Desempeño<a class="headerlink" href="#desempeno" title="Permalink to this heading">#</a></h3>
 <p>En general, para cuantificar el desempeño de una ventana con transmitancia espectral <span class="math notranslate nohighlight">\(T_\lambda\)</span> se consideran, principalmente, dos parámetros:</p>
 <p><strong>Transmitancia lumínica</strong> (<span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span>):</p>
 <div class="amsmath math notranslate nohighlight">
@@ -531,7 +526,7 @@ T_\mathrm{sol} = \frac{\int_{300~\mathrm{nm}}^{2500~\mathrm{nm}}T_\lambda I_\mat
 \end{equation*}\]</div>
 </section>
 <section id="analisis-teorico-de-un-recubrimiento-low-e">
-<h3><span class="section-number">11.3.3. </span>Análisis teórico de un recubrimiento <em>low-E</em><a class="headerlink" href="#analisis-teorico-de-un-recubrimiento-low-e" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.3.3. </span>Análisis teórico de un recubrimiento <em>low-E</em><a class="headerlink" href="#analisis-teorico-de-un-recubrimiento-low-e" title="Permalink to this heading">#</a></h3>
 <p>Simularemos un recubrimiento <em>low-E</em> con <code class="docutils literal notranslate"><span class="pre">empylib</span></code>. En este ejemplo, consideraremos tres bi-capas, cada una conformada de plata y <span class="math notranslate nohighlight">\(\mathrm{TiO_2}\)</span> de 8 nm y 30 nm de espesor, respectivamente. Asumiremos que el recubrimiento está ubicado en la parte trasera del vidrio. De esta forma, en la modelación consideramos vidrio como medio superior y aire en el inferior.</p>
 <p>Calculamos el desempeño de nuestro recubrimiento evaluando <span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span> y <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span>.</p>
 <div class="cell tag_hide-input docutils container">
@@ -562,7 +557,7 @@ Ganancia solar: 46.7%
 <p>El resultado es un recubrimiento 73 / 47.</p>
 <p>En la industria los recubrientos varían dentro de estos valores. Sin embargo, tal como vemos en la simulación, reducir <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span> también afecta en <span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span>.</p>
 <p>La siguiente tabla muestra los datos técnicos de algunos recubrimientos low-E del fabricante <a class="reference external" href="https://www.iqglassuk.com/products/solar-control-glass/s62761/">IQ Glass</a>. En esta tabla T-vis corresponde a <span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span> y G-solar a <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span>:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Calsificación</p></th>
 <th class="head text-center"><p>T-vis</p></th>
@@ -593,9 +588,10 @@ Ganancia solar: 46.7%
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="fabricacion-y-tipos">
-<h3><span class="section-number">11.3.4. </span>Fabricación y tipos<a class="headerlink" href="#fabricacion-y-tipos" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.3.4. </span>Fabricación y tipos<a class="headerlink" href="#fabricacion-y-tipos" title="Permalink to this heading">#</a></h3>
 <p>La fabricación del recubrimiento low-E puede ser:</p>
 <ul class="simple">
 <li><p><strong>Aplicación directa mediante pirólisis (<em>hard-coated</em>)</strong> Este proceso se realiza antes de finalizar la fabricación del vidrio, aprovechando las altas temperaturas del material (<span class="math notranslate nohighlight">\(\sim\)</span> 600°C) para depositar el recubrimiento mediante <em>Chemical Vapor Deposition</em> (CVD).* El recubrimiento es más resistente a la oxidación y por lo tanto tiene una duración mayor comparada con otros métodos. Sin embargo, el proceso premite aplicar pocas capas de recubrimiento</p></li>
@@ -623,7 +619,7 @@ Ganancia solar: 46.7%
 </section>
 </section>
 <section id="ventanas-inteligentes">
-<h2><span class="section-number">11.4. </span>Ventanas inteligentes<a class="headerlink" href="#ventanas-inteligentes" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.4. </span>Ventanas inteligentes<a class="headerlink" href="#ventanas-inteligentes" title="Permalink to this heading">#</a></h2>
 <p>Las ventanas inteligentes son capaces de modificar sus propiedades frente a estímulos eléctricos, lumínicos, térmicos o mecánicos, para controlar el paso de la radiación.</p>
 <a class="reference internal image-reference" href="../_images/g-smart-window-types-alt.jpg"><img alt="../_images/g-smart-window-types-alt.jpg" class="align-center" src="../_images/g-smart-window-types-alt.jpg" style="width: 600px;" /></a>
 <p>Distinguimos dos tipos:</p>
@@ -634,7 +630,7 @@ Ganancia solar: 46.7%
 <p>Dependiendo de la aplicación, una ventana inteligente puede ser diseñada para regular el paso de la radiación solar visible, UV o del infrarojo cercano (NIR).</p>
 <p>Debido a su caracter pasivo, en esta unidad nos enfocaremos en <strong>ventanas termocrómicas para modulación de radiación NIR</strong>.</p>
 <section id="fundamentos-de-las-ventanas-termocromicas">
-<h3><span class="section-number">11.4.1. </span>Fundamentos de las ventanas termocrómicas<a class="headerlink" href="#fundamentos-de-las-ventanas-termocromicas" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.4.1. </span>Fundamentos de las ventanas termocrómicas<a class="headerlink" href="#fundamentos-de-las-ventanas-termocromicas" title="Permalink to this heading">#</a></h3>
 <p>Las ventanas termocrómicas están diseñadas para regular el paso la radiación térmica (infrarojo cercano) solar entre el verano y el invierno.</p>
 <a class="reference internal image-reference" href="../_images/smart_window_schematic.png"><img alt="../_images/smart_window_schematic.png" class="align-center" src="../_images/smart_window_schematic.png" style="width: 800px;" /></a>
 <p>Para producir este efecto se utilizan <strong>materiales termocrómicos con cambio de fase aislante-conductor eléctrico.</strong></p>
@@ -644,7 +640,7 @@ Ganancia solar: 46.7%
 <p>La temperatura de transición intrínseca del VO<span class="math notranslate nohighlight">\(_2\)</span> es ~70°C. Sin embargo, <strong>esta temperatura puede ser modificada mediante dopaje</strong> desde los 70°C hasta cerca de los 10°C</p>
 </section>
 <section id="fabricacion-y-desempeno">
-<h3><span class="section-number">11.4.2. </span>Fabricación y desempeño<a class="headerlink" href="#fabricacion-y-desempeno" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.4.2. </span>Fabricación y desempeño<a class="headerlink" href="#fabricacion-y-desempeno" title="Permalink to this heading">#</a></h3>
 <p>Las ventanas termocrómicas operan agregando VO<span class="math notranslate nohighlight">\(_2\)</span> en pequeñas cantidades. Esto puede ser mediate una capa delgada sobre vidrio, o mediante particulas dispersas en un polímero transparente.</p>
 <a class="reference internal image-reference" href="../_images/vo2_smart_windows.png"><img alt="../_images/vo2_smart_windows.png" class="align-center" src="../_images/vo2_smart_windows.png" style="width: 700px;" /></a>
 <p>El desempeño de una ventana inteligente se caracteriza por la transmitancia lumínica (<span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span>), y la modulación de transmitancia solar (<span class="math notranslate nohighlight">\(\Delta T_\mathrm{sol} = T_\mathrm{sol}^\mathrm{frio} - T_\mathrm{sol}^\mathrm{caliente}\)</span>)</p>
@@ -656,9 +652,9 @@ Ganancia solar: 46.7%
 </section>
 </section>
 <section id="enfriamiento-radiativo-pasivo">
-<h2><span class="section-number">11.5. </span>Enfriamiento radiativo pasivo<a class="headerlink" href="#enfriamiento-radiativo-pasivo" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.5. </span>Enfriamiento radiativo pasivo<a class="headerlink" href="#enfriamiento-radiativo-pasivo" title="Permalink to this heading">#</a></h2>
 <section id="principio-de-funcionamiento">
-<h3><span class="section-number">11.5.1. </span>Principio de funcionamiento<a class="headerlink" href="#principio-de-funcionamiento" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.5.1. </span>Principio de funcionamiento<a class="headerlink" href="#principio-de-funcionamiento" title="Permalink to this heading">#</a></h3>
 <p>Los materiales para enfriamiento radiativo pasivo (PRC por sus siglas en inglés), consisten en materiales con reflectancia selectiva, es decir, alta reflectancia solar (&gt; 95%), y alta emisividad o transparencia en el espectro mid-IR.</p>
 <a class="reference internal image-reference" href="../_images/thermal_radiation_spectra.png"><img alt="../_images/thermal_radiation_spectra.png" class="align-center" src="../_images/thermal_radiation_spectra.png" style="width: 500px;" /></a>
 <p>La reflectancia selectiva permite reducir las ganancias de calor por radiación solar, y al mismo tiempo, canalizar el calor radiativo disipado por los cuerpos a temperaturas bajo 400K.</p>
@@ -671,14 +667,14 @@ Ganancia solar: 46.7%
 <p>El enfriamiento radiativo pasivo es un mecanismo que ocurre naturalmente en climas secos. Este fenómeno explica las altas fluctuaciones térmicas que ocurren en el desierto entre el día y la noche.</p>
 </section>
 <section id="prc-en-la-naturaleza">
-<h3><span class="section-number">11.5.2. </span>PRC en la naturaleza<a class="headerlink" href="#prc-en-la-naturaleza" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.5.2. </span>PRC en la naturaleza<a class="headerlink" href="#prc-en-la-naturaleza" title="Permalink to this heading">#</a></h3>
 <p>Algunos seres vivos utilizan este mecanismo para enfriar su cuerpo naturalmente. Tal es el caso de las <a class="reference external" href="https://www.science.org/doi/10.1126/science.aab3564">hormigas de plata en el desierto del Sahara</a>.</p>
 <a class="reference internal image-reference" href="../_images/silver_ants.png"><img alt="../_images/silver_ants.png" class="align-center" src="../_images/silver_ants.png" style="width: 700px;" /></a>
 <p>En el caso de las hormigas de plata. Los pelos producen efectos de scattering para longitudes de onda corta, aumentando la reflectancia, selectívamente, en el espectro visible. Como resultado, la hormiga adquire el color plateado característico.</p>
 <a class="reference internal image-reference" href="../_images/silver_ants_scattering.png"><img alt="../_images/silver_ants_scattering.png" class="align-center" src="../_images/silver_ants_scattering.png" style="width: 700px;" /></a>
 </section>
 <section id="materiales-prc">
-<h3><span class="section-number">11.5.3. </span>Materiales PRC<a class="headerlink" href="#materiales-prc" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.5.3. </span>Materiales PRC<a class="headerlink" href="#materiales-prc" title="Permalink to this heading">#</a></h3>
 <p>Artificialmente, el fenómeno puede ser reproducido utilizando materiales transparentes con porosidad inducida.</p>
 <p>Para esto, comúnmente se utilizan polímeros. La porosidad puede ser inducida mediante un proceso llamado <em>separación de fases</em>.</p>
 <a class="reference internal image-reference" href="../_images/radiative_cooling_film.png"><img alt="../_images/radiative_cooling_film.png" class="align-center" src="../_images/radiative_cooling_film.png" style="width: 900px;" /></a>
@@ -687,7 +683,7 @@ Ganancia solar: 46.7%
 <a class="reference internal image-reference" href="../_images/radiative_cooling_format.png"><img alt="../_images/radiative_cooling_format.png" class="align-center" src="../_images/radiative_cooling_format.png" style="width: 900px;" /></a>
 </section>
 <section id="aplicaciones">
-<h3><span class="section-number">11.5.4. </span>Aplicaciones<a class="headerlink" href="#aplicaciones" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">11.5.4. </span>Aplicaciones<a class="headerlink" href="#aplicaciones" title="Permalink to this heading">#</a></h3>
 <p>Enfriamiento radiativo pasivo es una tecnología emergente, con al menos 10 emprendimientos en el mundo. <a class="reference external" href="https://www.skycoolsystems.com/">Skycool</a>, es uno de los primeros en patentar esta tecnología. El siguiente video explica el funcionamiento de sus paneles de enfrmiamiento radiativo.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -705,7 +701,7 @@ Ganancia solar: 46.7%
 </section>
 </section>
 <section id="referencias">
-<h2><span class="section-number">11.6. </span>Referencias<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">11.6. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this heading">#</a></h2>
 <p>Kalogirou S. A. <em>Chapter 6. Solar space heating and cooling</em> in <strong>Solar Energy Engineering Processes and Systems</strong>, 2nd Ed, Academic Press, 2014</p>
 </section>
 </section>
@@ -737,7 +733,7 @@ Ganancia solar: 46.7%
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -824,7 +820,7 @@ By Francisco V. Ramirez-Cuevas
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2022.
       <br/>
     
   </p>
@@ -848,8 +844,8 @@ By Francisco V. Ramirez-Cuevas
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>
