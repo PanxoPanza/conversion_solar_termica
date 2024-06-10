@@ -16,17 +16,17 @@ parts:
     - file: 03_Interacción_materia-luz/03_Interacción_materia-luz
     - file: 04_Scattering/04_Scattering
     - file: 05_TransporteRadiativo/05_TransporteRadiativo
-  - caption: Parte 2 - Diseño de sistemas de manejo y conversión solar
+  - caption: Parte 2 - Diseño de sistemas solares
     numbered: true
     chapters:
     - file: 06_RadiacionTermica/06_RadiacionTermica
     - file: 07_Radiación_solar/07_Radiación_solar
     - file: 08_ColetorSolar/08_ColetorSolar
-  - caption: Parte 3 - Aplicaciones
+    - file: 09_SolarFotovoltaica/09_SolarFotovoltaica
+  - caption: Parte 3 - Otras aplicaciones
     numbered: true
     chapters:
-    - file: 09_CentralTermoSolar/09_CentralTermoSolar
-    - file: 10_SolarFotovoltaica/10_SolarFotovoltaica
+    - file: 10_CentralTermoSolar/10_CentralTermoSolar
     - file: 11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio
   - caption: Apéndice
     numbered: false
