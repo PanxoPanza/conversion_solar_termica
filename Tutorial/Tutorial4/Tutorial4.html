@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Tutorial 4 - Modelación módulo PV &#8212; MEC501 - Manejo y conversión solar</title>
   
@@ -15,54 +14,50 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom_edits.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_edits.css?v=4f657593" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorial/Tutorial4/Tutorial4';</script>
@@ -78,23 +73,27 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -116,13 +115,8 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
     </header>
   
 
@@ -157,7 +151,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">MEC501 - Manejo y conversión solar</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -179,29 +184,29 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../04_Scattering/04_Scattering.html">4. Scattering electromagnético</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../05_TransporteRadiativo/05_TransporteRadiativo.html">5. Transporte Radiativo</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 2 - Diseño de sistemas de manejo y conversión solar</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 2 - Diseño de sistemas solares</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../06_RadiacionTermica/06_RadiacionTermica.html">6. Radiación Térmica</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../07_Radiaci%C3%B3n_solar/07_Radiaci%C3%B3n_solar.html">7. Radiación Solar</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../08_ColetorSolar/08_ColetorSolar.html">8. Colectores solares estacionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../09_SolarFotovoltaica/09_SolarFotovoltaica.html">9. Conversión Solar Fotovoltaica</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 3 - Aplicaciones</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 3 - Otras aplicaciones</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../09_CentralTermoSolar/09_CentralTermoSolar.html">9. Central Termosolar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../10_SolarFotovoltaica/10_SolarFotovoltaica.html">10. Conversión Solar Fotovoltaica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../10_CentralTermoSolar/10_CentralTermoSolar.html">10. Central Termosolar</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio.html">11. Control pasivo de radiación solar en edificaciones</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndice</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../Apendice/Espectro_electromagnetico/Espectro_electromagnetico.html">Espectro electromagnético</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Apendice/Teoria_del_color/Teoria_del_color.html">Teoria del color</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Intro.html">Tutoriales</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Intro.html">Tutoriales</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial1/Tutorial1.html">Tutorial 1 - Modelos ópticos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial2/Tutorial2.html">Tutorial 2 - Espectros de referencia</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial3/Tutorial3.html">Tutorial 3 - Datos solares y climatológicos</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Tutorial 4 - Modelación módulo PV</a></li>
 </ul>
-</details></li>
+</li>
 </ul>
 
     </div>
@@ -217,7 +222,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -226,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -407,11 +412,18 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-4-modelacion-modulo-pv">
-<h1>Tutorial 4 - Modelación módulo PV<a class="headerlink" href="#tutorial-4-modelacion-modulo-pv" title="Permalink to this heading">#</a></h1>
+<h1>Tutorial 4 - Modelación módulo PV<a class="headerlink" href="#tutorial-4-modelacion-modulo-pv" title="Link to this heading">#</a></h1>
 <p>Este es un tutorial para estimar el desempeño de un módulo PV usando <code class="docutils literal notranslate"><span class="pre">pvlib</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pvlib</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/panxopanza/miniconda3/lib/python3.12/site-packages/numpy/core/getlimits.py:542: UserWarning: Signature b&#39;\x00\xd0\xcc\xcc\xcc\xcc\xcc\xcc\xfb\xbf\x00\x00\x00\x00\x00\x00&#39; for &lt;class &#39;numpy.longdouble&#39;&gt; does not match any known type: falling back to type probe function.
+This warnings indicates broken support for the dtype!
+  machar = _get_machar(dtype)
 </pre></div>
 </div>
 </div>
@@ -426,9 +438,9 @@ document.write(`
 <div><p>Para mayor información de las funciones de este tutorial, revisar la documentación oficial de <a class="reference external" href="https://pvlib-python.readthedocs.io/en/stable/reference/index.html"><code class="docutils literal notranslate"><span class="pre">pvlib</span></code></a></p>
 </div></blockquote>
 <section id="seleccion-de-modulo-pv-pvsystem-retrieve-sam">
-<h2>Selección de módulo pv (<code class="docutils literal notranslate"><span class="pre">pvsystem.retrieve_sam</span></code>)<a class="headerlink" href="#seleccion-de-modulo-pv-pvsystem-retrieve-sam" title="Permalink to this heading">#</a></h2>
+<h2>Selección de módulo pv (<code class="docutils literal notranslate"><span class="pre">pvsystem.retrieve_sam</span></code>)<a class="headerlink" href="#seleccion-de-modulo-pv-pvsystem-retrieve-sam" title="Link to this heading">#</a></h2>
 <section id="la-biblioteca-de-modulos-cec-cecmod">
-<h3>La biblioteca de módulos CEC (<code class="docutils literal notranslate"><span class="pre">'CECmod'</span></code>)<a class="headerlink" href="#la-biblioteca-de-modulos-cec-cecmod" title="Permalink to this heading">#</a></h3>
+<h3>La biblioteca de módulos CEC (<code class="docutils literal notranslate"><span class="pre">'CECmod'</span></code>)<a class="headerlink" href="#la-biblioteca-de-modulos-cec-cecmod" title="Link to this heading">#</a></h3>
 <p>El <em>California Energy Commission Comisión</em> (CEC) contrató laboratorios de pruebas autorizados para caracterizar una variedad de módulos pv en condiciones de medición estandar (<em>standard test conditions</em> o STC). Los resultados incluyen: corriente en corto circuito (<span class="math notranslate nohighlight">\(I_\mathrm{sc}\)</span>), voltaje en circuito abierto (<span class="math notranslate nohighlight">\(V_\mathrm{oc}\)</span>); voltaje, corriente y potencia en punto de potencia máxima o mpp (<span class="math notranslate nohighlight">\(V_\mathrm{mpp}\)</span>,  <span class="math notranslate nohighlight">\(I_\mathrm{mpp}\)</span> y <span class="math notranslate nohighlight">\(P_\mathrm{mpp}\)</span>); coeficientes de temperatura de voltaje y corriente, dimensiones del módulo, número de celdas en serie (<span class="math notranslate nohighlight">\(N_s\)</span>), subcadenas paralelas (<span class="math notranslate nohighlight">\(N_p\)</span>), área del módulo en <span class="math notranslate nohighlight">\(\mathrm{m^2}\)</span> (<span class="math notranslate nohighlight">\(A_c\)</span>), entre otros. La base de datos CEC está disponibles en la <a class="reference external" href="https://solarequipment.energy.ca.gov/Home/PVModuleList">Lista de equipos solares</a> y en un archivo CSV incluido en el <em>System Advisor Model</em> (SAM) del <em>National Renewable Energy Laboratory</em> (NREL).</p>
 <p>En <code class="docutils literal notranslate"><span class="pre">pvlib</span></code> podemos acceder a la biblioteca CEC mediante la función <code class="docutils literal notranslate"><span class="pre">retrieve_sam</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem</span></code>, usando el argumento <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">'CECMod'</span></code></p>
 <div class="cell docutils container">
@@ -614,7 +626,7 @@ document.write(`
 </div></div></div>
 </div>
 <p>Cada módulo está caracterizado por los siguientes parámetros:</p>
-<div class="pst-scrollable-table-container"><table class="table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>parámetro</p></th>
 <th class="head text-center"><p>tipo de variable</p></th>
@@ -716,10 +728,9 @@ document.write(`
 </tr>
 </tbody>
 </table>
-</div>
 </section>
 <section id="seleccion-de-modelo-de-panel">
-<h3>Selección de modelo de panel<a class="headerlink" href="#seleccion-de-modelo-de-panel" title="Permalink to this heading">#</a></h3>
+<h3>Selección de modelo de panel<a class="headerlink" href="#seleccion-de-modelo-de-panel" title="Link to this heading">#</a></h3>
 <p>Como vemos, en la biblioteca CEC los módulos se nombran según el esquema</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;nombre del fabricante&gt;&lt;modelo&gt;
 </pre></div>
@@ -1934,18 +1945,18 @@ Name: Canadian_Solar_Inc__CS6X_300M, dtype: object
 </section>
 </section>
 <section id="simulacion-de-curva-iv">
-<h2>Simulación de curva IV<a class="headerlink" href="#simulacion-de-curva-iv" title="Permalink to this heading">#</a></h2>
+<h2>Simulación de curva IV<a class="headerlink" href="#simulacion-de-curva-iv" title="Link to this heading">#</a></h2>
 <p>Para simular la curva IV de un módulo debemos considerar los siguientes pasos:</p>
 <ul class="simple">
 <li><p>Definir las condiciones de operación (niveles de irradiancia y condiciones climatológicas del sitio)</p></li>
 <li><p>Determinar irradiación sobre el módulo</p></li>
 <li><p>Determinar la temperatura de las celdas dentro del módulo</p></li>
-<li><p>Determinar los <a class="reference internal" href="../../10_SolarFotovoltaica/10_SolarFotovoltaica.html"><span class="doc std std-doc">cinco parámetros del SDM</span></a> para los niveles de irradiancia y temperatura de la celda.</p></li>
+<li><p>Determinar los <a class="reference internal" href="#../../10_SolarFotovoltaica/10_SolarFotovoltaica.ipynb"><span class="xref myst">cinco parámetros del SDM</span></a> para los niveles de irradiancia y temperatura de la celda.</p></li>
 <li><p>Caracterizar la curva IV en las condiciones de operación.</p></li>
 <li><p>Graficar curva IV según condiciones de operación.</p></li>
 </ul>
 <section id="condiciones-de-operacion">
-<h3>Condiciones de operación<a class="headerlink" href="#condiciones-de-operacion" title="Permalink to this heading">#</a></h3>
+<h3>Condiciones de operación<a class="headerlink" href="#condiciones-de-operacion" title="Link to this heading">#</a></h3>
 <p>En este caso consideraremos un panel solar con ángulos de inclinación <span class="math notranslate nohighlight">\(\theta = 30°\)</span> y <span class="math notranslate nohighlight">\(\phi = 90°\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2049,7 +2060,7 @@ Name: Canadian_Solar_Inc__CS6X_300M, dtype: object
 <p>En este caso, agrupamos todos los datos en un <em>dataframe</em> <code class="docutils literal notranslate"><span class="pre">site_conditions</span></code> para facilitar la manipulación posterior. Sin embargo, esto no es obligatorio.</p>
 </section>
 <section id="irradiacion-sobre-el-modulo-pvlib-irradiance">
-<h3>Irradiación sobre el módulo (<code class="docutils literal notranslate"><span class="pre">pvlib.irradiance</span></code>)<a class="headerlink" href="#irradiacion-sobre-el-modulo-pvlib-irradiance" title="Permalink to this heading">#</a></h3>
+<h3>Irradiación sobre el módulo (<code class="docutils literal notranslate"><span class="pre">pvlib.irradiance</span></code>)<a class="headerlink" href="#irradiacion-sobre-el-modulo-pvlib-irradiance" title="Link to this heading">#</a></h3>
 <p>La irradiación efectiva sobre la superficie del módulo (<span class="math notranslate nohighlight">\(G_\mathrm{eff}\)</span>), depende del <strong>ángulo de incidencia (<span class="math notranslate nohighlight">\(\theta_i\)</span>)</strong> y los <strong>niveles de irradiación (GHI, DNI y DHI)</strong>. En general, determinar esto requiere de modelos complejos. Acá, para simplificar, usaremos la relación:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -2113,7 +2124,7 @@ G_\mathrm{eff} = G_\mathrm{DNI}\cos\theta_i + G_\mathrm{DHI}
 </div>
 </section>
 <section id="temperatura-de-las-celdas-pvlib-temperature">
-<h3>Temperatura de las celdas (<code class="docutils literal notranslate"><span class="pre">pvlib.temperature</span></code>)<a class="headerlink" href="#temperatura-de-las-celdas-pvlib-temperature" title="Permalink to this heading">#</a></h3>
+<h3>Temperatura de las celdas (<code class="docutils literal notranslate"><span class="pre">pvlib.temperature</span></code>)<a class="headerlink" href="#temperatura-de-las-celdas-pvlib-temperature" title="Link to this heading">#</a></h3>
 <p>Existen distintos modelos para determinar la temperatura de las celdas <span class="math notranslate nohighlight">\(T_\mathrm{cell}\)</span>. En este curso usaremos el <a class="reference external" href="https://www.osti.gov/servlets/purl/919131"><em>Sandia Array Performance Model</em></a> de <em>Sandia National Laboratories</em>. El modelo está compuesto por dos ecuaciones:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -2132,7 +2143,7 @@ T_\mathrm{cell} &amp;= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
 <li><p><code class="docutils literal notranslate"><span class="pre">irrad_ref</span></code>: Irradiancia de referencia, <span class="math notranslate nohighlight">\(E_0\)</span> (<span class="math notranslate nohighlight">\(\mathrm{W/m^2}\)</span>). <code class="docutils literal notranslate"><span class="pre">irrad_ref</span> <span class="pre">=</span> <span class="pre">1000</span></code>, por defecto).</p></li>
 </ul>
 <p>Los parámetros de ajuste <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> y <span class="math notranslate nohighlight">\(\Delta T\)</span> dependen, en general, de la construcción del módulo pv (protección frontal y trasera) y de su montaje. La variable <code class="docutils literal notranslate"><span class="pre">TEMPERATURE_MODEL_PARAMETERS</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">pvlib.temperature</span></code> contiene una lista de referencia:</p>
-<div class="pst-scrollable-table-container"><table class="table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>front / backsheet</p></th>
 <th class="head text-center"><p>montaje</p></th>
@@ -2158,7 +2169,6 @@ T_\mathrm{cell} &amp;= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
 </tr>
 </tbody>
 </table>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pvlib.temperature</span> <span class="kn">import</span> <span class="n">TEMPERATURE_MODEL_PARAMETERS</span>
@@ -2212,8 +2222,8 @@ T_\mathrm{cell} &amp;= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
 </div>
 </section>
 <section id="parametros-sdm-en-operacion-pvlib-pvsystem-calcparams-cec">
-<h3>Parámetros SDM en operación (<code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.calcparams_cec</span></code>)<a class="headerlink" href="#parametros-sdm-en-operacion-pvlib-pvsystem-calcparams-cec" title="Permalink to this heading">#</a></h3>
-<p><a class="reference internal" href="../../10_SolarFotovoltaica/10_SolarFotovoltaica.html"><span class="doc std std-doc">Como vimos en la unidad 10</span></a>, el modelo SDM está caracterizado por 5 parámetros:</p>
+<h3>Parámetros SDM en operación (<code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.calcparams_cec</span></code>)<a class="headerlink" href="#parametros-sdm-en-operacion-pvlib-pvsystem-calcparams-cec" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="#../../10_SolarFotovoltaica/10_SolarFotovoltaica.ipynb"><span class="xref myst">Como vimos en la unidad 10</span></a>, el modelo SDM está caracterizado por 5 parámetros:</p>
 <ul class="simple">
 <li><p>Corriente fotoinducida, <code class="docutils literal notranslate"><span class="pre">IL</span></code> (análogo a <span class="math notranslate nohighlight">\(I_\mathrm{ph}\)</span>)</p></li>
 <li><p>Corriente de saturación, <code class="docutils literal notranslate"><span class="pre">I0</span></code>.</p></li>
@@ -2335,7 +2345,7 @@ T_\mathrm{cell} &amp;= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
 </div>
 </section>
 <section id="caracterizacion-curva-iv-pvlib-pvsystem-singlediode">
-<h3>Caracterización curva IV (<code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.singlediode</span></code>)<a class="headerlink" href="#caracterizacion-curva-iv-pvlib-pvsystem-singlediode" title="Permalink to this heading">#</a></h3>
+<h3>Caracterización curva IV (<code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.singlediode</span></code>)<a class="headerlink" href="#caracterizacion-curva-iv-pvlib-pvsystem-singlediode" title="Link to this heading">#</a></h3>
 <p>Una vez determinados los parámetros <code class="docutils literal notranslate"><span class="pre">IL</span></code>, <code class="docutils literal notranslate"><span class="pre">I0</span></code>, <code class="docutils literal notranslate"><span class="pre">Rs</span></code>, <code class="docutils literal notranslate"><span class="pre">Rsh</span></code> y <code class="docutils literal notranslate"><span class="pre">nNsVth</span></code> en las condiciones de operación, lo siguiente es resolver el SDM para caracterizar la curva IV del módulo en operación. Es decir, determinar <span class="math notranslate nohighlight">\(V_\mathrm{oc}\)</span>, <span class="math notranslate nohighlight">\(I_\mathrm{sc}\)</span>, <span class="math notranslate nohighlight">\(V_\mathrm{mpp}\)</span>, <span class="math notranslate nohighlight">\(I_\mathrm{mpp}\)</span>, etc.</p>
 <p>Para esto usamos la función <code class="docutils literal notranslate"><span class="pre">singlediode</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">pvlib.pvystem</span></code>.</p>
 <p>Los parámetros de entrada de <code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.singlediode</span></code> son:</p>
@@ -2462,7 +2472,7 @@ T_\mathrm{cell} &amp;= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
 </div>
 </section>
 <section id="grafico-de-curva-iv-pvlib-pvsystem-i-from-v">
-<h3>Gráfico de curva IV (<code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.i_from_v</span></code>)<a class="headerlink" href="#grafico-de-curva-iv-pvlib-pvsystem-i-from-v" title="Permalink to this heading">#</a></h3>
+<h3>Gráfico de curva IV (<code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem.i_from_v</span></code>)<a class="headerlink" href="#grafico-de-curva-iv-pvlib-pvsystem-i-from-v" title="Link to this heading">#</a></h3>
 <p>Para graficar la curva IV podemos usar la función <code class="docutils literal notranslate"><span class="pre">i_from_v</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">pvlib.pvsystem</span></code>. Esta función calcula la corriente para un voltaje <code class="docutils literal notranslate"><span class="pre">v</span></code> dado, en base al SDM. Los parámetros de entrada son:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">voltage</span></code>: voltaje efectivo.</p></li>
@@ -2525,7 +2535,7 @@ T_\mathrm{cell} &amp;= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bff0f6f1693c2dade0cead1fb542cb9c3e46dc46cc55a3518dd646f583c4e414.png" src="../../_images/bff0f6f1693c2dade0cead1fb542cb9c3e46dc46cc55a3518dd646f583c4e414.png" />
+<img alt="../../_images/d3ec36400a58e04ae9a657267628beaf93fde7c4e19cac9c5637b6dd7447035a.png" src="../../_images/d3ec36400a58e04ae9a657267628beaf93fde7c4e19cac9c5637b6dd7447035a.png" />
 </div>
 </div>
 </section>
@@ -2559,7 +2569,7 @@ T_\mathrm{cell} &amp;= T_\mathrm{mod} + \frac{G_\mathrm{eff}}{G_0}\Delta T
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -2625,7 +2635,7 @@ By Francisco V. Ramirez-Cuevas
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -2649,8 +2659,8 @@ By Francisco V. Ramirez-Cuevas
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

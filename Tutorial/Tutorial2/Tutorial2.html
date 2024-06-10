@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Tutorial 2 - Espectros de referencia &#8212; MEC501 - Manejo y conversión solar</title>
   
@@ -15,54 +14,50 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom_edits.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_edits.css?v=4f657593" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorial/Tutorial2/Tutorial2';</script>
@@ -79,23 +74,27 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -117,13 +116,8 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
     </header>
   
 
@@ -158,7 +152,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">MEC501 - Manejo y conversión solar</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -180,29 +185,29 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../04_Scattering/04_Scattering.html">4. Scattering electromagnético</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../05_TransporteRadiativo/05_TransporteRadiativo.html">5. Transporte Radiativo</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 2 - Diseño de sistemas de manejo y conversión solar</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 2 - Diseño de sistemas solares</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../06_RadiacionTermica/06_RadiacionTermica.html">6. Radiación Térmica</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../07_Radiaci%C3%B3n_solar/07_Radiaci%C3%B3n_solar.html">7. Radiación Solar</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../08_ColetorSolar/08_ColetorSolar.html">8. Colectores solares estacionarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../09_SolarFotovoltaica/09_SolarFotovoltaica.html">9. Conversión Solar Fotovoltaica</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 3 - Aplicaciones</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 3 - Otras aplicaciones</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../09_CentralTermoSolar/09_CentralTermoSolar.html">9. Central Termosolar</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../10_SolarFotovoltaica/10_SolarFotovoltaica.html">10. Conversión Solar Fotovoltaica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../10_CentralTermoSolar/10_CentralTermoSolar.html">10. Central Termosolar</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../11_ManejoSolarTermico_Edificio/11_ManejoSolarTermico_Edificio.html">11. Control pasivo de radiación solar en edificaciones</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndice</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../Apendice/Espectro_electromagnetico/Espectro_electromagnetico.html">Espectro electromagnético</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Apendice/Teoria_del_color/Teoria_del_color.html">Teoria del color</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Intro.html">Tutoriales</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../Intro.html">Tutoriales</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial1/Tutorial1.html">Tutorial 1 - Modelos ópticos</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Tutorial 2 - Espectros de referencia</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial3/Tutorial3.html">Tutorial 3 - Datos solares y climatológicos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Tutorial4/Tutorial4.html">Tutorial 4 - Modelación módulo PV</a></li>
 </ul>
-</details></li>
+</li>
 </ul>
 
     </div>
@@ -218,7 +223,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -227,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -397,7 +402,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-2-espectros-de-referencia">
-<h1>Tutorial 2 - Espectros de referencia<a class="headerlink" href="#tutorial-2-espectros-de-referencia" title="Permalink to this heading">#</a></h1>
+<h1>Tutorial 2 - Espectros de referencia<a class="headerlink" href="#tutorial-2-espectros-de-referencia" title="Link to this heading">#</a></h1>
 <p>Este es un tutorial para utilizar el módulo <code class="docutils literal notranslate"><span class="pre">ref_spectra</span></code> de la librería <code class="docutils literal notranslate"><span class="pre">empylib</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -407,7 +412,7 @@ document.write(`
 </div>
 </div>
 <section id="distribucion-de-planck-bplanck">
-<h2>Distribución de Planck (<code class="docutils literal notranslate"><span class="pre">Bplanck</span></code>)<a class="headerlink" href="#distribucion-de-planck-bplanck" title="Permalink to this heading">#</a></h2>
+<h2>Distribución de Planck (<code class="docutils literal notranslate"><span class="pre">Bplanck</span></code>)<a class="headerlink" href="#distribucion-de-planck-bplanck" title="Link to this heading">#</a></h2>
 <p>La función <code class="docutils literal notranslate"><span class="pre">Bplanck</span></code> permite determinar la radiancia espectral de un cuerpo negro.</p>
 <p>Tal como indica la documentación, los valores de entrada son:</p>
 <ul class="simple">
@@ -445,7 +450,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3d782fe985fa2965bd0a8995213280161ef22bf1ba9297b2b92941050a8c599a.png" src="../../_images/3d782fe985fa2965bd0a8995213280161ef22bf1ba9297b2b92941050a8c599a.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:19: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:19: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+/tmp/ipykernel_1374/4210372336.py:19: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  ax.set_xlabel(&#39;Longitud de onda ($\mu$m)&#39;)
+/tmp/ipykernel_1374/4210372336.py:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  ax.set_ylabel(&#39;Radiancia espectral (W/m$^2$-$\mu$m-sr)&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/5ecc98af33f0ea15e807905d6cf217e8a7ed4911d3660c5921bc39f817429e1b.png" src="../../_images/5ecc98af33f0ea15e807905d6cf217e8a7ed4911d3660c5921bc39f817429e1b.png" />
 </div>
 </div>
 <p>Con esto podemos analizar la variación del poder de emisión espectral hemisférico del cuerpo negro, <span class="math notranslate nohighlight">\(\pi I_{\mathrm{bb},\lambda}\)</span>, en función de la temperatura</p>
@@ -487,11 +502,19 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/panxopanza/miniconda3/lib/python3.11/site-packages/empylib/ref_spectra/ref_spectra.py:161: RuntimeWarning: overflow encountered in exp
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:29: SyntaxWarning: invalid escape sequence &#39;\l&#39;
+&lt;&gt;:30: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:29: SyntaxWarning: invalid escape sequence &#39;\l&#39;
+&lt;&gt;:30: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+/tmp/ipykernel_1374/469458870.py:29: SyntaxWarning: invalid escape sequence &#39;\l&#39;
+  plt.xlabel(&#39;Longitud de onda, $\lambda$ ($\mu$m)&#39;)
+/tmp/ipykernel_1374/469458870.py:30: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  plt.ylabel(&#39;$E_{\mathrm{bb},\lambda}$ (W/m$^2$-$\mu$m)&#39;)
+/home/panxopanza/miniconda3/lib/python3.12/site-packages/empylib/ref_spectra/ref_spectra.py:161: RuntimeWarning: overflow encountered in exp
   Ibb = 2*h*c0**2./ll**5*1/(np.exp(h*c0/(ll*T*kB)) - 1)*1E-6
 </pre></div>
 </div>
-<img alt="../../_images/d8aaab3ad415eb3822880c9bb0fe914823cb57f16b143ba921501bb48214c164.png" src="../../_images/d8aaab3ad415eb3822880c9bb0fe914823cb57f16b143ba921501bb48214c164.png" />
+<img alt="../../_images/36ef7950da46ffbc2a95a5d7dedea902e6ef58ad9504fe63109ced5d440e6284.png" src="../../_images/36ef7950da46ffbc2a95a5d7dedea902e6ef58ad9504fe63109ced5d440e6284.png" />
 </div>
 </div>
 <p>Además podemos comprobar la ley de Stefan-Boltzmann para el poder de emisión hemisférico total:</p>
@@ -528,7 +551,7 @@ Poder de emisión de cuerpo negro (Stefan-Boltzmann): 459.302 W/m^2
 </div></blockquote>
 </section>
 <section id="irradiacion-solar-espectro-am1-5-am15">
-<h2>Irradiación solar, espectro AM1.5 (<code class="docutils literal notranslate"><span class="pre">AM15</span></code>)<a class="headerlink" href="#irradiacion-solar-espectro-am1-5-am15" title="Permalink to this heading">#</a></h2>
+<h2>Irradiación solar, espectro AM1.5 (<code class="docutils literal notranslate"><span class="pre">AM15</span></code>)<a class="headerlink" href="#irradiacion-solar-espectro-am1-5-am15" title="Link to this heading">#</a></h2>
 <p>La función <code class="docutils literal notranslate"><span class="pre">AM15</span></code> entrega el espectro global y directo del AM1.5 para un arreglo de longitudes de onda.</p>
 <p>Como valor de entrada la función requiere el espectro de longitudes de onda <code class="docutils literal notranslate"><span class="pre">lam</span></code> en unidades de micrometros. La componente del espectro (horizonal global o normal directa) se puede controlar mediante un segúndo argumento <code class="docutils literal notranslate"><span class="pre">spectra_type</span></code>, con:</p>
 <ul class="simple">
@@ -570,7 +593,17 @@ I_\mathrm{sun,out} = \frac{G_\mathrm{sun}}{\sigma T^4_\mathrm{sun}} \pi I_{\math
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/22eb8d746676497c037188ab4af90bf80a4ef671a908084906e0497eed7dea57.png" src="../../_images/22eb8d746676497c037188ab4af90bf80a4ef671a908084906e0497eed7dea57.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:19: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:19: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+/tmp/ipykernel_1374/1578305245.py:18: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  ax.set_xlabel(&#39;Longitud de onda ($\mu$m)&#39;)
+/tmp/ipykernel_1374/1578305245.py:19: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  ax.set_ylabel(&#39;Irradianca espectral (W/m$^2$-$\mu$m)&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/713c9808758eb010cbb315fae5597c1fb8ca0fcc2628d6e7f1bcc0f67295167e.png" src="../../_images/713c9808758eb010cbb315fae5597c1fb8ca0fcc2628d6e7f1bcc0f67295167e.png" />
 </div>
 </div>
 <p>Comprobamos el valor integrado de cada espectro</p>
@@ -590,7 +623,7 @@ Flujo de energía, componente normal directa:	 900.1 W/m2
 </div>
 </section>
 <section id="transmitancia-atmosferica-t-atmosphere">
-<h2>Transmitancia atmosférica (<code class="docutils literal notranslate"><span class="pre">T_atmosphere</span></code>)<a class="headerlink" href="#transmitancia-atmosferica-t-atmosphere" title="Permalink to this heading">#</a></h2>
+<h2>Transmitancia atmosférica (<code class="docutils literal notranslate"><span class="pre">T_atmosphere</span></code>)<a class="headerlink" href="#transmitancia-atmosferica-t-atmosphere" title="Link to this heading">#</a></h2>
 <p>Esta función permite determinar la transmitancia atmosférica a partir de un espectro de longitudes de onda. Como valor de entrada la función requiere el espectro de longitudes de onda <code class="docutils literal notranslate"><span class="pre">lam</span></code> en unidades de micrometros.</p>
 <p>En el siguiente ejemplo graficaremos la radiación de cuerpo negro con <span class="math notranslate nohighlight">\(T = 300\)</span> K, el AM1.5 global y la transmitancia atmosférica. Debido a la diferencia de escalas, <strong>utilizaremos el eje de la derecha para cuantificar la transmitancia atmosférica (<span class="math notranslate nohighlight">\(\tau_{\mathrm{atm},\lambda}\)</span>), y el eje de la izquierda para la radiación solar y de cuerpo negro</strong>.</p>
 <div class="cell docutils container">
@@ -626,7 +659,17 @@ Flujo de energía, componente normal directa:	 900.1 W/m2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ee88d70d076bc0234afb7af42ebca3312d606d7882b506e3af16810a1d00216f.png" src="../../_images/ee88d70d076bc0234afb7af42ebca3312d606d7882b506e3af16810a1d00216f.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:17: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:17: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+/tmp/ipykernel_1374/333599365.py:17: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  ax1.set_xlabel(&#39;Longitud de onda, $\mu$m&#39;)
+/tmp/ipykernel_1374/333599365.py:20: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  ax1.set_ylabel(&#39;Irradiancia espectral (W/m$^2$-$\mu$m)&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/da3f195e6344dce90c6e9ad768e04594bfaf84e999fcc976a3db50293dea8a46.png" src="../../_images/da3f195e6344dce90c6e9ad768e04594bfaf84e999fcc976a3db50293dea8a46.png" />
 </div>
 </div>
 <p><strong>Nota</strong> Para valores <span class="math notranslate nohighlight">\(\lambda &gt; 20\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m y <span class="math notranslate nohighlight">\(\lambda &lt; 0.8\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m, <code class="docutils literal notranslate"><span class="pre">T_atmosphere</span> <span class="pre">=</span> <span class="pre">0</span></code> automáticamente. Aunque no es consistente con la realidad, esta condicion no induce un error significativo, ya que el espectro de emisión de la atmosféra ocurre en el infrarojo medio. Esto último, considerando a la atmósfera como un cuerpo negro a temperatura <span class="math notranslate nohighlight">\(T_\mathrm{atm}\sim 0-35\)</span>°C.</p>
@@ -654,7 +697,17 @@ G_{\mathrm{atm},\lambda} = (1 - \tau_{\mathrm{atm},\lambda})\pi I_{\mathrm{bb},\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/34af4f024dd6abbd2166f4365627f646b6ba0aea1097b2db381f373543eb4acb.png" src="../../_images/34af4f024dd6abbd2166f4365627f646b6ba0aea1097b2db381f373543eb4acb.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:8: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+&lt;&gt;:8: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+/tmp/ipykernel_1374/2258990544.py:7: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  ax1.set_xlabel(&#39;Longitud de onda, $\mu$m&#39;)
+/tmp/ipykernel_1374/2258990544.py:8: SyntaxWarning: invalid escape sequence &#39;\m&#39;
+  ax1.set_ylabel(&#39;Irradiancia espectral hemisférica (W/m$^2$-$\mu$m)&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/00708fb74366da324460a408876c8d798cb1507de9b4911ece349fb99be7a5fd.png" src="../../_images/00708fb74366da324460a408876c8d798cb1507de9b4911ece349fb99be7a5fd.png" />
 </div>
 </div>
 </section>
@@ -687,7 +740,7 @@ G_{\mathrm{atm},\lambda} = (1 - \tau_{\mathrm{atm},\lambda})\pi I_{\mathrm{bb},\
               
               
               
-                <footer class="prev-next-footer d-print-none">
+                <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -751,7 +804,7 @@ By Francisco V. Ramirez-Cuevas
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -775,8 +828,8 @@ By Francisco V. Ramirez-Cuevas
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -18,16 +18,69 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import numpy as np
-import matplotlib.pyplot as plt
+lam = np.linspace(0.3,1.0,100) # espectro de longitudes de onda
+tfilm = 1                      # espesor en mm
+N = (1.0,1.33,1.0)             # indice de refracción superior, intermedio e inferior
+fv = 0.001                     # fracción de volúmen de los poros
+D = 0.3                        # diámetro de los poros (micrones)
+Np = nk.SiO2(lam)              # índice de refracción partícula
+
+Ttot, Rtot, Tspec, Rspec = rt.adm_sphere(lam,tfilm,N,fv,D,Np)
+
+plt.plot(lam,Rtot,'-r',label='$R_\mathrm{tot}$')
+plt.plot(lam,Ttot,'-b',label='$T_\mathrm{tot}$')
+plt.plot(lam,Rspec,'--r',label='$R_\mathrm{spec}$')
+plt.plot(lam,Tspec,'--b',label='$T_\mathrm{spec}$')
+plt.xlabel('Longitud de onda ($\mu$m)')
+plt.ylabel('Reflectividad / Transmisividad')
+plt.title(r'Sílice suspendido en agua (fv = %.1f %% v/v)' % (fv*100))
+plt.legend()
+plt.ylim(0,1)
+plt.show()
 ------------------
 
+----- stderr -----
+<>:10: SyntaxWarning: invalid escape sequence '\m'
+<>:11: SyntaxWarning: invalid escape sequence '\m'
+<>:12: SyntaxWarning: invalid escape sequence '\m'
+<>:13: SyntaxWarning: invalid escape sequence '\m'
+<>:14: SyntaxWarning: invalid escape sequence '\m'
+<>:10: SyntaxWarning: invalid escape sequence '\m'
+<>:11: SyntaxWarning: invalid escape sequence '\m'
+<>:12: SyntaxWarning: invalid escape sequence '\m'
+<>:13: SyntaxWarning: invalid escape sequence '\m'
+<>:14: SyntaxWarning: invalid escape sequence '\m'
+/tmp/ipykernel_1344/901086605.py:10: SyntaxWarning: invalid escape sequence '\m'
+  plt.plot(lam,Rtot,'-r',label='$R_\mathrm{tot}$')
+/tmp/ipykernel_1344/901086605.py:11: SyntaxWarning: invalid escape sequence '\m'
+  plt.plot(lam,Ttot,'-b',label='$T_\mathrm{tot}$')
+/tmp/ipykernel_1344/901086605.py:12: SyntaxWarning: invalid escape sequence '\m'
+  plt.plot(lam,Rspec,'--r',label='$R_\mathrm{spec}$')
+/tmp/ipykernel_1344/901086605.py:13: SyntaxWarning: invalid escape sequence '\m'
+  plt.plot(lam,Tspec,'--b',label='$T_\mathrm{spec}$')
+/tmp/ipykernel_1344/901086605.py:14: SyntaxWarning: invalid escape sequence '\m'
+  plt.xlabel('Longitud de onda ($\mu$m)')
+----- stderr -----
+/tmp/ipykernel_1344/901086605.py:10: SyntaxWarning: invalid escape sequence '\m'
+  plt.plot(lam,Rtot,'-r',label='$R_\mathrm{tot}$')
+/tmp/ipykernel_1344/901086605.py:11: SyntaxWarning: invalid escape sequence '\m'
+  plt.plot(lam,Ttot,'-b',label='$T_\mathrm{tot}$')
+/tmp/ipykernel_1344/901086605.py:12: SyntaxWarning: invalid escape sequence '\m'
+  plt.plot(lam,Rspec,'--r',label='$R_\mathrm{spec}$')
+/tmp/ipykernel_1344/901086605.py:13: SyntaxWarning: invalid escape sequence '\m'
+  plt.plot(lam,Tspec,'--b',label='$T_\mathrm{spec}$')
+/tmp/ipykernel_1344/901086605.py:14: SyntaxWarning: invalid escape sequence '\m'
+  plt.xlabel('Longitud de onda ($\mu$m)')
+------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[2], line 2[0m
-[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
-[0;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mmatplotlib[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpyplot[39;00m [38;5;28;01mas[39;00m [38;5;21;01mplt[39;00m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[27], line 8[0m
+[1;32m      5[0m D [38;5;241m=[39m [38;5;241m0.3[39m                        [38;5;66;03m# diámetro de los poros (micrones)[39;00m
+[1;32m      6[0m Np [38;5;241m=[39m nk[38;5;241m.[39mSiO2(lam)              [38;5;66;03m# índice de refracción partícula[39;00m
+[0;32m----> 8[0m Ttot, Rtot, Tspec, Rspec [38;5;241m=[39m rt[38;5;241m.[39madm_sphere(lam,tfilm,N,fv,D,Np)
+[1;32m     10[0m plt[38;5;241m.[39mplot(lam,Rtot,[38;5;124m'[39m[38;5;124m-r[39m[38;5;124m'[39m,label[38;5;241m=[39m[38;5;124m'[39m[38;5;124m$R_[39m[38;5;124m\[39m[38;5;124mmathrm[39m[38;5;132;01m{tot}[39;00m[38;5;124m$[39m[38;5;124m'[39m)
+[1;32m     11[0m plt[38;5;241m.[39mplot(lam,Ttot,[38;5;124m'[39m[38;5;124m-b[39m[38;5;124m'[39m,label[38;5;241m=[39m[38;5;124m'[39m[38;5;124m$T_[39m[38;5;124m\[39m[38;5;124mmathrm[39m[38;5;132;01m{tot}[39;00m[38;5;124m$[39m[38;5;124m'[39m)
 
-[0;31mModuleNotFoundError[0m: No module named 'matplotlib'
+[0;31mValueError[0m: not enough values to unpack (expected 4, got 2)
 
