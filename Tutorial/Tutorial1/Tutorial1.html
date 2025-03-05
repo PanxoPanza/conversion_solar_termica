@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Tutorial 1 - Modelos ópticos &#8212; MEC501 - Manejo y conversión solar</title>
   
@@ -29,40 +28,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/custom_edits.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom_edits.css?v=4f657593" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorial/Tutorial1/Tutorial1';</script>
@@ -158,7 +153,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">MEC501 - Manejo y conversión solar</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -232,9 +238,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -259,14 +265,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/PanxoPanza/conversion_solar_termica/blob/main/Tutorial/Tutorial1/Tutorial1.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -359,9 +365,9 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -412,7 +418,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-1-modelos-opticos">
-<h1>Tutorial 1 - Modelos ópticos<a class="headerlink" href="#tutorial-1-modelos-opticos" title="Permalink to this heading">#</a></h1>
+<h1>Tutorial 1 - Modelos ópticos<a class="headerlink" href="#tutorial-1-modelos-opticos" title="Link to this heading">#</a></h1>
 <p>Este es un tutorial para utilizar las principales librerías del paquete <code class="docutils literal notranslate"><span class="pre">empylib</span></code>. Estas son:</p>
 <ul class="simple">
 <li><p>Funciones básicas en <code class="docutils literal notranslate"><span class="pre">empylib</span></code>.</p></li>
@@ -431,7 +437,7 @@ document.write(`
 </div>
 </div>
 <section id="conversion-de-unidades">
-<h2>Conversión de unidades<a class="headerlink" href="#conversion-de-unidades" title="Permalink to this heading">#</a></h2>
+<h2>Conversión de unidades<a class="headerlink" href="#conversion-de-unidades" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">empylib</span> <span class="k">as</span> <span class="nn">em</span>
@@ -493,7 +499,7 @@ longitudes de onda en eV:
 </div>
 </section>
 <section id="indices-de-refraccion-nklib">
-<h2>Índices de refracción (<code class="docutils literal notranslate"><span class="pre">nklib</span></code>)<a class="headerlink" href="#indices-de-refraccion-nklib" title="Permalink to this heading">#</a></h2>
+<h2>Índices de refracción (<code class="docutils literal notranslate"><span class="pre">nklib</span></code>)<a class="headerlink" href="#indices-de-refraccion-nklib" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
@@ -502,7 +508,7 @@ longitudes de onda en eV:
 </div>
 </div>
 <section id="indices-de-refraccion-tabulados">
-<h3>Índices de refracción tabulados<a class="headerlink" href="#indices-de-refraccion-tabulados" title="Permalink to this heading">#</a></h3>
+<h3>Índices de refracción tabulados<a class="headerlink" href="#indices-de-refraccion-tabulados" title="Link to this heading">#</a></h3>
 <p>La librería <code class="docutils literal notranslate"><span class="pre">empylib.nklib</span></code> contiene una serie de funciones para determinar el coeficiente de refracción complejo, <span class="math notranslate nohighlight">\(N = n + i\kappa\)</span>.</p>
 <p>Entre la lista de materiales disponibles tenemos:</p>
 <ul class="simple">
@@ -533,7 +539,7 @@ longitudes de onda en eV:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1584c451fd488d552fe28ae4447cda40fe68a2e9532fe7c6d33a8e706fba0193.png" src="../../_images/1584c451fd488d552fe28ae4447cda40fe68a2e9532fe7c6d33a8e706fba0193.png" />
+<img alt="../../_images/6f771c1a840523c724ff906651ccb69deaa796d0772134488e4b20e602c74ba2.png" src="../../_images/6f771c1a840523c724ff906651ccb69deaa796d0772134488e4b20e602c74ba2.png" />
 </div>
 </div>
 <p>También podemos extraer un valor puntual, para una longitud de onda específica. Por ejemplo, si necesitamos el índice de refracción del aluminio en <span class="math notranslate nohighlight">\(\lambda = 0.5\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m, hacemos:</p>
@@ -552,7 +558,7 @@ longitudes de onda en eV:
 </div>
 </section>
 <section id="modelos-de-drude-y-lorentz">
-<h3>Modelos de Drude y Lorentz<a class="headerlink" href="#modelos-de-drude-y-lorentz" title="Permalink to this heading">#</a></h3>
+<h3>Modelos de Drude y Lorentz<a class="headerlink" href="#modelos-de-drude-y-lorentz" title="Link to this heading">#</a></h3>
 <p>La librería <code class="docutils literal notranslate"><span class="pre">empylib.nklib</span></code> también posee funciones para determinar el <strong>índice de refracción</strong> a partir de modelos de Drude y Lorentz.</p>
 <blockquote>
 <div><p>Notar que estas funciones entregan el <strong>índice de refracción</strong>. Para esto, cada función toma el modelo de Drude o Lorentz  para determinar la <strong>constante dieléctrica</strong> <span class="math notranslate nohighlight">\(\varepsilon\)</span>, según lo <a class="reference external" href="https://panxopanza.github.io/conversion_solar_termica/3_Interacci%C3%B3n_materia-luz/3_Interacci%C3%B3n_materia-luz.html">visto en clases</a>. Luego el índice de refracción se determina a partir de <span class="math notranslate nohighlight">\(\sqrt{\varepsilon}\)</span></p>
@@ -565,7 +571,7 @@ longitudes de onda en eV:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function lorentz in module empylib.nklib.nklib:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function lorentz in module empylib.nklib:
 
 lorentz(epsinf, wp, wn, gamma, lam)
     Refractive index from Lorentz model
@@ -621,7 +627,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/665ad475191980c2e87c704dc98dca00472d65786fd9eb6f832af2c33a85e1fa.png" src="../../_images/665ad475191980c2e87c704dc98dca00472d65786fd9eb6f832af2c33a85e1fa.png" />
+<img alt="../../_images/7c55b7a9f80a70f40a5ed38212e4a32174db543e13990f2ba22aee9e1228b0d2.png" src="../../_images/7c55b7a9f80a70f40a5ed38212e4a32174db543e13990f2ba22aee9e1228b0d2.png" />
 </div>
 </div>
 <p><strong>Constante dieléctrica según modelo de Lorentz</strong></p>
@@ -640,7 +646,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e90c2a4fb61e31f9a17b2b4375ca517f13b8e6a8397af103f4cafe41c6be8c9a.png" src="../../_images/e90c2a4fb61e31f9a17b2b4375ca517f13b8e6a8397af103f4cafe41c6be8c9a.png" />
+<img alt="../../_images/0ea2eb3ae762ae69bb6c7d1752170dc08cc41bc0dc13866b25cec553e4b64cc8.png" src="../../_images/0ea2eb3ae762ae69bb6c7d1752170dc08cc41bc0dc13866b25cec553e4b64cc8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -661,10 +667,10 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f99df840450&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f214e3542d0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/53a78ecd4743bc63928d5fd51711543127f091c866a0de275aeb67bdfe2f6999.png" src="../../_images/53a78ecd4743bc63928d5fd51711543127f091c866a0de275aeb67bdfe2f6999.png" />
+<img alt="../../_images/f5bd128e32b8a8ddb4b00c8c839f9fde9093e4b070c45842f4ec97e10fb8f482.png" src="../../_images/f5bd128e32b8a8ddb4b00c8c839f9fde9093e4b070c45842f4ec97e10fb8f482.png" />
 </div>
 </div>
 <p><strong>Constante dieléctrica del agua modelo de Lorentz</strong></p>
@@ -721,13 +727,13 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c4f5f4e340e24dbe372a7d35e341a85d8f66d4c6baf02d76f237b2129bcc2ed0.png" src="../../_images/c4f5f4e340e24dbe372a7d35e341a85d8f66d4c6baf02d76f237b2129bcc2ed0.png" />
+<img alt="../../_images/aa2270b295719a5ad49d08fcaec8eb58356468f5eca1b5ce08e9406654b19958.png" src="../../_images/aa2270b295719a5ad49d08fcaec8eb58356468f5eca1b5ce08e9406654b19958.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="reflexion-transmission-waveoptics">
-<h2>Reflexión/Transmissión (<code class="docutils literal notranslate"><span class="pre">waveoptics</span></code>)<a class="headerlink" href="#reflexion-transmission-waveoptics" title="Permalink to this heading">#</a></h2>
+<h2>Reflexión/Transmissión (<code class="docutils literal notranslate"><span class="pre">waveoptics</span></code>)<a class="headerlink" href="#reflexion-transmission-waveoptics" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">empylib.waveoptics</span> <span class="k">as</span> <span class="nn">wv</span>
@@ -742,7 +748,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 <li><p><code class="docutils literal notranslate"><span class="pre">incoh_multilayer</span></code> para multicapas de película delgada ignorando fenómenos de interferencia (luz incoherente)</p></li>
 </ul>
 <section id="luz-incidente-en-una-interface-interface">
-<h3>Luz incidente en una interface (<code class="docutils literal notranslate"><span class="pre">interface</span></code>)<a class="headerlink" href="#luz-incidente-en-una-interface-interface" title="Permalink to this heading">#</a></h3>
+<h3>Luz incidente en una interface (<code class="docutils literal notranslate"><span class="pre">interface</span></code>)<a class="headerlink" href="#luz-incidente-en-una-interface-interface" title="Link to this heading">#</a></h3>
 <p>Esta función permite determinar los coeficientes de Fresnel y flujo de energía para la onda reflejada y transmitida a través de una interface. La función toma 4 argumentos:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">theta</span></code>: ángulo de incidencia (en radianes)</p></li>
@@ -820,12 +826,12 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c39671d299bcda59e511b056e231c5cab7392e3f4ea0da6518c560513515a69a.png" src="../../_images/c39671d299bcda59e511b056e231c5cab7392e3f4ea0da6518c560513515a69a.png" />
+<img alt="../../_images/b56695334c7bc2408f4ce8d383420dec472eef2a080a122c8243e553139db3fd.png" src="../../_images/b56695334c7bc2408f4ce8d383420dec472eef2a080a122c8243e553139db3fd.png" />
 </div>
 </div>
 </section>
 <section id="luz-incidente-en-arreglos-multicapas-multilayer">
-<h3>Luz incidente en arreglos multicapas (<code class="docutils literal notranslate"><span class="pre">multilayer</span></code>)<a class="headerlink" href="#luz-incidente-en-arreglos-multicapas-multilayer" title="Permalink to this heading">#</a></h3>
+<h3>Luz incidente en arreglos multicapas (<code class="docutils literal notranslate"><span class="pre">multilayer</span></code>)<a class="headerlink" href="#luz-incidente-en-arreglos-multicapas-multilayer" title="Link to this heading">#</a></h3>
 <p>Esta función permite determinar los coeficientes de Fresnel y flujo de energía para la onda reflejada y transmitida a través de un arreglo de multicapas. La función toma 5 argumentos:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">lam</span></code>: Espectro de longitudes de onda (en <span class="math notranslate nohighlight">\(\mu\)</span>m)</p></li>
@@ -897,12 +903,12 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/44c3837c590d34cfab996a5cb13ca86fd4c68e354e0e8453afee7c55e91abd2a.png" src="../../_images/44c3837c590d34cfab996a5cb13ca86fd4c68e354e0e8453afee7c55e91abd2a.png" />
+<img alt="../../_images/394423004716faecb55519f3bf1dd700bfb9c248c274b2527a7573ac7e29b49b.png" src="../../_images/394423004716faecb55519f3bf1dd700bfb9c248c274b2527a7573ac7e29b49b.png" />
 </div>
 </div>
 </section>
 <section id="luz-incoherente-en-arreglos-multicapas-incoh-multilayer">
-<h3>Luz incoherente en arreglos multicapas (<code class="docutils literal notranslate"><span class="pre">incoh_multilayer</span></code>)<a class="headerlink" href="#luz-incoherente-en-arreglos-multicapas-incoh-multilayer" title="Permalink to this heading">#</a></h3>
+<h3>Luz incoherente en arreglos multicapas (<code class="docutils literal notranslate"><span class="pre">incoh_multilayer</span></code>)<a class="headerlink" href="#luz-incoherente-en-arreglos-multicapas-incoh-multilayer" title="Link to this heading">#</a></h3>
 <p>Esta función es similar a <code class="docutils literal notranslate"><span class="pre">multilayer</span></code> pero para una fuente de luz incoherente. Considera los mismos 5 argumentos de <code class="docutils literal notranslate"><span class="pre">multilayer</span></code> con un argumento adicional <code class="docutils literal notranslate"><span class="pre">coh_length</span></code> para condicionar la longitud de coherencia (en <span class="math notranslate nohighlight">\(\mu\)</span>m). Por defecto, <code class="docutils literal notranslate"><span class="pre">coh_length</span> <span class="pre">=</span> <span class="pre">0</span></code></p>
 <p>Debido a que la función es para luz incoherente, el output es:</p>
 <ul class="simple">
@@ -942,7 +948,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/97575d3cbae4a584b468228ad342cd7da0a10118f7252c7ccdbee112f9598287.png" src="../../_images/97575d3cbae4a584b468228ad342cd7da0a10118f7252c7ccdbee112f9598287.png" />
+<img alt="../../_images/26ef1e83006137c8a5e5d2e97b1e08020fb25fdc547c97e1fec30fa8e78ee7c1.png" src="../../_images/26ef1e83006137c8a5e5d2e97b1e08020fb25fdc547c97e1fec30fa8e78ee7c1.png" />
 </div>
 </div>
 <p>En el límite de solo una interface, <code class="docutils literal notranslate"><span class="pre">interface</span></code>, <code class="docutils literal notranslate"><span class="pre">multilayer</span></code> y <code class="docutils literal notranslate"><span class="pre">incoh_multilayer</span></code> entregan el mismo resultado</p>
@@ -971,7 +977,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </section>
 </section>
 <section id="scattering-de-mie-miescattering">
-<h2>Scattering de mie (<code class="docutils literal notranslate"><span class="pre">miescattering</span></code>)<a class="headerlink" href="#scattering-de-mie-miescattering" title="Permalink to this heading">#</a></h2>
+<h2>Scattering de mie (<code class="docutils literal notranslate"><span class="pre">miescattering</span></code>)<a class="headerlink" href="#scattering-de-mie-miescattering" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">empylib.miescattering</span> <span class="k">as</span> <span class="nn">mie</span>
@@ -1025,12 +1031,12 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/51a857bff2ccce157ff4b24b58899034c204342a98e5f89bd8dd0a3c15f3ac09.png" src="../../_images/51a857bff2ccce157ff4b24b58899034c204342a98e5f89bd8dd0a3c15f3ac09.png" />
+<img alt="../../_images/3fbd4660428404193bbf3ed66668d00ba86bfe0c20d6089db1dc8b6b9004b697.png" src="../../_images/3fbd4660428404193bbf3ed66668d00ba86bfe0c20d6089db1dc8b6b9004b697.png" />
 </div>
 </div>
 </section>
 <section id="transporte-radiativo-rad-transfer">
-<h2>Transporte Radiativo (<code class="docutils literal notranslate"><span class="pre">rad_transfer</span></code>)<a class="headerlink" href="#transporte-radiativo-rad-transfer" title="Permalink to this heading">#</a></h2>
+<h2>Transporte Radiativo (<code class="docutils literal notranslate"><span class="pre">rad_transfer</span></code>)<a class="headerlink" href="#transporte-radiativo-rad-transfer" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">empylib.rad_transfer</span> <span class="k">as</span> <span class="nn">rt</span>
@@ -1044,7 +1050,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 <li><p><code class="docutils literal notranslate"><span class="pre">iadpython</span></code> para simulaciones de scattering multiple</p></li>
 </ul>
 <section id="beer-lambert-t-beer-lambert">
-<h3>Beer-Lambert (<code class="docutils literal notranslate"><span class="pre">T_beer_lambert</span></code>)<a class="headerlink" href="#beer-lambert-t-beer-lambert" title="Permalink to this heading">#</a></h3>
+<h3>Beer-Lambert (<code class="docutils literal notranslate"><span class="pre">T_beer_lambert</span></code>)<a class="headerlink" href="#beer-lambert-t-beer-lambert" title="Link to this heading">#</a></h3>
 <p>La función <code class="docutils literal notranslate"><span class="pre">T_beer_lambert</span></code> de la librería <code class="docutils literal notranslate"><span class="pre">empylib.rad_transfer</span></code> permite un rápido cálculo de la transmisivitidad a través de un medio de espesor <span class="math notranslate nohighlight">\(d\)</span> con incrustaciones.</p>
 <p>La función requiere los siguientes parámetros de entrada:</p>
 <ul class="simple">
@@ -1087,12 +1093,12 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5a617795cb14cdc31ee40816a74d2e9b8bb460e48ca99b6108e7dab163bdbdaa.png" src="../../_images/5a617795cb14cdc31ee40816a74d2e9b8bb460e48ca99b6108e7dab163bdbdaa.png" />
+<img alt="../../_images/4e6a2bd37bdb7a5cd6ea83ed7efbdca9794c3b8a7602ddb2e5ccc0f962bc1a11.png" src="../../_images/4e6a2bd37bdb7a5cd6ea83ed7efbdca9794c3b8a7602ddb2e5ccc0f962bc1a11.png" />
 </div>
 </div>
 </section>
 <section id="scattering-multiple-adm-sphere">
-<h3>Scattering multiple (<code class="docutils literal notranslate"><span class="pre">adm_sphere</span></code>)<a class="headerlink" href="#scattering-multiple-adm-sphere" title="Permalink to this heading">#</a></h3>
+<h3>Scattering multiple (<code class="docutils literal notranslate"><span class="pre">adm_sphere</span></code>)<a class="headerlink" href="#scattering-multiple-adm-sphere" title="Link to this heading">#</a></h3>
 <p>La función <code class="docutils literal notranslate"><span class="pre">adm_sphere</span></code> de la librería <code class="docutils literal notranslate"><span class="pre">empylib.rad_transfer</span></code> permite el cálculo de scattering múltiple en una película con incrustaciones entre dos medios semi-infinitos. La función utliza la librería <code class="docutils literal notranslate"><span class="pre">iadpython</span></code> la cual utiliza el <em><strong>adding doubling method (adm)</strong></em> para resolver la RTE numéricamente.</p>
 <p>La función requiere los siguientes parámetros de entrada:</p>
 <ul class="simple">
@@ -1143,7 +1149,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/53166565defcfe7df16b00881391750aaf235e23ea4f6f315f7aa3a19b7b2e99.png" src="../../_images/53166565defcfe7df16b00881391750aaf235e23ea4f6f315f7aa3a19b7b2e99.png" />
+<img alt="../../_images/9f4d911c357d2bbf940c1fe089b3d7b9ae88a92de15e1b067ac7b64dc6611537.png" src="../../_images/9f4d911c357d2bbf940c1fe089b3d7b9ae88a92de15e1b067ac7b64dc6611537.png" />
 </div>
 </div>
 </section>
@@ -1256,7 +1262,7 @@ By Francisco V. Ramirez-Cuevas
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
