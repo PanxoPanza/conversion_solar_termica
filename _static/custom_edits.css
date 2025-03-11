@@ -2,6 +2,10 @@ p {
     text-align: justify;
 }
 
+table {
+    width: 50%;
+}
+
 .skip-link {
     display: none;
 }
