@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom_edits.css?v=ed6755d4" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -70,7 +67,6 @@
     <link rel="prev" title="3. Propiedades ópticas de los materiales" href="../03_Interacci%C3%B3n_materia-luz/03_Interacci%C3%B3n_materia-luz.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -86,8 +82,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -95,6 +102,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -102,8 +110,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -119,8 +127,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -150,11 +157,15 @@
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -338,16 +349,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -409,18 +428,22 @@
 <section id="interaccion-de-luz-con-cuerpos-grandes">
 <h3><span class="section-number">4.1.1. </span>Interacción de luz con cuerpos grandes<a class="headerlink" href="#interaccion-de-luz-con-cuerpos-grandes" title="Link to this heading">#</a></h3>
 <p>En el caso de cuerpos curvos, los coeficientes de Fresnel y otras fórmulas relacionadas aún son aplicables, siembre y cuando el radio de curvartura del cuerpo <span class="math notranslate nohighlight">\(R \gg \lambda\)</span></p>
-<a class="reference internal image-reference" href="../_images/fresnel_curvature.png"><img alt="../_images/fresnel_curvature.png" class="align-center" src="../_images/fresnel_curvature.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../_images/fresnel_curvature.png"><img alt="../_images/fresnel_curvature.png" class="align-center" src="../_images/fresnel_curvature.png" style="width: 600px;" />
+</a>
 <p>A través de este principio podemos explicar la separación de colores en un arcoiris.</p>
 <p>Primero, es importante notar que el índice de refracción del agua en el espectro visible no es constante. Este índice tiene un pequeño grado de dispersión, y decae a medida que la longitud de onda crece. Así, a partir de la ley de Snell, el ángulo de transmisión de cada onda (o color), crece proporcional a la longitud de onda.</p>
-<a class="reference internal image-reference" href="../_images/rainbow_refraction.png"><img alt="../_images/rainbow_refraction.png" class="align-center" src="../_images/rainbow_refraction.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../_images/rainbow_refraction.png"><img alt="../_images/rainbow_refraction.png" class="align-center" src="../_images/rainbow_refraction.png" style="width: 800px;" />
+</a>
 <p>Este fenómeno produce la difracción de la luz en función de su longitud de onda.</p>
 <p>En una gota de agua, el efecto de separación de colores se magnifica a medida que la luz se refleja en el interior</p>
-<a class="reference internal image-reference" href="../_images/rainbows.jpg"><img alt="../_images/rainbows.jpg" class="align-center" src="../_images/rainbows.jpg" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../_images/rainbows.jpg"><img alt="../_images/rainbows.jpg" class="align-center" src="../_images/rainbows.jpg" style="width: 300px;" />
+</a>
 </section>
 <section id="interaccion-de-luz-con-cuerpos-pequenos">
 <h3><span class="section-number">4.1.2. </span>Interacción de luz con cuerpos pequeños<a class="headerlink" href="#interaccion-de-luz-con-cuerpos-pequenos" title="Link to this heading">#</a></h3>
 <p>Cuándo las dimensiones del cuerpo, <span class="math notranslate nohighlight">\(D\)</span>, son comparables a la longitud de onda, las soluciones de las ecuaciones de Maxwell para una interface plana no son aplicables. En este caso, se produce el fenómeno de <strong><em>scattering</em> de luz</strong> asociado a la disperción (o esparcimiento) de luz en múltiples direcciones.</p>
-<a class="reference internal image-reference" href="../_images/scattering_schematic.png"><img alt="../_images/scattering_schematic.png" class="align-center" src="../_images/scattering_schematic.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../_images/scattering_schematic.png"><img alt="../_images/scattering_schematic.png" class="align-center" src="../_images/scattering_schematic.png" style="width: 800px;" />
+</a>
 <p>Además del scattering, tenemos el fenómeno de <strong>absorción de luz</strong>, asociada con la porción de la energía incidente absorbida por el objeto, y la <strong>extinción de luz</strong>, que corresponde a la suma de la energía de scattering y absorción.</p>
 <p>El efecto scattering se presenta cada vez que tenemos material particulado y, por lo tanto, es común en ambientes con polvo o neblina.</p>
 <p>El siguiente video explica el fenómeno de forma visual. Aquí, el haz de luz producido por un láser rojo ocurre debido al scattering del laser al interactuar con particular pequeñas dispersas en agua.</p>
@@ -444,7 +467,8 @@
 <p>La solución analítica para predecir el efecto de scattering y absorción en esferas, desarrollada por Gustav Mie, se ha convertido en la principal referencia para entender este fenómeno.</p>
 <p>La fórmula es derivada a partir de la solución de las ecuaciones de Maxwell en coordenadas esféricas, y permite describir con precisión la <strong>dependencia del scattering y absorción respecto a las propiedades ópticas de la partícula y el medio circundante, asi como del diámetro de la partícula.</strong></p>
 <p>Consideremos el modelo simple una onda electromagnética interactuando con una esfera de radio <span class="math notranslate nohighlight">\(R\)</span> y diámetro <span class="math notranslate nohighlight">\(D\)</span> tal que <span class="math notranslate nohighlight">\(D/\lambda \sim 1\)</span></p>
-<a class="reference internal image-reference" href="../_images/em_wave_sphere.png"><img alt="../_images/em_wave_sphere.png" class="align-center" src="../_images/em_wave_sphere.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../_images/em_wave_sphere.png"><img alt="../_images/em_wave_sphere.png" class="align-center" src="../_images/em_wave_sphere.png" style="width: 300px;" />
+</a>
 <p>Llamaremos al índice de refracción de la esfera <span class="math notranslate nohighlight">\(N_p\)</span>, y al índice de refracción del exterior <span class="math notranslate nohighlight">\(N_h\)</span>.</p>
 <p>En este caso asumimos que el índice de refracción del exterior no tiene componente compleja, es decir <span class="math notranslate nohighlight">\(N_h = n_h\)</span></p>
 <p>El espacio está definido en coordenadas esféricas, donde:</p>
@@ -455,8 +479,8 @@
 </ul>
 <p>La solución a este problema se basa una expansión en serie de ondas esféricas <span class="math notranslate nohighlight">\(\vec{M}_{lm}(r, \theta,\phi)\)</span> y <span class="math notranslate nohighlight">\(\vec{N}_{lm}(r, \theta,\phi)\)</span> (más información en las referencias).</p>
 <p>Por ejemplo, la componente del campo eléctrico correspondiente al scattering, <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{sca}\)</span> es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-82faef4e-55e6-48b7-8b78-b0acf3ad8cd4">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-82faef4e-55e6-48b7-8b78-b0acf3ad8cd4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bae2b58b-dded-4428-90cb-d28a0f8562a5">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-bae2b58b-dded-4428-90cb-d28a0f8562a5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vec{E}_\mathrm{sca}(r, \theta,\phi) = \sum_{l=1}^\infty \mathrm{Im}\left[E_0\frac{2l+1}{l(l+1)}i^l\left(a_l \vec{N}_{l1}^{(3)} - b_l \vec{M}_{l1}^{(3)}\right)\right]
 \end{equation}\]</div>
 <p>donde los coeficientes <span class="math notranslate nohighlight">\(a_l\)</span> y <span class="math notranslate nohighlight">\(b_l\)</span> están dados por la funciones de Ricatti-Bessel, <span class="math notranslate nohighlight">\(\psi(x)\)</span> y <span class="math notranslate nohighlight">\(\xi(x)\)</span>, en la forma:</p>
@@ -477,18 +501,21 @@ b_l = \frac{\psi_l(px)\psi'_l(x) - p\psi_l(x)\psi'_l(px)}{\psi_l(px)\xi'_l(x) - 
 <section id="distribucion-del-campo-electrico">
 <h3><span class="section-number">4.2.1. </span>Distribución del campo eléctrico<a class="headerlink" href="#distribucion-del-campo-electrico" title="Link to this heading">#</a></h3>
 <p>La siguiente figura muestra la distribución del campo eléctrico scattering obtenido de la equación (4.1). La dirección de la onda incidente es <span class="math notranslate nohighlight">\(\hat{k}_\mathrm{inc} = \hat{x}\)</span>, con el campo eléctrico polarizado en dirección <span class="math notranslate nohighlight">\(\hat{e}=\hat{z}\)</span>.</p>
-<a class="reference internal image-reference" href="../_images/scattering_distribution.png"><img alt="../_images/scattering_distribution.png" class="align-center" src="../_images/scattering_distribution.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/scattering_distribution.png"><img alt="../_images/scattering_distribution.png" class="align-center" src="../_images/scattering_distribution.png" style="width: 700px;" />
+</a>
 <p>La figura de la izquierda muestra la distribución del campo electrico total, es decir: incidente (<span class="math notranslate nohighlight">\(\vec{E}_\mathrm{inc}\)</span>) + scattering (<span class="math notranslate nohighlight">\(\vec{E}_\mathrm{sca}\)</span>).</p>
 <p>La figura de la derecha muestra <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{sca}\)</span>, únicamente. Utilizando <span class="math notranslate nohighlight">\(\hat{k}_\text{inc}\)</span> como referencia, notamos que la intensidad del scattering es mayor hacia adelante (<span class="math notranslate nohighlight">\(\theta = 0^o\)</span>) y decrece a medida de <span class="math notranslate nohighlight">\(\theta\)</span> aumenta. Debido a la simetría axial, el scattering no varía en <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
 <p>En general, la distribución del scattering depende del tamaño de la partícula en relación la longitud de onda.</p>
-<a class="reference internal image-reference" href="../_images/scattering_vs_size.png"><img alt="../_images/scattering_vs_size.png" class="align-center" src="../_images/scattering_vs_size.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/scattering_vs_size.png"><img alt="../_images/scattering_vs_size.png" class="align-center" src="../_images/scattering_vs_size.png" style="width: 700px;" />
+</a>
 <p>Particularmente, cuando <span class="math notranslate nohighlight">\(D/\lambda \ll 1\)</span>, se denomina Rayleight scattering. En este caso el campo scattering está distribuido uniformemente alrededor de la partícula</p>
 </section>
 <section id="funcion-de-fase-p-mathrm-sca">
 <h3><span class="section-number">4.2.2. </span>Función de fase (<span class="math notranslate nohighlight">\(P_\mathrm{sca}\)</span>)<a class="headerlink" href="#funcion-de-fase-p-mathrm-sca" title="Link to this heading">#</a></h3>
 <p>Al igual que con el estudio de reflexión y transmisión, la solución <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{sca}\)</span> nos permite determinar el el vector de Poyinting asociado a scattering, <span class="math notranslate nohighlight">\(\langle\vec{S_\mathrm{sca}}\rangle = \frac{1}{2}\mathrm{Re}\left(\vec{E}_\mathrm{sca}\times\vec{H}^*_\mathrm{sca}\right)~\mathrm{[W/m^2]}\)</span>.</p>
 <p>Notar que, en general, <span class="math notranslate nohighlight">\(\langle\vec{S_\mathrm{sca}}\rangle\)</span> varía según <span class="math notranslate nohighlight">\(\theta\)</span>, <span class="math notranslate nohighlight">\(\phi\)</span> y <span class="math notranslate nohighlight">\(r\)</span>.</p>
-<a class="reference internal image-reference" href="../_images/poynting_vector.png"><img alt="../_images/poynting_vector.png" class="align-center" src="../_images/poynting_vector.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../_images/poynting_vector.png"><img alt="../_images/poynting_vector.png" class="align-center" src="../_images/poynting_vector.png" style="width: 300px;" />
+</a>
 <p>La potencia neta por scattering, <span class="math notranslate nohighlight">\(W_\mathrm{sca}\)</span> se obtiene integrando <span class="math notranslate nohighlight">\(\langle\vec{S_\mathrm{sca}}\rangle\)</span> sobre la superticie de la esfera:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -502,7 +529,8 @@ W_\mathrm{sca} &amp;= \oint_{S} \langle\vec{S_\mathrm{sca}}\rangle\cdot\hat{r}dS
 <p>donde <span class="math notranslate nohighlight">\(I_\mathrm{inc} = \frac{n_hE_0^2}{2Z_0}~\mathrm{[W/m^2]}\)</span> es el flujo de energía o intensidad de la onda incidente, y <span class="math notranslate nohighlight">\(P_\mathrm{sca}(\theta)  = \frac{R^2}{I_\mathrm{inc}}\left[\langle\vec{S_\mathrm{sca}}\rangle \cdot \hat{r}\right]\)</span>, es la <strong>función de distribución de scattering</strong> o <strong>función de fase</strong>.</p>
 <p>La función de fase representa <strong>energía de scattering por unidad de ángulo sólido <span class="math notranslate nohighlight">\(d\Omega = \sin\theta d\theta d\phi\)</span> relativo al flujo de energía de la onda incidente, <span class="math notranslate nohighlight">\(I_\mathrm{inc}\)</span></strong>.</p>
 <p>En otras palabras, para una onda incidente con intensidad <span class="math notranslate nohighlight">\(I_\mathrm{inc}\)</span>, la energía de scattering en dirección <span class="math notranslate nohighlight">\(\theta\)</span> es <span class="math notranslate nohighlight">\(I_\mathrm{inc} P_\mathrm{sca}(\theta)d\Omega\)</span></p>
-<a class="reference internal image-reference" href="../_images/phase_function.png"><img alt="../_images/phase_function.png" class="align-center" src="../_images/phase_function.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/phase_function.png"><img alt="../_images/phase_function.png" class="align-center" src="../_images/phase_function.png" style="width: 500px;" />
+</a>
 <p>Mediante un proceso similar, podemos determinar la potencia extinguida, <span class="math notranslate nohighlight">\(W_\mathrm{ext}\)</span>, a partir del campo total <span class="math notranslate nohighlight">\(\vec{E}_\mathrm{tot} = \vec{E}_\mathrm{inc} + \vec{E}_\mathrm{sca}\)</span></p>
 </section>
 <section id="seccion-transversal-de-scattering-c-mathrm-sca-y-extincion-c-mathrm-ext">
@@ -521,7 +549,8 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 <section id="parametro-de-asimetria-mu-mathrm-sca">
 <h3><span class="section-number">4.2.4. </span>Parámetro de asimetría (<span class="math notranslate nohighlight">\(\mu_\mathrm{sca}\)</span>)<a class="headerlink" href="#parametro-de-asimetria-mu-mathrm-sca" title="Link to this heading">#</a></h3>
 <p>Otro parámetro relevante es el parámetro de asimetría, <span class="math notranslate nohighlight">\(\mu_\mathrm{sca} \in [-1,1]\)</span>. Este parámetro cuantifica la anisotropía en la distribución del scattering.</p>
-<a class="reference internal image-reference" href="../_images/asymmetry_parameter.png"><img alt="../_images/asymmetry_parameter.png" class="align-center" src="../_images/asymmetry_parameter.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/asymmetry_parameter.png"><img alt="../_images/asymmetry_parameter.png" class="align-center" src="../_images/asymmetry_parameter.png" style="width: 700px;" />
+</a>
 <p>En el caso de esferas, se define por:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -595,7 +624,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/cf3b0de3ccabae1e0e255c0679bb12bb7711e16b6a182ac4a4b7495f035ed1c8.png" src="../_images/cf3b0de3ccabae1e0e255c0679bb12bb7711e16b6a182ac4a4b7495f035ed1c8.png" />
+<img alt="../_images/5ea45676284eb673a152162933c1efd4a1c71cbef04cc636e9a6a0ad6343a970.png" src="../_images/5ea45676284eb673a152162933c1efd4a1c71cbef04cc636e9a6a0ad6343a970.png" />
 </div>
 </div>
 <p>A partir de este gráfico podemos identificar algunos patrones comúnes en scattering:</p>
@@ -607,10 +636,12 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 <p>A partir de este gráfico podemos entender muchas situaciones de la vida cotidiana.</p>
 <p>Las partículas de agua en la neblina, por ejemplo, cuyo tamaño es <span class="math notranslate nohighlight">\(D\sim 1000\)</span> nm, inducen scattering en todo el espectro visible, con mayor intensidad en longitudes de onda <span class="math notranslate nohighlight">\(\lambda \sim 0.5\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>m.</p>
 <p>Esto significa que la luz en la niebla será dispersada, independientemente de su longitud de onda.</p>
-<a class="reference internal image-reference" href="../_images/difuse_and_specular.png"><img alt="../_images/difuse_and_specular.png" class="align-center" src="../_images/difuse_and_specular.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../_images/difuse_and_specular.png"><img alt="../_images/difuse_and_specular.png" class="align-center" src="../_images/difuse_and_specular.png" style="width: 800px;" />
+</a>
 <p>Para un haz de luz incidente en un medio con partículas, llamamos <strong>componente difusa</strong> a la porción de la luz dispersada por scattering, y como <strong>componente especular</strong> a la porción no dispersada.</p>
 <p>Otro ejemplo es el azul del cielo. En este caso las moléculas en el aire son mucho más pequeñas (1 - 0.1 nm). Aunque no es visible en el gráfico anterior, el scattering inducido por este tipo de moléculas es más intenso para ondas en el espectro del color azul y violeta (<span class="math notranslate nohighlight">\(\lambda &lt; 450\)</span> nm), similar a la curva <span class="math notranslate nohighlight">\(D = 300\)</span> nm.</p>
-<a class="reference internal image-reference" href="../_images/sky_scattering.png"><img alt="../_images/sky_scattering.png" class="align-center" src="../_images/sky_scattering.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/sky_scattering.png"><img alt="../_images/sky_scattering.png" class="align-center" src="../_images/sky_scattering.png" style="width: 700px;" />
+</a>
 <p>La componente difusa, así, corresponde a los colores azul y violeta. La componente especular, corresponde al resto de los colores del espectro visible. El fenómeno expica el color azul del cielo durante el día.</p>
 </section>
 <section id="particulas-no-metalicas-con-indice-de-refraccion-complejo">
@@ -684,18 +715,20 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/517aaff3451957e40a1eb37f099d4802245c7e21d612006c2e75562c47aec25a.png" src="../_images/517aaff3451957e40a1eb37f099d4802245c7e21d612006c2e75562c47aec25a.png" />
+<img alt="../_images/080da198d687e0e62dd4c73f85fa2c9b1aed72dd8af2051179334bf3afc97112.png" src="../_images/080da198d687e0e62dd4c73f85fa2c9b1aed72dd8af2051179334bf3afc97112.png" />
 </div>
 </div>
 <p>En este caso, vemos que <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> esta condicionado a valores donde <span class="math notranslate nohighlight">\(\kappa_p \neq 0\)</span> (en el espectro UV, en este caso particular). El valor de <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span>, en cambio, se extiende en el espectro visible, similar a lo que ocurre con el efecto de la neblina.</p>
 <p>Este efecto de scattering en particulas de TiO<span class="math notranslate nohighlight">\(_2\)</span>, explica el color blanco de los protectores solares. Las particulas de TiO<span class="math notranslate nohighlight">\(_2\)</span> se agregan a la crema para absorver la radiación UV. El color blanco ocurre debido al scattering de luz visible, tal como indica la gráfica anterior.</p>
-<a class="reference internal image-reference" href="../_images/tio2_sun-screen.png"><img alt="../_images/tio2_sun-screen.png" class="align-center" src="../_images/tio2_sun-screen.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/tio2_sun-screen.png"><img alt="../_images/tio2_sun-screen.png" class="align-center" src="../_images/tio2_sun-screen.png" style="width: 700px;" />
+</a>
 <p>A diferencia de la neblina, sin embargo, en este caso tenemos un blanco más intenso. Como veremos en la siguiente unidad, este efecto se debe al <em>scattering múltiple</em>, asociado a la alta concentración de partículas de TiO<span class="math notranslate nohighlight">\(_2\)</span></p>
 </section>
 <section id="particulas-metalicas">
 <h3><span class="section-number">4.3.3. </span>Partículas metálicas<a class="headerlink" href="#particulas-metalicas" title="Link to this heading">#</a></h3>
 <p>El naturaleza del scattering es diferente para los metales. En este caso, el movimiento libre de los electrones genera acumulación de carga en la superficie de la partícula. Como resultado, la partícula se polariza generando fenómenos de resonancia en determinadas longitudes de onda.</p>
-<a class="reference internal image-reference" href="../_images/surface_plasmon.png"><img alt="../_images/surface_plasmon.png" class="align-center" src="../_images/surface_plasmon.png" style="width: 350px;" /></a>
+<a class="reference internal image-reference" href="../_images/surface_plasmon.png"><img alt="../_images/surface_plasmon.png" class="align-center" src="../_images/surface_plasmon.png" style="width: 350px;" />
+</a>
 <p>En la siguiente figura, graficamos <span class="math notranslate nohighlight">\(C_\mathrm{sca}\)</span> y <span class="math notranslate nohighlight">\(C_\mathrm{abs}\)</span> para partículas de plata con distinto diámetro. Ambas variables son normalizadas por el área de la sección transversal de la esfera <span class="math notranslate nohighlight">\(\pi R^2\)</span>, para facilitar la comparación de los resultados.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -755,7 +788,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../_images/e9f115cac9c0d027ad9069e4dc86451690af9083b743c7cf6729819c77e9c8e6.png" src="../_images/e9f115cac9c0d027ad9069e4dc86451690af9083b743c7cf6729819c77e9c8e6.png" />
+<img alt="../_images/f725863ca4b737840d7acb5dd633f4ee675402cd07e87c8777a4eb6a9181613f.png" src="../_images/f725863ca4b737840d7acb5dd633f4ee675402cd07e87c8777a4eb6a9181613f.png" />
 </div>
 </div>
 <ul class="simple">
@@ -764,15 +797,18 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
 </ul>
 <p>Este fenómeno se repite en otros metales, aunque con distintas magnitudes y variaciones en la ubicación del peak en las curvas.</p>
 <p>El efecto de de scattering en nanopartículas metálicas permite explicar el cambio en los colores en la <a class="reference external" href="https://es.wikipedia.org/wiki/Copa_de_Licurgo">copa de Licurgo</a>.</p>
-<a class="reference internal image-reference" href="../_images/lycurgus_cup_effect.png"><img alt="../_images/lycurgus_cup_effect.png" class="align-center" src="../_images/lycurgus_cup_effect.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../_images/lycurgus_cup_effect.png"><img alt="../_images/lycurgus_cup_effect.png" class="align-center" src="../_images/lycurgus_cup_effect.png" style="width: 900px;" />
+</a>
 <p>Esta copa del periodo romano, esta compuesta de vidrio con nanopartícula de oro y plata en forma de coloides.</p>
 <p>En física, se denomina <strong>plasmones superficiales localizados</strong> (o LSP, por sus siglas en ingles) a esta interacción entre luz y nanopartículas métalicas.</p>
 <p>Existen diversas aplicaciones que han explorado la capacidad de los LSP de absorber y confinar luz en escalas nanométricas, tales como: transmisión de información a nanoescala, desalinización solar, fotodetección, fotosíntesis artificial, entre otras.</p>
 <p>Una de las aplicaciones más relevantes es la <strong>terapia fototermal</strong>.</p>
 <p>Esta técnica se basa en nanopartículas metálicas diseñadas para presentar una fuerte absorción en la región del infrarrojo cercano (NIR), donde la piel y los tejidos biológicos presentan una mayor transparencia óptica.</p>
-<a class="reference internal image-reference" href="../_images/nir_skin_transparency.png"><img alt="../_images/nir_skin_transparency.png" class="align-center" src="../_images/nir_skin_transparency.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../_images/nir_skin_transparency.png"><img alt="../_images/nir_skin_transparency.png" class="align-center" src="../_images/nir_skin_transparency.png" style="width: 800px;" />
+</a>
 <div><center><small>A la izquierda, solución de nanopartículas de oro con distintos diámetros. A la derecha, transparencia de la piel a la luz roja</small></center></div><p>Las nanopartículas de oro son internalizadas en células tumorales malignas e irradiardas con un láser de longitud de onda <span class="math notranslate nohighlight">\(\lambda \approx 800\)</span> nm, donde la piel es transparente. Las nanopartículas absorben la radiación incidente y la convierten en calor, induciendo hipertermia localizada y provocando la destrucción de las células cancerígenas.</p>
-<a class="reference internal image-reference" href="../_images/photothermal_therapy.png"><img alt="../_images/photothermal_therapy.png" class="align-center" src="../_images/photothermal_therapy.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../_images/photothermal_therapy.png"><img alt="../_images/photothermal_therapy.png" class="align-center" src="../_images/photothermal_therapy.png" style="width: 800px;" />
+</a>
 <div><center><small>Esquema del funcionamiento de la terapia fototermal.</small></center></div></section>
 </section>
 <section id="referencias">
@@ -840,8 +876,7 @@ C_\mathrm{ext} &amp;=&amp; \frac{W_\mathrm{ext}}{I_\mathrm{inc}} = \frac{2\pi}{k
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -917,8 +952,8 @@ By Francisco V. Ramirez-Cuevas
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

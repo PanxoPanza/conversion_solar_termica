@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom_edits.css?v=ed6755d4" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -70,7 +67,6 @@
     <link rel="prev" title="Introducción al curso" href="../00_introduccion/00_introduccion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -86,8 +82,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -95,6 +102,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -102,8 +110,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -119,8 +127,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -150,11 +157,15 @@
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -338,16 +349,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -413,7 +432,8 @@
 <li><p>Un campo vectorial representa la distribución espacial de una magnitud vectorial. Por ejemplo, distribución de velocidades, campo eléctrico o magnético. En coordenadas cartesianas: <span class="math notranslate nohighlight">\(\vec{f} = \vec{f}(x,y,z)\)</span>, donde <span class="math notranslate nohighlight">\(\vec{f}\)</span> es un campo escalar.</p></li>
 </ul>
 <p>Por ejemplo, consideremos la siguiente modelación de convección natural en cavidad cuadrada:</p>
-<a class="reference internal image-reference" href="../_images/natural_convection.png"><img alt="../_images/natural_convection.png" class="align-center" src="../_images/natural_convection.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/natural_convection.png"><img alt="../_images/natural_convection.png" class="align-center" src="../_images/natural_convection.png" style="width: 500px;" />
+</a>
 <p>Aquí podemos visualizar la distribución espacial de temperaturas y velocidades de un fluido sometido a las condiciones indicadas en la figura.</p>
 <p>De esta figura podemos identificar:</p>
 <ul class="simple">
@@ -425,14 +445,14 @@
 <h3><span class="section-number">1.1.2. </span>Operadores diferenciales<a class="headerlink" href="#operadores-diferenciales" title="Link to this heading">#</a></h3>
 <p><strong>Operador Del</strong></p>
 <p>Definimos el operador <span class="math notranslate nohighlight">\(\nabla\)</span> o “del”, como:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f0050e1a-5028-415b-b397-715788f80dc1">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-f0050e1a-5028-415b-b397-715788f80dc1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-84a8814f-3284-477e-aab4-b24790d35a5c">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-84a8814f-3284-477e-aab4-b24790d35a5c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla= \left( \hat{x}\frac{\partial }{\partial x} + \hat{y}\frac{\partial }{\partial y} + \hat{z}\frac{\partial }{\partial z} \right)
 \end{equation}\]</div>
 <p><strong>Operador Gradiente.</strong></p>
 <p>Es equivalente a la derivada de una función, pero en múltiples dimenciones. Permite identificar zonas de crecimiento o decrecimiento de un campo escalar o vectorial. Se define como el operador Del multiplicado por el campo escalar.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-05089d88-0990-4335-8996-4e3136c583bf">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-05089d88-0990-4335-8996-4e3136c583bf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-47bc9b8f-e6b6-48ef-a529-aa3e564a353d">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-47bc9b8f-e6b6-48ef-a529-aa3e564a353d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla f= \frac{\partial f}{\partial x}\hat{x} + \frac{\partial f}{\partial y}\hat{y}+ \frac{\partial f}{\partial z}\hat{z}
 \end{equation}\]</div>
 <blockquote>
@@ -440,23 +460,25 @@
 </div></blockquote>
 <p><strong>Operador Divergente.</strong></p>
 <p>Se aplica a campos vectoriales. Es una medida de cuanto un campo vectorial diverge o converge respecto de un punto en cuestión. Se define como el producto punto entre el operador Del y un campo vectorial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2782bd84-431b-4dcf-93cb-56759913cde1">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-2782bd84-431b-4dcf-93cb-56759913cde1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1b0f719b-ab53-404a-9e4b-ee4ad34918a2">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-1b0f719b-ab53-404a-9e4b-ee4ad34918a2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla \cdot \vec{f}= \frac{\partial f_x}{\partial x} + \frac{\partial f_y}{\partial y} + \frac{\partial f_z}{\partial z}
 \end{equation}\]</div>
 <p>Por ejemplo:</p>
-<a class="reference internal image-reference" href="../_images/divergence.jpg"><img alt="../_images/divergence.jpg" class="align-center" src="../_images/divergence.jpg" style="width: 71%;" /></a>
+<a class="reference internal image-reference" href="../_images/divergence.jpg"><img alt="../_images/divergence.jpg" class="align-center" src="../_images/divergence.jpg" style="width: 71%;" />
+</a>
 <p>(a) <span class="math notranslate nohighlight">\(\nabla\cdot\vec{f} \gt 0\)</span></p>
 <p>(b) <span class="math notranslate nohighlight">\(\nabla\cdot\vec{f} = 0\)</span></p>
 <p>(c) <span class="math notranslate nohighlight">\(\nabla\cdot\vec{f} \gt 0\)</span></p>
 <p><strong>Operador Rotacional.</strong></p>
 <p>Se aplica a campos vectoriales. Es una medida de cuanto un campo vectorial rota respecto de un punto en cuestión. Se define como el producto cruz entre el operador Del y un campo vectorial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-39c422fc-3135-45e9-8cf1-060fde5f11e3">
-<span class="eqno">(1.4)<a class="headerlink" href="#equation-39c422fc-3135-45e9-8cf1-060fde5f11e3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-98ae03ee-e329-4bef-b568-c56d8ab2a9be">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-98ae03ee-e329-4bef-b568-c56d8ab2a9be" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla \times \vec{f}= \left(\frac{\partial f_z}{\partial y}- \frac{\partial f_y}{\partial z}\right)\hat{x}+\left(\frac{\partial f_x}{\partial z}- \frac{\partial f_z}{\partial x}\right)\hat{y}+\left(\frac{\partial f_y}{\partial x}- \frac{\partial f_x}{\partial y}\right)\hat{z}
 \end{equation}\]</div>
 <p>Por ejemplo:</p>
-<a class="reference internal image-reference" href="../_images/curl.jpg"><img alt="../_images/curl.jpg" class="align-center" src="../_images/curl.jpg" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="../_images/curl.jpg"><img alt="../_images/curl.jpg" class="align-center" src="../_images/curl.jpg" style="width: 650px;" />
+</a>
 <p>(a) <span class="math notranslate nohighlight">\(\nabla\times\vec{f} \gt 0\)</span></p>
 <p>(b) <span class="math notranslate nohighlight">\(\nabla\times\vec{f} \gt 0\)</span></p>
 <blockquote>
@@ -470,8 +492,8 @@
 <h3><span class="section-number">1.2.1. </span>Ley de Gauss<a class="headerlink" href="#ley-de-gauss" title="Link to this heading">#</a></h3>
 <p><em>El flujo de campo electrico a través de una superficie cerrada es proporcional a la carga eléctrica, <span class="math notranslate nohighlight">\(\rho\)</span>, contenida dentro de esta superficie.</em></p>
 <p>En su forma diferencial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1ae47dd1-6923-40cf-8f64-76fb23b987bc">
-<span class="eqno">(1.5)<a class="headerlink" href="#equation-1ae47dd1-6923-40cf-8f64-76fb23b987bc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fee226c8-11aa-49d7-81e8-33df1edaa922">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-fee226c8-11aa-49d7-81e8-33df1edaa922" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla\cdot\left(\varepsilon_0\vec{E}\right) = \rho
 \end{equation}\]</div>
 <p>Donde:</p>
@@ -487,8 +509,8 @@
 <h3><span class="section-number">1.2.2. </span>Ley de continuidad del campo magnético<a class="headerlink" href="#ley-de-continuidad-del-campo-magnetico" title="Link to this heading">#</a></h3>
 <p><em>No existen cargas magnéticas que den lugar a un campo magnético</em></p>
 <p>En su forma diferencial:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a8ff79d1-8b19-46a7-9146-5e3de80ce936">
-<span class="eqno">(1.6)<a class="headerlink" href="#equation-a8ff79d1-8b19-46a7-9146-5e3de80ce936" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b01a99d7-a198-441b-9920-58787652df9a">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-b01a99d7-a198-441b-9920-58787652df9a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla\cdot\left(\mu_0\vec{H}\right) = 0
 \end{equation}\]</div>
 <p>Donde:</p>
@@ -505,8 +527,8 @@
 <section id="ley-de-faraday">
 <h3><span class="section-number">1.2.3. </span>Ley de Faraday<a class="headerlink" href="#ley-de-faraday" title="Link to this heading">#</a></h3>
 <p><em>Un campo magnético variable en el tiempo induce un campo eléctrico rotacional</em></p>
-<div class="amsmath math notranslate nohighlight" id="equation-8c8756ab-b2b4-43f3-b405-5550390f1856">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-8c8756ab-b2b4-43f3-b405-5550390f1856" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-069f4cd5-6ee4-4309-9cbb-ffedba1fcec5">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-069f4cd5-6ee4-4309-9cbb-ffedba1fcec5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla\times\vec{E} = -\mu_0\frac{\partial \vec{H}}{\partial t}
 \end{equation}\]</div>
 <ul class="simple">
@@ -516,8 +538,8 @@
 <section id="ley-de-ampere">
 <h3><span class="section-number">1.2.4. </span>Ley de Ampere<a class="headerlink" href="#ley-de-ampere" title="Link to this heading">#</a></h3>
 <p><em>Una corriente eléctrica induce un campo magnético rotacional alrededor de ella</em></p>
-<div class="amsmath math notranslate nohighlight" id="equation-bdd18c86-6879-4581-b253-c11f173f1c45">
-<span class="eqno">(1.8)<a class="headerlink" href="#equation-bdd18c86-6879-4581-b253-c11f173f1c45" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1e62e11b-ad5b-4536-9e8e-743e59c27c69">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-1e62e11b-ad5b-4536-9e8e-743e59c27c69" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla\times\vec{H} = \vec{J}
 \end{equation}\]</div>
 <p>Donde:</p>
@@ -561,8 +583,8 @@
 \nabla\cdot\vec{J} = - \frac{\partial \rho}{\partial t}
 \end{equation*}\]</div>
 <p>Claramente, la ecuación de Ampere no está completa. La corrección, fue propuesta por James Maxwell</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7d6680ab-e323-4296-b6e8-eff40434350b">
-<span class="eqno">(1.9)<a class="headerlink" href="#equation-7d6680ab-e323-4296-b6e8-eff40434350b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-36d6ecef-4c46-4af6-8179-a5ef3d6621d8">
+<span class="eqno">(1.9)<a class="headerlink" href="#equation-36d6ecef-4c46-4af6-8179-a5ef3d6621d8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \nabla\times\vec{H} = \vec{J} + \varepsilon_0\frac{\partial\vec{E}}{\partial t}
 \end{equation}\]</div>
 <p>El último término es conocido como la <em>corriente de desplazamiento de Maxwell.</em></p>
@@ -613,8 +635,8 @@
 <li><p><span class="math notranslate nohighlight">\(\hat{e}\)</span> es la dirección de oscilación de la onda.</p></li>
 </ul>
 <p>Reemplazando esta solución en la ecuación de onda, determinamos la <strong>relación de dispersión</strong> entre la <strong>magnitud del vector de onda en el vacío</strong>, <span class="math notranslate nohighlight">\(k_0 = |\vec{k}|\)</span>, y la frecuencia angular:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0a1879be-f398-4142-901c-dc8d27dcd606">
-<span class="eqno">(1.10)<a class="headerlink" href="#equation-0a1879be-f398-4142-901c-dc8d27dcd606" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5fe136ef-fa07-411f-add6-fec5bc637eff">
+<span class="eqno">(1.10)<a class="headerlink" href="#equation-5fe136ef-fa07-411f-add6-fec5bc637eff" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k_0 = \frac{\omega}{c_0},
 \end{equation}\]</div>
 <p>donde</p>
@@ -622,28 +644,29 @@ k_0 = \frac{\omega}{c_0},
 \[c_0 = \frac{1}{\sqrt{\varepsilon_0\mu_0}} \approx 3.00\times10^8~\mathrm{m/s,}\]</div>
 <p>es la velocidad de la luz.</p>
 <p>En general, estamos más familizarizados con los conceptos de <strong>longitud de onda <span class="math notranslate nohighlight">\(\lambda\)</span></strong> y <strong>frecuencia <span class="math notranslate nohighlight">\(\nu\)</span></strong>, para caracterizar ondas electromagnéticas. Estas variables se relacionan con el vector de onda y la frecuencia mediante:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5bcd4360-b1d3-4eec-a5d2-58081f322911">
-<span class="eqno">(1.11)<a class="headerlink" href="#equation-5bcd4360-b1d3-4eec-a5d2-58081f322911" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b5e54339-92bb-4873-a431-e086b1d20c55">
+<span class="eqno">(1.11)<a class="headerlink" href="#equation-b5e54339-92bb-4873-a431-e086b1d20c55" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k_0 = \frac{2\pi}{\lambda}, ~~ \omega = 2\pi\nu
 \end{equation}\]</div>
 <p>De igual forma, mediante la relación de dispersión, podemos establecer la siguiente relación entre la longitud de onda y la frecuencia:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0b3ed667-aa1c-4421-b453-c75910aa954d">
-<span class="eqno">(1.12)<a class="headerlink" href="#equation-0b3ed667-aa1c-4421-b453-c75910aa954d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0b1f9bed-6431-4ca4-a0f4-814f7ed199d4">
+<span class="eqno">(1.12)<a class="headerlink" href="#equation-0b1f9bed-6431-4ca4-a0f4-814f7ed199d4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lambda\nu = c_0
 \end{equation}\]</div>
 <blockquote>
 <div><p>Esto quiere decir, que un punto <span class="math notranslate nohighlight">\(\vec{r}\)</span> arbitrario de la onda, viaja en el vacío a una velocidad constante <span class="math notranslate nohighlight">\(c_0\)</span>, <strong>independendiente de su frecuencia</strong>.</p>
 </div></blockquote>
 <p><strong>El vector de onda representa la dirección de propagación de la onda</strong>. A partir de la ley de Gauss, podemos demostrar:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-caf110b2-a2da-418a-8e05-79a8fb1ae880">
-<span class="eqno">(1.13)<a class="headerlink" href="#equation-caf110b2-a2da-418a-8e05-79a8fb1ae880" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f3afba84-500c-4fe3-b51d-f915e8c950ab">
+<span class="eqno">(1.13)<a class="headerlink" href="#equation-f3afba84-500c-4fe3-b51d-f915e8c950ab" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \vec{k} \cdot\hat{e} = 0
 \end{equation}\]</div>
 <p>Es decir, el campo eléctrico oscila en dirección perpendicular a la dirección de propagación.</p>
 <blockquote>
 <div><p>En otras palabras, el campo electrico representa una <strong>onda transversal.</strong></p>
 </div></blockquote>
-<a class="reference internal image-reference" href="../_images/onda_transversal.png"><img alt="../_images/onda_transversal.png" class="align-center" src="../_images/onda_transversal.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/onda_transversal.png"><img alt="../_images/onda_transversal.png" class="align-center" src="../_images/onda_transversal.png" style="width: 400px;" />
+</a>
 <center> Esquema de una onda transversal </center><p>En general, tenemos dos tipos de ondas, transversales, y longitudinales</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -665,7 +688,8 @@ k_0 = \frac{2\pi}{\lambda}, ~~ \omega = 2\pi\nu
         </div></div>
 </div>
 <p>Debido a que el campo eléctrico toma la forma <span class="math notranslate nohighlight">\(\vec{E} = E_0 e^{i\left(\vec{k}\cdot\vec{r} - \omega t\right)} \hat{e},\)</span>  decimos que se comporta como una <strong>onda plana</strong>, debido a que el campo es constante sobre un plano perpendicular a la dirección de propagación</p>
-<a class="reference internal image-reference" href="../_images/planewave.png"><img alt="../_images/planewave.png" class="align-center" src="../_images/planewave.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/planewave.png"><img alt="../_images/planewave.png" class="align-center" src="../_images/planewave.png" style="width: 400px;" />
+</a>
 <p>De igual forma, podemos demostrar que la intensidad de campo magnético en el vacío también satisface la ecuación de onda:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -692,8 +716,8 @@ k_0 = \frac{2\pi}{\lambda}, ~~ \omega = 2\pi\nu
 <section id="vector-de-poynting">
 <h3><span class="section-number">1.3.2. </span>Vector de Poynting<a class="headerlink" href="#vector-de-poynting" title="Link to this heading">#</a></h3>
 <p>El flujo de energía electromagnética por unidad de área está dado por el vector de Poynting:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-232b23f7-c258-4ec5-8fb1-8d8748924884">
-<span class="eqno">(1.14)<a class="headerlink" href="#equation-232b23f7-c258-4ec5-8fb1-8d8748924884" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dbcf1c7c-a399-4d20-ae94-bbc4a65987c6">
+<span class="eqno">(1.14)<a class="headerlink" href="#equation-dbcf1c7c-a399-4d20-ae94-bbc4a65987c6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \langle\vec{S}\rangle = \frac{1}{2}\mathrm{Re}\left(\vec{E}\times\vec{H}^*\right),\quad\quad\mathrm{\frac{W}{m^2}}
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\langle\cdots\rangle\)</span> reprensenta el promedio por un periodo de oscilación, y el símbolo “<span class="math notranslate nohighlight">\(*\)</span>” reprenta el complejo conjugado.</p>
@@ -714,7 +738,8 @@ k_0 = \frac{2\pi}{\lambda}, ~~ \omega = 2\pi\nu
 <li><p>La <strong>amplitud</strong> de <span class="math notranslate nohighlight">\(\vec{E}\)</span> y <span class="math notranslate nohighlight">\(\vec{H}\)</span> están relacionadas por <span class="math notranslate nohighlight">\({H}_0 = \frac{E_0}{Z_0}\)</span>, donde <span class="math notranslate nohighlight">\(Z_0 = \sqrt{\frac{\mu_0}{\varepsilon_0}}\)</span>.</p></li>
 <li><p>El flujo de energía está dada por el vector el <strong>vector de Poynting</strong>: <span class="math notranslate nohighlight">\(\langle\vec{S}\rangle = \frac{E_0^2}{2Z_0} \hat{k}\)</span></p></li>
 </ol>
-<a class="reference internal image-reference" href="../_images/EM-Wave.gif"><img alt="../_images/EM-Wave.gif" class="align-center" src="../_images/EM-Wave.gif" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/EM-Wave.gif"><img alt="../_images/EM-Wave.gif" class="align-center" src="../_images/EM-Wave.gif" style="width: 400px;" />
+</a>
 <center> Esquema de una onda electromagnética </center></section>
 <section id="polarizacion-de-ondas-em">
 <h3><span class="section-number">1.3.3. </span>Polarización de ondas EM<a class="headerlink" href="#polarizacion-de-ondas-em" title="Link to this heading">#</a></h3>
@@ -825,8 +850,7 @@ k_0 = \frac{2\pi}{\lambda}, ~~ \omega = 2\pi\nu
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -903,8 +927,8 @@ By Francisco V. Ramirez-Cuevas
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
