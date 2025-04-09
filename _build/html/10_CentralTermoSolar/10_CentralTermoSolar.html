@@ -16,22 +16,20 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
@@ -39,11 +37,10 @@
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/custom_edits.css?v=ed6755d4" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -70,7 +67,6 @@
     <link rel="prev" title="9. Conversión Solar Fotovoltaica" href="../09_SolarFotovoltaica/09_SolarFotovoltaica.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -86,8 +82,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -95,6 +102,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -102,8 +110,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -119,8 +127,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -150,11 +157,15 @@
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -338,16 +349,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -419,7 +438,8 @@
 <p>Llamamos <strong>concentración solar</strong> a la práctica de aumentar la razón de áreas entre la apertura y el absorbedor.</p>
 <p>¿Para qué necesitamos mayores temperaturas?</p>
 <p>La mejor forma de entender el efecto de un aumento de temperatura es mediante el <strong>ciclo de Carnot,</strong> <em>un modelo idealizado de un ciclo termodinámico de potencia que opera entre una fuente a temperatura <span class="math notranslate nohighlight">\(T_\mathrm{H}\)</span> y que rechaza calor a un sumidero con temperatura <span class="math notranslate nohighlight">\(T_\mathrm{C}\)</span></em>.</p>
-<a class="reference internal image-reference" href="../_images/Carnot_Cycle.png"><img alt="../_images/Carnot_Cycle.png" class="align-center" src="../_images/Carnot_Cycle.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../_images/Carnot_Cycle.png"><img alt="../_images/Carnot_Cycle.png" class="align-center" src="../_images/Carnot_Cycle.png" style="width: 300px;" />
+</a>
 <p><strong>El ciclo de Carnot define la máxima eficiencia</strong> que puede alcanzar un ciclo termodinámico operando en estas condiciones:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
@@ -438,7 +458,8 @@
 <li><p>Sistema de <strong>almacenamiento de energía</strong> (a veces acoplado al sistema de transporte)</p></li>
 <li><p>Sistema de <strong>conversión de energía térmica a energía eléctrica</strong> (Ciclo termodinámico)</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/solar_thermal_sistems.png"><img alt="../_images/solar_thermal_sistems.png" class="align-center" src="../_images/solar_thermal_sistems.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/solar_thermal_sistems.png"><img alt="../_images/solar_thermal_sistems.png" class="align-center" src="../_images/solar_thermal_sistems.png" style="width: 500px;" />
+</a>
 <p>A continuación revisaremos los aspectos principales de cada uno de estos componentes</p>
 </section>
 <section id="sistema-de-captura-de-energia-solar-termica">
@@ -449,7 +470,8 @@
 <li><p>Un <strong>concentrador</strong>, encargado de enfocar los rayos del sol en un área de menor tamaño</p></li>
 <li><p>Un <strong>receptor</strong>, encargado de convertir la energía concentrada en calor útil.</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/solar_colector_concentrator_intro.png"><img alt="../_images/solar_colector_concentrator_intro.png" class="align-center" src="../_images/solar_colector_concentrator_intro.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../_images/solar_colector_concentrator_intro.png"><img alt="../_images/solar_colector_concentrator_intro.png" class="align-center" src="../_images/solar_colector_concentrator_intro.png" style="width: 900px;" />
+</a>
 <p>Los <strong>concentradores solares</strong> puede ser de diversos formatos:</p>
 <ul class="simple">
 <li><p>Reflectores o refractores (lentes). <em>Comúnmente, reflectores</em></p></li>
@@ -457,10 +479,11 @@
 <li><p>Continuos o segmentados.</p></li>
 </ul>
 <p>El <strong>receptor</strong> puede ser convexo, plano, cilíndrico o concavo. Suelen también estar cubierto por un material transparente separado a una pequeña distancia de la superficie del receptor, generando así un efecto aislante. El espacio entre el receptor y el material transparente puede ser aire o vacío.</p>
-<a class="reference internal image-reference" href="../_images/solar_reciever.png"><img alt="../_images/solar_reciever.png" class="align-center" src="../_images/solar_reciever.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../_images/solar_reciever.png"><img alt="../_images/solar_reciever.png" class="align-center" src="../_images/solar_reciever.png" style="width: 600px;" />
+</a>
 <p>Un aspecto fundamental de los colectores solares de concentración es la <strong>relación de concentración, <span class="math notranslate nohighlight">\(C_r\)</span></strong>, definida como:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dd59c0c3-ea06-4bb9-a196-87b5b0a1e494">
-<span class="eqno">(10.1)<a class="headerlink" href="#equation-dd59c0c3-ea06-4bb9-a196-87b5b0a1e494" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-20f7e8f2-b3c2-48d4-a6e2-e2b2a20ad63f">
+<span class="eqno">(10.1)<a class="headerlink" href="#equation-20f7e8f2-b3c2-48d4-a6e2-e2b2a20ad63f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 C_r = \frac{A_c}{A_r},
 \end{equation}\]</div>
 <p>donde, <span class="math notranslate nohighlight">\(A_c\)</span> es el área del concentrador, y <span class="math notranslate nohighlight">\(A_r\)</span> el área del receptor.</p>
@@ -474,24 +497,29 @@ C_r = \frac{A_c}{A_r},
 <li><p>Consiste en un tubo que pasa por el punto focal de un canal parabólico</p></li>
 <li><p>Las relaciones de concentración pueden variar entre 10 - 85</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/parabolic_trough_collector.png"><img alt="../_images/parabolic_trough_collector.png" class="align-center" src="../_images/parabolic_trough_collector.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../_images/parabolic_trough_collector.png"><img alt="../_images/parabolic_trough_collector.png" class="align-center" src="../_images/parabolic_trough_collector.png" style="width: 600px;" />
+</a>
 <p><strong>Reflector lineal Fresnel</strong></p>
 <p>El reflector lineal de Fresnel se basa en el principio de los lentes de Fresnel. Estos lentes permiten enfocar luz de forma similar a un lente convexo, pero con un volumen de material menor. Se utilizan en diversas aplicaciones como faros, lámparas y focos de automoviles.</p>
-<a class="reference internal image-reference" href="../_images/Fresnel_lens.png"><img alt="../_images/Fresnel_lens.png" class="align-center" src="../_images/Fresnel_lens.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/Fresnel_lens.png"><img alt="../_images/Fresnel_lens.png" class="align-center" src="../_images/Fresnel_lens.png" style="width: 700px;" />
+</a>
 <p>La siguiente imagen muestra como el lente de Fresnel redirecciona los rayos de una fuente en el punto focal (<a class="reference external" href="https://www.parabolixlight.com/fresnel-lens-and-parabolic-reflectors">más info acá</a>).</p>
-<a class="reference internal image-reference" href="../_images/Fresnel_lens_focus.png"><img alt="../_images/Fresnel_lens_focus.png" class="align-center" src="../_images/Fresnel_lens_focus.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../_images/Fresnel_lens_focus.png"><img alt="../_images/Fresnel_lens_focus.png" class="align-center" src="../_images/Fresnel_lens_focus.png" style="width: 800px;" />
+</a>
 <p>El reflector lineal Fresnel opera de forma similar a un lente de Fresnel pero con espejos en lugar de lentes.</p>
 <ul class="simple">
 <li><p>Las relaciones de concentración pueden ser entre 10 - 40.</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/linear_fresnel_collector.png"><img alt="../_images/linear_fresnel_collector.png" class="align-center" src="../_images/linear_fresnel_collector.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../_images/linear_fresnel_collector.png"><img alt="../_images/linear_fresnel_collector.png" class="align-center" src="../_images/linear_fresnel_collector.png" style="width: 800px;" />
+</a>
 <p><strong>Concentrador de disco parabólico</strong></p>
 <ul class="simple">
 <li><p>Consiste en un paraboloide que concentra la luz en un punto focal</p></li>
 <li><p>El principio de funcionamiento es similar al de una antena, con sistema de seguimiento de dos ejes.</p></li>
 <li><p>La relación de concentración varía entre 600 - 2000.</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/parabolic_dish_collector.png"><img alt="../_images/parabolic_dish_collector.png" class="align-center" src="../_images/parabolic_dish_collector.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/parabolic_dish_collector.png"><img alt="../_images/parabolic_dish_collector.png" class="align-center" src="../_images/parabolic_dish_collector.png" style="width: 700px;" />
+</a>
 <p><strong>Colector de helióstatos</strong></p>
 <ul class="simple">
 <li><p>Similar al concentrador de disco parabólico pero a gran escala.</p></li>
@@ -499,7 +527,8 @@ C_r = \frac{A_c}{A_r},
 <li><p>Una serie de espejos planos móbiles, también denominados heliostatos concentran la radiación solar hacia el receptor.</p></li>
 <li><p>Las relación de concentración en estos sistemas es del orden de 300 - 1500</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/Heliostat_solar_concentrator.png"><img alt="../_images/Heliostat_solar_concentrator.png" class="align-center" src="../_images/Heliostat_solar_concentrator.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/Heliostat_solar_concentrator.png"><img alt="../_images/Heliostat_solar_concentrator.png" class="align-center" src="../_images/Heliostat_solar_concentrator.png" style="width: 700px;" />
+</a>
 </section>
 </section>
 <section id="transporte-de-energia-termica">
@@ -523,7 +552,8 @@ C_r = \frac{A_c}{A_r},
 <h3><span class="section-number">10.3.2. </span>Aceites térmicos<a class="headerlink" href="#aceites-termicos" title="Link to this heading">#</a></h3>
 <p>Los aceites térmicos permiten temperaturas de operación de hasta 300 - 400° C. La principal desventaja de estos aceites radica en su flamabilidad y descomposición a temperaturas elevadas (<span class="math notranslate nohighlight">\(\sim 600\)</span> °C).</p>
 <p>La siguiente tabla corresponde a las propiedades de un HTF de la compañia <a class="reference external" href="https://globalhtf.com/application/solar/#:~:text=Heat%20Transfer%20Fluid%20for%20Concentrated%20Solar%20Power%20and%20Thermal%20Storage,in%20solar%20thermal%20electricity%20applications.">Omnitech</a>.</p>
-<a class="reference internal image-reference" href="../_images/heat_transfer_fluid_oil.jpg"><img alt="../_images/heat_transfer_fluid_oil.jpg" class="align-center" src="../_images/heat_transfer_fluid_oil.jpg" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/heat_transfer_fluid_oil.jpg"><img alt="../_images/heat_transfer_fluid_oil.jpg" class="align-center" src="../_images/heat_transfer_fluid_oil.jpg" style="width: 700px;" />
+</a>
 </section>
 <section id="sales-fundidas">
 <h3><span class="section-number">10.3.3. </span>Sales fundidas<a class="headerlink" href="#sales-fundidas" title="Link to this heading">#</a></h3>
@@ -539,7 +569,8 @@ C_r = \frac{A_c}{A_r},
 <li><p>TES con calor latente. Aún en etapa de estudio. Utiliza materiales con cambio de fase (PCM por sus siglas en ingles). La energía térmica almacenada induce un cambio de fase sólido – líquido, normalmente, sin un cambio aparente de temperatura</p></li>
 <li><p>TES termoquímico. Aún en etapa de estudio. Está basado en reacciones químicas reversibles. La energía térmica es almacenada en forma de compuestos químicos, generados a partir de una reacción química endotérmica. La reacción exotérmica, que resulta de la recombinación de los compuestos, libera la energía térmica almacenada.</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/thermal_energy_storage.png"><img alt="../_images/thermal_energy_storage.png" class="align-center" src="../_images/thermal_energy_storage.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../_images/thermal_energy_storage.png"><img alt="../_images/thermal_energy_storage.png" class="align-center" src="../_images/thermal_energy_storage.png" style="width: 600px;" />
+</a>
 <section id="tes-por-calor-sensible-solidos">
 <h3><span class="section-number">10.4.1. </span>TES por calor sensible - Sólidos<a class="headerlink" href="#tes-por-calor-sensible-solidos" title="Link to this heading">#</a></h3>
 <ul class="simple">
@@ -548,7 +579,8 @@ C_r = \frac{A_c}{A_r},
 <li><p>Los materiales más comunes son: hormigón, rocas, ripio, cerámicas, ladrillos, y metales como el cobre o hierro.</p></li>
 <li><p>Generalmente, se utiliza concreto, debido a su bajo costo, y resistencia a altas temperaturas</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/concrete_thermal_storage.png"><img alt="../_images/concrete_thermal_storage.png" class="align-center" src="../_images/concrete_thermal_storage.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../_images/concrete_thermal_storage.png"><img alt="../_images/concrete_thermal_storage.png" class="align-center" src="../_images/concrete_thermal_storage.png" style="width: 600px;" />
+</a>
 </section>
 <section id="tes-por-calor-sensible-sales-fundidas">
 <h3><span class="section-number">10.4.2. </span>TES por calor sensible - Sales fundidas<a class="headerlink" href="#tes-por-calor-sensible-sales-fundidas" title="Link to this heading">#</a></h3>
@@ -558,7 +590,8 @@ C_r = \frac{A_c}{A_r},
 <li><p>También se utilizan aceites térmicos, aunque es menos frecuente</p></li>
 </ul>
 <p>La tabla a continuación indica las propiedades de materiales comúnes utilizados en TES sensible.</p>
-<a class="reference internal image-reference" href="../_images/TES_thermal_properties.png"><img alt="../_images/TES_thermal_properties.png" class="align-center" src="../_images/TES_thermal_properties.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../_images/TES_thermal_properties.png"><img alt="../_images/TES_thermal_properties.png" class="align-center" src="../_images/TES_thermal_properties.png" style="width: 800px;" />
+</a>
 </section>
 </section>
 <section id="ciclos-termodinamicos-para-conversion-de-energia-solar-termica">
@@ -567,18 +600,22 @@ C_r = \frac{A_c}{A_r},
 <h3><span class="section-number">10.5.1. </span>Ciclo Rankine<a class="headerlink" href="#ciclo-rankine" title="Link to this heading">#</a></h3>
 <p>La mayoría de las centrales termosolares operan en base al <strong>ciclo Rankine</strong>. Este ciclo se basa en la generación de energía mecánica a través de turbinas por donde circula vapor.</p>
 <p>En su forma simplificada, el ciclo Rankine está compuesto de una <strong>caldera (boiler)</strong> que suministra el calor al fluido, una <strong>turbina (turbine)</strong> por donde circula el vapor, un <strong>condensador (condenser)</strong> encargado del rechazo de calor y del cambio de fase vapor-agua, y una <strong>bomba (pump)</strong>, que alimenta a la caldera.</p>
-<a class="reference internal image-reference" href="../_images/Rankin_cycle.png"><img alt="../_images/Rankin_cycle.png" class="align-center" src="../_images/Rankin_cycle.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/Rankin_cycle.png"><img alt="../_images/Rankin_cycle.png" class="align-center" src="../_images/Rankin_cycle.png" style="width: 700px;" />
+</a>
 <p>Es práctica común complementar el ciclo con etapas de recalentamiento y regeneración con el fin de mejorar la eficiencia térmodinámica.</p>
 <p><strong>Ciclo Rankine con recalentamiento</strong></p>
-<a class="reference internal image-reference" href="../_images/reheated_Rankin_cycle.png"><img alt="../_images/reheated_Rankin_cycle.png" class="align-center" src="../_images/reheated_Rankin_cycle.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/reheated_Rankin_cycle.png"><img alt="../_images/reheated_Rankin_cycle.png" class="align-center" src="../_images/reheated_Rankin_cycle.png" style="width: 700px;" />
+</a>
 <p><strong>Ciclo Rankine regenerativo</strong></p>
-<a class="reference internal image-reference" href="../_images/regenerative_Rankin_cycle.png"><img alt="../_images/regenerative_Rankin_cycle.png" class="align-center" src="../_images/regenerative_Rankin_cycle.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/regenerative_Rankin_cycle.png"><img alt="../_images/regenerative_Rankin_cycle.png" class="align-center" src="../_images/regenerative_Rankin_cycle.png" style="width: 700px;" />
+</a>
 </section>
 </section>
 <section id="caracteristicas-de-una-central-termosolar">
 <h2><span class="section-number">10.6. </span>Características de una central termosolar<a class="headerlink" href="#caracteristicas-de-una-central-termosolar" title="Link to this heading">#</a></h2>
 <p>El esquema básico de una central termosolar consiste en un <strong>ciclo térmico donde el calor de la caldera es reemplazado por el calor extraido por el concentrador solar</strong>. Comúnmente, las centrales solares utilizan sistemas de almacenamiento de calor en base a sales fundidas o cerámicos, además de una caldera como backup, que permiten una operación continua duarante periodos nublados y durante la noche.</p>
-<a class="reference internal image-reference" href="../_images/solar_power_plant_general.png"><img alt="../_images/solar_power_plant_general.png" class="align-center" src="../_images/solar_power_plant_general.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/solar_power_plant_general.png"><img alt="../_images/solar_power_plant_general.png" class="align-center" src="../_images/solar_power_plant_general.png" style="width: 500px;" />
+</a>
 <p>En el caso de sales fundidas, estas pueden operar directamente en el circuito del colector (como HTF), o bien solo para almacenaje de energía. En el segundo caso, se necesita un intercambiador de calor para transferir el calor del HTF a las sales fundidas.</p>
 <section id="central-solar-de-colectores-parabolicos">
 <h3><span class="section-number">10.6.1. </span>Central solar de colectores parabólicos<a class="headerlink" href="#central-solar-de-colectores-parabolicos" title="Link to this heading">#</a></h3>
@@ -603,7 +640,8 @@ C_r = \frac{A_c}{A_r},
         </div></div>
 </div>
 <p>En la siguiente imagen se muestra una fotografía de la central solar de concentradores parabólicos <em>Solar Energy Generating Systems (SEGS)</em> en el desierto Monjave, California, Estados Unidos, con capacidad de 160 MW.</p>
-<a class="reference internal image-reference" href="../_images/SEGS_plant.png"><img alt="../_images/SEGS_plant.png" class="align-center" src="../_images/SEGS_plant.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/SEGS_plant.png"><img alt="../_images/SEGS_plant.png" class="align-center" src="../_images/SEGS_plant.png" style="width: 700px;" />
+</a>
 <p>La limpieza de los canales parabólicos es crítica para el correcto funcionamiento del sistema, y existen equipos especializados para esto.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -619,9 +657,11 @@ C_r = \frac{A_c}{A_r},
         </div></div>
 </div>
 <p>El esquema a continuación corresponde a un ciclo típico de una central solar parabólica. Esta planta opera con aceite térmico como HTF, utiliza sales fundidas para el almacenamiento de calor</p>
-<a class="reference internal image-reference" href="../_images/parabolic_trough_plant_thermodynamic_cycle.png"><img alt="../_images/parabolic_trough_plant_thermodynamic_cycle.png" class="align-center" src="../_images/parabolic_trough_plant_thermodynamic_cycle.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/parabolic_trough_plant_thermodynamic_cycle.png"><img alt="../_images/parabolic_trough_plant_thermodynamic_cycle.png" class="align-center" src="../_images/parabolic_trough_plant_thermodynamic_cycle.png" style="width: 700px;" />
+</a>
 <p>La siguiente lista comprende las 10 centrales solares de canal parabólico con mayor capacidad:</p>
-<a class="reference internal image-reference" href="../_images/Parabolic_plants_registry.png"><img alt="../_images/Parabolic_plants_registry.png" class="align-center" src="../_images/Parabolic_plants_registry.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/Parabolic_plants_registry.png"><img alt="../_images/Parabolic_plants_registry.png" class="align-center" src="../_images/Parabolic_plants_registry.png" style="width: 700px;" />
+</a>
 </section>
 <section id="central-solares-de-torre-de-potencia">
 <h3><span class="section-number">10.6.2. </span>Central solares de torre de potencia<a class="headerlink" href="#central-solares-de-torre-de-potencia" title="Link to this heading">#</a></h3>
@@ -646,9 +686,11 @@ C_r = \frac{A_c}{A_r},
         </div></div>
 </div>
 <p>La imagen a continuación corresponde a la planta solar Cerro Dominador en María Elena, Antofagasta, Chile. La planta tiene una capacidad de 110 MW, el HTF es sales fundidas y tiene una autonomía de 17.5 horas.</p>
-<a class="reference internal image-reference" href="../_images/cerro_dominador.png"><img alt="../_images/cerro_dominador.png" class="align-center" src="../_images/cerro_dominador.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../_images/cerro_dominador.png"><img alt="../_images/cerro_dominador.png" class="align-center" src="../_images/cerro_dominador.png" style="width: 900px;" />
+</a>
 <p>La siguiente lista comprende las 10 centrales con mayor capacidad basadas en concentrador de canal parabólico:</p>
-<a class="reference internal image-reference" href="../_images/tower_plants_registry.png"><img alt="../_images/tower_plants_registry.png" class="align-center" src="../_images/tower_plants_registry.png" style="width: 700px;" /></a>
+<a class="reference internal image-reference" href="../_images/tower_plants_registry.png"><img alt="../_images/tower_plants_registry.png" class="align-center" src="../_images/tower_plants_registry.png" style="width: 700px;" />
+</a>
 </section>
 <section id="central-de-reflector-linear-fresnel">
 <h3><span class="section-number">10.6.3. </span>Central de reflector linear Fresnel<a class="headerlink" href="#central-de-reflector-linear-fresnel" title="Link to this heading">#</a></h3>
@@ -664,7 +706,8 @@ C_r = \frac{A_c}{A_r},
 <li><p><a class="reference external" href="https://solarpaces.nrel.gov/project/lanzhou-dacheng-dunhuang-dctc-dunhuang-50mw-fresnel">DCTC Dunhuang</a>, región de Gansu, China. Tiene una capacidad nominal de 50 MW y está basada en sales fundidas como HTF. Opera desde el 2018</p></li>
 </ul>
 <p>La siguiente imagen corresponde a la planta DCTC Dunhuang en China.</p>
-<a class="reference internal image-reference" href="../_images/Dacheng_Dunhuang_LFR.png"><img alt="../_images/Dacheng_Dunhuang_LFR.png" class="align-center" src="../_images/Dacheng_Dunhuang_LFR.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../_images/Dacheng_Dunhuang_LFR.png"><img alt="../_images/Dacheng_Dunhuang_LFR.png" class="align-center" src="../_images/Dacheng_Dunhuang_LFR.png" style="width: 900px;" />
+</a>
 <p>En el siguiente video se muestra el funcionamiento de una planta piloto desarrollada por la compañía <a class="reference external" href="https://www.industrial-solar.de/en/">Industrial Solar</a></p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -688,7 +731,8 @@ C_r = \frac{A_c}{A_r},
 <li><p>El diseño más popular está basado en motores Stirling acoplados en el receptor.</p></li>
 <li><p>No existen plantas operativas basadas en esta tecnología</p></li>
 </ul>
-<a class="reference internal image-reference" href="../_images/Dish_striling_solar_plant.jpg"><img alt="../_images/Dish_striling_solar_plant.jpg" class="align-center" src="../_images/Dish_striling_solar_plant.jpg" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="../_images/Dish_striling_solar_plant.jpg"><img alt="../_images/Dish_striling_solar_plant.jpg" class="align-center" src="../_images/Dish_striling_solar_plant.jpg" style="width: 500px;" />
+</a>
 <p>En el siguiente video se explica el funcionamiento de las centrales de disco parabólico.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -771,8 +815,7 @@ C_r = \frac{A_c}{A_r},
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -857,8 +900,8 @@ By Francisco V. Ramirez-Cuevas
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
