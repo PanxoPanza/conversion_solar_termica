@@ -460,9 +460,7 @@ document.write(`
 <p>Con esto podemos analizar la variación del poder de emisión espectral hemisférico del cuerpo negro, <span class="math notranslate nohighlight">\(\pi I_{\mathrm{bb},\lambda}\)</span>, en función de la temperatura</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">empylib</span> <span class="kn">import</span> <span class="n">color_system</span> <span class="k">as</span> <span class="n">cs</span>
-<span class="n">cs</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">hdtv</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">empylib.color_system</span> <span class="kn">import</span> <span class="n">spectrum_to_hex</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;12&#39;</span>
 
@@ -474,33 +472,38 @@ document.write(`
 <span class="c1"># creamos dos listas vacías para guardar el valor máximo de cada curva y la longitud de onda asociada</span>
 <span class="n">peak</span>   <span class="o">=</span> <span class="p">[]</span>            
 <span class="n">lam_at</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;dark_background&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 
 <span class="c1"># iteramos respecto a la temperatura</span>
 <span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">T_list</span><span class="p">:</span>
     <span class="n">Ebb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">rf</span><span class="o">.</span><span class="n">Bplanck</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>                         <span class="c1"># poder de emisión hemisférico espectral del cuerpo negro</span>
-    <span class="n">html_rgb</span> <span class="o">=</span> <span class="n">cs</span><span class="o">.</span><span class="n">spec_to_rgb</span><span class="p">(</span><span class="n">Ebb</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="n">out_fmt</span><span class="o">=</span><span class="s1">&#39;html&#39;</span><span class="p">)</span>    <span class="c1"># color asociado a la curva</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ebb</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%i</span><span class="s1"> K&#39;</span> <span class="o">%</span> <span class="n">T</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">html_rgb</span><span class="p">)</span>   <span class="c1"># graficamos el espectro usando el color anterior </span>
+    <span class="n">hex_color</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">spectrum_to_hex</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">Ebb</span><span class="p">,</span>              <span class="c1"># color asociado a la curva</span>
+                                    <span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;emitter&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span><span class="n">Ebb</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%i</span><span class="s1"> K&#39;</span> <span class="o">%</span> <span class="n">T</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">hex_color</span><span class="p">)</span>   <span class="c1"># graficamos el espectro usando el color anterior </span>
     <span class="n">peak</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Ebb</span><span class="p">))</span>                               <span class="c1"># guardamos el máximo de la curva</span>
     <span class="n">lam_at</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lam</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Ebb</span><span class="p">)])</span>                     <span class="c1"># guardamos la longitud de onda asociada al máximo</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam_at</span><span class="p">,</span><span class="n">peak</span><span class="p">,</span><span class="s1">&#39;--k&#39;</span><span class="p">)</span> <span class="c1"># graficamos la línea correspondiente a la ley de desplazamiento de Wien</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1E-6</span><span class="p">,</span><span class="mf">1E8</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda, $\lambda$ ($\mu$m)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$E_{\mathrm</span><span class="si">{bb}</span><span class="s1">,\lambda}$ (W/m$^2$-$\mu$m)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam_at</span><span class="p">,</span><span class="n">peak</span><span class="p">,</span><span class="s1">&#39;--k&#39;</span><span class="p">)</span> <span class="c1"># graficamos la línea correspondiente a la ley de desplazamiento de Wien</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1E-6</span><span class="p">,</span><span class="mf">1E8</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Longitud de onda, $\lambda$ ($\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$E_{\mathrm</span><span class="si">{bb}</span><span class="s1">,\lambda}$ (W/m$^2$-$\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">framealpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;default&#39;</span><span class="p">)</span>  
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/panxopanza/miniconda3/lib/python3.11/site-packages/empylib/ref_spectra.py:233: RuntimeWarning: overflow encountered in exp
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/mnt/c/Users/frami/OneDrive - Universidad Adolfo Ibanez/ComputerCodes/Python/custom_packages/empylib_proy/empylib/ref_spectra.py:233: RuntimeWarning: overflow encountered in exp
   Ibb = 2*h*c0**2./ll**5*1/(_np.exp(h*c0/(ll*T*kB)) - 1)*1E-6
 </pre></div>
 </div>
-<img alt="../../_images/ff9be4ea2ca17b9480f73a471257dceb99229d5d9c3c57714e21fde5307b6df7.png" src="../../_images/ff9be4ea2ca17b9480f73a471257dceb99229d5d9c3c57714e21fde5307b6df7.png" />
+<img alt="../../_images/56eddd3a23be7c20783e7d59fdd675f554734002602174b13bbf2be358169d81.png" src="../../_images/56eddd3a23be7c20783e7d59fdd675f554734002602174b13bbf2be358169d81.png" />
 </div>
 </div>
 <p>Además podemos comprobar la ley de Stefan-Boltzmann para el poder de emisión hemisférico total:</p>
@@ -579,7 +582,7 @@ I_\mathrm{sun,out} = \frac{G_\mathrm{sun}}{\sigma T^4_\mathrm{sun}} \pi I_{\math
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2c86d61c5cb56108ae9515242cd5ad379228d8be30571f46137ccecad053deac.png" src="../../_images/2c86d61c5cb56108ae9515242cd5ad379228d8be30571f46137ccecad053deac.png" />
+<img alt="../../_images/3106083e6a65af2b6e8ecd261b40b3462b6408945ccce34bd5c8ecab4c0b5e38.png" src="../../_images/3106083e6a65af2b6e8ecd261b40b3462b6408945ccce34bd5c8ecab4c0b5e38.png" />
 </div>
 </div>
 <p>Comprobamos el valor integrado de cada espectro</p>
