@@ -484,7 +484,6 @@ document.write(`
     <span class="n">peak</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Ebb</span><span class="p">))</span>                               <span class="c1"># guardamos el máximo de la curva</span>
     <span class="n">lam_at</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lam</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">Ebb</span><span class="p">)])</span>                     <span class="c1"># guardamos la longitud de onda asociada al máximo</span>
 
-
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam_at</span><span class="p">,</span><span class="n">peak</span><span class="p">,</span><span class="s1">&#39;--k&#39;</span><span class="p">)</span> <span class="c1"># graficamos la línea correspondiente a la ley de desplazamiento de Wien</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1E-6</span><span class="p">,</span><span class="mf">1E8</span><span class="p">)</span>
@@ -499,10 +498,6 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/mnt/c/Users/frami/OneDrive - Universidad Adolfo Ibanez/ComputerCodes/Python/custom_packages/empylib_proy/empylib/ref_spectra.py:233: RuntimeWarning: overflow encountered in exp
-  Ibb = 2*h*c0**2./ll**5*1/(_np.exp(h*c0/(ll*T*kB)) - 1)*1E-6
-</pre></div>
-</div>
 <img alt="../../_images/56eddd3a23be7c20783e7d59fdd675f554734002602174b13bbf2be358169d81.png" src="../../_images/56eddd3a23be7c20783e7d59fdd675f554734002602174b13bbf2be358169d81.png" />
 </div>
 </div>
@@ -582,7 +577,7 @@ I_\mathrm{sun,out} = \frac{G_\mathrm{sun}}{\sigma T^4_\mathrm{sun}} \pi I_{\math
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3106083e6a65af2b6e8ecd261b40b3462b6408945ccce34bd5c8ecab4c0b5e38.png" src="../../_images/3106083e6a65af2b6e8ecd261b40b3462b6408945ccce34bd5c8ecab4c0b5e38.png" />
+<img alt="../../_images/1f44fb3bbe9df3e662193cc5894752ccd9861b3526d44f48417871c6dd9655a2.png" src="../../_images/1f44fb3bbe9df3e662193cc5894752ccd9861b3526d44f48417871c6dd9655a2.png" />
 </div>
 </div>
 <p>Comprobamos el valor integrado de cada espectro</p>
