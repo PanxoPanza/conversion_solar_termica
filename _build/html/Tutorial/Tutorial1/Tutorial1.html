@@ -476,10 +476,10 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>longitudes de onda en um:
- [0.3 0.4 0.5 0.6 0.7 0.8 0.9 1. ]
+ [ 0.3  0.4  0.5  0.6  0.7  0.8  0.9  1. ]
 longitudes de onda en eV:
- [4.13280655 3.09960491 2.47968393 2.06640327 1.77120281 1.54980245
- 1.37760218 1.23984196]
+ [ 4.13280655  3.09960491  2.47968393  2.06640327  1.77120281  1.54980245
+  1.37760218  1.23984196]
 </pre></div>
 </div>
 </div>
@@ -494,7 +494,7 @@ longitudes de onda en eV:
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>longitudes de onda en um:
- [0.3 0.4 0.5 0.6 0.7 0.8 0.9 1. ]
+ [ 0.3  0.4  0.5  0.6  0.7  0.8  0.9  1. ]
 </pre></div>
 </div>
 </div>
@@ -697,7 +697,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.42303408, 0.20965728])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.42303408,  0.20965728])
 </pre></div>
 </div>
 </div>
@@ -774,7 +774,7 @@ lorentz(epsinf, wp, wn, gamma, lam)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.11111111] [0.88888889]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.11111111] [ 0.88888889]
 </pre></div>
 </div>
 </div>
@@ -972,6 +972,14 @@ multilayer:		 R = 0.025, T = 0.975
 incoh_multilayer:	 R = 0.025, T = 0.975
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_623051/3211510611.py:7: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  print(&#39;interface:\t\t R = %.3f, T = %.3f&#39; % wv.interface(theta,N[0],N[1])[:2])
+/tmp/ipykernel_623051/3211510611.py:8: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  print(&#39;multilayer:\t\t R = %.3f, T = %.3f&#39; % wv.multilayer(lam,theta,N,d)[:2])
+/tmp/ipykernel_623051/3211510611.py:9: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  print(&#39;incoh_multilayer:\t R = %.3f, T = %.3f&#39; % wv.incoh_multilayer(lam,theta,N,d))
+</pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -1149,7 +1157,7 @@ incoh_multilayer:	 R = 0.025, T = 0.975
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6b7cd6f73d604b797f72e384be986840b719a540396a1595e4befbf9ff4d36e7.png" src="../../_images/6b7cd6f73d604b797f72e384be986840b719a540396a1595e4befbf9ff4d36e7.png" />
+<img alt="../../_images/5fbc30a424b08e5645823398a59f4a2355bc6f662d93a53d2c8dc2c91130f6a7.png" src="../../_images/5fbc30a424b08e5645823398a59f4a2355bc6f662d93a53d2c8dc2c91130f6a7.png" />
 </div>
 </div>
 </section>

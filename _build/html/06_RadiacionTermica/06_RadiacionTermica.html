@@ -468,8 +468,8 @@ q'' = \dot{Q}/A,\quad\frac{\mathrm{W}}{\mathrm{m}^2}
 <a class="reference internal image-reference" href="../_images/thermal_conductivity.png"><img alt="../_images/thermal_conductivity.png" class="align-center" src="../_images/thermal_conductivity.png" style="width: 900px;" />
 </a>
 <p>En su forma diferencial, <span class="math notranslate nohighlight">\(\dot{Q}_\mathrm{cond}= - k\nabla T\)</span>, y para el caso unidimensional:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5c53c722-c820-4eb1-91e9-1438e92eeeb1">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-5c53c722-c820-4eb1-91e9-1438e92eeeb1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4fb1d3e2-7eff-428a-bbac-e335e12c9e40">
+<span class="eqno">(6.1)<a class="headerlink" href="#equation-4fb1d3e2-7eff-428a-bbac-e335e12c9e40" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \dot{Q}_\mathrm{cond} = - kA\frac{dT}{dx},\quad\mathrm{W}
 \end{equation}\]</div>
 <p>A partir de esta fórmula podemos deducir expresiones para taza de transferencia de calor por conducción según la geometría:</p>
@@ -534,16 +534,16 @@ q'' = \dot{Q}/A,\quad\frac{\mathrm{W}}{\mathrm{m}^2}
 <p>Un cuerpo a temperatura <span class="math notranslate nohighlight">\(T\)</span> emite ondas electromagnéticas en todas las direcciones y en un espectro de longitudes de onda. En general, la distribución angular (<span class="math notranslate nohighlight">\(\Omega\)</span>) y espectral (<span class="math notranslate nohighlight">\(\lambda\)</span>) de la radiación emitida depende de las propiedades ópticas de la superficie y la temperatura del material.</p>
 <p>Para caracterizar la intensidad de la radiación emitida por una superficie a tempertura <span class="math notranslate nohighlight">\(T\)</span>, usamos la <strong>intensidad específica o radiancia espectral</strong>, <span class="math notranslate nohighlight">\(I_\lambda(\Omega,T)\)</span>.</p>
 <p>La taza de calor total emitido por una superficie <span class="math notranslate nohighlight">\(dA\)</span> de un cuerpo negro en función de <span class="math notranslate nohighlight">\(\lambda\)</span> y <span class="math notranslate nohighlight">\(\Omega\)</span>, <span class="math notranslate nohighlight">\(d\dot{Q}_\mathrm{rad}\)</span>, está dada por:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9103d9cc-b5fe-4622-899a-d5ca61bceb93">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-9103d9cc-b5fe-4622-899a-d5ca61bceb93" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-205f9cea-3080-4c3e-9524-277c6c226600">
+<span class="eqno">(6.2)<a class="headerlink" href="#equation-205f9cea-3080-4c3e-9524-277c6c226600" title="Permalink to this equation">#</a></span>\[\begin{equation}
 d\dot{Q}_\mathrm{rad} = I_{\lambda}(\Omega, T) \cos\theta dA d\Omega d\lambda
 \end{equation}\]</div>
 <p>El término <span class="math notranslate nohighlight">\(\cos\theta dA\)</span> corresponde a la proyección de <span class="math notranslate nohighlight">\(dA\)</span> en la dirección <span class="math notranslate nohighlight">\(\Omega\)</span></p>
 <a class="reference internal image-reference" href="../_images/specific_intensity1.png"><img alt="../_images/specific_intensity1.png" class="align-center" src="../_images/specific_intensity1.png" style="width: 300px;" />
 </a>
 <p>Definimos como <strong>poder de emisión direccional espectral</strong> a la relación:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4a118d70-60ba-4e1e-bc69-9a4c8db54b1a">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-4a118d70-60ba-4e1e-bc69-9a4c8db54b1a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ec8d38ef-d5b8-4414-9c30-656f9a8c183b">
+<span class="eqno">(6.3)<a class="headerlink" href="#equation-ec8d38ef-d5b8-4414-9c30-656f9a8c183b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 E_{\lambda,\Omega}(T) = \frac{d\dot{Q}_\mathrm{rad}}{dAd\Omega d\lambda}=I_{\lambda}(\Omega, T)\cos\theta ,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}\cdot\mathrm{sr}}
 \end{equation}\]</div>
 <p>A diferencia de la intensidad específica, el poder de emisión considera la radiación effectiva emitida por una superficie.</p>
@@ -578,8 +578,8 @@ E(T) = \frac{d\dot{Q}}{dA}=\int_0^\infty\int_\mathrm{hemi}I_{\lambda}(\Omega, T)
 <section id="distribucion-de-planck">
 <h3><span class="section-number">6.2.2. </span>Distribución de Planck<a class="headerlink" href="#distribucion-de-planck" title="Link to this heading">#</a></h3>
 <p>Max Planck en 1901 determinó que la <strong>máxima radiancia espectral o intensidad específica</strong> (flujo de energía por unidad de longitud de onda y ángulo sólido) emitida por un cuerpo a temperatura <span class="math notranslate nohighlight">\(T\)</span>, en un medio con índice de refracción <span class="math notranslate nohighlight">\(n_1\)</span>, está dada por:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2b5d6b99-680f-4473-90fc-3ae891d676c1">
-<span class="eqno">(6.4)<a class="headerlink" href="#equation-2b5d6b99-680f-4473-90fc-3ae891d676c1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8195e585-afcf-4ac5-adcc-47ce1dc05c02">
+<span class="eqno">(6.4)<a class="headerlink" href="#equation-8195e585-afcf-4ac5-adcc-47ce1dc05c02" title="Permalink to this equation">#</a></span>\[\begin{equation}
 I_{\mathrm{bb},\lambda}(\Omega, T) = \frac{C_1}{n_1\lambda^5\left[\exp\left(C_2/\lambda T\right) - 1\right]},\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2\cdot\mu\mathrm{m}\cdot\mathrm{sr}}
 \end{equation}\]</div>
 <p>donde</p>
@@ -638,8 +638,8 @@ E_{\mathrm{bb},\lambda}(T) = \int_\mathrm{hemi} I_{\mathrm{bb},\lambda}(T)\cos\t
 \end{align*}\]</div>
 <p>Note que <span class="math notranslate nohighlight">\(I_{\mathrm{bb},\lambda}\)</span> no depende de <span class="math notranslate nohighlight">\(\Omega\)</span> y, por lo tanto, sale de la integral respecto a <span class="math notranslate nohighlight">\(d\Omega\)</span>.</p>
 <p>A partir de la integral de <span class="math notranslate nohighlight">\(E_{\mathrm{bb},\lambda}(T)\)</span> en el espectro de longitudes de onda, obtenemos el poder de emisión hemisferico total de un cuerpo negro:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b99bcdeb-3a41-48f9-a5c6-0d0eb764a4b3">
-<span class="eqno">(6.5)<a class="headerlink" href="#equation-b99bcdeb-3a41-48f9-a5c6-0d0eb764a4b3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-29f7c063-e1f4-4f44-9dad-6ff780b43ca5">
+<span class="eqno">(6.5)<a class="headerlink" href="#equation-29f7c063-e1f4-4f44-9dad-6ff780b43ca5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 E_\mathrm{bb}(T) = \int_0^\infty E_{\mathrm{bb},\lambda}(T) d\lambda = \pi\int_0^\infty I_{\mathrm{bb},\lambda}(T) d\lambda = \sigma T^4,\quad\quad\frac{\mathrm{W}}{\mathrm{m}^2}
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\sigma = 5.670\times10^{-8}\)</span> W/m<span class="math notranslate nohighlight">\(^2\cdot\)</span>K<span class="math notranslate nohighlight">\(^4\)</span>, es la <em>constante de Stefan-Boltzmann.</em> Esta fórmula se conoce como la <strong>ley de Stefan-Boltzmann</strong></p>
@@ -647,8 +647,8 @@ E_\mathrm{bb}(T) = \int_0^\infty E_{\mathrm{bb},\lambda}(T) d\lambda = \pi\int_0
 <a class="reference internal image-reference" href="../_images/blackbody_rad.png"><img alt="../_images/blackbody_rad.png" class="align-center" src="../_images/blackbody_rad.png" style="width: 700px;" />
 </a>
 <p>A medida que <span class="math notranslate nohighlight">\(T\)</span> aumenta, notamos que el máximo de la curva se desplaza hacia el azul. La longitud de onda correspondiente a este máximo, <span class="math notranslate nohighlight">\(\lambda_\mathrm{peak}\)</span>, está definida por la <strong>ley de desplazamiento de Wien:</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-b1992c39-ab8b-45ef-9550-99739115b942">
-<span class="eqno">(6.6)<a class="headerlink" href="#equation-b1992c39-ab8b-45ef-9550-99739115b942" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c2a281c3-c74c-4676-a330-6564a839a9c5">
+<span class="eqno">(6.6)<a class="headerlink" href="#equation-c2a281c3-c74c-4676-a330-6564a839a9c5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \lambda_\mathrm{peak}T = 2897.8\quad\mu\mathrm{m}\cdot\mathrm{K}
 \end{equation}\]</div>
 <p>Esta relación permite entender el cambio de color de la fuente emisora con la tempertura.</p>
@@ -657,28 +657,28 @@ E_\mathrm{bb}(T) = \int_0^\infty E_{\mathrm{bb},\lambda}(T) d\lambda = \pi\int_0
 <section id="propiedades-radiativas">
 <h3><span class="section-number">6.2.3. </span>Propiedades Radiativas<a class="headerlink" href="#propiedades-radiativas" title="Link to this heading">#</a></h3>
 <p>Definimos como <strong>emisividad direccional espectral, <span class="math notranslate nohighlight">\(\epsilon_{\lambda,\Omega}\)</span>,</strong> a la <em>razón entre la radiación emitida por una superficie, <span class="math notranslate nohighlight">\(I_\lambda(\Omega, T)\)</span>, y la radiación emitida por un cuerpo negro, ambas a temperatura <span class="math notranslate nohighlight">\(T\)</span></em>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7a25f708-f89e-4bea-bbb3-a1b4db6f61bf">
-<span class="eqno">(6.7)<a class="headerlink" href="#equation-7a25f708-f89e-4bea-bbb3-a1b4db6f61bf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-30b3b26d-dc8e-4ab7-992e-d9360e78263c">
+<span class="eqno">(6.7)<a class="headerlink" href="#equation-30b3b26d-dc8e-4ab7-992e-d9360e78263c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \epsilon_{\lambda,\Omega} = \frac{I_\lambda(\Omega, T)}{I_{\mathrm{bb},\lambda}(T)}
 \end{equation}\]</div>
 <p>De esta forma, <span class="math notranslate nohighlight">\(\epsilon\)</span> es una propiedad adimensional de superfice que varía entre <span class="math notranslate nohighlight">\(0 \le \epsilon \le 1\)</span>.</p>
 <p>Definimos como <strong>absortividad direccional espectral, <span class="math notranslate nohighlight">\(A_{\lambda,\Omega}\)</span>,</strong> a la <em>porción de radiación incidente que es absorbida por una superficie</em>. Igualmente, <span class="math notranslate nohighlight">\(0 \le A_{\lambda,\Omega} \le 1\)</span>.</p>
 <p>A través de la <strong>ley de Kirchhoff</strong>, podemos establecer una relación entre la absortancia y emisividad espectral direccional:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b11beb62-4d35-405b-a242-865ff310e5d1">
-<span class="eqno">(6.8)<a class="headerlink" href="#equation-b11beb62-4d35-405b-a242-865ff310e5d1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-16b59e5d-c403-4047-9b49-7e2bdf80c46e">
+<span class="eqno">(6.8)<a class="headerlink" href="#equation-16b59e5d-c403-4047-9b49-7e2bdf80c46e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \epsilon_{\lambda,\Omega} = A_{\lambda,\Omega}
 \end{equation}\]</div>
 <p>En otras palabras, las propiedades de un material como receptor o emisor de radiación, son iguales. Sin embargo, notar que <strong>esta igualdad solo existe para la misma longitud de onda y ángulo sólido.</strong></p>
 <p>Este concepto, denominado <em>reciprocidad</em>, es consecuencia de las ecuaciones de Maxwell y es la base fundamental para el diseño de antenas y radares.</p>
 <p>Por conservación de energía:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aa7af9d2-db0a-4f64-b2ae-f5269bcc36ec">
-<span class="eqno">(6.9)<a class="headerlink" href="#equation-aa7af9d2-db0a-4f64-b2ae-f5269bcc36ec" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fb2bfd89-7562-4908-86a8-3d24cd6a2f52">
+<span class="eqno">(6.9)<a class="headerlink" href="#equation-fb2bfd89-7562-4908-86a8-3d24cd6a2f52" title="Permalink to this equation">#</a></span>\[\begin{equation}
 A_{\lambda,\Omega} + R_{\lambda,\Omega} + T_{\lambda,\Omega} = 1
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(R_{\lambda,\Omega}\)</span> y <span class="math notranslate nohighlight">\(T_{\lambda,\Omega}\)</span> son, respectivamente, la reflectividad y transmisividad espectral direccional del material</p>
 <p>Debido a la naturaleza de la radiación térmica, la polarización de las ondas electromagnéticas es aleatoria. Así, <span class="math notranslate nohighlight">\(R_{\lambda,\Omega}\)</span> y <span class="math notranslate nohighlight">\(T_{\lambda,\Omega}\)</span> se calculan como:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f49e5d74-287d-44d2-b58f-f3e60d78d2c4">
-<span class="eqno">(6.10)<a class="headerlink" href="#equation-f49e5d74-287d-44d2-b58f-f3e60d78d2c4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a1502912-529c-446c-b018-a7565afc5152">
+<span class="eqno">(6.10)<a class="headerlink" href="#equation-a1502912-529c-446c-b018-a7565afc5152" title="Permalink to this equation">#</a></span>\[\begin{equation}
 R_{\lambda,\Omega} = \frac{R_{\lambda,\Omega}^\mathrm{TM}+R_{\lambda,\Omega}^\mathrm{TE}}{2}\quad\quad
 T_{\lambda,\Omega} = \frac{T_{\lambda,\Omega}^\mathrm{TM}+T_{\lambda,\Omega}^\mathrm{TE}}{2}
 \end{equation}\]</div>
@@ -839,22 +839,22 @@ E_{\lambda,\Omega}(T) &amp;= \epsilon_{\lambda,\Omega}I_{\mathrm{bb},\lambda}(T)
 </div>
 </details>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "9fdc301920d743e4a6b408938171033e"}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "9675398dcd7e4056b950d5f55c237307"}</script></div>
 </div>
 <p>Al igual que con el poder de emisión, la emisividad puede también ser definida de forma hemisférica (integración por ángulo sólido) o total (integración por longitudes de onda)</p>
 <p><strong>Emisividad direccional total</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-1cfcfd29-4394-4ae1-9163-d1fb09329c5e">
-<span class="eqno">(6.11)<a class="headerlink" href="#equation-1cfcfd29-4394-4ae1-9163-d1fb09329c5e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-4d1137af-b219-4754-a2f0-8fd37e0a6845">
+<span class="eqno">(6.11)<a class="headerlink" href="#equation-4d1137af-b219-4754-a2f0-8fd37e0a6845" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \epsilon_\Omega(T) = \frac{E_\Omega(T)}{E_{\Omega,bb}(T)} =\frac{\int_0^\infty \epsilon_{\lambda,\Omega} I_{\mathrm{bb},\lambda} (T)\cos\theta~d\lambda}{\int_0^\infty I_{\mathrm{bb},\lambda} (T)\cos\theta~d\lambda} = \frac{\pi}{\sigma T^4}\int_0^\infty \epsilon_{\lambda,\Omega} I_{\mathrm{bb},\lambda} (T)~d\lambda
 \end{equation}\]</div>
 <p><strong>Emisividad hemisférica espectral</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-5b3e046c-6321-42a5-a349-f9f199ae623c">
-<span class="eqno">(6.12)<a class="headerlink" href="#equation-5b3e046c-6321-42a5-a349-f9f199ae623c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3b375608-9b92-4749-97e2-5594e192a4b8">
+<span class="eqno">(6.12)<a class="headerlink" href="#equation-3b375608-9b92-4749-97e2-5594e192a4b8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \epsilon_\lambda(T) = \frac{E_\lambda(T)}{E_{\lambda,bb}(T)} = \frac{\int_\mathrm{hemi}\epsilon_{\lambda,\Omega}I_{\mathrm{bb},\lambda}(T)\cos\theta~d\Omega}{\pi I_{\mathrm{bb},\lambda}(T)}  = \frac{1}{\pi}\int_\mathrm{hemi}\epsilon_{\lambda,\Omega}\cos\theta~d\Omega
 \end{equation}\]</div>
 <p><strong>Emisividad hemisférica total</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-b2a21d50-f6a4-4328-a676-ddeadecf42b4">
-<span class="eqno">(6.13)<a class="headerlink" href="#equation-b2a21d50-f6a4-4328-a676-ddeadecf42b4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0096f967-810c-4424-af63-77fc654a1c5b">
+<span class="eqno">(6.13)<a class="headerlink" href="#equation-0096f967-810c-4424-af63-77fc654a1c5b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \epsilon(T) = \frac{E(T)}{\sigma T^4} =\frac{1}{\sigma T^4}\int\int_0^\infty \epsilon_{\lambda,\Omega} I_{\mathrm{bb},\lambda} (T)\cos\theta~d\lambda~d\Omega
 \end{equation}\]</div>
 <p>Notar que, debido al factor <span class="math notranslate nohighlight">\(\sigma T^4\)</span>, la emisividad hemisférica total y direccional total dependen de <span class="math notranslate nohighlight">\(T\)</span>, aún cuando <span class="math notranslate nohighlight">\(\epsilon_{\lambda,\Omega}\)</span> puede no depender de <span class="math notranslate nohighlight">\(T\)</span>.</p>
@@ -965,7 +965,7 @@ tenemos <span class="math notranslate nohighlight">\(A_{\lambda,\Omega} + R_{\la
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="../_images/09a0c56d5197d62e8a9b91db377c4490fc595f5f2bb5d038f4f760830f6815c9.png" src="../_images/09a0c56d5197d62e8a9b91db377c4490fc595f5f2bb5d038f4f760830f6815c9.png" />
+<img alt="../_images/8d225c397cf4f4b15d5c181ac30e373c0a7275a6462892f17c875e90b05ca924.png" src="../_images/8d225c397cf4f4b15d5c181ac30e373c0a7275a6462892f17c875e90b05ca924.png" />
 </div>
 </div>
 <p>Para finalizar, usamos la ley de Kirchhoff (<span class="math notranslate nohighlight">\(A_\lambda = \epsilon_\lambda\)</span>), y calculamos la emisividad total hemisférica mediante la ecuación (6.14):</p>
@@ -1000,25 +1000,25 @@ tenemos <span class="math notranslate nohighlight">\(A_{\lambda,\Omega} + R_{\la
 <a class="reference internal image-reference" href="../_images/irradiance.png"><img alt="../_images/irradiance.png" class="align-center" src="../_images/irradiance.png" style="width: 300px;" />
 </a>
 <p>Matemáticamente:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3f964370-119d-452b-8fdf-89efc7c8e751">
-<span class="eqno">(6.14)<a class="headerlink" href="#equation-3f964370-119d-452b-8fdf-89efc7c8e751" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c27440ca-6b1f-4c07-8fc1-7f2af7af7f64">
+<span class="eqno">(6.14)<a class="headerlink" href="#equation-c27440ca-6b1f-4c07-8fc1-7f2af7af7f64" title="Permalink to this equation">#</a></span>\[\begin{equation}
 G_{\lambda,\Omega} = I_i(\lambda,\Omega) \cos\theta\quad\frac{\mathrm{W}}{\mathrm{m}^2}
 \end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(I_i\)</span> es la radiancia espectral incidente sobre una superficie <span class="math notranslate nohighlight">\(dA\)</span></p>
 <p>La irradiancia permite determinar valores promedio para la absortancia, transmitancia y reflectancia. Al igual que en los casos anteriores, podemos extraer valores promedio del tipo hemisférico (integración por ángulo sólido) o total (integración por longitudes de onda). Por ejemplo, para la absortancia</p>
 <p><strong>Absorptancia direccional total</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-0d1f56ce-5767-4166-b906-803f0d184f37">
-<span class="eqno">(6.15)<a class="headerlink" href="#equation-0d1f56ce-5767-4166-b906-803f0d184f37" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-38eacd45-cddf-4609-ae59-ee50f6d4803f">
+<span class="eqno">(6.15)<a class="headerlink" href="#equation-38eacd45-cddf-4609-ae59-ee50f6d4803f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \alpha_\Omega = \frac{\int_0^\infty \alpha_{\lambda,\Omega} G_{\lambda,\Omega}~d\lambda}{\int_0^\infty G_{\lambda,\Omega} ~d\lambda}
 \end{equation}\]</div>
 <p><strong>Absorptancia hemisférica espectral</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-22011d01-6c1a-465b-835c-48006a9ec282">
-<span class="eqno">(6.16)<a class="headerlink" href="#equation-22011d01-6c1a-465b-835c-48006a9ec282" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-29dd6d5a-e876-4cc4-ab96-e3c5bc488b53">
+<span class="eqno">(6.16)<a class="headerlink" href="#equation-29dd6d5a-e876-4cc4-ab96-e3c5bc488b53" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \alpha_\lambda = \frac{\int_\mathrm{hemi}\alpha_{\lambda,\Omega}G_{\lambda,\Omega}~d\Omega}{\pi G_{\lambda,\Omega}}
 \end{equation}\]</div>
 <p><strong>Absorptancia hemisférica total</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-0d445584-46e5-4cd7-bfcb-6547e200442c">
-<span class="eqno">(6.17)<a class="headerlink" href="#equation-0d445584-46e5-4cd7-bfcb-6547e200442c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1d53effb-f26c-478e-9239-6d6050cd13a5">
+<span class="eqno">(6.17)<a class="headerlink" href="#equation-1d53effb-f26c-478e-9239-6d6050cd13a5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \alpha = \frac{\int_\mathrm{hemi} \int_0^\infty \alpha_{\lambda,\Omega} G_{\lambda,\Omega}~d\lambda d\Omega}{\int_\mathrm{hemi} \int_0^\infty G_{\lambda,\Omega}~d\lambda d\Omega}
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -1045,8 +1045,8 @@ G_{\lambda,\Omega} = I_i(\lambda,\Omega) \cos\theta\quad\frac{\mathrm{W}}{\mathr
 <a class="reference internal image-reference" href="../_images/radiosity.png"><img alt="../_images/radiosity.png" class="align-center" src="../_images/radiosity.png" style="width: 250px;" />
 </a>
 <p>Matemáticamente:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c48b195f-293f-4bf3-89a7-e69ff9745b92">
-<span class="eqno">(6.18)<a class="headerlink" href="#equation-c48b195f-293f-4bf3-89a7-e69ff9745b92" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d1f4dc42-44f5-49ef-bc10-bd3f9d6b11af">
+<span class="eqno">(6.18)<a class="headerlink" href="#equation-d1f4dc42-44f5-49ef-bc10-bd3f9d6b11af" title="Permalink to this equation">#</a></span>\[\begin{equation}
 J_{\lambda,\Omega} = R_{\lambda,\Omega}G_{\lambda,\Omega}+E_{\lambda,\Omega}
 \end{equation}\]</div>
 <p>Al igual que con el poder de emisión y la irradiancia, la radiosidad (<span class="math notranslate nohighlight">\(J_{\lambda,\Omega}\)</span>) puede ser definidas de forma hemisférica (integrando por ángulo sólido) o total (integrando por longitud de onda).</p>
@@ -1076,8 +1076,8 @@ dQ_{dA_1\rightarrow dA_2} = I_{\mathrm{bb},\lambda}(T_1)\cos\theta_1 dA_1 d\Omeg
 \dot{Q}_{A_1\rightarrow A_2} = \int_{A_1}\int_{A_1}I_{\mathrm{bb},\lambda}(T_1) \frac{\cos\theta_1 \cos\theta_2}{r^2 }dA_1dA_2
 \end{equation*}\]</div>
 <p>Definimos como <strong>factor de visión o factor de forma, <span class="math notranslate nohighlight">\(F_{12}\)</span></strong> a la razón entre <span class="math notranslate nohighlight">\(\dot{Q}_{A_1\rightarrow A_2}\)</span> y la radiación hemisférica espectral emitida por <span class="math notranslate nohighlight">\(A_1\)</span>, es decir <span class="math notranslate nohighlight">\(\dot{Q}_{A_1} = \pi I_{\mathrm{bb},\lambda}(T_1) A_1 \)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c4598baf-9bed-471c-a3c9-bb0b9398d6fc">
-<span class="eqno">(6.19)<a class="headerlink" href="#equation-c4598baf-9bed-471c-a3c9-bb0b9398d6fc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1396942c-0a40-4ee6-94b7-48b7b6313e48">
+<span class="eqno">(6.19)<a class="headerlink" href="#equation-1396942c-0a40-4ee6-94b7-48b7b6313e48" title="Permalink to this equation">#</a></span>\[\begin{equation}
 F_{12} = \frac{\dot{Q}_{A_1\rightarrow A_2}}{\dot{Q}_{A_1}} = \frac{1}{A_1}\int_{A_1}\int_{A_2} \frac{\cos\theta_1 \cos\theta_2}{\pi r^2 }dA_1dA_2
 \end{equation}\]</div>
 <p>El factor de visión permite simplificar el análisis para determinar el calor por radiación transferido a una superficie, de la forma:</p>
@@ -1091,8 +1091,8 @@ F_{12} = \frac{\dot{Q}_{A_1\rightarrow A_2}}{\dot{Q}_{A_1}} = \frac{1}{A_1}\int_
 F_{21} = \frac{1}{A_2}\int_{A_1}\int_{A_2} \frac{\cos\theta_1 \cos\theta_2}{\pi r^2 }dA_1dA_2
 \end{equation*}\]</div>
 <p>De donde deducimos la relación:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9310d7f2-a365-4765-aa66-4de83eecb276">
-<span class="eqno">(6.20)<a class="headerlink" href="#equation-9310d7f2-a365-4765-aa66-4de83eecb276" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2538db58-1769-4da6-9182-0d5dcea0c01a">
+<span class="eqno">(6.20)<a class="headerlink" href="#equation-2538db58-1769-4da6-9182-0d5dcea0c01a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 A_1 F_{12} = A_2 F_{21}
 \end{equation}\]</div>
 <p>Las expresiones para el factor de visión se encuentran tabuladas en diversos textos especializados.</p>
@@ -1103,8 +1103,8 @@ A_1 F_{12} = A_2 F_{21}
 <section id="id2">
 <h3><span class="section-number">6.3.2. </span>Transferencia de calor por radiación<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>En el caso de dos superficies negras a temperaturas <span class="math notranslate nohighlight">\(T_1\)</span> y <span class="math notranslate nohighlight">\(T_2\)</span>, la transferencia de calor neta por radiación es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f1f85f4d-c36e-4663-a71b-3156956cd327">
-<span class="eqno">(6.21)<a class="headerlink" href="#equation-f1f85f4d-c36e-4663-a71b-3156956cd327" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-57090ecc-27a4-4607-9b6b-36e81b652ce8">
+<span class="eqno">(6.21)<a class="headerlink" href="#equation-57090ecc-27a4-4607-9b6b-36e81b652ce8" title="Permalink to this equation">#</a></span>\[\begin{align}
 \dot{Q} &amp;= \dot{Q}_{A_1\rightarrow A_2} - \dot{Q}_{A_2\rightarrow A_1} \nonumber \\[10pt]
 &amp;= A_1F_{12}\sigma T_1^4 - A_2F_{21}\sigma T_2^4 \nonumber \\[10pt]
 &amp;= A_1F_{12}\sigma\left(T_1^4 - T_2^4\right)
