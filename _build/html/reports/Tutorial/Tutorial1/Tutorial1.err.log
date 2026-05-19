@@ -1,0 +1,223 @@
+Traceback (most recent call last):
+  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/panxopanza/miniconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/panxopanza/miniconda3/lib/python3.11/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+lam = np.linspace(0.5,20,100)   # arreglo de 100 datos entre 0.5 y 5.0 micrones
+N   = nk.SiO2(lam)              # índice de refracción del sílice
+
+# graficamos el índice de refracción
+plt.plot(lam, N.real,'-b', label = 'n')
+plt.plot(lam, N.imag,'-r', label = '$\kappa$')
+plt.xlabel('longitud de onda ($\mu$m)')
+plt.ylabel('Índice de refracción')
+plt.legend()
+plt.show()
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mgaierror[0m                                  Traceback (most recent call last)
+File [0;32m~/miniconda3/lib/python3.11/site-packages/urllib3/connection.py:174[0m, in [0;36mHTTPConnection._new_conn[0;34m(self)[0m
+[1;32m    173[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 174[0m     conn [38;5;241m=[39m connection[38;5;241m.[39mcreate_connection(
+[1;32m    175[0m         ([38;5;28mself[39m[38;5;241m.[39m_dns_host, [38;5;28mself[39m[38;5;241m.[39mport), [38;5;28mself[39m[38;5;241m.[39mtimeout, [38;5;241m*[39m[38;5;241m*[39mextra_kw
+[1;32m    176[0m     )
+[1;32m    178[0m [38;5;28;01mexcept[39;00m SocketTimeout:
+
+File [0;32m~/miniconda3/lib/python3.11/site-packages/urllib3/util/connection.py:72[0m, in [0;36mcreate_connection[0;34m(address, timeout, source_address, socket_options)[0m
+[1;32m     68[0m     [38;5;28;01mreturn[39;00m six[38;5;241m.[39mraise_from(
+[1;32m     69[0m         LocationParseError([38;5;124mu[39m[38;5;124m"[39m[38;5;124m'[39m[38;5;132;01m%s[39;00m[38;5;124m'[39m[38;5;124m, label empty or too long[39m[38;5;124m"[39m [38;5;241m%[39m host), [38;5;28;01mNone[39;00m
+[1;32m     70[0m     )
+[0;32m---> 72[0m [38;5;28;01mfor[39;00m res [38;5;129;01min[39;00m socket[38;5;241m.[39mgetaddrinfo(host, port, family, socket[38;5;241m.[39mSOCK_STREAM):
+[1;32m     73[0m     af, socktype, proto, canonname, sa [38;5;241m=[39m res
+
+File [0;32m~/miniconda3/lib/python3.11/socket.py:962[0m, in [0;36mgetaddrinfo[0;34m(host, port, family, type, proto, flags)[0m
+[1;32m    961[0m addrlist [38;5;241m=[39m []
+[0;32m--> 962[0m [38;5;28;01mfor[39;00m res [38;5;129;01min[39;00m _socket[38;5;241m.[39mgetaddrinfo(host, port, family, [38;5;28mtype[39m, proto, flags):
+[1;32m    963[0m     af, socktype, proto, canonname, sa [38;5;241m=[39m res
+
+[0;31mgaierror[0m: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+[0;31mNewConnectionError[0m                        Traceback (most recent call last)
+File [0;32m~/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py:716[0m, in [0;36mHTTPConnectionPool.urlopen[0;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)[0m
+[1;32m    715[0m [38;5;66;03m# Make the request on the httplib connection object.[39;00m
+[0;32m--> 716[0m httplib_response [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_make_request(
+[1;32m    717[0m     conn,
+[1;32m    718[0m     method,
+[1;32m    719[0m     url,
+[1;32m    720[0m     timeout[38;5;241m=[39mtimeout_obj,
+[1;32m    721[0m     body[38;5;241m=[39mbody,
+[1;32m    722[0m     headers[38;5;241m=[39mheaders,
+[1;32m    723[0m     chunked[38;5;241m=[39mchunked,
+[1;32m    724[0m )
+[1;32m    726[0m [38;5;66;03m# If we're going to release the connection in ``finally:``, then[39;00m
+[1;32m    727[0m [38;5;66;03m# the response doesn't need to know about the connection. Otherwise[39;00m
+[1;32m    728[0m [38;5;66;03m# it will also try to release it and we'll have a double-release[39;00m
+[1;32m    729[0m [38;5;66;03m# mess.[39;00m
+
+File [0;32m~/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py:404[0m, in [0;36mHTTPConnectionPool._make_request[0;34m(self, conn, method, url, timeout, chunked, **httplib_request_kw)[0m
+[1;32m    403[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 404[0m     [38;5;28mself[39m[38;5;241m.[39m_validate_conn(conn)
+[1;32m    405[0m [38;5;28;01mexcept[39;00m (SocketTimeout, BaseSSLError) [38;5;28;01mas[39;00m e:
+[1;32m    406[0m     [38;5;66;03m# Py2 raises this as a BaseSSLError, Py3 raises it as socket timeout.[39;00m
+
+File [0;32m~/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py:1061[0m, in [0;36mHTTPSConnectionPool._validate_conn[0;34m(self, conn)[0m
+[1;32m   1060[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mgetattr[39m(conn, [38;5;124m"[39m[38;5;124msock[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m):  [38;5;66;03m# AppEngine might not have  `.sock`[39;00m
+[0;32m-> 1061[0m     conn[38;5;241m.[39mconnect()
+[1;32m   1063[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m conn[38;5;241m.[39mis_verified:
+
+File [0;32m~/miniconda3/lib/python3.11/site-packages/urllib3/connection.py:363[0m, in [0;36mHTTPSConnection.connect[0;34m(self)[0m
+[1;32m    361[0m [38;5;28;01mdef[39;00m [38;5;21mconnect[39m([38;5;28mself[39m):
+[1;32m    362[0m     [38;5;66;03m# Add certificate verification[39;00m
+[0;32m--> 363[0m     [38;5;28mself[39m[38;5;241m.[39msock [38;5;241m=[39m conn [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_new_conn()
+[1;32m    364[0m     hostname [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mhost
+
+File [0;32m~/miniconda3/lib/python3.11/site-packages/urllib3/connection.py:186[0m, in [0;36mHTTPConnection._new_conn[0;34m(self)[0m
+[1;32m    185[0m [38;5;28;01mexcept[39;00m SocketError [38;5;28;01mas[39;00m e:
+[0;32m--> 186[0m     [38;5;28;01mraise[39;00m NewConnectionError(
+[1;32m    187[0m         [38;5;28mself[39m, [38;5;124m"[39m[38;5;124mFailed to establish a new connection: [39m[38;5;132;01m%s[39;00m[38;5;124m"[39m [38;5;241m%[39m e
+[1;32m    188[0m     )
+[1;32m    190[0m [38;5;28;01mreturn[39;00m conn
+
+[0;31mNewConnectionError[0m: <urllib3.connection.HTTPSConnection object at 0x7efbe956d010>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+[0;31mMaxRetryError[0m                             Traceback (most recent call last)
+File [0;32m~/miniconda3/lib/python3.11/site-packages/requests/adapters.py:486[0m, in [0;36mHTTPAdapter.send[0;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[1;32m    485[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 486[0m     resp [38;5;241m=[39m conn[38;5;241m.[39murlopen(
+[1;32m    487[0m         method[38;5;241m=[39mrequest[38;5;241m.[39mmethod,
+[1;32m    488[0m         url[38;5;241m=[39murl,
+[1;32m    489[0m         body[38;5;241m=[39mrequest[38;5;241m.[39mbody,
+[1;32m    490[0m         headers[38;5;241m=[39mrequest[38;5;241m.[39mheaders,
+[1;32m    491[0m         redirect[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[1;32m    492[0m         assert_same_host[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[1;32m    493[0m         preload_content[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[1;32m    494[0m         decode_content[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[1;32m    495[0m         retries[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39mmax_retries,
+[1;32m    496[0m         timeout[38;5;241m=[39mtimeout,
+[1;32m    497[0m         chunked[38;5;241m=[39mchunked,
+[1;32m    498[0m     )
+[1;32m    500[0m [38;5;28;01mexcept[39;00m (ProtocolError, [38;5;167;01mOSError[39;00m) [38;5;28;01mas[39;00m err:
+
+File [0;32m~/miniconda3/lib/python3.11/site-packages/urllib3/connectionpool.py:802[0m, in [0;36mHTTPConnectionPool.urlopen[0;34m(self, method, url, body, headers, retries, redirect, assert_same_host, timeout, pool_timeout, release_conn, chunked, body_pos, **response_kw)[0m
+[1;32m    800[0m     e [38;5;241m=[39m ProtocolError([38;5;124m"[39m[38;5;124mConnection aborted.[39m[38;5;124m"[39m, e)
+[0;32m--> 802[0m retries [38;5;241m=[39m retries[38;5;241m.[39mincrement(
+[1;32m    803[0m     method, url, error[38;5;241m=[39me, _pool[38;5;241m=[39m[38;5;28mself[39m, _stacktrace[38;5;241m=[39msys[38;5;241m.[39mexc_info()[[38;5;241m2[39m]
+[1;32m    804[0m )
+[1;32m    805[0m retries[38;5;241m.[39msleep()
+
+File [0;32m~/miniconda3/lib/python3.11/site-packages/urllib3/util/retry.py:594[0m, in [0;36mRetry.increment[0;34m(self, method, url, response, error, _pool, _stacktrace)[0m
+[1;32m    593[0m [38;5;28;01mif[39;00m new_retry[38;5;241m.[39mis_exhausted():
+[0;32m--> 594[0m     [38;5;28;01mraise[39;00m MaxRetryError(_pool, url, error [38;5;129;01mor[39;00m ResponseError(cause))
+[1;32m    596[0m log[38;5;241m.[39mdebug([38;5;124m"[39m[38;5;124mIncremented Retry for (url=[39m[38;5;124m'[39m[38;5;132;01m%s[39;00m[38;5;124m'[39m[38;5;124m): [39m[38;5;132;01m%r[39;00m[38;5;124m"[39m, url, new_retry)
+
+[0;31mMaxRetryError[0m: HTTPSConnectionPool(host='refractiveindex.info', port=443): Max retries exceeded with url: /database/data/main/SiO2/nk/Franta-25C.yml (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7efbe956d010>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+[0;31mConnectionError[0m                           Traceback (most recent call last)
+Cell [0;32mIn[7], line 2[0m
+[1;32m      1[0m lam [38;5;241m=[39m np[38;5;241m.[39mlinspace([38;5;241m0.5[39m,[38;5;241m20[39m,[38;5;241m100[39m)   [38;5;66;03m# arreglo de 100 datos entre 0.5 y 5.0 micrones[39;00m
+[0;32m----> 2[0m N   [38;5;241m=[39m nk[38;5;241m.[39mSiO2(lam)              [38;5;66;03m# índice de refracción del sílice[39;00m
+[1;32m      4[0m [38;5;66;03m# graficamos el índice de refracción[39;00m
+[1;32m      5[0m plt[38;5;241m.[39mplot(lam, N[38;5;241m.[39mreal,[38;5;124m'[39m[38;5;124m-b[39m[38;5;124m'[39m, label [38;5;241m=[39m [38;5;124m'[39m[38;5;124mn[39m[38;5;124m'[39m)
+
+File [0;32m/mnt/c/Users/frami/OneDrive - Universidad Adolfo Ibanez/ComputerCodes/Python/custom_packages/empylib_proy/empylib/nklib.py:2148[0m, in [0;36m<lambda>[0;34m(wavelength)[0m
+[1;32m   2138[0m [38;5;124;03m'''[39;00m
+[1;32m   2139[0m [38;5;124;03m    --------------------------------------------------------------------[39;00m
+[1;32m   2140[0m [38;5;124;03m                            Target functions[39;00m
+[1;32m   2141[0m [38;5;124;03m    --------------------------------------------------------------------[39;00m
+[1;32m   2142[0m [38;5;124;03m'''[39;00m
+[1;32m   2144[0m [38;5;66;03m#------------------------------------------------------------------------------[39;00m
+[1;32m   2145[0m [38;5;66;03m#                                   Inorganic[39;00m
+[1;32m   2146[0m [38;5;66;03m# refractive index of SiO2 (quartz)[39;00m
+[1;32m   2147[0m [38;5;66;03m# SiO2 = lambda wavelength: get_nkfile(wavelength, 'sio2_Palik_Lemarchand2013', get_from_local_path = True)[0][39;00m
+[0;32m-> 2148[0m SiO2 [38;5;241m=[39m [38;5;28;01mlambda[39;00m wavelength: get_ri_info(wavelength, [38;5;124m'[39m[38;5;124mmain[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mSiO2[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mFranta-25C[39m[38;5;124m'[39m)[[38;5;241m0[39m]
+[1;32m   2150[0m [38;5;66;03m# refractive index of Fused silica[39;00m
+[1;32m   2151[0m Silica [38;5;241m=[39m [38;5;28;01mlambda[39;00m wavelength: get_ri_info(wavelength, [38;5;124m'[39m[38;5;124mmain[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mSiO2[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mFranta[39m[38;5;124m'[39m)[[38;5;241m0[39m]
+
+File [0;32m/mnt/c/Users/frami/OneDrive - Universidad Adolfo Ibanez/ComputerCodes/Python/custom_packages/empylib_proy/empylib/nklib.py:222[0m, in [0;36mget_ri_info[0;34m(wavelength, shelf, book, page, extrapolate)[0m
+[1;32m    197[0m [38;5;28;01mdef[39;00m [38;5;21mget_ri_info[39m(wavelength, shelf, book, page, [38;5;241m*[39m, extrapolate[38;5;241m=[39m[38;5;124m'[39m[38;5;124mflat[39m[38;5;124m'[39m):
+[1;32m    198[0m [38;5;250m    [39m[38;5;124;03m'''[39;00m
+[1;32m    199[0m [38;5;124;03m    Extract refractive index from refractiveindex.info database. This code[39;00m
+[1;32m    200[0m [38;5;124;03m    uses the refidx package from Bejamin Vial (https://gitlab.com/benvial/refidx)[39;00m
+[0;32m   (...)[0m
+[1;32m    220[0m [38;5;124;03m        Original tabulated data from file[39;00m
+[1;32m    221[0m [38;5;124;03m    '''[39;00m
+[0;32m--> 222[0m     nk_df [38;5;241m=[39m ri_info_data(shelf,book,page)
+[1;32m    223[0m     MaterialName [38;5;241m=[39m book [38;5;241m+[39m [38;5;124m'[39m[38;5;124m_[39m[38;5;124m'[39m [38;5;241m+[39m page
+[1;32m    225[0m     [38;5;28;01mreturn[39;00m _process_nk_data(wavelength, nk_df, MaterialName, extrapolate)
+
+File [0;32m/mnt/c/Users/frami/OneDrive - Universidad Adolfo Ibanez/ComputerCodes/Python/custom_packages/empylib_proy/empylib/nklib.py:181[0m, in [0;36mri_info_data[0;34m(shelf, book, page)[0m
+[1;32m    178[0m url [38;5;241m=[39m url_root  [38;5;241m+[39m shelf [38;5;241m+[39m [38;5;124m'[39m[38;5;124m/[39m[38;5;124m'[39m  [38;5;241m+[39m book  [38;5;241m+[39m [38;5;124m'[39m[38;5;124m/nk/[39m[38;5;124m'[39m [38;5;241m+[39m page [38;5;241m+[39m [38;5;124m'[39m[38;5;124m.yml[39m[38;5;124m'[39m
+[1;32m    180[0m [38;5;66;03m# Download YAML content[39;00m
+[0;32m--> 181[0m response [38;5;241m=[39m _requests[38;5;241m.[39mget(url)
+[1;32m    182[0m response[38;5;241m.[39mraise_for_status()
+[1;32m    184[0m [38;5;66;03m# Parse YAML content[39;00m
+
+File [0;32m~/miniconda3/lib/python3.11/site-packages/requests/api.py:73[0m, in [0;36mget[0;34m(url, params, **kwargs)[0m
+[1;32m     62[0m [38;5;28;01mdef[39;00m [38;5;21mget[39m(url, params[38;5;241m=[39m[38;5;28;01mNone[39;00m, [38;5;241m*[39m[38;5;241m*[39mkwargs):
+[1;32m     63[0m [38;5;250m    [39m[38;5;124mr[39m[38;5;124;03m"""Sends a GET request.[39;00m
+[1;32m     64[0m 
+[1;32m     65[0m [38;5;124;03m    :param url: URL for the new :class:`Request` object.[39;00m
+[0;32m   (...)[0m
+[1;32m     70[0m [38;5;124;03m    :rtype: requests.Response[39;00m
+[1;32m     71[0m [38;5;124;03m    """[39;00m
+[0;32m---> 73[0m     [38;5;28;01mreturn[39;00m request([38;5;124m"[39m[38;5;124mget[39m[38;5;124m"[39m, url, params[38;5;241m=[39mparams, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+File [0;32m~/miniconda3/lib/python3.11/site-packages/requests/api.py:59[0m, in [0;36mrequest[0;34m(method, url, **kwargs)[0m
+[1;32m     55[0m [38;5;66;03m# By using the 'with' statement we are sure the session is closed, thus we[39;00m
+[1;32m     56[0m [38;5;66;03m# avoid leaving sockets open which can trigger a ResourceWarning in some[39;00m
+[1;32m     57[0m [38;5;66;03m# cases, and look like a memory leak in others.[39;00m
+[1;32m     58[0m [38;5;28;01mwith[39;00m sessions[38;5;241m.[39mSession() [38;5;28;01mas[39;00m session:
+[0;32m---> 59[0m     [38;5;28;01mreturn[39;00m session[38;5;241m.[39mrequest(method[38;5;241m=[39mmethod, url[38;5;241m=[39murl, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+File [0;32m~/miniconda3/lib/python3.11/site-packages/requests/sessions.py:589[0m, in [0;36mSession.request[0;34m(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)[0m
+[1;32m    584[0m send_kwargs [38;5;241m=[39m {
+[1;32m    585[0m     [38;5;124m"[39m[38;5;124mtimeout[39m[38;5;124m"[39m: timeout,
+[1;32m    586[0m     [38;5;124m"[39m[38;5;124mallow_redirects[39m[38;5;124m"[39m: allow_redirects,
+[1;32m    587[0m }
+[1;32m    588[0m send_kwargs[38;5;241m.[39mupdate(settings)
+[0;32m--> 589[0m resp [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39msend(prep, [38;5;241m*[39m[38;5;241m*[39msend_kwargs)
+[1;32m    591[0m [38;5;28;01mreturn[39;00m resp
+
+File [0;32m~/miniconda3/lib/python3.11/site-packages/requests/sessions.py:703[0m, in [0;36mSession.send[0;34m(self, request, **kwargs)[0m
+[1;32m    700[0m start [38;5;241m=[39m preferred_clock()
+[1;32m    702[0m [38;5;66;03m# Send the request[39;00m
+[0;32m--> 703[0m r [38;5;241m=[39m adapter[38;5;241m.[39msend(request, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+[1;32m    705[0m [38;5;66;03m# Total elapsed time of the request (approximately)[39;00m
+[1;32m    706[0m elapsed [38;5;241m=[39m preferred_clock() [38;5;241m-[39m start
+
+File [0;32m~/miniconda3/lib/python3.11/site-packages/requests/adapters.py:519[0m, in [0;36mHTTPAdapter.send[0;34m(self, request, stream, timeout, verify, cert, proxies)[0m
+[1;32m    515[0m     [38;5;28;01mif[39;00m [38;5;28misinstance[39m(e[38;5;241m.[39mreason, _SSLError):
+[1;32m    516[0m         [38;5;66;03m# This branch is for urllib3 v1.22 and later.[39;00m
+[1;32m    517[0m         [38;5;28;01mraise[39;00m SSLError(e, request[38;5;241m=[39mrequest)
+[0;32m--> 519[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(e, request[38;5;241m=[39mrequest)
+[1;32m    521[0m [38;5;28;01mexcept[39;00m ClosedPoolError [38;5;28;01mas[39;00m e:
+[1;32m    522[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(e, request[38;5;241m=[39mrequest)
+
+[0;31mConnectionError[0m: HTTPSConnectionPool(host='refractiveindex.info', port=443): Max retries exceeded with url: /database/data/main/SiO2/nk/Franta-25C.yml (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7efbe956d010>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+ConnectionError: HTTPSConnectionPool(host='refractiveindex.info', port=443): Max retries exceeded with url: /database/data/main/SiO2/nk/Franta-25C.yml (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7efbe956d010>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
