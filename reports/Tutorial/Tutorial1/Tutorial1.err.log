@@ -21,12 +21,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-lam = np.linspace(0.25, 1.0, 100)   # espectro de longitudes de onda (um)
-theta = np.linspace(0, 2*np.pi, 361)  # ángulos para función de fase (rad)
+lam = np.linspace(0.5,20,100)   # arreglo de 100 datos entre 0.5 y 5.0 micrones
+N   = nk.SiO2(lam)              # índice de refracción del sílice
 
-Nh = 1.5             # índice de refracción de la matriz transparente
-Np = nk.TiO2(lam)    # índice de refracción de las partículas}
-D_mono = 0.25        # diámetro (um)
+# graficamos el índice de refracción
+plt.plot(lam, N.real,'-b', label = 'n')
+plt.plot(lam, N.imag,'-r', label = '$\kappa$')
+plt.xlabel('longitud de onda ($\mu$m)')
+plt.ylabel('Índice de refracción')
+plt.legend()
+plt.show()
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
@@ -95,7 +99,7 @@ File [0;32m~/miniconda3/lib/python3.11/site-packages/urllib3/connection.py:186
 [1;32m    188[0m     )
 [1;32m    190[0m [38;5;28;01mreturn[39;00m conn
 
-[0;31mNewConnectionError[0m: <urllib3.connection.HTTPSConnection object at 0x7f0541330590>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+[0;31mNewConnectionError[0m: <urllib3.connection.HTTPSConnection object at 0x7efbe956d010>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
 
 During handling of the above exception, another exception occurred:
 
@@ -129,23 +133,30 @@ File [0;32m~/miniconda3/lib/python3.11/site-packages/urllib3/util/retry.py:594
 [0;32m--> 594[0m     [38;5;28;01mraise[39;00m MaxRetryError(_pool, url, error [38;5;129;01mor[39;00m ResponseError(cause))
 [1;32m    596[0m log[38;5;241m.[39mdebug([38;5;124m"[39m[38;5;124mIncremented Retry for (url=[39m[38;5;124m'[39m[38;5;132;01m%s[39;00m[38;5;124m'[39m[38;5;124m): [39m[38;5;132;01m%r[39;00m[38;5;124m"[39m, url, new_retry)
 
-[0;31mMaxRetryError[0m: HTTPSConnectionPool(host='refractiveindex.info', port=443): Max retries exceeded with url: /database/data/main/TiO2/nk/Siefke.yml (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f0541330590>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[0;31mMaxRetryError[0m: HTTPSConnectionPool(host='refractiveindex.info', port=443): Max retries exceeded with url: /database/data/main/SiO2/nk/Franta-25C.yml (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7efbe956d010>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
 
 During handling of the above exception, another exception occurred:
 
 [0;31mConnectionError[0m                           Traceback (most recent call last)
-Cell [0;32mIn[4], line 5[0m
-[1;32m      2[0m theta [38;5;241m=[39m np[38;5;241m.[39mlinspace([38;5;241m0[39m, [38;5;241m2[39m[38;5;241m*[39mnp[38;5;241m.[39mpi, [38;5;241m361[39m)  [38;5;66;03m# ángulos para función de fase (rad)[39;00m
-[1;32m      4[0m Nh [38;5;241m=[39m [38;5;241m1.5[39m             [38;5;66;03m# índice de refracción de la matriz transparente[39;00m
-[0;32m----> 5[0m Np [38;5;241m=[39m nk[38;5;241m.[39mTiO2(lam)    [38;5;66;03m# índice de refracción de las partículas}[39;00m
-[1;32m      6[0m D_mono [38;5;241m=[39m [38;5;241m0.25[39m
+Cell [0;32mIn[7], line 2[0m
+[1;32m      1[0m lam [38;5;241m=[39m np[38;5;241m.[39mlinspace([38;5;241m0.5[39m,[38;5;241m20[39m,[38;5;241m100[39m)   [38;5;66;03m# arreglo de 100 datos entre 0.5 y 5.0 micrones[39;00m
+[0;32m----> 2[0m N   [38;5;241m=[39m nk[38;5;241m.[39mSiO2(lam)              [38;5;66;03m# índice de refracción del sílice[39;00m
+[1;32m      4[0m [38;5;66;03m# graficamos el índice de refracción[39;00m
+[1;32m      5[0m plt[38;5;241m.[39mplot(lam, N[38;5;241m.[39mreal,[38;5;124m'[39m[38;5;124m-b[39m[38;5;124m'[39m, label [38;5;241m=[39m [38;5;124m'[39m[38;5;124mn[39m[38;5;124m'[39m)
 
-File [0;32m/mnt/c/Users/frami/OneDrive - Universidad Adolfo Ibanez/ComputerCodes/Python/custom_packages/empylib_proy/empylib/nklib.py:2163[0m, in [0;36m<lambda>[0;34m(wavelength)[0m
-[1;32m   2160[0m BaF2 [38;5;241m=[39m [38;5;28;01mlambda[39;00m wavelength: get_ri_info(wavelength, [38;5;124m'[39m[38;5;124mmain[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mBaF2[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mQuerry[39m[38;5;124m'[39m)[[38;5;241m0[39m]
-[1;32m   2162[0m [38;5;66;03m# refractive index of TiO2[39;00m
-[0;32m-> 2163[0m TiO2 [38;5;241m=[39m [38;5;28;01mlambda[39;00m wavelength: get_ri_info(wavelength,[38;5;124m'[39m[38;5;124mmain[39m[38;5;124m'[39m,[38;5;124m'[39m[38;5;124mTiO2[39m[38;5;124m'[39m,[38;5;124m'[39m[38;5;124mSiefke[39m[38;5;124m'[39m)[[38;5;241m0[39m]
-[1;32m   2165[0m [38;5;66;03m# refractive index of BiVO4 monoclinic (a axis)[39;00m
-[1;32m   2166[0m BiVO4_mono_a [38;5;241m=[39m [38;5;28;01mlambda[39;00m wavelength: get_nkfile(wavelength, [38;5;124m'[39m[38;5;124mBiVO4_a-c_Zhao2011[39m[38;5;124m'[39m, get_from_local_path [38;5;241m=[39m [38;5;28;01mTrue[39;00m)[[38;5;241m0[39m]
+File [0;32m/mnt/c/Users/frami/OneDrive - Universidad Adolfo Ibanez/ComputerCodes/Python/custom_packages/empylib_proy/empylib/nklib.py:2148[0m, in [0;36m<lambda>[0;34m(wavelength)[0m
+[1;32m   2138[0m [38;5;124;03m'''[39;00m
+[1;32m   2139[0m [38;5;124;03m    --------------------------------------------------------------------[39;00m
+[1;32m   2140[0m [38;5;124;03m                            Target functions[39;00m
+[1;32m   2141[0m [38;5;124;03m    --------------------------------------------------------------------[39;00m
+[1;32m   2142[0m [38;5;124;03m'''[39;00m
+[1;32m   2144[0m [38;5;66;03m#------------------------------------------------------------------------------[39;00m
+[1;32m   2145[0m [38;5;66;03m#                                   Inorganic[39;00m
+[1;32m   2146[0m [38;5;66;03m# refractive index of SiO2 (quartz)[39;00m
+[1;32m   2147[0m [38;5;66;03m# SiO2 = lambda wavelength: get_nkfile(wavelength, 'sio2_Palik_Lemarchand2013', get_from_local_path = True)[0][39;00m
+[0;32m-> 2148[0m SiO2 [38;5;241m=[39m [38;5;28;01mlambda[39;00m wavelength: get_ri_info(wavelength, [38;5;124m'[39m[38;5;124mmain[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mSiO2[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mFranta-25C[39m[38;5;124m'[39m)[[38;5;241m0[39m]
+[1;32m   2150[0m [38;5;66;03m# refractive index of Fused silica[39;00m
+[1;32m   2151[0m Silica [38;5;241m=[39m [38;5;28;01mlambda[39;00m wavelength: get_ri_info(wavelength, [38;5;124m'[39m[38;5;124mmain[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mSiO2[39m[38;5;124m'[39m, [38;5;124m'[39m[38;5;124mFranta[39m[38;5;124m'[39m)[[38;5;241m0[39m]
 
 File [0;32m/mnt/c/Users/frami/OneDrive - Universidad Adolfo Ibanez/ComputerCodes/Python/custom_packages/empylib_proy/empylib/nklib.py:222[0m, in [0;36mget_ri_info[0;34m(wavelength, shelf, book, page, extrapolate)[0m
 [1;32m    197[0m [38;5;28;01mdef[39;00m [38;5;21mget_ri_info[39m(wavelength, shelf, book, page, [38;5;241m*[39m, extrapolate[38;5;241m=[39m[38;5;124m'[39m[38;5;124mflat[39m[38;5;124m'[39m):
@@ -207,6 +218,6 @@ File [0;32m~/miniconda3/lib/python3.11/site-packages/requests/adapters.py:519[
 [1;32m    521[0m [38;5;28;01mexcept[39;00m ClosedPoolError [38;5;28;01mas[39;00m e:
 [1;32m    522[0m     [38;5;28;01mraise[39;00m [38;5;167;01mConnectionError[39;00m(e, request[38;5;241m=[39mrequest)
 
-[0;31mConnectionError[0m: HTTPSConnectionPool(host='refractiveindex.info', port=443): Max retries exceeded with url: /database/data/main/TiO2/nk/Siefke.yml (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f0541330590>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
-ConnectionError: HTTPSConnectionPool(host='refractiveindex.info', port=443): Max retries exceeded with url: /database/data/main/TiO2/nk/Siefke.yml (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f0541330590>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+[0;31mConnectionError[0m: HTTPSConnectionPool(host='refractiveindex.info', port=443): Max retries exceeded with url: /database/data/main/SiO2/nk/Franta-25C.yml (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7efbe956d010>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+ConnectionError: HTTPSConnectionPool(host='refractiveindex.info', port=443): Max retries exceeded with url: /database/data/main/SiO2/nk/Franta-25C.yml (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7efbe956d010>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
 
