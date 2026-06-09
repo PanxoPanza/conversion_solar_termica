@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11. Control pasivo de radiación solar en edificaciones &#8212; MEC501 - Manejo y conversión solar</title>
+    <title>11. Manejo térmico radiativo en edificaciones &#8212; MEC501 - Manejo y conversión solar</title>
   
   
   
@@ -198,7 +198,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Parte 3 - Otras aplicaciones</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../10_CentralTermoSolar/10_CentralTermoSolar.html">10. Central Termosolar</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Control pasivo de radiación solar en edificaciones</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Manejo térmico radiativo en edificaciones</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Apéndice</span></p>
 <ul class="nav bd-sidenav">
@@ -381,7 +381,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Control pasivo de radiación solar en edificaciones</h1>
+    <h1>Manejo térmico radiativo en edificaciones</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,31 +392,58 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">11.1. Introducción</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-tradicionales">11.2. Métodos tradicionales</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masa-termica-y-desface-termico-en-materiales-de-construccion">11.2.1. Masa térmica y desface térmico en materiales de construcción</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-termico-a-traves-de-ventanas">11.2.2. Manejo térmico a través de ventanas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrategias-tradicionales-no-selectivas">11.2. Estrategias tradicionales no selectivas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masa-termica-y-desfase-termico">11.2.1. Masa térmica y desfase térmico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muro-de-trombe">11.2.2. Muro de Trombe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orientacion-y-aleros">11.2.3. Orientación y aleros</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-solar-en-ventanas-low-e-coating">11.3. Control solar en ventanas (<em>Low-E coating</em>)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composicion">11.3.1. Composición</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno">11.3.2. Desempeño</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-teorico-de-un-recubrimiento-low-e">11.3.3. Análisis teórico de un recubrimiento <em>low-E</em></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fabricacion-y-tipos">11.3.4. Fabricación y tipos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-de-tecnologias-de-manejo-radiativo">11.3. Fundamentos de tecnologías de manejo radiativo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ventanas-y-control-solar">11.4. Ventanas y control solar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-de-desempeno">11.4.1. Métricas de desempeño</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recubrimientos-low-e">11.4.2. Recubrimientos Low-E</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#composicion-y-mecanismo-optico">11.4.2.1. Composición y mecanismo óptico</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-fabricacion">11.4.2.2. Tipos de fabricación</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-teorico">11.4.2.3. Análisis teórico</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-coat-low-e-glass">11.4.2.4. Soft-coat low-E glass</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filmes-polimericos">11.4.2.5. Filmes poliméricos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#durabilidad-y-condiciones-de-uso">11.4.2.6. Durabilidad y condiciones de uso</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ventanas-inteligentes">11.4. Ventanas inteligentes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-de-las-ventanas-termocromicas">11.4.1. Fundamentos de las ventanas termocrómicas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fabricacion-y-desempeno">11.4.2. Fabricación y desempeño</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ventanas-inteligentes">11.4.3. Ventanas inteligentes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#materiales-electrocromicos">11.4.3.1. Materiales electrocrómicos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capacidad-de-modulacion">11.4.3.2. Capacidad de modulación</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#beneficios-en-edificaciones">11.4.3.3. Beneficios en edificaciones</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#limitaciones-reales">11.4.3.4. Limitaciones reales</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#materiales-termocromicos">11.4.3.5. Materiales termocrómicos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enfriamiento-radiativo-pasivo">11.5. Enfriamiento radiativo pasivo</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principio-de-funcionamiento">11.5.1. Principio de funcionamiento</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prc-en-la-naturaleza">11.5.2. PRC en la naturaleza</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#materiales-prc">11.5.3. Materiales PRC</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones">11.5.4. Aplicaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-comparativos-de-tecnologias">11.4.4. Analisis comparativos de tecnologías</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">11.6. Referencias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recubrimientos-de-enfriamiento-radiativo-pasivo">11.5. Recubrimientos de enfriamiento radiativo pasivo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-balance-radiativo-de-una-superficie">11.5.1. El balance radiativo de una superficie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solar-refractive-index-sri">11.5.2. Solar Refractive Index (SRI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primera-generacion-cool-roofs">11.5.3. Primera generación: cool roofs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segunda-generacion-enfriamiento-radiativo-diurno-pasivo-pdrc">11.5.4. Segunda generación: enfriamiento radiativo diurno pasivo (PDRC)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pdrc-en-la-naturaleza-las-hormigas-de-plata-del-sahara">11.5.4.1. PDRC en la naturaleza: las hormigas de plata del Sahara</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#materiales-pdrc-artificiales">11.5.4.2. Materiales PDRC artificiales</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitaciones-reales-y-seleccion-climatica">11.6. Limitaciones reales y selección climática</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-chile-norte-seco-vs-zona-central-vs-sur-humedo">11.6.1. Caso Chile: norte seco vs zona central vs sur húmedo</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#antofagasta-copiapo-norte-arido">11.6.1.1. Antofagasta / Copiapó — Norte árido</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#santiago-clima-mediterraneo">11.6.1.2. Santiago — Clima mediterráneo</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#puerto-montt-valdivia-sur-lluvioso">11.6.1.3. Puerto Montt / Valdivia — Sur lluvioso</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-de-seleccion-de-tecnologia">11.6.2. Guía de selección de tecnología</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estado-de-madurez-de-las-tecnologias">11.6.3. Estado de madurez de las tecnologías</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">11.7. Referencias</a></li>
 </ul>
             </nav>
         </div>
@@ -428,37 +455,59 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="control-pasivo-de-radiacion-solar-en-edificaciones">
-<h1><span class="section-number">11. </span>Control pasivo de radiación solar en edificaciones<a class="headerlink" href="#control-pasivo-de-radiacion-solar-en-edificaciones" title="Link to this heading">#</a></h1>
+  <div class="cell tag_remove-input docutils container">
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="manejo-termico-radiativo-en-edificaciones">
+<h1><span class="section-number">11. </span>Manejo térmico radiativo en edificaciones<a class="headerlink" href="#manejo-termico-radiativo-en-edificaciones" title="Link to this heading">#</a></h1>
 <section id="introduccion">
 <h2><span class="section-number">11.1. </span>Introducción<a class="headerlink" href="#introduccion" title="Link to this heading">#</a></h2>
-<p>Hasta ahora hemos revisado tecnologías de conversión de energía solar. En estas aplicaciones el objetivo es convertir eficientemente la mayor cantidad de radiación solar.</p>
-<p>Sin embargo, hay situaciones donde la exposición solar induce efectos indeseables, tales como sobrecalentamiento de ambientes, degradación de materiales o efectos dañinos en la piel.</p>
-<p>Particularmente en edificios y hogares, el aumento de la temperatura en días cálidos por exceso de radiación solar conduce a un mayor consumo eléctrico asociado a sistemas de acondicionamiento de aire. Por el contrario, en invierno, necesitamos aprovechar el calor del sol al máximo para reducir el consumo por calefacción. <strong>El manejo eficiente de la energía solar térmica en edificios, así, juega un rol fundamental en la reducción de gases de efecto invernadero</strong>.</p>
-<p>En esta unidad revisaremos algunas tecnologías de manejo pasivo (sin electricidad) de radiación solar en edificaciones.</p>
+<p>Los edificios representan alrededor del <strong>30% de la demanda energética global</strong> (IEA, <em>Energy Efficiency 2025</em>). Considerando solo la operación de edificios, la IEA reporta cerca del <strong>26% de las emisiones globales relacionadas con energía</strong> (IEA, <em>Buildings</em>).</p>
+<a class="reference internal image-reference" href="../_images/consumo_vivienda_chile.jpg"><img alt="../_images/consumo_vivienda_chile.jpg" class="align-center" src="../_images/consumo_vivienda_chile.jpg" style="width: 600px;" />
+</a>
+<center><small><b>Figura 1.</b> Consumo energético en vivienda según uso (El Mercurio, "del carbón al sol: El mapa energético de chile").</small></center><p>El enfriamiento de espacios es uno de los usos de energía de mayor crecimiento en edificios. La IEA (<em>The Future of Cooling</em>, 2018) indica que el aire acondicionado y los ventiladores representan cerca del <strong>20% de la electricidad usada en edificios</strong> (aproximadamente 10% de la electricidad global) y que, sin políticas de eficiencia, la demanda energética para enfriamiento de espacios podría <strong>más que triplicarse hacia 2050</strong>.</p>
+<p><em>¿Por qué crece tanto la demanda de enfriamiento?</em></p>
+<ul class="simple">
+<li><p>Aumento de ingresos y acceso a equipos de climatización en países en desarrollo.</p></li>
+<li><p>Urbanización acelerada e islas de calor urbanas.</p></li>
+<li><p>Cambio climático: veranos más calurosos y períodos de calor más extremos.</p></li>
+<li><p>Diseño de edificios con gran superficie vidriada sin control solar adecuado.</p></li>
+</ul>
+<p><em>¿Qué herramientas tiene la ingeniería para reducir la carga térmica de un edificio sin aumentar su consumo eléctrico?</em></p>
+<p>La respuesta está, en gran medida, en la <strong>envolvente del edificio</strong>: muros, ventanas y techo son la interfaz entre el interior y el exterior. Controlar cómo esa envolvente interactúa con la radiación solar y la radiación térmica es la clave.</p>
 <a class="reference internal image-reference" href="../_images/passive_solar_management.png"><img alt="../_images/passive_solar_management.png" class="align-center" src="../_images/passive_solar_management.png" style="width: 700px;" />
 </a>
+<center><small><b>Figura 2.</b> Estrategias de manejo térmico en la envolvente de edificaciones (Kalogirou, 2014).</small></center><p>En este capítulo nos enfocaremos en cómo la envolvente del edificio afecta las cargas de calefacción, enfriamiento e iluminación.</p>
 </section>
-<section id="metodos-tradicionales">
-<h2><span class="section-number">11.2. </span>Métodos tradicionales<a class="headerlink" href="#metodos-tradicionales" title="Link to this heading">#</a></h2>
-<section id="masa-termica-y-desface-termico-en-materiales-de-construccion">
-<h3><span class="section-number">11.2.1. </span>Masa térmica y desface térmico en materiales de construcción<a class="headerlink" href="#masa-termica-y-desface-termico-en-materiales-de-construccion" title="Link to this heading">#</a></h3>
-<p>El calor puede ser almacenado en materiales de construcción para reducir la temperatura interior, reducir las cargas de enfriamiento, o para retrasar el momento donde la carga térmica es máxima.</p>
-<p>En arquitectura y construcción, la <strong>capacidad de un material para almacenar calor se conoce como, <em>masa térmica</em></strong> y corresponde al producto entre la densidad y el calor específico del material.</p>
+<section id="estrategias-tradicionales-no-selectivas">
+<h2><span class="section-number">11.2. </span>Estrategias tradicionales no selectivas<a class="headerlink" href="#estrategias-tradicionales-no-selectivas" title="Link to this heading">#</a></h2>
+<p>La estrategia de manejo solar en edificaciones puede ser definida anticipadamente en el diseño arquitectónico, con soluciones de bajo costo, bajo nivel de mantenimiento y larga vida útil. Sin embargo, no son fácilmente modificables una vez construidas y, en la mayoría de los casos, no son selectivas (es decir, afectan por igual a la radiación solar y a la radiación térmica).</p>
+<section id="masa-termica-y-desfase-termico">
+<h3><span class="section-number">11.2.1. </span>Masa térmica y desfase térmico<a class="headerlink" href="#masa-termica-y-desfase-termico" title="Link to this heading">#</a></h3>
+<p>La <strong>masa térmica</strong> es la capacidad de un material de construcción para almacenar calor. Se expresa como el producto <span class="math notranslate nohighlight">\(\rho \cdot c_p\)</span> [J/m³·K]:</p>
 <a class="reference internal image-reference" href="../_images/masa_termica_tabla.png"><img alt="../_images/masa_termica_tabla.png" class="align-center" src="../_images/masa_termica_tabla.png" style="width: 500px;" />
 </a>
-<p>Por otro lado, el <em><strong>desface térmico</strong></em>, asociado a la capacidad del material para liberar este calor, es también una propiedad relevante, ya que nos permite reducir las fluctuaciones asociadas a los cambios de temperatura externos.</p>
+<center><small><b>Figura 3.</b> Propiedades térmicas en materiales de construcción típicos.</small></center><p>El <strong>desfase térmico</strong> describe el retraso con que el calor almacenado es liberado. Un muro de alta masa térmica puede desplazar el peak de temperatura interior varias horas respecto al peak solar exterior:</p>
 <a class="reference internal image-reference" href="../_images/thermal_lag.png"><img alt="../_images/thermal_lag.png" class="align-center" src="../_images/thermal_lag.png" style="width: 650px;" />
 </a>
-<p>Esta característica depende de diversos factores, tales como la difusividad térmica, la diferencia de temperaturas entre la estructura y el aire circundante, el espesor del material, efectos convectivos asociados a la exposición a corrientes de aire, rugosidad de la superficie, color, etc.</p>
-<p>Un diseño adecuado de la masa térmica y el desface térmico de una estructura permite un manejo eficiente de las ganancias por radiación solar.</p>
-<p>Un buen ejemplo es el <em>muro de Trombe</em>, el cual consiste en un muro de concreto separado de un vidrio y expuesto a la radiación solar.</p>
+<center><small><b>Figura 4.</b> Desfase térmico: la masa térmica amortigua y desplaza el peak de temperatura interior respecto al exterior.</small></center><p>Un diseño bien calibrado de masa térmica reduce la amplitud de la oscilación de temperatura interior y puede eliminar completamente la necesidad de climatización en climas templados.</p>
+</section>
+<section id="muro-de-trombe">
+<h3><span class="section-number">11.2.2. </span>Muro de Trombe<a class="headerlink" href="#muro-de-trombe" title="Link to this heading">#</a></h3>
+<p>El <strong>muro de Trombe</strong> combina masa térmica con captación solar activa. Un muro de concreto pintado de negro oscuro se separa de una superficie de vidrio, formando una cámara de aire que actúa como colector solar.</p>
 <a class="reference internal image-reference" href="../_images/trombe_wall.png"><img alt="../_images/trombe_wall.png" class="align-center" src="../_images/trombe_wall.png" style="width: 650px;" />
 </a>
-<p>El sistema opera de forma similar a un colector solar en base a aire. El muro está cubierto por una pintura de color oscuro para maximizar la absorción de radiación, y tiene dos aperturas, una en la parte superior y otra en la parte inferior del muro.</p>
-<p>Durante el invierno, el calor almacenado en el muro de concreto es liberado hacia la cámara de aire generando un efecto de calefacción por convección natural. El aire frio entra por la parte inferior del muro y sale por la parte superior.</p>
-<p>Durante el verano, el muro es cubierto mediante percianas metálicas para evitar el exceso de radiación. Una apertura en la parte inferior del vidrio es descubiertas para permitir la ventilación hacia el interior. En la parte superior del vidrio, una segunda apertura permite el escape del aire caliente dentro de la habitación.</p>
-<div class="cell tag_remove-input docutils container">
+<center><small><b>Figura 5.</b> Esquema de operación del muro de Trombe en modo calefacción (invierno) y ventilación (verano).</small></center><ul class="simple">
+<li><p><strong>Invierno:</strong> el calor almacenado en el concreto se libera por convección natural hacia el interior.</p></li>
+<li><p><strong>Verano:</strong> persianas externas bloquean la radiación; aperturas superiores expulsan el aire caliente.</p></li>
+<li><p><strong>Orientación:</strong> hacia el norte en el hemisferio sur (hacia el sur en el hemisferio norte).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;fwIdRKwiOD4&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
 <div class="output text_html">
         <iframe
@@ -471,115 +520,265 @@ document.write(`
         ></iframe>
         </div></div>
 </div>
-<p>Existen muchos diseños basados en el principio de un muro de Trombe, algunos con parades inclinadas o en base a colectores de aire en la pared.</p>
-<div class="cell tag_remove-tag docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
-<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;N6QOZGgbj-g&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-        <iframe
-            width="700"
-            height="400"
-            src="https://www.youtube.com/embed/N6QOZGgbj-g"
-            frameborder="0"
-            allowfullscreen
-            
-        ></iframe>
-        </div></div>
-</div>
-<p>Lo más importante es la dirección donde debe apuntar este muro. En el hemisferio norte el muro debe apuntar hacia el sur, mientras que en el hemisferio sur, el muro debe apuntar preferentemente hacia la dirección norte.</p>
 </section>
-<section id="manejo-termico-a-traves-de-ventanas">
-<h3><span class="section-number">11.2.2. </span>Manejo térmico a través de ventanas<a class="headerlink" href="#manejo-termico-a-traves-de-ventanas" title="Link to this heading">#</a></h3>
-<p>Otro elemento importante para el manejo solar térmico son las ventanas. Dependiendo del diseño, una ventana puede ser utilizada para manejar las ganancias y pérdidas de energía por radiación.</p>
-<a class="reference internal image-reference" href="../_images/window_sunspaces.png"><img alt="../_images/window_sunspaces.png" class="align-center" src="../_images/window_sunspaces.png" style="width: 400px;" />
-</a>
-<p>En la figura se muestran tres diseños de ventanas utilizados para este propósito. En todos los casos, <strong>la cara vertical debe apuntar hacia el norte (sur para hemisferio norte) para maximizar la captura de radiación solar</strong>.</p>
-<p>A mayor área expuesta a la radiación solar, mayor será el aporte energético para calefacción. El diseño adecuado, así, debe considerar un buen balance entre la radiación recibida durante el verano y el invierno.</p>
-<p>Por ejemplo, el diseño (a) es preferible en lugares cálidos o con variaciones de temperatura altas, ya que reduce la exposición solar durante el verano.</p>
-<p>Los aleros sobre las ventanas, también sirven como elementos de control de radiación solar. Aunque generalmente el diseño de estos va asociado a otros factores, como canalización de lluvias, la sombra generada por el alero sobre una ventana permite reducir o aumentar la exposición a la radiación solar.</p>
+<section id="orientacion-y-aleros">
+<h3><span class="section-number">11.2.3. </span>Orientación y aleros<a class="headerlink" href="#orientacion-y-aleros" title="Link to this heading">#</a></h3>
+<p>La orientación de ventanas al norte (hemisferio sur) maximiza la captación solar en invierno. Los <strong>aleros</strong> sobre las ventanas permiten un control estacional natural: bloquean el sol de verano (ángulo solar alto) y permiten el sol de invierno (ángulo solar bajo).</p>
 <a class="reference internal image-reference" href="../_images/overhangs.png"><img alt="../_images/overhangs.png" class="align-center" src="../_images/overhangs.png" style="width: 400px;" />
 </a>
-<p>En ocaciones, la sección de la ventana es inclinada para maximizar las ganancias por radiación térmica</p>
+<center><small><b>Figura 6.</b> Configuraciones del alero para (a) zonas alejadas de los polos que requieren bloqueo solar en verano (ángulo solar alto), (b) zonas frias cercanas al polo que requieren maximizar captación en invierno (ángulo bajo).</small></center></section>
 </section>
-</section>
-<section id="control-solar-en-ventanas-low-e-coating">
-<h2><span class="section-number">11.3. </span>Control solar en ventanas (<em>Low-E coating</em>)<a class="headerlink" href="#control-solar-en-ventanas-low-e-coating" title="Link to this heading">#</a></h2>
-<p>Los recubrimientos para control solar o <em>Low-E coating</em>, están diseñados para reducir la componente UV y NIR de la radiación solar a través de ventanas, sin afectar la transparencia a la luz visible.</p>
-<a class="reference internal image-reference" href="../_images/low-E_glass_spectrum.png"><img alt="../_images/low-E_glass_spectrum.png" class="align-center" src="../_images/low-E_glass_spectrum.png" style="width: 400px;" />
-</a>
-<center> <small>Operación de un recubrimiento low-E (<a href="https://www.fortemp.com/news/triple_silver_glass_tempering">Fuente</a>) </small></center><p>Esto permite reducir el deterioro ocacionado por la radiación UV y las ganancias de calor producida por la irradiación NIR al interior de una habitación.</p>
-<p>En general, el recubrimiento reduce la ganancia de irradiación solar, la cual se compone de:</p>
-<ul class="simple">
-<li><p>3% radiación UV</p></li>
-<li><p>44% radiación visible</p></li>
-<li><p>53% radiación infraroja cercana</p></li>
-</ul>
-<section id="composicion">
-<h3><span class="section-number">11.3.1. </span>Composición<a class="headerlink" href="#composicion" title="Link to this heading">#</a></h3>
-<p>Los recubrimientos <em>low-E</em> están formados de multiples capas alternadas de metal (comúnmente plata) y óxidos metálicos (<span class="math notranslate nohighlight">\(\mathrm{TiO_2}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{ZnO}\)</span>, <span class="math notranslate nohighlight">\(\mathrm{SiO_2}\)</span>, etc), cada una de espesor nanométrico.</p>
-<a class="reference internal image-reference" href="../_images/low-E_coating_composition.png"><img alt="../_images/low-E_coating_composition.png" class="align-center" src="../_images/low-E_coating_composition.png" style="width: 800px;" />
-</a>
-<center> <small>Composición de un recubrimiento low-E (<a href="https://www.fortemp.com/news/triple_silver_glass_tempering">Fuente</a>) </small></center><p>En general, una capa de metal como la plata refleja la radiación visible y NIR. Sin embargo, <strong>al intercalar múltiples capas se produce interferencia destructiva</strong> en longitudes de onda corta que suprime la <strong>reflectancia en el espectro visible</strong> y, en consecuencia, aumenta la transmitancia. En el <strong>espectro NIR</strong>, donde las longitudes de onda son más largas, el efecto de <strong>interferencia desaparece y la radiación es reflejada por metal</strong>. Por otro lado, <strong>tanto la plata como los óxidos metálicos absorben la radiación UV</strong>.</p>
-<a class="reference internal image-reference" href="../_images/low-E_coating_spectrum.png"><img alt="../_images/low-E_coating_spectrum.png" class="align-center" src="../_images/low-E_coating_spectrum.png" style="width: 600px;" />
-</a>
-<center> <small>Transmitancia espectral de una ventana con recubrimiento low-E (<a href="https://www.jinjing-glass.com/energy-efficient-low-e-coated-glass-product/?gclid=Cj0KCQiA6vaqBhCbARIsACF9M6nsmyagglcvGAAy-XxyGqVYI4wGzDAa7iNv8X9gAtu9frBDAL_vstAaAjEGEALw_wcB">Fuente</a>) </small></center></section>
-<section id="desempeno">
-<h3><span class="section-number">11.3.2. </span>Desempeño<a class="headerlink" href="#desempeno" title="Link to this heading">#</a></h3>
-<p>En general, para cuantificar el desempeño de una ventana con transmitancia espectral <span class="math notranslate nohighlight">\(T_\lambda\)</span> se consideran, principalmente, dos parámetros:</p>
-<p><strong>Transmitancia lumínica</strong> (<span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span>):</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-T_\mathrm{lum} = \frac{\int_{380~\mathrm{nm}}^{780~\mathrm{nm}}T_\lambda\cdot y_\mathrm{CIE}(\lambda) d\lambda}{\int_{380~\mathrm{nm}}^{780~\mathrm{nm}}y_\mathrm{CIE}(\lambda) d\lambda}
-\end{equation*}\]</div>
-<p>donde <span class="math notranslate nohighlight">\(y_\mathrm{CIE}(\lambda)\)</span> es la <a class="reference external" href="https://en.wikipedia.org/wiki/Luminous_efficiency_function#:~:text=The%20CIE%20photopic%20luminous%20efficiency,the%20CIE%201931%20color%20space.">eficiencia de luminosidad fotocópica</a> que <strong>representa la sensibilidad del ojo a la luz visible</strong>.</p>
-<p><strong>Ganancia solar o G-solar</strong> (<span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span>):</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-T_\mathrm{sol} = \frac{\int_{300~\mathrm{nm}}^{2500~\mathrm{nm}}T_\lambda I_\mathrm{AM1.5}(\lambda) d\lambda}{\int_{300~\mathrm{nm}}^{2500~\mathrm{nm}}I_\mathrm{AM1.5}(\lambda) d\lambda}
-\end{equation*}\]</div>
-</section>
-<section id="analisis-teorico-de-un-recubrimiento-low-e">
-<h3><span class="section-number">11.3.3. </span>Análisis teórico de un recubrimiento <em>low-E</em><a class="headerlink" href="#analisis-teorico-de-un-recubrimiento-low-e" title="Link to this heading">#</a></h3>
-<p>Simularemos un recubrimiento <em>low-E</em> con <code class="docutils literal notranslate"><span class="pre">empylib</span></code>. En este ejemplo, consideraremos tres bi-capas, cada una conformada de plata y <span class="math notranslate nohighlight">\(\mathrm{TiO_2}\)</span> de 8 nm y 30 nm de espesor, respectivamente. Asumiremos que el recubrimiento está ubicado en la parte trasera del vidrio. De esta forma, en la modelación consideramos vidrio como medio superior y aire en el inferior.</p>
-<p>Calculamos el desempeño de nuestro recubrimiento evaluando <span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span> y <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span>.</p>
-<div class="cell tag_hide-input docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell source</span>
-<span class="expanded">Hide code cell source</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transmitancia lumínica</span>
-<span class="n">Tlum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">rf</span><span class="o">.</span><span class="n">yCIE_lum</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span><span class="o">*</span><span class="n">T</span><span class="p">,</span><span class="n">lam</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">rf</span><span class="o">.</span><span class="n">yCIE_lum</span><span class="p">(</span><span class="n">lam</span><span class="p">),</span><span class="n">lam</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tranmitancia lumínica: </span><span class="si">%.1f%%</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">Tlum</span><span class="p">)</span>
-
-<span class="c1"># Ganancia solar</span>
-<span class="n">Tsolar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">rf</span><span class="o">.</span><span class="n">AM15</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span><span class="o">*</span><span class="n">T</span><span class="p">,</span><span class="n">lam</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">rf</span><span class="o">.</span><span class="n">AM15</span><span class="p">(</span><span class="n">lam</span><span class="p">),</span><span class="n">lam</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ganancia solar: </span><span class="si">%.1f%%</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">Tsolar</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</details>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tranmitancia lumínica: 73.1%
-Ganancia solar: 46.6%
-</pre></div>
-</div>
-</div>
-</div>
-<p>El resultado es un recubrimiento 73 / 47.</p>
-<p>En la industria los recubrientos varían dentro de estos valores. Sin embargo, tal como vemos en la simulación, reducir <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span> también afecta en <span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span>.</p>
-<p>La siguiente tabla muestra los datos técnicos de algunos recubrimientos low-E del fabricante <a class="reference external" href="https://www.iqglassuk.com/products/solar-control-glass/s62761/">IQ Glass</a>. En esta tabla T-vis corresponde a <span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span> y G-solar a <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span>:</p>
+<section id="fundamentos-de-tecnologias-de-manejo-radiativo">
+<h2><span class="section-number">11.3. </span>Fundamentos de tecnologías de manejo radiativo<a class="headerlink" href="#fundamentos-de-tecnologias-de-manejo-radiativo" title="Link to this heading">#</a></h2>
+<p>Para entender las estrategias de control térmico en edificaciones, es clave distinguir los actores participantes</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>Calsificación</p></th>
-<th class="head text-center"><p>T-vis</p></th>
-<th class="head text-center"><p>G-solar</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Tipo</p></th>
+<th class="head text-center"><p>Fuente aproximada</p></th>
+<th class="head text-center"><p>Rango espectral dominante</p></th>
+<th class="head text-center"><p>¿Qué controlar?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Radiación solar</p></td>
+<td class="text-center"><p>~5800 K (sol)</p></td>
+<td class="text-center"><p>0.3 – 2.5 μm (UV, vis, NIR)</p></td>
+<td class="text-center"><p>Ganancia solar</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Radiación térmica edificio</p></td>
+<td class="text-center"><p>~300 K (paredes, personas)</p></td>
+<td class="text-center"><p>5 – 30 μm (mid-IR)</p></td>
+<td class="text-center"><p>Pérdidas en invierno / emisión en verano</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Radiación térmica alrededores</p></td>
+<td class="text-center"><p>~300 K</p></td>
+<td class="text-center"><p>5 – 30 μm (mid-IR)</p></td>
+<td class="text-center"><p>Ganancia por radiación difusa</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Ventana atmosférica</p></td>
+<td class="text-center"><p>N/A</p></td>
+<td class="text-center"><p>8 – 13 μm (mid-IR)</p></td>
+<td class="text-center"><p>Disipación radiativa hacia el universo</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell tag_remove-input docutils container">
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="../_images/14a8baa0ad7a5025ad647bb0125f4b901cf9be0f1ceeb96de82ca5f86aff17d3.png" src="../_images/14a8baa0ad7a5025ad647bb0125f4b901cf9be0f1ceeb96de82ca5f86aff17d3.png" />
+</div>
+</div>
+<p>Como muestra la figura controlar la ganancia solar (UV + NIR) y controlar la emisión IR térmica son objetivos <em>distintos</em> que requieren propiedades ópticas distintas. Un material que bloquea el NIR solar no necesariamente refleja el IR térmico de 10 μm, y viceversa.</p>
+<p>Aproximando el espectro solar terrestre con el espectro de referencia AM1.5 (ASTM G173/NREL), la energía solar que llega a la superficie se reparte, como orden de magnitud, en:</p>
+<ul class="simple">
+<li><p><strong>3%</strong> radiación ultravioleta (UV, <span class="math notranslate nohighlight">\(\lambda &lt; 0.38\)</span> μm)</p></li>
+<li><p><strong>44%</strong> luz visible (<span class="math notranslate nohighlight">\(\lambda \in [0.38, 0.78]\)</span> μm)</p></li>
+<li><p><strong>53%</strong> infrarrojo cercano (NIR, <span class="math notranslate nohighlight">\(\lambda \in [0.78, 2.5]\)</span> μm)</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Nota:</strong> La mayor parte del calor ganado por radiación solar en un recinto proviene del <strong>NIR</strong>, no del UV.</p>
+</div></blockquote>
+<p>La atmósfera terrestre es <strong>casi transparente</strong> en el rango <span class="math notranslate nohighlight">\(\lambda \in [8, 13]\)</span> μm. Esto tiene dos consecuencias importantes:</p>
+<ol class="arabic simple">
+<li><p>Los edificios pierden calor por radiación en este rango (noches frías).</p></li>
+<li><p>Materiales diseñados para emitir en esta banda pueden <strong>enfriarse por debajo de la temperatura ambiente</strong>, incluso bajo el sol.</p></li>
+</ol>
+</section>
+<section id="ventanas-y-control-solar">
+<h2><span class="section-number">11.4. </span>Ventanas y control solar<a class="headerlink" href="#ventanas-y-control-solar" title="Link to this heading">#</a></h2>
+<p>Las ventanas son el punto de mayor intercambio radiativo de la envolvente. Un vidrio simple claro tiene alta transmitancia solar, típicamente <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span> del orden de 0.75–0.86 según espesor y producto; para estimaciones de primer orden usaremos <span class="math notranslate nohighlight">\(T_\mathrm{sol} \approx 0.86\)</span>. Esto genera ganancias de calor no deseadas en verano y pérdidas en invierno.</p>
+<p>Los <strong>recubrimientos y filmes de control solar</strong> modifican la transmitancia espectral del vidrio para reducir estas ganancias y pérdidas de forma selectiva.</p>
+<section id="metricas-de-desempeno">
+<h3><span class="section-number">11.4.1. </span>Métricas de desempeño<a class="headerlink" href="#metricas-de-desempeno" title="Link to this heading">#</a></h3>
+<p>Para comparar tecnologías de control solar, se usan métricas estandarizadas que resumen el desempeño espectral en un solo número. Las más importantes son:</p>
+<ul>
+<li><p><strong>Transmitancia lumínica</strong> (<span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span>): fracción de la luz visible que atraviesa el material, ponderada por la sensibilidad del ojo humano.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+T_\mathrm{lum} = \frac{\int_{380~\mathrm{nm}}^{780~\mathrm{nm}}T_\lambda\cdot y_\mathrm{CIE}(\lambda)\, d\lambda}{\int_{380~\mathrm{nm}}^{780~\mathrm{nm}}y_\mathrm{CIE}(\lambda)\, d\lambda}
+\end{equation*}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(y_\mathrm{CIE}(\lambda)\)</span> es la función de eficiencia luminosa fotópica del ojo humano. Un vidrio claro tiene <span class="math notranslate nohighlight">\(T_\mathrm{lum} \approx 88\%\)</span>.</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>Ganancia solar</strong> (<span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span>, relacionada con el SHGC):</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+T_\mathrm{sol} = \frac{\int_{300~\mathrm{nm}}^{2500~\mathrm{nm}}T_\lambda\cdot I_\mathrm{AM1.5}(\lambda)\, d\lambda}{\int_{300~\mathrm{nm}}^{2500~\mathrm{nm}}I_\mathrm{AM1.5}(\lambda)\, d\lambda}
+\end{equation*}\]</div>
+<p>El <strong>SHGC</strong> (<em>Solar Heat Gain Coefficient</em>) incluye además la fracción de energía absorbida y re-irradiada hacia el interior. En este curso usamos <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span> como aproximación. Valores bajos de <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span> reducen la carga de enfriamiento en verano.</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>Valor U</strong> (<em>U-value</em>): coeficiente global de transferencia de calor [W/m²·K]. Mide las pérdidas térmicas totales por conducción y convección, no por radiación.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+U = \frac{1}{R_\mathrm{total}} = \frac{1}{h_\mathrm{int}^{-1} + \sum_i (d_i/k_i) + h_\mathrm{ext}^{-1}}
+\end{equation*}\]</div>
+<p>Un valor U bajo implica mejor aislación térmica. Relevante principalmente en climas fríos para reducir pérdidas de calefacción.</p>
+</li>
+</ul>
+<ul class="simple">
+<li><p><strong>Emisividad térmica</strong> (<span class="math notranslate nohighlight">\(\varepsilon\)</span>): fracción de emisión IR respecto a un cuerpo negro ideal, ponderada en el rango mid-IR (~8–13 μm). Como referencia, el vidrio sin recubrimiento tiene <span class="math notranslate nohighlight">\(\varepsilon \approx 0.84\)</span>, mientras que recubrimientos Low-E comerciales pueden bajar a <span class="math notranslate nohighlight">\(\varepsilon \approx 0.02\)</span>–<span class="math notranslate nohighlight">\(0.10\)</span>.</p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>Reflectancia solar</strong> (<span class="math notranslate nohighlight">\(\rho_\mathrm{sol}\)</span>): fracción del espectro solar total reflejado. Métrica principal para techos y superficies opacas.</p></li>
+</ul>
+</section>
+<section id="recubrimientos-low-e">
+<h3><span class="section-number">11.4.2. </span>Recubrimientos Low-E<a class="headerlink" href="#recubrimientos-low-e" title="Link to this heading">#</a></h3>
+<p>Los recubrimientos <em>Low-E</em> (<em>Low Emissivity</em>) son hoy la tecnología de control solar en ventanas <strong>más utilizada en el mercado</strong>.</p>
+<a class="reference internal image-reference" href="../_images/low-E_glass_spectrum.png"><img alt="../_images/low-E_glass_spectrum.png" class="align-center" src="../_images/low-E_glass_spectrum.png" style="width: 300px;" />
+</a>
+<center><small><b>Figura 7.</b> Efecto espectral de un recubrimiento Low-E: alta transmitancia visible y bloqueo del NIR solar (<a href="https://www.fortemp.com/news/triple_silver_glass_tempering">Fortemp</a>).</small></center><p>Están diseñados para cumplir dos funciones distintas a la vez:</p>
+<ol class="arabic simple">
+<li><p><strong>Bloquear NIR solar</strong> (0.7–2.5 μm): reduce la ganancia solar en verano → menor carga de enfriamiento.</p></li>
+<li><p><strong>Reflejar IR térmico</strong> (8–13 μm): reduce las pérdidas por emisión en invierno → menor carga de calefacción.</p></li>
+</ol>
+<section id="composicion-y-mecanismo-optico">
+<h4><span class="section-number">11.4.2.1. </span>Composición y mecanismo óptico<a class="headerlink" href="#composicion-y-mecanismo-optico" title="Link to this heading">#</a></h4>
+<p>Los recubrimientos Low-E consisten en <strong>capas nanométricas alternadas de metal (plata) y óxidos dieléctricos</strong> (TiO<span class="math notranslate nohighlight">\(_2\)</span>, ZnO, SiO<span class="math notranslate nohighlight">\(_2\)</span>), depositadas sobre vidrio.</p>
+<a class="reference internal image-reference" href="../_images/low-E_coating_composition.png"><img alt="../_images/low-E_coating_composition.png" class="align-center" src="../_images/low-E_coating_composition.png" style="width: 700px;" />
+</a>
+<center><small><b>Figura 8.</b> Composición multicapa de un recubrimiento Low-E: capas alternadas de plata y óxidos metálicos sobre vidrio (<a href="https://www.fortemp.com/news/triple_silver_glass_tempering">Fortemp</a>).</small></center><p>El mecanismo se basa en <strong>interferencia óptica</strong>:</p>
+<ul class="simple">
+<li><p>En el <strong>espectro visible</strong>: las múltiples capas generan interferencia destructiva de la reflectancia → aumenta la transmitancia → vidrio claro.</p></li>
+<li><p>En el <strong>NIR solar</strong> (λ &gt; 0.7 μm): el efecto de interferencia desaparece → la plata refleja → bloquea ganancia solar.</p></li>
+<li><p>En el <strong>mid-IR térmico</strong> (λ &gt; 5 μm): la plata refleja eficientemente → baja emisividad → reduce pérdidas invernales.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/low-E_coating_spectrum.png"><img alt="../_images/low-E_coating_spectrum.png" class="align-center" src="../_images/low-E_coating_spectrum.png" style="width: 600px;" />
+</a>
+<center><small><b>Figura 9.</b> Transmitancia espectral de una ventana con recubrimiento Low-E: alta en el visible, reducida en el NIR solar (<a href="https://www.jinjing-glass.com/energy-efficient-low-e-coated-glass-product/">JinJing Glass</a>).</small></center></section>
+<section id="tipos-de-fabricacion">
+<h4><span class="section-number">11.4.2.2. </span>Tipos de fabricación<a class="headerlink" href="#tipos-de-fabricacion" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Tipo</p></th>
+<th class="head text-center"><p>Proceso</p></th>
+<th class="head text-center"><p>Durabilidad relativa</p></th>
+<th class="head text-center"><p>Ventajas</p></th>
+<th class="head text-center"><p>Limitaciones</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>Hard-coat</strong> (pirólisis)</p></td>
+<td class="text-center"><p>CVD durante la fabricación del vidrio, a alta temperatura</p></td>
+<td class="text-center"><p>Alta; queda químicamente integrado al vidrio</p></td>
+<td class="text-center"><p>Resistente a manipulación; puede quedar expuesto en ciertas configuraciones</p></td>
+<td class="text-center"><p>Menor selectividad espectral que muchos soft-coats modernos</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Soft-coat</strong> (sputtering magnético)</p></td>
+<td class="text-center"><p>Post-fabricación; se sella normalmente dentro de una unidad de vidrio aislante (IGU)</p></td>
+<td class="text-center"><p>Alta si queda encapsulado</p></td>
+<td class="text-center"><p>Múltiples capas; alta selectividad visible/NIR; estándar en alto desempeño</p></td>
+<td class="text-center"><p>Delicado antes del ensamblaje; requiere IGU para proteger el coating</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>Film polimérico</strong> (PET tintado, metalizado, cerámico o selectivo)</p></td>
+<td class="text-center"><p>Lámina aplicada sobre vidrio existente, interior o exterior</p></td>
+<td class="text-center"><p>Depende de exposición UV, humedad, limpieza e instalación</p></td>
+<td class="text-center"><p>Retrofit; no requiere reemplazar la ventana</p></td>
+<td class="text-center"><p>Puede degradarse o delaminarse; puede producir estrés térmico si se instala en vidrio inadecuado</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Fuentes: NREL <em>Window Film</em> (2024); DOE Energy Saver; NREL <em>Pathway to Zero Energy Windows</em> (2022).</p>
+</section>
+<section id="analisis-teorico">
+<h4><span class="section-number">11.4.2.3. </span>Análisis teórico<a class="headerlink" href="#analisis-teorico" title="Link to this heading">#</a></h4>
+<p>Simularemos un recubrimiento Low-E con tres bi-capas de plata (8 nm) y TiO<span class="math notranslate nohighlight">\(_2\)</span> (30 nm) sobre vidrio, y calcularemos <span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span> y <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">empylib.nklib</span> <span class="k">as</span> <span class="nn">nk</span>
+<span class="kn">import</span> <span class="nn">empylib.waveoptics</span> <span class="k">as</span> <span class="nn">wv</span>
+<span class="kn">import</span> <span class="nn">empylib.ref_spectra</span> <span class="k">as</span> <span class="nn">rf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">FuncFormatter</span>
+
+<span class="c1"># inicializamos índices de refracción y espectro</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">3.0</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1"># espectro de longitudes de onda (um)</span>
+<span class="n">n_air</span>    <span class="o">=</span> <span class="mf">1.0</span>                   <span class="c1"># índice de refracción del aire</span>
+<span class="n">n_glass</span>  <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">SiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>          <span class="c1"># vidrio (SiO2)</span>
+<span class="n">n_silver</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">silver</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>        <span class="c1"># plata</span>
+<span class="n">n_mox</span>    <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">TiO2</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span>          <span class="c1"># óxido metálico (TiO2)</span>
+<span class="n">d_silver</span> <span class="o">=</span> <span class="mf">0.008</span>                 <span class="c1"># espesor capa de plata (um)</span>
+<span class="n">d_mox</span>    <span class="o">=</span> <span class="mf">0.030</span>                 <span class="c1"># espesor capa de TiO2 (um)</span>
+
+<span class="c1"># construimos estructura multicapas (3 bi-capas Ag/TiO2)</span>
+<span class="n">n_layers</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">n_lowE</span> <span class="o">=</span> <span class="p">[</span><span class="n">n_glass</span><span class="p">]</span>
+<span class="n">d_lowE</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_layers</span><span class="p">):</span>
+    <span class="n">n_lowE</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n_silver</span><span class="p">)</span>
+    <span class="n">n_lowE</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n_mox</span><span class="p">)</span>
+    <span class="n">d_lowE</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d_silver</span><span class="p">)</span>
+    <span class="n">d_lowE</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d_mox</span><span class="p">)</span>
+<span class="n">n_lowE</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n_air</span><span class="p">)</span>
+
+<span class="c1"># calculamos reflectancia y transmitancia</span>
+<span class="n">R</span><span class="p">,</span> <span class="n">T</span> <span class="o">=</span> <span class="n">wv</span><span class="o">.</span><span class="n">multilayer</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">aoi</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">N_layers</span><span class="o">=</span><span class="n">n_lowE</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">thickness</span><span class="o">=</span><span class="n">d_lowE</span><span class="p">,</span>
+                      <span class="n">N_above</span><span class="o">=</span><span class="n">n_lowE</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">N_below</span><span class="o">=</span><span class="n">n_lowE</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])[:</span><span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># gráfico</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="s1">&#39;-r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Reflectancia&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Transmitancia&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">R</span> <span class="o">-</span> <span class="n">T</span><span class="p">,</span> <span class="s1">&#39;-k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Absortancia&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax1</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">rf</span><span class="o">.</span><span class="n">AM15</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span><span class="o">/</span><span class="mi">1000</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;AM 1.5&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">lam</span><span class="p">,</span> <span class="n">rf</span><span class="o">.</span><span class="n">yCIE_lum</span><span class="p">(</span><span class="n">lam</span><span class="p">),</span>  <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$y_\mathrm</span><span class="si">{CIE}</span><span class="s1">$&#39;</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Longitud de onda ($\mu$m)&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">lam</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">lam</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="n">bottom</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Simulación recubrimiento Low-E (3 bi-capas Ag/TiO₂)&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">FuncFormatter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.16g}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/95ad6f084b0afee48f3a0f497e198649f432af5fa089842b9338d4edeb8ea3d3.png" src="../_images/95ad6f084b0afee48f3a0f497e198649f432af5fa089842b9338d4edeb8ea3d3.png" />
+</div>
+</div>
+<p><strong>Desempeño del recubrimiento simulado</strong></p>
+<p>Calculamos <span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span> y <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span> integrando la transmitancia espectral con los pesos correspondientes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transmitancia lumínica (visible, ponderada por y_CIE)</span>
+<span class="n">Tlum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">rf</span><span class="o">.</span><span class="n">yCIE_lum</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span><span class="o">*</span><span class="n">T</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">rf</span><span class="o">.</span><span class="n">yCIE_lum</span><span class="p">(</span><span class="n">lam</span><span class="p">),</span> <span class="n">lam</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Transmitancia lumínica: </span><span class="si">%.1f%%</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">Tlum</span><span class="p">)</span>
+
+<span class="c1"># Ganancia solar (solar, ponderada por AM1.5)</span>
+<span class="n">Tsolar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">rf</span><span class="o">.</span><span class="n">AM15</span><span class="p">(</span><span class="n">lam</span><span class="p">)</span><span class="o">*</span><span class="n">T</span><span class="p">,</span> <span class="n">lam</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">trapz</span><span class="p">(</span><span class="n">rf</span><span class="o">.</span><span class="n">AM15</span><span class="p">(</span><span class="n">lam</span><span class="p">),</span> <span class="n">lam</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ganancia solar (T_sol): </span><span class="si">%.1f%%</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">Tsolar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Transmitancia lumínica: 73.1%
+Ganancia solar (T_sol): 46.6%
+</pre></div>
+</div>
+</div>
+</div>
+<p>El recubrimiento simulado corresponde a una clasificación <strong>73/47</strong> (<span class="math notranslate nohighlight">\(T_\text{lum}\)</span>/G-solar): mantiene 73% de transmitancia visible pero reduce la ganancia solar al 47%.</p>
+<p>En la industria, la notación T-vis/G-solar indica exactamente este balance. La siguiente tabla muestra datos técnicos reales del fabricante <a class="reference external" href="https://www.iqglassuk.com/products/solar-control-glass/s62761/">IQ Glass</a>:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Clasificación</p></th>
+<th class="head text-center"><p>T-vis (<span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span>)</p></th>
+<th class="head text-center"><p>G-solar (<span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span>)</p></th>
 <th class="head text-center"><p>Reflectancia exterior</p></th>
 </tr>
 </thead>
@@ -607,21 +806,20 @@ Ganancia solar: 46.6%
 </tbody>
 </table>
 </div>
+<blockquote>
+<div><p><strong>Nota:</strong> Reducir <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span> inevitablemente afecta <span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span>: existe un <strong>trade-off</strong> entre bloquear la ganancia solar y mantener la transparencia visual. Los vidrios más selectivos minimizan este trade-off.</p>
+</div></blockquote>
 </section>
-<section id="fabricacion-y-tipos">
-<h3><span class="section-number">11.3.4. </span>Fabricación y tipos<a class="headerlink" href="#fabricacion-y-tipos" title="Link to this heading">#</a></h3>
-<p>La fabricación del recubrimiento low-E puede ser:</p>
-<ul class="simple">
-<li><p><strong>Aplicación directa mediante pirólisis (<em>hard-coated</em>)</strong> Este proceso se realiza antes de finalizar la fabricación del vidrio, aprovechando las altas temperaturas del material (<span class="math notranslate nohighlight">\(\sim\)</span> 600°C) para depositar el recubrimiento mediante <em>Chemical Vapor Deposition</em> (CVD).* El recubrimiento es más resistente a la oxidación y por lo tanto tiene una duración mayor comparada con otros métodos. Sin embargo, el proceso premite aplicar pocas capas de recubrimiento</p></li>
-</ul>
-<ul class="simple">
-<li><p><strong>Aplicación directa en el vidrio pre-fabricado (<em>soft-coated</em>)</strong> Este proceso se realiza luego de fabricar el vidrio. El recubrimiento se aplica mediante pulverización catódica o <em>magnétic sputtering</em>. Es el método más utilizado, ya que permite aplicar multiples capas a lo largo de la línea de producción. La adhesión y resitencia del recubrimiento, sin embargo, es menor al método <em>hard-coated</em>.</p></li>
-</ul>
-<ul class="simple">
-<li><p><strong>Recubrimientos adhesivos en base a polímeros</strong>. EL recubrimiento se fabrica mediante múltiples etapas de metalización sobre sustrato de polímero (comúnmente, PET). El resultado es un recubrimiento adhesivo y flexible que puede ser aplicado directamente sobre las ventanas corrientes. Sin embargo, debido al uso de polímeros, el recubrimiento sufre una degradación más rápida que lo hace menos resistente en comparación con los dos métodos anteriores.</p></li>
-</ul>
-<p>El siguiente video muestra el proceso de producción de un vidrio con recubrimiento low-E con el método <em>soft-coated</em>.</p>
-<div class="cell tag_remove-input docutils container">
+<section id="soft-coat-low-e-glass">
+<h4><span class="section-number">11.4.2.4. </span>Soft-coat low-E glass<a class="headerlink" href="#soft-coat-low-e-glass" title="Link to this heading">#</a></h4>
+<p>El siguiente video muestra el proceso de fabricación de un vidrio Low-E con método <em>soft-coat</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;p9H0ahGVRMM&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
 <div class="output text_html">
         <iframe
@@ -635,87 +833,400 @@ Ganancia solar: 46.6%
         </div></div>
 </div>
 </section>
+<section id="filmes-polimericos">
+<h4><span class="section-number">11.4.2.5. </span>Filmes poliméricos<a class="headerlink" href="#filmes-polimericos" title="Link to this heading">#</a></h4>
+<p>Los <strong>filmes de control solar</strong> son láminas delgadas —generalmente de polímero PET con recubrimientos metálicos o cerámicos— que se adhieren directamente sobre ventanas existentes. Son la solución de <strong>retrofit</strong> más accesible para edificios ya construidos.</p>
+<p>Los filmes de control solar se clasifican mejor por su función óptica y constructiva. NREL (2024) identifica, entre otros, los siguientes tipos:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Tipo</p></th>
+<th class="head text-center"><p>Mecanismo principal</p></th>
+<th class="head text-center"><p>Uso típico</p></th>
+<th class="head text-center"><p>Observaciones</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>Reflectivo</strong></p></td>
+<td class="text-center"><p>Refleja parte de la radiación solar; aspecto espejo</p></td>
+<td class="text-center"><p>Alta reducción de ganancia solar y deslumbramiento</p></td>
+<td class="text-center"><p>Puede aumentar reflectancia visible exterior</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Dual-reflective</strong></p></td>
+<td class="text-center"><p>Capa exterior más reflectiva y cara interior más neutra</p></td>
+<td class="text-center"><p>Control solar manteniendo mejor vista nocturna</p></td>
+<td class="text-center"><p>Compromiso entre privacidad, estética y control solar</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>Neutral</strong></p></td>
+<td class="text-center"><p>Control solar con apariencia menos visible</p></td>
+<td class="text-center"><p>Retrofit con menor impacto estético</p></td>
+<td class="text-center"><p>La reducción de SHGC depende del producto</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Low-E film</strong></p></td>
+<td class="text-center"><p>Reduce U-factor y mejora rechazo térmico</p></td>
+<td class="text-center"><p>Climas templados o ventanas existentes con pérdidas térmicas</p></td>
+<td class="text-center"><p>Puede ayudar más en invierno que un film solo reflectivo</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>Espectralmente selectivo</strong></p></td>
+<td class="text-center"><p>Bloquea bandas asociadas a calor solar sin penalizar tanto la luz visible</p></td>
+<td class="text-center"><p>Fachadas donde se busca luz natural y bajo SHGC</p></td>
+<td class="text-center"><p>Suele ser la opción más atractiva cuando se quiere conservar transparencia</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Cerámico</strong></p></td>
+<td class="text-center"><p>Control solar sin capa metálica</p></td>
+<td class="text-center"><p>Zonas costeras o donde importa corrosión/RF</p></td>
+<td class="text-center"><p>Baja reflectancia visible y buena estabilidad</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Fuente: NREL <em>End-Use Savings Shapes Measure Documentation: Window Film</em> (2024).</p>
+<p>Las ventajas de estos filmes de control solar incluyen:</p>
+<ul class="simple">
+<li><p><strong>Retrofit</strong>: no requiere reemplazar las ventanas existentes → costo mucho menor que cambiar el sistema completo de ventana.</p></li>
+<li><p>Puede reducir SHGC y deslumbramiento en edificios existentes.</p></li>
+<li><p>Puede disminuir la exposición UV de mobiliario, textiles y superficies interiores.</p></li>
+<li><p>Es especialmente útil en climas con temporadas largas de enfriamiento; en climas fríos puede reducir también la ganancia solar útil de invierno.</p></li>
+</ul>
+<p>Por otro lado, las limitaciones incluyen:</p>
+<ul class="simple">
+<li><p><strong>Vida útil más corta</strong> que un Low-E integrado en vidrio doble (ver tabla).</p></li>
+<li><p>Degradación por UV, humedad y ciclos térmicos; riesgo de delaminación y burbujas.</p></li>
+<li><p>Un film absorbente puede calentar el vidrio y causar <strong>stress térmico</strong> (riesgo de fractura en vidrios con marco metálico).</p></li>
+<li><p>En climas con invierno frío, reducir <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span> también reduce la <strong>ganancia solar útil en invierno</strong>.</p></li>
+<li><p>Instalación profesional recomendada para maximizar durabilidad.</p></li>
+</ul>
+</section>
+<section id="durabilidad-y-condiciones-de-uso">
+<h4><span class="section-number">11.4.2.6. </span>Durabilidad y condiciones de uso<a class="headerlink" href="#durabilidad-y-condiciones-de-uso" title="Link to this heading">#</a></h4>
+<p>La documentación DOE/NREL no entrega una vida útil universal para todos los filmes o coatings, porque depende del producto, instalación y exposición. Para seleccionar una solución conviene distinguir el mecanismo de degradación dominante:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Tecnología</p></th>
+<th class="head text-center"><p>Factor crítico</p></th>
+<th class="head text-center"><p>Comentario de diseño</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Film interior</p></td>
+<td class="text-center"><p>Temperatura del vidrio, humedad, adhesivo, limpieza</p></td>
+<td class="text-center"><p>Menor exposición que un film exterior, pero puede elevar temperatura del vidrio</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Film exterior</p></td>
+<td class="text-center"><p>UV, lluvia, abrasión, sales, limpieza</p></td>
+<td class="text-center"><p>Puede mejorar desempeño solar en ciertos casos, pero exige mayor mantención</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Low-E soft-coat en IGU</p></td>
+<td class="text-center"><p>Sellado perimetral y protección del coating</p></td>
+<td class="text-center"><p>El coating debe quedar protegido dentro de la cámara</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Low-E hard-coat</p></td>
+<td class="text-center"><p>Resistencia superficial y compatibilidad con instalación</p></td>
+<td class="text-center"><p>Más robusto a manipulación, con menor selectividad que soft-coat</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Electrocrómico</p></td>
+<td class="text-center"><p>ciclos de switching, uniformidad, sellado, control</p></td>
+<td class="text-center"><p>DOE menciona normas ASTM de envejecimiento acelerado para validar durabilidad</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Fuentes: NREL <em>Window Film</em> (2024); DOE EC Window Report (2022/2023); DOE Energy Saver.</p>
+</section>
 </section>
 <section id="ventanas-inteligentes">
-<h2><span class="section-number">11.4. </span>Ventanas inteligentes<a class="headerlink" href="#ventanas-inteligentes" title="Link to this heading">#</a></h2>
-<p>Las ventanas inteligentes son capaces de modificar sus propiedades frente a estímulos eléctricos, lumínicos, térmicos o mecánicos, para controlar el paso de la radiación.</p>
-<a class="reference internal image-reference" href="../_images/g-smart-window-types-alt.jpg"><img alt="../_images/g-smart-window-types-alt.jpg" class="align-center" src="../_images/g-smart-window-types-alt.jpg" style="width: 600px;" />
-</a>
+<h3><span class="section-number">11.4.3. </span>Ventanas inteligentes<a class="headerlink" href="#ventanas-inteligentes" title="Link to this heading">#</a></h3>
+<p>Los recubrimientos Low-E y los filmes de control solar tienen propiedades fijas: funcionan igual en verano que en invierno. Las <strong>ventanas inteligentes</strong> (<em>switchable glazing</em>) van más allá: pueden cambiar sus propiedades ópticas en respuesta a un estímulo, adaptándose a las condiciones del momento.</p>
+<p>Dependiendo de la aplicación, una ventana inteligente puede ser diseñada para regular el paso de la radiación solar visible, UV o del infrarrojo cercano (NIR).</p>
 <p>Distinguimos dos tipos:</p>
 <ul class="simple">
 <li><p><strong>termocrómicas</strong> responden a cambios de temperatura</p></li>
 <li><p><strong>eléctrocrómicas</strong> responden a cambios en el potencial eléctrico (voltaje).</p></li>
 </ul>
-<p>Dependiendo de la aplicación, una ventana inteligente puede ser diseñada para regular el paso de la radiación solar visible, UV o del infrarojo cercano (NIR).</p>
-<p>Debido a su caracter pasivo, en esta unidad nos enfocaremos en <strong>ventanas termocrómicas para modulación de radiación NIR</strong>.</p>
-<section id="fundamentos-de-las-ventanas-termocromicas">
-<h3><span class="section-number">11.4.1. </span>Fundamentos de las ventanas termocrómicas<a class="headerlink" href="#fundamentos-de-las-ventanas-termocromicas" title="Link to this heading">#</a></h3>
-<p>Las ventanas termocrómicas están diseñadas para regular el paso la radiación térmica (infrarojo cercano) solar entre el verano y el invierno.</p>
-<a class="reference internal image-reference" href="../_images/smart_window_schematic.png"><img alt="../_images/smart_window_schematic.png" class="align-center" src="../_images/smart_window_schematic.png" style="width: 800px;" />
+<a class="reference internal image-reference" href="../_images/g-smart-window-types-alt.jpg"><img alt="../_images/g-smart-window-types-alt.jpg" class="align-center" src="../_images/g-smart-window-types-alt.jpg" style="width: 500px;" />
 </a>
-<p>Para producir este efecto se utilizan <strong>materiales termocrómicos con cambio de fase aislante-conductor eléctrico.</strong></p>
-<p>El material más utilizado es el dióxido de vanadio (VO<span class="math notranslate nohighlight">\(_2\)</span>).</p>
-<a class="reference internal image-reference" href="../_images/vanadium_dioxide.png"><img alt="../_images/vanadium_dioxide.png" class="align-center" src="../_images/vanadium_dioxide.png" style="width: 400px;" />
-</a>
-<p>Sobre la temperatura de transición, el VO<span class="math notranslate nohighlight">\(_2\)</span> se comporta como un conductor eléctrico, con alta reflectancia en el espectro NIR. Bajo la temperatura de transición, el material se comporta como aislante térmico y la reflectancia dismuye.</p>
-<p>La temperatura de transición intrínseca del VO<span class="math notranslate nohighlight">\(_2\)</span> es ~70°C. Sin embargo, <strong>esta temperatura puede ser modificada mediante dopaje</strong> desde los 70°C hasta cerca de los 10°C</p>
+<center><small><b>Figura 10.</b> Tipos de ventanas inteligentes y su principio de operación (<a href="https://www.energystar.gov">ENERGY STAR</a>).</small></center><section id="materiales-electrocromicos">
+<h4><span class="section-number">11.4.3.1. </span>Materiales electrocrómicos<a class="headerlink" href="#materiales-electrocromicos" title="Link to this heading">#</a></h4>
+<p>Entre las ventanas inteligentes, los <strong>electrocrómicos</strong> (EC) son actualmente la tecnología con mayor penetración comercial en edificaciones.</p>
+<p>Una ventana electrocrómicas consiste en un vidrio doble con una estructura multicapa activa:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{vidrio} \;|\; \underbrace{\mathrm{ITO}}_{\text{electrodo}} \;|\; \underbrace{\mathrm{WO_3}}_{\text{capa EC}} \;|\; \underbrace{\text{conductor iónico}}_{\text{electrolito}} \;|\; \underbrace{\mathrm{NiO}}_{\text{contraelectrodo}} \;|\; \underbrace{\mathrm{ITO}}_{\text{electrodo}} \;|\; \mathrm{vidrio}\]</div>
+<p>Al aplicar un voltaje de <strong>1–5 V DC</strong>, iones <span class="math notranslate nohighlight">\(\text{Li}^+\)</span> en el electrolito se intercalan en la capa de <span class="math notranslate nohighlight">\(\text{WO}_3\)</span>, cambiando su estado de oxidación:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\mathrm{WO_3~(transparente)} + x\,\mathrm{Li}^+ + x\,e^- \;\rightleftharpoons\; \mathrm{Li}_x\mathrm{WO_3~(azulado, absorbente)}
+\end{equation*}\]</div>
+<p>El proceso es <strong>reversible</strong> y el estado tintado puede mantenerse con bajo consumo eléctrico. Como referencia de diseño, NREL (2022) plantea para ventanas dinámicas un objetivo de baja potencia de operación: menor que 3 W/m², o menor que 72 Wh/m² por día, con alimentación de bajo voltaje (3–5 V DC).</p>
 </section>
-<section id="fabricacion-y-desempeno">
-<h3><span class="section-number">11.4.2. </span>Fabricación y desempeño<a class="headerlink" href="#fabricacion-y-desempeno" title="Link to this heading">#</a></h3>
-<p>Las ventanas termocrómicas operan agregando VO<span class="math notranslate nohighlight">\(_2\)</span> en pequeñas cantidades. Esto puede ser mediate una capa delgada sobre vidrio, o mediante particulas dispersas en un polímero transparente.</p>
-<a class="reference internal image-reference" href="../_images/vo2_smart_windows.png"><img alt="../_images/vo2_smart_windows.png" class="align-center" src="../_images/vo2_smart_windows.png" style="width: 700px;" />
-</a>
-<p>El desempeño de una ventana inteligente se caracteriza por la transmitancia lumínica (<span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span>), y la modulación de transmitancia solar (<span class="math notranslate nohighlight">\(\Delta T_\mathrm{sol} = T_\mathrm{sol}^\mathrm{frio} - T_\mathrm{sol}^\mathrm{caliente}\)</span>)</p>
-<p>Además del VO<span class="math notranslate nohighlight">\(_2\)</span> existen otros materiales estudiados en ventanas inteligentes, tales como los hidrogeles y las peroskitas.</p>
-<a class="reference internal image-reference" href="../_images/smart-window_table.png"><img alt="../_images/smart-window_table.png" class="align-center" src="../_images/smart-window_table.png" style="width: 600px;" />
-</a>
-<p>Dependiendo de las condiciones del clima, se estima que estas ventanas pueden reducir entre 25-80% el consumo eléctrico en sistemas de acondicionamiento de ambientes.</p>
+<section id="capacidad-de-modulacion">
+<h4><span class="section-number">11.4.3.2. </span>Capacidad de modulación<a class="headerlink" href="#capacidad-de-modulacion" title="Link to this heading">#</a></h4>
+<p>Una ventana EC no tiene un único valor de desempeño: varía entre un estado claro y uno tintado. Como referencia de diseño:</p>
+<ul class="simple">
+<li><p>NREL (2022) usa para ventanas dinámicas de alto desempeño un rango operativo de SHGC de aproximadamente <strong>0.05–0.65</strong>.</p></li>
+<li><p>IEA (<em>Innovation Gaps: Buildings</em>) identifica como prioridad desarrollar vidrios dinámicos con SHGC variable de aproximadamente <strong>0.08–0.65</strong>.</p></li>
+<li><p>Revisiones recientes de ventanas inteligentes señalan que, para aplicaciones reales en edificios, son deseables alta transmitancia visible en estado claro, contraste claro/oscuro suficiente, switching de minutos y estabilidad de largo plazo.</p></li>
+</ul>
+<p>Esto permite controlar tanto el <strong>deslumbramiento</strong> como la <strong>ganancia solar</strong>, pero siempre existe un balance con luz natural, confort visual, color residual y estrategia de control.</p>
+</section>
+<section id="beneficios-en-edificaciones">
+<h4><span class="section-number">11.4.3.3. </span>Beneficios en edificaciones<a class="headerlink" href="#beneficios-en-edificaciones" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>Confort visual:</strong> elimina el deslumbramiento sin necesidad de persianas mecánicas.</p></li>
+<li><p><strong>Reducción de carga de enfriamiento:</strong> SHGC controlable según la hora y el clima.</p></li>
+<li><p><strong>Gestión de demanda eléctrica:</strong> reducir ganancia solar en horas de pico eléctrico puede aliviar la red.</p></li>
+<li><p><strong>Sin piezas móviles:</strong> no requiere mantenimiento mecánico.</p></li>
+<li><p><strong>Integración con automatización:</strong> puede programarse según orientación, hora del día, sensores de irradiación o comandos del ocupante.</p></li>
+</ol>
+<p>Los beneficios energéticos medidos dependen fuertemente del edificio y del algoritmo de control.</p>
+<ul class="simple">
+<li><p>El DOE EC Window Report resume casos reales: en un caso de sala de reuniones se estimaron <strong>39–48%</strong> de ahorros combinados de iluminación y HVAC</p></li>
+<li><p>En un edificio GSA en Portland se reportó <strong>36%</strong> menos demanda anual de iluminación, aunque el HVAC anual aumentó levemente en horario laboral</p></li>
+<li><p>en estudios de vidrios cromogénicos controlados se estiman reducciones de <strong>10–20%</strong> en energía de HVAC+iluminación de zonas perimetrales y <strong>20–30%</strong> en demanda eléctrica peak.</p></li>
+</ul>
+</section>
+<section id="limitaciones-reales">
+<h4><span class="section-number">11.4.3.4. </span>Limitaciones reales<a class="headerlink" href="#limitaciones-reales" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Limitación</p></th>
+<th class="head text-center"><p>Evidencia / criterio de diseño</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Costo</p></td>
+<td class="text-center"><p>DOE identifica el costo como una barrera importante de adopción; NREL formula metas de reducción de costo para hacer viables ventanas dinámicas hacia 2030</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Velocidad de switching</p></td>
+<td class="text-center"><p>DOE señala tiempos de cambio relativamente largos; NREL plantea como meta menos de 3 min para ventanas grandes, pero muchas tecnologías reales son más lentas</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Color residual</p></td>
+<td class="text-center"><p>DOE menciona preferencia de usuarios por tonos neutros y apariencia uniforme</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Control</p></td>
+<td class="text-center"><p>El ahorro depende del algoritmo: minimizar HVAC, iluminación y deslumbramiento son objetivos que pueden entrar en conflicto</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Durabilidad</p></td>
+<td class="text-center"><p>Existen ensayos ASTM de envejecimiento acelerado; revisiones técnicas consideran deseable sostener desempeño por 20–30 años o decenas de miles de ciclos, pero eso no equivale a garantía universal</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Instalación</p></td>
+<td class="text-center"><p>Requiere integración eléctrica, sensores o BMS cuando se busca control automático</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p><strong>Criterio ingenieril:</strong> el costo de los electrocrómicos se justifica principalmente en fachadas vidriadas de edificios de oficinas en climas cálidos, donde el confort visual y la reducción de carga de enfriamiento generan retorno de inversión. En viviendas con presupuesto limitado, un Low-E de alta calidad en doble vidrio es más costo-efectivo.</p>
+</div></blockquote>
+</section>
+<section id="materiales-termocromicos">
+<h4><span class="section-number">11.4.3.5. </span>Materiales termocrómicos<a class="headerlink" href="#materiales-termocromicos" title="Link to this heading">#</a></h4>
+<p>Las ventanas <strong>termocrómicas</strong> responden a cambios de temperatura sin necesidad de electricidad.</p>
 <a class="reference internal image-reference" href="../_images/smart_windows_closing.jpg"><img alt="../_images/smart_windows_closing.jpg" class="align-center" src="../_images/smart_windows_closing.jpg" style="width: 800px;" />
 </a>
-<center> <small>Esquema de operación de ventanas termocrómicas (<a href="https://onlinelibrary.wiley.com/doi/full/10.1002/aenm.201602209">Fuente</a>) </small></center><p>Las ventanas inteligentes son una tecnología relativamente nueva. Hoy en día, la mayoría de los fabricantes se enfocan en ventanas electrocrómicas. Las termocrómicas aun requieren mejoras para extender su vida útil, debido a que los materiales termocrómicos son sencibles a la oxidación.</p>
-</section>
-</section>
-<section id="enfriamiento-radiativo-pasivo">
-<h2><span class="section-number">11.5. </span>Enfriamiento radiativo pasivo<a class="headerlink" href="#enfriamiento-radiativo-pasivo" title="Link to this heading">#</a></h2>
-<section id="principio-de-funcionamiento">
-<h3><span class="section-number">11.5.1. </span>Principio de funcionamiento<a class="headerlink" href="#principio-de-funcionamiento" title="Link to this heading">#</a></h3>
-<p>Los materiales para enfriamiento radiativo pasivo (PRC por sus siglas en inglés), consisten en materiales con reflectancia selectiva, es decir, alta reflectancia solar (&gt; 95%), y alta emisividad o transparencia en el espectro mid-IR.</p>
-<a class="reference internal image-reference" href="../_images/thermal_radiation_spectra.png"><img alt="../_images/thermal_radiation_spectra.png" class="align-center" src="../_images/thermal_radiation_spectra.png" style="width: 500px;" />
+<center><small><b>Figura 11.</b> Operación estacional de ventanas termocrómicas: bloqueo del NIR en verano y captación en invierno (<a href="https://onlinelibrary.wiley.com/doi/full/10.1002/aenm.201602209">Khandelwal, H. et al., Adv. Energy Mater. 7(14), 2017</a>).</small></center><p>El material más estudiado es el <strong>dióxido de vanadio (VO<span class="math notranslate nohighlight">\(_2\)</span>)</strong>. Este material exhibe una <strong>transición de fase aislante-conductor</strong> que altera drásticamente sus propiedades ópticas en el NIR:</p>
+<ul class="simple">
+<li><p><strong>Por debajo de <span class="math notranslate nohighlight">\(T_\mathrm{trans}\)</span></strong> (fase aislante): alta transmitancia NIR → permite ganancia solar.</p></li>
+<li><p><strong>Por encima de <span class="math notranslate nohighlight">\(T_\mathrm{trans}\)</span></strong> (fase conductora): alta reflectancia NIR → bloquea ganancia solar.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/vanadium_dioxide.png"><img alt="../_images/vanadium_dioxide.png" class="align-center" src="../_images/vanadium_dioxide.png" style="width: 800px;" />
 </a>
-<p>La reflectancia selectiva permite reducir las ganancias de calor por radiación solar, y al mismo tiempo, canalizar el calor radiativo disipado por los cuerpos a temperaturas bajo 400K.</p>
-<p>Según estudios, esta tecnología podría reducir el consumo eléctrico en sistemas de aire acondicionado entre 15-40%.</p>
-<p>El efecto de enfriamiento se intensifica en climas secos, ya que la atmósfera es transparente en el espectro <span class="math notranslate nohighlight">\(\lambda\in[8, 13]~\mu\mathrm{m}\)</span></p>
-<a class="reference internal image-reference" href="../_images/atmospheric_transmittance.png"><img alt="../_images/atmospheric_transmittance.png" class="align-center" src="../_images/atmospheric_transmittance.png" style="width: 500px;" />
+<center><small><b>Figura 12.</b> (izquierda) Transición de fase en VO₂ y su efecto en la reflectancia espectral. (derecha) Cambio en la estructura cristalina del VO₂ de monoclínico (M) a rutilo (R) inducida por cambio de fase y sus implicaciones en la conductividad eléctrica (<a href="https://doi.org/10.1039/C3CS35508J">Wu, C et al., Chem. Soc. Rev. 42(12), 2013: 5157–5183</a>).</small></center><p>La temperatura de transición intrínseca del VO<span class="math notranslate nohighlight">\(_2\)</span> es cercana a <strong>68–70°C</strong>, demasiado alta para confort en edificios. Puede reducirse hacia rangos cercanos a temperatura ambiente mediante dopaje (por ejemplo W o Mo), aunque esto puede afectar transmitancia visible, histéresis, durabilidad o modulación solar.</p>
+<p>Las ventanas <span class="math notranslate nohighlight">\(\text{VO}_2\)</span> se fabrican como una capa delgada depositada sobre vidrio, o como partículas dispersas en un polímero transparente:</p>
+<a class="reference internal image-reference" href="../_images/vo2_smart_windows.png"><img alt="../_images/vo2_smart_windows.png" class="align-center" src="../_images/vo2_smart_windows.png" style="width: 700px;" />
 </a>
-<p>Esto implica que parte del intercambio radiativo ocurre entre el cuerpo y el universo.</p>
-<p>En otras palabras, <strong>el enfriamiento radiativo utiliza al universo como sumidero térmico</strong></p>
-<p>Como resultado <strong>el material es capaz de alcanzar temperaturas de equilibrio bajo la temperatura ambiente a plena luz del día</strong>.</p>
-<p>El enfriamiento radiativo pasivo es un mecanismo que ocurre naturalmente en climas secos. Este fenómeno explica las altas fluctuaciones térmicas que ocurren en el desierto entre el día y la noche.</p>
+<center><small><b>Figura 13.</b> Diseños a escala laboratorio de recubrimientos termocrómicos de VO₂ y modulación de transmitancia medida en espectrofotómetro UV-vis-NIR.</small></center><p>El desempeño se cuantifica mediante:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span>: debe ser alto en ambas fases para ser útil visualmente.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta T_\mathrm{sol} = T_\mathrm{sol}^\mathrm{frío} - T_\mathrm{sol}^\mathrm{caliente}\)</span>: modulación de ganancia solar. En prototipos de ventanas inteligentes, una modulación de varios puntos porcentuales ya es relevante; valores sobre ~10% son atractivos solo si se mantienen buena transparencia, color aceptable y durabilidad.</p></li>
+</ul>
+<p>Además del VO<span class="math notranslate nohighlight">\(_2\)</span> existen otros materiales estudiados en ventanas inteligentes, tales como los hidrogeles y las perovskitas.</p>
+<a class="reference internal image-reference" href="../_images/smart-window_table.png"><img alt="../_images/smart-window_table.png" class="align-center" src="../_images/smart-window_table.png" style="width: 600px;" />
+</a>
+<center><small><b>Figura 14.</b> Comparación de transmitancia lumínica (Tlum) y modulación solar (DTsol) para distintos materiales de ventanas inteligentes.</small></center><p>El mercado de ventanas inteligentes para edificaciones está dominado por electrocrómicos. Los recubrimientos termocrómicos de VO<span class="math notranslate nohighlight">\(_2\)</span> siguen más cerca de I+D o nichos específicos porque muchos prototipos sacrifican una o más variables críticas:</p>
+<ul class="simple">
+<li><p>Temperatura de transición difícil de ubicar exactamente en el rango útil.</p></li>
+<li><p>Transmitancia visible y color no siempre compatibles con confort visual.</p></li>
+<li><p>Histéresis, oxidación y estabilidad de largo plazo aún desafiantes.</p></li>
+</ul>
 </section>
-<section id="prc-en-la-naturaleza">
-<h3><span class="section-number">11.5.2. </span>PRC en la naturaleza<a class="headerlink" href="#prc-en-la-naturaleza" title="Link to this heading">#</a></h3>
-<p>Algunos seres vivos utilizan este mecanismo para enfriar su cuerpo naturalmente. Tal es el caso de las <a class="reference external" href="https://www.science.org/doi/10.1126/science.aab3564">hormigas de plata en el desierto del Sahara</a>.</p>
+</section>
+<section id="analisis-comparativos-de-tecnologias">
+<h3><span class="section-number">11.4.4. </span>Analisis comparativos de tecnologías<a class="headerlink" href="#analisis-comparativos-de-tecnologias" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Tecnología</p></th>
+<th class="head text-center"><p>Estímulo</p></th>
+<th class="head text-center"><p>¿Eléctrica?</p></th>
+<th class="head text-center"><p>Espectro modulado</p></th>
+<th class="head text-center"><p>Madurez comercial</p></th>
+<th class="head text-center"><p>Ventajas</p></th>
+<th class="head text-center"><p>Limitaciones</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>Low-E</strong> (referencia)</p></td>
+<td class="text-center"><p>— (fijo)</p></td>
+<td class="text-center"><p>No</p></td>
+<td class="text-center"><p>NIR solar + IR térmico</p></td>
+<td class="text-center"><p>Muy madura</p></td>
+<td class="text-center"><p>Bajo costo relativo; sin control activo</p></td>
+<td class="text-center"><p>No modulable</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Film control solar</strong></p></td>
+<td class="text-center"><p>— (fijo)</p></td>
+<td class="text-center"><p>No</p></td>
+<td class="text-center"><p>NIR + visible, según film</p></td>
+<td class="text-center"><p>Madura</p></td>
+<td class="text-center"><p>Retrofit; evita reemplazo completo</p></td>
+<td class="text-center"><p>Desempeño y durabilidad dependen del producto/base</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>Electrocrómico</strong></p></td>
+<td class="text-center"><p>Voltaje DC</p></td>
+<td class="text-center"><p>Sí</p></td>
+<td class="text-center"><p>Visible + NIR</p></td>
+<td class="text-center"><p>Comercial disponible</p></td>
+<td class="text-center"><p>Control preciso; posible integración con BMS; reduce deslumbramiento</p></td>
+<td class="text-center"><p>Costo; switching; control necesario</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Termocróm. VO₂</strong></p></td>
+<td class="text-center"><p>Temperatura</p></td>
+<td class="text-center"><p>No</p></td>
+<td class="text-center"><p>NIR solar</p></td>
+<td class="text-center"><p>I+D / nicho</p></td>
+<td class="text-center"><p>Pasivo; sin cableado</p></td>
+<td class="text-center"><p>T de transición, color, <span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span> y durabilidad</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Fuentes: DOE EC Window Report (2022/2023); LBNL EC Fact Sheet; NREL <em>Pathway to Zero Energy Windows</em> (2022); Wu et al. (2023).</p>
+<p>La tabla resume <strong>rangos orientativos</strong> para análisis de curso. Para especificación de proyecto se deben usar fichas NFRC/IGDB o datos del fabricante, porque <span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span>, SHGC, U-value y emisividad dependen del espesor, cámara de aire, gas, marco y coating.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Tecnología</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span> / VLT</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span> / SHGC</p></th>
+<th class="head text-center"><p>U-value [W/m²K]</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(\varepsilon\)</span> IR</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Vidrio simple claro</p></td>
+<td class="text-center"><p>~80–90%</p></td>
+<td class="text-center"><p>~0.75–0.86</p></td>
+<td class="text-center"><p>~5.6–6.0</p></td>
+<td class="text-center"><p>~0.84</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Vidrio doble claro (sin coating)</p></td>
+<td class="text-center"><p>~70–80%</p></td>
+<td class="text-center"><p>~0.65–0.75</p></td>
+<td class="text-center"><p>~2.7–3.0</p></td>
+<td class="text-center"><p>~0.84</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Low-E soft-coat (IGU)</p></td>
+<td class="text-center"><p>~60–75%</p></td>
+<td class="text-center"><p>~0.25–0.45</p></td>
+<td class="text-center"><p>~1.0–1.8</p></td>
+<td class="text-center"><p>~0.02–0.10</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Film de control solar</p></td>
+<td class="text-center"><p>depende del producto</p></td>
+<td class="text-center"><p>NREL reporta reducciones de SHGC de 17–71% respecto al vidrio base</p></td>
+<td class="text-center"><p>mejora de U-factor 0–22%</p></td>
+<td class="text-center"><p>depende del film</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Vidrio dinámico / electrocrómico</p></td>
+<td class="text-center"><p>variable claro–oscuro</p></td>
+<td class="text-center"><p>NREL/IEA usan rangos dinámicos objetivo ~0.05–0.65</p></td>
+<td class="text-center"><p>similar al IGU base</p></td>
+<td class="text-center"><p>depende del stack</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Fuentes: NREL <em>Pathway to Zero Energy Windows</em> (2022); NREL <em>Window Film</em> (2024); IEA <em>Innovation Gaps: Buildings – Advanced windows</em>; DOE EC Window Report (2022/2023).</p>
+</section>
+</section>
+<section id="recubrimientos-de-enfriamiento-radiativo-pasivo">
+<h2><span class="section-number">11.5. </span>Recubrimientos de enfriamiento radiativo pasivo<a class="headerlink" href="#recubrimientos-de-enfriamiento-radiativo-pasivo" title="Link to this heading">#</a></h2>
+<p>Las tecnologías de enfriamiento radiativo buscan que las superficies de un edificio <strong>emitan más calor del que reciben</strong>, reduciendo la temperatura superficial y aliviando la carga de los sistemas de aire acondicionado.</p>
+<section id="el-balance-radiativo-de-una-superficie">
+<h3><span class="section-number">11.5.1. </span>El balance radiativo de una superficie<a class="headerlink" href="#el-balance-radiativo-de-una-superficie" title="Link to this heading">#</a></h3>
+<p>Una superficie en el exterior intercambia energía de las siguientes formas:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_\mathrm{neto} = \underbrace{P_\mathrm{emit}}_{\text{emisión IR}} - \underbrace{P_\mathrm{atm}}_{\text{recibido de atm.}} - \underbrace{\alpha_\mathrm{sol}\cdot G_\mathrm{solar}}_{\text{absorbido solar}} - \underbrace{P_\mathrm{conv}}_{\text{ganancia convectiva}}
+\end{equation*}\]</div>
+<p>Para que la superficie se enfríe (<span class="math notranslate nohighlight">\(P_\mathrm{neto} &gt; 0\)</span>), se necesita:</p>
+<ol class="arabic simple">
+<li><p>Alta emisividad en la ventana atmosférica (8–13 μm) para maximizar <span class="math notranslate nohighlight">\(P_\mathrm{emit}\)</span>.</p></li>
+<li><p>Alta reflectancia solar para minimizar <span class="math notranslate nohighlight">\(\alpha_\mathrm{sol} \cdot G_\mathrm{solar}\)</span>.</p></li>
+</ol>
+<p>El fenómeno también depende de las condiciones externas, cielo despejado, baja humedad, baja temperatura de la atmósfera, y factor de vista al cielo. En condiciones desfavorables, el efecto puede ser nulo.</p>
+</section>
+<section id="solar-refractive-index-sri">
+<h3><span class="section-number">11.5.2. </span>Solar Refractive Index (SRI)<a class="headerlink" href="#solar-refractive-index-sri" title="Link to this heading">#</a></h3>
+<p>ASTM E1980 define SRI comparando la temperatura superficial de un material con un blanco estándar y un negro estándar bajo condiciones normalizadas.</p>
+<ul class="simple">
+<li><p>El blanco estándar tiene reflectancia solar 0.80, emisividad térmica 0.90 y SRI = 100</p></li>
+<li><p>El negro estándar tiene reflectancia solar 0.05, emisividad 0.90 y SRI = 0.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/SRI_illustration.png"><img alt="../_images/SRI_illustration.png" class="align-center" src="../_images/SRI_illustration.png" style="width: 550px;" />
+</a>
+<center><small><b>Figura 15.</b> Cargas térmicas consideradas en el cálculo del SRI (Understanding the solar reflectance index, Cool Roof Rating Council, 2024)</small></center></section>
+<section id="primera-generacion-cool-roofs">
+<h3><span class="section-number">11.5.3. </span>Primera generación: cool roofs<a class="headerlink" href="#primera-generacion-cool-roofs" title="Link to this heading">#</a></h3>
+<p>Los <strong>cool roofs</strong> (techos fríos) son la tecnología más madura del enfriamiento radiativo. El principio es simple: aumentar la reflectancia solar del techo para reducir la energía absorbida.</p>
+<p>Un buen cool roof tiene SRI &gt; 78</p>
+<p><strong>Impacto medido:</strong></p>
+<ul class="simple">
+<li><p>Reducción de temperatura superficial: DOE Energy Saver reporta que, bajo las mismas condiciones, un techo reflectivo puede mantenerse más de <strong>50°F (28°C)</strong> más frío que un techo convencional.</p></li>
+<li><p>Reducción de demanda peak de enfriamiento: EPA reporta <strong>11–27%</strong> en edificios residenciales acondicionados.</p></li>
+<li><p>Reducción de temperatura interior máxima: EPA reporta <strong>1.2–3.3°C</strong> en viviendas sin aire acondicionado.</p></li>
+<li><p>Reducción del efecto isla de calor urbana cuando se implementa a escala.</p></li>
+</ul>
+<p><strong>Estado comercial:</strong> tecnología completamente madura. Pinturas reflectantes blancas, membranas TPO y tejas reflectantes están disponibles en el mercado estándar de construcción.</p>
+</section>
+<section id="segunda-generacion-enfriamiento-radiativo-diurno-pasivo-pdrc">
+<h3><span class="section-number">11.5.4. </span>Segunda generación: enfriamiento radiativo diurno pasivo (PDRC)<a class="headerlink" href="#segunda-generacion-enfriamiento-radiativo-diurno-pasivo-pdrc" title="Link to this heading">#</a></h3>
+<p>Los materiales de <strong>enfriamiento radiativo diurno pasivo</strong> (<em>Passive Daytime Radiative Cooling</em>, PDRC) van más allá del cool roof convencional:</p>
+<ol class="arabic simple">
+<li><p>Alta reflectancia solar (<span class="math notranslate nohighlight">\(\rho_\mathrm{sol} &gt; 0.90\)</span>–<span class="math notranslate nohighlight">\(0.97\)</span>): minimiza <span class="math notranslate nohighlight">\(\alpha_\mathrm{sol} \cdot G_\mathrm{solar}\)</span>.</p></li>
+<li><p>Alta emisividad selectiva en la ventana atmosférica (8–13 μm): maximiza <span class="math notranslate nohighlight">\(P_\mathrm{emit}\)</span> hacia el espacio.</p></li>
+</ol>
+<p>Esto equivale a SRI &gt; 100</p>
+<p>Cuando estas condiciones se cumplen, la potencia de enfriamiento neta puede ser positiva incluso bajo irradiación solar directa:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_\mathrm{cool} = P_\mathrm{emit}(8\text{–}13\,\mu\mathrm{m}) - P_\mathrm{atm}(8\text{–}13\,\mu\mathrm{m}) - \alpha_\mathrm{sol}\cdot G_\mathrm{solar} - P_\mathrm{conv} &gt; 0
+\end{equation*}\]</div>
+<p><strong>El universo actúa como sumidero térmico:</strong> el material puede alcanzar temperaturas <strong>por debajo de la temperatura ambiente</strong> a plena luz del día.</p>
+<section id="pdrc-en-la-naturaleza-las-hormigas-de-plata-del-sahara">
+<h4><span class="section-number">11.5.4.1. </span>PDRC en la naturaleza: las hormigas de plata del Sahara<a class="headerlink" href="#pdrc-en-la-naturaleza-las-hormigas-de-plata-del-sahara" title="Link to this heading">#</a></h4>
+<p>Un ejemplo natural de PDRC es la <em>hormiga plateada del Sahara</em> (<em>Cataglyphis bombycina</em>).</p>
 <a class="reference internal image-reference" href="../_images/silver_ants.png"><img alt="../_images/silver_ants.png" class="align-center" src="../_images/silver_ants.png" style="width: 700px;" />
 </a>
-<p>En el caso de las hormigas de plata. Los pelos producen efectos de scattering para longitudes de onda corta, aumentando la reflectancia, selectívamente, en el espectro visible. Como resultado, la hormiga adquire el color plateado característico.</p>
+<center><small><b>Figura 16.</b> Hormiga de plata del Sahara (<i>Cataglyphis bombycina</i>): su coloración plateada resulta de las propiedades ópticas selectivas de sus pelos.</small></center><p>Sus pelos crean efectos de scattering para longitudes de onda corta, aumentando selectivamente la reflectancia en el visible, lo que les da el característico color plateado.</p>
 <a class="reference internal image-reference" href="../_images/silver_ants_scattering.png"><img alt="../_images/silver_ants_scattering.png" class="align-center" src="../_images/silver_ants_scattering.png" style="width: 700px;" />
 </a>
-</section>
-<section id="materiales-prc">
-<h3><span class="section-number">11.5.3. </span>Materiales PRC<a class="headerlink" href="#materiales-prc" title="Link to this heading">#</a></h3>
-<p>Artificialmente, el fenómeno puede ser reproducido utilizando materiales transparentes con porosidad inducida.</p>
-<p>Para esto, comúnmente se utilizan polímeros. La porosidad puede ser inducida mediante un proceso llamado <em>separación de fases</em>.</p>
+<center><small><b>Figura 17.</b> Mecanismo de scattering en los pelos de la hormiga de plata: alta reflectancia en el espectro visible y emisión eficiente en el IR térmico.</small></center></section>
+<section id="materiales-pdrc-artificiales">
+<h4><span class="section-number">11.5.4.2. </span>Materiales PDRC artificiales<a class="headerlink" href="#materiales-pdrc-artificiales" title="Link to this heading">#</a></h4>
+<p>Artificialmente, el fenómeno se reproduce con <strong>polímeros porosos</strong>. La porosidad —inducida mediante separación de fases— crea microestructuras que dispersan la radiación solar (alta reflectancia en UV-vis-NIR) y emiten eficientemente en el IR térmico.</p>
 <a class="reference internal image-reference" href="../_images/radiative_cooling_film.png"><img alt="../_images/radiative_cooling_film.png" class="align-center" src="../_images/radiative_cooling_film.png" style="width: 900px;" />
 </a>
-<p>El <a class="reference external" href="http://www.sciencemag.org/lookup/doi/10.1126/science.aat9513">siguiente estudio utiliza PVDF como polímero base</a></p>
-<p>La investigación en enfriamiento radiativo pasivo ha avanzado rápidamente en los últimos años. A partir de estos estudios se han elavorado diversas alternativas en formato de pinturas, ropa, materiales estructurales o láminas adhesivas</p>
+<center><small><b>Figura 18.</b> Film polimérico poroso P(VdF-HFP) para enfriamiento radiativo pasivo diurno: alta reflectancia solar y emisividad térmica elevada en la ventana atmosférica.</small></center>
+<p>El estudio de <a class="reference external" href="https://doi.org/10.1126/science.aat9513">Mandal et al. (Science, 2018)</a> demuestra un recubrimiento polimérico poroso con <span class="math notranslate nohighlight">\(\rho_\mathrm{sol} &gt; 0.96\)</span> y emisividad térmica hemisférica cercana a 0.97, logrando enfriamiento subambiente de alrededor de 6°C bajo radiación solar directa en sus ensayos. Esta es la fuente correcta del DOI 10.1126/science.aat9513; no corresponde a Zhai et al.</p>
+<p>Los materiales PDRC se pueden formular como <strong>pinturas, láminas adhesivas, ropa y materiales estructurales</strong>:</p>
 <a class="reference internal image-reference" href="../_images/radiative_cooling_format.png"><img alt="../_images/radiative_cooling_format.png" class="align-center" src="../_images/radiative_cooling_format.png" style="width: 900px;" />
 </a>
-</section>
-<section id="aplicaciones">
-<h3><span class="section-number">11.5.4. </span>Aplicaciones<a class="headerlink" href="#aplicaciones" title="Link to this heading">#</a></h3>
-<p>Enfriamiento radiativo pasivo es una tecnología emergente, con al menos 10 emprendimientos en el mundo. <a class="reference external" href="https://www.skycoolsystems.com/">Skycool</a>, es uno de los primeros en patentar esta tecnología. El siguiente video explica el funcionamiento de sus paneles de enfrmiamiento radiativo.</p>
-<div class="cell tag_remove-input docutils container">
+<center><small><b>Figura 19.</b> Formatos de aplicación de materiales PDRC: pinturas, láminas adhesivas, ropa y materiales estructurales.</small></center><p><strong>Estado comercial:</strong> tecnología emergente. Ya existen empresas y pilotos comerciales de enfriamiento radiativo, pero el desempeño real depende del clima, factor de vista al cielo, ensuciamiento, integración constructiva y costo. <a class="reference external" href="https://www.skycoolsystems.com/">SkyCool Systems</a> es un ejemplo de aplicación comercial en paneles de enfriamiento radiativo para usos industriales:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s1">&#39;CMaZfuInd9c&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
 <div class="output text_html">
         <iframe
@@ -730,9 +1241,246 @@ Ganancia solar: 46.6%
 </div>
 </section>
 </section>
+</section>
+<section id="limitaciones-reales-y-seleccion-climatica">
+<h2><span class="section-number">11.6. </span>Limitaciones reales y selección climática<a class="headerlink" href="#limitaciones-reales-y-seleccion-climatica" title="Link to this heading">#</a></h2>
+<p>No existe tecnología universal. La selección depende del clima local, el tipo de edificio y el balance anual de cargas.</p>
+<p>Para Low-E y filmes de control solar</p>
+<ul class="simple">
+<li><p>En climas <strong>cálidos sin invierno frío</strong>: priorizar bajo <span class="math notranslate nohighlight">\(T_\mathrm{sol}\)</span> (SHGC). La pérdida de ganancia solar en invierno tiene poca importancia.</p></li>
+<li><p>En climas <strong>con invierno frío</strong>: buscar balance entre bajo SHGC (verano) y bajo U-value (invierno). Un Low-E soft-coat en doble vidrio es la solución más versátil.</p></li>
+</ul>
+<p>Para electrocrómicos</p>
+<ul class="simple">
+<li><p>La inversión se justifica principalmente en <strong>fachadas vidriadas de oficinas</strong> en climas cálidos, donde el confort visual y la reducción de pico de demanda son críticos.</p></li>
+<li><p>En viviendas con presupuesto limitado, un Low-E de calidad es más costo-efectivo.</p></li>
+</ul>
+<p>Para enfriamiento radiativo (cool roofs y PDRC)</p>
+<p>Las siguientes condiciones <strong>reducen o anulan</strong> el efecto de enfriamiento radiativo:</p>
+<ol class="arabic simple">
+<li><p><strong>Alta humedad relativa</strong>: el vapor de agua absorbe radiación dentro y alrededor de la ventana atmosférica 8–13 μm → menor enfriamiento efectivo.</p></li>
+<li><p><strong>Alta nubosidad</strong>: las nubes actúan como cuerpos emisores a temperatura cercana a la ambiente → reducen la vista radiativa al cielo frío.</p></li>
+<li><p><strong>Contaminación y smog</strong>: absorción y dispersión adicional en el IR atmosférico.</p></li>
+<li><p><strong>Fachadas verticales</strong>: factor de vista al cielo bajo; el beneficio es marginal vs techo horizontal.</p></li>
+<li><p><strong>Polvo y ensuciamiento</strong>: degradan la reflectancia solar → mantenimiento periódico necesario.</p></li>
+<li><p><strong>Entornos urbanos densos</strong>: baja visión de cielo; radiación IR de edificios vecinos calienta la superficie.</p></li>
+</ol>
+<section id="caso-chile-norte-seco-vs-zona-central-vs-sur-humedo">
+<h3><span class="section-number">11.6.1. </span>Caso Chile: norte seco vs zona central vs sur húmedo<a class="headerlink" href="#caso-chile-norte-seco-vs-zona-central-vs-sur-humedo" title="Link to this heading">#</a></h3>
+<p>En Chile, la diversidad climática —desde el desierto de Atacama hasta la Patagonia— implica que las soluciones no son universales. Los valores de las tablas siguientes son <strong>órdenes de magnitud para discusión de diseño</strong>, basados en datos de irradiación usados en la Unidad 7/Explorador Solar y en resúmenes climatológicos de la Dirección Meteorológica de Chile; para diseño ejecutivo se debe usar un archivo climático local o mediciones del sitio.</p>
+<p>Comparemos tres zonas representativas usando los criterios de la sección anterior:</p>
+<section id="antofagasta-copiapo-norte-arido">
+<h4><span class="section-number">11.6.1.1. </span>Antofagasta / Copiapó — Norte árido<a class="headerlink" href="#antofagasta-copiapo-norte-arido" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Ventana atmosférica: muy favorable en interior seco y despejado → <strong>PDRC muy efectivo</strong>.</p></li>
+<li><p>En costa con camanchaca o nubosidad baja, el desempeño PDRC debe evaluarse con datos locales.</p></li>
+<li><p>Radiación solar altísima y carga de enfriamiento alta → <strong>Low-E y filmes altamente recomendados</strong>.</p></li>
+<li><p>Cool roofs: <strong>muy efectivos</strong> → reducciones de temperatura superficial del orden de 25–30°C son coherentes con DOE para techos reflectivos vs convencionales.</p></li>
+<li><p>Electrocrómicos: justificados en edificios comerciales o de alta demanda de enfriamiento.</p></li>
+<li><p>Inviernos benignos → la pérdida de ganancia solar suele ser menos crítica que en climas de calefacción dominante.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Variable</p></th>
+<th class="head text-center"><p>Valor típico / criterio</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Irradiación solar (GHI)</p></td>
+<td class="text-center"><p>~2 400–2 600 kWh/m²/año en zonas de alto recurso (datos Unidad 7 / Explorador Solar)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Humedad relativa</p></td>
+<td class="text-center"><p>Baja en interior árido; la costa de Antofagasta puede tener HR más alta por camanchaca</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Nubosidad anual</p></td>
+<td class="text-center"><p>Muy baja en interior; mayor presencia de nubosidad baja en costa</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Contaminación</p></td>
+<td class="text-center"><p>Baja a moderada, según ciudad y cercanía industrial</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Tecnología prioritaria:</strong> Low-E de bajo SHGC + PDRC en techos.</p>
+</section>
+<section id="santiago-clima-mediterraneo">
+<h4><span class="section-number">11.6.1.2. </span>Santiago — Clima mediterráneo<a class="headerlink" href="#santiago-clima-mediterraneo" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>PDRC: <strong>efectivo en verano</strong> (cielo claro, baja HR); <strong>limitado en invierno</strong> (nubosidad, smog, mayor HR).</p></li>
+<li><p>Materiales adaptativos (TARC): serían ideales para el ciclo verano/invierno de Santiago.</p></li>
+<li><p>Low-E con balance SHGC/U-value: <strong>solución más robusta</strong> para viviendas.</p></li>
+<li><p>Cool roofs: efectivos en verano.</p></li>
+<li><p>Electrocrómicos: justificados en edificios de oficinas con fachada vidriada (Providencia, Las Condes).</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Variable</p></th>
+<th class="head text-center"><p>Valor típico / criterio</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Irradiación solar (GHI)</p></td>
+<td class="text-center"><p>~1 700–1 900 kWh/m²/año</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Humedad relativa media</p></td>
+<td class="text-center"><p>Moderada; mayor en invierno que en verano</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Nubosidad anual</p></td>
+<td class="text-center"><p>Veranos soleados; inviernos más nublados</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Contaminación</p></td>
+<td class="text-center"><p>Alta en episodios invernales de estabilidad atmosférica</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Tecnología prioritaria:</strong> Low-E de balance (SHGC ~0.35–0.45, U bajo según presupuesto y marco) + cool roof en techos planos industriales o edificios.</p>
+</section>
+<section id="puerto-montt-valdivia-sur-lluvioso">
+<h4><span class="section-number">11.6.1.3. </span>Puerto Montt / Valdivia — Sur lluvioso<a class="headerlink" href="#puerto-montt-valdivia-sur-lluvioso" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>PDRC: <strong>muy limitado</strong> por humedad y nubosidad → el efecto de enfriamiento es mínimo.</p></li>
+<li><p>Cool roofs: beneficio reducido; la <strong>calefacción domina</strong> sobre el enfriamiento.</p></li>
+<li><p>Low-E: relevante principalmente para <strong>reducir pérdidas térmicas</strong> (bajo U-value, no bajo SHGC).</p></li>
+<li><p>Electrocrómicos y filmes: poca justificación económica dado el bajo potencial de enfriamiento.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Variable</p></th>
+<th class="head text-center"><p>Valor típico / criterio</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Irradiación solar (GHI)</p></td>
+<td class="text-center"><p>~1 000–1 200 kWh/m²/año</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Humedad relativa media</p></td>
+<td class="text-center"><p>Alta</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Nubosidad anual</p></td>
+<td class="text-center"><p>Alta durante gran parte del año</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Precipitación</p></td>
+<td class="text-center"><p>Alta, frecuentemente del orden de miles de mm/año según localidad</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Tecnología prioritaria:</strong> doble vidrio + Low-E hard-coat (bajo U-value) para retención de calor; masa térmica alta en muros para suavizar fluctuaciones.</p>
+<p>En síntesis, <strong>no hay una tecnología universal</strong>. En el norte árido, la prioridad es bloquear la ganancia solar y aprovechar el enfriamiento radiativo. En el sur húmedo, la prioridad es conservar el calor. Santiago requiere un balance estacional que los materiales adaptativos podrían resolver en el futuro.</p>
+</section>
+</section>
+<section id="guia-de-seleccion-de-tecnologia">
+<h3><span class="section-number">11.6.2. </span>Guía de selección de tecnología<a class="headerlink" href="#guia-de-seleccion-de-tecnologia" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Escenario</p></th>
+<th class="head text-center"><p>Tecnología recomendada</p></th>
+<th class="head text-center"><p>Alternativa</p></th>
+<th class="head text-center"><p>Razón principal</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>Edificio nuevo en clima cálido seco</strong></p></td>
+<td class="text-center"><p>Low-E soft-coat (bajo SHGC) + Cool roof</p></td>
+<td class="text-center"><p>Electrocrómico en fachadas vidriadas</p></td>
+<td class="text-center"><p>Máxima reducción de carga de enfriamiento; robusto y sin mantenimiento</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Retrofit barato</strong></p></td>
+<td class="text-center"><p>Film espectralmente selectivo (interior)</p></td>
+<td class="text-center"><p>—</p></td>
+<td class="text-center"><p>Bajo costo; no requiere reemplazar ventanas</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>Fachada vidriada con deslumbramiento</strong></p></td>
+<td class="text-center"><p>Electrocrómico</p></td>
+<td class="text-center"><p>Film (sin control dinámico)</p></td>
+<td class="text-center"><p>Control preciso de <span class="math notranslate nohighlight">\(T_\mathrm{lum}\)</span> y SHGC; elimina necesidad de persianas</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Vivienda con invierno frío y verano caluroso</strong></p></td>
+<td class="text-center"><p>Low-E balance + doble vidrio (U bajo)</p></td>
+<td class="text-center"><p>Film + masa térmica</p></td>
+<td class="text-center"><p>Reduce pérdidas en invierno y ganancia en verano</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>Techo industrial en zona seca</strong></p></td>
+<td class="text-center"><p>PDRC (pintura o lámina) sobre cool roof</p></td>
+<td class="text-center"><p>Cool roof blanco simple</p></td>
+<td class="text-center"><p>Máximo efecto radiativo; bajo costo de pintura</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>Zona húmeda/nublada</strong></p></td>
+<td class="text-center"><p>Masa térmica + Low-E (U-value bajo)</p></td>
+<td class="text-center"><p>Cool roof (beneficio parcial)</p></td>
+<td class="text-center"><p>PDRC tiene impacto limitado; priorizar aislación</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="estado-de-madurez-de-las-tecnologias">
+<h3><span class="section-number">11.6.3. </span>Estado de madurez de las tecnologías<a class="headerlink" href="#estado-de-madurez-de-las-tecnologias" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Tecnología</p></th>
+<th class="head text-center"><p>Estado actual</p></th>
+<th class="head text-center"><p>Observación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>Cool roofs</p></td>
+<td class="text-center"><p>Completamente madura</p></td>
+<td class="text-center"><p>Disponible en el mercado estándar de construcción</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Low-E (hard-coat y soft-coat)</p></td>
+<td class="text-center"><p>Completamente madura</p></td>
+<td class="text-center"><p>Estándar en ventanas de alto desempeño</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Filmes de control solar</p></td>
+<td class="text-center"><p>Madura</p></td>
+<td class="text-center"><p>Ampliamente disponibles; desempeño depende del vidrio base y del producto</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Electrocrómicos</p></td>
+<td class="text-center"><p>Comercial disponible</p></td>
+<td class="text-center"><p>Barreras de costo y control; ideal para edificios con fachadas vidriadas y alto valor de confort visual</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Termocrómicos VO₂</p></td>
+<td class="text-center"><p>I+D / nicho</p></td>
+<td class="text-center"><p>Sin solución comercial robusta y masiva aún</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>PDRC (pinturas y láminas)</p></td>
+<td class="text-center"><p>Emergente / primeras aplicaciones comerciales</p></td>
+<td class="text-center"><p>Prometedor en climas secos y despejados; sensible a humedad, nubosidad y ensuciamiento</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Materiales adaptativos (TARC)</p></td>
+<td class="text-center"><p>I+D</p></td>
+<td class="text-center"><p>Muy prometedores para evitar sobreenfriamiento, pero aún no comerciales</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
 <section id="referencias">
-<h2><span class="section-number">11.6. </span>Referencias<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h2>
-<p>Kalogirou S. A. <em>Chapter 6. Solar space heating and cooling</em> in <strong>Solar Energy Engineering Processes and Systems</strong>, 2nd Ed, Academic Press, 2014</p>
+<h2><span class="section-number">11.7. </span>Referencias<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>IEA. <em>Energy Efficiency 2025 – Buildings Chapter.</em> International Energy Agency, 2025. <a class="reference external" href="https://www.iea.org/reports/energy-efficiency-2025/buildings">https://www.iea.org/reports/energy-efficiency-2025/buildings</a></p></li>
+<li><p>IEA. <em>Buildings.</em> International Energy Agency, sector tracking page. <a class="reference external" href="https://www.iea.org/reports/buildings">https://www.iea.org/reports/buildings</a></p></li>
+<li><p>IEA. <em>The Future of Cooling.</em> International Energy Agency, 2018. <a class="reference external" href="https://www.iea.org/reports/the-future-of-cooling">https://www.iea.org/reports/the-future-of-cooling</a></p></li>
+<li><p>IEA. <em>Innovation Gaps: Buildings – Advanced Windows.</em> <a class="reference external" href="https://www.iea.org/reports/innovation-gaps/buildings">https://www.iea.org/reports/innovation-gaps/buildings</a></p></li>
+<li><p>U.S. DOE. <em>Better Windows, Better Outcomes: How Electrochromics Improve Health, Productivity, and Efficiency.</em> Building Technologies Office, 2022/2023. <a class="reference external" href="https://www.energy.gov/sites/default/files/2023-12/bto-electrochromic-window-report-121123.pdf">https://www.energy.gov/sites/default/files/2023-12/bto-electrochromic-window-report-121123.pdf</a></p></li>
+<li><p>LBNL Windows Group. <em>Electrochromic Windows Fact Sheet.</em> Lawrence Berkeley National Laboratory. <a class="reference external" href="https://windows.lbl.gov/sites/default/files/EC-Windows-FactSheet_v9.pdf">https://windows.lbl.gov/sites/default/files/EC-Windows-FactSheet_v9.pdf</a></p></li>
+<li><p>Kim, J.; CaraDonna, C.; Parker, A. <em>End-Use Savings Shapes Measure Documentation: Window Film.</em> NREL/TP-5500-86554, 2024. <a class="reference external" href="https://doi.org/10.2172/2447836">https://doi.org/10.2172/2447836</a></p></li>
+<li><p>U.S. DOE / NREL. <em>Pathway to Zero Energy Windows: Advancing Technologies and Market Adoption.</em> 2022. <a class="reference external" href="https://docs.nrel.gov/docs/fy22osti/80171.pdf">https://docs.nrel.gov/docs/fy22osti/80171.pdf</a></p></li>
+<li><p>U.S. DOE Energy Saver. <em>Energy Efficient Window Coverings – Window Films.</em> <a class="reference external" href="https://www.energy.gov/energysaver/energy-efficient-window-coverings">https://www.energy.gov/energysaver/energy-efficient-window-coverings</a></p></li>
+<li><p>U.S. EPA. <em>Using Cool Roofs to Reduce Heat Islands.</em> <a class="reference external" href="https://www.epa.gov/heatislands/using-cool-roofs-reduce-heat-islands">https://www.epa.gov/heatislands/using-cool-roofs-reduce-heat-islands</a></p></li>
+<li><p>U.S. DOE Energy Saver. <em>Cool Roofs.</em> <a class="reference external" href="https://www.energy.gov/energysaver/cool-roofs">https://www.energy.gov/energysaver/cool-roofs</a></p></li>
+<li><p>NREL. <em>Reference Air Mass 1.5 Spectra / ASTM G173.</em> <a class="reference external" href="https://www.nrel.gov/grid/solar-resource/spectra-am1.5">https://www.nrel.gov/grid/solar-resource/spectra-am1.5</a></p></li>
+<li><p>Wu, S. et al. <em>Applications of thermochromic and electrochromic smart windows: Materials to buildings.</em> <strong>Cell Reports Physical Science</strong> 4, 101370, 2023. DOI: <a class="reference external" href="https://doi.org/10.1016/j.xcrp.2023.101370">10.1016/j.xcrp.2023.101370</a></p></li>
+<li><p>Wang, X.; Narayan, S. <em>Thermochromic Materials for Smart Windows: A State-of-Art Review.</em> <strong>Frontiers in Energy Research</strong> 9, 800382, 2021. DOI: <a class="reference external" href="https://doi.org/10.3389/fenrg.2021.800382">10.3389/fenrg.2021.800382</a></p></li>
+<li><p>Mandal, J. et al. <em>Hierarchically porous polymer coatings for highly efficient passive daytime radiative cooling.</em> <strong>Science</strong> 362(6412), 315–319, 2018. DOI: <a class="reference external" href="https://doi.org/10.1126/science.aat9513">10.1126/science.aat9513</a></p></li>
+<li><p>Tang, K. et al. <em>Temperature-adaptive radiative coating for all-season household thermal regulation.</em> <strong>Science</strong> 374(6574), 1504–1509, 2021. DOI: <a class="reference external" href="https://doi.org/10.1126/science.abf7136">10.1126/science.abf7136</a></p></li>
+<li><p>Ministerio de Energía de Chile. <em>Explorador Solar.</em> <a class="reference external" href="https://solar.minenergia.cl">https://solar.minenergia.cl</a></p></li>
+<li><p>Dirección Meteorológica de Chile. <em>Servicios climáticos y resúmenes climatológicos.</em> <a class="reference external" href="https://climatologia.meteochile.gob.cl">https://climatologia.meteochile.gob.cl</a></p></li>
+<li><p>Kalogirou, S.A. <em>Chapter 6: Solar space heating and cooling.</em> En <strong>Solar Energy Engineering: Processes and Systems</strong>, 2nd Ed., Academic Press, 2014.</p></li>
+</ol>
 </section>
 </section>
 
@@ -801,31 +1549,58 @@ Ganancia solar: 46.6%
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">11.1. Introducción</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-tradicionales">11.2. Métodos tradicionales</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masa-termica-y-desface-termico-en-materiales-de-construccion">11.2.1. Masa térmica y desface térmico en materiales de construcción</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#manejo-termico-a-traves-de-ventanas">11.2.2. Manejo térmico a través de ventanas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrategias-tradicionales-no-selectivas">11.2. Estrategias tradicionales no selectivas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masa-termica-y-desfase-termico">11.2.1. Masa térmica y desfase térmico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#muro-de-trombe">11.2.2. Muro de Trombe</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orientacion-y-aleros">11.2.3. Orientación y aleros</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#control-solar-en-ventanas-low-e-coating">11.3. Control solar en ventanas (<em>Low-E coating</em>)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#composicion">11.3.1. Composición</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#desempeno">11.3.2. Desempeño</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-teorico-de-un-recubrimiento-low-e">11.3.3. Análisis teórico de un recubrimiento <em>low-E</em></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fabricacion-y-tipos">11.3.4. Fabricación y tipos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-de-tecnologias-de-manejo-radiativo">11.3. Fundamentos de tecnologías de manejo radiativo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ventanas-y-control-solar">11.4. Ventanas y control solar</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-de-desempeno">11.4.1. Métricas de desempeño</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recubrimientos-low-e">11.4.2. Recubrimientos Low-E</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#composicion-y-mecanismo-optico">11.4.2.1. Composición y mecanismo óptico</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-fabricacion">11.4.2.2. Tipos de fabricación</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-teorico">11.4.2.3. Análisis teórico</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#soft-coat-low-e-glass">11.4.2.4. Soft-coat low-E glass</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#filmes-polimericos">11.4.2.5. Filmes poliméricos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#durabilidad-y-condiciones-de-uso">11.4.2.6. Durabilidad y condiciones de uso</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ventanas-inteligentes">11.4. Ventanas inteligentes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentos-de-las-ventanas-termocromicas">11.4.1. Fundamentos de las ventanas termocrómicas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fabricacion-y-desempeno">11.4.2. Fabricación y desempeño</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ventanas-inteligentes">11.4.3. Ventanas inteligentes</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#materiales-electrocromicos">11.4.3.1. Materiales electrocrómicos</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#capacidad-de-modulacion">11.4.3.2. Capacidad de modulación</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#beneficios-en-edificaciones">11.4.3.3. Beneficios en edificaciones</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#limitaciones-reales">11.4.3.4. Limitaciones reales</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#materiales-termocromicos">11.4.3.5. Materiales termocrómicos</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enfriamiento-radiativo-pasivo">11.5. Enfriamiento radiativo pasivo</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principio-de-funcionamiento">11.5.1. Principio de funcionamiento</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prc-en-la-naturaleza">11.5.2. PRC en la naturaleza</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#materiales-prc">11.5.3. Materiales PRC</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicaciones">11.5.4. Aplicaciones</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-comparativos-de-tecnologias">11.4.4. Analisis comparativos de tecnologías</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">11.6. Referencias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recubrimientos-de-enfriamiento-radiativo-pasivo">11.5. Recubrimientos de enfriamiento radiativo pasivo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-balance-radiativo-de-una-superficie">11.5.1. El balance radiativo de una superficie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solar-refractive-index-sri">11.5.2. Solar Refractive Index (SRI)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primera-generacion-cool-roofs">11.5.3. Primera generación: cool roofs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segunda-generacion-enfriamiento-radiativo-diurno-pasivo-pdrc">11.5.4. Segunda generación: enfriamiento radiativo diurno pasivo (PDRC)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pdrc-en-la-naturaleza-las-hormigas-de-plata-del-sahara">11.5.4.1. PDRC en la naturaleza: las hormigas de plata del Sahara</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#materiales-pdrc-artificiales">11.5.4.2. Materiales PDRC artificiales</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitaciones-reales-y-seleccion-climatica">11.6. Limitaciones reales y selección climática</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caso-chile-norte-seco-vs-zona-central-vs-sur-humedo">11.6.1. Caso Chile: norte seco vs zona central vs sur húmedo</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#antofagasta-copiapo-norte-arido">11.6.1.1. Antofagasta / Copiapó — Norte árido</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#santiago-clima-mediterraneo">11.6.1.2. Santiago — Clima mediterráneo</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#puerto-montt-valdivia-sur-lluvioso">11.6.1.3. Puerto Montt / Valdivia — Sur lluvioso</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#guia-de-seleccion-de-tecnologia">11.6.2. Guía de selección de tecnología</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estado-de-madurez-de-las-tecnologias">11.6.3. Estado de madurez de las tecnologías</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">11.7. Referencias</a></li>
 </ul>
   </nav></div>
 
